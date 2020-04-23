@@ -1,1 +1,1 @@
-# weixin2web
+# weixin2vue
