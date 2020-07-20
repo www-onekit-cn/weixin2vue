@@ -1,0 +1,29 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/component/pages/textarea/textarea.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: 'textarea',
+      path: 'page/component/pages/textarea/textarea'
+    }
+  },
+
+  data: {
+    focus: false
+  },
+
+  bindTextAreaBlur(e) {
+    console.log(e.detail.value)
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "textarea"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

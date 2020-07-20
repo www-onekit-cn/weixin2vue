@@ -1,0 +1,24 @@
+.page-section {
+  margin-top: calc(var(--screen-width)*200/750);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 calc(var(--screen-width)*50/750);
+  box-sizing: border-box;
+}
+.page-body-title {
+  font-size: calc(var(--screen-width)*60/750);
+  line-height: calc(var(--screen-width)*200/750);
+}
+.page-body-text {
+  color: #bbb;
+  font-size: calc(var(--screen-width)*28/750);
+  line-height: calc(var(--screen-width)*40/750);
+  margin: 0 0 calc(var(--screen-width)*100/750) 0;
+  text-align: center;
+}
+.page-body-button {
+  width: 100%;
+}

@@ -1,0 +1,7 @@
+.page-section-title {
+  margin-bottom: calc(var(--screen-width)*30/750) ;
+}
+.navigator {
+  color: #1AAD19 ;
+  display: inline-block ;
+}

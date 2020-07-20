@@ -1,0 +1,67 @@
+
+<!--#include virtual="/page/component/pages/movable-view/movable-view.htm"-->
+
+
+<wx-view  class="page-body">
+    <!--
+            <wx-view  class="page-section">
+              <wx-view  class="page-section-title first">movable-view区域小于movable-area</wx-view>
+              <wx-movable-area >
+                <wx-movable-view  :x="x" :y="y" direction="all">text</wx-movable-view>
+              </wx-movable-area>
+            </wx-view>
+            <wx-view  class="btn-area">
+              <wx-button  @bindtap="tap" class="page-body-button" type="primary">点击移动到 (30px, 30px)</wx-button>
+            </wx-view>
+            -
+
+        <wx-view  class="page-section">
+          <wx-view  class="page-section-title">movable-view区域大于movable-area</wx-view>
+          <wx-movable-area >
+            <wx-movable-view  class="max" direction="all">text</wx-movable-view>
+          </wx-movable-area>
+        </wx-view>
+
+        <wx-view  class="page-section">
+          <wx-view  class="page-section-title">只可以横向移动</wx-view>
+          <wx-movable-area >
+            <wx-movable-view  direction="horizontal">text</wx-movable-view>
+          </wx-movable-area>
+        </wx-view>
+
+        <wx-view  class="page-section">
+          <wx-view  class="page-section-title">只可以纵向移动</wx-view>
+          <wx-movable-area >
+            <wx-movable-view  direction="vertical">text</wx-movable-view>
+          </wx-movable-area>
+        </wx-view>
+
+        <wx-view  class="page-section">
+          <wx-view  class="page-section-title">可超出边界</wx-view>
+          <wx-movable-area >
+            <wx-movable-view  direction="all" out-of-bounds="">text</wx-movable-view>
+          </wx-movable-area>
+        </wx-view>
+
+    <wx-view  class="page-section">
+      <wx-view  class="page-section-title">带有惯性</wx-view>
+      <wx-movable-area >
+        <wx-movable-view  direction="all" inertia="">text</wx-movable-view>
+      </wx-movable-area>
+    </wx-view>    -->
+
+    <wx-view  class="page-section">
+      <wx-view  class="page-section-title">可放缩</wx-view>
+      <wx-movable-area  scale-area="">
+        <wx-movable-view  direction="all" @bindchange="onChange" @bindscale="onScale" scale="" scale-min="0.5" scale-max="4" :scale-value="scale">text</wx-movable-view>
+      </wx-movable-area>
+    </wx-view>
+
+        <wx-view  class="btn-area">
+          <wx-button  @bindtap="tap2" class="page-body-button" type="primary">点击放大3倍</wx-button>
+        </wx-view>
+  </wx-view>
+
+
+
+<!--#include virtual="/OnekitWX/footer.html" -->

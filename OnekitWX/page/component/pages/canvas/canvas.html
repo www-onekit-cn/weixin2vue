@@ -1,0 +1,37 @@
+<!--#include virtual="/page/component/pages/canvas/canvas.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'canvas'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-body-wrapper">
+      <wx-canvas  canvas-id="canvas" class="canvas"></wx-canvas>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+
+
+<!--#include virtual="/OnekitWX/footer.html"-->

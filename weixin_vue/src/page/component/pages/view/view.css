@@ -1,0 +1,14 @@
+.flex-wrp{
+  margin-top: calc(var(--screen-width)*60/750);
+  display:flex;
+}
+.flex-item{
+  width: calc(var(--screen-width)*200/750);
+  height: calc(var(--screen-width)*300/750);
+  font-size: calc(var(--screen-width)*26/750);
+}
+.flex-item-V{
+  margin: 0 auto;
+  width: calc(var(--screen-width)*300/750);
+  height: calc(var(--screen-width)*200/750);
+}

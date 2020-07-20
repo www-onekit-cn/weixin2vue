@@ -1,0 +1,173 @@
+<!--#include virtual="/page/cloud/pages/db-permission/db-permission.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'Permission'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body" v-if="openid">
+    <wx-view  class="page-section">
+      <wx-view  class="weui-cells weui-cells_after-title">
+        <wx-view  class="weui-cell weui-cell_select">
+          <wx-view  class="weui-cell__hd weui-cell__hd_in-select-after">
+            <wx-view  class="weui-label">权限类型</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-picker  @bindchange="onPermissionChange" :value="currentPermissionIndex" :range="permissions">
+              <wx-view  class="weui-select permission-select" weui-select_in-select-after="">{{permissions[currentPermissionIndex]}}</wx-view>
+            </wx-picker>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+
+      <wx-view  class="weui-panel">
+        <wx-view  class="weui-panel__bd">
+
+          <template  v-if="currentPermissionIndex === 0">
+            <wx-view  class="weui-tab">
+              <wx-view  class="weui-navbar">
+                <template  :wx:for="tabs[currentPermissionIndex]">
+                  <wx-view  :id="index" :class="['weui-navbar__item ',activeTabIndex === index ? 'weui-bar__item_on' : '']" @bindtap="onTabClick">
+                    <wx-view  class="weui-navbar__title">{{item}}</wx-view>
+                  </wx-view>
+                </template>
+                <wx-view  class="weui-navbar__slider" :style="'left: '+sliderLeft+'px; transform: translateX('+sliderOffset+'px); -webkit-transform: translateX('+sliderOffset+'px);'"></wx-view>
+              </wx-view>
+              <wx-view  class="weui-tab__panel">
+                <wx-view  class="weui-tab__content" :hidden="activeTabIndex !== 0">
+                  <wx-view  class="weui-cells weui-cells_after-title input-area">
+                    <wx-view  class="weui-cell weui-cell_input">
+                      <wx-view  class="weui-cell__bd">
+                        <wx-input  class="weui-input" placeholder="请输入个性签名" :value="myWhatsUp" :focus="!hasMyWhatsUp" data-name="myWhatsUp" @bindinput="bindInput" @bindconfirm="updateMyWhatsUp"></wx-input>
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+
+                  <wx-view  class="btn-area">
+                    <wx-button  type="primary" @bindtap="updateMyWhatsUp" :loading="updating">设置个性签名</wx-button>
+                    <wx-button  @bindtap="queryMyWhatsUp" :loading="querying">获取个性签名</wx-button>
+                  </wx-view>
+                </wx-view>
+
+                <wx-view  class="weui-tab__content" :hidden="activeTabIndex !== 1">
+                  <wx-view  class="weui-cells weui-cells_after-title input-area">
+                    <wx-view  class="weui-cell weui-cell_input">
+                      <wx-view  class="weui-cell__bd">
+                        <wx-input  class="weui-input" placeholder="请输入个性签名" :value="adminWhatsUp" data-name="adminWhatsUp" @bindinput="bindInput"></wx-input>
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+
+                  <wx-view  class="btn-area">
+                    <wx-button  type="primary" @bindtap="updateAdminWhatsUp" :loading="updating">设置个性签名</wx-button>
+                    <wx-button  @bindtap="queryAdminWhatsUp" :loading="querying">获取个性签名</wx-button>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </template>
+
+          <template  v-else-if="currentPermissionIndex === 1">
+            <wx-view  class="weui-tab">
+              <wx-view  class="weui-navbar">
+                <template  :wx:for="tabs[currentPermissionIndex]">
+                  <wx-view  :id="index" :class="['weui-navbar__item ',activeTabIndex === index ? 'weui-bar__item_on' : '']" @bindtap="onTabClick">
+                    <wx-view  class="weui-navbar__title">{{item}}</wx-view>
+                  </wx-view>
+                </template>
+                <wx-view  class="weui-navbar__slider" :style="'left: '+sliderLeft+'px; transform: translateX('+sliderOffset+'px); -webkit-transform: translateX('+sliderOffset+'px);'"></wx-view>
+              </wx-view>
+              <wx-view  class="weui-tab__panel">
+                <wx-view  class="weui-tab__content" :hidden="activeTabIndex !== 0">
+                  <wx-view  class="weui-cells weui-cells_after-title input-area">
+                    <wx-view  class="weui-cell weui-cell_input">
+                      <wx-view  class="weui-cell__bd">
+                        <wx-input  class="weui-input" placeholder="请输入邮箱" :value="myEmail" data-name="myEmail" @bindinput="bindInput"></wx-input>
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+
+                  <wx-view  class="btn-area">
+                    <wx-button  type="primary" @bindtap="updateMyEmail" :loading="updating">设置邮箱</wx-button>
+                    <wx-button  @bindtap="queryMyEmail" :loading="querying">获取邮箱</wx-button>
+                  </wx-view>
+                </wx-view>
+
+                <wx-view  class="weui-tab__content" :hidden="activeTabIndex !== 1">
+                  <wx-view  class="weui-cells weui-cells_after-title input-area">
+                    <wx-view  class="weui-cell weui-cell_input">
+                      <wx-view  class="weui-cell__bd">
+                        <wx-input  class="weui-input" placeholder="请输入邮箱" :value="adminEmail" data-name="adminEmail" @bindinput="bindInput"></wx-input>
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+
+                  <wx-view  class="btn-area">
+                    <wx-button  type="primary" @bindtap="updateAdminEmail" :loading="updating">设置邮箱</wx-button>
+                    <wx-button  @bindtap="queryAdminEmail" :loading="querying">获取邮箱</wx-button>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </template>
+
+          <template  v-else-if="currentPermissionIndex === 2">
+            <wx-view >
+              <wx-view  class="weui-cells weui-cells_after-title input-area">
+                <wx-view  class="weui-cell weui-cell_input">
+                  <wx-view  class="weui-cell__bd">
+                    <wx-input  class="weui-input" placeholder="请输入商品价格" :value="product.price" data-name="product.price" @bindinput="bindInput"></wx-input>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+
+              <wx-view  class="btn-area">
+                <wx-button  type="primary" @bindtap="updateProductPrice" :loading="updating">设置商品价格</wx-button>
+                <wx-button  @bindtap="queryProduct" :loading="querying">获取商品价格</wx-button>
+              </wx-view>
+            </wx-view>
+          </template>
+
+          <template  v-else-if="currentPermissionIndex === 3">
+            <wx-view >
+              <wx-view  class="weui-cells weui-cells_after-title input-area">
+                <wx-view  class="weui-cell weui-cell_input">
+                  <wx-view  class="weui-cell__bd">
+                    <wx-input  class="weui-input" placeholder="请输入后台流水数据" :value="serverData" data-name="serverData" @bindinput="bindInput"></wx-input>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+
+              <wx-view  class="btn-area">
+                <wx-button  type="primary" @bindtap="updateServerData" :loading="updating">设置后台流水数据</wx-button>
+                <wx-button  @bindtap="queryServerData" :loading="querying">获取后台流水数据</wx-button>
+              </wx-view>
+            </wx-view>
+          </template>
+
+        </wx-view>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+<!--#include virtual="/OnekitWX/footer.html"-->

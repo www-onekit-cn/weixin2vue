@@ -1,0 +1,40 @@
+<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped="scoped" src="./index.css"></style>
+<script src="./index.js"></script>
+<template>
+<onekit-page>
+<set-tab-bar v-if="isSetTabBarPage" @unmount="leaveSetTabBarPage"></set-tab-bar>
+<onekit-view v-else class="index">
+  <onekit-view class="index-hd">
+    <onekit-image class="index-logo" src="resources/kind/logo.png"></onekit-image>
+    <onekit-view class="index-desc">以下将演示小程序接口能力，具体属性参数详见 <onekit-navigator url="pages/doc-web-view/doc-web-view" class="weui-agree__link">小程序开发文档</onekit-navigator>。</onekit-view>
+  </onekit-view>
+  <onekit-view class="index-bd">
+    <onekit-view class="kind-list">
+      <template v-for="(item,id) in list">
+        <onekit-view class="kind-list-item">
+          <onekit-view :id="item.id" :class="['kind-list-item-hd ',item.open ? 'kind-list-item-hd-show' : '']" @tap="kindToggle">
+            <onekit-view class="kind-list-text">{{item.name}}</onekit-view>
+            <onekit-image class="kind-list-img" :src="'resources/kind/'+item.id+'.png'"></onekit-image>
+          </onekit-view>
+          <onekit-view :class="['kind-list-item-bd ',item.open ? 'kind-list-item-bd-show' : '']">
+            <onekit-view :class="['navigator-box ',item.open ? 'navigator-box-show' : '']">
+              <template v-for="(page) in item.pages">
+                <onekit-navigator :url="'pages/'+page.url" class="navigator" v-if="page.url !== '@set-tab-bar'">
+                  <onekit-view class="navigator-text">{{page.zh}}</onekit-view>
+                  <onekit-view class="navigator-arrow"></onekit-view>
+                </onekit-navigator>
+                <onekit-view v-else class="navigator" @tap="enterSetTabBarPage">
+                  <onekit-view class="navigator-text">{{page.zh}}</onekit-view>
+                  <onekit-view class="navigator-arrow"></onekit-view>
+                </onekit-view>
+              </template>
+            </onekit-view>
+          </onekit-view>
+        </onekit-view>
+      </template>
+    </onekit-view>
+  </onekit-view>
+</onekit-view>
+</onekit-page>
+</template>

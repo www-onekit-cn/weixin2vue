@@ -1,0 +1,34 @@
+.wx-image {
+  width: calc(var(--screen-width)*150/750) ;
+  height: calc(var(--screen-width)*150/750) ;
+}
+.page-body-wrapper {
+  margin-top: 0 ;
+}
+.page-body-info {
+  padding-bottom: calc(var(--screen-width)*50/750) ;
+}
+.time-big {
+  font-size: calc(var(--screen-width)*60/750) ;
+  margin: calc(var(--screen-width)*20/750) ;
+}
+.slider {
+  width: calc(var(--screen-width)*650/750) ;
+}
+.play-time {
+  font-size: calc(var(--screen-width)*28/750) ;
+  width: calc(var(--screen-width)*700/750) ;
+  padding: calc(var(--screen-width)*20/750) 0 ;
+  display: flex ;
+  justify-content: space-between ;
+  box-sizing: border-box ;
+}
+.page-body-buttons {
+  display: flex ;
+  justify-content: space-around ;
+  margin-top: calc(var(--screen-width)*100/750) ;
+}
+.page-body-button {
+  width: calc(var(--screen-width)*250/750) ;
+  text-align: center ;
+}

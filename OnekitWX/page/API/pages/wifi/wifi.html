@@ -1,0 +1,52 @@
+<!--#include virtual="/page/API/pages/wifi/wifi.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'Wi-Fi'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-body-info">
+      <wx-scroll-view  class="device-list" scroll-y="">
+        <wx-view  class="item" :wx:for="wifiList">
+          <wx-view  class="list">
+            <wx-text >{{ item.SSID }}</wx-text>
+            <wx-span  class="wifi-icon">
+              <wx-span  class="wifi-1"></wx-span>
+              <wx-span  :class="['wifi-2 ',item.strength < 2 ? 'off' : '']"></wx-span>
+              <wx-span  :class="['wifi-3 ',item.strength < 3 ? 'off' : '']"></wx-span>
+              <wx-span  :class="['wifi-4 ',item.strength < 4 ? 'off' : '']"></wx-span>
+              <wx-span  class="lock" v-if="item.secure"></wx-span>
+            </wx-span>
+          </wx-view>
+        </wx-view>
+      </wx-scroll-view>
+    </wx-view>
+    <wx-view  class="btn-area">
+      <wx-button  type="primary" @bindtap="startSearch">搜索Wi-Fi</wx-button>
+      <wx-button  @bindtap="stopSearch">停止搜索</wx-button>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

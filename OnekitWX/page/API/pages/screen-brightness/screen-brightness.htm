@@ -1,0 +1,55 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/screen-brightness/screen-brightness.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '屏幕亮度',
+      path: 'page/API/pages/screen-brightness/screen-brightness'
+    }
+  },
+
+  data: {
+    screenBrightness: 0
+  },
+
+  onLoad() {
+    this._updateScreenBrightness()
+  },
+
+  changeBrightness(e) {
+    const value = Number.parseFloat(
+      (e.detail.value).toFixed(1)
+    )
+    wx.setScreenBrightness({
+      value,
+      success: () => {
+        this._updateScreenBrightness()
+      }
+    })
+  },
+
+  _updateScreenBrightness() {
+    wx.getScreenBrightness({
+      success: (res) => {
+        this.setData({
+          screenBrightness: Number.parseFloat(
+            res.value.toFixed(1)
+          )
+        })
+      },
+      fail(err) {
+        console.error(err)
+      }
+    })
+  }
+})
+
+	onekitwx_json({
+  "navigationBarTitleText": "屏幕亮度"
+})
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

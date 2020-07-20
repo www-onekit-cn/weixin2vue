@@ -1,0 +1,21 @@
+.canvas-element-wrapper {
+  display: block ;
+  margin-bottom: calc(var(--screen-width)*100/750) ;
+}
+.canvas-element {
+  width: 100% ;
+  height: calc(var(--screen-width)*500/750) ;
+  background-color: #ffffff ;
+}
+.canvas-buttons {
+  padding: calc(var(--screen-width)*30/750)  calc(var(--screen-width)*50/750)  calc(var(--screen-width)*10/750) ;
+  width: 100% ;
+  height: calc(var(--screen-width)*360/750) ;
+  box-sizing: border-box ;
+}
+.canvas-button {
+  float: left ;
+  line-height: 2 ;
+  width: calc(var(--screen-width)*300/750) ;
+  margin: calc(var(--screen-width)*15/750)  calc(var(--screen-width)*12/750) ;
+}

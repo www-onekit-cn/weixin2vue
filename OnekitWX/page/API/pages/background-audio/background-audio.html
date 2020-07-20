@@ -1,0 +1,58 @@
+<!--#include virtual="/page/API/pages/background-audio/background-audio.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'backgroundAudio'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-section">
+    <wx-view  class="page-body-info">
+      <wx-text  class="time-big">{{formatedPlayTime}}</wx-text>
+      <wx-slider  class="slider" min="0" max="269" step="1" :value="playTime" @bindchange="seek"></wx-slider>
+      <wx-view  class="play-time">
+        <wx-text >00:00</wx-text>
+        <wx-text >04:29</wx-text>
+      </wx-view>
+    </wx-view>
+    <wx-view  class="page-body-text tc">注意：离开当前页面后背景音乐将保持播放，但退出小程序将停止</wx-view>
+    <wx-view  class="page-body-buttons">
+      <template  v-if="playing === true">
+        <wx-view  class="page-body-button" @bindtap="stop">
+          <wx-image  src="/image/stop.png"></wx-image>
+        </wx-view>
+        <wx-view  class="page-body-button" @bindtap="pause">
+          <wx-image  src="/image/pause.png"></wx-image>
+        </wx-view>
+      </template>
+      <template  v-if="playing === false">
+        <wx-view  class="page-body-button"></wx-view>
+        <wx-view  class="page-body-button" @bindtap="play">
+          <wx-image  src="/image/play.png"></wx-image>
+        </wx-view>
+      </template>
+      <wx-view  class="page-body-button"></wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

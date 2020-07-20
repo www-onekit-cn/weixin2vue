@@ -1,0 +1,11 @@
+.page-body-info {
+  padding-bottom: 0 ;
+  height: 280px ;
+}
+.page-body-text {
+  padding: 0  calc(var(--screen-width)*30/750) ;
+  text-align: center ;
+}
+.context-value {
+  font-size: calc(var(--screen-width)*38/750) ;
+}

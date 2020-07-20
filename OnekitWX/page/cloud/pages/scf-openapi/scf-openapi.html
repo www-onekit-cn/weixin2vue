@@ -1,0 +1,99 @@
+<!--#include virtual="/page/cloud/pages/scf-openapi/scf-openapi.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: '云函数中使用微信开放能力'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section">
+      <wx-view  class="weui-cells__title">
+        <wx-view >云调用是云开发提供的基于云函数使用小程序开放接口的能力</wx-view>
+      </wx-view>
+
+      <wx-view  class="weui-cells__title">
+        <wx-view >发送模板消息需在手机上测试</wx-view>
+      </wx-view>
+      <wx-view  class="weui-cells weui-cells_after-title">
+        <wx-view  class="page-body-info">
+          <wx-view  class="progress-figure">
+            <wx-image  src="/page/API/resources/kind/device.png" class="progress-icon"></wx-image>
+            <wx-text  :class="['progress-line ',sendTemplateMessageLoading && 'pending',' ',sendTemplateMessageResult && 'success',' ',sendTemplateMessageError && 'fail']"></wx-text>
+            <wx-image  src="/page/cloud/resources/kind/scf.png" class="progress-icon"></wx-image>
+            <wx-text  :class="['progress-line ',sendTemplateMessageLoading && 'pending',' ',sendTemplateMessageResult && 'success',' ',sendTemplateMessageError && 'fail']"></wx-text>
+            <wx-image  src="/page/API/resources/kind/device.png" class="progress-icon"></wx-image>
+          </wx-view>
+
+          <wx-view  class="data-area">
+            <wx-view  class="data-text" v-if="sendTemplateMessageResult">
+              <wx-icon  type="success"></wx-icon>
+              <wx-text >发送模板消息成功，返回微信主窗口查看</wx-text>
+            </wx-view>
+            <wx-view  class="data-text" v-else-if="sendTemplateMessageError">
+              <wx-icon  type="warn" color="#F43530"></wx-icon>
+              <wx-text >发送失败</wx-text>
+            </wx-view>
+          </wx-view>
+
+          <wx-view  class="btn-area">
+            <wx-form  @bindsubmit="sendTemplateMessageViaCloudFunction" report-submit=""></wx-form>
+              <wx-button  form-type="submit" :loading="cloudLoading">发送模板消息</wx-button>
+            </form>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+
+      <wx-view  class="weui-cells__title"></wx-view>
+      <wx-view  class="weui-cells weui-cells_after-title">
+        <wx-view  class="page-body-info">
+          <wx-view  class="progress-figure">
+            <wx-image  src="/page/API/resources/kind/device.png" class="progress-icon"></wx-image>
+            <wx-text  :class="['progress-line ',getWXACodeLoading && 'pending',' ',getWXACodeResult && 'success',' ',getWXACodeError && 'fail']"></wx-text>
+            <wx-image  src="/page/cloud/resources/kind/scf.png" class="progress-icon"></wx-image>
+          </wx-view>
+
+          <wx-view  class="progress-figure" v-if="getWXACodeResult">
+            <wx-image  :src="getWXACodeResult.result" mode="aspectFit"></wx-image>
+          </wx-view>
+
+          <wx-view  class="data-area">
+            <wx-view  class="data-text" v-if="getWXACodeResult">
+              <wx-icon  type="success"></wx-icon>
+              <wx-text >获取成功</wx-text>
+            </wx-view>
+            <wx-view  class="data-text" v-else-if="getWXACodeError">
+              <wx-icon  type="warn" color="#F43530"></wx-icon>
+              <wx-text >获取失败</wx-text>
+            </wx-view>
+          </wx-view>
+
+          <wx-view  class="btn-area">
+            <wx-button  @bindtap="getWXACodeViaCloudFunction" :loading="cloudLoading">获取小程序码</wx-button>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+<!--#include virtual="/OnekitWX/footer.html"-->

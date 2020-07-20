@@ -1,0 +1,38 @@
+.wx-movable-view {
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+  height: calc(var(--screen-width)*100/750) ;
+  width: calc(var(--screen-width)*100/750) ;
+  background: #1AAD19 ;
+  color: #fff ;
+}
+.wx-movable-area {
+  height: calc(var(--screen-width)*400/750) ;
+  width: calc(var(--screen-width)*400/750) ;
+  margin: calc(var(--screen-width)*50/750)  calc(var(--screen-width)*0/750) 0  calc(var(--screen-width)*50/750) ;
+  background-color: #ccc ;
+  overflow: hidden ;
+}
+.max {
+  width: calc(var(--screen-width)*600/750) ;
+  height: calc(var(--screen-width)*600/750) ;
+}
+.page-section {
+  width: 100% ;
+  margin-bottom: calc(var(--screen-width)*20/750) ;
+}
+.page-section-title {
+  margin-top: calc(var(--screen-width)*50/750) ;
+  font-size: calc(var(--screen-width)*28/750) ;
+  color: #999999 ;
+  margin-bottom: calc(var(--screen-width)*10/750) ;
+  padding-left: calc(var(--screen-width)*30/750) ;
+  padding-right: calc(var(--screen-width)*30/750) ;
+}
+.page-section-title.first {
+  margin-top: 0 ;
+}
+.btn-area {
+  margin-top: calc(var(--screen-width)*20/750) ;
+}

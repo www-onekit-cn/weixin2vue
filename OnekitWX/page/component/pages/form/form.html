@@ -1,0 +1,75 @@
+<!--#include virtual="/page/component/pages/form/form.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'form'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-form  catchsubmit="formSubmit" catchreset="formReset"></wx-form>
+      <wx-view  class="page-section page-section-gap">
+        <wx-view  class="page-section-title">switch</wx-view>
+        <wx-switch  name="switch"></wx-switch>
+      </wx-view>
+
+      <wx-view  class="page-section page-section-gap">
+        <wx-view  class="page-section-title">radio</wx-view>
+        <wx-radio-group  name="radio">
+          <wx-label ><wx-radio  value="radio1"></wx-radio>选项一</wx-label>
+          <wx-label ><wx-radio  value="radio2"></wx-radio>选项二</wx-label>
+        </wx-radio-group>
+      </wx-view>
+
+      <wx-view  class="page-section page-section-gap">
+        <wx-view  class="page-section-title">checkbox</wx-view>
+        <wx-checkbox-group  name="checkbox">
+          <wx-label ><wx-checkbox  value="checkbox1"></wx-checkbox>选项一</wx-label>
+          <wx-label ><wx-checkbox  value="checkbox2"></wx-checkbox>选项二</wx-label>
+        </wx-checkbox-group>
+      </wx-view>
+
+      <wx-view  class="page-section page-section-gap">
+        <wx-view  class="page-section-title">slider</wx-view>
+        <wx-slider  value="50" name="slider" show-value=""></wx-slider>
+      </wx-view>
+
+      <wx-view  class="page-section">
+        <wx-view  class="page-section-title">input</wx-view>
+        <wx-view  class="weui-cells weui-cells_after-title">
+          <wx-view  class="weui-cell weui-cell_input">
+            <wx-view  class="weui-cell__bd">
+              <wx-input  class="weui-input" name="input" placeholder="这是一个输入框"></wx-input>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+
+      <wx-view  class="btn-area">
+        <wx-button  type="primary" formtype="submit">Submit</wx-button>
+        <wx-button  formtype="reset">Reset</wx-button>
+      </wx-view>
+    </form>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

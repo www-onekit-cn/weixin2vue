@@ -1,0 +1,49 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/vibrate/vibrate.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '振动',
+      path: 'page/API/pages/vibrate/vibrate'
+    }
+  },
+
+  vibrateShort() {
+    wx.vibrateShort({
+      success(res) {
+        console.log(res)
+      },
+      fail(err) {
+        console.error(err)
+      },
+      complete() {
+        console.log('completed')
+      }
+    })
+  },
+
+  vibrateLong() {
+    wx.vibrateLong({
+      success(res) {
+        console.log(res)
+      },
+      fail(err) {
+        console.error(err)
+      },
+      complete() {
+        console.log('completed')
+      }
+    })
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "振动"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

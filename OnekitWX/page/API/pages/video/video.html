@@ -1,0 +1,69 @@
+<!--#include virtual="/page/API/pages/video/video.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'chooseVideo'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section">
+      <wx-view  class="weui-cells weui-cells_after-title">
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">视频来源</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-picker  :range="sourceType" @bindchange="sourceTypeChange" :value="sourceTypeIndex">
+              <wx-view  class="weui-input">{{sourceType[sourceTypeIndex]}}</wx-view>
+            </wx-picker>
+          </wx-view>
+        </wx-view>
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">摄像头</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-picker  :range="camera" @bindchange="cameraChange" :value="cameraIndex">
+              <wx-view  class="weui-input">{{camera[cameraIndex]}}</wx-view>
+            </wx-picker>
+          </wx-view>
+        </wx-view>
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">拍摄长度</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-picker  :range="duration" @bindchange="durationChange" :value="durationIndex">
+              <wx-view  class="weui-input">{{duration[durationIndex]}}</wx-view>
+            </wx-picker>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+
+      <wx-view  class="page-body-info">
+        <template  v-if="src === ''">
+          <wx-view  class="image-plus image-plus-nb" @bindtap="chooseVideo">
+            <wx-view  class="image-plus-horizontal"></wx-view>
+            <wx-view  class="image-plus-vertical"></wx-view>
+          </wx-view>
+          <wx-view  class="image-plus-text">添加视频</wx-view>
+        </template>
+        <template  v-if="src != ''">
+          <wx-video  :src="src" class="video"></wx-video>
+        </template>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

@@ -1,0 +1,48 @@
+<!--#include virtual="/page/API/pages/on-accelerometer-change/on-accelerometer-change.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'onAccelerometerChange'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section page-section_center">
+      <wx-text  class="page-body-text">倾斜手机即可移动下方小球</wx-text>
+      <wx-view  class="page-body-canvas">
+        <wx-canvas  class="page-body-ball" :show="true" canvas-id="big-ball"></wx-canvas>
+        <wx-canvas  class="page-body-ball" :show="true" canvas-id="small-ball"></wx-canvas>
+      </wx-view>
+      <wx-view  class="page-body-xyz">
+        <wx-text  class="page-body-title">X: {{x}}</wx-text>
+        <wx-text  class="page-body-title">Y: {{y}}</wx-text>
+        <wx-text  class="page-body-title">Z: {{z}}</wx-text>
+      </wx-view>
+      <wx-view  class="page-body-controls">
+        <wx-button  @bindtap="startAccelerometer" :disabled="enabled">开始监听</wx-button>
+        <wx-button  @bindtap="stopAccelerometer" :disabled="!enabled">停止监听</wx-button>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

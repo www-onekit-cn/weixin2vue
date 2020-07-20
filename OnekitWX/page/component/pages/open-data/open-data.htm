@@ -1,0 +1,20 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/component/pages/open-data/open-data.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: 'open-data',
+      path: 'page/component/pages/open-data/open-data'
+    }
+  },
+})
+
+	onekitwx_json({
+  "navigationBarTitleText": "open-data"
+})
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

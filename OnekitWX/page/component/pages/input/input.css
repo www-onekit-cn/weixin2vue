@@ -1,0 +1,4 @@
+@import "../../../common/lib/weui.css";
+.page-section {
+  margin-bottom: calc(var(--screen-width)*20/750) ;
+}

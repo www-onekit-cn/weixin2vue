@@ -1,0 +1,21 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/component/pages/web-view/web-view.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: 'webview',
+      path: 'page/component/pages/web-view/web-view'
+    }
+  },
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "webview"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

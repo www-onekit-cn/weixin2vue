@@ -1,0 +1,49 @@
+<!--#include virtual="/page/API/pages/animation/animation.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'createAnimation'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section">
+
+      <wx-view  class="animation-element-wrapper">
+        <wx-view  class="animation-element" :animation="animation"></wx-view>
+      </wx-view>
+      <wx-scroll-view  class="animation-buttons" scroll-y="true">
+        <wx-button  class="animation-button" @bindtap="rotate">旋转</wx-button>
+        <wx-button  class="animation-button" @bindtap="scale">缩放</wx-button>
+        <wx-button  class="animation-button" @bindtap="translate">移动</wx-button>
+        <wx-button  class="animation-button" @bindtap="skew">倾斜</wx-button>
+        <wx-button  class="animation-button" @bindtap="rotateAndScale">旋转并缩放</wx-button>
+        <wx-button  class="animation-button" @bindtap="rotateThenScale">旋转后缩放</wx-button>
+        <wx-button  class="animation-button" @bindtap="all">同时展示全部</wx-button>
+        <wx-button  class="animation-button" @bindtap="allInQueue">顺序展示全部</wx-button>
+        <wx-button  class="animation-button animation-button-reset" @bindtap="reset">还原</wx-button>
+      </wx-scroll-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

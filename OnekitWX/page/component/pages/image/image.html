@@ -1,0 +1,44 @@
+<!--#include virtual="/page/component/pages/image/image.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'image'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section page-section-gap">
+      <wx-view  class="page-section-title">Local Image</wx-view>
+      <wx-view  class="page-section-ctn">
+        <wx-image  class="image" src="../../resources/pic/1.jpg"></wx-image>
+      </wx-view>
+    </wx-view>
+    <wx-view  class="page-section page-section-gap">
+      <wx-view  class="page-section-title">Internet Image</wx-view>
+      <wx-view  class="page-section-ctn">
+        <wx-image  class="image" :src="imageUrl"></wx-image>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

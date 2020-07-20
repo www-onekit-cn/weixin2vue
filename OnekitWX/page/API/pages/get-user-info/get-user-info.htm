@@ -1,0 +1,38 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/get-user-info/get-user-info.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '获取用户信息',
+      path: 'page/API/pages/get-user-info/get-user-info'
+    }
+  },
+
+  data: {
+    hasUserInfo: false
+  },
+  getUserInfo(info) {
+    const userInfo = info.detail.userInfo
+    this.setData({
+      userInfo,
+      hasUserInfo: true
+    })
+  },
+  clear() {
+    this.setData({
+      hasUserInfo: false,
+      userInfo: {}
+    })
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "获取用户信息"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

@@ -1,0 +1,3 @@
+class OnekitWX_Share{
+
+}

@@ -1,0 +1,56 @@
+<!--#include virtual="/page/component/pages/camera/camera.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'camera'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-body-wrapper">
+      <wx-camera  flash="off" :device-position="position" @binderror="error">
+      </wx-camera>
+      <wx-view  class="btn-area first-btn">
+      <wx-button  type="primary" @bindtap="togglePosition">切换摄像头</wx-button>
+      </wx-view>
+      <wx-view  class="btn-area">
+        <wx-button  type="primary" @bindtap="takePhoto">拍照</wx-button>
+      </wx-view>
+      <wx-view  class="btn-area">
+        <wx-button  type="primary" @bindtap="startRecord">开始录像</wx-button>
+      </wx-view>
+      <wx-view  class="btn-area">
+        <wx-button  type="primary" @bindtap="stopRecord">结束录像</wx-button>
+      </wx-view>
+      <wx-view  class="btn-area">
+        <wx-navigator  url="/page/component/pages/camera-scan-code/camera-scan-code">
+          <wx-button  type="primary">扫描一维码</wx-button>
+        </wx-navigator>
+      </wx-view>
+      <wx-view  class="preview-tips">预览</wx-view>
+      <wx-image  v-if="src" mode="widthFix" class="photo" :src="src"></wx-image>
+      <wx-video  v-if="videoSrc" class="video" :src="videoSrc"></wx-video>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

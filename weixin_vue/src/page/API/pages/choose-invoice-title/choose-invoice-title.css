@@ -1,0 +1,13 @@
+@import "../../../common/lib/weui.css";
+
+form {
+  margin-top: calc(var(--screen-width)*30/750);
+}
+
+.weui-cell__bd {
+  display: flex;
+  justify-content: flex-start;
+  padding: calc(var(--screen-width)*20/750) 0;
+  min-height: calc(var(--screen-width)*60/750);
+  align-items: center;
+}

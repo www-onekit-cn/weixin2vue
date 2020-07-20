@@ -1,0 +1,45 @@
+<!--#include virtual="/page/component/pages/textarea/textarea.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'textarea'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section">
+      <wx-view  class="page-section-title">输入区域高度自适应，不会出现滚动条</wx-view>
+      <wx-view  class="textarea-wrp">
+        <wx-textarea  @bindblur="bindTextAreaBlur" auto-height=""></wx-textarea>
+      </wx-view>
+    </wx-view>
+
+    <wx-view  class="page-section">
+      <wx-view  class="page-section-title">这是一个可以自动聚焦的textarea</wx-view>
+      <wx-view  class="textarea-wrp">
+        <wx-textarea  auto-focus="true" style="height: 3em"></wx-textarea>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

@@ -1,0 +1,9 @@
+@import "../../../common/lib/weui.css";
+.canvas {
+  width: 305px ;
+  height: 305px ;
+  background-color: #fff ;
+}
+.page-section-title {
+  margin-top: calc(var(--screen-width)*30/750) ;
+}

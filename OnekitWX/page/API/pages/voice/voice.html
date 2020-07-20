@@ -1,0 +1,91 @@
+<!--#include virtual="/page/API/pages/voice/voice.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'start/stopRecord、play/stopVoice'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section">
+      <template  v-if="recording === false && playing === false && hasRecord === false">
+        <wx-view  class="page-body-time">
+          <wx-text  class="time-big">{{formatedRecordTime}}</wx-text>
+        </wx-view>
+        <wx-view  class="page-body-buttons">
+          <wx-view  class="page-body-button"></wx-view>
+          <wx-view  class="page-body-button" @bindtap="startRecord">
+            <wx-image  src="/image/record.png"></wx-image>
+          </wx-view>
+          <wx-view  class="page-body-button"></wx-view>
+        </wx-view>
+      </template>
+
+      <template  v-if="recording === true">
+        <wx-view  class="page-body-time">
+          <wx-text  class="time-big">{{formatedRecordTime}}</wx-text>
+        </wx-view>
+        <wx-view  class="page-body-buttons">
+          <wx-view  class="page-body-button"></wx-view>
+          <wx-view  class="page-body-button" @bindtap="stopRecord">
+            <wx-view  class="button-stop-record"></wx-view>
+          </wx-view>
+          <wx-view  class="page-body-button"></wx-view>
+        </wx-view>
+      </template>
+
+      <template  v-if="hasRecord === true && playing === false">
+        <wx-view  class="page-body-time">
+          <wx-text  class="time-big">{{formatedPlayTime}}</wx-text>
+          <wx-text  class="time-small">{{formatedRecordTime}}</wx-text>
+        </wx-view>
+        <wx-view  class="page-body-buttons">
+          <wx-view  class="page-body-button"></wx-view>
+          <wx-view  class="page-body-button" @bindtap="playVoice">
+            <wx-image  src="/image/play.png"></wx-image>
+          </wx-view>
+          <wx-view  class="page-body-button" @bindtap="clear">
+            <wx-image  src="/image/trash.png"></wx-image>
+          </wx-view>
+        </wx-view>
+      </template>
+
+      <template  v-if="hasRecord === true && playing === true">
+        <wx-view  class="page-body-time">
+          <wx-text  class="time-big">{{formatedPlayTime}}</wx-text>
+          <wx-text  class="time-small">{{formatedRecordTime}}</wx-text>
+        </wx-view>
+        <wx-view  class="page-body-buttons">
+          <wx-view  class="page-body-button" @bindtap="stopVoice">
+            <wx-image  src="/image/stop.png"></wx-image>
+          </wx-view>
+          
+          <wx-view  class="page-body-button" @bindtap="clear">
+            <wx-image  src="/image/trash.png"></wx-image>
+          </wx-view>
+        </wx-view>
+      </template>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

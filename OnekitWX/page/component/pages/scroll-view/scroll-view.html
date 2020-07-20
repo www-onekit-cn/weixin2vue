@@ -1,0 +1,58 @@
+<!--#include virtual="/page/component/pages/scroll-view/scroll-view.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'scroll-view',desc:""},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section">
+      <wx-view  class="page-section-title">
+        <wx-text >Vertical Scroll
+纵向滚动</wx-text>
+      </wx-view>
+      <wx-view  class="page-section-spacing">
+        <wx-scroll-view  scroll-y="true" style="height:calc(var(--screen-width)*300/750);" @bindscrolltoupper="upper" @bindscrolltolower="lower" @bindscroll="scroll" :scroll-into-view="toView" :scroll-top="scrollTop">
+          <wx-view  id="demo1" class="scroll-view-item demo-text-1"></wx-view>
+          <wx-view  id="demo2" class="scroll-view-item demo-text-2"></wx-view>
+          <wx-view  id="demo3" class="scroll-view-item demo-text-3"></wx-view>
+        </wx-scroll-view>
+      </wx-view>
+    </wx-view>
+    <wx-view  class="page-section">
+      <wx-view  class="page-section-title">
+        <wx-text >Horizontal Scroll
+横向滚动</wx-text>
+      </wx-view>
+      <wx-view  class="page-section-spacing">
+        <wx-scroll-view  class="scroll-view_H" scroll-x="true" @bindscroll="scroll" style="width: 100%">
+          <wx-view  id="demo1" class="scroll-view-item_H demo-text-1"></wx-view>
+          <wx-view  id="demo2" class="scroll-view-item_H demo-text-2"></wx-view>
+          <wx-view  id="demo3" class="scroll-view-item_H demo-text-3"></wx-view>
+        </wx-scroll-view>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

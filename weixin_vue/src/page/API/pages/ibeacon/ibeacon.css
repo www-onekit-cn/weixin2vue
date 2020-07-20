@@ -1,0 +1,25 @@
+@import "../../../common/lib/weui.css";
+
+.page-body-info {
+  margin-top: calc(var(--screen-width)*50/750);
+  padding: calc(var(--screen-width)*30/750) calc(var(--screen-width)*60/750);
+  width: auto;
+}
+
+.devices_summary {
+  padding: calc(var(--screen-width)*10/750);
+  font-size: calc(var(--screen-width)*30/750);
+}
+.device_list {
+  height: calc(var(--screen-width)*300/750);
+  border-radius: calc(var(--screen-width)*5/750);
+  flex: 1;
+}
+.device_item {
+  border-bottom: calc(var(--screen-width)*1/750) solid #EEE;
+  padding: calc(var(--screen-width)*10/750);
+  color: #666;
+}
+.device_item_hover {
+  background-color: rgba(0, 0, 0, .1);
+}

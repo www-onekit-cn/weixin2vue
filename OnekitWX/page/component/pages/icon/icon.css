@@ -1,0 +1,28 @@
+.icon-box {
+  margin-bottom: calc(var(--screen-width)*40/750) ;
+  padding: 0  calc(var(--screen-width)*75/750) ;
+  display: flex ;
+  align-items: center ;
+}
+.icon-box-img {
+  margin-right: calc(var(--screen-width)*46/750) ;
+}
+.icon-box-ctn {
+  flex-shrink: 100 ;
+}
+.icon-box-title {
+  font-size: calc(var(--screen-width)*34/750) ;
+}
+.icon-box-desc {
+  margin-top: calc(var(--screen-width)*12/750) ;
+  font-size: calc(var(--screen-width)*26/750) ;
+  color: #888 ;
+}
+.icon-small-wrp {
+  margin-right: calc(var(--screen-width)*46/750) ;
+  width: 93px ;
+  height: 93px ;
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+}

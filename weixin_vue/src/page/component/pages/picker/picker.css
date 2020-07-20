@@ -1,0 +1,6 @@
+@import "../../../common/lib/weui.css";
+
+.picker{
+  padding: calc(var(--screen-width)*19/750) calc(var(--screen-width)*26/750);
+  background-color: #FFFFFF;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onekit WX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/OnekitWX/js/Onekit.js"></script>
+    <script src="/OnekitWX/core/Onekit_WX.js"></script>
+    <script src="/OnekitWX/lib/jquery.min.js"></script>
+    <style>
+        html{     height:100%;}
+        hr{height:0;
+            border:1px solid red;}
+        body{
+            height:100%;
+            margin:0;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+        #tabContent{
+            border:0;
+            width:100%;
+            max-width: 750px;
+        }
+        #eMenu1{
+            height:49px;
+            width: 100%;
+            position: absolute;
+            border-top:1px gray outset;
+            bottom: 0;
+        }
+        #eTabs1{
+            width: 100%;
+            display: flex;
+        }
+        #eTabs1   a{
+            flex: 1;
+            padding: 3px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+        #eTabs1 a img{width:30px;height:30px;}
+        #eTabs1 a span{font-size:10px;}
+        /*            */
+        #eMenu2{
+            height:49px;
+            width: 100%;
+            border-bottom:1px gray outset;
+            text-align: center;
+            display: flex;
+        }
+        #eTabs2{
+            width: 750px;
+            display: flex;
+            margin:auto;
+        }
+        #eTabs2   a{
+            flex: 1;
+            padding: 3px;
+            align-items: center;
+            display: flex;
+            text-decoration: none;
+        }
+        #eTabs2 a img{width:30px;height:30px;}
+        #eTabs2 a span{font-size:20px;}
+        .Tabs_Selected *{}
+    </style>
+    <script>
+        let isMobile;
+        let tabContent;
+        let ONEKITWX_TABS = {
+            color:"#000",
+            selectedColor:"rgb(82,169,56)",
+            backgroundColor:"#fff",
+            borderStyle:"black",
+            list:[],
+            position:"bottom",
+            custom:false,
+        };
+        function body_load() {
+            isMobile = Onekit.isMobile;
+            tabContent = document.getElementById("tabContent");
+            let eTabs1 = document.getElementById("eTabs1");
+            let eTabs2 = document.getElementById("eTabs2");
+            let eMenu1 = document.getElementById("eMenu1");
+            let eMenu2 = document.getElementById("eMenu2");
+            //
+            tabContent.style.height = (document.body.clientHeight-49)+"px";
+            let eTabs;
+            if(isMobile){
+                $(eMenu2).hide();
+                eTabs = eTabs1;
+            }else{
+                $(eMenu1).hide();
+                eTabs = eTabs2;
+            }
+            $.getJSON("./app.json", function (json) {
+                let tabBar = json["tabBar"];
+                for(let key in tabBar){
+                    if(!tabBar.hasOwnProperty(key)) {
+                        continue;
+                    }
+                    ONEKITWX_TABS[key] = tabBar[key];
+                }
+                ///////////////
+                $(".Menu").css("background",ONEKITWX_TABS.backgroundColor);
+                for (let t = 0; t < ONEKITWX_TABS.list.length; t++) {
+                    let tab = ONEKITWX_TABS.list[t];
+                    let eTab = document.createElement("a");
+                    eTab.id = "tabs_"+(t+1);
+                    eTab.dataset.url = tab["pagePath"];
+                    eTab.href = "javascript:void(0);";
+                    eTab.onclick = function () {
+                        changeTab(Onekit_WX.url(this.dataset.url, true));
+                        return false;
+                    };
+                    eTab.innerHTML = '<img alt=""/><span>' + tab["text"] + '</span>';
+                    eTabs.appendChild(eTab);
+                }
+                //
+                changeTab(ONEKITWX_TABS.list[0]["pagePath"]);
+            });
+        }
+        function changeTab(url) {
+            for(let i=0;i<ONEKITWX_TABS.list.length;i++){
+                let tab = ONEKITWX_TABS.list[i];
+                let eTab = $("#tabs_" + (i + 1));
+                if(url.indexOf(tab["pagePath"])===0) {
+                    eTab.css("color", ONEKITWX_TABS.selectedColor);
+                    eTab.children(0).attr("src","/"+tab["selectedIconPath"]);
+                }else{
+                    eTab.css("color",ONEKITWX_TABS.color);
+                    eTab.children(0).attr("src","/"+tab["iconPath"]);
+                }
+            }
+            tabContent.src = Onekit_WX.url(url,true);
+        }
+    </script>
+</head>
+<body  onload="body_load();">
+<div class="Menu" id="eMenu2">
+    <nav id="eTabs2"></nav>
+</div>
+<iframe id="tabContent"></iframe>
+<div class="Menu" id="eMenu1">
+    <nav id="eTabs1"></nav>
+</div>
+</body>
+</html>

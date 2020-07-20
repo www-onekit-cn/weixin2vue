@@ -1,0 +1,41 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/navigator/navigator.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '页面跳转',
+      path: 'page/API/pages/navigator/navigator'
+    }
+  },
+
+  navigateTo() {
+    wx.navigateTo({url: './navigator'})
+  },
+
+  navigateBack() {
+    wx.navigateBack()
+  },
+
+  redirectTo() {
+    wx.redirectTo({url: './navigator'})
+  },
+
+  switchTab() {
+    wx.switchTab({url: '/page/component/index'})
+  },
+
+  reLaunch() {
+    wx.reLaunch({url: '/page/component/index'})
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "页面跳转"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

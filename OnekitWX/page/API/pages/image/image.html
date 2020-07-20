@@ -1,0 +1,96 @@
+<!--#include virtual="/page/API/pages/image/image.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'choose/previewImage'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-form ></wx-form>
+      <wx-view  class="page-section">
+
+        <wx-view  class="weui-cells weui-cells_after-title">
+          <wx-view  class="weui-cell weui-cell_input">
+            <wx-view  class="weui-cell__hd">
+              <wx-view  class="weui-label">图片来源</wx-view>
+            </wx-view>
+            <wx-view  class="weui-cell__bd">
+              <wx-picker  :range="sourceType" @bindchange="sourceTypeChange" :value="sourceTypeIndex" mode="selector">
+                <wx-view  class="weui-input">{{sourceType[sourceTypeIndex]}}</wx-view>
+              </wx-picker>
+            </wx-view>
+          </wx-view>
+
+          <wx-view  class="weui-cell weui-cell_input">
+            <wx-view  class="weui-cell__hd">
+              <wx-view  class="weui-label">图片质量</wx-view>
+            </wx-view>
+            <wx-view  class="weui-cell__bd">
+              <wx-picker  :range="sizeType" @bindchange="sizeTypeChange" :value="sizeTypeIndex" mode="selector">
+                <wx-view  class="weui-input">{{sizeType[sizeTypeIndex]}}</wx-view>
+              </wx-picker>
+            </wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell weui-cell_input">
+            <wx-view  class="weui-cell__hd">
+              <wx-view  class="weui-label">数量限制</wx-view>
+            </wx-view>
+            <wx-view  class="weui-cell__bd">
+              <wx-picker  :range="count" @bindchange="countChange" :value="countIndex" mode="selector">
+                <wx-view  class="weui-input">{{count[countIndex]}}</wx-view>
+              </wx-picker>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+
+        <wx-view  class="weui-cells">
+          <wx-view  class="weui-cell">
+            <wx-view  class="weui-cell__bd">
+              <wx-view  class="weui-uploader">
+                <wx-view  class="weui-uploader__hd">
+                  <wx-view  class="weui-uploader__title">点击可预览选好的图片</wx-view>
+                  <wx-view  class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</wx-view>
+                </wx-view>
+                <wx-view  class="weui-uploader__bd">
+                  <wx-view  class="weui-uploader__files">
+                    <template  :wx:for="imageList">
+                      <wx-view  class="weui-uploader__file">
+                        <wx-image  class="weui-uploader__img" :src="image" :data-src="image" @bindtap="previewImage"></wx-image>
+                      </wx-view>
+                    </template>
+                  </wx-view>
+                  <wx-view  class="weui-uploader__input-box">
+                    <wx-view  class="weui-uploader__input" @bindtap="chooseImage"></wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+
+      </wx-view>
+    </form>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

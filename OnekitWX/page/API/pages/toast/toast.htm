@@ -1,0 +1,46 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/toast/toast.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '消息提示框',
+      path: 'page/API/pages/toast/toast'
+    }
+  },
+
+  toast1Tap() {
+    wx.showToast({
+      title: '默认'
+    })
+  },
+
+  toast2Tap() {
+    wx.showToast({
+      title: 'duration 3000',
+      duration: 3000
+    })
+  },
+
+  toast3Tap() {
+    wx.showToast({
+      title: 'loading',
+      icon: 'loading',
+      duration: 5000
+    })
+  },
+
+  hideToast() {
+    wx.hideToast()
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "消息提示框"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

@@ -1,0 +1,11 @@
+.label-1, .label-2{
+  margin: calc(var(--screen-width)*30/750) 0;
+}
+.label-3-text{
+  color: #576B95;
+  font-size: calc(var(--screen-width)*28/750);
+}
+.checkbox-3{
+  display: block;
+  margin: calc(var(--screen-width)*30/750) 0;
+}

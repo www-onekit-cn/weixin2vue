@@ -1,0 +1,30 @@
+.animation-element-wrapper {
+  display: flex;
+  width: 100%;
+  padding-top: calc(var(--screen-width)*150/750);
+  padding-bottom: calc(var(--screen-width)*150/750);
+  justify-content: center;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.animation-element {
+  width: calc(var(--screen-width)*200/750);
+  height: calc(var(--screen-width)*200/750);
+  background-color: #1AAD19;
+}
+.animation-buttons {
+  padding: calc(var(--screen-width)*30/750) calc(var(--screen-width)*50/750) calc(var(--screen-width)*10/750);
+  width: 100%;
+  height: calc(var(--screen-width)*360/750);
+  box-sizing: border-box;
+}
+.animation-button {
+  float: left;
+  line-height: 2;
+  width: calc(var(--screen-width)*300/750);
+  margin: calc(var(--screen-width)*15/750) calc(var(--screen-width)*12/750);
+}
+
+.animation-button-reset {
+  width: calc(var(--screen-width)*620/750);
+}

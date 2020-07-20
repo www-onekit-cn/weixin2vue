@@ -1,0 +1,46 @@
+<!--#include virtual="/page/API/pages/toast/toast.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'toast'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="btn-area">
+      <wx-view  class="body-view">
+        <wx-button  type="default" @bindtap="toast1Tap">点击弹出默认toast</wx-button>
+      </wx-view>
+      <wx-view  class="body-view">
+        <wx-button  type="default" @bindtap="toast2Tap">点击弹出设置duration的toast</wx-button>
+      </wx-view>
+      <wx-view  class="body-view">
+        <wx-button  type="default" @bindtap="toast3Tap">点击弹出显示loading的toast</wx-button>
+      </wx-view>
+      <wx-view  class="body-view">
+        <wx-button  type="default" @bindtap="hideToast">点击隐藏toast</wx-button>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

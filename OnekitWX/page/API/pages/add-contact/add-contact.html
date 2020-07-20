@@ -1,0 +1,62 @@
+<!--#include virtual="/page/API/pages/add-contact/add-contact.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'addPhoneContact'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-form  @bindsubmit="submit"></wx-form>
+      <wx-view  class="page-section">
+        <wx-view  class="weui-cells__title">姓氏</wx-view>
+        <wx-view  class="weui-cells weui-cells_after-title">
+          <wx-view  class="weui-cell weui-cell_input">
+            <wx-input  class="weui-input" name="lastName"></wx-input>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+      <wx-view  class="page-section">
+        <wx-view  class="weui-cells__title">名字</wx-view>
+        <wx-view  class="weui-cells weui-cells_after-title">
+          <wx-view  class="weui-cell weui-cell_input">
+            <wx-input  class="weui-input" name="firstName"></wx-input>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+      <wx-view  class="page-section">
+        <wx-view  class="weui-cells__title">手机号</wx-view>
+        <wx-view  class="weui-cells weui-cells_after-title">
+          <wx-view  class="weui-cell weui-cell_input">
+            <wx-input  class="weui-input" name="mobilePhoneNumber"></wx-input>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+      <wx-view  class="btn-area">
+        <wx-button  type="primary" formtype="submit">创建联系人</wx-button>
+        <wx-button  type="default" formtype="reset">重置</wx-button>
+      </wx-view>
+    </form>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

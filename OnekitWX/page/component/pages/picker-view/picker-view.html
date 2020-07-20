@@ -1,0 +1,52 @@
+<!--#include virtual="/page/component/pages/picker-view/picker-view.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'picker-view'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</wx-view>
+    <wx-picker-view  indicator-style="height: 50px;" style="width: 100%; height: 300px;" :value="value" @bindchange="bindChange">
+      <wx-picker-view-column >
+        <wx-view  :wx:for="years" style="line-height: 50px; text-align: center;">{{item}}年</wx-view>
+      </wx-picker-view-column>
+      <wx-picker-view-column >
+        <wx-view  :wx:for="months" style="line-height: 50px; text-align: center;">{{item}}月</wx-view>
+      </wx-picker-view-column>
+      <wx-picker-view-column >
+        <wx-view  :wx:for="days" style="line-height: 50px; text-align: center;">{{item}}日</wx-view>
+      </wx-picker-view-column>
+      <wx-picker-view-column >
+        <wx-view  class="icon-container">
+          <wx-image  class="picker-icon" src="../../resources/kind/daytime.png"></wx-image>
+        </wx-view>
+        <wx-view  class="icon-container">
+          <wx-image  class="picker-icon" src="../../resources/kind/night.png"></wx-image>
+        </wx-view>
+      </wx-picker-view-column>
+    </wx-picker-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

@@ -1,0 +1,57 @@
+<!--#include virtual="/page/component/pages/radio/radio.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'radio'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section page-section-gap">
+      <wx-view  class="page-section-title">默认样式</wx-view>
+      <wx-label  class="radio">
+        <wx-radio  value="r1" checked="true"></wx-radio>选中
+      </wx-label>
+      <wx-label  class="radio">
+        <wx-radio  value="r2"></wx-radio>未选中
+      </wx-label>
+    </wx-view>
+
+
+    <wx-view  class="page-section">
+      <wx-view  class="page-section-title">推荐展示样式</wx-view>
+      <wx-view  class="weui-cells weui-cells_after-title">
+        <wx-radio-group  @bindchange="radioChange">
+          <wx-label  class="weui-cell weui-check__label" :wx:for="items">
+
+            <wx-view  class="weui-cell__hd">
+              <wx-radio  :value="item.value" checked="true"></wx-radio>
+            </wx-view>
+            <wx-view  class="weui-cell__bd">{{item.name}}</wx-view>
+          </wx-label>
+        </wx-radio-group>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

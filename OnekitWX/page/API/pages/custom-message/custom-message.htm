@@ -1,0 +1,21 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/custom-message/custom-message.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '客服消息',
+      path: 'page/API/pages/custom-message/custom-message'
+    }
+  },
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "客服消息"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

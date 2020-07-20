@@ -1,0 +1,26 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/share/share.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  data: {
+    shareData: {
+      title: '自定义转发标题',
+      desc: '自定义转发描述',
+      path: '/page/API/pages/share/share'
+    }
+  },
+
+  onShareAppMessage() {
+    return this.data.shareData
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "转发"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

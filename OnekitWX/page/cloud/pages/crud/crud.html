@@ -1,0 +1,65 @@
+<!--#include virtual="/page/cloud/pages/crud/crud.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'CRUD'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section">
+      <wx-view  class="weui-cells weui-cells_after-title">
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd" style="margin-right:calc(var(--screen-width)*10/750)">
+            <wx-icon  class="weui-icon-checkbox_circle" type="search" size="20"></wx-icon>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" placeholder="精确搜索或使用正则表达式搜索" :value="searchContent" @bindinput="onInputSearchContent" @bindconfirm="searchTodo"></wx-input>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+
+      <wx-view  class="weui-cells__title">Todo List</wx-view>
+      <wx-view  class="weui-cells weui-cells_after-title" v-if="openid">
+        <wx-view  :wx:for="todoList" class="weui-cell weui-cell_access" hover-class="weui-cell_active" :data-id="item._id" @bindtap="toDetail">
+          <wx-view  class="weui-cell__hd" :data-id="item._id" :data-index="index" catchtap="toggleComplete" style="margin-right:calc(var(--screen-width)*10/750)">
+            <wx-icon  class="weui-icon-checkbox_circle" type="circle" v-if="!item.done"></wx-icon>
+            <wx-icon  class="weui-icon-checkbox_success" type="success" v-else=""></wx-icon>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">{{item.description}}</wx-view>
+          <wx-view  class="weui-cell__ft weui-cell__ft_in-access"></wx-view>
+        </wx-view>
+
+        <wx-view  class="weui-cell weui-cell_input" v-if="todoList.length < 5 && !filtered">
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" placeholder="添加新的 Todo" :value="newContent" :focus="todoListFetched && !todoList.length" @bindinput="onInputNewContent" @bindconfirm="createTodo"></wx-input>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+
+      <wx-view  class="page-body-info" v-if="!todoList.length && filtered">
+        <wx-text  class="page-body-text">无数据</wx-text>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+<!--#include virtual="/OnekitWX/footer.html"-->

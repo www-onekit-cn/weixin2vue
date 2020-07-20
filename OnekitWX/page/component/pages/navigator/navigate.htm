@@ -1,0 +1,28 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/component/pages/navigator/navigate.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: 'navigatePage',
+      path: 'page/component/pages/navigator/navigate'
+    }
+  },
+
+  onLoad(options) {
+    console.log(options)
+    this.setData({
+      title: options.title
+    })
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "navigatePage"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

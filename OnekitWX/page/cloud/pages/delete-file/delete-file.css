@@ -1,0 +1,12 @@
+@import "../../../common/lib/weui.css";
+.page-section-ctn {
+  text-align: center ;
+  margin: calc(var(--screen-width)*200/750) auto 0 ;
+  width: 100% ;
+}
+.page-body-text {
+  color: #bbb ;
+  font-size: calc(var(--screen-width)*28/750) ;
+  line-height: calc(var(--screen-width)*40/750) ;
+  text-align: center ;
+}

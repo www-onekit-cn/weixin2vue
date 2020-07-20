@@ -1,0 +1,9 @@
+@import "../../../common/lib/weui.css";
+
+.weui-cells{
+  margin-top: calc(var(--screen-width)*80/750);
+  text-align: left;
+}
+.weui-label{
+  width: 5em;
+}

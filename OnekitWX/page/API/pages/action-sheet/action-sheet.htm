@@ -1,0 +1,30 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/action-sheet/action-sheet.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '操作菜单',
+      path: 'page/API/pages/action-sheet/action-sheet'
+    }
+  },
+
+  actionSheetTap() {
+    wx.showActionSheet({
+      itemList: ['item1', 'item2', 'item3', 'item4'],
+      success(e) {
+        console.log(e.tapIndex)
+      }
+    })
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "操作菜单"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

@@ -1,0 +1,8 @@
+.page-section-ctn {
+  text-align: center ;
+}
+.image {
+  margin-top: calc(var(--screen-width)*30/750) ;
+  width: calc(var(--screen-width)*580/750) ;
+  height: calc(var(--screen-width)*208/750) ;
+}

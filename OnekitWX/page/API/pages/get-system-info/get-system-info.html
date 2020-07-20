@@ -1,0 +1,95 @@
+<!--#include virtual="/page/API/pages/get-system-info/get-system-info.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'getSystemInfo'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="page-section">
+      <wx-view  class="weui-cells weui-cells_after-title">
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">手机品牌</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" type="text" :disabled="true" placeholder="未获取" :value="systemInfo.brand"></wx-input>
+          </wx-view>
+        </wx-view>
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">手机型号</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" type="text" :disabled="true" placeholder="未获取" :value="systemInfo.model"></wx-input>
+          </wx-view>
+        </wx-view>
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">微信语言</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" type="text" :disabled="true" placeholder="未获取" :value="systemInfo.language"></wx-input>
+          </wx-view>
+        </wx-view>
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">微信版本</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" type="text" :disabled="true" placeholder="未获取" :value="systemInfo.version"></wx-input>
+          </wx-view>
+        </wx-view>
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">屏幕宽度</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" type="text" :disabled="true" placeholder="未获取" :value="systemInfo.windowWidth"></wx-input>
+          </wx-view>
+        </wx-view>
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">屏幕高度</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" type="text" :disabled="true" placeholder="未获取" :value="systemInfo.windowHeight"></wx-input>
+          </wx-view>
+        </wx-view>
+        <wx-view  class="weui-cell weui-cell_input">
+          <wx-view  class="weui-cell__hd">
+            <wx-view  class="weui-label">DPR</wx-view>
+          </wx-view>
+          <wx-view  class="weui-cell__bd">
+            <wx-input  class="weui-input" type="text" :disabled="true" placeholder="未获取" :value="systemInfo.pixelRatio"></wx-input>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+      <wx-view  class="btn-area">
+        <wx-button  type="primary" @bindtap="getSystemInfo">获取手机系统信息</wx-button>
+      </wx-view>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

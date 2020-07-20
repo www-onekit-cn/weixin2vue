@@ -1,0 +1,23 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/open-location/open-location.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function() {
+        Page({
+            onLoad() {
+                wx.openLocation({
+                    longitude: 113.324520,//Number(value.longitude),
+                    latitude: 23.099994,
+                    name:"aaaa", //value.name,
+                    address:"bbbb" //value.address
+                })
+            }
+        });
+
+	onekitwx_json({
+    "navigationBarTitleText": "查看位置"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

@@ -1,0 +1,28 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/navigation-bar-loading/navigation-bar-loading.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '标题栏加载动画',
+      path: 'page/API/pages/navigation-bar-loading/navigation-bar-loading'
+    }
+  },
+
+  showNavigationBarLoading() {
+    wx.showNavigationBarLoading()
+  },
+  hideNavigationBarLoading() {
+    wx.hideNavigationBarLoading()
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "标题栏加载动画"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

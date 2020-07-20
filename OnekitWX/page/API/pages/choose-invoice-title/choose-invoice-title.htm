@@ -1,0 +1,48 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/API/pages/choose-invoice-title/choose-invoice-title.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: '获取发票抬头',
+      path: 'page/API/pages/choose-invoice-title/choose-invoice-title'
+    }
+  },
+
+  data: {
+    type: '',
+    title: '',
+    taxNumber: '',
+    companyAddress: '',
+    telephone: '',
+    bankName: '',
+    bankAccount: '',
+  },
+  chooseInvoiceTitle() {
+    wx.chooseInvoiceTitle({
+      success: (res) => {
+        this.setData({
+          type: res.type,
+          title: res.title,
+          taxNumber: res.taxNumber,
+          companyAddress: res.companyAddress,
+          telephone: res.telephone,
+          bankName: res.bankName,
+          bankAccount: res.bankAccount
+        })
+      },
+      fail: (err) => {
+        console.error(err)
+      }
+    })
+  }
+})
+
+	onekitwx_json({
+  "navigationBarTitleText": "获取发票抬头"
+})
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

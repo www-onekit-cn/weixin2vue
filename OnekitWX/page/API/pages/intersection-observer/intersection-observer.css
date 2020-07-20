@@ -1,0 +1,32 @@
+.scroll-view {
+  height: calc(var(--screen-width)*400/750) ;
+  background: #fff ;
+}
+.scroll-area {
+  height: calc(var(--screen-width)*1300/750) ;
+  display: flex ;
+  flex-direction: column ;
+  align-items: center ;
+  transition: .5s ;
+}
+.notice {
+  margin-top: calc(var(--screen-width)*150/750) ;
+}
+.ball {
+  width: calc(var(--screen-width)*200/750) ;
+  height: calc(var(--screen-width)*200/750) ;
+  background: #1AAD19 ;
+  border-radius: 50% ;
+}
+.filling {
+  height: calc(var(--screen-width)*400/750) ;
+}
+.message {
+  width: 100% ;
+  display: flex ;
+  justify-content: center ;
+}
+.message text {
+  font-size: calc(var(--screen-width)*40/750) ;
+  font-family: -apple-system-font, Helvetica Neue,Helvetica,sans-serif ;
+}

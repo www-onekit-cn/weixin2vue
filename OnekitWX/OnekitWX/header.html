@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onekit WX</title>
+    <script src="/OnekitWX/lib/jquery.min.js"></script>
+    <script src="/OnekitWX/js/js.js"></script>
+    <script src="/OnekitWX/js/COLOR.js"></script>
+    <script src="/OnekitWX/js/Uri.js"></script>
+    <link rel="stylesheet" href="/OnekitWX/wxapp/virtual_dom.css"/>
+    <script src="/OnekitWX/lib/vue2.5.js"></script>
+    <script>
+        function Component(object) {
+            return object;
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/OnekitWX/core/OnekitWX.css"/>
+    <link rel="stylesheet" href="/app.css"/>
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=GU3BZ-TOVHF-CEPJJ-JXSXM-M4B6O-PABGV"></script>
+    <script src="/OnekitWX/lib/mobile-detect.min.js"></script>
+    <script src="/OnekitWX/lib/jquery.ajax.arraybuffer.min.js"></script>
+    <script src="/OnekitWX/lib/jquery.transform2d.js"></script>
+    <script src="/OnekitWX/lib/jquery.transform3d.js"></script>
+    <script src="/OnekitWX/js/Onekit.js"></script>
+    <script src="/OnekitWX/api/Basic.js"></script>
+    <script src="/OnekitWX/api/System.js"></script>
+    <script src="/OnekitWX/api/Debug.js"></script>
+    <script src="/OnekitWX/api/UpdateManager.js"></script>
+    <script src="/OnekitWX/api/App.js"></script>
+    <script src="/OnekitWX/api/Router.js"></script>
+    <script src="/OnekitWX/api/Interaction.js"></script>
+    <script src="/OnekitWX/api/NavigationBar.js"></script>
+    <script src="/OnekitWX/api/Background.js"></script>
+    <script src="/OnekitWX/api/TabBar.js"></script>
+    <script src="/OnekitWX/api/Font.js"></script>
+    <script src="/OnekitWX/api/PullDownRefresh.js"></script>
+    <script src="/OnekitWX/api/PageScroll.js"></script>
+    <script src="/OnekitWX/api/Animation.js"></script>
+    <script src="/OnekitWX/api/TopBar.js"></script>
+    <script src="/OnekitWX/api/CustomComponent.js"></script>
+    <script src="/OnekitWX/api/Menu.js"></script>
+    <script src="/OnekitWX/api/Window.js"></script>
+    <script src="/OnekitWX/api/AJAX.js"></script>
+    <script src="/OnekitWX/api/WebSocket.js"></script>
+    <script src="/OnekitWX/api/mDNS.js"></script>
+    <script src="/OnekitWX/api/Storage.js"></script>
+    <script src="/OnekitWX/api/MapContext.js"></script>
+    <script src="/OnekitWX/api/Image.js"></script>
+    <script src="/OnekitWX/api/Video.js"></script>
+    <script src="/OnekitWX/api/VideoContext.js"></script>
+    <script src="/OnekitWX/api/Voice.js"></script>
+    <script src="/OnekitWX/api/Audio.js"></script>
+    <script src="/OnekitWX/api/AudioContext.js"></script>
+    <script src="/OnekitWX/api/InnerAudioContext.js"></script>
+    <script src="/OnekitWX/api/BackgroundAudio.js"></script>
+    <script src="/OnekitWX/api/LivePusherContext.js"></script>
+    <script src="/OnekitWX/api/LivePlayerContext.js"></script>
+    <script src="/OnekitWX/api/Record.js"></script>
+    <script src="/OnekitWX/api/RecorderManager.js"></script>
+    <script src="/OnekitWX/api/CameraContext.js"></script>
+    <script src="/OnekitWX/api/Location.js"></script>
+    <script src="/OnekitWX/api/Share.js"></script>
+    <script src="/OnekitWX/api/Canvas.js"></script>
+    <script src="/OnekitWX/api/CanvasContext.js"></script>
+    <script src="/OnekitWX/api/Gradient.js"></script>
+    <script src="/OnekitWX/api/LinearGradient.js"></script>
+    <script src="/OnekitWX/api/CircularGradient.js"></script>
+    <script src="/OnekitWX/api/File.js"></script>
+    <script src="/OnekitWX/api/FileSystemManager.js"></script>
+    <script src="/OnekitWX/api/Login.js"></script>
+    <script src="/OnekitWX/api/UserInfo.js"></script>
+    <script src="/OnekitWX/api/MiniProgram.js"></script>
+    <script src="/OnekitWX/api/AccountInfo.js"></script>
+    <script src="/OnekitWX/api/Monitor.js"></script>
+    <script src="/OnekitWX/api/Analytics.js"></script>
+    <script src="/OnekitWX/api/Payment.js"></script>
+    <script src="/OnekitWX/api/Authorize.js"></script>
+    <script src="/OnekitWX/api/Setting.js"></script>
+    <script src="/OnekitWX/api/Address.js"></script>
+    <script src="/OnekitWX/api/Card.js"></script>
+    <script src="/OnekitWX/api/Invoice.js"></script>
+    <script src="/OnekitWX/api/SoterAuthentication.js"></script>
+    <script src="/OnekitWX/api/WeRun.js"></script>
+    <script src="/OnekitWX/api/iBeacon.js"></script>
+    <script src="/OnekitWX/api/WiFi.js"></script>
+    <script src="/OnekitWX/api/BLE.js"></script>
+    <script src="/OnekitWX/api/PhoneContact.js"></script>
+    <script src="/OnekitWX/api/Bluetooth.js"></script>
+    <script src="/OnekitWX/api/BatteryInfo.js"></script>
+    <script src="/OnekitWX/api/Clipboard.js"></script>
+    <script src="/OnekitWX/api/NFC.js"></script>
+    <script src="/OnekitWX/api/Network.js"></script>
+    <script src="/OnekitWX/api/Phone.js"></script>
+    <script src="/OnekitWX/api/Accelerometer.js"></script>
+    <script src="/OnekitWX/api/Compass.js"></script>
+    <script src="/OnekitWX/api/DeviceMotion.js"></script>
+    <script src="/OnekitWX/api/Gyroscope.js"></script>
+    <script src="/OnekitWX/api/Performance.js"></script>
+    <script src="/OnekitWX/api/ScanCode.js"></script>
+    <script src="/OnekitWX/api/Vibrate.js"></script>
+    <script src="/OnekitWX/api/Screen.js"></script>
+    <script src="/OnekitWX/api/Worker.js"></script>
+    <script src="/OnekitWX/api/ExtConfig.js"></script>
+    <script src="/OnekitWX/api/WXML.js"></script>
+    <script src="/OnekitWX/api/AD.js"></script>
+    <script src="/OnekitWX/api/Photo.js"></script>
+    <script src="/OnekitWX/wx.js"></script>
+    <script src="/OnekitWX/wxapp/wx-wx.js"></script>
+    <script src="/OnekitWX/wxapp/exparser-behvaior.js"></script>
+    <script src="/OnekitWX/core/Onekit_WX.js"></script>
+    <script src="/OnekitWX/core/WXPage.js"></script>

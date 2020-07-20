@@ -1,0 +1,36 @@
+<!--#include virtual="/page/API/pages/navigation-bar-loading/navigation-bar-loading.htm"-->
+<!--#include file="../../../common/head.html"-->
+
+<!--#include file="../../../common/foot.html"-->
+
+
+<wx-view  class="container">
+  <template id="onekit_head"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_head",
+        data: {title: 'navigationBarLoading'},
+        template: '#head'
+    })
+</script>
+
+  <wx-view  class="page-body">
+    <wx-view  class="btn-area">
+      <wx-button  type="primary" @bindtap="showNavigationBarLoading">显示加载动画</wx-button>
+      <wx-button  @bindtap="hideNavigationBarLoading">隐藏加载动画</wx-button>
+    </wx-view>
+  </wx-view>
+
+  <template id="onekit_foot"></template>
+<script>
+
+    new Vue({
+        el: "#onekit_foot",
+        data: {},
+        template: '#foot'
+    })
+</script>
+</wx-view>
+
+<!--#include virtual="/OnekitWX/footer.html"-->

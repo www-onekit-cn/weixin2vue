@@ -1,0 +1,21 @@
+<!--#include virtual="/OnekitWX/header.html"-->
+<link rel="stylesheet" href="/page/component/pages/navigator/navigator.css"/>
+   
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+    Page({
+  onShareAppMessage() {
+    return {
+      title: 'navigator',
+      path: 'page/component/pages/navigator/navigator'
+    }
+  }
+})
+
+	onekitwx_json({
+    "navigationBarTitleText": "navigator"
+}
+)
+    });
+    </script><!--#include virtual="/OnekitWX/navigator.html"-->

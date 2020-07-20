@@ -1,0 +1,19 @@
+@import "../../../common/lib/weui.css";
+.avatar {
+  display: flex ;
+  justify-content: center ;
+  margin-bottom: calc(var(--screen-width)*50/750) ;
+}
+.avatar-img {
+  width: 50% ;
+  border-radius: 50% ;
+}
+.country {
+  padding-right: calc(var(--screen-width)*10/750) ;
+}
+.province {
+  padding-right: calc(var(--screen-width)*10/750) ;
+}
+.city {
+  padding-right: calc(var(--screen-width)*10/750) ;
+}

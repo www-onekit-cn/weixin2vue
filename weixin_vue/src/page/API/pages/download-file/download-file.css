@@ -1,0 +1,6 @@
+.page-body image {
+  width: calc(var(--screen-width)*600/750);
+  height: calc(var(--screen-width)*600/750);
+
+  margin: 0 calc(var(--screen-width)*75/750);
+}

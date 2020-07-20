@@ -1,0 +1,2 @@
+class OnekitWX_LivePusherContext{
+}
