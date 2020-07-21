@@ -5,11 +5,30 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
-        }
+        },
+        {
+                        "name": ".NET Core Launch (console)",
+                        "type": "coreclr",
+                        "request": "launch",
+                        "preLaunchTask": "build",
+                        "program": "${workspaceFolder}/bin/Debug/<insert-target-framework-here>/<insert-project-name-here>.dll",
+                        "args": [],
+                        "cwd": "${workspaceFolder}",
+                        "console": "internalConsole",
+                        "stopAtEntry": false,
+                        "internalConsoleOptions": "openOnSessionStart"
+                    }
     ]
 }
