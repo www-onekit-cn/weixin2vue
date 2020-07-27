@@ -6,65 +6,65 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
+  <onekit-view Class="page-body">
     <onekit-form>
-      <onekit-view class="page-section">
+      <onekit-view Class="page-section">
 
-        <onekit-view class="weui-cells weui-cells_after-title">
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-view class="weui-cell__hd">
-              <onekit-view class="weui-label">图片来源</onekit-view>
+        <onekit-view Class="weui-cells weui-cells_after-title">
+          <onekit-view Class="weui-cell weui-cell_input">
+            <onekit-view Class="weui-cell__hd">
+              <onekit-view Class="weui-label">图片来源</onekit-view>
             </onekit-view>
-            <onekit-view class="weui-cell__bd">
+            <onekit-view Class="weui-cell__bd">
               <onekit-picker :range="{{sourceType}}" @change="sourceTypeChange" :value="{{sourceTypeIndex}}" mode="selector">
-                <onekit-view class="weui-input">{{sourceType[sourceTypeIndex]}}</onekit-view>
+                <onekit-view Class="weui-input">{{sourceType[sourceTypeIndex]}}</onekit-view>
               </onekit-picker>
             </onekit-view>
           </onekit-view>
 
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-view class="weui-cell__hd">
-              <onekit-view class="weui-label">图片质量</onekit-view>
+          <onekit-view Class="weui-cell weui-cell_input">
+            <onekit-view Class="weui-cell__hd">
+              <onekit-view Class="weui-label">图片质量</onekit-view>
             </onekit-view>
-            <onekit-view class="weui-cell__bd">
+            <onekit-view Class="weui-cell__bd">
               <onekit-picker :range="{{sizeType}}" @change="sizeTypeChange" :value="{{sizeTypeIndex}}" mode="selector">
-                <onekit-view class="weui-input">{{sizeType[sizeTypeIndex]}}</onekit-view>
+                <onekit-view Class="weui-input">{{sizeType[sizeTypeIndex]}}</onekit-view>
               </onekit-picker>
             </onekit-view>
           </onekit-view>
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-view class="weui-cell__hd">
-              <onekit-view class="weui-label">数量限制</onekit-view>
+          <onekit-view Class="weui-cell weui-cell_input">
+            <onekit-view Class="weui-cell__hd">
+              <onekit-view Class="weui-label">数量限制</onekit-view>
             </onekit-view>
-            <onekit-view class="weui-cell__bd">
+            <onekit-view Class="weui-cell__bd">
               <onekit-picker :range="{{count}}" @change="countChange" :value="{{countIndex}}" mode="selector">
-                <onekit-view class="weui-input">{{count[countIndex]}}</onekit-view>
+                <onekit-view Class="weui-input">{{count[countIndex]}}</onekit-view>
               </onekit-picker>
             </onekit-view>
           </onekit-view>
         </onekit-view>
 
-        <onekit-view class="weui-cells">
-          <onekit-view class="weui-cell">
-            <onekit-view class="weui-cell__bd">
-              <onekit-view class="weui-uploader">
-                <onekit-view class="weui-uploader__hd">
-                  <onekit-view class="weui-uploader__title">点击可预览选好的图片</onekit-view>
-                  <onekit-view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</onekit-view>
+        <onekit-view Class="weui-cells">
+          <onekit-view Class="weui-cell">
+            <onekit-view Class="weui-cell__bd">
+              <onekit-view Class="weui-uploader">
+                <onekit-view Class="weui-uploader__hd">
+                  <onekit-view Class="weui-uploader__title">点击可预览选好的图片</onekit-view>
+                  <onekit-view Class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</onekit-view>
                 </onekit-view>
-                <onekit-view class="weui-uploader__bd">
-                  <onekit-view class="weui-uploader__files">
+                <onekit-view Class="weui-uploader__bd">
+                  <onekit-view Class="weui-uploader__files">
                     <onekit-block v-for="(image) in imageList">
-                      <onekit-view class="weui-uploader__file">
+                      <onekit-view Class="weui-uploader__file">
                         <onekit-image class="weui-uploader__img" :src="{{image}}" :data-src="{{image}}" @tap="previewImage"></onekit-image>
                       </onekit-view>
                     </onekit-block>
                   </onekit-view>
-                  <onekit-view class="weui-uploader__input-box">
-                    <onekit-view class="weui-uploader__input" @tap="chooseImage"></onekit-view>
+                  <onekit-view Class="weui-uploader__input-box">
+                    <onekit-view Class="weui-uploader__input" @tap="chooseImage"></onekit-view>
                   </onekit-view>
                 </onekit-view>
               </onekit-view>

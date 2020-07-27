@@ -6,13 +6,13 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-section">
       <onekit-block>
-        <onekit-text class="page-body-text">点击提交，调用示例订阅消息</onekit-text>
+        <onekit-text Class="page-body-text">点击提交，调用示例订阅消息</onekit-text>
         <onekit-button Class="page-body-button" type="primary" @tap="requestSubscribeMessage">提交</onekit-button>
       </onekit-block>
     </onekit-view>

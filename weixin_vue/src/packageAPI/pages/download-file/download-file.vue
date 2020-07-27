@@ -6,18 +6,18 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
+  <onekit-view Class="page-body">
     <onekit-image v-if="imageSrc" :src="{{imageSrc}}" mode="center"></onekit-image>
     <onekit-block v-else>
-      <onekit-view class="page-body-wording">
-        <onekit-text class="page-body-text">
+      <onekit-view Class="page-body-wording">
+        <onekit-text Class="page-body-text">
           点击按钮下载服务端示例图片
         </onekit-text>
       </onekit-view>
-      <onekit-view class="btn-area">
+      <onekit-view Class="btn-area">
         <onekit-button @tap="downloadImage" type="primary">下载</onekit-button>
       </onekit-view>
     </onekit-block>

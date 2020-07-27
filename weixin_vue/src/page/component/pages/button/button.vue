@@ -6,11 +6,11 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="btn-area" id="buttonContainer">
+  <onekit-view Class="page-body">
+    <onekit-view Class="btn-area" id="buttonContainer">
       <onekit-button type="primary">页面主操作 Normal</onekit-button>
       <onekit-button type="primary" loading="true">页面主操作 Loading</onekit-button>
       <onekit-button type="primary" disabled="true">页面主操作 Disabled</onekit-button>
@@ -21,7 +21,7 @@
       <onekit-button type="warn">警告类操作 Normal</onekit-button>
       <onekit-button type="warn" disabled="true">警告类操作 Disabled</onekit-button>
 
-      <onekit-view class="button-sp-area">
+      <onekit-view Class="button-sp-area">
         <onekit-button type="primary" plain="true">按钮</onekit-button>
         <onekit-button type="primary" disabled="true" plain="true">不可点击的按钮</onekit-button>
 

@@ -6,16 +6,16 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="btn-area">
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-section">
+      <onekit-view Class="btn-area">
         <onekit-button type="primary" @tap="scrollToBottom">滚动到页面底部</onekit-button>
       </onekit-view>
-      <onekit-view class="filling-area"></onekit-view>
-      <onekit-view class="btn-area">
+      <onekit-view Class="filling-area"></onekit-view>
+      <onekit-view Class="btn-area">
         <onekit-button type="primary" @tap="scrollToTop">返回顶部</onekit-button>
       </onekit-view>
     </onekit-view>

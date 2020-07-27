@@ -6,15 +6,15 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="page-body-info">
-        <onekit-text class="page-body-text">下滑页面即可刷新</onekit-text>
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-section">
+      <onekit-view Class="page-body-info">
+        <onekit-text Class="page-body-text">下滑页面即可刷新</onekit-text>
       </onekit-view>
-      <onekit-view class="btn-area">
+      <onekit-view Class="btn-area">
         <onekit-button @tap="stopPullDownRefresh">停止刷新</onekit-button>
       </onekit-view>
     </onekit-view>

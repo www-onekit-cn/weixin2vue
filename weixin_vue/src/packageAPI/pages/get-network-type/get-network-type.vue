@@ -6,22 +6,22 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="page-body-info">
-        <onekit-view class="page-body-title">网络状态</onekit-view>
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-section">
+      <onekit-view Class="page-body-info">
+        <onekit-view Class="page-body-title">网络状态</onekit-view>
         <onekit-block v-if="hasNetworkType === false">
-          <onekit-text class="page-body-text">未获取</onekit-text>
-          <onekit-text class="page-body-text">点击绿色按钮可获取网络状态</onekit-text>
+          <onekit-text Class="page-body-text">未获取</onekit-text>
+          <onekit-text Class="page-body-text">点击绿色按钮可获取网络状态</onekit-text>
         </onekit-block>
         <onekit-block v-if="hasNetworkType === true">
-          <onekit-text class="page-body-text-network-type">{{networkType}}</onekit-text>
+          <onekit-text Class="page-body-text-network-type">{{networkType}}</onekit-text>
         </onekit-block>
       </onekit-view>
-      <onekit-view class="btn-area">
+      <onekit-view Class="btn-area">
         <onekit-button type="primary" @tap="getNetworkType">获取手机网络状态</onekit-button>
         <onekit-button @tap="clear">清空</onekit-button>
       </onekit-view>

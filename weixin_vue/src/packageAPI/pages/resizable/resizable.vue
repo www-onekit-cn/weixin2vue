@@ -6,12 +6,12 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 null
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view style="text-align:center">
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-section">
+      <onekit-view Style="text-align:center">
         
         旋转屏幕
       </onekit-view>

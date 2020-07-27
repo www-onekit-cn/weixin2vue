@@ -6,26 +6,26 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</onekit-view>
-    <onekit-picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" :value="{{value}}" @change="bindChange">
+  <onekit-view Class="page-body">
+    <onekit-view Class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</onekit-view>
+    <onekit-picker-view indicator-style="height: 50px;" Style="width: 100%; height: 300px;" :value="{{value}}" @change="bindChange">
       <onekit-picker-view-column>
-        <onekit-view v-for="(item,years) in years" style="line-height: 50px; text-align: center;">{{item}}年</onekit-view>
+        <onekit-view v-for="(item,years) in years" Style="line-height: 50px; text-align: center;">{{item}}年</onekit-view>
       </onekit-picker-view-column>
       <onekit-picker-view-column>
-        <onekit-view v-for="(item,months) in months" style="line-height: 50px; text-align: center;">{{item}}月</onekit-view>
+        <onekit-view v-for="(item,months) in months" Style="line-height: 50px; text-align: center;">{{item}}月</onekit-view>
       </onekit-picker-view-column>
       <onekit-picker-view-column>
-        <onekit-view v-for="(item,days) in days" style="line-height: 50px; text-align: center;">{{item}}日</onekit-view>
+        <onekit-view v-for="(item,days) in days" Style="line-height: 50px; text-align: center;">{{item}}日</onekit-view>
       </onekit-picker-view-column>
       <onekit-picker-view-column>
-        <onekit-view class="icon-container">
+        <onekit-view Class="icon-container">
           <onekit-image class="picker-icon" src="../../resources/kind/daytime.png"></onekit-image>
         </onekit-view>
-        <onekit-view class="icon-container">
+        <onekit-view Class="icon-container">
           <onekit-image class="picker-icon" src="../../resources/kind/night.png"></onekit-image>
         </onekit-view>
       </onekit-picker-view-column>

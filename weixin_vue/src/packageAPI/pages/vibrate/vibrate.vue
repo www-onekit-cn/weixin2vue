@@ -6,12 +6,12 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="btn-area">
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-section">
+      <onekit-view Class="btn-area">
         <onekit-button type="primary" @tap="vibrateLong">长振动</onekit-button>
         <onekit-button type="default" @tap="vibrateShort">短振动</onekit-button>
       </onekit-view>

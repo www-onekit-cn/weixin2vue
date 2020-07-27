@@ -6,15 +6,15 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-body-wrapper">
-      <onekit-text class="page-body-title">
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-body-wrapper">
+      <onekit-text Class="page-body-title">
         点击气泡icon打开客服消息界面
       </onekit-text>
-      <onekit-view class="page-body-line">
+      <onekit-view Class="page-body-line">
         <onekit-contact-button size="40" session-from="weapp"></onekit-contact-button>
       </onekit-view>
     </onekit-view>

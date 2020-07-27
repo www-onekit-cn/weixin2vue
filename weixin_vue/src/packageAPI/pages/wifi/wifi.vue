@@ -6,14 +6,14 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-body-info">
-      <onekit-scroll-view class="device-list" scroll-y>
-        <onekit-view v-for="(item,index) in wifiList" class="item">
-          <onekit-view class="list">
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-body-info">
+      <onekit-scroll-view Class="device-list" scroll-y>
+        <onekit-view v-for="(item,index) in wifiList" Class="item">
+          <onekit-view Class="list">
             <onekit-text>{{ item.SSID }}</onekit-text>
             <onekit-span class="wifi-icon">
               <onekit-span class="wifi-1"></onekit-span>
@@ -26,7 +26,7 @@
         </onekit-view>
       </onekit-scroll-view>
     </onekit-view>
-    <onekit-view class="btn-area">
+    <onekit-view Class="btn-area">
       <onekit-button type="primary" @tap="startSearch">搜索Wi-Fi</onekit-button>
       <onekit-button @tap="stopSearch">停止搜索</onekit-button>
     </onekit-view>

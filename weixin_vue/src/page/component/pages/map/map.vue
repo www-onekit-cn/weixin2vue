@@ -6,19 +6,19 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-section-title">当前组件使用了墨渊底图样式，查看<onekit-navigator class="navigator" url="/page/component/pages/map-styles/map-styles">查看更多</onekit-navigator>。</onekit-view>
-    <onekit-view class="page-section page-section-gap">
+  <onekit-view Class="page-body">
+    <onekit-view Class="page-section-title">当前组件使用了墨渊底图样式，查看<onekit-navigator Class="navigator" url="/page/component/pages/map-styles/map-styles">查看更多</onekit-navigator>。</onekit-view>
+    <onekit-view Class="page-section page-section-gap">
       <onekit-map :subkey="{{subKey}}" Style="width: 100%; height: 300px;" :latitude="{{latitude}}" :longitude="{{longitude}}" :scale="{{18}}" :markers="{{markers}}" :covers="{{covers}}" :enable-3D="{{enable3d}}" :show-compass="{{showCompass}}" :enable-zoom="{{enableZoom}}" :enable-rotate="{{enableRotate}}" :enable-satellite="{{enableSatellite}}" :enable-traffic="{{enableTraffic}}" :enable-overlooking="{{enableOverlooking}}" :enable-scroll="{{enableScroll}}" :polygons="{{drawPolygon ? polygons : []}}">
       </onekit-map>
     </onekit-view>
   </onekit-view>
 
-  <onekit-view class="page-section">
-    <onekit-view class="btn-area">
+  <onekit-view Class="page-section">
+    <onekit-view Class="btn-area">
       <onekit-button @tap="toggle3d">
         {{ !enable3d ? '启用' : '关闭'}}3D效果
       </onekit-button>

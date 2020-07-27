@@ -6,11 +6,11 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
 
-  <onekit-view class="page-body">
-    <onekit-view class="btn-area">
+  <onekit-view Class="page-body">
+    <onekit-view Class="btn-area">
       <onekit-button @tap="navigateTo">跳转新页面</onekit-button>
       <onekit-button @tap="navigateBack">返回上一页</onekit-button>
       <onekit-button @tap="redirectTo">在当前页面打开</onekit-button>

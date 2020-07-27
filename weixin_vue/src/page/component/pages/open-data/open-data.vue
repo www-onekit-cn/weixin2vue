@@ -7,43 +7,43 @@
 <import src="../../../common/foot.vue"/>
 
 
-<onekit-view class="container">
+<onekit-view Class="container">
   
-  <onekit-view class="page-body">
-    <onekit-view class="avatar">
+  <onekit-view Class="page-body">
+    <onekit-view Class="avatar">
       <onekit-open-data Class="avatar-img" type="userAvatarUrl" lang="zh_CN"></onekit-open-data>
     </onekit-view>
     <onekit-form>
-      <onekit-view class="page-section">
-        <onekit-view class="weui-cells weui-cells_after-title">
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-view class="weui-cell__hd">
-              <onekit-view class="weui-label">昵称</onekit-view>
+      <onekit-view Class="page-section">
+        <onekit-view Class="weui-cells weui-cells_after-title">
+          <onekit-view Class="weui-cell weui-cell_input">
+            <onekit-view Class="weui-cell__hd">
+              <onekit-view Class="weui-label">昵称</onekit-view>
             </onekit-view>
-            <onekit-view class="weui-cell__bd">
-              <onekit-view class="weui-input">
+            <onekit-view Class="weui-cell__bd">
+              <onekit-view Class="weui-input">
                 <onekit-open-data type="userNickName" lang="zh_CN"></onekit-open-data>
               </onekit-view>
             </onekit-view>
           </onekit-view>
 
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-view class="weui-cell__hd">
-              <onekit-view class="weui-label">性别</onekit-view>
+          <onekit-view Class="weui-cell weui-cell_input">
+            <onekit-view Class="weui-cell__hd">
+              <onekit-view Class="weui-label">性别</onekit-view>
             </onekit-view>
-            <onekit-view class="weui-cell__bd">
-              <onekit-view class="weui-input">
+            <onekit-view Class="weui-cell__bd">
+              <onekit-view Class="weui-input">
                 <onekit-open-data type="userGender" lang="zh_CN"></onekit-open-data>
               </onekit-view>
             </onekit-view>
           </onekit-view>
 
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-view class="weui-cell__hd">
-              <onekit-view class="weui-label">地区</onekit-view>
+          <onekit-view Class="weui-cell weui-cell_input">
+            <onekit-view Class="weui-cell__hd">
+              <onekit-view Class="weui-label">地区</onekit-view>
             </onekit-view>
-            <onekit-view class="weui-cell__bd">
-              <onekit-view class="weui-input">
+            <onekit-view Class="weui-cell__bd">
+              <onekit-view Class="weui-input">
                 <onekit-open-data Class="country" type="userCountry" lang="zh_CN"></onekit-open-data>
                 <onekit-open-data Class="province" type="userProvince" lang="zh_CN"></onekit-open-data>
                 <onekit-open-data Class="city" type="userCity" lang="zh_CN"></onekit-open-data>
@@ -52,12 +52,12 @@
           </onekit-view>
 
 
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-view class="weui-cell__hd">
-              <onekit-view class="weui-label">语言</onekit-view>
+          <onekit-view Class="weui-cell weui-cell_input">
+            <onekit-view Class="weui-cell__hd">
+              <onekit-view Class="weui-label">语言</onekit-view>
             </onekit-view>
-            <onekit-view class="weui-cell__bd">
-              <onekit-view class="weui-input">
+            <onekit-view Class="weui-cell__bd">
+              <onekit-view Class="weui-input">
                 <onekit-open-data type="userLanguage" lang="zh_CN"></onekit-open-data>
               </onekit-view>
             </onekit-view>

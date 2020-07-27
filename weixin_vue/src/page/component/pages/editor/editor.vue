@@ -3,12 +3,12 @@
 <script src="./editor.js"></script>
 <template>
 <onekit-page>
-<onekit-view class="container" :style="height:{{editorHeight}}px;">
+<onekit-view Class="container" :Style="height:{{editorHeight}}px;">
 	<onekit-editor id="editor" Class="ql-container" :placeholder="{{placeholder}}" @statuschange="onStatusChange" @ready="onEditorReady">
 	</onekit-editor>
 </onekit-view>
 
-<onekit-view class="toolbar" catchtouchend="format" :hidden="{{false}}" :style="bottom: {{isIOS ? keyboardHeight : 0}}px; height: {{toolBarHeight}}px; padding-bottom: {{isIOS ? safeHeight : 0}}px">
+<onekit-view Class="toolbar" catchtouchend="format" :hidden="{{false}}" :Style="bottom: {{isIOS ? keyboardHeight : 0}}px; height: {{toolBarHeight}}px; padding-bottom: {{isIOS ? safeHeight : 0}}px">
 	<onekit-i class="iconfont icon-charutupian" catchtouchend="insertImage"></onekit-i>
 	<onekit-i :class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" :data-value="{{2}}"></onekit-i>
 	<onekit-i :class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" :data-value="{{3}}"></onekit-i>
