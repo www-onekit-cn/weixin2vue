@@ -14,7 +14,7 @@
       <onekit-canvas class="canvas-element" canvas-id="canvas"></onekit-canvas>
       <onekit-scroll-view class="canvas-buttons" scroll-y="true">
         <onekit-block v-for="(method) in methods">
-          <onekit-button class="canvas-button" @tap="{{method}}">{{method}}</onekit-button>
+          <onekit-button class="canvas-button" @tap="method">{{method}}</onekit-button>
         </onekit-block>
         <onekit-button class="canvas-button" @tap="toTempFilePath" type="primary">toTempFilePath</onekit-button>
       </onekit-scroll-view>

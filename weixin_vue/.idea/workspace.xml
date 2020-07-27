@@ -3,137 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="eeb8a428-b03a-4a1c-8af6-26f996146c2f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/onekit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/onekit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/capture-screen/capture-screen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/capture-screen/capture-screen.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-address/choose-address.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-address/choose-address.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-invoice-title/choose-invoice-title.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-invoice-title/choose-invoice-title.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-location/choose-location.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-location/choose-location.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/clipboard-data/clipboard-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/clipboard-data/clipboard-data.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/custom-message/custom-message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/custom-message/custom-message.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/custom-service/custom-service.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/custom-service/custom-service.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/download-file/download-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/download-file/download-file.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/file/file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/file/file.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-background-fetch-data/get-background-fetch-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-background-fetch-data/get-background-fetch-data.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-background-prefetch-data/get-background-prefetch-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-background-prefetch-data/get-background-prefetch-data.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-battery-info/get-battery-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-battery-info/get-battery-info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-location/get-location.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-location/get-location.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-network-type/get-network-type.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-network-type/get-network-type.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-performance/get-performance.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-performance/get-performance.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-system-info/get-system-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-system-info/get-system-info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-user-info/get-user-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-user-info/get-user-info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-wxml-node-info/get-wxml-node-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-wxml-node-info/get-wxml-node-info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/ibeacon/ibeacon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/ibeacon/ibeacon.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/image/image.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/image/image.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/intersection-observer/intersection-observer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/intersection-observer/intersection-observer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/login/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/login/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/make-phone-call/make-phone-call.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/make-phone-call/make-phone-call.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/mdns/mdns.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/mdns/mdns.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/media-container/media-container.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/media-container/media-container.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/modal/modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/modal/modal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/navigation-bar-loading/navigation-bar-loading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/navigation-bar-loading/navigation-bar-loading.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/navigator/navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/navigator/navigator.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-accelerometer-change/on-accelerometer-change.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-accelerometer-change/on-accelerometer-change.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-network-status-change/on-network-status-change.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-network-status-change/on-network-status-change.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/open-location/open-location.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/open-location/open-location.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/page-scroll/page-scroll.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/page-scroll/page-scroll.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/pull-down-refresh/pull-down-refresh.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/pull-down-refresh/pull-down-refresh.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/request-payment/request-payment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/request-payment/request-payment.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/request/request.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/request/request.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/scan-code/scan-code.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/scan-code/scan-code.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/screen-brightness/screen-brightness.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/screen-brightness/screen-brightness.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/sendMessage/sendMessage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/sendMessage/sendMessage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/setting/setting.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/setting/setting.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/share-button/share-button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/share-button/share-button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/share/share.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/share/share.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/soter-authentication/soter-authentication.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/soter-authentication/soter-authentication.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/storage/storage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/storage/storage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/subscribe-message/subscribe-message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/subscribe-message/subscribe-message.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/template-message/template-message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/template-message/template-message.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/toast/toast.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/toast/toast.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/two-way-bindings/two-way-bindings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/two-way-bindings/two-way-bindings.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/udp-socket/udp-socket.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/udp-socket/udp-socket.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/upload-file/upload-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/upload-file/upload-file.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/vibrate/vibrate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/vibrate/vibrate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/video/video.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/video/video.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/voice/voice.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/voice/voice.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/web-socket/web-socket.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/web-socket/web-socket.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/worker/worker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/worker/worker.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/wxs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/wxs.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/cloud-file-component/cloud-file-component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/cloud-file-component/cloud-file-component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/crud-detail/crud-detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/crud-detail/crud-detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/crud/crud.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/crud/crud.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/delete-file/delete-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/delete-file/delete-file.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/download-file/download-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/download-file/download-file.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/get-temp-file-url/get-temp-file-url.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/get-temp-file-url/get-temp-file-url.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/get-wx-context/get-wx-context.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/get-wx-context/get-wx-context.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-storage/scf-storage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-storage/scf-storage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/server-date/server-date.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/server-date/server-date.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/upload-file/upload-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/upload-file/upload-file.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/user-authentication/user-authentication.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/user-authentication/user-authentication.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/API/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/ad/ad.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/ad/ad.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/aria-component/aria-component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/aria-component/aria-component.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/button/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/button/button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas-2d/canvas-2d.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas-2d/canvas-2d.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/form/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/form/form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/icon/icon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/icon/icon.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/image/image.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/image/image.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/input/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/input/input.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/label/label.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/label/label.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/live-player/live-player.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/live-player/live-player.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/live-pusher/live-pusher.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/live-pusher/live-pusher.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map/map.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map/map.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/official-account/official-account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/official-account/official-account.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker/picker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker/picker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/progress/progress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/progress/progress.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/radio/radio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/radio/radio.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/slider/slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/slider/slider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/switch/switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/switch/switch.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/text/text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/text/text.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/picture-in-picture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/picture-in-picture.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/video.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/video.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/view/view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/view/view.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/webgl/webgl.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/webgl/webgl.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +78,7 @@
       <workItem from="1576552649065" duration="257000" />
       <workItem from="1576552918469" duration="4000" />
       <workItem from="1576552932556" duration="28813000" />
-      <workItem from="1595862361359" duration="4979000" />
+      <workItem from="1595862361359" duration="6040000" />
     </task>
     <servers />
   </component>
@@ -214,25 +91,9 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="547" y="234" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576600800781">
+    <state x="636" y="211" width="598" height="486" key="find.popup" timestamp="1595871041376">
       <screen x="0" y="23" width="1536" height="912" />
     </state>
-    <state x="547" y="234" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1536.912@0.23.1536.912" timestamp="1576600800781" />
-    <state x="608" y="195" key="FileChooserDialogImpl" timestamp="1576551688631">
-      <screen x="0" y="23" width="1536" height="912" />
-    </state>
-    <state x="608" y="195" key="FileChooserDialogImpl/0.23.1536.912@0.23.1536.912" timestamp="1576551688631" />
-    <state x="362" y="117" key="SettingsEditor" timestamp="1576509668522">
-      <screen x="0" y="23" width="1536" height="912" />
-    </state>
-    <state x="362" y="117" key="SettingsEditor/0.23.1536.912@0.23.1536.912" timestamp="1576509668522" />
-    <state x="398" y="168" width="868" height="528" key="find.popup" timestamp="1576646282967">
-      <screen x="0" y="23" width="1536" height="912" />
-    </state>
-    <state x="398" y="168" width="868" height="528" key="find.popup/0.23.1536.912@0.23.1536.912" timestamp="1576646282967" />
-    <state x="691" y="221" width="670" height="676" key="search.everywhere.popup" timestamp="1576598663026">
-      <screen x="0" y="23" width="1536" height="912" />
-    </state>
-    <state x="691" y="221" width="670" height="676" key="search.everywhere.popup/0.23.1536.912@0.23.1536.912" timestamp="1576598663026" />
+    <state x="636" y="211" width="598" height="486" key="find.popup/0.23.1536.912@0.23.1536.912" timestamp="1595871041376" />
   </component>
 </project>

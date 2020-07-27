@@ -125,4 +125,4 @@ function OnekitPage(object) {
 function OnekitComponent(data){
  //return Component(data);
 }
-module.exports = {OnekitApp,OnekitPage,OnekitComponent};
+export default {OnekitApp,OnekitPage,OnekitComponent};

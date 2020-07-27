@@ -22,7 +22,7 @@ null
       </onekit-view>
     </onekit-view>
   </onekit-view> 
-  <onekit-view :data-width="windowWidth" :catch:touchmove="test.touchmove" @:touchend="{{test.touchend}}" @:touchstart="{{test.touchstart}}" class="page-top">
+  <onekit-view :data-width="windowWidth" :catch:touchmove="test.touchmove" @:touchend="test.touchend" @:touchstart="test.touchstart" class="page-top">
     <onekit-view style="margin: 10px 10px;"> >>> 右滑出现侧边菜单</onekit-view>
       <onekit-block v-for="(item,title) in tabs">
         <onekit-view style="display: flex; align-items: center; flex-direction: column;">

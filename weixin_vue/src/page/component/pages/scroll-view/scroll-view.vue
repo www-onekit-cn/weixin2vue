@@ -40,7 +40,7 @@
         <onekit-text>自定义下拉刷新\n自定义：</onekit-text>
       </onekit-view>
       <onekit-view class="page-section-spacing">
-        <onekit-scroll-view scroll-y style="width: 100%; height: 400px;" :refresher-enabled="true" :refresher-threshold="80" refresher-default-style="none" refresher-background="lightgreen" @refresherpulling="{{refresh.onPulling}}">
+        <onekit-scroll-view scroll-y style="width: 100%; height: 400px;" :refresher-enabled="true" :refresher-threshold="80" refresher-default-style="none" refresher-background="lightgreen" @refresherpulling="refresh.onPulling">
           <onekit-view slot="refresher" class="refresh-container" style="display: block; width: 100%; height: 80px; background: #ECBDF0; display: flex; align-items: center;">
             <onekit-view class="view1" style="position: absolute; color: white; text-align: center; width: 100%;">
               下拉刷新
