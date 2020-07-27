@@ -6,18 +6,18 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
 
-  <onekit-view Class="page-body">
+  <onekit-view class="page-body">
     <onekit-block v-if="canIUse">
-      <onekit-view Class="page-section">
-        <onekit-view Class="page-body-wrapper">
-          <onekit-canvas Class="canvas" type="webgl" id="canvasWebGL"></onekit-canvas>
+      <onekit-view class="page-section">
+        <onekit-view class="page-body-wrapper">
+          <onekit-canvas class="canvas" type="webgl" id="canvasWebGL"></onekit-canvas>
         </onekit-view>
       </onekit-view>
     </onekit-block>
-    <onekit-view v-else Style="margin: 15px; text-align:center">
+    <onekit-view v-else style="margin: 15px; text-align:center">
       微信版本过低，暂不支持本功能
     </onekit-view>
   </onekit-view>

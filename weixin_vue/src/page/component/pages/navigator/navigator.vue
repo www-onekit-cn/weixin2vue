@@ -6,11 +6,11 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
 
-  <onekit-view Class="page-body">
-    <onekit-view Class="btn-area">
+  <onekit-view class="page-body">
+    <onekit-view class="btn-area">
       <onekit-navigator url="navigate?title=navigate" hover-class="ohter-navigator">
        <onekit-button type="default">跳转到新页面</onekit-button>
       </onekit-navigator>

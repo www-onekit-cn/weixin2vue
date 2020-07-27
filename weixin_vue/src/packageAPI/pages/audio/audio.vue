@@ -4,7 +4,7 @@
 <template>
 <onekit-page>
 <onekit-view>
-  <onekit-audio :src="{{src}}" id="myAudio"></onekit-audio>
+  <onekit-audio :src="src" id="myAudio"></onekit-audio>
 
   <onekit-button type="primary" @tap="audioPlay">播放</onekit-button>
   <onekit-button type="primary" @tap="audioPause">暂停</onekit-button>

@@ -9,7 +9,7 @@ const htmlSnip = `<div class="div_class">
   </p>
 </div>
 `;
-const nodeSnip = `Page({
+const nodeSnip = `WeixinPage({
   data: {
     nodes: [{
       name: 'div',

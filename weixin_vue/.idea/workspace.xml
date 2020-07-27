@@ -7,6 +7,7 @@
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.vue" afterDir="false" />
@@ -200,7 +201,7 @@
       <workItem from="1576552649065" duration="257000" />
       <workItem from="1576552918469" duration="4000" />
       <workItem from="1576552932556" duration="28813000" />
-      <workItem from="1595862361359" duration="2597000" />
+      <workItem from="1595862361359" duration="4979000" />
     </task>
     <servers />
   </component>

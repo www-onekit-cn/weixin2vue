@@ -6,14 +6,14 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
 
-  <onekit-view Class="page-body">
-    <onekit-view Class="btn-area">
+  <onekit-view class="page-body">
+    <onekit-view class="btn-area">
       <onekit-button type="primary" data-mode="fingerPrint" @tap="startAuth">指纹认证</onekit-button>
     </onekit-view>
-     <onekit-view Class="btn-area">
+     <onekit-view class="btn-area">
       <onekit-button type="primary" data-mode="facial" @tap="startAuth">人脸认证</onekit-button>
     </onekit-view>
   </onekit-view>

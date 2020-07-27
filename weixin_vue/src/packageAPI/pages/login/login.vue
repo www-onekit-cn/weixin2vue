@@ -6,18 +6,18 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
 
-  <onekit-view Class="page-body">
-    <onekit-view Class="page-section">
+  <onekit-view class="page-body">
+    <onekit-view class="page-section">
       <onekit-block v-if="hasLogin === true">
-        <onekit-text Class="page-body-title">已登录</onekit-text>
-        <onekit-text Class="page-body-text">每个微信号中仅需登录 1 次，后续每次进入页面即可根据微信 id 自动拉取用户信息</onekit-text>
+        <onekit-text class="page-body-title">已登录</onekit-text>
+        <onekit-text class="page-body-text">每个微信号中仅需登录 1 次，后续每次进入页面即可根据微信 id 自动拉取用户信息</onekit-text>
       </onekit-block>
       <onekit-block v-if="hasLogin === false">
-        <onekit-text Class="page-body-text">每个微信号中仅需登录一次</onekit-text>
-        <onekit-button Class="page-body-button" type="primary" @tap="login">微信登录</onekit-button>
+        <onekit-text class="page-body-text">每个微信号中仅需登录一次</onekit-text>
+        <onekit-button class="page-body-button" type="primary" @tap="login">微信登录</onekit-button>
       </onekit-block>
     </onekit-view>
   </onekit-view>

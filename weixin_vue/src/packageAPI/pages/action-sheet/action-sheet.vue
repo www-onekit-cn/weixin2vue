@@ -6,11 +6,11 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
 
-  <onekit-view Class="page-body">
-    <onekit-view Class="btn-area">
+  <onekit-view class="page-body">
+    <onekit-view class="btn-area">
       <onekit-button type="default" @tap="actionSheetTap">弹出action sheet</onekit-button>
     </onekit-view>
   </onekit-view>

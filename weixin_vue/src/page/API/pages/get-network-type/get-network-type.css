@@ -1,7 +1,0 @@
-.page-body-info {
-  height: calc(var(--screen-width)*200/750);
-}
-.page-body-text-network-type {
-  font-size: calc(var(--screen-width)*80/750);
-  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
-}

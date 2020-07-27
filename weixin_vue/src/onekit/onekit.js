@@ -1,9 +1,9 @@
 import APP from '../app.json.js';
-function App(object) {
+function OnekitApp(object) {
 
 }
 
-function Page(object) {
+function OnekitPage(object) {
   let result = {
     data() {
       return {};
@@ -121,5 +121,8 @@ function Page(object) {
     }
   }
   return result;
+}
+function OnekitComponent(data){
+ //return Component(data);
 }
 module.exports = {OnekitApp,OnekitPage,OnekitComponent};

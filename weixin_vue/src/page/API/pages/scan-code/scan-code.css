@@ -1,6 +1,0 @@
-@import "../../../common/lib/weui.css";
-
-.weui-cell__bd{
-  min-height: calc(var(--screen-width)*48/750);
-  word-break: break-all;
-}

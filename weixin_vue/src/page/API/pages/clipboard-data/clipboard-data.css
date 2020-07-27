@@ -1,8 +1,0 @@
-@import "../../../common/lib/weui.css";
-
-.page-body-info {
-  padding: calc(var(--screen-width)*10/750);
-  height: calc(var(--screen-width)*200/750);
-  overflow: scroll-y;
-  text-align: left;
-}

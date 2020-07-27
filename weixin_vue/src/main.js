@@ -9,16 +9,12 @@ import APP_JSON from './app.json.js'
 const screen_width = isMobile()?(($(window).width())-0):750;
 $("body").css('--screen-width', screen_width + "px");
 /////////////////////////////////////////////////////////
-for(let ui of ["cover-image","cover-view","match-media", "movable-area","movable-view","scroll-view","swiper","swiper-item","view",
-  "icon","progress","rich-text","text",
-  "button","checkbox","checkbox-group","editor","form","input","label","picker","picker-view","picker-view-column","radio","radio-group","slider","switch","textarea",
-  "functional-page-navigator","navigator",
-  "audio","camera", "live-player","live-pusher","video","voip-room",
-  "map",
-  "canvas",
-  "ad","ad-custom","official-account","open-data","web-view",
-  "navigation-bar",
-  "page-meta" ]){
+for(let ui of ["page","ad", "audio","button","camera","canvas","checkbox","checkbox-group","cover-image","cover-view",
+  "editor","form","functional-page-navigator","image",
+  "icon","map","input","label","live-player","live-pusher","map","movable-area","movable-view","navigator",
+  "open-data","page","picker","picker-view","picker-view-column","progress",
+  "radio","radio-group","rich-text","scroll-view","slider","swiper","swiper-item","switch",
+  "text","textarea","video","view","web-view" ]){
   Vue.component(`onekit-${ui}`,()=>import(`@/onekit/ui/${ui}.vue`));
 }
 /*

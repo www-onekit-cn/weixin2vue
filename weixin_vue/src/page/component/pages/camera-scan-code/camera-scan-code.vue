@@ -6,34 +6,34 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
 
-  <onekit-view Class="page-body">
-    <onekit-view Class="page-body-wrapper">
+  <onekit-view class="page-body">
+    <onekit-view class="page-body-wrapper">
       <onekit-camera mode="scanCode" flash="off" @scancode="scanCode" @error="error">
       </onekit-camera>
-      <onekit-view Class="btn-area">
+      <onekit-view class="btn-area">
         <onekit-button type="primary" @tap="navigateBack">
           返回正常模式
         </onekit-button>
       </onekit-view>
       <onekit-form>
-        <onekit-view Class="page-section">
-          <onekit-view Class="weui-cells weui-cells_after-title">
-            <onekit-view Class="weui-cell weui-cell_input">
-              <onekit-view Class="weui-cell__hd">
-                <onekit-view Class="weui-label">类型</onekit-view>
+        <onekit-view class="page-section">
+          <onekit-view class="weui-cells weui-cells_after-title">
+            <onekit-view class="weui-cell weui-cell_input">
+              <onekit-view class="weui-cell__hd">
+                <onekit-view class="weui-label">类型</onekit-view>
               </onekit-view>
-              <onekit-view Class="weui-cell__bd">
+              <onekit-view class="weui-cell__bd">
                 {{ result.type }}
               </onekit-view>
             </onekit-view>
-            <onekit-view Class="weui-cell weui-cell_input">
-              <onekit-view Class="weui-cell__hd">
-                <onekit-view Class="weui-label">结果</onekit-view>
+            <onekit-view class="weui-cell weui-cell_input">
+              <onekit-view class="weui-cell__hd">
+                <onekit-view class="weui-label">结果</onekit-view>
               </onekit-view>
-              <onekit-view Class="weui-cell__bd">
+              <onekit-view class="weui-cell__bd">
                 {{ result.result }}
               </onekit-view>
             </onekit-view>

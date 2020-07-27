@@ -6,16 +6,16 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
 
-  <onekit-view Class="page-body">
-    <onekit-view Class="page-section">
-    <onekit-view Class="btn-area">
+  <onekit-view class="page-body">
+    <onekit-view class="page-section">
+    <onekit-view class="btn-area">
       <onekit-button type="primary" data-nav="movable" @:tap="handleNavChange">movable</onekit-button>
     </onekit-view>
     
-    <onekit-view Class="btn-area">
+    <onekit-view class="btn-area">
       <onekit-button type="primary" data-nav="nearby" @:tap="handleNavChange">跟随 swiper 的图片切换</onekit-button>   
     </onekit-view>
     </onekit-view>

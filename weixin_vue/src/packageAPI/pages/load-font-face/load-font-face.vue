@@ -6,16 +6,16 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
 
-  <onekit-view Class="page-body">
-    <onekit-view Class="page-section">
-      <onekit-view :Class="page-body-info display-area {{ loaded ? 'font-loaded' : '' }}">
+  <onekit-view class="page-body">
+    <onekit-view class="page-section">
+      <onekit-view :class="['page-body-info display-area '+ loaded ? 'font-loaded' : '' ]">
         <onekit-text v-if="!loaded">Load {{ fontFamily }}</onekit-text>
         <onekit-text v-else>{{ fontFamily }} is loaded</onekit-text>
       </onekit-view>
-      <onekit-view Class="btn-area">
+      <onekit-view class="btn-area">
         <onekit-button type="primary" @tap="loadFontFace">加载字体</onekit-button>
         <onekit-button type="default" @tap="clear">清除</onekit-button>
       </onekit-view>

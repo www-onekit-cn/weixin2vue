@@ -6,29 +6,29 @@
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
-<onekit-view Class="container">
+<onekit-view class="container">
   
-  <onekit-view Class="page-body">
-    <onekit-view Class="page-section">
-      <onekit-view Class="page-section-title">
+  <onekit-view class="page-body">
+    <onekit-view class="page-section">
+      <onekit-view class="page-section-title">
         <onekit-text>flex-direction: row\n横向布局</onekit-text>
       </onekit-view>
-      <onekit-view Class="page-section-spacing">
-        <onekit-view Class="flex-wrp" Style="flex-direction:row;">
-          <onekit-view Class="flex-item demo-text-1"></onekit-view>
-          <onekit-view Class="flex-item demo-text-2"></onekit-view>
-          <onekit-view Class="flex-item demo-text-3"></onekit-view>
+      <onekit-view class="page-section-spacing">
+        <onekit-view class="flex-wrp" style="flex-direction:row;">
+          <onekit-view class="flex-item demo-text-1"></onekit-view>
+          <onekit-view class="flex-item demo-text-2"></onekit-view>
+          <onekit-view class="flex-item demo-text-3"></onekit-view>
         </onekit-view>
       </onekit-view>
     </onekit-view>
-    <onekit-view Class="page-section">
-      <onekit-view Class="page-section-title">
+    <onekit-view class="page-section">
+      <onekit-view class="page-section-title">
         <onekit-text>flex-direction: column\n纵向布局</onekit-text>
       </onekit-view>
-      <onekit-view Class="flex-wrp" Style="flex-direction:column;">
-        <onekit-view Class="flex-item flex-item-V demo-text-1"></onekit-view>
-        <onekit-view Class="flex-item flex-item-V demo-text-2"></onekit-view>
-        <onekit-view Class="flex-item flex-item-V demo-text-3"></onekit-view>
+      <onekit-view class="flex-wrp" style="flex-direction:column;">
+        <onekit-view class="flex-item flex-item-V demo-text-1"></onekit-view>
+        <onekit-view class="flex-item flex-item-V demo-text-2"></onekit-view>
+        <onekit-view class="flex-item flex-item-V demo-text-3"></onekit-view>
       </onekit-view>
     </onekit-view>
   </onekit-view>
