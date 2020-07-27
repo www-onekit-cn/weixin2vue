@@ -1,0 +1,27 @@
+@import "../../../common/lib/weui.css";
+
+.image {
+  width: 100%;
+  height: calc(var(--screen-width)*360/750);
+}
+
+.page-body-info {
+  display: flex;
+  box-sizing: border-box;
+  padding: calc(var(--screen-width)*30/750);
+  height: calc(var(--screen-width)*420/750);
+  border-top: calc(var(--screen-width)*1/750) solid var(--weui-FG-3);
+  border-bottom: calc(var(--screen-width)*1/750) solid var(--weui-FG-3);
+  align-items: center;
+  justify-content: center;
+}
+
+.page-section-ctn {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image {
+  max-width: 100%;
+}

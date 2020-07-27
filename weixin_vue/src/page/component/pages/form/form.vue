@@ -3,8 +3,8 @@
 <script src="./form.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
@@ -34,7 +34,7 @@
 
       <onekit-view class="page-section page-section-gap">
         <onekit-view class="page-section-title">slider</onekit-view>
-        <onekit-slider value="50" name="slider" show-value=""></onekit-slider>
+        <onekit-slider value="50" name="slider" show-value></onekit-slider>
       </onekit-view>
 
       <onekit-view class="page-section">

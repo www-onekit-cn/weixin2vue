@@ -3,7 +3,7 @@
 <script src="./index.js"></script>
 <template>
 <onekit-page>
-<set-tab-bar v-if="isSetTabBarPage" @unmount="leaveSetTabBarPage"></set-tab-bar>
+<onekit-set-tab-bar v-if="isSetTabBarPage" @unmount="leaveSetTabBarPage"></onekit-set-tab-bar>
 <onekit-view v-else class="index">
   <onekit-view class="index-hd">
     <onekit-image class="index-logo" src="resources/kind/logo.png"></onekit-image>
@@ -11,16 +11,17 @@
   </onekit-view>
   <onekit-view class="index-bd">
     <onekit-view class="kind-list">
-      <template v-for="(item,id) in list">
+      <onekit-block v-for="(item,id) in list">
         <onekit-view class="kind-list-item">
-          <onekit-view :id="item.id" :class="['kind-list-item-hd ',item.open ? 'kind-list-item-hd-show' : '']" @tap="kindToggle">
+          <onekit-view :id="{{item.id}}" :class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" @tap="kindToggle">
             <onekit-view class="kind-list-text">{{item.name}}</onekit-view>
-            <onekit-image class="kind-list-img" :src="'resources/kind/'+item.id+'.png'"></onekit-image>
+            <onekit-image v-if="theme === 'dark'" class="kind-list-img" :src="resources/kind/{{item.id}}_dark.png"></onekit-image>
+            <onekit-image v-else class="kind-list-img" :src="resources/kind/{{item.id}}.png"></onekit-image>
           </onekit-view>
-          <onekit-view :class="['kind-list-item-bd ',item.open ? 'kind-list-item-bd-show' : '']">
-            <onekit-view :class="['navigator-box ',item.open ? 'navigator-box-show' : '']">
-              <template v-for="(page) in item.pages">
-                <onekit-navigator :url="'pages/'+page.url" class="navigator" v-if="page.url !== '@set-tab-bar'">
+          <onekit-view :class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <onekit-view :class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <onekit-block v-for="(page) in item.pages">
+                <onekit-navigator :url="../../packageAPI/pages/{{page.url}}" class="navigator" v-if="page.url !== '@set-tab-bar'">
                   <onekit-view class="navigator-text">{{page.zh}}</onekit-view>
                   <onekit-view class="navigator-arrow"></onekit-view>
                 </onekit-navigator>
@@ -28,11 +29,11 @@
                   <onekit-view class="navigator-text">{{page.zh}}</onekit-view>
                   <onekit-view class="navigator-arrow"></onekit-view>
                 </onekit-view>
-              </template>
+              </onekit-block>
             </onekit-view>
           </onekit-view>
         </onekit-view>
-      </template>
+      </onekit-block>
     </onekit-view>
   </onekit-view>
 </onekit-view>

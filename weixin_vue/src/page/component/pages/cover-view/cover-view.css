@@ -1,7 +1,7 @@
 .cover-view {
   position: absolute;
-  top: calc(50% - calc(var(--screen-width)*150/750));
-  left: calc(50% - calc(var(--screen-width)*300/750));
+  top: calc(50% - 75px);
+  left: calc(50% - 150px);
   /* opacity: .7; */
 }
 
@@ -10,9 +10,9 @@
 }
 
 .flex-item{
-  width: calc(var(--screen-width)*200/750);
-  height: calc(var(--screen-width)*300/750);
-  font-size: calc(var(--screen-width)*26/750);
+  width: 100px;
+  height: 150px;
+  font-size: 13px;
 }
 
 .demo-text-1 {

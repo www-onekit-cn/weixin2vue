@@ -2,13 +2,13 @@
 
 label {
   display: inline-block;
-  min-width: calc(var(--screen-width)*270/750);
-  margin-right: calc(var(--screen-width)*20/750);
+  min-width: 235px;
+  margin-right: 10px;
 }
 form{
   width: 100%;
 }
 .picker-text {
-  margin-left: calc(var(--screen-width)*20/750);
+  margin-left: 10px;
   position: relative;
 }

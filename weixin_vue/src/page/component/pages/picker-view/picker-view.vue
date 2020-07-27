@@ -3,15 +3,15 @@
 <script src="./picker-view.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
 
   <onekit-view class="page-body">
     <onekit-view class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</onekit-view>
-    <onekit-picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" :value="value" @change="bindChange">
+    <onekit-picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" :value="{{value}}" @change="bindChange">
       <onekit-picker-view-column>
         <onekit-view v-for="(item,years) in years" style="line-height: 50px; text-align: center;">{{item}}年</onekit-view>
       </onekit-picker-view-column>

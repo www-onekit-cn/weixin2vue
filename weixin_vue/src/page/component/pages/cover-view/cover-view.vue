@@ -3,15 +3,15 @@
 <script src="./cover-view.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
 
   <onekit-view class="page-body">
     <onekit-view class="page-section page-section-gap">
-      <onekit-map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude">
+      <onekit-map Style="width: 100%; height: 300px;" :latitude="{{latitude}}" :longitude="{{longitude}}">
         <onekit-cover-view class="cover-view">
           <onekit-cover-view class="container">
             <onekit-cover-view class="flex-wrp" style="flex-direction:row;">

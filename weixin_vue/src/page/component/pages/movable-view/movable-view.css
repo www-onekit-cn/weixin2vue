@@ -2,37 +2,37 @@ movable-view {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(var(--screen-width)*100/750);
-  width: calc(var(--screen-width)*100/750);
+  height: 50px;
+  width: 50px;
   background: #1AAD19;
   color: #fff;  
 }
 
 movable-area {
-  height: calc(var(--screen-width)*400/750);
-  width: calc(var(--screen-width)*400/750);
-  margin: calc(var(--screen-width)*50/750) calc(var(--screen-width)*0/750) 0 calc(var(--screen-width)*50/750);
+  height: 200px;
+  width: 200px;
+  margin: 25px 0px 0 25px;
   background-color: #ccc;
   overflow: hidden;
 }
 
 .max {
-  width: calc(var(--screen-width)*600/750);
-  height: calc(var(--screen-width)*600/750);
+  width: 300px;
+  height: 300px;
 }
 
 .page-section {
   width: 100%;
-  margin-bottom: calc(var(--screen-width)*20/750);
+  margin-bottom: 10px;
 }
 
 .page-section-title {
-  margin-top: calc(var(--screen-width)*50/750);
-  font-size: calc(var(--screen-width)*28/750);
+  margin-top: 25px;
+  font-size: 14px;
   color: #999999;
-  margin-bottom: calc(var(--screen-width)*10/750);
-  padding-left: calc(var(--screen-width)*30/750);
-  padding-right: calc(var(--screen-width)*30/750);
+  margin-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .page-section-title.first {
@@ -40,5 +40,5 @@ movable-area {
 }
 
 .btn-area {
-  margin-top: calc(var(--screen-width)*20/750);
+  margin-top: 10px;
 }

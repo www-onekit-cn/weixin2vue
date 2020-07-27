@@ -1,16 +1,15 @@
-import Page from '@/onekit/Page.js';
-import PAGE_JSON from './cover-view.json.js';
-import wx from '@/onekit/wx';const global = {};
-export default Page(PAGE_JSON,{
-  onShareAppMessage() {
-    return {
-      title: 'cover-view',
-      path: 'page/component/pages/cover-view/cover-view'
+import PAGE_JSON from './cover-view.json';
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'cover-view',
+            path:'page/component/pages/cover-view/cover-view'
+        };
+    },
+    data:{
+        latitude:23.099994,
+        longitude:113.32452
     }
-  },
-
-  data: {
-    latitude: 23.099994,
-    longitude: 113.324520,
-  }
-})
+});

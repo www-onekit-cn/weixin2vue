@@ -3,8 +3,8 @@
 <script src="./map-styles.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   

@@ -1,8 +1,5 @@
 export default {
-	"backgroundTextStyle":"light",
-	"enablePullDownRefresh":false,
-	"navigationBarTextStyle":"white",
+	"pageOrientation":"auto",
 	"navigationBarTitleText":"scroll-view",
-	"navigationStyle":"default",
-	"onReachBottomDistance":50
-};
+	"usingComponents":{}
+}

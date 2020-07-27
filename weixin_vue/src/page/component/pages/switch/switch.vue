@@ -3,8 +3,8 @@
 <script src="./switch.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
@@ -13,7 +13,7 @@
     <onekit-view class="page-section page-section-gap">
       <onekit-view class="page-section-title">默认样式</onekit-view>
       <onekit-view class="body-view">
-        <onekit-switch checked="" @change="switch1Change"></onekit-switch>
+        <onekit-switch checked @change="switch1Change"></onekit-switch>
         <onekit-switch @change="switch2Change"></onekit-switch>
       </onekit-view>
     </onekit-view>
@@ -24,7 +24,7 @@
         <onekit-view class="weui-cell weui-cell_switch">
           <onekit-view class="weui-cell__bd">开启中</onekit-view>
           <onekit-view class="weui-cell__ft">
-            <onekit-switch checked=""></onekit-switch>
+            <onekit-switch checked></onekit-switch>
           </onekit-view>
         </onekit-view>
         <onekit-view class="weui-cell weui-cell_switch">

@@ -3,8 +3,8 @@
 <script src="./radio.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
@@ -28,7 +28,7 @@
           <onekit-label v-for="(item,value) in items" class="weui-cell weui-check__label">
 
             <onekit-view class="weui-cell__hd">
-              <onekit-radio :value="item.value" checked="true"></onekit-radio>
+              <onekit-radio :value="{{item.value}}" checked="true"></onekit-radio>
             </onekit-view>
             <onekit-view class="weui-cell__bd">{{item.name}}</onekit-view>
           </onekit-label>

@@ -1,19 +1,17 @@
-import Page from '@/onekit/Page.js';
-import PAGE_JSON from './textarea.json.js';
-import wx from '@/onekit/wx';const global = {};
-export default Page(PAGE_JSON,{
-  onShareAppMessage() {
-    return {
-      title: 'textarea',
-      path: 'page/component/pages/textarea/textarea'
+import PAGE_JSON from './textarea.json';
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'textarea',
+            path:'page/component/pages/textarea/textarea'
+        };
+    },
+    data:{
+        focus:false
+    },
+    bindTextAreaBlur:function(e){
+        console.log(e.detail.value);
     }
-  },
-
-  data: {
-    focus: false
-  },
-
-  bindTextAreaBlur(e) {
-    console.log(e.detail.value)
-  }
-})
+});

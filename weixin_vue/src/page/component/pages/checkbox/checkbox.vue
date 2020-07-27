@@ -3,8 +3,8 @@
 <script src="./checkbox.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
@@ -26,7 +26,7 @@
         <onekit-checkbox-group @change="checkboxChange">
           <onekit-label v-for="(item,value) in items" class="weui-cell weui-check__label">
             <onekit-view class="weui-cell__hd">
-              <onekit-checkbox :value="item.value" :checked="item.checked"></onekit-checkbox>
+              <onekit-checkbox :value="{{item.value}}" :checked="{{item.checked}}"></onekit-checkbox>
             </onekit-view>
             <onekit-view class="weui-cell__bd">{{item.name}}</onekit-view>
           </onekit-label>

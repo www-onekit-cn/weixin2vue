@@ -1,21 +1,19 @@
-import Page from '@/onekit/Page.js';
-import PAGE_JSON from './slider.json.js';
-import wx from '@/onekit/wx';const global = {};
+import PAGE_JSON from './slider.json';
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
 const pageData = {
-  onShareAppMessage() {
-    return {
-      title: 'slider',
-      path: 'page/component/pages/slider/slider'
+    onShareAppMessage:function(){
+        return {
+            title:'slider',
+            path:'page/component/pages/slider/slider'
+        };
     }
-  },
-}
-
-for (let i = 1; i < 5; ++i) {
-  (function (index) {
-    pageData['slider' + index + 'change'] = function (e) {
-      console.log('slider' + index + '发生change事件，携带值为', e.detail.value)
-    }
-  }(i))
-}
-
-export default Page(PAGE_JSON,pageData)
+};
+for(var i = 1;i < 5;++i){
+    (function(index){
+        pageData['slider' + index + 'change'] = function(e){
+            console.log('slider' + index + '发生change事件，携带值为',e.detail.value);
+        };
+    }(i));
+};
+OnekitPage(pageData);

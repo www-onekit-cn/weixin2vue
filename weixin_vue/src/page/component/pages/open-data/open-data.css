@@ -3,7 +3,7 @@
 .avatar {
   display: flex;
   justify-content: center;
-  margin-bottom: calc(var(--screen-width)*50/750);
+  margin-bottom: 25px;
 }
 
 .avatar-img {
@@ -12,5 +12,5 @@
 }
 
 .country, .province, .city {
-  padding-right: calc(var(--screen-width)*10/750);
+  padding-right: 5px;
 }

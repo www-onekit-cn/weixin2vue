@@ -3,15 +3,15 @@
 <script src="./open-data.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 
 <onekit-view class="container">
   
   <onekit-view class="page-body">
     <onekit-view class="avatar">
-      <onekit-open-data class="avatar-img" type="userAvatarUrl" lang="zh_CN"></onekit-open-data>
+      <onekit-open-data Class="avatar-img" type="userAvatarUrl" lang="zh_CN"></onekit-open-data>
     </onekit-view>
     <onekit-form>
       <onekit-view class="page-section">
@@ -44,9 +44,9 @@
             </onekit-view>
             <onekit-view class="weui-cell__bd">
               <onekit-view class="weui-input">
-                <onekit-open-data class="country" type="userCountry" lang="zh_CN"></onekit-open-data>
-                <onekit-open-data class="province" type="userProvince" lang="zh_CN"></onekit-open-data>
-                <onekit-open-data class="city" type="userCity" lang="zh_CN"></onekit-open-data>
+                <onekit-open-data Class="country" type="userCountry" lang="zh_CN"></onekit-open-data>
+                <onekit-open-data Class="province" type="userProvince" lang="zh_CN"></onekit-open-data>
+                <onekit-open-data Class="city" type="userCity" lang="zh_CN"></onekit-open-data>
               </onekit-view>
             </onekit-view>
           </onekit-view>

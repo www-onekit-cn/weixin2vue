@@ -1,11 +1,11 @@
-import Page from '@/onekit/Page.js';
-import PAGE_JSON from './web-view.json.js';
-import wx from '@/onekit/wx';const global = {};
-export default Page(PAGE_JSON,{
-  onShareAppMessage() {
-    return {
-      title: 'webview',
-      path: 'page/component/pages/web-view/web-view'
+import PAGE_JSON from './web-view.json';
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'webview',
+            path:'page/component/pages/web-view/web-view'
+        };
     }
-  },
-})
+});

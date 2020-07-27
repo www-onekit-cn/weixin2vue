@@ -1,7 +1,7 @@
 @import "../../../common/lib/weui.css";
 
 button{
-  margin-bottom: calc(var(--screen-width)*30/750);
+  margin-bottom: 15px;
 }
 button:last-child{
   margin-bottom: 0;
@@ -14,15 +14,15 @@ button:last-child{
   height: 150px;
 }
 .page-section-title{
-  margin-top: calc(var(--screen-width)*60/750);
+  margin-top: 30px;
   position: relative;
 }
 .info{
   position: absolute;
   right: 0;
   color: #353535;
-  font-size: calc(var(--screen-width)*30/750);
+  font-size: 15px;
 }
 .page-foot{
-  margin-top: calc(var(--screen-width)*50/750);
+  margin-top: 25px;
 }

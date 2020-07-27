@@ -1,5 +1,5 @@
 @import "../../../common/lib/weui.css";
 
 .checkbox{
-  margin-right: calc(var(--screen-width)*20/750);
+  margin-right: 10px;
 }

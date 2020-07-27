@@ -3,8 +3,8 @@
 <script src="./button.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
@@ -28,10 +28,16 @@
         <onekit-button type="default" plain="true">按钮</onekit-button>
         <onekit-button type="default" disabled="true" plain="true">按钮</onekit-button>
 
-        <onekit-button class="mini-btn" type="primary" size="mini">按钮</onekit-button>
-        <onekit-button class="mini-btn" type="default" size="mini">按钮</onekit-button>
-        <onekit-button class="mini-btn" type="warn" size="mini">按钮</onekit-button>
+        <onekit-button Class="mini-btn" type="primary" size="mini">按钮</onekit-button>
+        <onekit-button Class="mini-btn" type="default" size="mini">按钮</onekit-button>
+        <onekit-button Class="mini-btn" type="warn" size="mini">按钮</onekit-button>
       </onekit-view>
+      <onekit-button type="primary" open-type="contact" @contact="handleContact" :show-message-card="{{true}}" send-message-title="临时会话">打开客服会话</onekit-button>
+      <onekit-button type="primary" open-type="share">触发用户转发</onekit-button>
+      <onekit-button type="primary" open-type="getPhoneNumber" @getphonenumber="handleGetPhoneNumber">获取用户手机号</onekit-button>
+      <onekit-button type="primary" open-type="getUserInfo" lang="zh_CN" @getuserinfo="handleGetUserInfo">获取用户信息</onekit-button>
+      <onekit-button type="primary" open-type="openSetting" @opensetting="handleOpenSetting">打开设置授权页</onekit-button>
+      <onekit-button type="primary" open-type="feedback">打开意见反馈</onekit-button>
     </onekit-view>
   </onekit-view>
 

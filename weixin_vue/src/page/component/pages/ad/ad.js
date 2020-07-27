@@ -1,17 +1,15 @@
-import Page from '@/onekit/Page.js';
-import PAGE_JSON from './ad.json.js';
-import wx from '@/onekit/wx';const global = {};
-const info = wx.getSystemInfoSync()
-
-export default Page(PAGE_JSON,{
-  onShareAppMessage() {
-    return {
-      title: 'ad',
-      path: 'page/component/pages/ad/ad'
+import PAGE_JSON from './ad.json';
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+const info = wx.getSystemInfoSync();
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'ad',
+            path:'page/component/pages/ad/ad'
+        };
+    },
+    data:{
+        platform:info.platform
     }
-  },
-
-  data: {
-    platform: info.platform
-  }
-})
+});

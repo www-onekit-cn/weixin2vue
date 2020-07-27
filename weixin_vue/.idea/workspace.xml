@@ -1,7 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb8a428-b03a-4a1c-8af6-26f996146c2f" name="Default Changelist" comment="" />
+    <list default="true" id="eeb8a428-b03a-4a1c-8af6-26f996146c2f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_API_HL.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/image/icon_API_HL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/API/resources/kind/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/OneKit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/TheKit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Download.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Download.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/index.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/common/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/common/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/common/lib/weui.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/common/lib/weui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/index.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/ad/ad.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/ad/ad.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/ad/ad.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/ad/ad.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/ad/ad.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/ad/ad.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/button/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/button/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/button/button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/button/button.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/button/button.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/button/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/button/button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/doc-web-view/doc-web-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/doc-web-view/doc-web-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/doc-web-view/doc-web-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/doc-web-view/doc-web-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/form/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/form/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/form/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/form/form.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/form/form.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/form/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/form/form.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/icon/icon.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/icon/icon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/icon/icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/icon/icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/icon/icon.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/icon/icon.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/icon/icon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/icon/icon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/image/image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/image/image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/image/image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/image/image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/image/image.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/image/image.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/image/image.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/image/image.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/input/input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/input/input.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/input/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/input/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/input/input.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/input/input.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/input/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/input/input.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/label/label.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/label/label.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/label/label.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/label/label.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/label/label.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/label/label.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/label/label.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/label/label.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map/map.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map/map.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map/map.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map/map.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map/map.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map/map.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker/picker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker/picker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker/picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker/picker.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker/picker.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker/picker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker/picker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/progress/progress.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/progress/progress.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/progress/progress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/progress/progress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/progress/progress.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/progress/progress.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/progress/progress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/progress/progress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/radio/radio.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/radio/radio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/radio/radio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/radio/radio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/radio/radio.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/radio/radio.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/radio/radio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/radio/radio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/slider/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/slider/slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/slider/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/slider/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/slider/slider.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/slider/slider.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/slider/slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/slider/slider.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/switch/switch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/switch/switch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/switch/switch.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/switch/switch.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/switch/switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/switch/switch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/text/text.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/text/text.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/text/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/text/text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/text/text.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/text/text.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/text/text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/text/text.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/video.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/video.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/video.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/video.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/video.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/video.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/view/view.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/view/view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/view/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/view/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/view/view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/view/view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/view/view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/view/view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/web-view/web-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/web-view/web-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/web-view/web-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/web-view/web-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/workers/fib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/workers/fib/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +177,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -27,37 +188,25 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/page/componnet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/onekit" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/onekit" />
       <recent name="$PROJECT_DIR$/public/page/componnet" />
       <recent name="$PROJECT_DIR$/public/page/component" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/onekitwx" />
     </key>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -80,11 +229,12 @@
       <workItem from="1576552649065" duration="257000" />
       <workItem from="1576552918469" duration="4000" />
       <workItem from="1576552932556" duration="28813000" />
+      <workItem from="1595862361359" duration="938000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>

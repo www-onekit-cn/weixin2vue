@@ -3,7 +3,7 @@
 }
 
 .image {
-  margin-top: calc(var(--screen-width)*30/750);
-  width: calc(var(--screen-width)*490/750);
-  height: calc(var(--screen-width)*568/750);
+  margin-top: 15px;
+  width: 245px;
+  height: 284px;
 }

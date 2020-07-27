@@ -3,7 +3,7 @@
  * Modified by Wangjunjie on 2018/12/24.
  */
 import OnekitWX_AD from "../AD/AD"
-import OneKit from "../../OneKit"
+import OneKit from "../../TheKit"
 class DownloadTask {
 
 }

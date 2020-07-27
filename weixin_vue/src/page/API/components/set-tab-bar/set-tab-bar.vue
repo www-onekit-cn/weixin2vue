@@ -1,5 +1,10 @@
-
-
+<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped="scoped" src="./set-tab-bar.css"></style>
+<script src="./set-tab-bar.js"></script>
+<template>
+<onekit-page>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
@@ -30,3 +35,5 @@
 
   
 </onekit-view>
+</onekit-page>
+</template>

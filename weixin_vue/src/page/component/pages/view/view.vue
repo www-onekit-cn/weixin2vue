@@ -3,12 +3,11 @@
 <script src="./view.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
-
   <onekit-view class="page-body">
     <onekit-view class="page-section">
       <onekit-view class="page-section-title">
@@ -33,7 +32,6 @@
       </onekit-view>
     </onekit-view>
   </onekit-view>
-
   
 </onekit-view>
 </onekit-page>

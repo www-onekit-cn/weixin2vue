@@ -3,15 +3,24 @@
 <script src="./canvas.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
 
   <onekit-view class="page-body">
-    <onekit-view class="page-body-wrapper">
-      <onekit-canvas canvas-id="canvas" class="canvas"></onekit-canvas>
+    <onekit-block v-if="canIUse">
+      <onekit-view class="page-section">
+        <onekit-view class="page-section-spacing">
+          <onekit-view class="page-body-wrapper">
+            <onekit-canvas canvas-id="canvas" class="canvas"></onekit-canvas>
+          </onekit-view>
+        </onekit-view>
+      </onekit-view>
+    </onekit-block>
+    <onekit-view v-else style="margin: 15px; text-align:center">
+      微信版本过低，暂不支持本功能
     </onekit-view>
   </onekit-view>
 

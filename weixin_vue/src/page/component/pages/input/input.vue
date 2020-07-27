@@ -3,8 +3,8 @@
 <script src="./input.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
@@ -14,7 +14,7 @@
       <onekit-view class="weui-cells__title">可以自动聚焦的input</onekit-view>
       <onekit-view class="weui-cells weui-cells_after-title">
         <onekit-view class="weui-cell weui-cell_input">
-          <onekit-input class="weui-input" auto-focus="" placeholder="将会获取焦点"></onekit-input>
+          <onekit-input class="weui-input" auto-focus placeholder="将会获取焦点"></onekit-input>
         </onekit-view>
       </onekit-view>
     </onekit-view>
@@ -62,7 +62,7 @@
       <onekit-view class="weui-cells__title">密码输入的input</onekit-view>
       <onekit-view class="weui-cells weui-cells_after-title">
         <onekit-view class="weui-cell weui-cell_input">
-          <onekit-input class="weui-input" password="" type="text" placeholder="这是一个密码输入框"></onekit-input>
+          <onekit-input class="weui-input" password type="text" placeholder="这是一个密码输入框"></onekit-input>
         </onekit-view>
       </onekit-view>
     </onekit-view>

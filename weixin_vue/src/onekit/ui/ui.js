@@ -1,5 +1,5 @@
 
-  import OneKit from "../OneKit.js";
+  import OneKit from "../TheKit.js";
 export default {
   methods: {
     ui_click(e) {

@@ -1,11 +1,11 @@
 button{
-  margin-top: calc(var(--screen-width)*30/750);
-  margin-bottom: calc(var(--screen-width)*30/750);
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .button-sp-area{
   margin: 0 auto;
   width: 60%;
 }
 .mini-btn{
-  margin-right: calc(var(--screen-width)*10/750);
+  margin-right: 5px;
 }

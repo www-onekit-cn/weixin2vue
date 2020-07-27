@@ -3,16 +3,16 @@
 <script src="./map.js"></script>
 <template>
 <onekit-page>
-
-
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
 
   <onekit-view class="page-body">
-    <onekit-view class="page-section-title">当前组件使用了墨渊底图样式，查看<onekit-navigator class="navigator" url="/page/component/pages/map-styles/map-styles">更多样式</onekit-navigator>。</onekit-view>
+    <onekit-view class="page-section-title">当前组件使用了墨渊底图样式，查看<onekit-navigator class="navigator" url="/page/component/pages/map-styles/map-styles">查看更多</onekit-navigator>。</onekit-view>
     <onekit-view class="page-section page-section-gap">
-      <onekit-map :subkey="subKey" style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" :scale="18" :markers="markers" :covers="covers" :enable-3D="enable3d" :show-compass="showCompass" :enable-zoom="enableZoom" :enable-rotate="enableRotate" :enable-satellite="enableSatellite" :enable-traffic="enableTraffic" :enable-overlooking="enableOverlooking" :enable-scroll="enableScroll" :polygons="drawPolygon ? polygons : []">
+      <onekit-map :subkey="{{subKey}}" Style="width: 100%; height: 300px;" :latitude="{{latitude}}" :longitude="{{longitude}}" :scale="{{18}}" :markers="{{markers}}" :covers="{{covers}}" :enable-3D="{{enable3d}}" :show-compass="{{showCompass}}" :enable-zoom="{{enableZoom}}" :enable-rotate="{{enableRotate}}" :enable-satellite="{{enableSatellite}}" :enable-traffic="{{enableTraffic}}" :enable-overlooking="{{enableOverlooking}}" :enable-scroll="{{enableScroll}}" :polygons="{{drawPolygon ? polygons : []}}">
       </onekit-map>
     </onekit-view>
   </onekit-view>
