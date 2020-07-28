@@ -3,7 +3,9 @@
 <script src="./stick-top.js"></script>
 <template>
 <onekit-page>
-null
+<script>
+const test = require('./stick-top.wxs')</script>
+
 <onekit-scroll-view @scroll="theme=== 'dark' ? test.funcD :test.funcA" :style="['height:'+height+'px;']" scroll-y>
   <onekit-view class="page-banner">
     <onekit-image class="image" src="http://mmbiz.qpic.cn/mmbiz_jpg/TcDuyasB5T3Eg34AYwjMw7xbEK2n01ekiaicPiaMInEMTkOQtuv1yke5KziaYF4MLia4IAbxlm0m5NxkibicFg4IZ92EA/0?wx_fmt=jpeg" style="width:100%;height:200px" mode="aspectFit"></onekit-image>

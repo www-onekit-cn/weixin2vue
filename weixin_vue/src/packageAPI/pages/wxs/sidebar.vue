@@ -4,7 +4,9 @@
 <template>
 <onekit-page>
 
-null
+<script>
+const test = require('./sidebar.wxs')</script>
+
 <onekit-view class="page">
   <onekit-view class="page-bottom">
     <onekit-view class="page-content">

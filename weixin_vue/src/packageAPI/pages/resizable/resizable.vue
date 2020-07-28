@@ -5,7 +5,9 @@
 <onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
-null
+<script>
+const resizable = require('./resizable.wxs')</script>
+
 <onekit-view class="container">
   
 

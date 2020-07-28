@@ -5,7 +5,8 @@ import {isMobile} from './onekit/js/TheKit'
 import MainPage from './onekit/MainPage.vue'
 import SinglePage from './onekit/SinglePage.vue'
 import APP_JSON from './app.json.js'
-//import app from './app.js'
+import axios from 'axios'
+Vue.prototype.$axios= axios
 const screen_width = isMobile()?(($(window).width())-0):750;
 $("body").css('--screen-width', screen_width + "px");
 /////////////////////////////////////////////////////////

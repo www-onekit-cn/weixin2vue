@@ -1,4 +1,6 @@
 import OnekitWX_mDNS from "./mDNS"
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 class RequestTask {
   abort() {
     this.jqXHR.abort();
@@ -25,8 +27,9 @@ export default class OnekitWX_Request extends OnekitWX_mDNS{
     let fail = object.fail;
     let complete = object.complete;
     //////////////////////////
-    let result;
     let request = new RequestTask();
+    /*
+    let result;
     let jqXHR = $.ajax({
       url: url,
       data: data,
@@ -57,7 +60,7 @@ export default class OnekitWX_Request extends OnekitWX_mDNS{
           complete(result);
         }
       }
-    });
-    request.jqXHR = jqXHR;
+    });*/
+    request.jqXHR = {};
   }
 }

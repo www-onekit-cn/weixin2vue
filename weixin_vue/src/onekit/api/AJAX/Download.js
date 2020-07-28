@@ -20,7 +20,7 @@ export default class OnekitWX_Download extends OnekitWX_AD {
     let complete = object.complete;
     /////////////////////////////
     let result;
-    try {
+  /*
       $.ajax({
         url: url,
         headers: header,
@@ -55,6 +55,6 @@ export default class OnekitWX_Download extends OnekitWX_AD {
       if (complete) {
         complete(result);
       }
-    }
+    }*/
   }
 }

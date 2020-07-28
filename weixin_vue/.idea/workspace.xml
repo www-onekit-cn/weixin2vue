@@ -1,84 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb8a428-b03a-4a1c-8af6-26f996146c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/onekit/onekit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/onekit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.vue" afterDir="false" />
+    <list default="true" id="c796b1b3-fe1f-4a3d-9a13-c9725a4fcb5f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Download.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Download.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PackageJsonUpdateNotifier">
-    <dismissed value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="ProjectId" id="1UvJhpvEtXnfOHxzs6tK4eJajv3" />
+  <component name="ProjectId" id="1fIj09lP7iE5akScxgHDfyiHUnd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/onekit" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/onekit" />
-      <recent name="$PROJECT_DIR$/public/page/componnet" />
-      <recent name="$PROJECT_DIR$/public/page/component" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="eeb8a428-b03a-4a1c-8af6-26f996146c2f" name="Default Changelist" comment="" />
-      <created>1576231257572</created>
+      <changelist id="c796b1b3-fe1f-4a3d-9a13-c9725a4fcb5f" name="Default Changelist" comment="" />
+      <created>1595912274754</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1576231257572</updated>
-      <workItem from="1576231259574" duration="7019000" />
-      <workItem from="1576503233021" duration="2374000" />
-      <workItem from="1576509378915" duration="486000" />
-      <workItem from="1576509878582" duration="1902000" />
-      <workItem from="1576511832900" duration="6337000" />
-      <workItem from="1576549189020" duration="173000" />
-      <workItem from="1576549409207" duration="69000" />
-      <workItem from="1576549487396" duration="1463000" />
-      <workItem from="1576552649065" duration="257000" />
-      <workItem from="1576552918469" duration="4000" />
-      <workItem from="1576552932556" duration="28813000" />
-      <workItem from="1595862361359" duration="6040000" />
+      <updated>1595912274754</updated>
+      <workItem from="1595912278065" duration="350000" />
     </task>
     <servers />
   </component>
@@ -86,14 +63,12 @@
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="636" y="211" width="598" height="486" key="find.popup" timestamp="1595871041376">
+    <state x="483" y="117" key="SettingsEditor" timestamp="1595912330194">
       <screen x="0" y="23" width="1536" height="912" />
     </state>
-    <state x="636" y="211" width="598" height="486" key="find.popup/0.23.1536.912@0.23.1536.912" timestamp="1595871041376" />
+    <state x="483" y="117" key="SettingsEditor/0.23.1536.912@0.23.1536.912" timestamp="1595912330194" />
   </component>
 </project>

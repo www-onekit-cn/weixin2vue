@@ -20,7 +20,7 @@ export default class OnekitWX_Upload extends OnekitWX_UDPSocket{
     let fail = object.fail;
     let complete = object.complete;
     let result;
-    try {
+    /*
       let params = new FormData();
       formData.append('fileDian', filePath);
       $.ajax({
@@ -58,6 +58,6 @@ export default class OnekitWX_Upload extends OnekitWX_UDPSocket{
       if (complete) {
         complete(result);
       }
-    }
+    }*/
   }
 }

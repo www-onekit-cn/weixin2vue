@@ -1,4 +1,4 @@
-# weixin_web
+# myproject
 
 ## Project setup
 ```
