@@ -1,0 +1,61 @@
+<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped="scoped" src="./form.css"></style>
+<script src="./form.js"></script>
+<template>
+<onekit-page>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-form catchsubmit="formSubmit" catchreset="formReset">
+      <onekit-view class="page-section page-section-gap">
+        <onekit-view class="page-section-title">switch</onekit-view>
+        <onekit-switch name="switch"></onekit-switch>
+      </onekit-view>
+
+      <onekit-view class="page-section page-section-gap">
+        <onekit-view class="page-section-title">radio</onekit-view>
+        <onekit-radio-group name="radio">
+          <onekit-label><onekit-radio value="radio1"></onekit-radio>选项一</onekit-label>
+          <onekit-label><onekit-radio value="radio2"></onekit-radio>选项二</onekit-label>
+        </onekit-radio-group>
+      </onekit-view>
+
+      <onekit-view class="page-section page-section-gap">
+        <onekit-view class="page-section-title">checkbox</onekit-view>
+        <onekit-checkbox-group name="checkbox">
+          <onekit-label><onekit-checkbox value="checkbox1"></onekit-checkbox>选项一</onekit-label>
+          <onekit-label><onekit-checkbox value="checkbox2"></onekit-checkbox>选项二</onekit-label>
+        </onekit-checkbox-group>
+      </onekit-view>
+
+      <onekit-view class="page-section page-section-gap">
+        <onekit-view class="page-section-title">slider</onekit-view>
+        <onekit-slider value="50" name="slider" show-value></onekit-slider>
+      </onekit-view>
+
+      <onekit-view class="page-section">
+        <onekit-view class="page-section-title">input</onekit-view>
+        <onekit-view class="weui-cells weui-cells_after-title">
+          <onekit-view class="weui-cell weui-cell_input">
+            <onekit-view class="weui-cell__bd">
+              <onekit-input class="weui-input" name="input" placeholder="这是一个输入框"></onekit-input>
+            </onekit-view>
+          </onekit-view>
+        </onekit-view>
+      </onekit-view>
+
+      <onekit-view class="btn-area">
+        <onekit-button type="primary" formType="submit">Submit</onekit-button>
+        <onekit-button formType="reset">Reset</onekit-button>
+      </onekit-view>
+    </onekit-form>
+  </onekit-view>
+
+  
+</onekit-view>
+</onekit-page>
+</template>

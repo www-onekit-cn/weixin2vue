@@ -1,0 +1,97 @@
+body{background: #eee;margin:0;}
+
+onekit-page {overflow:scroll;margin:auto;max-width: 750px;}
+onekit-image{width:100%;height:200px;}
+onekit-button[disabled] { color:#fff8;}
+onekit-button[size=mini] { display: table;  }
+onekit-checkbox input{ transform:scale(1.5,1.5)  }
+onekit-radio input{ transform:scale(1.5,1.5)  }
+
+onekit-textarea {
+    height: 1.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: UICTFontTextStyleBody;
+    min-height: 1.4rem;
+}
+
+onekit-textarea input {
+    min-height: 1.4rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: none;
+    height: inherit;
+    width: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: UICTFontTextStyleBody;
+    color: inherit;
+    background: inherit;
+    display: inherit;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    vertical-align: middle;
+    text-align: inherit;
+    overflow: inherit;
+    white-space: inherit;
+    text-overflow: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+onekit-input[disabled] p {
+    color: grey;
+}
+
+onekit-textarea div {
+    min-height: 1.4rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-overflow: inherit;
+    border: none;
+    height: inherit;
+    width: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: UICTFontTextStyleBody;
+    color: inherit;
+    background: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-align: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+onekit-textarea div[type=password] p {
+    color: black;
+}
+
+onekit-textarea div p {
+    height: inherit;
+    min-height: 1.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-overflow: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+}
+@import "../app.css";

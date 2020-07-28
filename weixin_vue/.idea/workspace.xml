@@ -1,25 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c796b1b3-fe1f-4a3d-9a13-c9725a4fcb5f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+    <list default="true" id="3be65508-fc00-49e8-83bf-4d287033f7a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Download.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Download.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app-darkmode.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/demo.theme.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/green_tri.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon64_appwx_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_API.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_API_HL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_API_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_cloud_HL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_cloud_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_component.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_component_HL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_component_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/icon_foot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/plus_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/share.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/stop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/wechat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/wechatHL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/custom-service/custom-service.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/on-compass-change/compass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/resizable/resizable.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/sendMessage/sendMessage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/image/1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/image/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/image/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/image/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/image/btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/movable.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/nearby.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/sidebar.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageAPI/pages/wxs/stick-top.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/db_dump/perm1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/db_dump/perm2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/db_dump/perm3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/db_dump/perm4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/database_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/scf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/scf_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/storage_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/packageCloud/resources/kind/user_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/components/set-tab-bar/set-tab-bar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/pages/custom-service/custom-service.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/pages/on-compass-change/compass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/pages/sendMessage/sendMessage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/api.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/api_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/device.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/device_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/feedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/feedback_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/framework.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/framework_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/location_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/media.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/media_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/network.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/network_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/page.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/page_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/performance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/performance_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/storage_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/worker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/API/resources/kind/worker_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/db_dump/perm1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/db_dump/perm2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/db_dump/perm3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/db_dump/perm4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/database_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/scf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/scf_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/storage_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/cloud/resources/kind/user_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/pages/canvas-2d/car.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/pages/canvas/car.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/pages/official-account/official-account.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/pages/video/picture-in-picture.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/canvas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/canvas_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/content.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/content_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/daytime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/form.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/form_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/map.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/map_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/media.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/media_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/nav_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/night.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/obstacle-free.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/obstacle-free_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/open_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/kind/view_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/pic/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/pic/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/pic/custom_map_template_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/pic/custom_map_template_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/pic/custom_map_template_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/component/resources/pic/custom_map_template_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/WXML/WXML.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/WXML/WXML.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/onekit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/onekit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +143,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1fIj09lP7iE5akScxgHDfyiHUnd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1fImRI2abqF7BYDnhRz7szGnMO9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,33 +154,42 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="npm.npm serve">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:8080">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm serve" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c796b1b3-fe1f-4a3d-9a13-c9725a4fcb5f" name="Default Changelist" comment="" />
-      <created>1595912274754</created>
+      <changelist id="3be65508-fc00-49e8-83bf-4d287033f7a0" name="Default Changelist" comment="" />
+      <created>1595913970903</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595912274754</updated>
-      <workItem from="1595912278065" duration="350000" />
+      <updated>1595913970903</updated>
+      <workItem from="1595913972249" duration="295000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="483" y="117" key="SettingsEditor" timestamp="1595912330194">
-      <screen x="0" y="23" width="1536" height="912" />
-    </state>
-    <state x="483" y="117" key="SettingsEditor/0.23.1536.912@0.23.1536.912" timestamp="1595912330194" />
   </component>
 </project>
