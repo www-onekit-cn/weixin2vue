@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3be65508-fc00-49e8-83bf-4d287033f7a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/onekit/OneKit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/OneKit2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/OneKit2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/onekit.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595913970903</updated>
-      <workItem from="1595913972249" duration="715000" />
+      <workItem from="1595913972249" duration="785000" />
     </task>
     <servers />
   </component>
