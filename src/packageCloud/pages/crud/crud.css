@@ -1,0 +1,10 @@
+@import "../../../common/lib/weui.css";
+
+.page-body-info {
+  padding: calc(var(--screen-width)*30/750) 0 calc(var(--screen-width)*30/750) 0;
+}
+
+.page-body-text {
+  padding: 0 calc(var(--screen-width)*30/750);
+  text-align: center;
+}

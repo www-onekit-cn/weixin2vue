@@ -1,0 +1,4 @@
+export {
+	"navigationBarTitleText":"权限管理",
+	"usingComponents":{}
+}

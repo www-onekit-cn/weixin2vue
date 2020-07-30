@@ -1,0 +1,4 @@
+export {
+	"navigationBarTitleText":"navigator",
+	"usingComponents":{}
+}

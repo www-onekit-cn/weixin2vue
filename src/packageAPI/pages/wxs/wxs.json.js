@@ -1,0 +1,4 @@
+export {
+	"navigationBarTitleText":"WXS",
+	"usingComponents":{}
+}

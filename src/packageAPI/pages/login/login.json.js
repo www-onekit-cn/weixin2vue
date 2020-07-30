@@ -1,0 +1,4 @@
+export {
+	"navigationBarTitleText":"微信登录",
+	"usingComponents":{}
+}

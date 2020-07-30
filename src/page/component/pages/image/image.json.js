@@ -1,0 +1,4 @@
+export {
+	"navigationBarTitleText":"image",
+	"usingComponents":{}
+}
