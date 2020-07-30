@@ -8,4 +8,4 @@ const config = {
     demoImageFileId:'cloud://release-b86096.7265-release-b86096-1258211818/demo.jpg',
     demoVideoFileId:'cloud://release-b86096.7265-release-b86096/demo.mp4'
 };
-module.exports = config;
+export default config;

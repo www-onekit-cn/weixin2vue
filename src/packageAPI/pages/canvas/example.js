@@ -279,4 +279,4 @@ example.setMiterLimit = function(context){
         context.stroke();
     });
 };
-module.exports = example;
+export default example;

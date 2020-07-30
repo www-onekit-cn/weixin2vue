@@ -126,4 +126,4 @@ function raiseEvent(target,type,e) {
     type: type,
   }
 }
-export {tempFiles,storeFiles,getUrl,getExt,createUUID,createUUIDfileName,createTempPath,createStorePath,loadImage,raiseEvent}
+export default {tempFiles,storeFiles,getUrl,getExt,createUUID,createUUIDfileName,createTempPath,createStorePath,loadImage,raiseEvent}
