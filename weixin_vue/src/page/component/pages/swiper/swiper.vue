@@ -14,7 +14,7 @@
       <onekit-swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
         <onekit-block v-for="(item) in background">
           <onekit-swiper-item>
-            <onekit-view :class="['swiper-item '+item]"></onekit-view>
+            <onekit-view :class="'swiper-item '+item"></onekit-view>
           </onekit-swiper-item>
         </onekit-block>
       </onekit-swiper>

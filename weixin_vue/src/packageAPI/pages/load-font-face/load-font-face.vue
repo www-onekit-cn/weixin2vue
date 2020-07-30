@@ -11,7 +11,7 @@
 
   <onekit-view class="page-body">
     <onekit-view class="page-section">
-      <onekit-view :class="['page-body-info display-area '+ loaded ? 'font-loaded' : '' ]">
+      <onekit-view :class="'page-body-info display-area '+ loaded ? "font-loaded" : "" ">
         <onekit-text v-if="!loaded">Load {{ fontFamily }}</onekit-text>
         <onekit-text v-else>{{ fontFamily }} is loaded</onekit-text>
       </onekit-view>

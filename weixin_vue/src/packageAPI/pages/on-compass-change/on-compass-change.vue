@@ -14,7 +14,7 @@
       <onekit-text class="page-body-text">旋转手机即可获取方位信息</onekit-text>
       <onekit-view class="direction">
         <onekit-view class="bg-compass-line"></onekit-view>
-        <onekit-image class="bg-compass" src="compass.png" :style="['transform: rotate('+direction+'deg)']"></onekit-image>
+        <onekit-image class="bg-compass" src="compass.png" :style="'transform: rotate('+direction+'deg)'"></onekit-image>
         <onekit-view class="direction-value">
           <onekit-text>{{direction}}</onekit-text>
           <onekit-text class="direction-degree">o</onekit-text>

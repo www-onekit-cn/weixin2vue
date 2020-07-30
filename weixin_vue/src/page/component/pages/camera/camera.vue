@@ -19,7 +19,7 @@
           <onekit-view>
             帧高度：{{ frameHeight }}  帧宽度：{{ frameWidth }}
           </onekit-view>
-          <onekit-canvas id="webgl" type="webgl" canvas-id="canvas" :style="['width: '+width+'px; height: '+height+'px;']">
+          <onekit-canvas id="webgl" type="webgl" canvas-id="canvas" :style="'width: '+width+'px; height: '+height+'px;'">
           </onekit-canvas>
         </onekit-view>
       <onekit-view class="btn-area first-btn">

@@ -20,7 +20,7 @@
           <onekit-view class="progress-figure">
             <onekit-image v-if="theme === 'dark'" src="/page/API/resources/kind/device_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/API/resources/kind/device.png" class="progress-icon"></onekit-image>
-            <onekit-text :class="['progress-line lg '+clientLoading && 'pending'+' '+serverDataClient && 'success'+' '+serverDataClientError && 'fail']"></onekit-text>
+            <onekit-text :class="'progress-line lg '+clientLoading && "pending"+' '+serverDataClient && "success"+' '+serverDataClientError && "fail""></onekit-text>
             <onekit-image v-if="theme === 'dark'" src="/page/cloud/resources/kind/database_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/cloud/resources/kind/database.png" class="progress-icon"></onekit-image>
           </onekit-view>
@@ -48,10 +48,10 @@
           <onekit-view class="progress-figure">
             <onekit-image v-if="theme === 'dark'" src="/page/API/resources/kind/device_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/API/resources/kind/device.png" class="progress-icon"></onekit-image>
-            <onekit-text :class="['progress-line '+cloudLoading && 'pending'+' '+serverDataCloud && 'success'+' '+serverDataCloudError && 'fail']"></onekit-text>
+            <onekit-text :class="'progress-line '+cloudLoading && "pending"+' '+serverDataCloud && "success"+' '+serverDataCloudError && "fail""></onekit-text>
             <onekit-image v-if="theme === 'dark'" src="/page/cloud/resources/kind/scf_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/cloud/resources/kind/scf.png" class="progress-icon"></onekit-image>
-            <onekit-text :class="['progress-line '+cloudLoading && 'pending'+' '+serverDataCloud && 'success'+' '+serverDataCloudError && 'fail']"></onekit-text>
+            <onekit-text :class="'progress-line '+cloudLoading && "pending"+' '+serverDataCloud && "success"+' '+serverDataCloudError && "fail""></onekit-text>
             <onekit-image v-if="theme === 'dark'" src="/page/cloud/resources/kind/database_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/cloud/resources/kind/database.png" class="progress-icon"></onekit-image>
           </onekit-view>

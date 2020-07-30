@@ -31,11 +31,11 @@
             <onekit-view class="weui-tab">
               <onekit-view class="weui-navbar">
                 <onekit-block v-for="(item) in tabs[currentPermissionIndex]">
-                  <onekit-view :id="index" :class="['weui-navbar__item '+activeTabIndex === index ? 'weui-bar__item_on' : '']" @tap="onTabClick">
+                  <onekit-view :id="index" :class="'weui-navbar__item '+activeTabIndex === index ? "weui-bar__item_on" : """ @tap="onTabClick">
                     <onekit-view class="weui-navbar__title">{{item}}</onekit-view>
                   </onekit-view>
                 </onekit-block>
-                <onekit-view class="weui-navbar__slider" :style="['left: '+sliderLeft+'px; transform: translateX('+sliderOffset+'px); -webkit-transform: translateX('+sliderOffset+'px);']"></onekit-view>
+                <onekit-view class="weui-navbar__slider" :style="'left: '+sliderLeft+'px; transform: translateX('+sliderOffset+'px); -webkit-transform: translateX('+sliderOffset+'px);'"></onekit-view>
               </onekit-view>
               <onekit-view class="weui-tab__panel">
                 <onekit-view class="weui-tab__content" :hidden="activeTabIndex !== 0">
@@ -75,11 +75,11 @@
             <onekit-view class="weui-tab">
               <onekit-view class="weui-navbar">
                 <onekit-block v-for="(item) in tabs[currentPermissionIndex]">
-                  <onekit-view :id="index" :class="['weui-navbar__item '+activeTabIndex === index ? 'weui-bar__item_on' : '']" @tap="onTabClick">
+                  <onekit-view :id="index" :class="'weui-navbar__item '+activeTabIndex === index ? "weui-bar__item_on" : """ @tap="onTabClick">
                     <onekit-view class="weui-navbar__title">{{item}}</onekit-view>
                   </onekit-view>
                 </onekit-block>
-                <onekit-view class="weui-navbar__slider" :style="['left: '+sliderLeft+'px; transform: translateX('+sliderOffset+'px); -webkit-transform: translateX('+sliderOffset+'px);']"></onekit-view>
+                <onekit-view class="weui-navbar__slider" :style="'left: '+sliderLeft+'px; transform: translateX('+sliderOffset+'px); -webkit-transform: translateX('+sliderOffset+'px);'"></onekit-view>
               </onekit-view>
               <onekit-view class="weui-tab__panel">
                 <onekit-view class="weui-tab__content" :hidden="activeTabIndex !== 0">
