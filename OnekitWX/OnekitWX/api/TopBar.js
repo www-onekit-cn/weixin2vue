@@ -1,3 +1,0 @@
-class OnekitWX_TopBar{
-
-}

@@ -1,4 +1,0 @@
-export {
-	"navigationBarTitleText":"发起支付",
-	"usingComponents":{}
-}

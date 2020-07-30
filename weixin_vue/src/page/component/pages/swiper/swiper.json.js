@@ -1,4 +1,0 @@
-export {
-	"navigationBarTitleText":"swiper",
-	"usingComponents":{}
-}

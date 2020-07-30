@@ -1,4 +1,0 @@
-export {
-	"navigationBarTitleText":"模态弹窗",
-	"usingComponents":{}
-}

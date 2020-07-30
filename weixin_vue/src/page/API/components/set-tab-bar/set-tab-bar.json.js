@@ -1,4 +1,0 @@
-export {
-	"component":true,
-	"usingComponents":{}
-}

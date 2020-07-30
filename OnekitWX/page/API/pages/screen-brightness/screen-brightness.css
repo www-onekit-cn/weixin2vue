@@ -1,7 +1,0 @@
-.page-body-text-screen-brightness {
-  font-size: calc(var(--screen-width)*80/750) ;
-  font-family: -apple-system-font, Helvetica Neue,Helvetica,sans-serif ;
-}
-.page-section-gap {
-  padding: calc(var(--screen-width)*30/750) ;
-}

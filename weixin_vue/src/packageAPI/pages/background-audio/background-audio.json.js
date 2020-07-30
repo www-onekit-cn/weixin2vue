@@ -1,4 +1,0 @@
-export {
-	"navigationBarTitleText":"背景音频",
-	"usingComponents":{}
-}

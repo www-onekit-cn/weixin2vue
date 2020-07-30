@@ -1,4 +1,0 @@
-export {
-	"navigationBarTitleText":"text",
-	"usingComponents":{}
-}

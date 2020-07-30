@@ -1,4 +1,0 @@
-export {
-	"navigationBarTitleText":"UDPSocket",
-	"usingComponents":{}
-}

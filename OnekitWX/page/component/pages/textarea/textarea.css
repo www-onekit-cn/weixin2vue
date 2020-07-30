@@ -1,8 +1,0 @@
-.wx-textarea {
-  width: calc(var(--screen-width)*700/750) ;
-  padding: calc(var(--screen-width)*25/750) 0 ;
-}
-.textarea-wrp {
-  padding: 0  calc(var(--screen-width)*25/750) ;
-  background-color: #fff ;
-}
