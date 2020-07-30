@@ -1,5 +1,5 @@
 import OnekitWX_Contact from "./Contact"
-export default class OnekitWX_DeviceMotion extends OnekitWX_Contact{
+export class OnekitWX_DeviceMotion extends OnekitWX_Contact{
   static _callback(event) {
     if (DeviceMotion.callback) {
       let deviceMotion = event;

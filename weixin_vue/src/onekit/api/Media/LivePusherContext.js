@@ -1,3 +1,3 @@
 
-export default class LivePusherContext {
+export class LivePusherContext {
 }

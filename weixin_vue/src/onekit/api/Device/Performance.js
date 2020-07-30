@@ -1,5 +1,5 @@
 import OnekitWX_NFC from "./NFC"
-export default class OnekitWX_Performance extends OnekitWX_NFC{
+export class OnekitWX_Performance extends OnekitWX_NFC{
   static onMemoryWarning(callback) {
     var _callback = callback;
     //////////////////////////////

@@ -1,4 +1,4 @@
-export default {
+export {
 	"navigationBarTitleText":"监听罗盘数据",
 	"usingComponents":{}
 }

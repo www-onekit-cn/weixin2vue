@@ -1,4 +1,4 @@
-export default {
+export {
 	"navigationBarTitleText":"stick-top",
 	"usingComponents":{}
 }

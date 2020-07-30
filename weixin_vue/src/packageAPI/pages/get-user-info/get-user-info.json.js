@@ -1,4 +1,4 @@
-export default {
+export {
 	"navigationBarTitleText":"获取用户信息",
 	"usingComponents":{}
 }

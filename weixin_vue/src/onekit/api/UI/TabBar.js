@@ -1,5 +1,5 @@
 import OnekitWX_SetTop from "./SetTop"
-export default class OnekitWX_TabBar extends OnekitWX_SetTop{
+export class OnekitWX_TabBar extends OnekitWX_SetTop{
 	static setTabBarBadge(){}
 
 	static removeTabBarBadge(){}

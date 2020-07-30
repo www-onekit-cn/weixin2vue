@@ -3,6 +3,451 @@
   <component name="ChangeListManager">
     <list default="true" id="3be65508-fc00-49e8-83bf-4d287033f7a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app-darkmode.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/app.5f112f4d.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0e349a98.2605fe7b.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-330c3f22.c402269a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-bba68bf6.1dc9715f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-d26ea8a8.9b90a726.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-f0b71730.436cdf2f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo.theme.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/green_tri.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon64_appwx_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_API.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_API_HL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_API_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_cloud_HL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_cloud_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_component.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_component_HL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_component_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/icon_foot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/plus_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/share.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/stop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/wechat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image/wechatHL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c73ea.a43b6a31.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c73ea.a43b6a31.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c87ec.82b9d6ad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c87ec.82b9d6ad.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e454a.737604f8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e454a.737604f8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d230fd9.1fd5d723.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d230fd9.1fd5d723.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3bc32543.1412629b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3bc32543.1412629b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-41f65614.fae684dd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-41f65614.fae684dd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5961cec8.8b5efcb6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5961cec8.8b5efcb6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5d64ce35.6bd9fd9a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5d64ce35.6bd9fd9a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-bba68bf6.5e56c8d9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-bba68bf6.5e56c8d9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.2f45e547.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.2f45e547.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/custom-service/custom-service.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/on-compass-change/compass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/resizable/resizable.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/sendMessage/sendMessage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/image/1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/image/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/image/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/image/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/image/btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/movable.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/nearby.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/sidebar.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageAPI/pages/wxs/stick-top.wxs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/db_dump/perm1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/db_dump/perm2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/db_dump/perm3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/db_dump/perm4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/database_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/scf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/scf_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/storage_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/packageCloud/resources/kind/user_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/api.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/api_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/device.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/device_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/feedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/feedback_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/framework.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/framework_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/location_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/media.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/media_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/network.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/network_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/page.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/page_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/performance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/performance_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/storage_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/worker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/API/resources/kind/worker_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/db_dump/perm1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/db_dump/perm2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/db_dump/perm3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/db_dump/perm4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/database_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/scf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/scf_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/storage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/storage_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/cloud/resources/kind/user_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/pages/canvas-2d/car.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/pages/canvas/car.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/pages/official-account/official-account.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/pages/video/picture-in-picture.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/canvas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/canvas_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/content.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/content_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/daytime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/form.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/form_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/map.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/map_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/media.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/media_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/nav_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/night.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/obstacle-free.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/obstacle-free_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/open_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/kind/view_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/pic/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/pic/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/pic/custom_map_template_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/pic/custom_map_template_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/pic/custom_map_template_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/page/component/resources/pic/custom_map_template_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/MainPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/MainPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/SinglePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/SinglePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/TheKit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/TheKit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AD/AD.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AD/AD.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AD/InterstitialAd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AD/InterstitialAd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AD/RewardedVideoAd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AD/RewardedVideoAd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Download.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Download.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/SocketTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/SocketTask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/UDPSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/UDPSocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/UDPSocket_.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/UDPSocket_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/Upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/Upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/WebSocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/AJAX/mDNS.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/AJAX/mDNS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Basic/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Basic/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Basic/Basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Basic/Basic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Basic/Debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Basic/Debug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Basic/Log.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Basic/Log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Basic/LogManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Basic/LogManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Basic/System.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Basic/System.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Basic/Update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Basic/Update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Basic/UpdateManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Basic/UpdateManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Canvas/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Canvas/Canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Canvas/CanvasContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Canvas/CanvasContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Canvas/CanvasGradient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Canvas/CanvasGradient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Canvas/Color.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Canvas/Color.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Accelerometer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Accelerometer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/BLE.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/BLE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/BatteryInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/BatteryInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Bluetooth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Bluetooth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/CaptureScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/CaptureScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Clipboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Clipboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Compass.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Compass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/DeviceMotion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/DeviceMotion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Gyroscope.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Gyroscope.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/MakePhone.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/MakePhone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/MemoryWarning.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/MemoryWarning.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/NFC.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/NFC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Network.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Network.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Performance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Performance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Phone.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Phone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/PhoneContact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/PhoneContact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/ScanCode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/ScanCode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/Vibrate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/Vibrate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/WiFi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/WiFi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Device/iBeacon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Device/iBeacon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/ExtConfig/ExtConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/ExtConfig/ExtConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/FSO/FSO.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/FSO/FSO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/FSO/FileSystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/FSO/FileSystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/FSO/FileSystemManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/FSO/FileSystemManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Location/Location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Location/Location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/Audio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/Audio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/AudioContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/AudioContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/BackgroundAudio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/BackgroundAudio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/Camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/Camera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/CameraContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/CameraContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/EditorText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/EditorText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/Image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/InnerAudio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/InnerAudio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/InnerAudioContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/InnerAudioContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/LivePlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/LivePlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/LivePlayerContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/LivePlayerContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/LivePusher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/LivePusher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/LivePusherContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/LivePusherContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/Map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/MapContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/MapContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/MediaContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/MediaContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/Record.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/Record.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/RecorderManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/RecorderManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/Screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/Screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/Video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/VideoContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/VideoContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Media/Voice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Media/Voice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/AccountInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/AccountInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Address.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Address.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Analytics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Authorize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Authorize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Invoice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Invoice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/MiniProgram.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/MiniProgram.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Monitor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Monitor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/Setting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/SoterAuthentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/SoterAuthentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/UserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/OpenInterface/WeRun.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/OpenInterface/WeRun.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Router/EventChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Router/EventChannel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Router/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Router/Router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Share/Share.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Share/Share.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Storage/BackgroundFetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Storage/BackgroundFetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Storage/Storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Storage/Storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Animation_.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Animation_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Background.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/BackgroundAudio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/BackgroundAudio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Font.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Font.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Gradient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Gradient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Interaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Interaction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Keyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Keyboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/PageScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/PageScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/PullDownRefresh.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/PullDownRefresh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/SetTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/SetTop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/TabBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/TabBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/TopBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/TopBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/UI/Window.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/UI/Window.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/WXML/WXML.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/WXML/WXML.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/api/Worker/Worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/api/Worker/Worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/js/Uri.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/js/Uri.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/onekit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/onekit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/ad-custom.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/ad-custom.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/ad.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/ad.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/audio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/audio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/camera.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/camera.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/canvas.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/checkbox-group.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/checkbox-group.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/checkbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/checkbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/cover-image.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/cover-image.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/cover-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/cover-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/editor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/editor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/form.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/functional-page-navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/functional-page-navigator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/icon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/icon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/image.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/image.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/input.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/label.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/label.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/live-player.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/live-player.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/live-pusher.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/live-pusher.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/map.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/map.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/match-media.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/match-media.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/movable-area.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/movable-area.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/movable-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/movable-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/navigation-bar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/navigation-bar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/navigator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/official-account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/official-account.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/open-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/open-data.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/page-meta.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/page-meta.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/page.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/picker-view-column.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/picker-view-column.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/picker-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/picker-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/picker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/picker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/progress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/progress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/radio-group.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/radio-group.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/radio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/radio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/rich-text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/rich-text.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/scroll-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/scroll-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/slider.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/swiper-item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/swiper-item.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/swiper.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/swiper.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/switch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/text.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/textarea.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/textarea.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/video.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/video.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/voip-room.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/voip-room.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/ui/web-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/ui/web-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/wx.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/wx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/capture-screen/capture-screen.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/capture-screen/capture-screen.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-address/choose-address.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-address/choose-address.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-invoice-title/choose-invoice-title.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-invoice-title/choose-invoice-title.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-location/choose-location.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-location/choose-location.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/clipboard-data/clipboard-data.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/clipboard-data/clipboard-data.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/custom-message/custom-message.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/custom-message/custom-message.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/doc-web-view/doc-web-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/doc-web-view/doc-web-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/download-file/download-file.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/download-file/download-file.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/file/file.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/file/file.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-background-fetch-data/get-background-fetch-data.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-background-fetch-data/get-background-fetch-data.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-background-prefetch-data/get-background-prefetch-data.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-background-prefetch-data/get-background-prefetch-data.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-battery-info/get-battery-info.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-battery-info/get-battery-info.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-location/get-location.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-location/get-location.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-network-type/get-network-type.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-network-type/get-network-type.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-performance/get-performance.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-performance/get-performance.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-system-info/get-system-info.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-system-info/get-system-info.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-user-info/get-user-info.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-user-info/get-user-info.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-wxml-node-info/get-wxml-node-info.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-wxml-node-info/get-wxml-node-info.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/ibeacon/ibeacon.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/ibeacon/ibeacon.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/image/image.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/image/image.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/intersection-observer/intersection-observer.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/intersection-observer/intersection-observer.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/login/login.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/login/login.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/make-phone-call/make-phone-call.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/make-phone-call/make-phone-call.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/mdns/mdns.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/mdns/mdns.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/media-container/media-container.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/media-container/media-container.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/modal/modal.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/modal/modal.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/navigation-bar-loading/navigation-bar-loading.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/navigation-bar-loading/navigation-bar-loading.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/navigator/navigator.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/navigator/navigator.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-accelerometer-change/on-accelerometer-change.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-accelerometer-change/on-accelerometer-change.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-network-status-change/on-network-status-change.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-network-status-change/on-network-status-change.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/open-location/open-location.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/open-location/open-location.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/page-scroll/page-scroll.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/page-scroll/page-scroll.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/pull-down-refresh/pull-down-refresh.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/pull-down-refresh/pull-down-refresh.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/request-payment/request-payment.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/request-payment/request-payment.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/request/request.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/request/request.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/scan-code/scan-code.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/scan-code/scan-code.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/screen-brightness/screen-brightness.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/screen-brightness/screen-brightness.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/setting/setting.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/setting/setting.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/share-button/share-button.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/share-button/share-button.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/share/share.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/share/share.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/soter-authentication/soter-authentication.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/soter-authentication/soter-authentication.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/storage/storage.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/storage/storage.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/subscribe-message/subscribe-message.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/subscribe-message/subscribe-message.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/template-message/template-message.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/template-message/template-message.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/toast/toast.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/toast/toast.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/two-way-bindings/two-way-bindings.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/two-way-bindings/two-way-bindings.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/udp-socket/udp-socket.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/udp-socket/udp-socket.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/upload-file/upload-file.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/upload-file/upload-file.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/vibrate/vibrate.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/vibrate/vibrate.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/video/video.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/video/video.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/voice/voice.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/voice/voice.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/web-socket/web-socket.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/web-socket/web-socket.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/worker/worker.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/worker/worker.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/wxs.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/wxs.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/cloud-file-component/cloud-file-component.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/cloud-file-component/cloud-file-component.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/crud-detail/crud-detail.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/crud-detail/crud-detail.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/crud/crud.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/crud/crud.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/delete-file/delete-file.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/delete-file/delete-file.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/doc-web-view/doc-web-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/doc-web-view/doc-web-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/download-file/download-file.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/download-file/download-file.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/get-temp-file-url/get-temp-file-url.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/get-temp-file-url/get-temp-file-url.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/get-wx-context/get-wx-context.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/get-wx-context/get-wx-context.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-storage/scf-storage.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-storage/scf-storage.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/server-date/server-date.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/server-date/server-date.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/upload-file/upload-file.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/upload-file/upload-file.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/user-authentication/user-authentication.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/user-authentication/user-authentication.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/index.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/index.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/ad/ad.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/ad/ad.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/aria-component/aria-component.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/aria-component/aria-component.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/button/button.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/button/button.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas-2d/canvas-2d.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas-2d/canvas-2d.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/doc-web-view/doc-web-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/doc-web-view/doc-web-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/form/form.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/form/form.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/icon/icon.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/icon/icon.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/image/image.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/image/image.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/input/input.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/input/input.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/label/label.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/label/label.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/live-player/live-player.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/live-player/live-player.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/live-pusher/live-pusher.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/live-pusher/live-pusher.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map/map.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map/map.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker/picker.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker/picker.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/progress/progress.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/progress/progress.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/radio/radio.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/radio/radio.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/slider/slider.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/slider/slider.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/switch/switch.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/switch/switch.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/text/text.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/text/text.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/video.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/video.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/view/view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/view/view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/web-view/web-view.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/web-view/web-view.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/webgl/webgl.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/webgl/webgl.json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +505,7 @@
       <workItem from="1595917614378" duration="855000" />
       <workItem from="1596102743413" duration="3176000" />
       <workItem from="1596111653610" duration="2820000" />
-      <workItem from="1596121472594" duration="380000" />
+      <workItem from="1596121472594" duration="1887000" />
     </task>
     <servers />
   </component>
@@ -84,9 +529,9 @@
       <screen x="0" y="23" width="1536" height="912" />
     </state>
     <state width="1167" height="388" key="GridCell.Tab.0.right/0.23.1536.912@0.23.1536.912" timestamp="1596121469266" />
-    <state x="40" y="397" width="604" height="538" key="find.popup" timestamp="1596114861206">
+    <state x="39" y="167" width="622" height="538" key="find.popup" timestamp="1596122690211">
       <screen x="0" y="23" width="1536" height="912" />
     </state>
-    <state x="40" y="397" width="604" height="538" key="find.popup/0.23.1536.912@0.23.1536.912" timestamp="1596114861206" />
+    <state x="39" y="167" width="622" height="538" key="find.popup/0.23.1536.912@0.23.1536.912" timestamp="1596122690211" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-export default {
+export {
 	"navigationBarTitleText":"屏幕亮度",
 	"usingComponents":{}
 }

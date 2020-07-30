@@ -1,5 +1,5 @@
 import OnekitWX_Image from "./Image"
-export default class OnekitWX_InnerAudio extends OnekitWX_Image{
+export class OnekitWX_InnerAudio extends OnekitWX_Image{
 
 
   // InnerAudioContext

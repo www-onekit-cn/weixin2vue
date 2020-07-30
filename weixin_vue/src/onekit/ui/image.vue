@@ -5,7 +5,7 @@
 </template>
 <script>
   import ui from "./ui.js"
-  export default {
+  export {
     mixins: [ui],
     props: {src: String}
   }

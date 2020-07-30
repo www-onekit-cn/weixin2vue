@@ -3,7 +3,7 @@
  * Modified by Wangjunjie on 2018/12/25.
  */
 import OnekitWX_EditorText from "./EditorText"
-export default class OnekitWX_Image extends OnekitWX_EditorText{
+export class OnekitWX_Image extends OnekitWX_EditorText{
   // HACK: 这个 api 的名字、参数和 JS-SDK 一样，可以在用户代码中直接调用 JS-SDK 来实现
   static chooseImage(object) {}
 

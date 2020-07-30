@@ -1,4 +1,4 @@
-export default {
+export {
 	"navigationBarTitleText":"live-player",
 	"usingComponents":{}
 }

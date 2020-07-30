@@ -1,4 +1,4 @@
-export default class CanvasContext {
+export class CanvasContext {
     static createContext() {
         let eCanvas = document.getElementsByTagName("canvas")[0];
         return new OnekitWX_CanvasContext(eCanvas);

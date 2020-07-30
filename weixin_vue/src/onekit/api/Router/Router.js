@@ -1,6 +1,6 @@
 import OnekitWX_WeRun from "../OpenInterface/WeRun"
 import EventChannel from "./EventChannel"
-export default class OnekitWX_Router extends OnekitWX_WeRun{
+export class OnekitWX_Router extends OnekitWX_WeRun{
   static switchTab(){}
   static reLaunch(){
   }

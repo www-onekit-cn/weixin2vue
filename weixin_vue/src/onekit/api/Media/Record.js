@@ -2,7 +2,7 @@
  * Created by Wangjunjie on 2018/12/25.
  */
 import OnekitWX_MediaContainer from "./MediaContainer"
-export default class OnekitWX_Record extends OnekitWX_MediaContainer{
+export class OnekitWX_Record extends OnekitWX_MediaContainer{
   static startRecord(object) {
     let success = object.success;
     let fail = object.success;

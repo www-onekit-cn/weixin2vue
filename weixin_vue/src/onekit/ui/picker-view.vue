@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    export default {
+    export {
         name: "onekit-picker-view"
     }
 </script>

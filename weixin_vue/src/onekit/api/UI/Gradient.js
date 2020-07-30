@@ -1,5 +1,5 @@
 
-export default   class Gradient{
+export   class Gradient{
       constructor() {
           this.colorStops = [];
       }

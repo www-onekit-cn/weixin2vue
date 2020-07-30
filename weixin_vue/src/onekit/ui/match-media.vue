@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    export default {
+    export {
         name: "match-media"
     }
 </script>

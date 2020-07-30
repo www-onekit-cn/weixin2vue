@@ -83,10 +83,10 @@ function compareVersion(v1,v2){
     };
     return 0;
 };
-module.exports = {
-    formatTime:formatTime,
-    formatLocation:formatLocation,
-    fib:fib,
-    formatDateTime:formatDateTime,
-    compareVersion:compareVersion
+export {
+    formatTime,
+    formatLocation,
+    fib,
+    formatDateTime,
+    compareVersion
 };

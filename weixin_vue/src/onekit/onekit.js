@@ -241,4 +241,4 @@ function OnekitComponent(data){
   }
   return result;
 }
-module.exports = {OnekitApp,OnekitPage,OnekitComponent};
+export {OnekitApp,OnekitPage,OnekitComponent};

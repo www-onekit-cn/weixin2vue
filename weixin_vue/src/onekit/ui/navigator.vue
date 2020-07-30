@@ -3,7 +3,7 @@
 </template>
 <script>
   import ui from "./ui.js"
-  export default{
+  export{
     mixins:[ui],
     props:{
       target:{type:String,default:"self"},

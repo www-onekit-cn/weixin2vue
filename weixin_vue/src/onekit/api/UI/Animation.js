@@ -1,5 +1,5 @@
 
-export default class Animation{
+export class Animation{
      constructor() {
          this._animations = [];
          this._buffer = [];

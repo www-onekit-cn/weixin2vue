@@ -2,7 +2,7 @@
  * Created by Wangjunjie on 2018/12/24.
  */
 import OnekitWX_App from "./App"
-export default class OnekitWX_Basic extends OnekitWX_App {
+export class OnekitWX_Basic extends OnekitWX_App {
   static canIUse(apiId) {
     return true;
     /*

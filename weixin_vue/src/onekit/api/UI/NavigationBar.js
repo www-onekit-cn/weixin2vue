@@ -1,5 +1,5 @@
 import OnekitWX_Menu from "./Menu"
-export default class OnekitWX_NavigationBar extends OnekitWX_Menu{
+export class OnekitWX_NavigationBar extends OnekitWX_Menu{
 	static setNavigationBarTitle(object){
 		$("#onekitwx_navigationBar_title").html("xxx");
 		if(object.success)object.success();

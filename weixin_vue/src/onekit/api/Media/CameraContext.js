@@ -1,4 +1,4 @@
 
-export default class CameraContext{
+export class CameraContext{
 
 }

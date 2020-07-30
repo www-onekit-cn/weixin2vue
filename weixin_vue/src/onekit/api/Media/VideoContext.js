@@ -1,4 +1,4 @@
-export default class VideoContext {
+export class VideoContext {
 
   // o.play = function() {
   //   vc.play();

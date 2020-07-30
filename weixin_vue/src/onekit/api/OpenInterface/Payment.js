@@ -1,5 +1,5 @@
 import OnekitWX_Monitor from "./Monitor"
-export default class OnekitWX_Payment extends OnekitWX_Monitor{
+export class OnekitWX_Payment extends OnekitWX_Monitor{
   static requestPayment(object) {
     // 小程序参数
     let timestamp = object.timestamp; // 时间戳，从 1970 年 1 月 1 日 00:00:00 至今的秒数，即当前的时间

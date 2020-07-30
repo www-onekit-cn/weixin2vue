@@ -1,4 +1,4 @@
-export default class CanvasGradient {
+export class CanvasGradient {
   addColorStop(stop,color){
     
   }

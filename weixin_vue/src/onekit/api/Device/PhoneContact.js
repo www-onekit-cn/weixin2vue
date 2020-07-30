@@ -3,7 +3,7 @@
  * Modified by Wangjunjie on 2018/12/24.
  */
 import OnekitWX_Phone from "./Phone"
-export default class OnekitWX_PhoneContact extends OnekitWX_Phone{
+export class OnekitWX_PhoneContact extends OnekitWX_Phone{
   static makePhoneCall(object) {
     let phoneNumber = object.phoneNumber;
     let success = object.success;

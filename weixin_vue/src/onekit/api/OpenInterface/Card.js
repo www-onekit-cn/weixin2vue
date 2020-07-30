@@ -1,5 +1,5 @@
 import OnekitWX_Authorize from "./Authorize"
-export default class OnekitWX_Card extends OnekitWX_Authorize{
+export class OnekitWX_Card extends OnekitWX_Authorize{
   static addCard(object) {
     let cardList = object.cardList;
     let success = object.success || '';

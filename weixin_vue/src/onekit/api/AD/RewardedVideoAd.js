@@ -1,4 +1,4 @@
-export default class RewardedVideoAd {
+export class RewardedVideoAd {
   load(){}
   //加载激励视频广告。
 

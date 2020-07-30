@@ -1,6 +1,6 @@
 // INFO: 以下方法在iPhone下不能实现震动
 import OnekitWX_Screen from "./Screen"
-export default class OnekitWX_Vibrate extends OnekitWX_Screen{
+export class OnekitWX_Vibrate extends OnekitWX_Screen{
   static vibrateLong(object) {
     let success = object.success;
     let fail = object.fail;

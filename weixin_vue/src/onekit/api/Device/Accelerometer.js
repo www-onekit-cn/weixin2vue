@@ -3,7 +3,7 @@
  * Modified by Wangjunjie on 2018/12/25.
  */
 import OnekitWX_Color from "../Canvas/Color"
-export default class OnekitWX_Accelerometer extends OnekitWX_Color{
+export class OnekitWX_Accelerometer extends OnekitWX_Color{
   static onAccelerometerChange(callback) {
     Accelerometer.callback = callback;
   }

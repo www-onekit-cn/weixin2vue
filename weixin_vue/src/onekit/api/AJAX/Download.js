@@ -8,7 +8,7 @@ class DownloadTask {
 
 }
 
-export default class OnekitWX_Download extends OnekitWX_AD {
+export class OnekitWX_Download extends OnekitWX_AD {
 
   // TODO: 未改未测试
   static downloadFile(object) {

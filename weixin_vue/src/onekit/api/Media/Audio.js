@@ -1,5 +1,5 @@
 import OnekitWX_Location from "../Location/Location"
-export default class OnekitWX_Audio extends OnekitWX_Location{
+export class OnekitWX_Audio extends OnekitWX_Location{
   static setInnerAudioOption(){}
   static getAvailableAudioSources(){}
   static setInnerAudioOption(){}

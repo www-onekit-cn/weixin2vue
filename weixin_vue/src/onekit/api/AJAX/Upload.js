@@ -6,7 +6,7 @@ import OnekitWX_UDPSocket from "./UDPSocket_"
  class UploadTask {
 }
 
-export default class OnekitWX_Upload extends OnekitWX_UDPSocket{
+export class OnekitWX_Upload extends OnekitWX_UDPSocket{
 
 
   // TODO: 未改未测试

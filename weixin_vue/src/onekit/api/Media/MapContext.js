@@ -1,4 +1,4 @@
 
-export default class MapContext{
+export class MapContext{
 
 }

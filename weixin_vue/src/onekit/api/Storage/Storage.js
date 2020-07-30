@@ -3,7 +3,7 @@
  * Modified by Wangjunjie on 2018/12/24.
  */
 import OnekitWX_BackgroundFetch from "./BackgroundFetch"
-export default class OnekitWX_Storage extends OnekitWX_BackgroundFetch{
+export class OnekitWX_Storage extends OnekitWX_BackgroundFetch{
   // INFO: 已改
   static setStorageSync(key,value) {
     try {

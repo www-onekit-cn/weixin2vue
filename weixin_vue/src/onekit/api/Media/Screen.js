@@ -1,6 +1,6 @@
 import  html2canvas from  "html2canvas"
 import OnekitWX_Record from "./Record"
-export default class OnekitWX_Screen extends OnekitWX_Record{
+export class OnekitWX_Screen extends OnekitWX_Record{
   static setScreenBrightness() {
     // 设置屏幕亮度
     plus.screen.setBrightness(0.5);

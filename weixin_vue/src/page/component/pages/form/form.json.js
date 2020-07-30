@@ -1,4 +1,4 @@
-export default {
+export {
 	"navigationBarTitleText":"form",
 	"usingComponents":{}
 }

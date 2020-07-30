@@ -1,5 +1,5 @@
 import OnekitWX_Download from "./Download"
-export default class OnekitWX_mDNS extends OnekitWX_Download{
+export class OnekitWX_mDNS extends OnekitWX_Download{
   static offLocalServiceResolveFail() {
     console.error('HTML5 is not support mDNS!!');
   }

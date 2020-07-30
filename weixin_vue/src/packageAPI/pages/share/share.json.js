@@ -1,4 +1,4 @@
-export default {
+export {
 	"navigationBarTitleText":"转发",
 	"usingComponents":{}
 }

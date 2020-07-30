@@ -1,4 +1,4 @@
-export default {
+export {
 	"navigationBarTitleText":"操作菜单",
 	"usingComponents":{}
 }

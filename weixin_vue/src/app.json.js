@@ -1,4 +1,4 @@
-export default {
+export {
 	"pages":[
 		"page/component/index",
 		"page/component/pages/view/view",

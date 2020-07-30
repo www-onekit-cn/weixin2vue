@@ -1,4 +1,4 @@
-export default class LogManager {
+export class LogManager {
   debug() {
 
   }
