@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./screen-brightness.css"></style>
 <script src="./screen-brightness.js"></script>
 <template>

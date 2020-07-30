@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./ibeacon.css"></style>
 <script src="./ibeacon.js"></script>
 <template>

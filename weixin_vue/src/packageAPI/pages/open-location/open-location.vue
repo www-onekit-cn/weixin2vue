@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./open-location.css"></style>
 <script src="./open-location.js"></script>
 <template>

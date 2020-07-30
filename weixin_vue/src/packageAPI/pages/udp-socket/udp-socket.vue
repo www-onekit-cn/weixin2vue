@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./udp-socket.css"></style>
 <script src="./udp-socket.js"></script>
 <template>

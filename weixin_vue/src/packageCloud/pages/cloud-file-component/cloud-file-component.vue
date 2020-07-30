@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./cloud-file-component.css"></style>
 <script src="./cloud-file-component.js"></script>
 <template>

@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./soter-authentication.css"></style>
 <script src="./soter-authentication.js"></script>
 <template>

@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./scf-openapi.css"></style>
 <script src="./scf-openapi.js"></script>
 <template>

@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./two-way-bindings.css"></style>
 <script src="./two-way-bindings.js"></script>
 <template>

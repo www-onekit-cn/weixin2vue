@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d237eb6"],{fcbe:function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[e._t("default")],2)},u=[],a={name:"onekit-swiper"},i=a,r=t("2877"),s=Object(r["a"])(i,c,u,!1,null,"ef3039d6",null);n["default"]=s.exports}}]);
+//# sourceMappingURL=chunk-2d237eb6.9db985ba.js.map

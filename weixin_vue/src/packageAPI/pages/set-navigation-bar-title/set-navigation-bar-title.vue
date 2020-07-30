@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./set-navigation-bar-title.css"></style>
 <script src="./set-navigation-bar-title.js"></script>
 <template>

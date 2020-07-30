@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./on-compass-change.css"></style>
 <script src="./on-compass-change.js"></script>
 <template>

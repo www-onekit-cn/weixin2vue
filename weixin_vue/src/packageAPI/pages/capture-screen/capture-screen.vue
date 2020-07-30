@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./capture-screen.css"></style>
 <script src="./capture-screen.js"></script>
 <template>

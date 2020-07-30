@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d2217d7"],{cb24:function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div")},i=[],s={name:"onekit-switch"},u=s,a=t("2877"),o=Object(a["a"])(u,c,i,!1,null,"1445442b",null);e["default"]=o.exports}}]);
+//# sourceMappingURL=chunk-2d2217d7.57c707c5.js.map

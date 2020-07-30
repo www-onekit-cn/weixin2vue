@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./get-background-fetch-data.css"></style>
 <script src="./get-background-fetch-data.js"></script>
 <template>

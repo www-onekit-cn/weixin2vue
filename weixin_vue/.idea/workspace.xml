@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3be65508-fc00-49e8-83bf-4d287033f7a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/API/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +58,7 @@
       <workItem from="1595913972249" duration="1108000" />
       <workItem from="1595915881599" duration="1389000" />
       <workItem from="1595917614378" duration="855000" />
-      <workItem from="1596102743413" duration="2859000" />
+      <workItem from="1596102743413" duration="2959000" />
     </task>
     <servers />
   </component>

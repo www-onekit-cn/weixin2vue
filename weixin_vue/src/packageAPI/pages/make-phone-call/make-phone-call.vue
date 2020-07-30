@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./make-phone-call.css"></style>
 <script src="./make-phone-call.js"></script>
 <template>

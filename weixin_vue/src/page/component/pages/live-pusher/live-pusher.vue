@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./live-pusher.css"></style>
 <script src="./live-pusher.js"></script>
 <template>

@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./canvas-2d.css"></style>
 <script src="./canvas-2d.js"></script>
 <template>

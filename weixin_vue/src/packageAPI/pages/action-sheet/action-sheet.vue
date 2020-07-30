@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./action-sheet.css"></style>
 <script src="./action-sheet.js"></script>
 <template>

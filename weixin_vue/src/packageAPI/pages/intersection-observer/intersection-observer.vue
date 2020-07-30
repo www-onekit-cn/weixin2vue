@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./intersection-observer.css"></style>
 <script src="./intersection-observer.js"></script>
 <template>

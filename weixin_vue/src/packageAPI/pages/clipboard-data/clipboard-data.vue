@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./clipboard-data.css"></style>
 <script src="./clipboard-data.js"></script>
 <template>

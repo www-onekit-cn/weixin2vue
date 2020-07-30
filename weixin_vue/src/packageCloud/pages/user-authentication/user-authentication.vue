@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./user-authentication.css"></style>
 <script src="./user-authentication.js"></script>
 <template>

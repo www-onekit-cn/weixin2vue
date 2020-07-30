@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0b597a"],{"1a0d":function(e,n,t){"use strict";t.r(n);var a=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div")},c=[],i={name:"onekit-scroll-view"},l=i,o=t("2877"),r=Object(o["a"])(l,a,c,!1,null,"07fa718f",null);n["default"]=r.exports}}]);
+//# sourceMappingURL=chunk-2d0b597a.96acdd7a.js.map

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d207e71"],{a309:function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div")},a=[],i={name:"onekit-rich-text"},r=i,u=t("2877"),o=Object(u["a"])(r,c,a,!1,null,"1167c0af",null);n["default"]=o.exports}}]);
+//# sourceMappingURL=chunk-2d207e71.539bb81a.js.map

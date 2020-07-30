@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./subscribe-message.css"></style>
 <script src="./subscribe-message.js"></script>
 <template>

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c20a1"],{4939:function(e,n,a){"use strict";a.r(n);var t=function(){var e=this,n=e.$createElement,a=e._self._c||n;return a("div")},c=[],o={name:"onekit-movable-area"},r=o,u=a("2877"),i=Object(u["a"])(r,t,c,!1,null,"bd600a4a",null);n["default"]=i.exports}}]);
+//# sourceMappingURL=chunk-2d0c20a1.f30ec296.js.map

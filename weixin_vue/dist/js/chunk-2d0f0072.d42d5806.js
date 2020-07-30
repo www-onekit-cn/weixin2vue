@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0f0072"],{"9b2e":function(n,e,t){"use strict";t.r(e);var a=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div")},c=[],i={name:"onekit-functional-page-navigator"},o=i,u=t("2877"),f=Object(u["a"])(o,a,c,!1,null,"4f662f8f",null);e["default"]=f.exports}}]);
+//# sourceMappingURL=chunk-2d0f0072.d42d5806.js.map

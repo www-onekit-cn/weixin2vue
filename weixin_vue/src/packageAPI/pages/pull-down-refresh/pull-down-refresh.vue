@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./pull-down-refresh.css"></style>
 <script src="./pull-down-refresh.js"></script>
 <template>

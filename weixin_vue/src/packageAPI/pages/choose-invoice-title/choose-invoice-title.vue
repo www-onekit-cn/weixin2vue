@@ -1,4 +1,4 @@
-<style scoped src="@/onekit/OneKit.css"></style>
+<style scoped src="@/onekit/onekit.css"></style>
 <style scoped="scoped" src="./choose-invoice-title.css"></style>
 <script src="./choose-invoice-title.js"></script>
 <template>
