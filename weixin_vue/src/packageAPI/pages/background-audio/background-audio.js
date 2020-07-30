@@ -13,7 +13,7 @@ OnekitPage({
         };
     },
     onShow:function(){
-        if(!backgroundAudioManager.paused && backgroundAudioManager.paused !== undefined){
+        if(!backgroundAudioManager.paused && (backgroundAudioManager.paused !== undefined)){
             this._enableInterval();
             this.setData({
                 playing:true
@@ -72,9 +72,7 @@ OnekitPage({
         } else {
             that.setData({
                 playing:true
-            },()=>{
-                backgroundAudioManager.src = 'https://dldir1.qq.com/music/release/upload/t_mm_file_publish/2339610.m4a';
-            });
+            },()=>{backgroundAudioManager.src = 'https://dldir1.qq.com/music/release/upload/t_mm_file_publish/2339610.m4a'});
         }
     },
     seek:function(e){
@@ -97,7 +95,11 @@ OnekitPage({
                 formatedPlayTime:util.formatTime(backgroundAudioManager.currentTime + 1)
             });
         };
-        updateInterval = setInterval(update,1000);
+        updateInterval = setInterval(()=>{
+update();
+},()=>{
+1000();
+});
     },
     onUnload:function(){
         clearInterval(updateInterval);

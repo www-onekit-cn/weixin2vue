@@ -30,15 +30,11 @@ OnekitPage({
             ],
             success:(res)=>{
                 console.log(res);
-                wx.onBeaconUpdate(({beacons})=>{
-                    this.setData({
-                        beacons:beacons
-                    });
-                });
+                wx.onBeaconUpdate(({beacons})=>{this.setData({
+                    beacons:beacons
+                })});
             },
-            fail:(err)=>{
-                console.error(err);
-            }
+            fail:(err)=>{console.error(err)}
         });
     },
     stopSearch:function(){

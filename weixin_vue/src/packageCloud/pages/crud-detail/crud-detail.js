@@ -64,9 +64,7 @@ OnekitPage({
                 });
                 console.error('[数据库] [查询记录] 失败：',err);
             },
-            complete:()=>{
-                wx.hideLoading();
-            }
+            complete:()=>{wx.hideLoading()}
         });
     },
     updateTodo:function(){
@@ -99,11 +97,9 @@ OnekitPage({
                 });
                 console.error('[数据库] [更新记录] 失败：',err);
             },
-            complete:()=>{
-                this.setData({
-                    updating:false
-                });
-            }
+            complete:()=>{this.setData({
+                updating:false
+            })}
         });
     },
     removeTodo:function(){
@@ -129,11 +125,9 @@ OnekitPage({
                 });
                 console.error('[数据库] [删除记录] 失败：',err);
             },
-            complete:()=>{
-                this.setData({
-                    deleting:false
-                });
-            }
+            complete:()=>{this.setData({
+                deleting:false
+            })}
         });
     },
     onInputContent:function(e){

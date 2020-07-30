@@ -4,7 +4,8 @@
 <template>
 <onekit-page>
 <script>
-const test = require('./stick-top.wxs')</script>
+const test = require('./stick-top.wxs');
+</script>
 
 <onekit-scroll-view @scroll="theme=== 'dark' ? test.funcD :test.funcA" :style="['height:'+height+'px;']" scroll-y>
   <onekit-view class="page-banner">

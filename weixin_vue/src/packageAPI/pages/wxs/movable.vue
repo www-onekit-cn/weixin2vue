@@ -5,7 +5,8 @@
 <onekit-page>
 
 <script>
-const test = require('./movable.wxs')</script>
+const test = require('./movable.wxs');
+</script>
  
 <onekit-view v-if="show" class="area" style="position:relative;width:100%;height:100%;overflow: hidden">
   <onekit-view data-index="1" :data-obj="dataObj" @touchstart="test.touchstart" @touchmove="test.touchmove" @touchend="test.touchmove" class="movable" :style="['position:absolute;width:100px;height:100px;border-radius: 50%;background:url('https://res.wx.qq.com/community/dist/community/images/logo_miniprogram_013191.png');background-size: cover;left:'+left+'px;top:'+top+'px']"></onekit-view>

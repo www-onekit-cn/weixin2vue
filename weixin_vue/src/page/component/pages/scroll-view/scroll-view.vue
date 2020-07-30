@@ -97,6 +97,7 @@ module.exports = {
   }
 }
 
+;
 </script>
 
 </onekit-page>

@@ -45,14 +45,10 @@ OnekitPage({
                     });
                 }
             },
-            fail:(err)=>{
-                console.error('[云函数] [getTempFileURL] 调用失败',err);
-            },
-            complete:()=>{
-                this.setData({
-                    loading:false
-                });
-            }
+            fail:(err)=>{console.error('[云函数] [getTempFileURL] 调用失败',err)},
+            complete:()=>{this.setData({
+                loading:false
+            })}
         });
     }
 });

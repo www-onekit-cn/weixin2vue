@@ -4,7 +4,8 @@
 <template>
 <onekit-page>
 <script>
-const test = require('./nearby.wxs')</script>
+const test = require('./nearby.wxs');
+</script>
 
 
 <onekit-swiper class="swiper" :data-width="windowWidth" :data-imgsize="imgSize" @change="test.change" @animationfinish="test.animationFinish" @transition="test.func" :indicator-dots="indicatorDots" :autoplay="true" :interval="interval" circular :duration="duration">

@@ -15,6 +15,7 @@ module.exports.len = function(arr) {
   arr = arr || []
   return arr.length
 }
+;
 </script>
 
 <onekit-view class="container">

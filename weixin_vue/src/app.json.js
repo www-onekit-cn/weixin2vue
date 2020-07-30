@@ -1,11 +1,4 @@
 export default {
-	"networkTimeout":{
-		"downloadFile":10000,
-		"request":10000,
-		"uploadFile":10000,
-		"connectSocket":10000
-	},
-	"cloud":true,
 	"pages":[
 		"page/component/index",
 		"page/component/pages/view/view",
@@ -51,11 +44,6 @@ export default {
 		"page/component/pages/canvas-2d/canvas-2d",
 		"page/component/pages/webgl/webgl"
 	],
-	"debug":false,
-	"navigateToMiniProgramAppIdList":[
-		"wx4f1b24bdc99fa23b"
-	],
-	"sitemapLocation":"sitemap.json",
 	"tabBar":{
 		"list":[
 			{
@@ -78,18 +66,12 @@ export default {
 			}
 		]
 	},
-	"permission":{
-		"scope.userLocation":{
-			"desc":"你的位置信息将用于小程序位置接口的效果展示"
-		}
-	},
 	"window":{
 		"backgroundColor":"#f7f7f7",
 		"navigationBarBackgroundColor":"#f7f7f7",
 		"navigationBarTitleText":"演示",
 		"navigationBarTextStyle":"black"
 	},
-	"workers":"workers",
 	"subpackages":[
 		{
 			"pages":[
