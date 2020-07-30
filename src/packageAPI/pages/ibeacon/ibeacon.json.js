@@ -1,4 +1,4 @@
-export {
+export default {
 	"navigationBarTitleText":"iBeacon",
 	"usingComponents":{}
 }

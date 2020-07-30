@@ -351,7 +351,7 @@
 
 }());
 import OnekitWX_PageScroll from "./PageScroll"
-export class OnekitWX_PullDownRefresh extends OnekitWX_PageScroll{
+export default class OnekitWX_PullDownRefresh extends OnekitWX_PageScroll{
     static startPullDownRefresh(object){
         if(object){
             let success = object.success;

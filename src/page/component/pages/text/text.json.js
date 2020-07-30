@@ -1,4 +1,4 @@
-export {
+export default {
 	"navigationBarTitleText":"text",
 	"usingComponents":{}
 }

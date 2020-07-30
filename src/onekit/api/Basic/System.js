@@ -1,5 +1,5 @@
 import OnekitWX_Log from "./Log"
-export class OnekitWX_System extends OnekitWX_Log{
+export default class OnekitWX_System extends OnekitWX_Log{
   static getSystemInfo(object) {
     let success = object.success;
     let fail = object.fail;

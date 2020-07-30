@@ -1,4 +1,4 @@
-export {
+export default {
 	"navigationBarTitleText":"小程序接口能力展示",
 	"usingComponents":{
 		"set-tab-bar":"./components/set-tab-bar/set-tab-bar"

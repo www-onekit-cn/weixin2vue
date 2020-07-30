@@ -1,4 +1,4 @@
-export class InterstitialAd {
+export default class InterstitialAd {
   show() {}
   //显示插屏广告。
 

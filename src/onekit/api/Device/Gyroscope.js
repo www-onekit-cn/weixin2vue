@@ -1,5 +1,5 @@
 import OnekitWX_DeviceMotion from "./DeviceMotion"
-export class OnekitWX_Gyroscope extends OnekitWX_DeviceMotion{
+export default class OnekitWX_Gyroscope extends OnekitWX_DeviceMotion{
   static _callback(event) {
     if (Gyroscope.callback) {
       let deviceOrientation = event.acceleration;

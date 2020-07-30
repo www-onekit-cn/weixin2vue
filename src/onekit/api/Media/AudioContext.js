@@ -1,4 +1,4 @@
-export class AudioContext {
+export default class AudioContext {
 
   // IAC for InnerAudioContext
   // TODO: 未完成，会报错

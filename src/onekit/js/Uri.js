@@ -1,4 +1,4 @@
-export class Uri{
+export default class Uri{
     constructor(str){
         let s = str.indexOf(":");
         if(s>=0){

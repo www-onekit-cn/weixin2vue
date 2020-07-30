@@ -3,7 +3,7 @@
  * Modified by Wangjunjie on 2018/12/26.
  */
 import OnekitWX_CaptureScreen from "./CaptureScreen"
-export class OnekitWX_Clipboard extends OnekitWX_CaptureScreen{
+export default class OnekitWX_Clipboard extends OnekitWX_CaptureScreen{
   static setClipboardData(object) {
     let data = object.data; // 【必填】剪贴板的内容
     let success = object.success;

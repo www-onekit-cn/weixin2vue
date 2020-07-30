@@ -1,5 +1,5 @@
 import OnekitWX_Invoice from "./Invoice"
-export class OnekitWX_Login extends OnekitWX_Invoice{
+export default class OnekitWX_Login extends OnekitWX_Invoice{
   static login() {
     var weiXdeng = document.createElement('button');
     weiXdeng.setAttribute('id', 'weiXingDeng');

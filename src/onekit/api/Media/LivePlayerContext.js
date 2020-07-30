@@ -1,3 +1,3 @@
-export class LivePlayerContext{
+export default class LivePlayerContext{
 
 }

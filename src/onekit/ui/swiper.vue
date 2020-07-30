@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    export {
+    export default{
         name: "onekit-swiper"
     }
 </script>

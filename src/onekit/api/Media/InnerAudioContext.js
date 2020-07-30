@@ -1,5 +1,5 @@
 
-export class InnerAudioContext{
+export default class InnerAudioContext{
 
 
 // IAC for InnerAudioContext

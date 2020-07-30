@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    export {
+    export default{
         name: "onekit-radio-group"
     }
 </script>

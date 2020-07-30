@@ -1,5 +1,5 @@
 import OnekitWX_Clipboard from "./Clipboard"
-export class OnekitWX_Compass extends OnekitWX_Clipboard{
+export default class OnekitWX_Compass extends OnekitWX_Clipboard{
   static _deviceorientation (event) {
     if (OnekitWX_Compass._callback) {
       let result = {

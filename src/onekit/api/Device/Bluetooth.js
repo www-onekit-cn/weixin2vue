@@ -3,7 +3,7 @@
  */
 // dcloud html5+的 nativejs 实现的蓝牙串口操作demo https://github.com/chengxg/html5-bluetooth
 import OnekitWX_BLE from "./BLE"
-export class OnekitWX_Bluetooth extends OnekitWX_BLE{
+export default class OnekitWX_Bluetooth extends OnekitWX_BLE{
   static openBluetoothAdapter() {}
 
   static closeBluetoothAdapter() {}

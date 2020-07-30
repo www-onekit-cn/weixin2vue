@@ -1,4 +1,4 @@
 
-export class RecorderManager{
+export default class RecorderManager{
 
 }

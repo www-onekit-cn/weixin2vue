@@ -1,5 +1,5 @@
 import OnekitWX_WebSocket from "../AJAX/WebSocket"
-export class OnekitWX_App extends OnekitWX_WebSocket{
+export default class OnekitWX_App extends OnekitWX_WebSocket{
   static offPageNotFound() {}
   static onPageNotFound() {}
 

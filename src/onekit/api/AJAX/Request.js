@@ -15,7 +15,7 @@ class RequestTask {
   }
 }
 
-export class OnekitWX_Request extends OnekitWX_mDNS{
+export default class OnekitWX_Request extends OnekitWX_mDNS{
   static request(object) {
     let url = object.url; // 【必填】开发者服务器接口地址
     let data = object.data; // 请求的参数

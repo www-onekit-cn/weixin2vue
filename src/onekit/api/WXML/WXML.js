@@ -1,5 +1,5 @@
 import OnekitWX_Worker from "../Worker/Worker"
-export class OnekitWX_WXML extends OnekitWX_Worker{
+export default class OnekitWX_WXML extends OnekitWX_Worker{
 	static createSelectorQuery(){
 		var xsw_document=document;
 		xsw_document.select = function (object) {

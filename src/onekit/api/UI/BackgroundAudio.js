@@ -1,5 +1,5 @@
 import OnekitWX_Background from "./Background"
-export class OnekitWX_BackgroundAudio extends OnekitWX_Background{
+export default class OnekitWX_BackgroundAudio extends OnekitWX_Background{
   static getBackgroundAudioPlayerState(object) {
     let success = object.success;
     let fail = object.fail;

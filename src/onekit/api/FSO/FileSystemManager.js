@@ -1,4 +1,4 @@
 
-export class OnekitWX_FileSystem{
+export default class OnekitWX_FileSystem{
 
 }

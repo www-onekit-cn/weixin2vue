@@ -1,5 +1,5 @@
 import OnekitWX_Screen from "./Screen"
-export class OnekitWX_Video extends OnekitWX_Screen{
+export default class OnekitWX_Video extends OnekitWX_Screen{
   static chooseVideo(object) {
     let result;
     if (object) {

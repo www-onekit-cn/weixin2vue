@@ -26,7 +26,7 @@
 </template>
 <script>
   import Vue from 'vue'
-  export {
+  export default{
     data () {
       return {
         WINDOW:{}

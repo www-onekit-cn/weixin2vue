@@ -1,5 +1,5 @@
 import OnekitWX_Font from "./Font"
-export class OnekitWX_Interaction extends OnekitWX_Font{
+export default class OnekitWX_Interaction extends OnekitWX_Font{
     static showToast(object){
         let tipTxt=object.title;
         let time;

@@ -4,7 +4,7 @@
  */
 // TODO: location 2/3
 import OnekitWX_FSO from "../FSO/FSO"
-export class OnekitWX_Location extends OnekitWX_FSO{
+export default class OnekitWX_Location extends OnekitWX_FSO{
   static getLocation(object) {
     var type = object.type || 'wgs84'; // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入 'gcj02'
     var altitude = object.altitude || 'false'; //【小程序传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度】

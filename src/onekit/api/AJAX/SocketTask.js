@@ -1,4 +1,4 @@
- export class SocketTask {
+ export default class SocketTask {
   constructor(socket){
     this._socket = socket;
   }

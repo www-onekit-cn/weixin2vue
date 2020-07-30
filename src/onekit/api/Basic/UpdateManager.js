@@ -1,4 +1,4 @@
-export class UpdateManager {
+export default class UpdateManager {
   applyUpdate() {
 
   }

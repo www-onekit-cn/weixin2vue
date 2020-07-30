@@ -1,5 +1,5 @@
 
-export class UDPSocket {
+export default class UDPSocket {
   bind(port){}
   close(){}
   offClose(callback){

@@ -1,5 +1,5 @@
 import OnekitWX_Basic from "./Basic"
-export class OnekitWX_Debug extends OnekitWX_Basic{
+export default class OnekitWX_Debug extends OnekitWX_Basic{
     static setEnableDebug(){
 
     }

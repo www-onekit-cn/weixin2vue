@@ -3,7 +3,7 @@
  * Modified by Wangjunjie on 2018/12/24.
  */
 import OnekitWX_MemoryWarning from "./MemoryWarning"
-export class OnekitWX_Network extends OnekitWX_MemoryWarning{
+export default class OnekitWX_Network extends OnekitWX_MemoryWarning{
   static getNetworkType(object) {
     var success = object.success;
     var fail = object.fail;

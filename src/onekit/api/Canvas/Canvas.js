@@ -1,5 +1,5 @@
 import OnekitWX_Update from "../Basic/Update"
-export class OnekitWX_Canvas extends OnekitWX_Update{
+export default class OnekitWX_Canvas extends OnekitWX_Update{
     static drawCanvas(object){
         let canvasId = object.canvasId;
         let actions = object.actions;

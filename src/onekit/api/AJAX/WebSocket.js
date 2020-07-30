@@ -1,6 +1,6 @@
 import OnekitWX_Upload from "./Upload"
 import SocketTask from "./SocketTask"
-export class OnekitWX_WebSocket extends OnekitWX_Upload{
+export default class OnekitWX_WebSocket extends OnekitWX_Upload{
   static connectSocket(object) {
     let url = object.url; // 【必填】开发者服务器 wss 接口地址
    // let header = object.header; // HTTP Header，Header 中不能设置 Referer

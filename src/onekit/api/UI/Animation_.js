@@ -1,6 +1,6 @@
 import OnekitWX_Storage from "../Storage/Storage"
 import Animation from "./Animation"
-export class OnekitWX_Animation extends OnekitWX_Storage{
+export default class OnekitWX_Animation extends OnekitWX_Storage{
 
      static  createAnimation(OBJECT) {
          let animation = new Animation();

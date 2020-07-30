@@ -13,7 +13,7 @@
 <script>
   import Vue from 'vue'
   import APP_JSON from '../app.json.js';
-  export {
+  export default {
     methods:{
       switchTo(path){
         this.$router.replace(path);
