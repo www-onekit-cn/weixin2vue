@@ -1,4 +1,4 @@
-import PAGE_JSON from './udp-socket.json';
+import PAGE_JSON from './udp-socket.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const AB2String = (arrayBuffer)=>{

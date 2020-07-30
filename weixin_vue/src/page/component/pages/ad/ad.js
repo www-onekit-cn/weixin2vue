@@ -1,4 +1,4 @@
-import PAGE_JSON from './ad.json';
+import PAGE_JSON from './ad.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
 import wx from "../../../../onekit/wx.js";
 const info = wx.getSystemInfoSync();

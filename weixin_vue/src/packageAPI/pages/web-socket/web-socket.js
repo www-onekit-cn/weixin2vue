@@ -1,4 +1,4 @@
-import PAGE_JSON from './web-socket.json';
+import PAGE_JSON from './web-socket.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 function showModal(title,content){

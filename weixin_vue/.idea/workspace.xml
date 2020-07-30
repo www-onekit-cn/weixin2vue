@@ -2,7 +2,751 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3be65508-fc00-49e8-83bf-4d287033f7a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-01a7d5b6.7f6d0f06.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-030643e9.d1d57011.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0404b727.2379b684.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-04ffa965.4c710d90.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0622bccd.e44892ae.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0651f2d2.9d2a1279.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-06b7ea96.6b7714e6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-06be2695.f48737a8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-09cc3651.ca48a00f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0a20e563.b395abe9.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0a949370.78f2c3b7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0c2aeddc.cc0c2824.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0c5c582c.53c4b3e9.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0c7eccec.09272c0d.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0d78065a.e2ef5ff7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0e9a28c2.f1a9ea4e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0f220764.8b4473e2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-103d5f46.401fc310.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-1083d36e.3777e1aa.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-1091af2d.d844e09f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-11fd17c5.0611485e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-124d2ff6.856cc6b5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-154d03f3.187b080a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-15b1b5ed.b1bda27c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-19559652.35802adb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-1c08c85b.2cff825e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-1c5fc8be.15e9c190.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-1cff39da.9e908944.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-1d52cbb4.c4f3f15c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-2063504c.b051d546.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-223d3472.0ccdc43e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-24e6de6c.0eae2088.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-262d32ba.af42eb4f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-26304ba2.65345fe9.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-26fbc7fc.db9eb360.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-288698b0.e516f6d2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-29cf13b8.b98f2271.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-2c7a8c22.a71d60f7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-2e92072e.b7047d71.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-301007ec.08229e0f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-345625f0.5c0b40a3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-36f7bbf0.d85f4a58.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-38361496.e753dc22.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-39bc6f98.2a1ac39c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-3a2fdcf6.b8a4b0a5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-3e6f14f1.51c866ba.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-3ec0920a.0824c938.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-3f4d2f94.6be2528a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-411c205b.1afebd17.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-41bbd126.24e4f057.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-420aee06.a4104640.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-43985a4b.b160d24f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-458561c0.d8f24a3a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-45f05b2d.e0ad8ddd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-46332202.1f3ab87e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-4720f862.20909b10.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-47527e4f.3b5c40d4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-47f4ea08.6b983c03.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-4c70b920.5c61804f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-4d03762e.f9661ccc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-4f42fccf.a23de270.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-513f510b.9d816f5a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-519c1519.4f166184.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-52184615.cb990e97.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-52f1352e.6630d9a0.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-535fcd36.55fed865.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-5705cf61.879df177.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-576cac30.31009581.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-5b86805b.fca9de0c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-5babadbe.3469f10e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-5c89f02a.5c22b9ab.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-5d86f560.b8abd915.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-5e1c7c5f.53b28936.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-5ee2cfe4.5cf35160.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-5f9fc3e8.260c5231.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-609fbfe5.a280e13e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-6309e232.f2773e2c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-6367a621.e386b822.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-63cd549c.7ce22f9a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-63f2c656.6e574008.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-63fd80f9.1d19768a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-641c0467.8b61dc83.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-6618b968.4c05fc2c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-66782cc1.f4010c1b.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-68649f7e.329bae61.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-6db399ec.f7dd84bb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7028d16e.a1630754.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-70601a6f.5c8fc897.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-730fd8b3.6c6df18a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7391b216.b336273e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-755a881c.95ccfdf4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-760777e0.1400e6d1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7620782d.4bb243a8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7754ff00.3d19b84f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7ac2b508.4ac89e94.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7ae9570c.639d1b39.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7cee7856.0880d3e4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7d931248.4a02bf27.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7dfabe1b.856ef7f1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7e26f84e.1ba6051f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-7fa533fe.3f724459.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-84ae0254.2587fd25.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-8e941ce6.f4dbd97a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-94dc9b2a.c74fc469.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-9e719cf0.7adabde3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-a1e21d98.fb514a2d.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-a85128d8.f3428860.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-a9fe1844.e4a321b6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-b9440dc2.2c748ec2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-badd4344.afd545d0.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-c16d77ac.d56da976.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-c21d2232.51aa34e5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-c6d5fabe.d2c38273.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-c79f0f4e.04dfa5df.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-c84f7dc2.d2775dbd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-cf93f500.5620bc29.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-d03baf40.b5bb7da6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-d06a9b86.2a283864.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-d1ca735c.873416b5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-de5154cc.5213c3a8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-e55a5f48.25c7ca5c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-e59e0c84.39a31b38.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-e93df450.5a1ded2a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-ebe4bcd2.6c817789.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-ef2c4292.6eef491e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-f1c437ca.a6caa2bc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.26ad2479.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.26ad2479.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-01a7d5b6.6085589c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-01a7d5b6.6085589c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-02d44160.a5465bd7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-02d44160.a5465bd7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-030643e9.3c5a7607.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-030643e9.3c5a7607.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0404b727.d2a5587d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0404b727.d2a5587d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-04ffa965.99363093.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-04ffa965.99363093.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0622bccd.cec5b923.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0622bccd.cec5b923.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0651f2d2.eccd2a6b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0651f2d2.eccd2a6b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-06b7ea96.acb9b2d2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-06b7ea96.acb9b2d2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-06be2695.83bdbd37.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-06be2695.83bdbd37.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-09cc3651.080a3213.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-09cc3651.080a3213.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0a20e563.48c5aa5d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0a20e563.48c5aa5d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0a949370.2e4a4d27.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0a949370.2e4a4d27.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0c2aeddc.4aba4771.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0c2aeddc.4aba4771.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0c5c582c.9970f85a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0c5c582c.9970f85a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0c7eccec.6ac0e01d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0c7eccec.6ac0e01d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0d78065a.2ace1195.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0d78065a.2ace1195.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0e349a98.10dc5d0e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0e349a98.10dc5d0e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0e9a28c2.5b246156.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0e9a28c2.5b246156.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0f220764.37fae26b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-0f220764.37fae26b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-103d5f46.ee53c5bf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-103d5f46.ee53c5bf.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1083d36e.c21aee03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1083d36e.c21aee03.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1091af2d.12b44926.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1091af2d.12b44926.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-11fd17c5.b7154f4b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-11fd17c5.b7154f4b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-124d2ff6.d3b6d80c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-124d2ff6.d3b6d80c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-154d03f3.25a3126f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-154d03f3.25a3126f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-15b1b5ed.d52c525e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-15b1b5ed.d52c525e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-19559652.4689bdad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-19559652.4689bdad.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1c08c85b.6f8e1c85.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1c08c85b.6f8e1c85.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1c5fc8be.769a0ff4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1c5fc8be.769a0ff4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1cff39da.e437823c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1cff39da.e437823c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1d52cbb4.55e4b150.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1d52cbb4.55e4b150.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2063504c.6287368c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2063504c.6287368c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-21a588f8.791fc06e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-21a588f8.791fc06e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-223d3472.6a1c1a97.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-223d3472.6a1c1a97.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-24e6de6c.38cf2641.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-24e6de6c.38cf2641.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-262d32ba.2386a65e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-262d32ba.2386a65e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-26304ba2.56c6921e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-26304ba2.56c6921e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-26fbc7fc.1a0dc633.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-26fbc7fc.1a0dc633.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-288698b0.bef6cd34.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-288698b0.bef6cd34.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-29cf13b8.7ccb6758.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-29cf13b8.7ccb6758.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2c7a8c22.94adb3dd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2c7a8c22.94adb3dd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0a405d.cda71453.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0a405d.cda71453.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b21d6.63ce0a49.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b21d6.63ce0a49.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b597a.96acdd7a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b597a.96acdd7a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b611d.aefd9390.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b611d.aefd9390.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0ba2d0.da020ca8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0ba2d0.da020ca8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0ba91a.53154002.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0ba91a.53154002.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0bda12.094cb750.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0bda12.094cb750.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0bff8d.e2d6ac10.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0bff8d.e2d6ac10.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c08b1.02fb22b7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c08b1.02fb22b7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c20a1.f30ec296.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c20a1.f30ec296.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c211d.27f21256.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c211d.27f21256.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c4642.ebd1e8a6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c4642.ebd1e8a6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c554a.7ec5ce71.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c554a.7ec5ce71.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c8226.723941f9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c8226.723941f9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c840c.389718f1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c840c.389718f1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c930c.2e93bb49.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c930c.2e93bb49.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0cfe48.8564a2d4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0cfe48.8564a2d4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0d2bbc.fafaa063.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0d2bbc.fafaa063.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0d67dd.e9f359cd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0d67dd.e9f359cd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0da7ba.84fc7de4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0da7ba.84fc7de4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0daae9.d637aa71.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0daae9.d637aa71.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0dad15.6f0ccae4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0dad15.6f0ccae4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0dd7ae.54bbc261.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0dd7ae.54bbc261.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0dd88b.77d460a3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0dd88b.77d460a3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e2cd2.c0762ca6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e2cd2.c0762ca6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e51f4.6dc2e3fc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e51f4.6dc2e3fc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e5610.e0e90517.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e5610.e0e90517.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e9439.77621092.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e9439.77621092.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0f0072.d42d5806.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0f0072.d42d5806.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d2077d2.4bec0cc4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d2077d2.4bec0cc4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d207e71.539bb81a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d207e71.539bb81a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d20fefa.8e634273.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d20fefa.8e634273.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d21061c.ec097fc4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d21061c.ec097fc4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d213a1d.f78d0b4a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d213a1d.f78d0b4a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d214411.10734865.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d214411.10734865.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d2172fb.7fa39068.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d2172fb.7fa39068.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d21af98.f71638ae.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d21af98.f71638ae.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d21e71b.6644abdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d21e71b.6644abdf.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d2217d7.57c707c5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d2217d7.57c707c5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d225f46.2f2c2cd0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d225f46.2f2c2cd0.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d22c2b1.82e7d687.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d22c2b1.82e7d687.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d22c4b6.668d6ebe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d22c4b6.668d6ebe.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d237eb6.9db985ba.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d237eb6.9db985ba.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d23841a.fbe9763c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d23841a.fbe9763c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2e92072e.4569d7c6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2e92072e.4569d7c6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-301007ec.1d036008.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-301007ec.1d036008.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-330c3f22.1fa7bb44.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-330c3f22.1fa7bb44.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-345625f0.317b098e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-345625f0.317b098e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-36f7bbf0.940317ce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-36f7bbf0.940317ce.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-38361496.92ae3e72.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-38361496.92ae3e72.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-39bc6f98.714827e8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-39bc6f98.714827e8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3a2fdcf6.357fe391.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3a2fdcf6.357fe391.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3e6f14f1.4596eae2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3e6f14f1.4596eae2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3ec0920a.d20dc9b2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3ec0920a.d20dc9b2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3f4d2f94.d39889a2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3f4d2f94.d39889a2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-411c205b.f811ebd8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-411c205b.f811ebd8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-41bbd126.89f508de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-41bbd126.89f508de.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-420aee06.9dbf0386.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-420aee06.9dbf0386.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-43985a4b.1c72e023.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-43985a4b.1c72e023.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-458561c0.a79e2ee7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-458561c0.a79e2ee7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-45f05b2d.54665166.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-45f05b2d.54665166.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-46332202.362e871c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-46332202.362e871c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4720f862.c38eb66a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4720f862.c38eb66a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-47527e4f.61b4e819.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-47527e4f.61b4e819.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-47f4ea08.50d7dc70.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-47f4ea08.50d7dc70.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4ac223e4.0326e4bd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4ac223e4.0326e4bd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4c70b920.2eb2582e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4c70b920.2eb2582e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4d03762e.422c17f5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4d03762e.422c17f5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4f42fccf.9226e98c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-4f42fccf.9226e98c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-513f510b.de4dff36.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-513f510b.de4dff36.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-519c1519.4424144b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-519c1519.4424144b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-52184615.36337369.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-52184615.36337369.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-52f1352e.d6a5f2b3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-52f1352e.d6a5f2b3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-535fcd36.14a40d0d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-535fcd36.14a40d0d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5705cf61.1f02568c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5705cf61.1f02568c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-576cac30.efa8b7d4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-576cac30.efa8b7d4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5b86805b.f20b4ad7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5b86805b.f20b4ad7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5babadbe.230541b5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5babadbe.230541b5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5c89f02a.d067b237.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5c89f02a.d067b237.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5d86f560.b634d55a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5d86f560.b634d55a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5e1c7c5f.a9f4eb3e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5e1c7c5f.a9f4eb3e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5ee2cfe4.86798889.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5ee2cfe4.86798889.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5f9fc3e8.a890caf2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-5f9fc3e8.a890caf2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-609fbfe5.1566bf2b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-609fbfe5.1566bf2b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6309e232.d0d06497.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6309e232.d0d06497.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6367a621.585de527.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6367a621.585de527.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-63cd549c.042acc5d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-63cd549c.042acc5d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-63f2c656.e13eea54.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-63f2c656.e13eea54.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-63fd80f9.80276d8d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-63fd80f9.80276d8d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-641c0467.82c4d379.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-641c0467.82c4d379.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6618b968.fd0b7ebe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6618b968.fd0b7ebe.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-66782cc1.dc8cf028.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-66782cc1.dc8cf028.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-68649f7e.ebe9ea8a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-68649f7e.ebe9ea8a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6db399ec.f0083957.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6db399ec.f0083957.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7028d16e.3d88f4b8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7028d16e.3d88f4b8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-70601a6f.b219ee86.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-70601a6f.b219ee86.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-730fd8b3.05247869.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-730fd8b3.05247869.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7391b216.af0e2471.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7391b216.af0e2471.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-755a881c.0be2b274.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-755a881c.0be2b274.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-760777e0.1299e7bb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-760777e0.1299e7bb.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7620782d.d36ab7b6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7620782d.d36ab7b6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7754ff00.f54e60b9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7754ff00.f54e60b9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7ac2b508.3f557f24.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7ac2b508.3f557f24.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7ae9570c.434f4ed1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7ae9570c.434f4ed1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7cee7856.f5c43cdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7cee7856.f5c43cdf.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7d931248.c118811d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7d931248.c118811d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7dfabe1b.4f18d889.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7dfabe1b.4f18d889.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7e26f84e.14523ad1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7e26f84e.14523ad1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7fa533fe.a11dd6b9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-7fa533fe.a11dd6b9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-84ae0254.515a31f1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-84ae0254.515a31f1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-8e941ce6.c530f46c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-8e941ce6.c530f46c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-94dc9b2a.38d28e79.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-94dc9b2a.38d28e79.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-9e719cf0.bee42e3e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-9e719cf0.bee42e3e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-a1e21d98.36b596e1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-a1e21d98.36b596e1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-a85128d8.3af56ddc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-a85128d8.3af56ddc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-a9fe1844.4c4ec34c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-a9fe1844.4c4ec34c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-b9440dc2.6108c6bd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-b9440dc2.6108c6bd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-badd4344.8ab9ad4d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-badd4344.8ab9ad4d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c16d77ac.0be0ee19.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c16d77ac.0be0ee19.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c21d2232.9f90d6ce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c21d2232.9f90d6ce.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c6d5fabe.a4862798.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c6d5fabe.a4862798.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c79f0f4e.a8e7d807.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c79f0f4e.a8e7d807.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c84f7dc2.96f0db09.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c84f7dc2.96f0db09.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-cf93f500.75c8d551.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-cf93f500.75c8d551.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-d03baf40.aaef4a4f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-d03baf40.aaef4a4f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-d06a9b86.839a7f61.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-d06a9b86.839a7f61.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-d1ca735c.311ffa52.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-d1ca735c.311ffa52.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-d26ea8a8.add7d7dc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-d26ea8a8.add7d7dc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-de5154cc.1b81e55a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-de5154cc.1b81e55a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-e55a5f48.0fb1691a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-e55a5f48.0fb1691a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-e59e0c84.a0a62942.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-e59e0c84.a0a62942.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-e93df450.def29dc1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-e93df450.def29dc1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ebe4bcd2.36a96d0b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ebe4bcd2.36a96d0b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ed76a60a.1d2de452.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ed76a60a.1d2de452.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ef2c4292.d0a6b51d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ef2c4292.d0a6b51d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-f0b71730.bb4b0b3b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-f0b71730.bb4b0b3b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-f1c437ca.1dd8be97.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-f1c437ca.1dd8be97.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onekit/onekit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/onekit/onekit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/action-sheet/action-sheet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/add-contact/add-contact.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/animation/animation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/audio/audio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/background-audio/background-audio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/bluetooth.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/bluetooth/slave/slave.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/canvas/canvas.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/capture-screen/capture-screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/capture-screen/capture-screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/capture-screen/capture-screen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/capture-screen/capture-screen.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-address/choose-address.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-address/choose-address.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-address/choose-address.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-address/choose-address.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-invoice-title/choose-invoice-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-invoice-title/choose-invoice-title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-invoice-title/choose-invoice-title.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-invoice-title/choose-invoice-title.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-location/choose-location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-location/choose-location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/choose-location/choose-location.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/choose-location/choose-location.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/clipboard-data/clipboard-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/clipboard-data/clipboard-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/clipboard-data/clipboard-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/clipboard-data/clipboard-data.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/custom-message/custom-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/custom-message/custom-message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/custom-message/custom-message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/custom-message/custom-message.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/doc-web-view/doc-web-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/doc-web-view/doc-web-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/download-file/download-file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/download-file/download-file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/download-file/download-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/download-file/download-file.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/file/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/file/file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/file/file.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-background-fetch-data/get-background-fetch-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-background-fetch-data/get-background-fetch-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-background-fetch-data/get-background-fetch-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-background-fetch-data/get-background-fetch-data.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-background-prefetch-data/get-background-prefetch-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-background-prefetch-data/get-background-prefetch-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-background-prefetch-data/get-background-prefetch-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-background-prefetch-data/get-background-prefetch-data.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-battery-info/get-battery-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-battery-info/get-battery-info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-battery-info/get-battery-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-battery-info/get-battery-info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-location/get-location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-location/get-location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-location/get-location.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-location/get-location.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-network-type/get-network-type.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-network-type/get-network-type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-network-type/get-network-type.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-network-type/get-network-type.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-performance/get-performance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-performance/get-performance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-performance/get-performance.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-performance/get-performance.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-system-info/get-system-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-system-info/get-system-info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-system-info/get-system-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-system-info/get-system-info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-user-info/get-user-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-user-info/get-user-info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-user-info/get-user-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-user-info/get-user-info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-wxml-node-info/get-wxml-node-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-wxml-node-info/get-wxml-node-info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/get-wxml-node-info/get-wxml-node-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/get-wxml-node-info/get-wxml-node-info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/ibeacon/ibeacon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/ibeacon/ibeacon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/ibeacon/ibeacon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/ibeacon/ibeacon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/image/image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/image/image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/image/image.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/image/image.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/intersection-observer/intersection-observer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/intersection-observer/intersection-observer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/intersection-observer/intersection-observer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/intersection-observer/intersection-observer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/load-font-face/load-font-face.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/login/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/login/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/make-phone-call/make-phone-call.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/make-phone-call/make-phone-call.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/make-phone-call/make-phone-call.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/make-phone-call/make-phone-call.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/mdns/mdns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/mdns/mdns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/mdns/mdns.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/mdns/mdns.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/media-container/media-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/media-container/media-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/media-container/media-container.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/media-container/media-container.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/modal/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/modal/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/modal/modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/modal/modal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/navigation-bar-loading/navigation-bar-loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/navigation-bar-loading/navigation-bar-loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/navigation-bar-loading/navigation-bar-loading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/navigation-bar-loading/navigation-bar-loading.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/navigator/navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/navigator/navigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/navigator/navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/navigator/navigator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-accelerometer-change/on-accelerometer-change.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-accelerometer-change/on-accelerometer-change.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-accelerometer-change/on-accelerometer-change.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-accelerometer-change/on-accelerometer-change.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-compass-change/on-compass-change.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-network-status-change/on-network-status-change.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-network-status-change/on-network-status-change.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/on-network-status-change/on-network-status-change.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/on-network-status-change/on-network-status-change.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/open-location/open-location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/open-location/open-location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/open-location/open-location.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/open-location/open-location.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/page-scroll/page-scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/page-scroll/page-scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/page-scroll/page-scroll.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/page-scroll/page-scroll.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/pull-down-refresh/pull-down-refresh.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/pull-down-refresh/pull-down-refresh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/pull-down-refresh/pull-down-refresh.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/pull-down-refresh/pull-down-refresh.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/request-payment/request-payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/request-payment/request-payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/request-payment/request-payment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/request-payment/request-payment.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/request/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/request/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/request/request.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/request/request.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/resizable/resizable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/scan-code/scan-code.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/scan-code/scan-code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/scan-code/scan-code.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/scan-code/scan-code.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/screen-brightness/screen-brightness.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/screen-brightness/screen-brightness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/screen-brightness/screen-brightness.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/screen-brightness/screen-brightness.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/setting/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/setting/setting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/setting/setting.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/setting/setting.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/share-button/share-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/share-button/share-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/share-button/share-button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/share-button/share-button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/share/share.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/share/share.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/share/share.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/share/share.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/soter-authentication/soter-authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/soter-authentication/soter-authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/soter-authentication/soter-authentication.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/soter-authentication/soter-authentication.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/storage/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/storage/storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/storage/storage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/storage/storage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/subscribe-message/subscribe-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/subscribe-message/subscribe-message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/subscribe-message/subscribe-message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/subscribe-message/subscribe-message.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/template-message/template-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/template-message/template-message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/template-message/template-message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/template-message/template-message.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/toast/toast.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/toast/toast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/toast/toast.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/toast/toast.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/two-way-bindings/two-way-bindings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/two-way-bindings/two-way-bindings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/two-way-bindings/two-way-bindings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/two-way-bindings/two-way-bindings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/udp-socket/udp-socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/udp-socket/udp-socket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/udp-socket/udp-socket.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/udp-socket/udp-socket.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/upload-file/upload-file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/upload-file/upload-file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/upload-file/upload-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/upload-file/upload-file.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/vibrate/vibrate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/vibrate/vibrate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/vibrate/vibrate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/vibrate/vibrate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/video/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/video/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/video/video.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/video/video.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/voice/voice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/voice/voice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/voice/voice.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/voice/voice.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/web-socket/web-socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/web-socket/web-socket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/web-socket/web-socket.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/web-socket/web-socket.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wifi/wifi.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/worker/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/worker/worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/worker/worker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/worker/worker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/movable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/nearby.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/sidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/stick-top.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/wxs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/wxs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageAPI/pages/wxs/wxs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageAPI/pages/wxs/wxs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/cloud-file-component/cloud-file-component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/cloud-file-component/cloud-file-component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/cloud-file-component/cloud-file-component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/cloud-file-component/cloud-file-component.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/crud-detail/crud-detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/crud-detail/crud-detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/crud-detail/crud-detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/crud-detail/crud-detail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/crud/crud.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/crud/crud.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/crud/crud.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/crud/crud.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/db-permission/db-permission.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/delete-file/delete-file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/delete-file/delete-file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/delete-file/delete-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/delete-file/delete-file.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/doc-web-view/doc-web-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/doc-web-view/doc-web-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/download-file/download-file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/download-file/download-file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/download-file/download-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/download-file/download-file.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/get-temp-file-url/get-temp-file-url.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/get-temp-file-url/get-temp-file-url.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/get-temp-file-url/get-temp-file-url.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/get-temp-file-url/get-temp-file-url.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/get-wx-context/get-wx-context.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/get-wx-context/get-wx-context.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/get-wx-context/get-wx-context.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/get-wx-context/get-wx-context.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-database/scf-database.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-openapi/scf-openapi.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-storage/scf-storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-storage/scf-storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/scf-storage/scf-storage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/scf-storage/scf-storage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/server-date/server-date.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/server-date/server-date.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/server-date/server-date.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/server-date/server-date.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/upload-file/upload-file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/upload-file/upload-file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/upload-file/upload-file.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/upload-file/upload-file.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/user-authentication/user-authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/user-authentication/user-authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageCloud/pages/user-authentication/user-authentication.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageCloud/pages/user-authentication/user-authentication.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/components/set-tab-bar/set-tab-bar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/API/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/API/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/cloud/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/cloud/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/ad/ad.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/ad/ad.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/ad/ad.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/ad/ad.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/aria-component/aria-component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/aria-component/aria-component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/aria-component/aria-component.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/aria-component/aria-component.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/button/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/button/button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/button/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/button/button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera-scan-code/camera-scan-code.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/camera/camera.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/camera/camera.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas-2d/canvas-2d.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas-2d/canvas-2d.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas-2d/canvas-2d.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas-2d/canvas-2d.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/canvas/canvas.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/checkbox/checkbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/cover-view/cover-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/doc-web-view/doc-web-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/doc-web-view/doc-web-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/editor/editor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/editor/editor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/form/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/form/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/form/form.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/icon/icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/icon/icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/icon/icon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/icon/icon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/image/image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/image/image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/image/image.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/image/image.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/input/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/input/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/input/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/input/input.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/label/label.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/label/label.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/label/label.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/label/label.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/live-player/live-player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/live-player/live-player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/live-player/live-player.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/live-player/live-player.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/live-pusher/live-pusher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/live-pusher/live-pusher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/live-pusher/live-pusher.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/live-pusher/live-pusher.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map-styles/map-styles.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/map/map.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/map/map.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/movable-view/movable-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/navigator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/navigator/redirect.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/open-data/open-data.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker-view/picker-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker/picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/picker/picker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/picker/picker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/progress/progress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/progress/progress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/progress/progress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/progress/progress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/radio/radio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/radio/radio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/radio/radio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/radio/radio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/rich-text/rich-text.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/scroll-view/scroll-view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/slider/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/slider/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/slider/slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/slider/slider.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/swiper/swiper.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/switch/switch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/switch/switch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/switch/switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/switch/switch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/text/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/text/text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/text/text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/text/text.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/textarea/textarea.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/video/video.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/video/video.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/view/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/view/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/view/view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/view/view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/web-view/web-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/web-view/web-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/webgl/webgl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/webgl/webgl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/component/pages/webgl/webgl.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/component/pages/webgl/webgl.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +802,8 @@
       <workItem from="1595913972249" duration="1108000" />
       <workItem from="1595915881599" duration="1389000" />
       <workItem from="1595917614378" duration="855000" />
-      <workItem from="1596102743413" duration="2959000" />
+      <workItem from="1596102743413" duration="3176000" />
+      <workItem from="1596111653610" duration="2484000" />
     </task>
     <servers />
   </component>
@@ -66,21 +811,25 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1088" height="388" key="GridCell.Tab.0.bottom" timestamp="1596107565330">
+    <state width="1167" height="388" key="GridCell.Tab.0.bottom" timestamp="1596115095739">
       <screen x="0" y="23" width="1536" height="912" />
     </state>
-    <state width="1088" height="388" key="GridCell.Tab.0.bottom/0.23.1536.912@0.23.1536.912" timestamp="1596107565330" />
-    <state width="1088" height="388" key="GridCell.Tab.0.center" timestamp="1596107565329">
+    <state width="1167" height="388" key="GridCell.Tab.0.bottom/0.23.1536.912@0.23.1536.912" timestamp="1596115095739" />
+    <state width="1167" height="388" key="GridCell.Tab.0.center" timestamp="1596115095739">
       <screen x="0" y="23" width="1536" height="912" />
     </state>
-    <state width="1088" height="388" key="GridCell.Tab.0.center/0.23.1536.912@0.23.1536.912" timestamp="1596107565329" />
-    <state width="1088" height="388" key="GridCell.Tab.0.left" timestamp="1596107565328">
+    <state width="1167" height="388" key="GridCell.Tab.0.center/0.23.1536.912@0.23.1536.912" timestamp="1596115095739" />
+    <state width="1167" height="388" key="GridCell.Tab.0.left" timestamp="1596115095739">
       <screen x="0" y="23" width="1536" height="912" />
     </state>
-    <state width="1088" height="388" key="GridCell.Tab.0.left/0.23.1536.912@0.23.1536.912" timestamp="1596107565328" />
-    <state width="1088" height="388" key="GridCell.Tab.0.right" timestamp="1596107565330">
+    <state width="1167" height="388" key="GridCell.Tab.0.left/0.23.1536.912@0.23.1536.912" timestamp="1596115095739" />
+    <state width="1167" height="388" key="GridCell.Tab.0.right" timestamp="1596115095739">
       <screen x="0" y="23" width="1536" height="912" />
     </state>
-    <state width="1088" height="388" key="GridCell.Tab.0.right/0.23.1536.912@0.23.1536.912" timestamp="1596107565330" />
+    <state width="1167" height="388" key="GridCell.Tab.0.right/0.23.1536.912@0.23.1536.912" timestamp="1596115095739" />
+    <state x="40" y="397" width="604" height="538" key="find.popup" timestamp="1596114861206">
+      <screen x="0" y="23" width="1536" height="912" />
+    </state>
+    <state x="40" y="397" width="604" height="538" key="find.popup/0.23.1536.912@0.23.1536.912" timestamp="1596114861206" />
   </component>
 </project>

@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0bda12"],{"2d8b":function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div")},a=[],o={name:"onekit-checkbox-group"},u=o,r=t("2877"),i=Object(r["a"])(u,c,a,!1,null,"5606f2a6",null);n["default"]=i.exports}}]);
-//# sourceMappingURL=chunk-2d0bda12.094cb750.js.map

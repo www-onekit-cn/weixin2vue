@@ -1,4 +1,4 @@
-import PAGE_JSON from './upload-file.json';
+import PAGE_JSON from './upload-file.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 OnekitPage({

@@ -1,4 +1,4 @@
-import PAGE_JSON from './nearby.json';
+import PAGE_JSON from './nearby.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const windowWidth = wx.getSystemInfoSync().windowWidth;

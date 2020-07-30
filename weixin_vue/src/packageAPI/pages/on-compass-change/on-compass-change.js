@@ -1,4 +1,4 @@
-import PAGE_JSON from './on-compass-change.json';
+import PAGE_JSON from './on-compass-change.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 OnekitPage({

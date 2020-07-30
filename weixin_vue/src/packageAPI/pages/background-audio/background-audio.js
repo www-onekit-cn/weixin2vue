@@ -1,4 +1,4 @@
-import PAGE_JSON from './background-audio.json';
+import PAGE_JSON from './background-audio.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const app = getApp();

@@ -1,4 +1,4 @@
-import PAGE_JSON from './canvas.json';
+import PAGE_JSON from './canvas.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const example = require('./example.js');

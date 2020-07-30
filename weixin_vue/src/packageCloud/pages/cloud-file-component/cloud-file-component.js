@@ -1,4 +1,4 @@
-import PAGE_JSON from './cloud-file-component.json';
+import PAGE_JSON from './cloud-file-component.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const {demoImageFileId,demoVideoFileId} = require('../../../config');

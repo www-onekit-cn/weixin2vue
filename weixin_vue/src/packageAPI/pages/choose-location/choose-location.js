@@ -1,4 +1,4 @@
-import PAGE_JSON from './choose-location.json';
+import PAGE_JSON from './choose-location.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const util = require('../../../util/util.js');

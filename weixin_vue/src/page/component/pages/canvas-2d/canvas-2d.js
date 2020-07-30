@@ -1,4 +1,4 @@
-import PAGE_JSON from './canvas-2d.json';
+import PAGE_JSON from './canvas-2d.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
 import wx from "../../../../onekit/wx.js";
 import {compareVersion} from "../../../../util/util";

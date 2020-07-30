@@ -1,4 +1,4 @@
-import PAGE_JSON from './crud.json';
+import PAGE_JSON from './crud.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const app = getApp();

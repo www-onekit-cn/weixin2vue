@@ -1,4 +1,4 @@
-import PAGE_JSON from './rich-text.json';
+import PAGE_JSON from './rich-text.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
 import wx from "../../../../onekit/wx.js";
 const htmlSnip = `<div class="div_class">

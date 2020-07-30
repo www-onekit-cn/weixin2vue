@@ -1,4 +1,4 @@
-import PAGE_JSON from './get-background-fetch-data.json';
+import PAGE_JSON from './get-background-fetch-data.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 OnekitPage({

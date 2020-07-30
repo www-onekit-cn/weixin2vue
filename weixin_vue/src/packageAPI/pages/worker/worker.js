@@ -1,4 +1,4 @@
-import PAGE_JSON from './worker.json';
+import PAGE_JSON from './worker.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const {fib} = require('../../../util/util.js');

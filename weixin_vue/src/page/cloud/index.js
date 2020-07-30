@@ -1,4 +1,4 @@
-import PAGE_JSON from './index.json';
+import PAGE_JSON from './index.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../onekit/onekit.js";
 import wx from "../../onekit/wx.js";
 OnekitPage({

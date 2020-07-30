@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d2bbc"],{"5a82":function(e,n,c){"use strict";c.r(n);var t=function(){var e=this,n=e.$createElement,c=e._self._c||n;return c("div")},i=[],a={name:"onekit-picker-view"},r=a,u=c("2877"),o=Object(u["a"])(r,t,i,!1,null,"3ff1cc22",null);n["default"]=o.exports}}]);
-//# sourceMappingURL=chunk-2d0d2bbc.fafaa063.js.map

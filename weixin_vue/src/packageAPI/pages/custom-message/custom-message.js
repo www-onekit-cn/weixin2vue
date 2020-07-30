@@ -1,4 +1,4 @@
-import PAGE_JSON from './custom-message.json';
+import PAGE_JSON from './custom-message.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 OnekitPage({

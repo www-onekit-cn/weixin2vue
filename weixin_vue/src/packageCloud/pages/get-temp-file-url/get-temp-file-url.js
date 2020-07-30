@@ -1,4 +1,4 @@
-import PAGE_JSON from './get-temp-file-url.json';
+import PAGE_JSON from './get-temp-file-url.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const demoImageFileId = require('../../../config').demoImageFileId;

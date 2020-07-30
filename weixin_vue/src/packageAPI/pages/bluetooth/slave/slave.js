@@ -1,4 +1,4 @@
-import PAGE_JSON from './slave.json';
+import PAGE_JSON from './slave.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
 import wx from "../../../../onekit/wx.js";
 const uuid3 = '0C76801A-62EB-45E5-96A8-37C8882ABB2B';

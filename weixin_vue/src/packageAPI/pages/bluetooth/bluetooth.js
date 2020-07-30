@@ -1,4 +1,4 @@
-import PAGE_JSON from './bluetooth.json';
+import PAGE_JSON from './bluetooth.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 function inArray(arr,key,val){

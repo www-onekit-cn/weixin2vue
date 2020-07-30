@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0b21d6"],{2376:function(e,n,t){"use strict";t.r(n);var o=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div")},c=[],r={name:"voip-room"},u=r,a=t("2877"),i=Object(a["a"])(u,o,c,!1,null,"2be487e4",null);n["default"]=i.exports}}]);
-//# sourceMappingURL=chunk-2d0b21d6.63ce0a49.js.map

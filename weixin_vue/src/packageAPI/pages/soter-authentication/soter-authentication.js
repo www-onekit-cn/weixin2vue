@@ -1,4 +1,4 @@
-import PAGE_JSON from './soter-authentication.json';
+import PAGE_JSON from './soter-authentication.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 OnekitPage({

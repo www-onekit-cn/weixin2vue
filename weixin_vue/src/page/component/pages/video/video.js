@@ -1,4 +1,4 @@
-import PAGE_JSON from './video.json';
+import PAGE_JSON from './video.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
 import wx from "../../../../onekit/wx.js";
 function getRandomColor(){

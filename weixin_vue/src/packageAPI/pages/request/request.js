@@ -1,4 +1,4 @@
-import PAGE_JSON from './request.json';
+import PAGE_JSON from './request.json.js';
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const requestUrl = require('../../../config').requestUrl;
