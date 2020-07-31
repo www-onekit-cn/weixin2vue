@@ -1,8 +1,49 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./picker.css"></style>
-<script src="./picker.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"picker",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'picker',
+            path:'page/component/pages/picker/picker'
+        };
+    },
+    data:{
+        array:[
+            '中国',
+            '美国',
+            '巴西',
+            '日本'
+        ],
+        index:0,
+        date:'2016-09-01',
+        time:'12:01'
+    },
+    bindPickerChange:function(e){
+        console.log('picker发送选择改变，携带值为',e.detail.value);
+        this.setData({
+            index:e.detail.value
+        });
+    },
+    bindDateChange:function(e){
+        this.setData({
+            date:e.detail.value
+        });
+    },
+    bindTimeChange:function(e){
+        this.setData({
+            time:e.detail.value
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -56,6 +97,12 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.picker{
+  padding: 10px 13px;
+  background-color: #FFFFFF;
+}
+</style>

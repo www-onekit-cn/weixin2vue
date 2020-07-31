@@ -1,8 +1,49 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./input.css"></style>
-<script src="./input.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"input",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'input',
+            path:'page/component/pages/input/input'
+        };
+    },
+    data:{
+        focus:false,
+        inputValue:''
+    },
+    bindKeyInput:function(e){
+        this.setData({
+            inputValue:e.detail.value
+        });
+    },
+    bindReplaceInput:function(e){
+        const value = e.detail.value;
+        var pos = e.detail.cursor;
+        var left;
+        if(pos !== -1){
+            left = e.detail.value.slice(0,pos);
+            pos = left.replace(new RegExp("11","g"),'2').length;
+        }
+        return {
+            value:value.replace(new RegExp("11","g"),'2'),
+            cursor:pos
+        };
+    },
+    bindHideKeyboard:function(e){
+        if(e.detail.value === '123'){
+            wx.hideKeyboard();
+        }
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -93,6 +134,11 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.page-section{
+  margin-bottom: 10px;
+}
+</style>

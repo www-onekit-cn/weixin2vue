@@ -1,8 +1,22 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./progress.css"></style>
-<script src="./progress.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"progress",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'progress',
+            path:'page/component/pages/progress/progress'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -32,6 +46,17 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+progress{
+  width: 100%;
+}
+.progress-box{
+  display: flex;
+  height: 25px;
+  margin-bottom: 30px;
+}
+.progress-cancel{
+  margin-left: 20px;
+}
+</style>

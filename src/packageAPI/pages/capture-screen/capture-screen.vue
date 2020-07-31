@@ -1,8 +1,30 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./capture-screen.css"></style>
-<script src="./capture-screen.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"用户截屏事件",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'用户截屏事件',
+            path:'packageAPI/pages/capture-screen/capture-screen'
+        };
+    },
+    data:{
+        captured:false
+    },
+    onLoad:function(){
+        wx.onUserCaptureScreen(()=>{this.setData({
+            captured:true
+        })});
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -17,6 +39,10 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-body-text {
+  font-size: 20px;
+  font-family: -apple-system-font, Helvetica Neue,Helvetica,sans-serif;
+}
+</style>

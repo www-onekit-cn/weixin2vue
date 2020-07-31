@@ -1,8 +1,44 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./get-location.css"></style>
-<script src="./get-location.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"获取位置",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const util = require('../../../util/util.js');
+const formatLocation = util.formatLocation;
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'获取位置',
+            path:'packageAPI/pages/get-location/get-location'
+        };
+    },
+    data:{
+        hasLocation:false
+    },
+    getLocation:function(){
+        const that = this;
+        wx.getLocation({
+            success:function(res){
+                console.log(res);
+                that.setData({
+                    hasLocation:true,
+                    location:formatLocation(res.longitude,res.latitude)
+                });
+            }
+        });
+    },
+    clear:function(){
+        this.setData({
+            hasLocation:false
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -31,6 +67,21 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-body-info {
+  height: 225px;
+}
+.page-body-text-small {
+  font-size: 12px;
+  color: var(--weui-FG-0);
+  margin-bottom: 50px;
+}
+.page-body-text-location {
+  display: flex;
+  font-size: 25px;
+}
+.page-body-text-location text {
+  margin: 5px;
+}
+</style>

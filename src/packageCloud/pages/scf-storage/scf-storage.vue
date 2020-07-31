@@ -1,8 +1,65 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./scf-storage.css"></style>
-<script src="./scf-storage.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"云函数操作存储",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const demoImageFileId = require('../../../config').demoImageFileId;
+const app = getApp();
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'云函数操作存储',
+            path:'page/cloud/pages/scf-storage/scf-storage'
+        };
+    },
+    data:{
+        fileTempURLDone:false,
+        fileId:'',
+        tempFileURL:'',
+        loading:false
+    },
+    onLoad:function(){
+        this.setData({
+            fileId:app.globalData.fileId || demoImageFileId
+        });
+    },
+    getTempFileURL:function(){
+        const fileId = this.data.fileId;
+        if(!fileId){
+            return;
+        }
+        this.setData({
+            loading:true
+        });
+        wx.cloud.callFunction({
+            name:'getTempFileURL',
+            data:{
+                fileIdList:[
+                    fileId
+                ]
+            },
+            success:(res)=>{
+                console.log('[云函数] [getTempFileURL] res: ',res.result);
+                if(res.result.length){
+                    this.setData({
+                        fileTempURLDone:true,
+                        tempFileURL:res.result[0].tempFileURL
+                    });
+                }
+            },
+            fail:(err)=>{console.error('[云函数] [getTempFileURL] 调用失败',err)},
+            complete:()=>{this.setData({
+                loading:false
+            })}
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -61,6 +118,17 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.page-section-ctn {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image {
+  max-width: 100%;
+}
+</style>

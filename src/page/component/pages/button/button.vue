@@ -1,8 +1,76 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./button.css"></style>
-<script src="./button.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"button",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+const types = [
+    'default',
+    'primary',
+    'warn'
+];
+const pageObject = {
+    data:{
+        defaultSize:'default',
+        primarySize:'default',
+        warnSize:'default',
+        disabled:false,
+        plain:false,
+        loading:false
+    },
+    onShareAppMessage:function(){
+        return {
+            title:'button',
+            path:'page/component/pages/button/button'
+        };
+    },
+    setDisabled:function(){
+        this.setData({
+            disabled:!this.data.disabled
+        });
+    },
+    setPlain:function(){
+        this.setData({
+            plain:!this.data.plain
+        });
+    },
+    setLoading:function(){
+        this.setData({
+            loading:!this.data.loading
+        });
+    },
+    handleContact:function(e){
+        console.log(e.detail);
+    },
+    handleGetPhoneNumber:function(e){
+        console.log(e.detail);
+    },
+    handleGetUserInfo:function(e){
+        console.log(e.detail);
+    },
+    handleOpenSetting:function(e){
+        console.log(e.detail.authSetting);
+    },
+    handleGetUserInfo:function(e){
+        console.log(e.detail.userInfo);
+    }
+};
+for(var i = 0;i < types.length;++i){
+    (function(type){
+        pageObject[type] = function(){
+            const key = type + 'Size';
+            const changedData = {};
+            changedData[key] = this.data[key] === 'default'?'mini':'default';
+            this.setData(changedData);
+        };
+    }(types[i]));
+};
+OnekitPage(pageObject);
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -42,6 +110,17 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+button{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.button-sp-area{
+  margin: 0 auto;
+  width: 60%;
+}
+.mini-btn{
+  margin-right: 5px;
+}
+</style>

@@ -1,13 +1,34 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./redirect.css"></style>
-<script src="./redirect.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"redirectPage",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'redirectPage',
+            path:'page/component/pages/navigator/redirect'
+        };
+    },
+    onLoad:function(options){
+        console.log(options);
+        this.setData({
+            title:options.title
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+/* page/component/pages/navigator/redirect.css */
+</style>

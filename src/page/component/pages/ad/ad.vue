@@ -1,8 +1,26 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./ad.css"></style>
-<script src="./ad.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"ad",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+const info = wx.getSystemInfoSync();
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'ad',
+            path:'page/component/pages/ad/ad'
+        };
+    },
+    data:{
+        platform:info.platform
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -45,6 +63,7 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+/* page/component/pages/ad/ad.css */
+</style>

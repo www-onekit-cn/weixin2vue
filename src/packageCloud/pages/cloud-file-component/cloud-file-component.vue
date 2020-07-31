@@ -1,8 +1,27 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./cloud-file-component.css"></style>
-<script src="./cloud-file-component.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"组件支持",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const {demoImageFileId,demoVideoFileId} = require('../../../config');
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'组件支持',
+            path:'page/cloud/pages/cloud-file-component/cloud-file-component'
+        };
+    },
+    data:{
+        imageFileId:demoImageFileId,
+        videoFileId:demoVideoFileId
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -50,6 +69,17 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.page-section-ctn {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image {
+  max-width: 100%;
+}
+</style>

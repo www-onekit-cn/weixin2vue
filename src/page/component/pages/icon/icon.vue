@@ -1,8 +1,22 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./icon.css"></style>
-<script src="./icon.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"icon",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'icon',
+            path:'page/component/pages/icon/icon'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -118,6 +132,38 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.container {
+  display: block;
+}
+.icon-box{
+  margin-bottom: 20px;
+  padding: 0 38px;
+  display: flex;
+  align-items: center;
+}
+.icon-box-img{
+  margin-right: 28px;
+}
+.icon-box-ctn{
+  flex-shrink: 100;
+}
+.icon-box-title{
+  font-size: 17px;
+}
+.icon-box-desc{
+  margin-top: 6px;
+  font-size: 13px;
+  color: #888;
+}
+
+.icon-small-wrp{
+  margin-right: 28px;
+  width: 93px;
+  height: 93px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

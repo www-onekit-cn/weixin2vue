@@ -1,8 +1,59 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./download-file.css"></style>
-<script src="./download-file.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"下载文件",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const demoImageFileId = require('../../../config').demoImageFileId;
+const app = getApp();
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'下载文件',
+            path:'page/cloud/pages/download-file/download-file'
+        };
+    },
+    data:{
+        fileDownloaded:false,
+        fileId:'',
+        filePath:'',
+        loading:false
+    },
+    onLoad:function(){
+        this.setData({
+            fileId:app.globalData.fileId || demoImageFileId
+        });
+    },
+    downloadFile:function(){
+        const fileId = this.data.fileId;
+        if(!fileId){
+            return;
+        }
+        const self = this;
+        this.setData({
+            loading:true
+        });
+        wx.cloud.downloadFile({
+            fileID:fileId,
+            success:(res)=>{
+                console.log('[下载文件] 成功：',res);
+                self.setData({
+                    fileDownloaded:true,
+                    filePath:res.tempFilePath
+                });
+            },
+            fail:(err)=>{console.error('[下载文件] 失败：',err)},
+            complete:()=>{self.setData({
+                loading:false
+            })}
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -52,6 +103,17 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.page-section-ctn {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image {
+  max-width: 100%;
+}
+</style>

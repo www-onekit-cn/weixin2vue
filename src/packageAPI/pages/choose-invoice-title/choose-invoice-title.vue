@@ -1,8 +1,45 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./choose-invoice-title.css"></style>
-<script src="./choose-invoice-title.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"获取发票抬头",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'获取发票抬头',
+            path:'packageAPI/pages/choose-invoice-title/choose-invoice-title'
+        };
+    },
+    data:{
+        type:'',
+        title:'',
+        taxNumber:'',
+        companyAddress:'',
+        telephone:'',
+        bankName:'',
+        bankAccount:''
+    },
+    chooseInvoiceTitle:function(){
+        wx.chooseInvoiceTitle({
+            success:(res)=>{this.setData({
+                type:res.type,
+                title:res.title,
+                taxNumber:res.taxNumber,
+                companyAddress:res.companyAddress,
+                telephone:res.telephone,
+                bankName:res.bankName,
+                bankAccount:res.bankAccount
+            })},
+            fail:(err)=>{console.error(err)}
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -86,6 +123,19 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+form {
+  margin-top: 15px;
+}
+
+.weui-cell__bd {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+  min-height: 30px;
+  align-items: center;
+}
+</style>

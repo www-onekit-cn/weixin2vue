@@ -1,8 +1,43 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./toast.css"></style>
-<script src="./toast.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"消息提示框",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'消息提示框',
+            path:'packageAPI/pages/toast/toast'
+        };
+    },
+    toast1Tap:function(){
+        wx.showToast({
+            title:'默认'
+        });
+    },
+    toast2Tap:function(){
+        wx.showToast({
+            title:'duration 3000',
+            duration:3000
+        });
+    },
+    toast3Tap:function(){
+        wx.showToast({
+            title:'loading',
+            icon:'loading',
+            duration:5000
+        });
+    },
+    hideToast:function(){
+        wx.hideToast();
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -27,6 +62,7 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+/* page/API/pages/toast/toast.css */
+</style>

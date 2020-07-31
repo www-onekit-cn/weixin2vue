@@ -1,8 +1,26 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./share.css"></style>
-<script src="./share.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"转发",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    data:{
+        shareData:{
+            title:'自定义转发标题',
+            desc:'自定义转发描述',
+            path:'packageAPI/pages/share/share'
+        }
+    },
+    onShareAppMessage:function(){
+        return this.data.shareData;
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -41,6 +59,7 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+</style>

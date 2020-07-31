@@ -1,8 +1,51 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./get-wx-context.css"></style>
-<script src="./get-wx-context.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"WXContext",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'WXContext',
+            path:'page/cloud/pages/get-wx-context/get-wx-context'
+        };
+    },
+    data:{
+        hasWXContext:false,
+        wxContext:{},
+        loading:false
+    },
+    getWXContext:function(){
+        this.setData({
+            loading:true
+        });
+        wx.cloud.callFunction({
+            name:'wxContext',
+            data:{},
+            success:(res)=>{
+                console.log('[云函数] [wxContext] wxContext: ',res.result);
+                this.setData({
+                    hasWXContext:true,
+                    wxContext:res.result,
+                    loading:false
+                });
+            },
+            fail:(err)=>{console.error('[云函数] [wxContext] 调用失败',err)}
+        });
+    },
+    clear:function(){
+        this.setData({
+            hasWXContext:false,
+            wxContext:{}
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -41,6 +84,17 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-body-info {
+  padding-bottom: 0;
+  height: 230px;
+}
+.page-body-text {
+  padding: 0 calc(var(--screen-width)*30/750);
+  text-align: center;
+}
+.context-value {
+  font-size: calc(var(--screen-width)*38/750);
+}
+</style>

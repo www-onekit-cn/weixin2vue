@@ -1,8 +1,23 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./web-view.css"></style>
-<script src="./web-view.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"webview",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'webview',
+            path:'page/component/pages/web-view/web-view'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
-<onekit-web-view src="https://developers.weixin.qq.com/miniprogram/introduction/"></onekit-web-view>
-</onekit-page>
-</template>
+<onekit-web-view src="https://developers.weixin.qq.com/miniprogram/introduction/"></onekit-web-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+
+</style>

@@ -1,8 +1,38 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./add-contact.css"></style>
-<script src="./add-contact.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"新增联系人",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'新增联系人',
+            path:'packageAPI/pages/add-contact/add-contact'
+        };
+    },
+    submit:function(e){
+        const formData = e.detail.value;
+        wx.addPhoneContact({
+            ...formData,
+            success:function(){
+                wx.showToast({
+                    title:'联系人创建成功'
+                });
+            },
+            fail:function(){
+                wx.showToast({
+                    title:'联系人创建失败'
+                });
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -43,6 +73,11 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+input {
+  width: 100%;
+}
+</style>

@@ -1,8 +1,35 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./get-system-info.css"></style>
-<script src="./get-system-info.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"获取手机系统信息",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'获取手机系统信息',
+            path:'packageAPI/pages/get-system-info/get-system-info'
+        };
+    },
+    data:{
+        systemInfo:{}
+    },
+    getSystemInfo:function(){
+        const that = this;
+        wx.getSystemInfo({
+            success:function(res){
+                that.setData({
+                    systemInfo:res
+                });
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -76,6 +103,7 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+</style>

@@ -1,8 +1,55 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./load-font-face.css"></style>
-<script src="./load-font-face.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"动态加载字体",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'动态加载字体',
+            path:'packageAPI/pages/load-font-face/load-font-face'
+        };
+    },
+    data:{
+        fontFamily:'Bitstream Vera Serif Bold',
+        loaded:false
+    },
+    onLoad:function(){
+        this.setData({
+            loaded:false
+        });
+    },
+    loadFontFace:function(){
+        const self = this;
+        wx.loadFontFace({
+            family:this.data.fontFamily,
+            source:'url("https://sungd.github.io/Pacifico.ttf")',
+            success:function(res){
+                console.log(res.status);
+                self.setData({
+                    loaded:true
+                });
+            },
+            fail:function(res){
+                console.log(res.status);
+            },
+            complete:function(res){
+                console.log(res.status);
+            }
+        });
+    },
+    clear:function(){
+        this.setData({
+            loaded:false
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -23,6 +70,18 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-body-info {
+  align-items: center;
+  padding: 100px 0;
+}
+
+.font-loaded {
+  font-family: "Bitstream Vera Serif Bold";
+}
+
+.display-area {
+  font-size: 20px;
+}
+</style>

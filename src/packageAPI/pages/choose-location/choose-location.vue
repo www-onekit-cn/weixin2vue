@@ -1,8 +1,45 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./choose-location.css"></style>
-<script src="./choose-location.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"使用原生地图选择位置",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const util = require('../../../util/util.js');
+const formatLocation = util.formatLocation;
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'使用原生地图选择位置',
+            path:'packageAPI/pages/choose-location/choose-location'
+        };
+    },
+    data:{
+        hasLocation:false
+    },
+    chooseLocation:function(){
+        const that = this;
+        wx.chooseLocation({
+            success:function(res){
+                console.log(res);
+                that.setData({
+                    hasLocation:true,
+                    location:formatLocation(res.longitude,res.latitude),
+                    locationAddress:res.address
+                });
+            }
+        });
+    },
+    clear:function(){
+        this.setData({
+            hasLocation:false
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -32,6 +69,10 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-body-info{
+  padding-bottom: 0;
+  height: 420px;
+}
+</style>

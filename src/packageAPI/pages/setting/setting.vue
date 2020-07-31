@@ -1,8 +1,35 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./setting.css"></style>
-<script src="./setting.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"设置",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'设置',
+            path:'packageAPI/pages/setting/setting'
+        };
+    },
+    data:{
+        setting:{}
+    },
+    getSetting:function(){
+        wx.getSetting({
+            success:(res)=>{
+                console.log(res);
+                this.setData({
+                    setting:res.authSetting
+                });
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -97,6 +124,18 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+form {
+  margin-top: 15px;
+}
+
+.weui-cell__bd {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  min-height: 30px;
+}
+</style>

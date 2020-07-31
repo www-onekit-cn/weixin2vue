@@ -1,8 +1,37 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./intersection-observer.css"></style>
-<script src="./intersection-observer.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"WXML节点布局相交状态",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'WXML节点布局相交状态',
+            path:'packageAPI/pages/intersection-observer/intersection-observer'
+        };
+    },
+    data:{
+        appear:false
+    },
+    onLoad:function(){
+        this._observer = wx.createIntersectionObserver(this);
+        this._observer.relativeTo('.scroll-view').observe('.ball',(res)=>{
+            console.log(res);
+            this.setData({
+                appear:res.intersectionRatio > 0
+            });
+        });
+    },
+    onUnload:function(){
+        if(this._observer)this._observer.disconnect()
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -30,6 +59,44 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.scroll-view {
+  height: 200px;
+  background: var(--weui-BG-2);
+}
+
+.scroll-area {
+  height: 1150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .5s;
+}
+
+.notice {
+  margin-top: 75px;
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  background: #1AAD19;
+  border-radius: 50%;
+}
+
+.filling {
+  height: 200px;
+}
+
+.message {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.message text {
+  font-size: 20px;
+  font-family: -apple-system-font, Helvetica Neue,Helvetica,sans-serif;
+}
+</style>

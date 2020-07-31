@@ -1,8 +1,147 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./scf-openapi.css"></style>
-<script src="./scf-openapi.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"云调用",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'云函数中使用微信开放能力',
+            path:'page/cloud/pages/scf-openapi/scf-openapi'
+        };
+    },
+    data:{
+        sendTemplateMessageResult:'',
+        sendTemplateMessageError:false,
+        getWXACodeResult:'',
+        getWXACodeError:false,
+        sendTemplateMessageLoading:false,
+        getWXACodeLoading:false,
+        theme:'light'
+    },
+    onLoad:function(){
+        this.setData({
+            theme:wx.getSystemInfoSync().theme || 'light'
+        });
+        if(wx.onThemeChange){
+            wx.onThemeChange(({theme})=>{this.setData({
+                theme:theme
+            })});
+        }
+    },
+    sendTemplateMessageViaCloudFunction:function(e){
+        this.setData({
+            sendTemplateMessageResult:'',
+            sendTemplateMessageError:false,
+            sendTemplateMessageLoading:true
+        });
+        wx.cloud.callFunction({
+    name:'openapi',
+    data:{
+        action:'sendTemplateMessage',
+        formId:e.detail.formId
+    }
+}).then((res)=>{
+    this.setData({
+        sendTemplateMessageResult:res,
+        sendTemplateMessageLoading:false
+    });
+    console.log('[云调用] [发送模板消息] 成功: ',res);
+}).catch((err)=>{
+            this.setData({
+                sendTemplateMessageError:true,
+                sendTemplateMessageLoading:false
+            });
+            console.error('[云调用] [发送模板消息] 失败: ',err);
+        });
+    },
+    getWXACodeViaCloudFunction:function(){
+        this.setData({
+            getWXACodeResult:'',
+            getWXACodeError:false,
+            getWXACodeLoading:true
+        });
+        wx.cloud.callFunction({
+    name:'openapi',
+    data:{
+        action:'getWXACode'
+    }
+}).then((res)=>{
+    this.setData({
+        getWXACodeResult:res,
+        getWXACodeLoading:false
+    });
+    console.log('[云调用] [获取小程序码]] 成功: ',res);
+}).catch((err)=>{
+            this.setData({
+                getWXACodeError:true,
+                getWXACodeLoading:false
+            });
+            console.error('[云调用] [获取小程序码] 失败: ',err);
+        });
+    },
+    queryServerDataViaClient:function(){
+        const db = wx.cloud.database();
+        this.setData({
+            clientLoading:true,
+            serverDataClient:'',
+            serverDataClientError:false
+        });
+        db.collection('perm4').where({
+    _openid:'server'
+}).get({
+            success:(res)=>{
+                const resFirstData = (res.data && res.data[0]) || {};
+                this.setData({
+                    serverDataClient:resFirstData.data
+                });
+                console.log('[数据库] [查询记录] 成功: ',res);
+            },
+            fail:(err)=>{
+                this.setData({
+                    serverDataClientError:true
+                });
+                console.error('[数据库] [查询记录] 失败：',err);
+            },
+            complete:()=>{this.setData({
+                clientLoading:false
+            })}
+        });
+    },
+    queryServerDataViaCloudFunction:function(){
+        this.setData({
+            cloudLoading:true,
+            serverDataCloud:'',
+            serverDataCloudError:false
+        });
+        wx.cloud.callFunction({
+            name:'getServerDataDemo',
+            data:{},
+            success:(res)=>{
+                console.log('[云函数] [getServerDataDemo] res: ',res.result);
+                const resFirstData = (res.result.data && res.result.data[0]) || {};
+                this.setData({
+                    serverDataCloud:resFirstData.data
+                });
+            },
+            fail:(err)=>{
+                this.setData({
+                    serverDataCloudError:true
+                });
+                console.error('[云函数] [getServerDataDemo] 调用失败',err);
+            },
+            complete:()=>{this.setData({
+                cloudLoading:false
+            })}
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -86,6 +225,52 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.page-body-info {
+  padding-bottom: calc(var(--screen-width)*30/750);
+}
+.progress-figure {
+  font-size: calc(var(--screen-width)*32/750);
+}
+.progress-icon {
+  width: calc(var(--screen-width)*60/750);
+  height: calc(var(--screen-width)*60/750);
+}
+.progress-line {
+  border-top: 2px solid #2F2F2F;
+  padding: 0 calc(var(--screen-width)*60/750);
+  margin: 0 calc(var(--screen-width)*20/750);
+}
+.progress-line.pending {
+  border-top-style: dashed;
+}
+.progress-line.success {
+  border-top-color: #0bb20c;
+}
+.progress-line.fail {
+  border-top-color: #e64340;
+}
+.progress-line.lg {
+  padding: 0 calc(var(--screen-width)*100/750);
+}
+.data-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calc(var(--screen-width)*30/750);
+  height: calc(var(--screen-width)*30/750);
+}
+.data-area .data-text {
+  display: flex;
+  align-items: center;
+}
+.data-area .data-text icon {
+  margin-right: calc(var(--screen-width)*10/750);
+}
+.btn-area {
+  margin-top: calc(var(--screen-width)*30/750);
+}
+</style>

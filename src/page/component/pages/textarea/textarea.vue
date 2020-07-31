@@ -1,8 +1,28 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./textarea.css"></style>
-<script src="./textarea.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"textarea",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'textarea',
+            path:'page/component/pages/textarea/textarea'
+        };
+    },
+    data:{
+        focus:false
+    },
+    bindTextAreaBlur:function(e){
+        console.log(e.detail.value);
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -26,6 +46,13 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+textarea {
+    width: 350px;
+    padding: 13px 0;
+}
+.textarea-wrp {
+    padding: 0 13px;
+}
+</style>

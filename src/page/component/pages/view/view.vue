@@ -1,8 +1,22 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./view.css"></style>
-<script src="./view.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"view",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'view',
+            path:'page/component/pages/view/view'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -33,6 +47,20 @@
     </onekit-view>
   </onekit-view>
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.flex-wrp{
+  margin-top: 30px;
+  display:flex;
+}
+.flex-item{
+  width: 100px;
+  height: 150px;
+  font-size: 13px;
+}
+.flex-item-V{
+  margin: 0 auto;
+  width: 150px;
+  height: 100px;
+}
+</style>

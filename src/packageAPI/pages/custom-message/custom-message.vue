@@ -1,8 +1,22 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./custom-message.css"></style>
-<script src="./custom-message.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"客服消息",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'客服消息',
+            path:'packageAPI/pages/custom-message/custom-message'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -21,6 +35,7 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+/* page/API/pages/custom-message/custom-message.css */
+</style>

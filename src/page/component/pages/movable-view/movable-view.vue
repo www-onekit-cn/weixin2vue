@@ -1,8 +1,44 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./movable-view.css"></style>
-<script src="./movable-view.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"movable-view",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'movable-view',
+            path:'page/component/pages/movable-view/movable-view'
+        };
+    },
+    data:{
+        x:0,
+        y:0,
+        scale:2
+    },
+    tap:function(){
+        this.setData({
+            x:30,
+            y:30
+        });
+    },
+    tap2:function(){
+        this.setData({
+            scale:3
+        });
+    },
+    onChange:function(e){
+        console.log(e.detail);
+    },
+    onScale:function(e){
+        console.log(e.detail);
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -68,6 +104,50 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+movable-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  background: #1AAD19;
+  color: #fff;  
+}
+
+movable-area {
+  height: 200px;
+  width: 200px;
+  margin: 25px 0px 0 25px;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.max {
+  width: 300px;
+  height: 300px;
+}
+
+.page-section {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.page-section-title {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.page-section-title.first {
+  margin-top: 0;
+}
+
+.btn-area {
+  margin-top: 10px;
+}
+</style>

@@ -1,8 +1,83 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./rich-text.css"></style>
-<script src="./rich-text.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"rich-text",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+const htmlSnip = `<div class="div_class">
+  <h1>Title</h1>
+  <p class="p">
+    Life is&nbsp;<i>like</i>&nbsp;a box of
+    <b>&nbsp;chocolates</b>.
+  </p>
+</div>
+`;
+const nodeSnip = `Page({
+  data: {
+    nodes: [{
+      name: 'div',
+      attrs: {
+        class: 'div_class',
+        style: 'line-height: 60px; color: red;'
+      },
+      children: [{
+        type: 'text',
+        text: 'You never know what you're gonna get.'
+      }]
+    }]
+  }
+})
+`;
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'rich-text',
+            path:'page/component/pages/rich-text/rich-text'
+        };
+    },
+    data:{
+        htmlSnip:htmlSnip,
+        nodeSnip:nodeSnip,
+        renderedByHtml:false,
+        renderedByNode:false,
+        nodes:[
+            {
+                name:'div',
+                attrs:{
+                    class:'div_class',
+                    style:'line-height: 60px; color: #1AAD19;'
+                },
+                children:[
+                    {
+                        type:'text',
+                        text:'You never know what you\'re gonna get.'
+                    }
+                ]
+            }
+        ]
+    },
+    renderHtml:function(){
+        this.setData({
+            renderedByHtml:true
+        });
+    },
+    renderNode:function(){
+        this.setData({
+            renderedByNode:true
+        });
+    },
+    enterCode:function(e){
+        console.log(e.detail.value);
+        this.setData({
+            htmlSnip:e.detail.value
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -34,6 +109,40 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-content {
+  width: auto;
+  margin: 15px 0;
+  padding: 0 25px;
+}
+
+.code-fragment {
+  height: 325px;
+}
+
+.code-textarea {
+  width: auto;
+  height: 325px;
+  border: 1px solid #1AAD19;
+}
+
+.p {
+  color: #1AAD19;
+  margin-top: 15px;
+}
+
+.space {
+  display: inline-block;
+  background: red;
+  width: 5px;
+}
+
+scroll-view {
+  height: 325px;
+  border: 1px solid #1AAD19;
+  white-space: pre;
+  padding: 5px;
+  box-sizing: border-box;
+}
+</style>

@@ -1,8 +1,61 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./picker-view.css"></style>
-<script src="./picker-view.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"picker-view",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+const date = new Date();
+const years = [
+];
+const months = [
+];
+const days = [
+];
+for(var i = 1990;i <= date.getFullYear();i++){
+    years.push(i);
+};
+for(var i = 1;i <= 12;i++){
+    months.push(i);
+};
+for(var i = 1;i <= 31;i++){
+    days.push(i);
+};
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'picker-view',
+            path:'page/component/pages/picker-view/picker-view'
+        };
+    },
+    data:{
+        years:years,
+        year:date.getFullYear(),
+        months:months,
+        month:2,
+        days:days,
+        day:2,
+        value:[
+            9999,
+            1,
+            1
+        ],
+        isDaytime:true
+    },
+    bindChange:function(e){
+        const val = e.detail.value;
+        this.setData({
+            year:this.data.years[val[0]],
+            month:this.data.months[val[1]],
+            day:this.data.days[val[2]],
+            isDaytime:!val[3]
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -33,6 +86,22 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.selected-date {
+  text-align: center;
+  margin: 15px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.picker-icon {
+  width: 25px;
+  height: 25px;
+}
+</style>

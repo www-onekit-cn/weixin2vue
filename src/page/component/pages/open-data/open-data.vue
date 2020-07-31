@@ -1,8 +1,22 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./open-data.css"></style>
-<script src="./open-data.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"open-data",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'open-data',
+            path:'page/component/pages/open-data/open-data'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -68,6 +82,23 @@
 
   </onekit-view>
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.avatar-img {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.country, .province, .city {
+  padding-right: 5px;
+}
+
+</style>

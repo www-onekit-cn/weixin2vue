@@ -1,8 +1,53 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./form.css"></style>
-<script src="./form.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"form",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'form',
+            path:'page/component/pages/form/form'
+        };
+    },
+    data:{
+        pickerHidden:true,
+        chosen:''
+    },
+    pickerConfirm:function(e){
+        this.setData({
+            pickerHidden:true
+        });
+        this.setData({
+            chosen:e.detail.value
+        });
+    },
+    pickerCancel:function(){
+        this.setData({
+            pickerHidden:true
+        });
+    },
+    pickerShow:function(){
+        this.setData({
+            pickerHidden:false
+        });
+    },
+    formSubmit:function(e){
+        console.log('form发生了submit事件，携带数据为：',e.detail.value);
+    },
+    formReset:function(e){
+        console.log('form发生了reset事件，携带数据为：',e.detail.value);
+        this.setData({
+            chosen:''
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -56,6 +101,20 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+label {
+  display: inline-block;
+  min-width: 235px;
+  margin-right: 10px;
+}
+form{
+  width: 100%;
+}
+.picker-text {
+  margin-left: 10px;
+  position: relative;
+}
+</style>

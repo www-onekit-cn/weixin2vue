@@ -1,8 +1,30 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./slider.css"></style>
-<script src="./slider.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"slider",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+const pageData = {
+    onShareAppMessage:function(){
+        return {
+            title:'slider',
+            path:'page/component/pages/slider/slider'
+        };
+    }
+};
+for(var i = 1;i < 5;++i){
+    (function(index){
+        pageData[('slider' + index) + 'change'] = function(e){
+            console.log(('slider' + index) + '发生change事件，携带值为',e.detail.value);
+        };
+    }(i));
+};
+OnekitPage(pageData);
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -33,6 +55,11 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+/* page/component/pages/slider/slider.css */
+
+slider {
+  margin: 0;
+}
+</style>

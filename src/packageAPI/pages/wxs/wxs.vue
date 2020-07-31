@@ -1,8 +1,28 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./wxs.css"></style>
-<script src="./wxs.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"WXS",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'wxs',
+            path:'packageAPI/pages/wxs/wxs'
+        };
+    },
+    handleNavChange:function(e){
+        console.log(e);
+        wx.navigateTo({
+            url:`/packageAPI/pages/wxs/${e.currentTarget.dataset.nav}`
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -22,6 +42,7 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+
+</style>

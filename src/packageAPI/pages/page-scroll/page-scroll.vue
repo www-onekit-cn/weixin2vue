@@ -1,8 +1,34 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./page-scroll.css"></style>
-<script src="./page-scroll.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"页面滚动",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'页面滚动',
+            path:'packageAPI/pages/page-scroll/page-scroll'
+        };
+    },
+    scrollToTop:function(){
+        wx.pageScrollTo({
+            scrollTop:0,
+            duration:300
+        });
+    },
+    scrollToBottom:function(){
+        wx.pageScrollTo({
+            scrollTop:3000,
+            duration:300
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -22,6 +48,15 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.rect {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+}
+
+.filling-area {
+  height: 1250px;
+}
+</style>

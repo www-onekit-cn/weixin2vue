@@ -1,8 +1,40 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./login.css"></style>
-<script src="./login.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"微信登录",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const app = getApp();
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'微信登录',
+            path:'package/API/pages/login/login'
+        };
+    },
+    onLoad:function(){
+        this.setData({
+            hasLogin:app.globalData.hasLogin
+        });
+    },
+    data:{},
+    login:function(){
+        const that = this;
+        wx.login({
+            success:function(){
+                app.globalData.hasLogin = true;
+                that.setData({
+                    hasLogin:true
+                });
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -23,6 +55,30 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-section {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+.page-body-title {
+  font-size: 30px;
+  line-height: 100px;
+}
+.page-body-text {
+  color: #bbb;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 50px 0;
+  text-align: center;
+}
+.page-body-button {
+  width: 100%;
+}
+</style>

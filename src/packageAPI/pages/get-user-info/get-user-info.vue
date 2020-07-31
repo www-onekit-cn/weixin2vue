@@ -1,8 +1,38 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./get-user-info.css"></style>
-<script src="./get-user-info.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"获取用户信息",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'获取用户信息',
+            path:'packageAPI/pages/get-user-info/get-user-info'
+        };
+    },
+    data:{
+        hasUserInfo:false
+    },
+    getUserInfo:function(info){
+        const userInfo = info.detail.userInfo;
+        this.setData({
+            userInfo:userInfo,
+            hasUserInfo:true
+        });
+    },
+    clear:function(){
+        this.setData({
+            hasUserInfo:false,
+            userInfo:{}
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -30,6 +60,19 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-body-info {
+  padding-bottom: 0;
+  height: 230px;
+}
+.userinfo-avatar {
+  border-radius: 114px;
+  width: 114px;
+  height: 114px;
+}
+.userinfo-nickname {
+  margin-top: 10px;
+  font-size: 19px;
+}
+</style>

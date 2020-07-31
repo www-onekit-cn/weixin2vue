@@ -1,8 +1,55 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./ibeacon.css"></style>
-<script src="./ibeacon.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"iBeacon",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'iBeacon',
+            path:'packageAPI/pages/ibeacon/ibeacon'
+        };
+    },
+    data:{
+        uuid:'',
+        beacons:[
+        ]
+    },
+    onUnload:function(){
+        this.stopSearch();
+    },
+    enterUuid:function(e){
+        this.setData({
+            uuid:e.detail.value
+        });
+    },
+    startSearch:function(){
+        if(this._searching)return
+        this._searching = true;
+        wx.startBeaconDiscovery({
+            uuids:[
+                this.data.uuid
+            ],
+            success:(res)=>{
+                console.log(res);
+                wx.onBeaconUpdate(({beacons})=>{this.setData({
+                    beacons:beacons
+                })});
+            },
+            fail:(err)=>{console.error(err)}
+        });
+    },
+    stopSearch:function(){
+        this._searching = false;
+        wx.stopBeaconDiscovery();
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -36,6 +83,31 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.page-body-info {
+  margin-top: 25px;
+  padding: 15px 30px;
+  width: auto;
+}
+
+.devices_summary {
+  padding: 5px;
+  font-size: 15px;
+}
+.device_list {
+  height: 150px;
+  border-radius: 3px;
+  flex: 1;
+}
+.device_item {
+  border-bottom: 1px solid var(--weui-FG-3);
+  padding: 5px;
+  color: var(--weui-FG-HALF);
+}
+.device_item_hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+</style>

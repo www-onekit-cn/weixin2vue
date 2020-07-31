@@ -1,8 +1,39 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./two-way-bindings.css"></style>
-<script src="./two-way-bindings.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"two-way-bindings",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    data:{
+        value:''
+    },
+    onLoad:function(options){
+    },
+    onReady:function(){
+    },
+    onShow:function(){
+    },
+    onHide:function(){
+    },
+    onUnload:function(){
+    },
+    onPullDownRefresh:function(){
+    },
+    onReachBottom:function(){
+    },
+    onShareAppMessage:function(){
+        return {
+            title:'双向绑定',
+            path:'packageAPI/pages/make-phone-call/make-phone-call'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -18,6 +49,15 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.input {
+  margin: 15px auto;
+  width: 80%;
+  /* border-bottom: 1px solid black; */
+}
+.text {
+  margin: 15px auto;
+  width: 80%;
+}
+</style>

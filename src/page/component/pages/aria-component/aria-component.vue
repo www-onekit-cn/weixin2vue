@@ -1,8 +1,22 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./aria-component.css"></style>
-<script src="./aria-component.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"aria-component",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'无障碍访问',
+            path:'page/component/pages/aria-component/aria-component'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -29,6 +43,18 @@
     </onekit-view>
   </onekit-view>
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.text-box{
+  margin-bottom: 35px;
+  padding: 20px 0;
+  display: flex;
+  min-height: 150px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  color: #353535;
+  line-height: 2em;
+}
+</style>

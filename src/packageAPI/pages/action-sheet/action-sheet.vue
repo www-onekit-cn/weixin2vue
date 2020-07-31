@@ -1,8 +1,35 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./action-sheet.css"></style>
-<script src="./action-sheet.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"操作菜单",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'操作菜单',
+            path:'packageAPI/pages/action-sheet/action-sheet'
+        };
+    },
+    actionSheetTap:function(){
+        wx.showActionSheet({
+            itemList:[
+                'item1',
+                'item2',
+                'item3',
+                'item4'
+            ],
+            success:function(e){
+                console.log(e.tapIndex);
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -16,6 +43,15 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+/*
+.cancel {
+  color: white;
+  background: #303F9F;
+}
+.item {
+  color: black;
+  background: #C5CAE9;
+}*/
+</style>

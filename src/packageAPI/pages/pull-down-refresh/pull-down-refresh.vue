@@ -1,8 +1,38 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./pull-down-refresh.css"></style>
-<script src="./pull-down-refresh.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"下拉刷新",
+	"enablePullDownRefresh":true,
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'下拉刷新',
+            path:'packageAPI/pages/pull-down-refresh/pull-down-refresh'
+        };
+    },
+    onPullDownRefresh:function(){
+        wx.showToast({
+            title:'loading...',
+            icon:'loading'
+        });
+        console.log('onPullDownRefresh',new Date());
+    },
+    stopPullDownRefresh:function(){
+        wx.stopPullDownRefresh({
+            complete:function(res){
+                wx.hideToast();
+                console.log(res,new Date());
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -21,6 +51,12 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-body-info {
+  background-color: transparent;
+}
+.btn-area{
+  margin-top: 150px;
+}
+</style>

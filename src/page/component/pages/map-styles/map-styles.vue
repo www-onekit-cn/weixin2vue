@@ -1,8 +1,22 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./map-styles.css"></style>
-<script src="./map-styles.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"map底图样式",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'map底图样式',
+            path:'page/component/pages/map-styles/map-styles'
+        };
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -38,6 +52,15 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-section-ctn {
+  text-align: center;
+}
+
+.image {
+  margin-top: 15px;
+  width: 245px;
+  height: 284px;
+}
+</style>

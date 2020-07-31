@@ -1,8 +1,37 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./scan-code.css"></style>
-<script src="./scan-code.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"扫码",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'扫码',
+            path:'packageAPI/pages/scan-code/scan-code'
+        };
+    },
+    data:{
+        result:''
+    },
+    scanCode:function(){
+        const that = this;
+        wx.scanCode({
+            success:function(res){
+                that.setData({
+                    result:res.result
+                });
+            },
+            fail:function(){
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -22,6 +51,12 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.weui-cell__bd{
+  min-height: 24px;
+  word-break: break-all;
+}
+</style>

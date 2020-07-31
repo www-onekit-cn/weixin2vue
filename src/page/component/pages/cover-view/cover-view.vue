@@ -1,8 +1,26 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./cover-view.css"></style>
-<script src="./cover-view.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"cover-view",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'cover-view',
+            path:'page/component/pages/cover-view/cover-view'
+        };
+    },
+    data:{
+        latitude:23.099994,
+        longitude:113.32452
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -26,6 +44,34 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.cover-view {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 150px);
+  /* opacity: .7; */
+}
+
+.flex-wrp{
+  display:flex;
+}
+
+.flex-item{
+  width: 100px;
+  height: 150px;
+  font-size: 13px;
+}
+
+.demo-text-1 {
+  background: rgba(26, 173, 25, 0.7);
+}
+
+.demo-text-2 {
+  background: rgba(39, 130, 215, 0.7);
+}
+
+.demo-text-3 {
+  background: rgba(255, 255, 255, 0.7);
+}
+</style>

@@ -1,8 +1,45 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./on-network-status-change.css"></style>
-<script src="./on-network-status-change.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"监听手机网络变化",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'监听手机网络变化',
+            path:'packageAPI/pages/on-network-status-change/on-network-status-change'
+        };
+    },
+    data:{
+        isConnected:false
+    },
+    onLoad:function(){
+        const that = this;
+        wx.onNetworkStatusChange(function(res){
+            that.setData({
+                isConnected:res.isConnected,
+                networkType:res.networkType
+            });
+        });
+    },
+    onShow:function(){
+        const that = this;
+        wx.getNetworkType({
+            success:function(res){
+                that.setData({
+                    isConnected:res.networkType !== 'none',
+                    networkType:res.networkType
+                });
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -24,6 +61,13 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.page-body-info {
+  height: 100px;
+}
+.page-body-text-network-type {
+  font-size: 40px;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+</style>

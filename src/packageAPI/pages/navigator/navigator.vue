@@ -1,8 +1,45 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./navigator.css"></style>
-<script src="./navigator.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"页面跳转",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'页面跳转',
+            path:'packageAPI/pages/navigator/navigator'
+        };
+    },
+    navigateTo:function(){
+        wx.navigateTo({
+            url:'./navigator'
+        });
+    },
+    navigateBack:function(){
+        wx.navigateBack();
+    },
+    redirectTo:function(){
+        wx.redirectTo({
+            url:'./navigator'
+        });
+    },
+    switchTab:function(){
+        wx.switchTab({
+            url:'/page/component/index'
+        });
+    },
+    reLaunch:function(){
+        wx.reLaunch({
+            url:'/page/component/index'
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -20,6 +57,7 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+
+</style>

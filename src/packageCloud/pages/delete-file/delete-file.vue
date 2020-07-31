@@ -1,8 +1,68 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./delete-file.css"></style>
-<script src="./delete-file.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"删除文件",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const app = getApp();
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'删除文件',
+            path:'page/cloud/pages/delete-file/delete-file'
+        };
+    },
+    data:{
+        fileId:'',
+        loading:false
+    },
+    onLoad:function(){
+        this.setData({
+            fileId:app.globalData.fileId || ''
+        });
+    },
+    onShow:function(){
+        this.setData({
+            fileId:app.globalData.fileId || ''
+        });
+    },
+    deleteFile:function(){
+        const fileId = this.data.fileId;
+        if(!fileId){
+            return;
+        }
+        const self = this;
+        this.setData({
+            loading:true
+        });
+        wx.cloud.deleteFile({
+            fileList:[
+                fileId
+            ],
+            success:(res)=>{
+                console.log('[删除文件] 成功：',res);
+                if(res.fileList && res.fileList.length){
+                    self.setData({
+                        fileId:''
+                    });
+                }
+                app.globalData.fileId = '';
+                wx.showToast({
+                    title:'删除成功'
+                });
+            },
+            fail:(err)=>{console.error('[删除文件] 失败：',err)},
+            complete:()=>{self.setData({
+                loading:false
+            })}
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -44,6 +104,20 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.page-section-ctn {
+  text-align: center;
+  margin: calc(var(--screen-width)*200/750) auto 0;
+  width: 100%;
+}
+
+.page-body-text {
+  color: #bbb;
+  font-size: calc(var(--screen-width)*28/750);
+  line-height: calc(var(--screen-width)*40/750);
+  text-align: center;
+}
+</style>

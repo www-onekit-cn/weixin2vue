@@ -1,8 +1,61 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./radio.css"></style>
-<script src="./radio.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"radio",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'radio',
+            path:'page/component/pages/radio/radio'
+        };
+    },
+    data:{
+        items:[
+            {
+                value:'USA',
+                name:'美国'
+            },
+            {
+                value:'CHN',
+                name:'中国',
+                checked:'true'
+            },
+            {
+                value:'BRA',
+                name:'巴西'
+            },
+            {
+                value:'JPN',
+                name:'日本'
+            },
+            {
+                value:'ENG',
+                name:'英国'
+            },
+            {
+                value:'FRA',
+                name:'法国'
+            }
+        ]
+    },
+    radioChange:function(e){
+        console.log('radio发生change事件，携带value值为：',e.detail.value);
+        const items = this.data.items;
+        for(var i = 0,len = items.length;i < len;++i){
+            items[i].checked = items[i].value === e.detail.value;
+        };
+        this.setData({
+            items:items
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -38,6 +91,11 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.radio {
+  margin-right: 10px;
+}
+</style>

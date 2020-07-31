@@ -1,13 +1,34 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./navigate.css"></style>
-<script src="./navigate.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"navigatePage",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'navigatePage',
+            path:'page/component/pages/navigator/navigate'
+        };
+    },
+    onLoad:function(options){
+        console.log(options);
+        this.setData({
+            title:options.title
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+/* page/component/pages/navigator/navigate.css */
+</style>

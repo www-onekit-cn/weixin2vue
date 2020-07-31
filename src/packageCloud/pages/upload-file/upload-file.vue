@@ -1,8 +1,88 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./upload-file.css"></style>
-<script src="./upload-file.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"上传文件",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const app = getApp();
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'上传文件',
+            path:'page/cloud/pages/upload-file/upload-file'
+        };
+    },
+    data:{
+        fileUploaded:false,
+        fileId:'',
+        filePath:'',
+        fromOtherPage:false
+    },
+    onLoad:function(options){
+        if(options.from){
+            this.setData({
+                fromOtherPage:true
+            });
+        }
+    },
+    chooseImage:function(){
+        const self = this;
+        wx.chooseImage({
+            count:1,
+            sizeType:[
+                'compressed'
+            ],
+            sourceType:[
+                'album'
+            ],
+            success:function(res){
+                console.log('chooseImage success, temp path is',res.tempFilePaths[0]);
+                const filePath = res.tempFilePaths[0];
+                wx.showLoading({
+                    title:'上传中'
+                });
+                app.getUserOpenIdViaCloud().then((openid)=>{
+    const cloudPath = ('upload/' + openid) + filePath.match(new RegExp("\.[^.]+?$",""))[0];
+    console.log('cloudPath',cloudPath);
+    wx.cloud.uploadFile({
+        cloudPath:cloudPath,
+        filePath:filePath,
+        success:(res)=>{
+            console.log('[上传文件] 成功：',res);
+            app.globalData.fileId = res.fileID;
+            self.setData({
+                fileUploaded:true,
+                fileId:res.fileID,
+                filePath:filePath
+            });
+            wx.hideLoading();
+        },
+        fail:(err)=>{
+            console.error('[上传文件] 失败：',err);
+            wx.hideLoading();
+            wx.showToast({
+                icon:'none',
+                title:'上传失败'
+            });
+        }
+    });
+    return openid;
+}).catch((err)=>{
+                    console.error(err);
+                    wx.hideLoading();
+                });
+            },
+            fail:function({errMsg}){
+                console.log('chooseImage fail, err is',errMsg);
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -47,6 +127,33 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+.image {
+  width: 100%;
+  height: calc(var(--screen-width)*360/750);
+}
+
+.page-body-info {
+  display: flex;
+  box-sizing: border-box;
+  padding: calc(var(--screen-width)*30/750);
+  height: calc(var(--screen-width)*420/750);
+  border-top: calc(var(--screen-width)*1/750) solid var(--weui-FG-3);
+  border-bottom: calc(var(--screen-width)*1/750) solid var(--weui-FG-3);
+  align-items: center;
+  justify-content: center;
+}
+
+.page-section-ctn {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image {
+  max-width: 100%;
+}
+</style>

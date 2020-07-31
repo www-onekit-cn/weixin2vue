@@ -1,8 +1,31 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./share-button.css"></style>
-<script src="./share-button.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"转发按钮",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'转发按钮',
+            path:'packageAPI/pages/share-button/share-button'
+        };
+    },
+    handleTapShareButton:function(){
+        if(!(typeof wx.canIUse === 'function') && wx.canIUse('button.open-type.share')){
+            wx.showModal({
+                title:'当前版本不支持转发按钮',
+                content:'请升级至最新版本微信客户端',
+                showCancel:false
+            });
+        }
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -23,6 +46,9 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+.button-share {
+  display: none;
+}
+</style>

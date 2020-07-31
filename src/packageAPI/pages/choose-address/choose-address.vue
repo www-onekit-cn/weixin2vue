@@ -1,8 +1,35 @@
-<style scoped src="@/onekit/onekit.css"></style>
-<style scoped="scoped" src="./choose-address.css"></style>
-<script src="./choose-address.js"></script>
+<script>
+const PAGE_JSON = {
+	"navigationBarTitleText":"收货地址",
+	"usingComponents":{}
+}
+</script>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'收货地址',
+            path:'packageAPI/pages/choose-address/choose-address'
+        };
+    },
+    data:{
+        addressInfo:null
+    },
+    chooseAddress:function(){
+        wx.chooseAddress({
+            success:(res)=>{this.setData({
+                addressInfo:res
+            })},
+            fail:function(err){
+                console.log(err);
+            }
+        });
+    }
+});
+</script>
 <template>
-<onekit-page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -80,6 +107,19 @@
   </onekit-view>
 
   
-</onekit-view>
-</onekit-page>
-</template>
+</onekit-view></template>
+<style scoped src="@/onekit/onekit.css"/><style>
+@import "../../../common/lib/weui.css";
+
+form {
+  margin-top: 15px;
+}
+
+.weui-cell__bd {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+  min-height: 30px;
+}
+</style>
