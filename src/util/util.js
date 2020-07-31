@@ -1,5 +1,5 @@
-import {OnekitApp,OnekitPage,OnekitComponent} from "../onekit/onekit.js";
-import wx from "../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../onekit/onekit.js';
+import wx from '../onekit/wx.js';
 function formatTime(time){
     if((typeof time !== 'number') || (time < 0)){
         return time;
@@ -83,10 +83,10 @@ function compareVersion(v1,v2){
     };
     return 0;
 };
-export {
-    formatTime,
-    formatLocation,
-    fib,
-    formatDateTime,
-    compareVersion
+export default {
+    formatTime:formatTime,
+    formatLocation:formatLocation,
+    fib:fib,
+    formatDateTime:formatDateTime,
+    compareVersion:compareVersion
 };

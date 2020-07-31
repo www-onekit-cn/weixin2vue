@@ -4,18 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
-import wx from "../../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'open-data',
-            path:'page/component/pages/open-data/open-data'
-        };
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -83,7 +71,18 @@ export default OnekitPage({
   </onekit-view>
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
+import wx from '../../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'open-data',
+            path:'page/component/pages/open-data/open-data'
+        };
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../common/lib/weui.css";

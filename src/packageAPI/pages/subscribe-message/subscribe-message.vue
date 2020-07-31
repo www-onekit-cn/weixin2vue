@@ -3,9 +3,27 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-view class="page-section">
+      <onekit-block>
+        <onekit-text class="page-body-text">点击提交，调用示例订阅消息</onekit-text>
+        <onekit-button class="page-body-button" type="primary" @tap="requestSubscribeMessage">提交</onekit-button>
+      </onekit-block>
+    </onekit-view>
+  </onekit-view>
+
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     data:{},
     requestSubscribeMessage:function(){
@@ -70,25 +88,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-block>
-        <onekit-text class="page-body-text">点击提交，调用示例订阅消息</onekit-text>
-        <onekit-button class="page-body-button" type="primary" @tap="requestSubscribeMessage">提交</onekit-button>
-      </onekit-block>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 .page-section {

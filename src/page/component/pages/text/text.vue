@@ -4,9 +4,28 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-view class="page-section page-section-spacing">
+      <onekit-view class="text-box" scroll-y="true" :scroll-top="scrollTop">
+        <onekit-text>{{text}}</onekit-text>
+      </onekit-view>
+      <onekit-button :disabled="!canAdd" @tap="add">add line</onekit-button>
+      <onekit-button :disabled="!canRemove" @tap="remove">remove line</onekit-button>
+    </onekit-view>
+  </onekit-view>
+
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
-import wx from "../../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
+import wx from '../../../../onekit/wx.js';
 const texts = [
     '2011年1月，微信1.0发布',
     '同年5月，微信2.0语音对讲发布',
@@ -62,26 +81,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section page-section-spacing">
-      <onekit-view class="text-box" scroll-y="true" :scroll-top="scrollTop">
-        <onekit-text>{{text}}</onekit-text>
-      </onekit-view>
-      <onekit-button :disabled="!canAdd" @tap="add">add line</onekit-button>
-      <onekit-button :disabled="!canRemove" @tap="remove">remove line</onekit-button>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 button{

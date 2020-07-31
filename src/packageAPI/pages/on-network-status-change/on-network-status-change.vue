@@ -4,9 +4,32 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-view class="page-section">
+      <onekit-view class="page-body-info">
+        <onekit-view class="page-body-title">网络状态</onekit-view>
+        <onekit-block v-if="isConnected === false">
+          <onekit-text class="page-body-text">没有网络连接</onekit-text>
+        </onekit-block>
+        <onekit-block v-if="isConnected === true">
+          <onekit-text class="page-body-text-network-type">{{networkType}}</onekit-text>
+        </onekit-block>
+      </onekit-view>
+    </onekit-view>
+  </onekit-view>
+
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     onShareAppMessage:function(){
         return {
@@ -39,30 +62,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="page-body-info">
-        <onekit-view class="page-body-title">网络状态</onekit-view>
-        <onekit-block v-if="isConnected === false">
-          <onekit-text class="page-body-text">没有网络连接</onekit-text>
-        </onekit-block>
-        <onekit-block v-if="isConnected === true">
-          <onekit-text class="page-body-text-network-type">{{networkType}}</onekit-text>
-        </onekit-block>
-      </onekit-view>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 .page-body-info {

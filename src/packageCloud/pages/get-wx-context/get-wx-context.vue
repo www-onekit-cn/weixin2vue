@@ -4,47 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'WXContext',
-            path:'page/cloud/pages/get-wx-context/get-wx-context'
-        };
-    },
-    data:{
-        hasWXContext:false,
-        wxContext:{},
-        loading:false
-    },
-    getWXContext:function(){
-        this.setData({
-            loading:true
-        });
-        wx.cloud.callFunction({
-            name:'wxContext',
-            data:{},
-            success:(res)=>{
-                console.log('[云函数] [wxContext] wxContext: ',res.result);
-                this.setData({
-                    hasWXContext:true,
-                    wxContext:res.result,
-                    loading:false
-                });
-            },
-            fail:(err)=>{console.error('[云函数] [wxContext] 调用失败',err)}
-        });
-    },
-    clear:function(){
-        this.setData({
-            hasWXContext:false,
-            wxContext:{}
-        });
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -85,7 +44,47 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'WXContext',
+            path:'page/cloud/pages/get-wx-context/get-wx-context'
+        };
+    },
+    data:{
+        hasWXContext:false,
+        wxContext:{},
+        loading:false
+    },
+    getWXContext:function(){
+        this.setData({
+            loading:true
+        });
+        wx.cloud.callFunction({
+            name:'wxContext',
+            data:{},
+            success:(res)=>{
+                console.log('[云函数] [wxContext] wxContext: ',res.result);
+                this.setData({
+                    hasWXContext:true,
+                    wxContext:res.result,
+                    loading:false
+                });
+            },
+            fail:(err)=>{console.error('[云函数] [wxContext] 调用失败',err)}
+        });
+    },
+    clear:function(){
+        this.setData({
+            hasWXContext:false,
+            wxContext:{}
+        });
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 .page-body-info {
@@ -93,10 +92,10 @@ export default OnekitPage({
   height: 230px;
 }
 .page-body-text {
-  padding: 0 calc(var(--screen-width)*30/750);
+  padding: 0 30rpx;
   text-align: center;
 }
 .context-value {
-  font-size: calc(var(--screen-width)*38/750);
+  font-size: 38rpx;
 }
 </style>

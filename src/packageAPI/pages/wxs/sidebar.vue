@@ -4,9 +4,42 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+const test = require('./sidebar.wxs');
+</script>
+
+<onekit-view class="page">
+  <onekit-view class="page-bottom">
+    <onekit-view class="page-content">
+      <onekit-view class="wc">
+          <onekit-text>技术开发</onekit-text>
+      </onekit-view>
+      <onekit-view class="wc">
+          <onekit-text>产品解析</onekit-text>
+      </onekit-view>
+      <onekit-view class="wc">
+          <onekit-text>运营规范</onekit-text>
+      </onekit-view>
+      <onekit-view class="wc">
+          <onekit-text>高校大赛</onekit-text>
+      </onekit-view>
+    </onekit-view>
+  </onekit-view> 
+  <onekit-view :data-width="windowWidth"null @:touchend="test.touchend" @:touchstart="test.touchstart" class="page-top">
+    <onekit-view style="margin: 10px 10px;"> >>> 右滑出现侧边菜单</onekit-view>
+      <onekit-block v-for="(item,title) in tabs">
+        <onekit-view style="display: flex; align-items: center; flex-direction: column;">
+          <onekit-image :src="item.img" mode="widthFix"></onekit-image>
+         
+        </onekit-view>
+      </onekit-block>
+  </onekit-view>
+</onekit-view></template>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     data:{
         tabs:[
@@ -35,40 +68,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-
-<script>
-const test = require('./sidebar.wxs');
-</script>
-
-<onekit-view class="page">
-  <onekit-view class="page-bottom">
-    <onekit-view class="page-content">
-      <onekit-view class="wc">
-          <onekit-text>技术开发</onekit-text>
-      </onekit-view>
-      <onekit-view class="wc">
-          <onekit-text>产品解析</onekit-text>
-      </onekit-view>
-      <onekit-view class="wc">
-          <onekit-text>运营规范</onekit-text>
-      </onekit-view>
-      <onekit-view class="wc">
-          <onekit-text>高校大赛</onekit-text>
-      </onekit-view>
-    </onekit-view>
-  </onekit-view> 
-  <onekit-view :data-width="windowWidth" :catch:touchmove="test.touchmove" @:touchend="test.touchend" @:touchstart="test.touchstart" class="page-top">
-    <onekit-view style="margin: 10px 10px;"> >>> 右滑出现侧边菜单</onekit-view>
-      <onekit-block v-for="(item,title) in tabs">
-        <onekit-view style="display: flex; align-items: center; flex-direction: column;">
-          <onekit-image :src="item.img" mode="widthFix"></onekit-image>
-         
-        </onekit-view>
-      </onekit-block>
-  </onekit-view>
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 .container {

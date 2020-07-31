@@ -4,27 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'转发按钮',
-            path:'packageAPI/pages/share-button/share-button'
-        };
-    },
-    handleTapShareButton:function(){
-        if(!(typeof wx.canIUse === 'function') && wx.canIUse('button.open-type.share')){
-            wx.showModal({
-                title:'当前版本不支持转发按钮',
-                content:'请升级至最新版本微信客户端',
-                showCancel:false
-            });
-        }
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -47,7 +26,27 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'转发按钮',
+            path:'packageAPI/pages/share-button/share-button'
+        };
+    },
+    handleTapShareButton:function(){
+        if(!(typeof wx.canIUse === 'function') && wx.canIUse('button.open-type.share')){
+            wx.showModal({
+                title:'当前版本不支持转发按钮',
+                content:'请升级至最新版本微信客户端',
+                showCancel:false
+            });
+        }
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 .button-share {

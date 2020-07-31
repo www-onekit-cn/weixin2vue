@@ -4,9 +4,55 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-view class="page-section">
+      <onekit-block v-if="fileUploaded">
+        <onekit-view class="weui-cells weui-cells_after-title">
+          <onekit-view class="weui-cell weui-cell_input">
+            <onekit-view class="weui-cell__hd">
+              <onekit-view class="weui-label">文件 ID</onekit-view>
+            </onekit-view>
+            <onekit-view class="weui-cell__bd">
+              <onekit-textarea class="weui-textarea" :value="fileId" style="height: 3.3em" disabled></onekit-textarea>
+            </onekit-view>
+          </onekit-view>
+
+          <onekit-view class="weui-cell page-section-ctn">
+            <onekit-image :src="filePath" class="image" mode="aspectFit"></onekit-image>
+          </onekit-view>
+        </onekit-view>
+
+        <onekit-view class="btn-area" v-if="fromOtherPage">
+          <onekit-navigator open-type="navigateBack">
+            <onekit-button type="primary" size="40">返回</onekit-button>
+          </onekit-navigator>
+        </onekit-view>
+      </onekit-block>
+
+      <onekit-block v-else>
+        <onekit-view class="page-body-info">
+          <onekit-view class="image-plus image-plus-nb" @tap="chooseImage">
+            <onekit-view class="image-plus-horizontal"></onekit-view>
+            <onekit-view class="image-plus-vertical"></onekit-view>
+          </onekit-view>
+          <onekit-view class="image-plus-text">选择图片</onekit-view>
+        </onekit-view>
+      </onekit-block>
+    </onekit-view>
+  </onekit-view>
+
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 const app = getApp();
 export default OnekitPage({
     onShareAppMessage:function(){
@@ -82,69 +128,22 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-block v-if="fileUploaded">
-        <onekit-view class="weui-cells weui-cells_after-title">
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-view class="weui-cell__hd">
-              <onekit-view class="weui-label">文件 ID</onekit-view>
-            </onekit-view>
-            <onekit-view class="weui-cell__bd">
-              <onekit-textarea class="weui-textarea" :value="fileId" style="height: 3.3em" disabled></onekit-textarea>
-            </onekit-view>
-          </onekit-view>
-
-          <onekit-view class="weui-cell page-section-ctn">
-            <onekit-image :src="filePath" class="image" mode="aspectFit"></onekit-image>
-          </onekit-view>
-        </onekit-view>
-
-        <onekit-view class="btn-area" v-if="fromOtherPage">
-          <onekit-navigator open-type="navigateBack">
-            <onekit-button type="primary" size="40">返回</onekit-button>
-          </onekit-navigator>
-        </onekit-view>
-      </onekit-block>
-
-      <onekit-block v-else>
-        <onekit-view class="page-body-info">
-          <onekit-view class="image-plus image-plus-nb" @tap="chooseImage">
-            <onekit-view class="image-plus-horizontal"></onekit-view>
-            <onekit-view class="image-plus-vertical"></onekit-view>
-          </onekit-view>
-          <onekit-view class="image-plus-text">选择图片</onekit-view>
-        </onekit-view>
-      </onekit-block>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../common/lib/weui.css";
 
 .image {
   width: 100%;
-  height: calc(var(--screen-width)*360/750);
+  height: 360rpx;
 }
 
 .page-body-info {
   display: flex;
   box-sizing: border-box;
-  padding: calc(var(--screen-width)*30/750);
-  height: calc(var(--screen-width)*420/750);
-  border-top: calc(var(--screen-width)*1/750) solid var(--weui-FG-3);
-  border-bottom: calc(var(--screen-width)*1/750) solid var(--weui-FG-3);
+  padding: 30rpx;
+  height: 420rpx;
+  border-top: 1rpx solid var(--weui-FG-3);
+  border-bottom: 1rpx solid var(--weui-FG-3);
   align-items: center;
   justify-content: center;
 }

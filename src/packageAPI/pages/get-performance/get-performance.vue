@@ -4,9 +4,36 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+  <onekit-block v-if="support">
+    <onekit-button type="primary" @:tap="getPerformanceInfo">
+      获取性能数据
+    </onekit-button>
+    <onekit-view class="page-section">
+      <onekit-view v-for="(item) in array" class="performance-list">
+        <onekit-view class="performance-item">
+          <onekit-view>{{item.entryType}}：{{item.name}}</onekit-view>
+          <onekit-view v-if="item.duration">耗时：{{item.duration}}</onekit-view>
+          <onekit-view v-if="item.startTime">时间：{{item.startTime}}</onekit-view>
+        </onekit-view>
+      </onekit-view>
+    </onekit-view>
+  </onekit-block>
+  <onekit-view style="text-align: center" v-else>
+    微信版本过低，暂不支持本功能
+  </onekit-view>
+
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 const util = require('./util');
 const performance = wx.getPerformance?wx.getPerformance():{};
 const performanceObserver = performance.createObserver?performance.createObserver():null;
@@ -60,34 +87,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-  <onekit-block v-if="support">
-    <onekit-button type="primary" @:tap="getPerformanceInfo">
-      获取性能数据
-    </onekit-button>
-    <onekit-view class="page-section">
-      <onekit-view v-for="(item) in array" class="performance-list">
-        <onekit-view class="performance-item">
-          <onekit-view>{{item.entryType}}：{{item.name}}</onekit-view>
-          <onekit-view v-if="item.duration">耗时：{{item.duration}}</onekit-view>
-          <onekit-view v-if="item.startTime">时间：{{item.startTime}}</onekit-view>
-        </onekit-view>
-      </onekit-view>
-    </onekit-view>
-  </onekit-block>
-  <onekit-view style="text-align: center" v-else>
-    微信版本过低，暂不支持本功能
-  </onekit-view>
-
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 .container {

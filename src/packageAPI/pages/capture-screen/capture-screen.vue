@@ -4,9 +4,25 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-view class="page-body-info">
+      <onekit-view class="page-body-title">请进行屏幕截屏</onekit-view>
+      <onekit-text class="page-body-text">截屏事件{{ captured ? "已" : "未" }}触发</onekit-text>
+    </onekit-view>
+  </onekit-view>
+
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     onShareAppMessage:function(){
         return {
@@ -24,23 +40,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-body-info">
-      <onekit-view class="page-body-title">请进行屏幕截屏</onekit-view>
-      <onekit-text class="page-body-text">截屏事件{{ captured ? "已" : "未" }}触发</onekit-text>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 .page-body-text {

@@ -4,18 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
-import wx from "../../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'icon',
-            path:'page/component/pages/icon/icon'
-        };
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -133,7 +121,18 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
+import wx from '../../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'icon',
+            path:'page/component/pages/icon/icon'
+        };
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 .container {

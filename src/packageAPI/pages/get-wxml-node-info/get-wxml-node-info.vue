@@ -4,9 +4,37 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-view class="page-section">
+      <onekit-movable-area>
+        <onekit-movable-view class="target" :x="x" :y="y" direction="all" @change="getNodeInfo">
+          Drag
+        </onekit-movable-view>
+      </onekit-movable-area>
+    </onekit-view>
+
+    <onekit-view class="page-section">
+      <onekit-view class="metric">
+        <onekit-view v-for="(item,key) in  metrics ">
+          <onekit-text class="b">{{ item.key }}</onekit-text>
+          <onekit-text class="span">{{ item.val }}</onekit-text>
+        </onekit-view>
+      </onekit-view>
+    </onekit-view>
+  </onekit-view>
+
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     onShareAppMessage:function(){
         return {
@@ -47,35 +75,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-movable-area>
-        <onekit-movable-view class="target" :x="x" :y="y" direction="all" @change="getNodeInfo">
-          Drag
-        </onekit-movable-view>
-      </onekit-movable-area>
-    </onekit-view>
-
-    <onekit-view class="page-section">
-      <onekit-view class="metric">
-        <onekit-view v-for="(item,key) in  metrics ">
-          <onekit-text class="b">{{ item.key }}</onekit-text>
-          <onekit-text class="span">{{ item.val }}</onekit-text>
-        </onekit-view>
-      </onekit-view>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 movable-view {

@@ -4,22 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
-import wx from "../../../../onekit/wx.js";
-const info = wx.getSystemInfoSync();
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'ad',
-            path:'page/component/pages/ad/ad'
-        };
-    },
-    data:{
-        platform:info.platform
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -64,7 +48,22 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
+import wx from '../../../../onekit/wx.js';
+const info = wx.getSystemInfoSync();
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'ad',
+            path:'page/component/pages/ad/ad'
+        };
+    },
+    data:{
+        platform:info.platform
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 /* page/component/pages/ad/ad.css */

@@ -4,9 +4,25 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-view class="btn-area">
+      <onekit-button type="default" @tap="modalTap">有标题的modal</onekit-button>
+      <onekit-button type="default" @tap="noTitlemodalTap">无标题的modal</onekit-button>
+    </onekit-view>
+  </onekit-view>
+
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     onShareAppMessage:function(){
         return {
@@ -35,23 +51,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="btn-area">
-      <onekit-button type="default" @tap="modalTap">有标题的modal</onekit-button>
-      <onekit-button type="default" @tap="noTitlemodalTap">无标题的modal</onekit-button>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 /* page/API/pages/modal/modal.css */

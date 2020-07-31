@@ -4,29 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'查看位置',
-            path:'packageAPI/pages/open-location/open-location'
-        };
-    },
-    openLocation:function(e){
-        console.log(e);
-        const value = e.detail.value;
-        console.log(value);
-        wx.openLocation({
-            longitude:Number(value.longitude),
-            latitude:Number(value.latitude),
-            name:value.name,
-            address:value.address
-        });
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -80,7 +57,29 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'查看位置',
+            path:'packageAPI/pages/open-location/open-location'
+        };
+    },
+    openLocation:function(e){
+        console.log(e);
+        const value = e.detail.value;
+        console.log(value);
+        wx.openLocation({
+            longitude:Number(value.longitude),
+            latitude:Number(value.latitude),
+            name:value.name,
+            address:value.address
+        });
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../common/lib/weui.css";

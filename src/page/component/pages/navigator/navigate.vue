@@ -4,9 +4,16 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
-import wx from "../../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
+import wx from '../../../../onekit/wx.js';
 export default OnekitPage({
     onShareAppMessage:function(){
         return {
@@ -22,14 +29,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 /* page/component/pages/navigator/navigate.css */

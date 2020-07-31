@@ -4,31 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'收货地址',
-            path:'packageAPI/pages/choose-address/choose-address'
-        };
-    },
-    data:{
-        addressInfo:null
-    },
-    chooseAddress:function(){
-        wx.chooseAddress({
-            success:(res)=>{this.setData({
-                addressInfo:res
-            })},
-            fail:function(err){
-                console.log(err);
-            }
-        });
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -108,7 +83,31 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'收货地址',
+            path:'packageAPI/pages/choose-address/choose-address'
+        };
+    },
+    data:{
+        addressInfo:null
+    },
+    chooseAddress:function(){
+        wx.chooseAddress({
+            success:(res)=>{this.setData({
+                addressInfo:res
+            })},
+            fail:function(err){
+                console.log(err);
+            }
+        });
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../common/lib/weui.css";

@@ -4,9 +4,18 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<onekit-view>
+  <onekit-audio :src="src" id="myAudio"></onekit-audio>
+
+  <onekit-button type="primary" @tap="audioPlay">播放</onekit-button>
+  <onekit-button type="primary" @tap="audioPause">暂停</onekit-button>
+  <onekit-button type="primary" @tap="audio14">设置当前播放时间为14秒</onekit-button>
+  <onekit-button type="primary" @tap="audioStart">回到开头</onekit-button>
+</onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     onShareAppMessage:function(){
         return {
@@ -36,16 +45,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<onekit-view>
-  <onekit-audio :src="src" id="myAudio"></onekit-audio>
-
-  <onekit-button type="primary" @tap="audioPlay">播放</onekit-button>
-  <onekit-button type="primary" @tap="audioPause">暂停</onekit-button>
-  <onekit-button type="primary" @tap="audio14">设置当前播放时间为14秒</onekit-button>
-  <onekit-button type="primary" @tap="audioStart">回到开头</onekit-button>
-</onekit-view></template>
-
 <style scoped src="@/app.css"/>
 <style>
 /* miniprogram/packageAPI/pages/audio/audio.css */

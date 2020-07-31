@@ -4,45 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
-import wx from "../../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'picker',
-            path:'page/component/pages/picker/picker'
-        };
-    },
-    data:{
-        array:[
-            '中国',
-            '美国',
-            '巴西',
-            '日本'
-        ],
-        index:0,
-        date:'2016-09-01',
-        time:'12:01'
-    },
-    bindPickerChange:function(e){
-        console.log('picker发送选择改变，携带值为',e.detail.value);
-        this.setData({
-            index:e.detail.value
-        });
-    },
-    bindDateChange:function(e){
-        this.setData({
-            date:e.detail.value
-        });
-    },
-    bindTimeChange:function(e){
-        this.setData({
-            time:e.detail.value
-        });
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -98,7 +59,45 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
+import wx from '../../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'picker',
+            path:'page/component/pages/picker/picker'
+        };
+    },
+    data:{
+        array:[
+            '中国',
+            '美国',
+            '巴西',
+            '日本'
+        ],
+        index:0,
+        date:'2016-09-01',
+        time:'12:01'
+    },
+    bindPickerChange:function(e){
+        console.log('picker发送选择改变，携带值为',e.detail.value);
+        this.setData({
+            index:e.detail.value
+        });
+    },
+    bindDateChange:function(e){
+        this.setData({
+            date:e.detail.value
+        });
+    },
+    bindTimeChange:function(e){
+        this.setData({
+            time:e.detail.value
+        });
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../common/lib/weui.css";

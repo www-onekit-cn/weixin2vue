@@ -4,61 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-const demoImageFileId = require('../../../config').demoImageFileId;
-const app = getApp();
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'云函数操作存储',
-            path:'page/cloud/pages/scf-storage/scf-storage'
-        };
-    },
-    data:{
-        fileTempURLDone:false,
-        fileId:'',
-        tempFileURL:'',
-        loading:false
-    },
-    onLoad:function(){
-        this.setData({
-            fileId:app.globalData.fileId || demoImageFileId
-        });
-    },
-    getTempFileURL:function(){
-        const fileId = this.data.fileId;
-        if(!fileId){
-            return;
-        }
-        this.setData({
-            loading:true
-        });
-        wx.cloud.callFunction({
-            name:'getTempFileURL',
-            data:{
-                fileIdList:[
-                    fileId
-                ]
-            },
-            success:(res)=>{
-                console.log('[云函数] [getTempFileURL] res: ',res.result);
-                if(res.result.length){
-                    this.setData({
-                        fileTempURLDone:true,
-                        tempFileURL:res.result[0].tempFileURL
-                    });
-                }
-            },
-            fail:(err)=>{console.error('[云函数] [getTempFileURL] 调用失败',err)},
-            complete:()=>{this.setData({
-                loading:false
-            })}
-        });
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -119,7 +64,61 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+const demoImageFileId = require('../../../config').demoImageFileId;
+const app = getApp();
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'云函数操作存储',
+            path:'page/cloud/pages/scf-storage/scf-storage'
+        };
+    },
+    data:{
+        fileTempURLDone:false,
+        fileId:'',
+        tempFileURL:'',
+        loading:false
+    },
+    onLoad:function(){
+        this.setData({
+            fileId:app.globalData.fileId || demoImageFileId
+        });
+    },
+    getTempFileURL:function(){
+        const fileId = this.data.fileId;
+        if(!fileId){
+            return;
+        }
+        this.setData({
+            loading:true
+        });
+        wx.cloud.callFunction({
+            name:'getTempFileURL',
+            data:{
+                fileIdList:[
+                    fileId
+                ]
+            },
+            success:(res)=>{
+                console.log('[云函数] [getTempFileURL] res: ',res.result);
+                if(res.result.length){
+                    this.setData({
+                        fileTempURLDone:true,
+                        tempFileURL:res.result[0].tempFileURL
+                    });
+                }
+            },
+            fail:(err)=>{console.error('[云函数] [getTempFileURL] 调用失败',err)},
+            complete:()=>{this.setData({
+                loading:false
+            })}
+        });
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../common/lib/weui.css";

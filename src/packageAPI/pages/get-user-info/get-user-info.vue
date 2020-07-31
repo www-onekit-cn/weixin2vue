@@ -4,34 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'获取用户信息',
-            path:'packageAPI/pages/get-user-info/get-user-info'
-        };
-    },
-    data:{
-        hasUserInfo:false
-    },
-    getUserInfo:function(info){
-        const userInfo = info.detail.userInfo;
-        this.setData({
-            userInfo:userInfo,
-            hasUserInfo:true
-        });
-    },
-    clear:function(){
-        this.setData({
-            hasUserInfo:false,
-            userInfo:{}
-        });
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -61,7 +33,34 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'获取用户信息',
+            path:'packageAPI/pages/get-user-info/get-user-info'
+        };
+    },
+    data:{
+        hasUserInfo:false
+    },
+    getUserInfo:function(info){
+        const userInfo = info.detail.userInfo;
+        this.setData({
+            userInfo:userInfo,
+            hasUserInfo:true
+        });
+    },
+    clear:function(){
+        this.setData({
+            hasUserInfo:false,
+            userInfo:{}
+        });
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 .page-body-info {

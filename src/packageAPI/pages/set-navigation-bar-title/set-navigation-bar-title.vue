@@ -4,32 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'设置页面标题',
-            path:'packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title'
-        };
-    },
-    setNaivgationBarTitle:function(e){
-        const title = e.detail.value.title;
-        console.log(title);
-        wx.setNavigationBarTitle({
-            title:title,
-            success:function(){
-                console.log('setNavigationBarTitle success');
-            },
-            fail:function(err){
-                console.log('setNavigationBarTitle fail, err is',err);
-            }
-        });
-        return false;
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -55,7 +29,32 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'设置页面标题',
+            path:'packageAPI/pages/set-navigation-bar-title/set-navigation-bar-title'
+        };
+    },
+    setNaivgationBarTitle:function(e){
+        const title = e.detail.value.title;
+        console.log(title);
+        wx.setNavigationBarTitle({
+            title:title,
+            success:function(){
+                console.log('setNavigationBarTitle success');
+            },
+            fail:function(err){
+                console.log('setNavigationBarTitle fail, err is',err);
+            }
+        });
+        return false;
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../common/lib/weui.css";

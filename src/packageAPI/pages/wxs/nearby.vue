@@ -4,9 +4,22 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
+const test = require('./nearby.wxs');
+</script>
+
+
+<onekit-swiper class="swiper" :data-width="windowWidth" :data-imgsize="imgSize" @change="test.change" @animationfinish="test.animationFinish" @transition="test.func" :indicator-dots="indicatorDots" :autoplay="true" :interval="interval" circular :duration="duration">
+  <onekit-block v-for="(item) in imgUrls">
+    <onekit-swiper-item style="height:100%;">
+      <onekit-image :src="item" class="slide-image" style="height:100%;width:100%;" mode="center" height="300"></onekit-image>
+    </onekit-swiper-item>
+  </onekit-block>
+</onekit-swiper></template>
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
 const windowWidth = wx.getSystemInfoSync().windowWidth;
 export default OnekitPage({
     onShareAppMessage:function(){
@@ -73,20 +86,6 @@ export default OnekitPage({
     }
 });
 </script>
-<template>
-<script>
-const test = require('./nearby.wxs');
-</script>
-
-
-<onekit-swiper class="swiper" :data-width="windowWidth" :data-imgsize="imgSize" @change="test.change" @animationfinish="test.animationFinish" @transition="test.func" :indicator-dots="indicatorDots" :autoplay="true" :interval="interval" circular :duration="duration">
-  <onekit-block v-for="(item) in imgUrls">
-    <onekit-swiper-item style="height:100%;">
-      <onekit-image :src="item" class="slide-image" style="height:100%;width:100%;" mode="center" height="300"></onekit-image>
-    </onekit-swiper-item>
-  </onekit-block>
-</onekit-swiper></template>
-
 <style scoped src="@/app.css"/>
 <style>
 /* pages/nearby/nearby.css */

@@ -5,26 +5,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'屏幕旋转',
-            path:'package/API/pages/resizable/resizable'
-        };
-    },
-    data:{
-        status:'lock'
-    },
-    handleStatusChange:function(e){
-        this.setData({
-            status:e.currentTarget.dataset.status
-        });
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -48,7 +28,26 @@ const resizable = require('./resizable.wxs');
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'屏幕旋转',
+            path:'package/API/pages/resizable/resizable'
+        };
+    },
+    data:{
+        status:'lock'
+    },
+    handleStatusChange:function(e){
+        this.setData({
+            status:e.currentTarget.dataset.status
+        });
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 /* miniprogram/packageAPI/pages/resizable/resizable.css */

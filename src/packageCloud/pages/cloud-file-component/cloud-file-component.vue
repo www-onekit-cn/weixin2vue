@@ -4,23 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-const {demoImageFileId,demoVideoFileId} = require('../../../config');
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'组件支持',
-            path:'page/cloud/pages/cloud-file-component/cloud-file-component'
-        };
-    },
-    data:{
-        imageFileId:demoImageFileId,
-        videoFileId:demoVideoFileId
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -70,7 +53,23 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+const {demoImageFileId,demoVideoFileId} = require('../../../config');
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'组件支持',
+            path:'page/cloud/pages/cloud-file-component/cloud-file-component'
+        };
+    },
+    data:{
+        imageFileId:demoImageFileId,
+        videoFileId:demoVideoFileId
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../common/lib/weui.css";

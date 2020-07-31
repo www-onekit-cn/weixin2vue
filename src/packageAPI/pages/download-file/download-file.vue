@@ -4,32 +4,6 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
-<script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
-import wx from "../../../onekit/wx.js";
-const demoImageFileId = require('../../../config').demoImageFileId;
-export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'下载文件',
-            path:'packageAPI/pages/download-file/download-file'
-        };
-    },
-    downloadImage:function(){
-        const self = this;
-        wx.cloud.downloadFile({
-            fileID:demoImageFileId,
-            success:(res)=>{
-                console.log('downloadFile success, res is',res);
-                self.setData({
-                    imageSrc:res.tempFilePath
-                });
-            },
-            fail:console.error
-        });
-    }
-});
-</script>
 <template>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
@@ -53,7 +27,32 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-
+<script>
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import wx from '../../../onekit/wx.js';
+const demoImageFileId = require('../../../config').demoImageFileId;
+export default OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'下载文件',
+            path:'packageAPI/pages/download-file/download-file'
+        };
+    },
+    downloadImage:function(){
+        const self = this;
+        wx.cloud.downloadFile({
+            fileID:demoImageFileId,
+            success:(res)=>{
+                console.log('downloadFile success, res is',res);
+                self.setData({
+                    imageSrc:res.tempFilePath
+                });
+            },
+            fail:console.error
+        });
+    }
+});
+</script>
 <style scoped src="@/app.css"/>
 <style>
 .page-body image {

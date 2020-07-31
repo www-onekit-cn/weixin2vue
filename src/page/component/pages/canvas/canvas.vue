@@ -4,9 +4,35 @@ const PAGE_JSON = {
 	"usingComponents":{}
 }
 </script>
+<template>
+<import src="../../../common/head.vue"/>
+<import src="../../../common/foot.vue"/>
+
+<onekit-view class="container">
+  
+
+  <onekit-view class="page-body">
+    <onekit-block v-if="canIUse">
+      <onekit-view class="page-section">
+        <onekit-view class="page-section-spacing">
+          <onekit-view class="page-body-wrapper">
+            <onekit-canvas canvas-id="canvas" class="canvas"></onekit-canvas>
+          </onekit-view>
+        </onekit-view>
+      </onekit-view>
+    </onekit-block>
+    <onekit-view v-else style="margin: 15px; text-align:center">
+      微信版本过低，暂不支持本功能
+    </onekit-view>
+  </onekit-view>
+
+  
+</onekit-view>
+
+</template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
-import wx from "../../../../onekit/wx.js";
+import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
+import wx from '../../../../onekit/wx.js';
 import {compareVersion} from "../../../../util/util";
 export default OnekitPage({
     onShareAppMessage:function(){
@@ -103,33 +129,6 @@ this.drawBall();
     }
 });
 </script>
-<template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
-
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-block v-if="canIUse">
-      <onekit-view class="page-section">
-        <onekit-view class="page-section-spacing">
-          <onekit-view class="page-body-wrapper">
-            <onekit-canvas canvas-id="canvas" class="canvas"></onekit-canvas>
-          </onekit-view>
-        </onekit-view>
-      </onekit-view>
-    </onekit-block>
-    <onekit-view v-else style="margin: 15px; text-align:center">
-      微信版本过低，暂不支持本功能
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view>
-
-</template>
-
 <style scoped src="@/app.css"/>
 <style>
 @import '../../../common//lib/weui.css';
