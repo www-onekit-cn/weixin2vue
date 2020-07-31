@@ -83,7 +83,7 @@ function compareVersion(v1,v2){
     };
     return 0;
 };
-export default {
+module.exports = {
     formatTime:formatTime,
     formatLocation:formatLocation,
     fib:fib,

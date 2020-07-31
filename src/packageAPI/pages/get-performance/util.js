@@ -50,4 +50,4 @@ util.renderStartTime = (startTime)=>{
     const date = new Date(startTime);
     return date.Format("yyyy-MM-dd hh:mm:ss");
 };
-export default util;
+module.exports = util;

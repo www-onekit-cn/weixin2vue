@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router';Vue.use(Router);
 import $ from 'jquery'
 import {isMobile} from './onekit/js/TheKit'
-import MainPage from './onekit/MainPage.vue'
-import SinglePage from './onekit/SinglePage.vue'
+import Tabs from './onekit/page/Tabs.vue'
+import Page from './onekit/page/Page.vue'
 import APP_JSON from './app.json.js'
 import axios from 'axios'
 Vue.prototype.$axios= axios
@@ -86,7 +86,7 @@ if(tabBar) {
     });
     tabPages.push(pagePath);
   }
-  router.routes[0].component = MainPage;
+  router.routes[0].component = Tabs;
   router.routes[0].children = children;
 }
 //
@@ -102,5 +102,5 @@ for(let page of APP_JSON.pages) {
 //
 new Vue({
   router:new Router(router),
-  render: h => h(SinglePage)
+  render: h => h(Page)
 }).$mount('#app');
