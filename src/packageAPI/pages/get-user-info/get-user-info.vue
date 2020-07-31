@@ -61,7 +61,7 @@ export default OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/>
+
 <style scoped src="@/app.css"/>
 <style>
 .page-body-info {

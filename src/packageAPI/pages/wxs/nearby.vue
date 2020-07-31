@@ -86,7 +86,7 @@ const test = require('./nearby.wxs');
     </onekit-swiper-item>
   </onekit-block>
 </onekit-swiper></template>
-<style scoped src="@/onekit/onekit.css"/>
+
 <style scoped src="@/app.css"/>
 <style>
 /* pages/nearby/nearby.css */

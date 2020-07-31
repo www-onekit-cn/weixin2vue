@@ -18,7 +18,7 @@ export default OnekitPage({
 </script>
 <template>
 <onekit-web-view src="https://developers.weixin.qq.com/miniprogram/introduction/"></onekit-web-view></template>
-<style scoped src="@/onekit/onekit.css"/>
+
 <style scoped src="@/app.css"/>
 <style>
 

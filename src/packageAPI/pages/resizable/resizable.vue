@@ -48,7 +48,7 @@ const resizable = require('./resizable.wxs');
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/>
+
 <style scoped src="@/app.css"/>
 <style>
 /* miniprogram/packageAPI/pages/resizable/resizable.css */

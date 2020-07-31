@@ -56,7 +56,7 @@ export default OnekitPage(pageData);
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/>
+
 <style scoped src="@/app.css"/>
 <style>
 /* page/component/pages/slider/slider.css */

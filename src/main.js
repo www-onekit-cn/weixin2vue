@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router';Vue.use(Router);
 import $ from 'jquery'
 import {isMobile} from './onekit/js/TheKit'
-import MainPage from './onekit/MainPage.vue'
-import SinglePage from './onekit/SinglePage.vue'
+import MainPage from './onekit/page/Tabs.vue'
+import SinglePage from './onekit/page/Page.vue'
 import APP_JSON from './app.json.js'
 import axios from 'axios'
 Vue.prototype.$axios= axios

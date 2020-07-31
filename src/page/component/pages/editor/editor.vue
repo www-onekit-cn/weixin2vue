@@ -171,7 +171,7 @@ export default OnekitPage({
 	<onekit-i :class="'iconfont icon-youxupailie '+formats.list === 'ordered' ? 'ql-active' : ''" data-name="list" data-value="ordered"></onekit-i>
 	<onekit-i :class="'iconfont icon-wuxupailie '+formats.list === 'bullet' ? 'ql-active' : ''" data-name="list" data-value="bullet"></onekit-i>
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/>
+
 <style scoped src="@/app.css"/>
 <style>
 @import "../../../weui/components/weui-wxss/dist/style/weui.css";

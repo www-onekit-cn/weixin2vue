@@ -111,7 +111,7 @@ export default OnekitPage(pageObject);
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/>
+
 <style scoped src="@/app.css"/>
 <style>
 button{

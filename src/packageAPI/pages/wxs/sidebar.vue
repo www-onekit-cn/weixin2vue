@@ -68,7 +68,7 @@ const test = require('./sidebar.wxs');
       </onekit-block>
   </onekit-view>
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/>
+
 <style scoped src="@/app.css"/>
 <style>
 .container {
