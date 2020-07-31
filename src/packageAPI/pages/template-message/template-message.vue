@@ -15,7 +15,7 @@ const formData = {
     name:'帝国歼星舰',
     serial:'123456789'
 };
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'模板消息',
@@ -115,6 +115,8 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 </style>

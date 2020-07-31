@@ -8,7 +8,7 @@ const PAGE_JSON = {
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const windowWidth = wx.getSystemInfoSync().windowWidth;
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'nearby',
@@ -86,7 +86,9 @@ const test = require('./nearby.wxs');
     </onekit-swiper-item>
   </onekit-block>
 </onekit-swiper></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 /* pages/nearby/nearby.css */
 .swiper {
   width: 100%;

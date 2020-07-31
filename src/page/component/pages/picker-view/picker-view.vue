@@ -23,7 +23,7 @@ for(var i = 1;i <= 12;i++){
 for(var i = 1;i <= 31;i++){
     days.push(i);
 };
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'picker-view',
@@ -87,7 +87,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .selected-date {
   text-align: center;
   margin: 15px;

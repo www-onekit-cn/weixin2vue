@@ -8,7 +8,7 @@ const PAGE_JSON = {
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const example = require('./example.js');
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'创建画布',
@@ -67,7 +67,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .canvas-element-wrapper {
   display: block;
   margin-bottom: 50px;

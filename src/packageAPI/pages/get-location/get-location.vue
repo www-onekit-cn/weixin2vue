@@ -9,7 +9,7 @@ import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const util = require('../../../util/util.js');
 const formatLocation = util.formatLocation;
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'获取位置',
@@ -68,7 +68,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-body-info {
   height: 225px;
 }

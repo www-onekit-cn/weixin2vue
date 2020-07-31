@@ -10,7 +10,7 @@ import wx from "../../../onekit/wx.js";
 const util = require('../../../util/util.js');
 const app = getApp();
 const collection = 'serverDate';
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'服务端时间',
@@ -173,7 +173,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-body-info {
   padding-bottom: 0;
   height: 280px;

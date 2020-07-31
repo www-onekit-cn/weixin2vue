@@ -11,7 +11,7 @@ var serviceList = [
 ];
 var resolveFailList = [
 ];
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'mdns',
@@ -144,6 +144,8 @@ OnekitPage({
     </onekit-view>
   </onekit-view>
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 /* miniprogram/page/API/pages/mdns/mdns.css */
 </style>

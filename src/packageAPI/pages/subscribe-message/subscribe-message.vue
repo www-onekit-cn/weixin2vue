@@ -6,7 +6,7 @@ const PAGE_JSON = {
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
-OnekitPage({
+export default OnekitPage({
     data:{},
     requestSubscribeMessage:function(){
         const self = this;
@@ -88,7 +88,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-section {
   margin-top: 100px;
   display: flex;

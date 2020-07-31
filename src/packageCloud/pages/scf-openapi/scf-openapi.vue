@@ -7,7 +7,7 @@ const PAGE_JSON = {
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'云函数中使用微信开放能力',
@@ -162,10 +162,10 @@ OnekitPage({
           <onekit-view class="progress-figure">
             <onekit-image v-if="theme === 'dark'" src="/page/API/resources/kind/device_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/API/resources/kind/device.png" class="progress-icon"></onekit-image>
-            <onekit-text :class="'progress-line '+sendTemplateMessageLoading && "pending"+' '+sendTemplateMessageResult && "success"+' '+sendTemplateMessageError && "fail""></onekit-text>
+            <onekit-text :class="'progress-line '+sendTemplateMessageLoading && 'pending'+' '+sendTemplateMessageResult && 'success'+' '+sendTemplateMessageError && 'fail'"></onekit-text>
             <onekit-image v-if="theme === 'dark'" src="/page/cloud/resources/kind/scf_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/cloud/resources/kind/scf.png" class="progress-icon"></onekit-image>
-            <onekit-text :class="'progress-line '+sendTemplateMessageLoading && "pending"+' '+sendTemplateMessageResult && "success"+' '+sendTemplateMessageError && "fail""></onekit-text>
+            <onekit-text :class="'progress-line '+sendTemplateMessageLoading && 'pending'+' '+sendTemplateMessageResult && 'success'+' '+sendTemplateMessageError && 'fail'"></onekit-text>
             <onekit-image v-if="theme === 'dark'" src="/page/API/resources/kind/device_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/API/resources/kind/device.png" class="progress-icon"></onekit-image>
           </onekit-view>
@@ -195,7 +195,7 @@ OnekitPage({
           <onekit-view class="progress-figure">
             <onekit-image v-if="theme === 'dark'" src="/page/API/resources/kind/device_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/API/resources/kind/device.png" class="progress-icon"></onekit-image>
-            <onekit-text :class="'progress-line '+getWXACodeLoading && "pending"+' '+getWXACodeResult && "success"+' '+getWXACodeError && "fail""></onekit-text>
+            <onekit-text :class="'progress-line '+getWXACodeLoading && 'pending'+' '+getWXACodeResult && 'success'+' '+getWXACodeError && 'fail'"></onekit-text>
             <onekit-image v-if="theme === 'dark'" src="/page/cloud/resources/kind/scf_dark.png" class="progress-icon"></onekit-image>
             <onekit-image v-else src="/page/cloud/resources/kind/scf.png" class="progress-icon"></onekit-image>
           </onekit-view>
@@ -226,7 +226,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 
 .page-body-info {

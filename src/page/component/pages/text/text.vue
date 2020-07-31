@@ -22,7 +22,7 @@ const texts = [
     '2017年1月，小程序发布',
     '......'
 ];
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'text',
@@ -81,7 +81,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 button{
   margin: 20px 0;
 }

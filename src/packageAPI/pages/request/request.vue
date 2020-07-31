@@ -9,7 +9,7 @@ import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const requestUrl = require('../../../config').requestUrl;
 const duration = 2000;
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'网络请求',
@@ -68,6 +68,8 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 
 </style>

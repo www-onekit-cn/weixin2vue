@@ -7,7 +7,7 @@ const PAGE_JSON = {
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
-OnekitPage({
+export default OnekitPage({
     data:{
         value:''
     },
@@ -50,7 +50,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .input {
   margin: 15px auto;
   width: 80%;

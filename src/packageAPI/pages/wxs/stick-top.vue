@@ -9,7 +9,7 @@ import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const height = wx.getSystemInfoSync().windowHeight;
 const app = getApp();
-OnekitPage({
+export default OnekitPage({
     data:{
         sticky:false,
         opacity:0,
@@ -90,7 +90,9 @@ const test = require('./stick-top.wxs');
     </onekit-view>
   </onekit-block>
 </onekit-scroll-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-banner{
   height:200px;
   background-color: #fff;

@@ -7,7 +7,7 @@ const PAGE_JSON = {
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'WXML节点布局相交状态',
@@ -60,7 +60,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .scroll-view {
   height: 200px;
   background: var(--weui-BG-2);

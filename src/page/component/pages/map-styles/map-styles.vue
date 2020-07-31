@@ -7,7 +7,7 @@ const PAGE_JSON = {
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
 import wx from "../../../../onekit/wx.js";
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'map底图样式',
@@ -53,7 +53,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-section-ctn {
   text-align: center;
 }

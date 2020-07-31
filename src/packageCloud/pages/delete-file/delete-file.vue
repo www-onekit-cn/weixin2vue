@@ -8,7 +8,7 @@ const PAGE_JSON = {
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const app = getApp();
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'删除文件',
@@ -105,7 +105,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 
 .page-section-ctn {

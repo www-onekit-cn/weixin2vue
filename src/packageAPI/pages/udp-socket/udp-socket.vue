@@ -12,7 +12,7 @@ const AB2String = (arrayBuffer)=>{
     var encodedString = String.fromCharCode.apply(null,unit8Arr),decodedString = decodeURIComponent(escape(encodedString));
     return decodedString;
 };
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'UDPSocket',
@@ -137,6 +137,8 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 
 </style>

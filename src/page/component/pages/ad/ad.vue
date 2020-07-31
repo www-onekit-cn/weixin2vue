@@ -8,7 +8,7 @@ const PAGE_JSON = {
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
 import wx from "../../../../onekit/wx.js";
 const info = wx.getSystemInfoSync();
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'ad',
@@ -64,6 +64,8 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 /* page/component/pages/ad/ad.css */
 </style>

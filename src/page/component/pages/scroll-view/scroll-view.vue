@@ -13,7 +13,7 @@ const order = [
     'demo2',
     'demo3'
 ];
-OnekitPage({
+export default OnekitPage({
     onLoad:function(){
         this.animate('#scroll-sample-object1',[
             {
@@ -228,7 +228,9 @@ module.exports = {
 ;
 </script>
 </template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-section-spacing{
   margin-top: 30px;
 }

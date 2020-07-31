@@ -7,7 +7,7 @@ const PAGE_JSON = {
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'动态加载字体',
@@ -58,7 +58,7 @@ OnekitPage({
 
   <onekit-view class="page-body">
     <onekit-view class="page-section">
-      <onekit-view :class="'page-body-info display-area '+ loaded ? "font-loaded" : "" ">
+      <onekit-view :class="'page-body-info display-area '+ loaded ? 'font-loaded' : '' ">
         <onekit-text v-if="!loaded">Load {{ fontFamily }}</onekit-text>
         <onekit-text v-else>{{ fontFamily }} is loaded</onekit-text>
       </onekit-view>
@@ -71,7 +71,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-body-info {
   align-items: center;
   padding: 100px 0;

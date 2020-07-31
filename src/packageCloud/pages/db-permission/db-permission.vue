@@ -9,7 +9,7 @@ import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const app = getApp();
 const sliderWidth = 96;
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'权限管理',
@@ -449,7 +449,7 @@ OnekitPage({
             <onekit-view class="weui-tab">
               <onekit-view class="weui-navbar">
                 <onekit-block v-for="(item) in tabs[currentPermissionIndex]">
-                  <onekit-view :id="index" :class="'weui-navbar__item '+activeTabIndex === index ? "weui-bar__item_on" : """ @tap="onTabClick">
+                  <onekit-view :id="index" :class="'weui-navbar__item '+activeTabIndex === index ? 'weui-bar__item_on' : ''" @tap="onTabClick">
                     <onekit-view class="weui-navbar__title">{{item}}</onekit-view>
                   </onekit-view>
                 </onekit-block>
@@ -493,7 +493,7 @@ OnekitPage({
             <onekit-view class="weui-tab">
               <onekit-view class="weui-navbar">
                 <onekit-block v-for="(item) in tabs[currentPermissionIndex]">
-                  <onekit-view :id="index" :class="'weui-navbar__item '+activeTabIndex === index ? "weui-bar__item_on" : """ @tap="onTabClick">
+                  <onekit-view :id="index" :class="'weui-navbar__item '+activeTabIndex === index ? 'weui-bar__item_on' : ''" @tap="onTabClick">
                     <onekit-view class="weui-navbar__title">{{item}}</onekit-view>
                   </onekit-view>
                 </onekit-block>
@@ -574,7 +574,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 
 .permission-select {

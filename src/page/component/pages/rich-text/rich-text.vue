@@ -31,7 +31,7 @@ const nodeSnip = `Page({
   }
 })
 `;
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'rich-text',
@@ -110,7 +110,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-content {
   width: auto;
   margin: 15px 0;

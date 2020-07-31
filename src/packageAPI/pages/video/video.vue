@@ -36,7 +36,7 @@ const duration = Array.apply(null,{
 }).map(function(n,i){
     return i + 1;
 });
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'拍摄/选择视频',
@@ -149,7 +149,9 @@ OnekitPage({
     </onekit-view>
   </onekit-view>
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 
 .page-body-info {

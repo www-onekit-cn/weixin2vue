@@ -45,7 +45,7 @@ const triangleVertices = [
     1.0,
     0.6
 ];
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'canvas',
@@ -134,7 +134,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import '../../../common//lib/weui.css';
 
 .canvas {

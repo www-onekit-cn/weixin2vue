@@ -120,7 +120,7 @@ function createRenderer(canvas,width,height){
         gl.drawElements(gl.TRIANGLES,6,gl.UNSIGNED_SHORT,0);
     };
 };
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'camera',
@@ -247,7 +247,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 
 camera {

@@ -21,7 +21,7 @@ function showSuccess(title){
         duration:1000
     });
 };
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'Web Socket',
@@ -134,6 +134,8 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 </style>

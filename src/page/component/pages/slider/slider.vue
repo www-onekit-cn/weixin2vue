@@ -22,7 +22,7 @@ for(var i = 1;i < 5;++i){
         };
     }(i));
 };
-OnekitPage(pageData);
+export default OnekitPage(pageData);
 </script>
 <template>
 <import src="../../../common/head.vue"/>
@@ -56,7 +56,9 @@ OnekitPage(pageData);
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 /* page/component/pages/slider/slider.css */
 
 slider {

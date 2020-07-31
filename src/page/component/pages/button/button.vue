@@ -68,7 +68,7 @@ for(var i = 0;i < types.length;++i){
         };
     }(types[i]));
 };
-OnekitPage(pageObject);
+export default OnekitPage(pageObject);
 </script>
 <template>
 <import src="../../../common/head.vue"/>
@@ -111,7 +111,9 @@ OnekitPage(pageObject);
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 button{
   margin-top: 15px;
   margin-bottom: 15px;

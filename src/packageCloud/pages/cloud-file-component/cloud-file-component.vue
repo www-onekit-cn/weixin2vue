@@ -8,7 +8,7 @@ const PAGE_JSON = {
 import {OnekitApp,OnekitPage,OnekitComponent} from "../../../onekit/onekit.js";
 import wx from "../../../onekit/wx.js";
 const {demoImageFileId,demoVideoFileId} = require('../../../config');
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'组件支持',
@@ -70,7 +70,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 
 .page-section-ctn {

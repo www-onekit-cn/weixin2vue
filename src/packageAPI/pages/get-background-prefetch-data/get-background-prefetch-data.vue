@@ -26,7 +26,7 @@ Date.prototype.Format = function(fmt){
         };
     return fmt;
 };
-OnekitPage({
+export default OnekitPage({
     onShow:function(){
         this.getBackgroundFetchData();
     },
@@ -102,7 +102,9 @@ OnekitPage({
   </onekit-view>
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .page-body-info {
   padding-bottom: 0;
   height: 340px;

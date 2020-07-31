@@ -13,7 +13,7 @@ const defaultTabBarStyle = {
     backgroundColor:'#ffffff'
 };
 const defaultItemName = '接口';
-OnekitComponent({
+export default OnekitComponent({
     data:{
         hasSetTabBarBadge:false,
         hasShownTabBarRedDot:false,
@@ -172,8 +172,11 @@ OnekitComponent({
   </onekit-view>
 
   
-</onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+</onekit-view>
+</template>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 @import "../../../../app.css";
 

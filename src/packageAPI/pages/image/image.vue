@@ -31,7 +31,7 @@ const sizeType = [
         'original'
     ]
 ];
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'图片',
@@ -180,6 +180,8 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 @import "../../../common/lib/weui.css";
 </style>

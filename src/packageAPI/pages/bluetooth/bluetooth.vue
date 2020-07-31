@@ -21,7 +21,7 @@ function ab2hex(buffer){
     });
     return hexArr.join('');
 };
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'蓝牙',
@@ -296,7 +296,9 @@ module.exports.len = function(arr) {
   </onekit-view>
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 
 .devices_summary {
   padding: 5px;

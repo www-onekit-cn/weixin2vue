@@ -10,7 +10,7 @@ import wx from "../../../onekit/wx.js";
 const util = require('./util');
 const performance = wx.getPerformance?wx.getPerformance():{};
 const performanceObserver = performance.createObserver?performance.createObserver():null;
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'周期性缓存',
@@ -87,7 +87,9 @@ OnekitPage({
 
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .container {
   display: block;
 }

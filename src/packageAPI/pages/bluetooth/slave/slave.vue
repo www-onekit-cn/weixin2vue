@@ -23,7 +23,7 @@ function inArray(arr,key,val){
     };
     return -1;
 };
-OnekitPage({
+export default OnekitPage({
     onShareAppMessage:function(){
         return {
             title:'蓝牙',
@@ -301,7 +301,9 @@ OnekitPage({
   </onekit-view>
   
 </onekit-view></template>
-<style scoped src="@/onekit/onekit.css"/><style>
+<style scoped src="@/onekit/onekit.css"/>
+<style scoped src="@/app.css"/>
+<style>
 .action-area {
   display: flex;
   flex-direction: row;
