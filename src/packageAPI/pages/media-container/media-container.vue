@@ -5,7 +5,8 @@ const PAGE_JSON = {
 }
 </script>
 <template>
-<import src="../../../common/head.vue"/>
+    <page>
+        <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
@@ -13,9 +14,7 @@ const PAGE_JSON = {
 
   <onekit-view class="page-body">
     <onekit-view class="page-section">
-      <onekit-view class="page-section-title">
-       源视频
-      </onekit-view>
+      <onekit-view class="page-section-title">源视频</onekit-view>
     </onekit-view>
     <onekit-view class="page-section">
      <onekit-button type="primary" @tap="handleChooseVideo" data-video="one">选择源视频1</onekit-button>
@@ -31,10 +30,10 @@ const PAGE_JSON = {
     <onekit-block v-if="targetSrc">
       <onekit-view class="page-section">
         <onekit-view class="page-section-title">
-           <onekit-text>合成视频</onekit-text>
+            <onekit-text>合成视频</onekit-text>
         </onekit-view>
         <onekit-view class="page-section-title">
-           <onekit-text>合成视频轨道为：源视频1视频轨道 + 源视频2音频轨道</onekit-text>
+            <onekit-text>合成视频轨道为：源视频1视频轨道 + 源视频2音频轨道</onekit-text>
         </onekit-view>
       </onekit-view>
       <onekit-view class="page-section">
@@ -44,7 +43,9 @@ const PAGE_JSON = {
     </onekit-block>
   </onekit-view>
   
-</onekit-view></template>
+</onekit-view>
+    </page>
+</template>
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
 import wx from '../../../onekit/wx.js';

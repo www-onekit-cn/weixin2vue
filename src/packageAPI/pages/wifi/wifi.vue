@@ -5,7 +5,8 @@ const PAGE_JSON = {
 }
 </script>
 <template>
-<import src="../../../common/head.vue"/>
+  <page>
+    <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
@@ -14,7 +15,7 @@ const PAGE_JSON = {
   <onekit-view class="page-body">
     <onekit-view class="page-body-info">
       <onekit-scroll-view class="device-list" scroll-y>
-        <onekit-view v-for="(item,index) in wifiList" class="item">
+        <onekit-view v-for="item in wifiList" class="item" :key="item">
           <onekit-view class="list">
             <onekit-text>{{ item.SSID }}</onekit-text>
             <onekit-span class="wifi-icon">
@@ -35,7 +36,9 @@ const PAGE_JSON = {
   </onekit-view>
 
   
-</onekit-view></template>
+</onekit-view>
+  </page>
+</template>
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
 import wx from '../../../onekit/wx.js';

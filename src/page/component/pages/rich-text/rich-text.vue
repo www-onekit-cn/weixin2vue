@@ -1,45 +1,48 @@
 <script>
 const PAGE_JSON = {
-	"navigationBarTitleText":"rich-text",
-	"usingComponents":{}
-}
+  navigationBarTitleText: "rich-text",
+  usingComponents: {},
+};
 </script>
 <template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
+  <page>
+    <import src="../../../common/head.vue" />
+    <import src="../../../common/foot.vue" />
 
-<onekit-view class="container">
-  
+    <onekit-view class="container">
+      <onekit-view class="page-body">
+        <onekit-view class="page-section">
+          <onekit-view class="page-section-title">通过HTML String渲染</onekit-view>
+          <onekit-view class="page-content">
+            <onekit-scroll-view scroll-y>{{htmlSnip}}</onekit-scroll-view>
+            <onekit-button type="primary" @tap="renderHtml">渲染HTML</onekit-button>
+            <onekit-block v-if="renderedByHtml">
+              <onekit-rich-text :nodes="htmlSnip"></onekit-rich-text>
+            </onekit-block>
+          </onekit-view>
+        </onekit-view>
 
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="page-section-title">通过HTML String渲染</onekit-view>
-      <onekit-view class="page-content">
-        <onekit-scroll-view scroll-y>{{htmlSnip}}</onekit-scroll-view>
-        <onekit-button type="primary" @tap="renderHtml">渲染HTML</onekit-button>
-        <onekit-block v-if="renderedByHtml">
-          <onekit-rich-text :nodes="htmlSnip"></onekit-rich-text>
-        </onekit-block>
+        <onekit-view class="page-section">
+          <onekit-view class="page-section-title">通过节点渲染</onekit-view>
+          <onekit-view class="page-content">
+            <onekit-scroll-view scroll-y>{{nodeSnip}}</onekit-scroll-view>
+            <onekit-button type="primary" @tap="renderNode">渲染Node</onekit-button>
+            <onekit-block v-if="renderedByNode">
+              <onekit-rich-text :nodes="nodes"></onekit-rich-text>
+            </onekit-block>
+          </onekit-view>
+        </onekit-view>
       </onekit-view>
     </onekit-view>
-
-    <onekit-view class="page-section">
-      <onekit-view class="page-section-title">通过节点渲染</onekit-view>
-      <onekit-view class="page-content">
-        <onekit-scroll-view scroll-y>{{nodeSnip}}</onekit-scroll-view>
-        <onekit-button type="primary" @tap="renderNode">渲染Node</onekit-button>
-        <onekit-block v-if="renderedByNode">
-          <onekit-rich-text :nodes="nodes"></onekit-rich-text>
-        </onekit-block>
-      </onekit-view>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
+  </page>
+</template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
-import wx from '../../../../onekit/wx.js';
+import {
+  OnekitApp,
+  OnekitPage,
+  OnekitComponent,
+} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
 const htmlSnip = `<div class="div_class">
   <h1>Title</h1>
   <p class="p">
@@ -65,49 +68,49 @@ const nodeSnip = `Page({
 })
 `;
 export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'rich-text',
-            path:'page/component/pages/rich-text/rich-text'
-        };
-    },
-    data:{
-        htmlSnip:htmlSnip,
-        nodeSnip:nodeSnip,
-        renderedByHtml:false,
-        renderedByNode:false,
-        nodes:[
-            {
-                name:'div',
-                attrs:{
-                    class:'div_class',
-                    style:'line-height: 60px; color: #1AAD19;'
-                },
-                children:[
-                    {
-                        type:'text',
-                        text:'You never know what you\'re gonna get.'
-                    }
-                ]
-            }
-        ]
-    },
-    renderHtml:function(){
-        this.setData({
-            renderedByHtml:true
-        });
-    },
-    renderNode:function(){
-        this.setData({
-            renderedByNode:true
-        });
-    },
-    enterCode:function(e){
-        console.log(e.detail.value);
-        this.setData({
-            htmlSnip:e.detail.value
-        });
-    }
+  onShareAppMessage: function () {
+    return {
+      title: "rich-text",
+      path: "page/component/pages/rich-text/rich-text",
+    };
+  },
+  data: {
+    htmlSnip: htmlSnip,
+    nodeSnip: nodeSnip,
+    renderedByHtml: false,
+    renderedByNode: false,
+    nodes: [
+      {
+        name: "div",
+        attrs: {
+          class: "div_class",
+          style: "line-height: 60px; color: #1AAD19;",
+        },
+        children: [
+          {
+            type: "text",
+            text: "You never know what you're gonna get.",
+          },
+        ],
+      },
+    ],
+  },
+  renderHtml: function () {
+    this.setData({
+      renderedByHtml: true,
+    });
+  },
+  renderNode: function () {
+    this.setData({
+      renderedByNode: true,
+    });
+  },
+  enterCode: function (e) {
+    console.log(e.detail.value);
+    this.setData({
+      htmlSnip: e.detail.value,
+    });
+  },
 });
 </script>
 <style scoped src="@/app.css"/>
@@ -125,11 +128,11 @@ export default OnekitPage({
 .code-textarea {
   width: auto;
   height: 325px;
-  border: 1px solid #1AAD19;
+  border: 1px solid #1aad19;
 }
 
 .p {
-  color: #1AAD19;
+  color: #1aad19;
   margin-top: 15px;
 }
 
@@ -141,7 +144,7 @@ export default OnekitPage({
 
 scroll-view {
   height: 325px;
-  border: 1px solid #1AAD19;
+  border: 1px solid #1aad19;
   white-space: pre;
   padding: 5px;
   box-sizing: border-box;

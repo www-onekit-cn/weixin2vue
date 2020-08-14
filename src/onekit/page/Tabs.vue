@@ -2,7 +2,7 @@
   <div id="app">
     <router-view @updateWindow="updateWindow" />
     <div class="tab-bar">
-      <span v-for="tab in tabs" class="item" @click="switchTo(tab.url)">
+      <span v-for="tab in tabs" class="item" @click="switchTo(tab.url)" :key="tab">
         <img :src="$route.path.includes(tab.url) ? tab.selected : tab.normal" alt="">
         <span :class="{active:$route.path.includes(tab.url)}">{{tab.name}}</span>
       </span>

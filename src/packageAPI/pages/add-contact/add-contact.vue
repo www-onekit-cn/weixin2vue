@@ -5,47 +5,30 @@ const PAGE_JSON = {
 }
 </script>
 <template>
-<import src="../../../common/head.vue"/>
+  <page>
+    <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
 <onekit-view class="container">
   
 
   <onekit-view class="page-body">
-    <onekit-form @submit="submit">
-      <onekit-view class="page-section">
-        <onekit-view class="weui-cells__title">姓氏</onekit-view>
-        <onekit-view class="weui-cells weui-cells_after-title">
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-input class="weui-input" name="lastName"></onekit-input>
-          </onekit-view>
-        </onekit-view>
-      </onekit-view>
-      <onekit-view class="page-section">
-        <onekit-view class="weui-cells__title">名字</onekit-view>
-        <onekit-view class="weui-cells weui-cells_after-title">
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-input class="weui-input" name="firstName"></onekit-input>
-          </onekit-view>
-        </onekit-view>
-      </onekit-view>
-      <onekit-view class="page-section">
-        <onekit-view class="weui-cells__title">手机号</onekit-view>
-        <onekit-view class="weui-cells weui-cells_after-title">
-          <onekit-view class="weui-cell weui-cell_input">
-            <onekit-input class="weui-input" name="mobilePhoneNumber"></onekit-input>
-          </onekit-view>
-        </onekit-view>
-      </onekit-view>
-      <onekit-view class="btn-area">
-        <onekit-button type="primary" formType="submit">创建联系人</onekit-button>
-        <onekit-button type="default" formType="reset">重置</onekit-button>
-      </onekit-view>
-    </onekit-form>
+  <onekit-view class="page-section">
+    <onekit-view class="page-section-title">
+      <onekit-text>关键帧动画\n\n从小程序基础库 2.9.0 开始支持一种更友好的动画创建方式，用于代替旧的 wx.createAnimation</onekit-text>
+    </onekit-view>  
+    <onekit-view id="container1" :style="containerStyle1">
+      <onekit-button class="block1" style="width: 150px; margin: 50px auto;">示例按钮</onekit-button>
+      <onekit-a class="block1" style="display: block; margin: 50px auto; width: 150px; text-align: center;">示例超链接</onekit-a>
+      <onekit-text class="block1" style="display: block; margin: 50px auto; width: 150px; text-align: center;">示例文本</onekit-text>
+    </onekit-view>
+    <onekit-button :disabled="!canIUse" type="primary" @tap="change">开启动画</onekit-button>
   </onekit-view>
-
+  </onekit-view>
   
-</onekit-view></template>
+</onekit-view>
+  </page>
+</template>
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
 import wx from '../../../onekit/wx.js';

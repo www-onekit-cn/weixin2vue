@@ -1,52 +1,55 @@
 <script>
 const PAGE_JSON = {
-	"navigationBarTitleText":"页面滚动",
-	"usingComponents":{}
-}
+  navigationBarTitleText: "页面滚动",
+  usingComponents: {},
+};
 </script>
 <template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
+  <page>
+    <import src="../../../common/head.vue" />
+    <import src="../../../common/foot.vue" />
 
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="btn-area">
-        <onekit-button type="primary" @tap="scrollToBottom">滚动到页面底部</onekit-button>
-      </onekit-view>
-      <onekit-view class="filling-area"></onekit-view>
-      <onekit-view class="btn-area">
-        <onekit-button type="primary" @tap="scrollToTop">返回顶部</onekit-button>
+    <onekit-view class="container">
+      <onekit-view class="page-body">
+        <onekit-view class="page-section">
+          <onekit-view class="btn-area">
+            <onekit-button type="primary" @tap="scrollToBottom">滚动到页面底部</onekit-button>
+          </onekit-view>
+          <onekit-view class="filling-area"></onekit-view>
+          <onekit-view class="btn-area">
+            <onekit-button type="primary" @tap="scrollToTop">返回顶部</onekit-button>
+          </onekit-view>
+        </onekit-view>
       </onekit-view>
     </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
+  </page>
+</template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
-import wx from '../../../onekit/wx.js';
+import {
+  OnekitApp,
+  OnekitPage,
+  OnekitComponent,
+} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
 export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'页面滚动',
-            path:'packageAPI/pages/page-scroll/page-scroll'
-        };
-    },
-    scrollToTop:function(){
-        wx.pageScrollTo({
-            scrollTop:0,
-            duration:300
-        });
-    },
-    scrollToBottom:function(){
-        wx.pageScrollTo({
-            scrollTop:3000,
-            duration:300
-        });
-    }
+  onShareAppMessage: function () {
+    return {
+      title: "页面滚动",
+      path: "packageAPI/pages/page-scroll/page-scroll",
+    };
+  },
+  scrollToTop: function () {
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300,
+    });
+  },
+  scrollToBottom: function () {
+    wx.pageScrollTo({
+      scrollTop: 3000,
+      duration: 300,
+    });
+  },
 });
 </script>
 <style scoped src="@/app.css"/>

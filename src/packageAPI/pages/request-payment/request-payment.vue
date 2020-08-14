@@ -1,93 +1,103 @@
 <script>
 const PAGE_JSON = {
-	"navigationBarTitleText":"发起支付",
-	"usingComponents":{}
-}
+  navigationBarTitleText: "发起支付",
+  usingComponents: {},
+};
 </script>
 <template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
+  <page>
+    <import src="../../../common/head.vue" />
+    <import src="../../../common/foot.vue" />
 
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view>支付金额</onekit-view>
-      <onekit-view class="price">0.01</onekit-view>
-      <onekit-view class="desc">实际接口应用中可自定义金额</onekit-view>
-      <onekit-view class="btn-area">
-        <onekit-button type="primary" @tap="requestPayment" :loading="loading">支付</onekit-button>
+    <onekit-view class="container">
+      <onekit-view class="page-body">
+        <onekit-view class="page-section">
+          <onekit-view>支付金额</onekit-view>
+          <onekit-view class="price">0.01</onekit-view>
+          <onekit-view class="desc">实际接口应用中可自定义金额</onekit-view>
+          <onekit-view class="btn-area">
+            <onekit-button type="primary" @tap="requestPayment" :loading="loading">支付</onekit-button>
+          </onekit-view>
+        </onekit-view>
       </onekit-view>
     </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
+  </page>
+</template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
-import wx from '../../../onekit/wx.js';
+import {
+  OnekitApp,
+  OnekitPage,
+  OnekitComponent,
+} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
 const app = getApp();
 export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'发起支付',
-            path:'packageAPI/pages/request-payment/request-payment'
-        };
-    },
-    onLoad:function(){
-    },
-    requestPayment:function(){
-        const self = this;
+  onShareAppMessage: function () {
+    return {
+      title: "发起支付",
+      path: "packageAPI/pages/request-payment/request-payment",
+    };
+  },
+  onLoad: function () {},
+  requestPayment: function () {
+    const self = this;
+    self.setData({
+      loading: true,
+    });
+    app.getUserOpenId(function (err, openid) {
+      if (!err) {
+        wx.cloud.callFunction({
+          name: "pay",
+          data: {
+            action: "unifiedorder",
+            userInfo: {
+              openId: openid,
+            },
+            price: 0.01,
+          },
+          success: (res) => {
+            console.warn(
+              "[云函数] [openapi] templateMessage.send 调用成功：",
+              res
+            );
+            const data = res.result.data;
+            wx.requestPayment({
+              timeStamp: data.time_stamp,
+              nonceStr: data.nonce_str,
+              package: `prepay_id=${data.prepay_id}`,
+              signType: "MD5",
+              paySign: data.sign,
+              success: () => {
+                wx.showToast({
+                  title: "支付成功",
+                });
+              },
+            });
+          },
+          fail: (err) => {
+            wx.showToast({
+              icon: "none",
+              title: "支付失败",
+            });
+            console.error(
+              "[云函数] [openapi] templateMessage.send 调用失败：",
+              err
+            );
+          },
+        });
+      } else {
+        console.log("err:", err);
         self.setData({
-            loading:true
+          loading: false,
         });
-        app.getUserOpenId(function(err,openid){
-            if(!err){
-                wx.cloud.callFunction({
-                    name:'pay',
-                    data:{
-                        action:'unifiedorder',
-                        userInfo:{
-                            openId:openid
-                        },
-                        price:0.01
-                    },
-                    success:(res)=>{
-                        console.warn('[云函数] [openapi] templateMessage.send 调用成功：',res);
-                        const data = res.result.data;
-                        wx.requestPayment({
-                            timeStamp:data.time_stamp,
-                            nonceStr:data.nonce_str,
-                            package:`prepay_id=${data.prepay_id}`,
-                            signType:'MD5',
-                            paySign:data.sign,
-                            success:()=>{wx.showToast({
-                                title:'支付成功'
-                            })}
-                        });
-                    },
-                    fail:(err)=>{
-                        wx.showToast({
-                            icon:'none',
-                            title:'支付失败'
-                        });
-                        console.error('[云函数] [openapi] templateMessage.send 调用失败：',err);
-                    }
-                });
-            } else {
-                console.log('err:',err);
-                self.setData({
-                    loading:false
-                });
-            }
-        });
-    }
+      }
+    });
+  },
 });
 </script>
 <style scoped src="@/app.css"/>
 <style>
-.page-section{
+.page-section {
   width: auto;
   margin: 15px;
   padding: 62px 15px;
@@ -95,10 +105,10 @@ export default OnekitPage({
   text-align: center;
   font-size: 14px;
 }
-.desc{
+.desc {
   color: var(--weui-FG-1);
 }
-.price{
+.price {
   margin-top: 15px;
   margin-bottom: 13px;
   position: relative;
@@ -106,7 +116,7 @@ export default OnekitPage({
   font-size: 39px;
   line-height: 1;
 }
-.price:before{
+.price:before {
   content: "¥";
   position: absolute;
   font-size: 20px;

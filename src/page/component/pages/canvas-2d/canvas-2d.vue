@@ -5,30 +5,27 @@ const PAGE_JSON = {
 }
 </script>
 <template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
+    <page>
+        <import src="../../../common/head.vue"/>
+        <import src="../../../common/foot.vue"/>
 
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-block v-if="canIUse">
-      <onekit-view class="page-section">
-        <onekit-view class="page-section-spacing">
-          <onekit-view class="page-body-wrapper">
-            <onekit-canvas type="2d" id="canvas2D" class="canvas"></onekit-canvas>    
-          </onekit-view>
+        <onekit-view class="container">
+            <onekit-view class="page-body">
+                <onekit-block v-if="canIUse">
+                <onekit-view class="page-section">
+                    <onekit-view class="page-section-spacing">
+                    <onekit-view class="page-body-wrapper">
+                        <onekit-canvas type="2d" id="canvas2D" class="canvas"></onekit-canvas>    
+                    </onekit-view>
+                    </onekit-view>
+                </onekit-view>
+                </onekit-block>
+                <onekit-view v-else style="margin: 15px; text-align:center">
+                微信版本过低，暂不支持本功能
+                </onekit-view>
+            </onekit-view>
         </onekit-view>
-      </onekit-view>
-    </onekit-block>
-    <onekit-view v-else style="margin: 15px; text-align:center">
-      微信版本过低，暂不支持本功能
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view>
-
+    </page>
 </template>
 <script>
 import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';

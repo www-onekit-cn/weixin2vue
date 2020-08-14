@@ -1,71 +1,74 @@
 <script>
 const PAGE_JSON = {
-	"navigationBarTitleText":"获取位置",
-	"usingComponents":{}
-}
+  navigationBarTitleText: "获取位置",
+  usingComponents: {},
+};
 </script>
 <template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
+  <page>
+    <import src="../../../common/head.vue" />
+    <import src="../../../common/foot.vue" />
 
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="page-body-info">
-        <onekit-text class="page-body-text-small">当前位置经纬度</onekit-text>
-        <onekit-block v-if="hasLocation === false">
-          <onekit-text class="page-body-text">未获取</onekit-text>
-        </onekit-block>
-        <onekit-block v-if="hasLocation === true">
-          <onekit-view class="page-body-text-location">
-            <onekit-text>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</onekit-text>
-            <onekit-text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</onekit-text>
+    <onekit-view class="container">
+      <onekit-view class="page-body">
+        <onekit-view class="page-section">
+          <onekit-view class="page-body-info">
+            <onekit-text class="page-body-text-small">当前位置经纬度</onekit-text>
+            <onekit-block v-if="hasLocation === false">
+              <onekit-text class="page-body-text">未获取</onekit-text>
+            </onekit-block>
+            <onekit-block v-if="hasLocation === true">
+              <onekit-view class="page-body-text-location">
+                <onekit-text>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</onekit-text>
+                <onekit-text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</onekit-text>
+              </onekit-view>
+            </onekit-block>
           </onekit-view>
-        </onekit-block>
-      </onekit-view>
-      <onekit-view class="btn-area">
-        <onekit-button type="primary" @tap="getLocation">获取位置</onekit-button>
-        <onekit-button @tap="clear">清空</onekit-button>
+          <onekit-view class="btn-area">
+            <onekit-button type="primary" @tap="getLocation">获取位置</onekit-button>
+            <onekit-button @tap="clear">清空</onekit-button>
+          </onekit-view>
+        </onekit-view>
       </onekit-view>
     </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
+  </page>
+</template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
-import wx from '../../../onekit/wx.js';
-const util = require('../../../util/util.js');
+import {
+  OnekitApp,
+  OnekitPage,
+  OnekitComponent,
+} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+const util = require("../../../util/util.js");
 const formatLocation = util.formatLocation;
 export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'获取位置',
-            path:'packageAPI/pages/get-location/get-location'
-        };
-    },
-    data:{
-        hasLocation:false
-    },
-    getLocation:function(){
-        const that = this;
-        wx.getLocation({
-            success:function(res){
-                console.log(res);
-                that.setData({
-                    hasLocation:true,
-                    location:formatLocation(res.longitude,res.latitude)
-                });
-            }
+  onShareAppMessage: function () {
+    return {
+      title: "获取位置",
+      path: "packageAPI/pages/get-location/get-location",
+    };
+  },
+  data: {
+    hasLocation: false,
+  },
+  getLocation: function () {
+    const that = this;
+    wx.getLocation({
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          hasLocation: true,
+          location: formatLocation(res.longitude, res.latitude),
         });
-    },
-    clear:function(){
-        this.setData({
-            hasLocation:false
-        });
-    }
+      },
+    });
+  },
+  clear: function () {
+    this.setData({
+      hasLocation: false,
+    });
+  },
 });
 </script>
 <style scoped src="@/app.css"/>

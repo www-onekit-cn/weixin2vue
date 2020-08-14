@@ -1,137 +1,144 @@
 <script>
 const PAGE_JSON = {
-	"navigationBarTitleText":"Web Socket",
-	"usingComponents":{}
-}
+  navigationBarTitleText: "Web Socket",
+  usingComponents: {},
+};
 </script>
 <template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
+  <page>
+    <import src="../../../common/head.vue" />
+    <import src="../../../common/foot.vue" />
 
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section">
-      <onekit-view class="weui-cells weui-cells_after-title">
-        <onekit-view class="weui-cell weui-cell_switch">
-          <onekit-view class="weui-cell__bd">Socket状态</onekit-view>
-          <onekit-view class="weui-cell__ft">
-            <onekit-switch @change="toggleSocket" :disabled="!hasLogin"></onekit-switch>
+    <onekit-view class="container">
+      <onekit-view class="page-body">
+        <onekit-view class="page-section">
+          <onekit-view class="weui-cells weui-cells_after-title">
+            <onekit-view class="weui-cell weui-cell_switch">
+              <onekit-view class="weui-cell__bd">Socket状态</onekit-view>
+              <onekit-view class="weui-cell__ft">
+                <onekit-switch @change="toggleSocket" :disabled="!hasLogin"></onekit-switch>
+              </onekit-view>
+            </onekit-view>
+            <onekit-view class="weui-cell">
+              <onekit-view class="weui-cell__bd">消息</onekit-view>
+              <onekit-view class="weui-cell__ft">Hello, 小程序!</onekit-view>
+            </onekit-view>
           </onekit-view>
         </onekit-view>
-        <onekit-view class="weui-cell">
-          <onekit-view class="weui-cell__bd">消息</onekit-view>
-          <onekit-view class="weui-cell__ft">
-            Hello, 小程序!
-          </onekit-view>
+        <onekit-view class="btn-area">
+          <onekit-button
+            type="primary"
+            size="40"
+            @tap="sendMessage"
+            :disabled="socketStatus != 'connected'"
+            :loading="loading"
+          >点我发送</onekit-button>
         </onekit-view>
       </onekit-view>
     </onekit-view>
-    <onekit-view class="btn-area">
-      <onekit-button type="primary" size="40" @tap="sendMessage" :disabled="socketStatus != 'connected'" :loading="loading">点我发送</onekit-button>
-    </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
+  </page>
+</template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
-import wx from '../../../onekit/wx.js';
-function showModal(title,content){
-    wx.showModal({
-        title:title,
-        content:content,
-        showCancel:false
-    });
-};
-function showSuccess(title){
-    wx.showToast({
-        title:title,
-        icon:'success',
-        duration:1000
-    });
-};
+import {
+  OnekitApp,
+  OnekitPage,
+  OnekitComponent,
+} from "../../../onekit/onekit.js";
+import wx from "../../../onekit/wx.js";
+function showModal(title, content) {
+  wx.showModal({
+    title: title,
+    content: content,
+    showCancel: false,
+  });
+}
+function showSuccess(title) {
+  wx.showToast({
+    title: title,
+    icon: "success",
+    duration: 1000,
+  });
+}
 export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'Web Socket',
-            path:'packageAPI/pages/web-socket/web-socket'
-        };
-    },
-    data:{
-        socketStatus:'closed'
-    },
-    onLoad:function(){
-        const self = this;
-        self.setData({
-            hasLogin:true
-        });
-    },
-    onUnload:function(){
-        this.closeSocket();
-    },
-    toggleSocket:function(e){
-        const turnedOn = e.detail.value;
-        if(turnedOn && (this.data.socketStatus === 'closed')){
-            this.openSocket();
-        } else if(!turnedOn && (this.data.socketStatus === 'connected')){
-            const showSuccess = true;
-            this.closeSocket(showSuccess);
-        }
-    },
-    openSocket:function(){
-        wx.onSocketOpen(()=>{
-            console.log('WebSocket 已连接');
-            showSuccess('Socket已连接');
-            this.setData({
-                socketStatus:'connected',
-                waitingResponse:false
-            });
-        });
-        wx.onSocketClose(()=>{
-            console.log('WebSocket 已断开');
-            this.setData({
-                socketStatus:'closed'
-            });
-        });
-        wx.onSocketError((error)=>{
-            showModal('发生错误',JSON.stringify(error));
-            console.error('socket error:',error);
-            this.setData({
-                loading:false
-            });
-        });
-        wx.onSocketMessage((message)=>{
-            showSuccess('收到信道消息');
-            console.log('socket message:',message);
-            this.setData({
-                loading:false
-            });
-        });
-        wx.connectSocket({
-            url:'wss://echo.websocket.org'
-        });
-    },
-    closeSocket:function(){
-        if(this.data.socketStatus === 'connected'){
-            wx.closeSocket({
-                success:()=>{
-                    showSuccess('Socket已断开');
-                    this.setData({
-                        socketStatus:'closed'
-                    });
-                }
-            });
-        }
-    },
-    sendMessage:function(){
-        if(this.data.socketStatus === 'connected'){
-            wx.sendSocketMessage({
-                data:'Hello, Miniprogram!'
-            });
-        }
+  onShareAppMessage: function () {
+    return {
+      title: "Web Socket",
+      path: "packageAPI/pages/web-socket/web-socket",
+    };
+  },
+  data: {
+    socketStatus: "closed",
+  },
+  onLoad: function () {
+    const self = this;
+    self.setData({
+      hasLogin: true,
+    });
+  },
+  onUnload: function () {
+    this.closeSocket();
+  },
+  toggleSocket: function (e) {
+    const turnedOn = e.detail.value;
+    if (turnedOn && this.data.socketStatus === "closed") {
+      this.openSocket();
+    } else if (!turnedOn && this.data.socketStatus === "connected") {
+      const showSuccess = true;
+      this.closeSocket(showSuccess);
     }
+  },
+  openSocket: function () {
+    wx.onSocketOpen(() => {
+      console.log("WebSocket 已连接");
+      showSuccess("Socket已连接");
+      this.setData({
+        socketStatus: "connected",
+        waitingResponse: false,
+      });
+    });
+    wx.onSocketClose(() => {
+      console.log("WebSocket 已断开");
+      this.setData({
+        socketStatus: "closed",
+      });
+    });
+    wx.onSocketError((error) => {
+      showModal("发生错误", JSON.stringify(error));
+      console.error("socket error:", error);
+      this.setData({
+        loading: false,
+      });
+    });
+    wx.onSocketMessage((message) => {
+      showSuccess("收到信道消息");
+      console.log("socket message:", message);
+      this.setData({
+        loading: false,
+      });
+    });
+    wx.connectSocket({
+      url: "wss://echo.websocket.org",
+    });
+  },
+  closeSocket: function () {
+    if (this.data.socketStatus === "connected") {
+      wx.closeSocket({
+        success: () => {
+          showSuccess("Socket已断开");
+          this.setData({
+            socketStatus: "closed",
+          });
+        },
+      });
+    }
+  },
+  sendMessage: function () {
+    if (this.data.socketStatus === "connected") {
+      wx.sendSocketMessage({
+        data: "Hello, Miniprogram!",
+      });
+    }
+  },
 });
 </script>
 <style scoped src="@/app.css"/>

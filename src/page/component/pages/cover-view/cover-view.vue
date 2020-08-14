@@ -1,48 +1,55 @@
 <script>
 const PAGE_JSON = {
-	"navigationBarTitleText":"cover-view",
-	"usingComponents":{}
-}
+  navigationBarTitleText: "cover-view",
+  usingComponents: {},
+};
 </script>
 <template>
-<import src="../../../common/head.vue"/>
-<import src="../../../common/foot.vue"/>
+  <page>
+    <import src="../../../common/head.vue" />
+    <import src="../../../common/foot.vue" />
 
-<onekit-view class="container">
-  
-
-  <onekit-view class="page-body">
-    <onekit-view class="page-section page-section-gap">
-      <onekit-map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude">
-        <onekit-cover-view class="cover-view">
-          <onekit-cover-view class="container">
-            <onekit-cover-view class="flex-wrp" style="flex-direction:row;">
-              <onekit-cover-view class="flex-item demo-text-1"></onekit-cover-view>
-              <onekit-cover-view class="flex-item demo-text-2"></onekit-cover-view>
-              <onekit-cover-view class="flex-item demo-text-3"></onekit-cover-view>
+    <onekit-view class="container">
+      <onekit-view class="page-body">
+        <onekit-view class="page-section page-section-gap">
+          <onekit-map
+            style="width: 100%; height: 300px;"
+            :latitude="latitude"
+            :longitude="longitude"
+          >
+            <onekit-cover-view class="cover-view">
+              <onekit-cover-view class="container">
+                <onekit-cover-view class="flex-wrp" style="flex-direction:row;">
+                  <onekit-cover-view class="flex-item demo-text-1"></onekit-cover-view>
+                  <onekit-cover-view class="flex-item demo-text-2"></onekit-cover-view>
+                  <onekit-cover-view class="flex-item demo-text-3"></onekit-cover-view>
+                </onekit-cover-view>
+              </onekit-cover-view>
             </onekit-cover-view>
-          </onekit-cover-view>
-        </onekit-cover-view>
-      </onekit-map>
+          </onekit-map>
+        </onekit-view>
+      </onekit-view>
     </onekit-view>
-  </onekit-view>
-
-  
-</onekit-view></template>
+  </page>
+</template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../../onekit/onekit.js';
-import wx from '../../../../onekit/wx.js';
+import {
+  OnekitApp,
+  OnekitPage,
+  OnekitComponent,
+} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
 export default OnekitPage({
-    onShareAppMessage:function(){
-        return {
-            title:'cover-view',
-            path:'page/component/pages/cover-view/cover-view'
-        };
-    },
-    data:{
-        latitude:23.099994,
-        longitude:113.32452
-    }
+  onShareAppMessage: function () {
+    return {
+      title: "cover-view",
+      path: "page/component/pages/cover-view/cover-view",
+    };
+  },
+  data: {
+    latitude: 23.099994,
+    longitude: 113.32452,
+  },
 });
 </script>
 <style scoped src="@/app.css"/>
@@ -54,11 +61,11 @@ export default OnekitPage({
   /* opacity: .7; */
 }
 
-.flex-wrp{
-  display:flex;
+.flex-wrp {
+  display: flex;
 }
 
-.flex-item{
+.flex-item {
   width: 100px;
   height: 150px;
   font-size: 13px;
