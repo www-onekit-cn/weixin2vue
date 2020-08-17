@@ -25,11 +25,7 @@ const PAGE_JSON = {
   </page>
 </template>
 <script>
-import {
-  OnekitApp,
-  OnekitPage,
-  OnekitComponent,
-} from "../../../onekit/onekit.js";
+import OnekitPage from "../../../onekit/OnekitPage"
 import wx from "../../../onekit/wx.js";
 const example = require("./example.js");
 export default OnekitPage({

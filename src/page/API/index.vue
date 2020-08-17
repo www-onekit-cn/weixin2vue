@@ -1,3 +1,4 @@
+<!--
 <script>
 const PAGE_JSON = {
   navigationBarTitleText: "小程序接口能力展示",
@@ -456,3 +457,10 @@ export default OnekitPage({
   color: var(--weui-LINK);
 }
 </style>
+-->
+
+<template>
+  <div>
+    B
+  </div>
+</template>

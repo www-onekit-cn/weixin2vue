@@ -77,11 +77,7 @@ const PAGE_JSON = {
   </page>
 </template>
 <script>
-import {
-  OnekitApp,
-  OnekitPage,
-  OnekitComponent,
-} from "../../../onekit/onekit.js";
+import OnekitPage from "../../../onekit/OnekitPage"
 import wx from "../../../onekit/wx.js";
 function inArray(arr, key, val) {
   for (var i = 0; i < arr.length; i++) {

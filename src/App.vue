@@ -9,10 +9,10 @@
     </div>
 </template>
 <script>
-import "./onekit/OnekitPage"
-export default OnekitPage({
+import OnekitPage from "./onekit/OnekitPage";
+export default {
     onLoad(){
         console.log("onLoad");
     }
-})
+}
 </script>

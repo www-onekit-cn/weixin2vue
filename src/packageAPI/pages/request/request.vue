@@ -25,7 +25,7 @@ const PAGE_JSON = {
   
 </onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import "../../../onekit/OnekitPage.js"
 import wx from '../../../onekit/wx.js';
 const requestUrl = require('../../../config').requestUrl;
 const duration = 2000;

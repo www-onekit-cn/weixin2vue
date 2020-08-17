@@ -5,6 +5,7 @@ const PAGE_JSON = {
 }
 </script>
 <template>
+<page>
 <import src="../../../common/head.vue"/>
 <import src="../../../common/foot.vue"/>
 
@@ -18,9 +19,10 @@ const PAGE_JSON = {
   </onekit-view>
 
   
-</onekit-view></template>
+</onekit-view>
+</page></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import "../../../onekit/OnekitPage.js"
 import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     onShareAppMessage:function(){

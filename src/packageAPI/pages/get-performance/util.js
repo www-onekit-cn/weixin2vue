@@ -1,4 +1,4 @@
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import "../../../onekit/OnekitPage.js"
 import wx from '../../../onekit/wx.js';
 const util = {};
 Date.prototype.Format = function(fmt){

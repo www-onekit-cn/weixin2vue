@@ -48,11 +48,7 @@ const PAGE_JSON = {
   </page>
 </template>
 <script>
-import {
-  OnekitApp,
-  OnekitPage,
-  OnekitComponent,
-} from "../../../../onekit/onekit.js";
+import OnekitPage from "../../../../onekit/OnekitPage.js"
 import wx from "../../../../onekit/wx.js";
 const uuid3 = "0C76801A-62EB-45E5-96A8-37C8882ABB2B";
 const serviceId = "D0611E78-BBB4-4591-A5F8-487910AE4366";

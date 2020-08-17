@@ -14,7 +14,7 @@ const PAGE_JSON = {
   <onekit-button type="primary" @tap="audioStart">回到开头</onekit-button>
 </onekit-view></template>
 <script>
-import {OnekitApp,OnekitPage,OnekitComponent} from '../../../onekit/onekit.js';
+import "../../../onekit/OnekitPage.js"
 import wx from '../../../onekit/wx.js';
 export default OnekitPage({
     onShareAppMessage:function(){
