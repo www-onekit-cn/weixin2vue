@@ -1,4 +1,3 @@
-<!--
 <script>
 const PAGE_JSON = {
   navigationBarTitleText: "小程序官方组件展示",
@@ -172,10 +171,3 @@ export default OnekitPage({
   color: var(--weui-LINK);
 }
 </style>
--->
-
-<template>
-  <div>
-    A
-  </div>
-</template>

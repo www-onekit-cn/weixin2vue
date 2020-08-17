@@ -13,7 +13,8 @@
     "vuex": "^3.4.0",
     "axios": "latest",
     "vue-axios": "latest",
-    "html2canvas": "latest"
+    "html2canvas": "latest",
+    "jquery": "latest"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
