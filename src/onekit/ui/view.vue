@@ -1,5 +1,5 @@
 <template>
-		<view
+		<div
 		:class="['onekit-view',class_]"
 		:style="style_"
 		:id="id_"
@@ -7,10 +7,10 @@
 		:hover-stop-propagation="hoverStopPropagation"
 		:hover-start-time="hoverStartTime"
 		:hover-stay-time="hoverStayTime"
-		@tap="view_tap"
+		@click="view_click"
 		>
 		<slot></slot>
-		</view>
+		</div>
 </template>
 
 <script>
@@ -50,7 +50,7 @@ export default{
 		// view_click:function(e){
 		// 	this.$emit('click',e.details)
 		// },
-		view_tap:function(e){
+		view_click:function(e){
 			//console.log("image load success",e)
 			this.$emit('tap',e.details)
 		},

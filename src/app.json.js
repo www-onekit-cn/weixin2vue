@@ -1,5 +1,6 @@
 export default {
 	"pages":[
+		"test",
 		"page/component/index",
 		"page/component/pages/view/view",
 		"page/component/pages/scroll-view/scroll-view",
@@ -44,28 +45,6 @@ export default {
 		"page/component/pages/canvas-2d/canvas-2d",
 		"page/component/pages/webgl/webgl"
 	],
-	"tabBar":{
-		"list":[
-			{
-				"selectedIconPath":"image/icon_component_HL.png",
-				"text":"组件",
-				"pagePath":"page/component/index",
-				"iconPath":"image/icon_component.png"
-			},
-			{
-				"selectedIconPath":"image/icon_API_HL.png",
-				"text":"接口",
-				"pagePath":"page/API/index",
-				"iconPath":"image/icon_API.png"
-			},
-			{
-				"selectedIconPath":"image/icon_cloud_HL.png",
-				"text":"云开发",
-				"pagePath":"page/cloud/index",
-				"iconPath":"image/icon_cloud.png"
-			}
-		]
-	},
 	"window":{
 		"backgroundColor":"#f7f7f7",
 		"navigationBarBackgroundColor":"#f7f7f7",
