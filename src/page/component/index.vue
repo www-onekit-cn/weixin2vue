@@ -134,6 +134,7 @@ export default OnekitPage({
     theme: "light",
   },
   onLoad: function () {
+    console.log("xxxx",this.data);
     this.setData({
       theme: wx.getSystemInfoSync().theme || "light",
     });
