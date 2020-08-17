@@ -1,6 +1,6 @@
 import APP from '../app.json.js';
 
-export default function(){
+export default function(object){
   let result = {
     data() {
       return {};
@@ -17,7 +17,6 @@ export default function(){
       }
     },
     mounted() {
-      //console.log( this.$route.fullPath);
       let WINDOW = {
         navigationBarBackgroundColor:"#000000",
         navigationBarTextStyle:"white",
@@ -33,26 +32,27 @@ export default function(){
           WINDOW[key] = APP.window[key];
         }
       }
-      let path = this.$route.fullPath;
-      for (let key in PAGE_JSON) {
-        if (!PAGE_JSON.hasOwnProperty(key)) {
-          continue;
-        }
-        let item = PAGE_JSON[key];
-        switch (key) {
-          case "backgroundColorTop":
-            break;
-          case "backgroundColorBottom":
-            break;
-          case "enablePullDownRefresh":
-            break;
-          case "onReachBottomDistance":
-            break;
-          case "pageOrientation":
-            break;
-          default:
-            WINDOW[key] = item;
-            break;
+      if(typeof(PAGE_JSON)!="undefined"){
+        for (let key in PAGE_JSON) {
+          if (!PAGE_JSON.hasOwnProperty(key)) {
+            continue;
+          }
+          let item = PAGE_JSON[key];
+          switch (key) {
+            case "backgroundColorTop":
+              break;
+            case "backgroundColorBottom":
+              break;
+            case "enablePullDownRefresh":
+              break;
+            case "onReachBottomDistance":
+              break;
+            case "pageOrientation":
+              break;
+            default:
+              WINDOW[key] = item;
+              break;
+          }
         }
       }
       //console.log(WINDOW)

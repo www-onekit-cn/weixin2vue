@@ -1,4 +1,3 @@
-import {OnekitApp,OnekitPage,OnekitComponent} from '../onekit/onekit.js';
 import wx from '../onekit/wx.js';
 function formatTime(time){
     if((typeof time !== 'number') || (time < 0)){
@@ -17,7 +16,7 @@ function formatTime(time){
     n = n.toString();
     return n[1]?n:'0' + n;
 }).join(':');
-};
+}
 function formatLocation(longitude,latitude){
     if((typeof longitude === 'string') && (typeof latitude === 'string')){
         longitude = parseFloat(longitude);
@@ -29,17 +28,17 @@ function formatLocation(longitude,latitude){
         longitude:longitude.toString().split('.'),
         latitude:latitude.toString().split('.')
     };
-};
+}
 function fib(n){
     if(n < 1)return 0
     if(n <= 2)return 1
     return fib(n - 1) + fib(n - 2);
-};
+}
 function formatLeadingZeroNumber(n,digitNum){
     n = n.toString();
     const needNum = Math.max(digitNum - n.length,0);
     return new Array(needNum).fill(0).join('') + n;
-};
+}
 function formatDateTime(date,withMs){
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
@@ -61,7 +60,7 @@ function formatDateTime(date,withMs){
         ret += '.' + formatLeadingZeroNumber(ms,3);
     }
     return ret;
-};
+}
 function compareVersion(v1,v2){
     v1 = v1.split('.');
     v2 = v2.split('.');
@@ -80,9 +79,9 @@ function compareVersion(v1,v2){
         } else if(num1 < num2){
             return -1;
         }
-    };
+    }
     return 0;
-};
+}
 module.exports = {
     formatTime:formatTime,
     formatLocation:formatLocation,

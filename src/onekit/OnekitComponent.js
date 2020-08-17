@@ -1,6 +1,6 @@
 import APP from '../app.json.js';
 
-export default function(data){
+export default function(object){
   let result = {
     data() {
       return {};
