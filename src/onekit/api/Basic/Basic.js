@@ -18,7 +18,7 @@ export default class OnekitWX_Basic extends OnekitWX_App {
     });
     return result;*/
   }
-  //64转arrayz
+  //64转array
   static base64ToArrayBuffer(base64) {
     base64 = base64.replace(/\s/g, '+');
     let commonContent = Buffer.from(base64, 'base64');
