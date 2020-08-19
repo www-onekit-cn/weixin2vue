@@ -3,6 +3,7 @@
  * Modified by Wangjunjie on 2018/12/24.
  */
 import OnekitWX_AD from "../AD/AD"
+import $ from 'jquery'
 import OneKit from "../../onekit"
 class DownloadTask {
 
