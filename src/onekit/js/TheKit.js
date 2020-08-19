@@ -1,20 +1,21 @@
-function header2json(str) {
+import STRING from "./STRING.js" 
+export const header2json = function(str) {
   const strArray = str.split('\n');
   const headers = {};
 
   for (let i = 0; i < strArray.length - 1; i++) {
     // "strArray.length - 1" 是为了消除最后一个空字符串
     const array = strArray[i].split(': ');
-    const key = String._toUpperCaseOfFirstLetter(array[0]); // 首字母大写
+    const key = STRING.firstUpper(array[0]); // 首字母大写
     headers[key] = array[1];
   }
   return headers;
 }
-function isWeixin() {
+export const  isWeixin=function() {
   const ua = window.navigator.userAgent.toLowerCase();
   return ua.match(/MicroMessenger/i) === 'micromessenger';
 }
-function isMobile() {
+export const  isMobile=function() {
   const ua = navigator.userAgent;
 
   const ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
@@ -24,4 +25,3 @@ function isMobile() {
       isAndroid = ua.match(/(Android)\s+([\d.]+)/);
   return isIphone || isAndroid
 }
-export {header2json,isWeixin,isMobile}

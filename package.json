@@ -11,8 +11,6 @@
     "vue": "^2.6.11",
     "vue-router": "latest",
     "vuex": "latest",
-    "axios": "latest",
-    "vue-axios": "latest",
     "html2canvas": "latest",
     "jquery": "latest"
   },

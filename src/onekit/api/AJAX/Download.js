@@ -3,7 +3,7 @@
  * Modified by Wangjunjie on 2018/12/24.
  */
 import OnekitWX_AD from "../AD/AD"
-import OneKit from "../../TheKit"
+import OneKit from "../../onekit"
 class DownloadTask {
 
 }
@@ -20,7 +20,7 @@ export default class OnekitWX_Download extends OnekitWX_AD {
     let complete = object.complete;
     /////////////////////////////
     let result;
-  /*
+
       $.ajax({
         url: url,
         headers: header,
@@ -55,6 +55,6 @@ export default class OnekitWX_Download extends OnekitWX_AD {
       if (complete) {
         complete(result);
       }
-    }*/
+    }
   }
-}
+

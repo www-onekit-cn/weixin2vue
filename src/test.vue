@@ -1,22 +1,40 @@
 <template>
-    <div>Test</div>
+  <div>Test</div>
 </template>
 <script>
-import wx from "./onekit/wx"
-import OnekitPage from "./onekit/OnekitPage"
+import wx from "./onekit/wx";
+import OnekitPage from "./onekit/OnekitPage";
+
 export default OnekitPage({
-  onLoad: function (options) {
-    var obj = wx.getLaunchOptionsSync()
-    console.log('启动小程序的路径:',obj.path)
-    console.log('启动小程序的场景值:', obj.scene)
-    console.log('启动小程序的 query 参数:', obj.query)
-    console.log('来源信息:', obj.shareTicket)
-    console.log('来源信息参数appId:', obj.referrerInfo.appId)
-    console.log('来源信息传过来的数据:', obj.referrerInfo.extraData)
+  onLoad() {
+    wx.request({
+      url: "https://route.showapi.com/9-5", //仅为示例，并非真实的接口地址
+      data: {
+        x: "",
+        y: "",
+      },
+      header: {
+        "content-type": "application/json", // 默认值
+      },
+      success(res) {
+        console.log(res.data);
+      },
+    });
   },
-  mounted: function (options) {
-    var obj = wx.getLaunchOptionsSync()
-    window.addEventListener("pageshow",obj)
-  }
-})
+  // onLoad: function () {
+  //   wx.downloadFile({
+  //     url: 'https://example.com/audio/123', //仅为示例，并非真实的资源
+  //     success (res) {
+  //       // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+  //       if (res.statusCode === 200) {
+  //         wx.playVoice({
+  //           filePath: res.tempFilePath
+  //         })
+  //       }
+  //       console.log(res);
+  //     }
+      
+  //   })
+  // }
+});
 </script>
