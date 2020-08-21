@@ -7,12 +7,15 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "core-js": "latest",
+    "html2canvas": "latest",
+    "jquery": "latest",
     "vue": "^2.6.11",
     "vue-router": "latest",
+    "vue-weui": "^0.3.2",
     "vuex": "latest",
-    "html2canvas": "latest",
-    "jquery": "latest"
+    "weui": "^2.3.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
