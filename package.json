@@ -1,32 +1,11 @@
 {
-  "name": "myproject",
-  "version": "0.1.0",
-  "private": true,
+  "name": "weixin2vue",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "axios": "^0.20.0",
-    "core-js": "latest",
-    "html2canvas": "latest",
-    "jquery": "latest",
-    "vue": "^2.6.11",
-    "vue-router": "latest",
-    "vue-weui": "^0.3.2",
-    "vuex": "latest",
-    "weui": "^2.3.0"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  "author": "",
+  "license": "ISC"
 }
