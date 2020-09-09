@@ -1,4 +1,5 @@
-import APP from '../app.json.js';
+import Vue from "vue";
+const APP_JSON = Vue.prototype.APP_JSON;
 
 export default function(object){
   let result = {

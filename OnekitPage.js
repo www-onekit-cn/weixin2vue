@@ -1,6 +1,6 @@
-import APP from '../app.json.js';
-/*
-export default function(object){
+import Vue from "vue";
+const APP_JSON = Vue.prototype.APP_JSON;
+export default function(PAGE_JSON,object){
   let result = {
     data() {
       return {};
@@ -24,12 +24,12 @@ export default function(object){
         backgroundColor:"#000000",
         backgroundTextStyle:"dark",
       };
-      if(APP.window) {
-        for (let key in APP.window) {
-          if (!APP.window.hasOwnProperty(key)) {
+      if(APP_JSON.window) {
+        for (let key in APP_JSON.window) {
+          if (!APP_JSON.window.hasOwnProperty(key)) {
             continue;
           }
-          WINDOW[key] = APP.window[key];
+          WINDOW[key] = APP_JSON.window[key];
         }
       }
       if(typeof(PAGE_JSON)!="undefined"){
@@ -55,7 +55,6 @@ export default function(object){
           }
         }
       }
-      //console.log(WINDOW)
       this.$emit("updateWindow",WINDOW);
       if (this["onReady"]) {
         this["onReady"]();
@@ -118,133 +117,4 @@ export default function(object){
     }
   }
   return result;
-}
-*/
-export default function(options){
-	const _data = options.data || {};
-	const uniapp_options = {
-		created(){
-			Object.defineProperty(this, 'data', {
-			  get: function () {
-			    return _data;
-			  },
-			  set: function (data) {
-			    _data = data;
-			  }
-			});
-			this.setData(_data);
-
-			if(this.onLoad){
-				this.onLoad.apply(this);
-			}
-		},
-		onShow(){
-			if(this.onShow){
-				this.onShow.apply(this);
-			}
-		},
-		onReady(){
-			if(this.onReady){
-				this.onReady.apply(this);
-			}
-		},
-		onHide(){
-			if(this.onHide){
-				this.onHide.apply(this);
-			}
-		},
-		onUnload(){
-			if(this.onUnload){
-				this.onUnload.apply(this);
-			}
-		},
-		onResize(){
-			if(this.onResize){
-				this.onResize.apply(this);
-			}
-		},
-		onPullDownRefresh(){
-			if(this.onPullDownRefresh){
-				this.onPullDownRefresh.apply(this);
-			}
-		},
-		onReachBottom(){
-			if(this.onReachBottom){
-				this.onReachBottom.apply(this);
-			}
-		},
-		onTabItemTap(){
-			if(this.onTabItemTap){
-				this.onTabItemTap.apply(this);
-			}
-		},
-		onShareAppMessage(){
-			if(this.onShareAppMessage){
-				this.onShareAppMessage.apply(this);
-			}
-		},
-		onPageScroll(){
-			if(this.onPageScroll){
-				this.onPageScroll.apply(this);
-			}
-		},
-		onNavigationBarButtonTap(){
-			if(this.onNavigationBarButtonTap){
-				this.onNavigationBarButtonTap.apply(this);
-			}
-		},
-		onBackPress(){
-			if(this.onBackPress){
-				this.onBackPress.apply(this);
-			}
-		},
-		onNavigationBarSearchInputChanged(){
-			if(this.onNavigationBarSearchInputChanged){
-				this.onNavigationBarSearchInputChanged.apply(this);
-			}
-		},
-		onNavigationBarSearchInputConfirmed(){
-			if(this.onNavigationBarSearchInputConfirmed){
-				this.onNavigationBarSearchInputConfirmed.apply(this);
-			}
-		},
-		onNavigationBarSearchInputClicked(){
-			if(this.onNavigationBarSearchInputClicked){
-				this.onNavigationBarSearchInputClicked.apply(this);
-			}
-		},
-		onShareTimeline(){
-			if(this.onShareTimeline){
-				this.onShareTimeline.apply(this);
-			}
-		},
-		onAddToFavorites(){
-			if(this.onAddToFavorites){
-				this.onAddToFavorites.apply(this);
-			}
-		},
-		methods:{
-			setData(data){
-				for(const key of Object.keys(data)){
-					this[key] = data[key];
-					_data[key] = data[key];
-				}
-			}
-		}
-	};
-	for(const key of Object.keys(options)){
-		const value = options[key];
-		switch(key){
-			case "data":
-				break;
-			default:
-			if(typeof(value)=="function" ){
-				uniapp_options.methods[key] = value;
-			}else{
-				uniapp_options[key] = value;
-				}
-				break;
-		}
-	}
-	return uniapp_options;
 }

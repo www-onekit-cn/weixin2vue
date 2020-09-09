@@ -12,7 +12,7 @@
 
 <script>
   import Vue from 'vue'
-  import APP_JSON from '../../app.json.js';
+  const APP_JSON = Vue.prototype.APP_JSON;
   export default {
     methods:{
       switchTo(path){

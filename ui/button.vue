@@ -27,7 +27,7 @@ export default {
      * 是否为disabled按钮，若为true则会阻止点击事件
      */
     disabled: {
-      type: Boolean,
+      type: Boolean|String,
       default: false,
       required: false
     },
@@ -36,7 +36,7 @@ export default {
      * 是否为小按钮
      */
     mini: {
-      type: Boolean,
+      type: Boolean|String,
       default: false,
       required: false
     },
@@ -46,7 +46,7 @@ export default {
      * 目前只有primary和default类型支持plain按钮
      */
     plain: {
-      type: Boolean,
+      type: Boolean|String,
       default: false,
       required: false
     }
