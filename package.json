@@ -1,6 +1,6 @@
 {
   "name": "weixin2vue",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Weixin-Miniprogram SDK for Vue",
   "repository": {
     "type": "git",
