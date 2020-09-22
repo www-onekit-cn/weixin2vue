@@ -1,5 +1,5 @@
 import OnekitWX_Log from "./Log"
-import MobileDetect from "../../lib/mobile-detect.min"
+const MobileDetect = require("../../lib/mobile-detect.min")
 export default class OnekitWX_System extends OnekitWX_Log{
   static getSystemInfo(object) {
     let success = object.success;

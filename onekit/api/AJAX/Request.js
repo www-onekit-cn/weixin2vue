@@ -1,6 +1,6 @@
 import OnekitWX_mDNS from "./mDNS"
 import $ from 'jquery'
-import {header2json} from '../../js/TheKit'
+import thekit from '../../js/thekit'
 class RequestTask {
   abort() {
     this.jqXHR.abort();
@@ -39,7 +39,7 @@ export default class OnekitWX_Request extends OnekitWX_mDNS{
       success: function(result, status, xhr) {
         result = {
           data: result,
-          header: header2json(xhr.getAllResponseHeaders()),
+          header: thekit.header2json(xhr.getAllResponseHeaders()),
           statusCode: xhr.status
         };
         console.log(result);

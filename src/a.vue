@@ -1,7 +1,6 @@
 <template>
   <onekit-page id="app">
-    <onekit-ad></onekit-ad>
-    <onekit-audio></onekit-audio>
+    <onekit-view >view1</onekit-view>
   </onekit-page>
 </template>
 

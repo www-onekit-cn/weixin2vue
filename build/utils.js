@@ -11,7 +11,7 @@ function  getComponentEntries(path) {
             if( ['onekit/ui'].indexOf(itemPath)>=0){
       
                  ret[item] = resolve(join(itemPath, 'index.js'))
-            }else{
+            }else {
                var data = getComponentEntries(itemPath)
                for(var key in data){
                 

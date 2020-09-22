@@ -1,11 +1,11 @@
-import onekitAd from './ad'
-import onekitAudio from './audio'
-
+import icon from './icon'
+import page from './page'
+import view from './view'
 
 export default {
     install(Vue) {
-        Vue.use(onekitAd)
-        Vue.use(onekitAudio)
-      //  Vue.use(onekitButton)
+        Vue.use(icon)
+        Vue.use(page)
+         Vue.use(view)
     },
 }
