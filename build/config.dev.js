@@ -19,5 +19,5 @@ module.exports = {
     },
     configureWebpack: {
         resolve: pub.resolve
-    },
+    }
 }

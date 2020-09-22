@@ -87,7 +87,8 @@ export default {
 };
 </script>
 <style scoped="scoped">
-@import "../../../public/onekit.css"; 
+@import "../../../public/onekit.css";
+@import "https://res.wx.qq.com/open/libs/weui/0.2.2/weui.css"; 
 #onekitwx_navigationBar {
   height: 50px;
   display: flex;

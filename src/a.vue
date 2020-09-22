@@ -1,6 +1,7 @@
 <template>
   <onekit-page id="app">
     <onekit-view >view1</onekit-view>
+    <onekit-icon type="success"/>
   </onekit-page>
 </template>
 
