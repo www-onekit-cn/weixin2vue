@@ -1,8 +1,11 @@
 const {resolve, getComponentEntries} = require('./utils')
 const pub = require('./config.pub')
+const CopyWebpackPlugin = require("copy-webpack-plugin") //引入插件
 
 module.exports = {
     outputDir: resolve('lib'),
+    assetsDir: resolve('public'),
+    publicPath: resolve('./'),
     configureWebpack: {
         entry: {
             ...getComponentEntries('onekit'),
@@ -12,14 +15,21 @@ module.exports = {
             libraryTarget: 'commonjs2',
             libraryExport: 'default',
             library: 'vue-lyxlwz',
+            chunkFilename: "[id]/index.js"
         },
         resolve: pub.resolve,
+        plugins: [
+            new CopyWebpackPlugin({
+             patterns:[{
+              from: "./public",
+              to: 'public'
+             }]
+            })
+        ]
     },
     css: {
-        sourceMap: true,
-        extract: {
-            filename: '[name]/style.css'
-        }
+        extract:false,
+        sourceMap:true,
     },
     chainWebpack: config => {
         config.optimization.delete('splitChunks')

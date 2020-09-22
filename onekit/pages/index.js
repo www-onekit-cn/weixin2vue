@@ -1,10 +1,10 @@
-import onekitSingle from './single'
+import onekitActivity from './activity'
 import onekitTabs from './tabs'
 
 
 export default {
     install(Vue) {
-        Vue.use(onekitSingle)
+        Vue.use(onekitActivity)
         Vue.use(onekitTabs)
     },
 }

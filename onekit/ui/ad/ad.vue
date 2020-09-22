@@ -11,5 +11,8 @@
 </script>
 
 <style scoped>
-
+  .onekit-ad {
+    background-color: maroon;
+    color: white;
+  }
 </style>

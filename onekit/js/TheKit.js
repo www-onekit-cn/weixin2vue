@@ -1,4 +1,4 @@
-import STRING from "./STRING.js" 
+import STRING from "./string.js" 
 export const header2json = function(str) {
   const strArray = str.split('\n');
   const headers = {};

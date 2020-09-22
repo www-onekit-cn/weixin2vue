@@ -1,9 +1,8 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+  <onekit-page id="app">
     <onekit-ad></onekit-ad>
     <onekit-audio></onekit-audio>
-  </div>
+  </onekit-page>
 </template>
 
 <script>
