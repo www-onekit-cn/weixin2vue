@@ -11,7 +11,7 @@ Vue.use(lyxlwz);
 const screen_width = thekit.isMobile()?(($(window).width())-0):750;
 $("body").css('--screen-width', screen_width + "px");
 import wx from "../onekit/wx"
-//console.log(wx.f1(1,2))
+console.log(wx.base64ToArrayBuffer("abc"))
 //////////////////////////////////////////////
 let router = {
   mode: 'history',

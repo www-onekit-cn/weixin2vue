@@ -64,10 +64,18 @@
     <div style="flex-grow:2;overflow:scroll;">
       <router-view @updateWindow="updateWindow"></router-view>
     </div>
+
+    <div>
+      <span data-clipboard-action="copy" @click="copyLink"></span>
+    </div>
+
   </div>
 </template>
 <script>
 import Vue from "vue";
+
+import clipboard from 'clipboard';
+Vue.prototype.clipboard = clipboard;
 
 export default {
   name: "onekit-activity",
@@ -83,12 +91,24 @@ export default {
     updateWindow(WINDOW) {
       Vue.set(this, "WINDOW", WINDOW);
     },
+
+    copyLink() {
+     let _this = this;
+     let clipboard = new this.clipboard(".cobyOrderSn");
+     clipboard.on('success', function () {
+       _this.$toast("复制成功")
+     });
+     clipboard.on('error', function () {
+       _this.$toast("复制失败")
+     });
+    }
+
   },
 };
 </script>
 <style scoped="scoped">
 @import "../../../public/onekit.css";
-@import "https://res.wx.qq.com/open/libs/weui/0.2.2/weui.css"; 
+@import "../../../public/weui.css"; 
 #onekitwx_navigationBar {
   height: 50px;
   display: flex;
