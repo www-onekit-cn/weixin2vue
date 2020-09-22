@@ -24,7 +24,7 @@ import UpdateManager from "./api/UpdateManager"
 import UploadTask from "./api/UploadTask"
 import VideoContext from "./api/VideoContext"
 
-const MobileDetect = require("./lib/mobile-detect.min")
+//const MobileDetect = require("./lib/mobile-detect.min")
 export default class wx {
     static canIUse(apiId) {
         return true;
@@ -65,7 +65,7 @@ export default class wx {
     static getSystemInfoSync() {
         try {
             var device_type = navigator.userAgent; //获取userAgent信息
-            var md = new MobileDetect(device_type); //初始化mobile-detect
+            var md = {};//new MobileDetect(device_type); //初始化mobile-detect
             var os = md.os(); //获取系统
             var model;
             var system;
@@ -3835,84 +3835,84 @@ export default class wx {
         var complete = object.complete;
         var connectionInfo = navigator.connection;
         alert(connectionInfo.effectiveType);
-    
-      }
-    
-      // TODO: 未测试
-      // INFO: Network Information API 兼容性很差 (https://caniuse.com/#feat=netinfo) (https://developer.mozilla.org/zh-CN/docs/Web/API/Network_Information_API)
-      static onNetworkStatusChange(callback) {
+
+    }
+
+    // TODO: 未测试
+    // INFO: Network Information API 兼容性很差 (https://caniuse.com/#feat=netinfo) (https://developer.mozilla.org/zh-CN/docs/Web/API/Network_Information_API)
+    static onNetworkStatusChange(callback) {
         var connection = navigator.connection;
         var connectionInfo = {};
         connectionInfo.isOnline = true;
         connectionInfo.networkType = connection.type || 'unknown';
-        connection.addEventListener('change', function() {
-          if (connection.type === 'cellular') {
-            if (connection.rtt < 270) {
-              connectionInfo.networkType = '4g';
-            } else if (270 <= connection.rtt < 1400) {
-              connectionInfo.networkType = '3g';
-            } else if (1400 <= connection.rtt) {
-              connectionInfo.networkType = '2g';
-            } else {
-              connectionInfo.networkType = 'unknown';
+        connection.addEventListener('change', function () {
+            if (connection.type === 'cellular') {
+                if (connection.rtt < 270) {
+                    connectionInfo.networkType = '4g';
+                } else if (270 <= connection.rtt < 1400) {
+                    connectionInfo.networkType = '3g';
+                } else if (1400 <= connection.rtt) {
+                    connectionInfo.networkType = '2g';
+                } else {
+                    connectionInfo.networkType = 'unknown';
+                }
             }
-          }
-          // INFO: navigator.onLine 兼容性很好
-          if (!navigator.onLine) {
-            connectionInfo.networkType = 'none';
-            connectionInfo.isOnline = false;
-          }
-          callback(connectionInfo);
+            // INFO: navigator.onLine 兼容性很好
+            if (!navigator.onLine) {
+                connectionInfo.networkType = 'none';
+                connectionInfo.isOnline = false;
+            }
+            callback(connectionInfo);
         });
-      }
+    }
 
     static createIntersectionObserver() { }
 
-    static createRewardedVideoAd(object){}
-    static createInterstitialAd(object){}
+    static createRewardedVideoAd(object) { }
+    static createInterstitialAd(object) { }
 
-    static color(){}//canvas
-    static ble(){}
-    static fileSystem(){}
-    static livePlayer(){}
-    static livePusher(){}
-    static mediaContainer(){}
-    static accountInfo(){}
-    static chooseAddress(){}
-    static authorize(){}
-    static chooseInvoiceTitle(){}
-    static chooseInvoice(){}
-    static navigateToMiniProgram(){}
-    static navigateBackMiniProgram(){}
-    static UserInfo(){}
-    static getUserInfo(){}
+    static color() { }//canvas
+    static ble() { }
+    static fileSystem() { }
+    static livePlayer() { }
+    static livePusher() { }
+    static mediaContainer() { }
+    static accountInfo() { }
+    static chooseAddress() { }
+    static authorize() { }
+    static chooseInvoiceTitle() { }
+    static chooseInvoice() { }
+    static navigateToMiniProgram() { }
+    static navigateBackMiniProgram() { }
+    static UserInfo() { }
+    static getUserInfo() { }
 
-    static updateShareMenu(){}
-    static showShareMenu(){}
-    static hideShareMenu(){}
-    static getShareInfo(){}
-    static authPrivateMessage(){}
+    static updateShareMenu() { }
+    static showShareMenu() { }
+    static hideShareMenu() { }
+    static getShareInfo() { }
+    static authPrivateMessage() { }
 
 
-    static playVoice(object) {}
-    static pauseVoice(object) {}
-    static stopVoice(object) {}
+    static playVoice(object) { }
+    static pauseVoice(object) { }
+    static stopVoice(object) { }
 
-    static setBackgroundFetchToken(){}
-    static onBackgroundFetchData(){}
-    static getBackgroundFetchToken(){}
-    static getBackgroundFetchData(){}
+    static setBackgroundFetchToken() { }
+    static onBackgroundFetchData() { }
+    static getBackgroundFetchToken() { }
+    static getBackgroundFetchData() { }
 
-    static onKeyboardHeightChange(){}
-    static offKeyboardHeightChange(){}
-    static hideKeyboard(){}
-    static getSelectedTextRange(){}
+    static onKeyboardHeightChange() { }
+    static offKeyboardHeightChange() { }
+    static hideKeyboard() { }
+    static getSelectedTextRange() { }
 
-    static getMenuButtonBoundingClientRect(){}
+    static getMenuButtonBoundingClientRect() { }
 
-    static setTopBarText(){}
+    static setTopBarText() { }
 
-    static setWindowSize(){}
-    static onWindowResize(){}
-    static offWindowResize(){}
+    static setWindowSize() { }
+    static onWindowResize() { }
+    static offWindowResize() { }
 }
