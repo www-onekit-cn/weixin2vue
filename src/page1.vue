@@ -5,13 +5,14 @@
     <onekit-icon type="success"/>
     -->
     <onekit-button>button</onekit-button>
+    <onekit-audio/>
   </page>
 </template>
 
 <script>
 
 export default {
-  name: 'page1'
+
 }
 </script>
 
