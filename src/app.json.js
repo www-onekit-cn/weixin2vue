@@ -11,7 +11,7 @@ export default {
 		"uploadFile":10000
 	},
 	"pages":[
-		"a",
+		"page1",
 	],
 	"permission":{
 		"scope.userLocation":{

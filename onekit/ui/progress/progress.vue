@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name:"onekit-progress",
   props: {
     /**
      * 进度，最小为0，最大为100
