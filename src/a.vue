@@ -1,8 +1,11 @@
 <template>
-  <onekit-page id="app">
-    <onekit-view >view1</onekit-view>
+  <page id="app">
+    <onekit-view >view</onekit-view>
+    <!--
     <onekit-icon type="success"/>
-  </onekit-page>
+    -->
+    <onekit-button>button</onekit-button>
+  </page>
 </template>
 
 <script>
