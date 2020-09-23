@@ -1,11 +1,7 @@
 <template>
   <page id="app">
-    <onekit-view >view</onekit-view>
-    <!--
-    <onekit-icon type="success"/>
-    -->
-    <onekit-button>button</onekit-button>
-    <onekit-audio/>
+ 
+
   </page>
 </template>
 
