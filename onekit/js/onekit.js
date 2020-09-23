@@ -1,4 +1,4 @@
-import Uri from "./js/uri"
+import Uri from "./Uri"
 const storeFiles = {};
 const tempFiles = {};
 function getUrl(url) {

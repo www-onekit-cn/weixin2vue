@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router';Vue.use(Router);
 import $ from 'jquery'
-import thekit from '../onekit/js/thekit'
+import thekit from '../onekit/js/TheKit'
 import tabs from '../onekit/pages/tabs/tabs.vue'
 import activity from '../onekit/pages/activity/activity.vue'
 import APP_JSON from './app.json.js'
 //import app from './app.js'
-import lyxlwz from "vue-lyxlwz"
-Vue.use(lyxlwz);
+import weixin2vue from "weixin2vue"
+Vue.use(weixin2vue);
 const screen_width = thekit.isMobile()?(($(window).width())-0):750;
 $("body").css('--screen-width', screen_width + "px");
 import wx from "../onekit/wx"

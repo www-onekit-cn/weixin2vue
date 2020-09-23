@@ -1,4 +1,4 @@
-import OneKit from "../onekit.js";
+import OneKit from "../js/onekit.js";
 export default {
   methods: {
     ui_click(e) {

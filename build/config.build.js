@@ -15,7 +15,7 @@ module.exports = {
             filename: '[name]/index.js',
             libraryTarget: 'commonjs2',
             libraryExport: 'default',
-            library: 'vue-lyxlwz',
+            library: 'weixin2vue',
             chunkFilename: "[id]/index.js"
         },
         resolve: pub.resolve,
