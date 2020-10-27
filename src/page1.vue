@@ -6,10 +6,10 @@
 </template>
 
 <script>
+import OnekitPage from '../weixin2vue/OnekitPage'
+export default OnekitPage({},{
 
-export default {
-
-}
+})
 </script>
 
 <style>

@@ -9,7 +9,7 @@ module.exports = {
     productionSourceMap: false, // 生产环境不产生未加密的map文件
     configureWebpack: {
         entry: {
-            ...getComponentEntries('onekit'),
+            ...getComponentEntries('weixin2vue'),
         },
         output: {
             filename: '[name]/index.js',

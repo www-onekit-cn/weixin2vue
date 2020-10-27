@@ -8,7 +8,7 @@ function  getComponentEntries(path) {
         const itemPath = join(path, item)
         const isDir = fs.statSync(itemPath).isDirectory();
         if (isDir) {
-            if( ['onekit/ui','onekit/pages'].indexOf(itemPath)>=0){
+            if( ['weixin2vue/ui','weixin2vue/pages'].indexOf(itemPath)>=0){
       
                  ret[item] = resolve(join(itemPath, 'index.js'))
             } 
@@ -16,7 +16,7 @@ function  getComponentEntries(path) {
           }else {
               if(item==='index.js'){
              const [name] = item.split('.')
-             var folder = (path!="onekit"?(path.replace("onekit/","")+"/"):"");
+             var folder = (path!="weixin2vue"?(path.replace("weixin2vue/","")+"/"):"");
              ret[folder+name] = resolve(`${itemPath}`)
               }
          }
