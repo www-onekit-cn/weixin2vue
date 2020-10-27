@@ -1,643 +1,614 @@
+/* eslint-disable class-methods-use-this */
+import TheKit from '../js/TheKit'
+import CircularGradient from './CircularGradient'
+import LinearGradient from './LinearGradient'
+
 export default class CanvasContext {
-    static createContext() {
-        let eCanvas = document.getElementsByTagName("canvas")[0];
-        return new OnekitWX_CanvasContext(eCanvas);
-    }
 
-    static createCanvasContext(canvasId) {
-        let eCanvas = $("[canvasid='" + canvasId + "']")[0];
-        return new CanvasContext(eCanvas);
-    }
+  constructor(eCanvas) {
+    this._eCanvas = eCanvas
+    this.allActions = []
+    this._actions = []
+    this.path = []
+  }
 
-    ///////////////////////////////////////////
-    constructor(eCanvas) {
-        this._eCanvas = eCanvas;
-        this.allActions = [];
-        this._actions = [];
-        this.path = [];
-    }
+  set textBaseline(textBaseline) {
+    this._actions.push({
+      method: 'setTextBaseLine',
+      data: [textBaseline]
 
-    set textBaseline(textBaseline) {
-        this._actions.push({
-            method: "setTextBaseLine",
-            data: [textBaseline]
+    })
+  }
 
-        });
-    }
+  getActions() {
+    const result = this._actions
+    this._actions = []
+    return result
+  }
 
-    getActions() {
-        let result = OneKit.clone(this._actions);
-        this._actions = [];
-        return result;
-    }
+  save() {
+    this._actions.push(
+      {
 
-    save() {
-        this._actions.push(
-            {
+        method: 'save'
 
-                method: "save"
-
-            }
-        )
-        ;
-    }
+      }
+    )
+  }
 
 
-    restore() {
-        this._actions.push(
-            {
+  restore() {
+    this._actions.push(
+      {
 
-                method: "restore"
+        method: 'restore'
 
-            }
-        )
-        ;
-    }
+      }
+    )
+  }
 
 
-    setFillStyle(fillStyle) {
-
-        let
-            action =
+  setFillStyle(fillStyle) {
+    const
+      action =
                 {
 
-                    method: "setFillStyle"
+                  method: 'setFillStyle'
                 }
-            ;
-        if (fillStyle instanceof LinearGradient) {
 
-            let
-                linearGradient =
-                    fillStyle;
-            action["data"] = [
-
-
-                "linear",
-                linearGradient.info,
-                linearGradient.colorStops
-
-            ]
-            ;
-        } else if (fillStyle instanceof CircularGradient) {
-
-            let
-                circularGradient =
-                    fillStyle;
-            action["data"] = [
+    if (fillStyle instanceof LinearGradient) {
+      const
+        linearGradient =
+                    fillStyle
+      action.data = [
 
 
-                "radial",
-                circularGradient.info,
-                circularGradient.colorStops
+        'linear',
+        linearGradient.info,
+        linearGradient.colorStops
 
-            ]
-            ;
-        } else{
+      ]
+    } else if (fillStyle instanceof CircularGradient) {
+      const
+        circularGradient =
+                    fillStyle
+      action.data = [
 
-            let color = fillStyle;
-            action["data"] = [
 
-                "normal", COLOR.toRGBAs(COLOR.parse(color))
+        'radial',
+        circularGradient.info,
+        circularGradient.colorStops
 
-            ]
-            ;
-        }
-        this._actions.push(action);
+      ]
+    } else {
+      const color = fillStyle
+      action.data = [
+
+        'normal', TheKit.toRGBAs(TheKit.parse(color))
+
+      ]
     }
+    this._actions.push(action)
+  }
 
 
-    setStrokeStyle(strokeStyle) {
-        let
-            action =
+  setStrokeStyle(strokeStyle) {
+    const
+      action =
                 {
 
-                    method: "setStrokeStyle"
+                  method: 'setStrokeStyle'
 
                 }
-            ;
 
 
-            let color = strokeStyle;
-            action["data"] = [
-                "normal", COLOR.toRGBAs(COLOR.parse(color))
-            ];
+    const color = strokeStyle
+    action.data = [
+      'normal', COLOR.toRGBAs(COLOR.parse(color))
+    ]
 
-        this._actions.push(action);
-    }
+    this._actions.push(action)
+  }
 
 
-    strokeRect(Lx,
-               Ly,
-               Wx,
-               Hy) {
-        this._actions.push(
-            {
-                method: "strokePath",
-                data: [
-                    {
-                        method: "rect",
-                        data: [
+  strokeRect(Lx,
+    Ly,
+    Wx,
+    Hy) {
+    this._actions.push(
+      {
+        method: 'strokePath',
+        data: [
+          {
+            method: 'rect',
+            data: [
 
-                            Lx
+              Lx,
 
-                            ,
 
-                            Ly
+              Ly,
 
-                            ,
 
-                            Wx
-                            ,
+              Wx,
 
-                            Hy
+              Hy
 
-                        ]
-                    }]
-            });
-    }
+            ]
+          }]
+      }
+    )
+  }
 
 
-    fillRect(Lx,
-             Ly,
-             Wx,
-             Hy) {
-        this._actions.push(
-            {
+  fillRect(Lx,
+    Ly,
+    Wx,
+    Hy) {
+    this._actions.push(
+      {
 
-                method: "fillPath",
-                data: [
-                    {
-                        method: "rect",
-                        data: [
+        method: 'fillPath',
+        data: [
+          {
+            method: 'rect',
+            data: [
 
-                            Lx
-                            ,
+              Lx,
 
-                            Ly
-                            ,
+              Ly,
 
-                            Wx
-                            ,
+              Wx,
 
-                            Hy
+              Hy
 
-                        ]
-                    }]
-            });
-    }
+            ]
+          }]
+      }
+    )
+  }
 
 
-    setLineWidth(lineWidth) {
-        this._actions.push(
-            {
-                method: "setLineWidth",
-                data: [
+  setLineWidth(lineWidth) {
+    this._actions.push(
+      {
+        method: 'setLineWidth',
+        data: [
 
-                    lineWidth
+          lineWidth
 
-                ]
-            });
-    }
+        ]
+      }
+    )
+  }
 
 
-    moveTo(x,
-           y) {
-        this.path.push(
-            {
-                method: "moveTo",
-                data: [
+  moveTo(x,
+    y) {
+    this.path.push(
+      {
+        method: 'moveTo',
+        data: [
 
-                    x
-                    ,
+          x,
 
-                    y
-                ]
+          y
+        ]
 
-            })
-        ;
-    }
+      }
+    )
+  }
 
 
-    lineTo(x,
-           y) {
-        this.path.push(
-            {
-                method: "lineTo",
-                data: [
+  lineTo(x,
+    y) {
+    this.path.push(
+      {
+        method: 'lineTo',
+        data: [
 
 
-                    x
-                    ,
+          x,
 
-                    y
+          y
 
-                ]
+        ]
 
-            })
-        ;
-    }
+      }
+    )
+  }
 
-    setLineCap(lineCap) {
-        this._actions.push(
-            {
+  setLineCap(lineCap) {
+    this._actions.push(
+      {
 
-                method: "setLineCap",
-                data: [
-                    lineCap]
-            });
-    }
+        method: 'setLineCap',
+        data: [
+          lineCap]
+      }
+    )
+  }
 
-    setLineJoin(lineJoin) {
-        this._actions.push(
-            {
-                method: "setLineJoin",
-                data: [
+  setLineJoin(lineJoin) {
+    this._actions.push(
+      {
+        method: 'setLineJoin',
+        data: [
 
 
-                    lineJoin
-                ]
+          lineJoin
+        ]
 
-            })
-        ;
-    }
+      }
+    )
+  }
 
 
-    setMiterLimit(miterLimit) {
-        this._actions.push(
-            {
+  setMiterLimit(miterLimit) {
+    this._actions.push(
+      {
 
-                method: "setMiterLimit",
-                data: [
+        method: 'setMiterLimit',
+        data: [
 
-                    miterLimit
-                ]
-            });
-    }
+          miterLimit
+        ]
+      }
+    )
+  }
 
 
-    clearRect(x,
-              y,
-              width,
-              height) {
-        this._actions.push(
-            {
-                method: "clearRect",
-                data: [
+  clearRect(x,
+    y,
+    width,
+    height) {
+    this._actions.push(
+      {
+        method: 'clearRect',
+        data: [
 
 
-                    x
-                    ,
+          x,
 
-                    y
-                    ,
+          y,
 
-                    width
-                    ,
+          width,
 
-                    height
-                ]
-            });
-    }
+          height
+        ]
+      }
+    )
+  }
 
-    rect(x,
-         y,
-         width,
-         height) {
-        this.path.push(
-            {
+  rect(x,
+    y,
+    width,
+    height) {
+    this.path.push(
+      {
 
-                method: "rect",
-                data: [
+        method: 'rect',
+        data: [
 
-                    x
-                    ,
-                    y
-                    ,
-                    width
-                    ,
-                    height
-                ]
-            });
-    }
+          x,
+          y,
+          width,
+          height
+        ]
+      }
+    )
+  }
 
 
-    fill() {
-        this._actions.push(
-            {
+  fill() {
+    this._actions.push(
+      {
 
-                method: "fillPath",
-                data: OneKit.clone(this.path)
-            }
-        )
-        ;
-    }
+        method: 'fillPath',
+        data: TheKit.clone(this.path)
+      }
+    )
+  }
 
 
-    stroke() {
-        this._actions.push(
-            {
+  stroke() {
+    this._actions.push(
+      {
 
-                method: "strokePath",
-                data: OneKit.clone(this.path)
-            }
-        )
-        ;
-    }
+        method: 'strokePath',
+        data: TheKit.clone(this.path)
+      }
+    )
+  }
 
 
-    arc(x,
-        y,
-        r,
-        sAngle,
-        eAngle,
-        counterclockwise=false) {
-        this.path.push(
-            {
+  arc(x,
+    y,
+    r,
+    sAngle,
+    eAngle,
+    counterclockwise = false) {
+    this.path.push(
+      {
 
-                method: "arc",
-                data: [
+        method: 'arc',
+        data: [
 
 
-                    x
-                    ,
+          x,
 
-                    y
-                    ,
+          y,
 
-                    r
-                    ,
+          r,
 
-                    sAngle
-                    ,
+          sAngle,
 
-                    eAngle
-                    ,
+          eAngle,
 
-                    counterclockwise
-                ]
-            });
-    }
+          counterclockwise
+        ]
+      }
+    )
+  }
 
 
-    bezierCurveTo(cp1x,
-                  cp1y,
-                  cp2x,
-                  cp2y,
-                  x,
-                  y) {
-        this.path.push(
-            {
+  bezierCurveTo(cp1x,
+    cp1y,
+    cp2x,
+    cp2y,
+    x,
+    y) {
+    this.path.push(
+      {
 
-                method: "bezierCurveTo",
-                data: [
+        method: 'bezierCurveTo',
+        data: [
 
-                    cp1x
-                    ,
+          cp1x,
 
-                    cp1y
-                    ,
+          cp1y,
 
-                    cp2x
-                    ,
+          cp2x,
 
-                    cp2y
-                    ,
+          cp2y,
 
-                    x
-                    ,
+          x,
 
-                    y
-                ]
-            });
-    }
+          y
+        ]
+      }
+    )
+  }
 
 
-    quadraticCurveTo(cpx,
-                     cpy,
-                     x,
-                     y) {
-        this.path.push(
-            {
+  quadraticCurveTo(cpx,
+    cpy,
+    x,
+    y) {
+    this.path.push(
+      {
 
-                method: "quadraticCurveTo",
-                data: [
+        method: 'quadraticCurveTo',
+        data: [
 
-                    cpx
-                    ,
+          cpx,
 
-                    cpy
-                    ,
+          cpy,
 
-                    x
-                    ,
-                    y
-                ]
-            }
-        );
-    }
+          x,
+          y
+        ]
+      }
+    )
+  }
 
 
-    scale(sw,
-          sh) {
-        this._actions.push(
-            {
+  scale(sw,
+    sh) {
+    this._actions.push(
+      {
 
-                method: "scale",
-                data: [
+        method: 'scale',
+        data: [
 
-                    sw
-                    ,
+          sw,
 
-                    sh
-                ]
-            });
-    }
+          sh
+        ]
+      }
+    )
+  }
 
 
-    rotate(angle) {
-        this._actions.push(
-            {
+  rotate(angle) {
+    this._actions.push(
+      {
 
-                method: "rotate",
-                data: [
+        method: 'rotate',
+        data: [
 
 
-                    angle
-                ]
-            });
-    }
+          angle
+        ]
+      }
+    )
+  }
 
 
-    translate(x,
-              y) {
-        this._actions.push(
-            {
+  translate(x,
+    y) {
+    this._actions.push(
+      {
 
-                method: "translate",
-                data: [
+        method: 'translate',
+        data: [
 
-                    x
-                    ,
-                    y
-                ]
-            });
-    }
+          x,
+          y
+        ]
+      }
+    )
+  }
 
 
-    setFontSize(s) {
-        this._actions.push(
-            {
+  setFontSize(s) {
+    this._actions.push(
+      {
 
-                method: "setFontSize",
-                data: [
+        method: 'setFontSize',
+        data: [
 
-                    s
-                ]
-            });
-    }
+          s
+        ]
+      }
+    )
+  }
 
 
-    fillText(t,
-             x,
-             y) {
-        this._actions.push(
-            {
+  fillText(t,
+    x,
+    y) {
+    this._actions.push(
+      {
 
-                method: "fillText",
-                data: [
-                    t,
+        method: 'fillText',
+        data: [
+          t,
 
-                    x
-                    ,
+          x,
 
-                    y
-                ]
-            });
-    }
+          y
+        ]
+      }
+    )
+  }
 
 
-    setTextAlign(align) {
-        this._actions.push(
-            {
+  setTextAlign(align) {
+    this._actions.push(
+      {
 
-                method: "setTextAlign",
-                data: [
-                    align]
-            });
-    }
+        method: 'setTextAlign',
+        data: [
+          align]
+      }
+    )
+  }
 
 
-    drawImage(imageResource,
-              x,
-              y,
-              width,
-              height) {
-        this._actions.push(
-            {
+  drawImage(imageResource,
+    x,
+    y,
+    width,
+    height) {
+    this._actions.push(
+      {
 
-                method: "drawImage",
-                data: [
+        method: 'drawImage',
+        data: [
 
 
-                    imageResource,
+          imageResource,
 
 
-                    x,
+          x,
 
-                    y,
-                    width,
-                    height
-                ]
-            });
-    }
+          y,
+          width,
+          height
+        ]
+      }
+    )
+  }
 
 
-    setGlobalAlpha(alpha) {
-        this._actions.push(
-            {
+  setGlobalAlpha(alpha) {
+    this._actions.push(
+      {
 
-                method: "setGlobalAlpha",
-                data: [
-                    alpha * 255
-                ]
-            });
-    }
+        method: 'setGlobalAlpha',
+        data: [
+          alpha * 255
+        ]
+      }
+    )
+  }
 
 
-    createLinearGradient(x0,
-                         y0,
-                         x1,
-                         y1) {
-        return new OnekitWX_LinearGradient(x0, y0, x1, y1);
-    }
+  createLinearGradient(x0,
+    y0,
+    x1,
+    y1) {
+    return new LinearGradient(x0, y0, x1, y1)
+  }
 
 
-    createCircularGradient(x,
-                           y,
-                           r) {
-        return new OnekitWX_CircularGradient(x, y, r);
-    }
+  createCircularGradient(x,
+    y,
+    r) {
+    return new CircularGradient(x, y, r)
+  }
 
 
-    setShadow(dx,
-              dy,
-              radius,
-              color) {
-        this._actions.push(
-            {
-                method: "setShadow",
-                data: [
-                    dx,
-                    dy,
+  setShadow(dx,
+    dy,
+    radius,
+    color) {
+    this._actions.push(
+      {
+        method: 'setShadow',
+        data: [
+          dx,
+          dy,
 
-                    radius, COLOR.toRGBAs(COLOR.parse(color))]
-            });
-    }
+          radius, COLOR.toRGBAs(COLOR.parse(color))]
+      }
+    )
+  }
 
 
-    beginPath() {
-        this.path = [];
-    }
+  beginPath() {
+    this.path = []
+  }
 
 
-    closePath() {
-        this.path.push(
-            {
+  closePath() {
+    this.path.push(
+      {
 
-                method: "closePath"
+        method: 'closePath'
 
-            }
-        )
-        ;
-    }
+      }
+    )
+  }
 
 
-    setLineDash(lineDashs,
-                v) {
-        this._actions.push(
-            {
+  setLineDash(lineDashs,
+    v) {
+    this._actions.push(
+      {
 
-                method: "setLineDash",
-                data: [
-                    lineDashs,
-                    v]
-            });
-    }
+        method: 'setLineDash',
+        data: [
+          lineDashs,
+          v]
+      }
+    )
+  }
 
-    draw(reserve,callback) {
-      /*  this.allActions.push({
+  draw(reserve, callback) {
+    /*  this.allActions.push({
             reserve: reserve,
             actions: this._actions
-        });*/
-        //
-        Canvas._draw(this._eCanvas,this._actions,reserve);
-        //
-        this._actions = [];
-        //
-        callback();
-    }
+        }); */
+    //
+    Canvas._draw(this._eCanvas, this._actions, reserve)
+    //
+    this._actions = []
+    //
+    callback()
+  }
 
-    clip() {
+  clip() {
 
-    }
+  }
 }

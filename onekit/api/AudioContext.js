@@ -1,9 +1,9 @@
+/* eslint-disable class-methods-use-this */
 export default class AudioContext {
-
   // IAC for InnerAudioContext
   // TODO: 未完成，会报错
   IAC() {
-    /*let audioContainer = document.createElement('audio');
+    /* let audioContainer = document.createElement('audio');
     audioContainer.setAttribute('controls', 'controls');
     document.body.appendChild(audioContainer);
     let o = new Object();
@@ -18,6 +18,6 @@ export default class AudioContext {
         // o.autoplay = value;
         // audioContainer.autoplay = value;
       }
-    });*/
+    }); */
   }
 }

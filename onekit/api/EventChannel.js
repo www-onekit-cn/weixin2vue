@@ -1,3 +1,3 @@
-export default class EventChannel{
+export default class EventChannel {
 
 }
