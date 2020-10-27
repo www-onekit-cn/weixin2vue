@@ -1,3 +1,3 @@
-import tabs from './tabs.vue'
-tabs.install = (Vue) => Vue.component(tabs.name, tabs);
-export default tabs
+import uc from './tabs.vue'
+uc.install = (Vue) => Vue.component(uc.name, uc);
+export default uc

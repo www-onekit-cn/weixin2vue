@@ -8,21 +8,18 @@ function  getComponentEntries(path) {
         const itemPath = join(path, item)
         const isDir = fs.statSync(itemPath).isDirectory();
         if (isDir) {
-            if( ['onekit/ui'].indexOf(itemPath)>=0){
+            if( ['onekit/ui','onekit/pages'].indexOf(itemPath)>=0){
       
                  ret[item] = resolve(join(itemPath, 'index.js'))
-            }else {
-               var data = getComponentEntries(itemPath)
-               for(var key in data){
-                
-                ret[key] = data[key]; 
-               }
-             }
-         }else {
-            const [name] = item.split('.')
-            var folder = (path!="onekit"?(path.replace("onekit/","")+"/"):"");
-            ret[folder+name] = resolve(`${itemPath}`)
-        }
+            } 
+            
+          }else {
+              if(item==='index.js'){
+             const [name] = item.split('.')
+             var folder = (path!="onekit"?(path.replace("onekit/","")+"/"):"");
+             ret[folder+name] = resolve(`${itemPath}`)
+              }
+         }
         return ret
     }, {})
     console.dir(componentEntries)

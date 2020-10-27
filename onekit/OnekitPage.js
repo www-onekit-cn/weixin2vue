@@ -1,6 +1,6 @@
 import Vue from "vue";
 const APP_JSON = Vue.prototype.APP_JSON;
-export default function(PAGE_JSON,object){
+export default function (PAGE_JSON, object) {
   let result = {
     data() {
       return {};
@@ -18,13 +18,13 @@ export default function(PAGE_JSON,object){
     },
     mounted() {
       let WINDOW = {
-        navigationBarBackgroundColor:"#000000",
-        navigationBarTextStyle:"white",
-        navigationStyle:"default",
-        backgroundColor:"#000000",
-        backgroundTextStyle:"dark",
+        navigationBarBackgroundColor: "#000000",
+        navigationBarTextStyle: "white",
+        navigationStyle: "default",
+        backgroundColor: "#000000",
+        backgroundTextStyle: "dark",
       };
-      if(APP_JSON.window) {
+      if (APP_JSON.window) {
         for (let key in APP_JSON.window) {
           if (!APP_JSON.window.hasOwnProperty(key)) {
             continue;
@@ -32,7 +32,7 @@ export default function(PAGE_JSON,object){
           WINDOW[key] = APP_JSON.window[key];
         }
       }
-      if(typeof(PAGE_JSON)!="undefined"){
+      if (typeof (PAGE_JSON) != "undefined") {
         for (let key in PAGE_JSON) {
           if (!PAGE_JSON.hasOwnProperty(key)) {
             continue;
@@ -55,7 +55,7 @@ export default function(PAGE_JSON,object){
           }
         }
       }
-      this.$emit("updateWindow",WINDOW);
+      this.$emit("updateWindow", WINDOW);
       if (this["onReady"]) {
         this["onReady"]();
       }

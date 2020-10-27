@@ -6,7 +6,7 @@ module.exports = {
     outputDir: resolve('dist'),
     assetsDir: resolve('public'),
     publicPath: resolve('./'),
-    productionSourceMap: true, // 生产环境不产生未加密的map文件
+    productionSourceMap: false, // 生产环境不产生未加密的map文件
     configureWebpack: {
         entry: {
             ...getComponentEntries('onekit'),

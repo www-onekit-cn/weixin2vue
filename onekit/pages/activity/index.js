@@ -1,3 +1,3 @@
-import activity from './activity.vue'
-activity.install = (Vue) => Vue.component(activity.name, activity);
-export default activity
+import uc from './activity.vue'
+uc.install = (Vue) => Vue.component(uc.name, uc);
+export default uc
