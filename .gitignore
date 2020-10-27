@@ -19,6 +19,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-/lib
+/dist
 *.iml
 package-lock.json

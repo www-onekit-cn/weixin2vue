@@ -3,7 +3,7 @@ const pub = require('./config.pub')
 const CopyWebpackPlugin = require("copy-webpack-plugin") //引入插件
 
 module.exports = {
-    outputDir: resolve('lib'),
+    outputDir: resolve('dist'),
     assetsDir: resolve('public'),
     publicPath: resolve('./'),
     productionSourceMap: true, // 生产环境不产生未加密的map文件

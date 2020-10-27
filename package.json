@@ -1,9 +1,9 @@
 {
   "name": "vue-lyxlwz",
-  "version": "0.3.44",
-  "main": "lib/index/index.js",
+  "version": "0.3.45",
+  "main": "dist/index/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",

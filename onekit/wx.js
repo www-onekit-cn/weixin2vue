@@ -24,7 +24,7 @@ import UpdateManager from "./api/UpdateManager"
 import UploadTask from "./api/UploadTask"
 import VideoContext from "./api/VideoContext"
 
-//const MobileDetect = require("./lib/mobile-detect.min")
+//const MobileDetect = require("./dist/mobile-detect.min")
 export default class wx {
     static canIUse(apiId) {
         return true;
