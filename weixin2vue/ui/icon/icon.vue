@@ -1,55 +1,51 @@
 <template>
   <i
-    :class="['onekit-icon',typeClass,'iconfont icon-search','iconfont icon-clear']"
-    :style="onekitStyle"
-    :id="onekitId"
-    
-  ></i>
+     :class="['onekit-icon',typeClass,'iconfont icon-search','iconfont icon-clear']"
+     :style="onekitStyle"
+     :id="onekitId"></i>
 </template>
 
 <script>
-import onekit_behavior from '../../behaviors/onekit_behavior'
-export default {
-  name: "onekit-icon",
-  mixins:[onekit_behavior],
-  props: {
-    type: {
-      type: String,
-      required: true,
+  import onekit_behavior from '../../behaviors/onekit_behavior'
+  export default {
+    name: "onekit-icon",
+    mixins: [onekit_behavior],
+    props: {
+      type: {
+        type: String,
+        required: true,
+      },
+      size: {
+        type: Number | String,
+        required: false,
+        default: 23,
+      },
+      color: {
+        type: String,
+        required: false,
+      },
     },
-    size: {
-      type: Number | String,
-      required: false,
-      default: 23,
+    watch: {
+      size(value) {
+        this.sizeUpdate(value)
+      },
+      color(value) {
+        this.colorUpdate(value)
+      }
     },
-    color: {
-      type: String,
-      required: false,
+    computed: {
+      typeClass() {
+        return `weui_icon_${this.type}`;
+      },
     },
-  },
-  watch:{
-    size(value){
-         this.sizeUpdate(value)
-    },color(value){
-         this.colorUpdate(value)
-    }
-  },
-  computed: {
-    typeClass() {
-      return `weui_icon_${this.type}`;
-    },
-  },
-  created(){
-    this.$emit('changeType')
-  },
-  mounted(){
+    mounted() {
       this.sizeUpdate(this.size)
       this.colorUpdate(this.color)
-  },
-  methods:{
-    colorUpdate(color){
-      if (!color) {
-        switch (this.type) {
+    },
+    methods: {
+      colorUpdate(color) {
+        if (!color) {
+          switch (this.type) {
           case "success":
           case "success_no_circle":
           case "download":
@@ -76,19 +72,19 @@ export default {
           default:
             throw new Error(this.type);
             break;
-        }       
-      }
-      this.$el.style.setProperty("--icon-color", color);   
-    },
-    sizeUpdate(size){
-      this.$el.style.setProperty("--icon-size", `${size}px`);
-    },
-  }
-};
+          }
+        }
+        this.$el.style.setProperty("--icon-color", color);
+      },
+      sizeUpdate(size) {
+        this.$el.style.setProperty("--icon-size", `${size}px`);
+      },
+    }
+  };
 </script>
 <style scoped>
-.onekit-icon::before {
-  font-size: var(--icon-size);
-  color: var(--icon-color);
-}
+  .onekit-icon::before {
+    font-size: var(--icon-size);
+    color: var(--icon-color);
+  }
 </style>
