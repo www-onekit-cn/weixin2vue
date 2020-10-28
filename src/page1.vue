@@ -1,5 +1,15 @@
 <template>
   <page id="app">
+    <onekit-progress
+                     percent="40"
+                     :show-info="true"
+                     border-radius="10"
+                     font-size="13"
+                     stroke-width="20"
+                     backgroudColor="pink"
+                     activeColor="black" />
+    <div>——</div>
+    <onekit-progress percent="60" />
 
   </page>
 </template>
