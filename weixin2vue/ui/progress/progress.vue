@@ -4,10 +4,11 @@
          :style="{height: strokeWidth + 'px',
                   background: backgroudColor}">
       <div class="weui_progress_inner_bar"
-           :style="{width: percent + '%',
+           :style="{width: width + '%',
                     borderRadius: borderRadius + 'px',
                     height: strokeWidth + 'px',
-                    background: bgcolor}"
+                    background: bgcolor,
+                    transition:`width ${speed}s`}"
            @click="ui_click(activeColor)">
       </div>
     </div>
@@ -29,8 +30,11 @@
     name: "onekit-progress",
     data() {
       return {
-        bgcolor: this.color,
-        bgActiveColor: this.activeColor
+        bgcolor: JSON.parse(JSON.stringify(this.color)),
+        bgActiveColor: this.activeColor,
+        width: this.percent,
+        speed: this.duration / 10,
+        isAnimation: this.active
       }
     },
     props: {
@@ -90,12 +94,12 @@
         required: false,
       },
       'duration': {
-        type: Number,
-        default: 30,
+        type: [Number, String],
+        default: 0,
         required: false
       },
       'bindactiveend': {
-        // type: eventhandle,
+        type: Function,
         required: false
       },
       hasCancelButton: {
@@ -104,13 +108,33 @@
         default: false
       }
     },
+    computed: {
 
+    },
+    async mounted() {
+      await this._ui_progress_animation()
+    },
     methods: {
       callEvent(event) {
-        this.$emit(event);
+        this.$emit(event); // 用户自定义事件
       },
       ui_click(active) {
-        this.bgcolor = this.activeColor
+        this.bgcolor === active ? this.bgcolor = this.color : this.bgcolor = active
+      },
+      _ui_progress_animation() {
+        if (this.isAnimation) {
+          this.width = 0
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              this.width += this.percent
+            }, this.speed)
+            resolve('continue')
+          }).then(() => {
+            setTimeout(() => {
+              this.bindactiveend()
+            }, this.speed * 1000)
+          })
+        }
       }
     }
   }

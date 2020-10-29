@@ -2,12 +2,17 @@
   <page id="app">
     <onekit-progress
                      percent="40"
-                     :show-info="true"
                      border-radius="10"
                      font-size="13"
                      stroke-width="20"
                      backgroudColor="pink"
-                     activeColor="black" />
+                     activeColor="black"
+                     color="deeppink"
+                     duration="60"
+                     active
+                     show-info
+                     hasCancelButton
+                     :bindactiveend="fn" />
     <div>——</div>
     <onekit-progress percent="60" />
 
@@ -17,7 +22,9 @@
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage'
   export default OnekitPage({}, {
-
+    fn(url) {
+      console.log(`函数进来了`)
+    }
   })
 </script>
 
