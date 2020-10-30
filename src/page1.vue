@@ -1,17 +1,19 @@
 <template>
   <page id="app">
-    <onekit-text user-select>{{text}}</onekit-text>
+    <onekit-text space="emsp">{{text}}</onekit-text>
     <onekit-view>-</onekit-view>
-    <onekit-text decode>{{text}}</onekit-text>
+    <onekit-text decode space="nbsp">{{text}}</onekit-text>
   </page>
 </template>
 
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage'
   export default OnekitPage({}, {
+
     data: {
-      text: '王野未 &gt;'
+      text: '我&nbsp;你 她'
     }
+
   })
 </script>
 

@@ -3,15 +3,13 @@
        :class="['onekit-text',onekitClass,
 			 					this.userSelect? 'iselect': '']"
        :style="onekitStyle"
-       :id="onekitId">
-    <div style="display:none">
-      <slot></slot>
-    </div>
-    {{html}}
+       :id="onekitId" v-html="html">
+    <slot v-if="false"></slot>
   </div>
 </template>
 
 <script>
+  import TheKit from '../../js/TheKit'
   import onekit_behavior from '../../behaviors/onekit_behavior'
   export default {
     name: "onekit-text",
@@ -24,7 +22,7 @@
       },
       'space': {
         type: String,
-        default: '',
+        default: null,
         required: false,
       },
       'decode': {
@@ -37,13 +35,17 @@
     computed: {
       html() {
         var temp = this.$slots.default[0].text;
-        if (this.decode) {
-          temp = temp.replace(/&amp;/g, "&");
-          temp = temp.replace(/&lt;/g, "<");
-          temp = temp.replace(/&gt;/g, ">");
-          temp = temp.replace(/&nbsp;/g, " ");
-          temp = temp.replace(/&#39;/g, "\'");
-          temp = temp.replace(/&quot;/g, "\"");
+
+        if (this.space) {
+          temp = TheKit.replace(temp, ' ', `&${this.space};`)
+        }
+        if (!this.decode) {
+          temp = temp.replace(/&amp;/g, "&amp;&amp;");
+          temp = temp.replace(/&lt;/g, "&amp;&lt;");
+          temp = temp.replace(/&gt;/g, "&amp;&gt;");
+          temp = temp.replace(/&nbsp;/g, "&amp;nbsp;");
+          temp = temp.replace(/&#39;/g, "&amp;&#39;");
+          temp = temp.replace(/&quot;/g, "&amp;&quot;");
         }
         return temp
       }
@@ -55,15 +57,10 @@
 <style>
   .iselect {
     -webkit-touch-callout: none;
-    /*系统默认菜单被禁用*/
     -webkit-user-select: none;
-    /*webkit浏览器*/
     -khtml-user-select: none;
-    /*早期浏览器*/
     -moz-user-select: none;
-    /*火狐*/
     -ms-user-select: none;
-    /*IE10*/
     user-select: none;
     display: inline-block;
   }
