@@ -6,6 +6,7 @@ module.exports = {
     outputDir: resolve('dist'),
     assetsDir: resolve('public'),
     publicPath: resolve('./'),
+    lintOnSave: 'warning',// 如果你不需要使用eslint，把lintOnSave设为false即可
     productionSourceMap: false, // 生产环境不产生未加密的map文件
     configureWebpack: {
         entry: {
