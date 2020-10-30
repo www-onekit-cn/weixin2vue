@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import onekit_behavior from " ../../behaviors/onekit_behavior"
+  import onekit_behavior from '../../behaviors/onekit_behavior'
   export default {
     name: "onekit-text",
     mixins: [onekit_behavior],
@@ -34,9 +34,9 @@
       }
 
     },
-    conputed: {
+    computed: {
       html() {
-        var temp = this.$el.innerHTML;
+        var temp = this.$slots.default[0].text;
         if (this.decode) {
           temp = temp.replace(/&amp;/g, "&");
           temp = temp.replace(/&lt;/g, "<");
