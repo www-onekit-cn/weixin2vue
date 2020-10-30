@@ -1,7 +1,7 @@
 <template>
   <div
        :class="['onekit-text',onekitClass,
-			 					this.userSelect? 'iselect': '']"
+						this.userSelect? 'iselect': '']"
        :style="onekitStyle"
        :id="onekitId" v-html="html">
     <slot v-if="false"></slot>
@@ -47,6 +47,7 @@
           temp = temp.replace(/&#39;/g, "&amp;&#39;");
           temp = temp.replace(/&quot;/g, "&amp;&quot;");
         }
+
         return temp
       }
 

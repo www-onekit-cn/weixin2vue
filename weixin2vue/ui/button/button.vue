@@ -50,6 +50,8 @@
           return 'weui-btn_plain-disabled'
         } else if (this.disabled) {
           return 'weui-btn_disabled'
+        } else {
+          return ''
         }
       }
     }
