@@ -34,6 +34,9 @@
         type: String,
         default: '',
         required: false,
+        validator(value) {
+          return value == 'ensp' || value == 'emsp' || value == 'nbsp'
+        }
       }
 
     },
