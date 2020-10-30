@@ -116,7 +116,7 @@
     },
     methods: {
       callEvent(event) {
-        this.$emit(event); // 用户自定义事件
+        this.$emit(event);
       },
       ui_click(active) {
         this.bgcolor === active ? this.bgcolor = this.color : this.bgcolor = active
@@ -124,7 +124,7 @@
       _ui_progress_animation() {
         if (this.isAnimation) {
           this.width = 0
-          new Promise((resolve, reject) => {
+          new Promise((resolve) => {
             setTimeout(() => {
               this.width += this.percent
             }, this.speed)

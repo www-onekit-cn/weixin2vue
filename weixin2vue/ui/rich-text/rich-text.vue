@@ -19,7 +19,6 @@
       html() {
         const html = TheKit.replace(typeof (this.nodes) == "string" ? this.nodes : HTML.nodes2html(this.nodes),
           ' ', `&${this.space};`)
-        // console.log(typeof this.nodes)
         return html
       }
     },

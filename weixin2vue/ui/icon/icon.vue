@@ -16,7 +16,7 @@
         required: true,
       },
       size: {
-        type: Number | String,
+        type: [Number, String],
         required: false,
         default: 23,
       },
@@ -71,7 +71,6 @@
 
           default:
             throw new Error(this.type);
-            break;
           }
         }
         this.$el.style.setProperty("--icon-color", color);
