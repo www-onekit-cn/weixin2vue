@@ -1,12 +1,12 @@
 <template>
   <div
        :class="['onekit-swiper-item',onekitClass]"
-       :style="[onekitStyle,itemStyle]"
-       :id="onekitId"
-       ref="item_dom">
+       :style="[onekitStyle,itemStyle,{width: `${$parent.width}px`}]"
+       :id="onekitId">
     <slot></slot>
   </div>
 </template>
+
 
 <script>
   import onekit_behavior from "../../behaviors/onekit_behavior"
@@ -46,12 +46,8 @@
 
 <style scoped>
   .onekit-swiper-item {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    background: deeppink;
-    justify-content: center;
-    align-items: center;
+    height: 100px;
+    float: left;
+    background: pink;
   }
 </style>

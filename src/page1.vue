@@ -1,6 +1,10 @@
 <template>
   <page id="app">
-    <onekit-swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
+    <onekit-swiper indicator-dots
+                   indicator-color="#999"
+                   indicator-active-color="#ccc"
+                   autoplay
+                   :duration="100">
       <template v-for="(item) in background">
         <onekit-swiper-item :key="item">
           <onekit-view :onekit-class="'swiper-item '+item">{{item}}</onekit-view>
