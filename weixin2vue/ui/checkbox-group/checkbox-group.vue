@@ -2,8 +2,7 @@
   <div
        :class="['onekit-checkbox-group',onekitClass]"
        :style="onekitStyle"
-       :id="onekitId"
-       class="main">
+       :id="onekitId">
     <slot></slot>
   </div>
 </template>
@@ -13,13 +12,39 @@
   export default {
     name: "onekit-checkbox-group",
     mixins: [onekit_behavior],
+    data() {
+      return {
+        chckboxArr: []
+      }
+    },
     props: {
-
-
+      'value': { type: Array, },
+      'disabled': { type: Boolean },
+      'bindchange': { type: Function }
+    },
+    model: {
+      prop: "value",
+      event: "select"
+    },
+    watch: {
+      value(newValue) {
+        this.$emit("change", newValue);
+      }
     },
     methods: {
-
+      selectItem(item) {
+        const { value } = this;
+        this.$emit("select", [...value, item]);
+      },
+      deleteItem(item) {
+        const { value: selectItems } = this;
+        this.$emit(
+          "select",
+          selectItems.filter(selectitem => selectitem !== item)
+        );
+      }
     }
+
   }
 </script>
 

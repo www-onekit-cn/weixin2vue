@@ -1,6 +1,6 @@
 <template>
   <page id="app">
-    <onekit-checkbox-group @change="checkboxChange">
+    <onekit-checkbox-group @bindchange="checkboxChange">
       <onekit-lable v-for="(item,index) in items" :key="index" onekit-class="checkbox">
         <onekit-checkbox :value="item.name"
                          :checked="item.checked"

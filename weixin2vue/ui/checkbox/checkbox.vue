@@ -6,9 +6,14 @@
          @click.stop="handleClick">
     <input class="input_check_box"
            type="checkbox"
-           :style="{color:color,'--bgcolor':(disabled ? '#ccc' : '#fff')}"
+           :style="{color:(disabled? '#999':color),
+           '--bgcolor':(disabled ? '#ccc' : '#fff'),
+           '--discolor':(disabled? '#ccc' : '#fff')}"
            :value="model"
-           :disabled="disabled">
+           :disabled="disabled"
+           :checked="checked"
+           v-bind="$attrs">
+
     <slot></slot>
   </label>
 </template>
@@ -93,7 +98,7 @@
     text-align: center;
     vertical-align: middle;
     line-height: 18px;
-    margin-right: 10px;
+    margin-right: 2px;
     position: relative;
   }
 
@@ -106,19 +111,18 @@
     width: 100%;
     height: 100%;
     border: 1px solid #d9d9d9;
-    border-radius: 4px;
+    border-radius: 2px;
   }
 
   .input_check_box:checked::before {
     content: "\2713";
-    background-color: #fff;
+    background-color: var(--discolor);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    border-radius: 4px;
     font-size: 20px;
     font-weight: bold;
-
+    border-radius: 2xp;
   }
 </style>
