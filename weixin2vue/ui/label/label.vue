@@ -1,26 +1,25 @@
 <template>
-		<div
-		:class="['onekit-live-player',onekitClass]"
-		:style="onekitStyle"
-		:id="onekitId"
-		>
-		<slot></slot>
-		</div>
+  <label
+         :class="['onekit-lable',onekitClass]"
+         :style="onekitStyle"
+         :id="onekitId">
+    <slot></slot>
+  </label>
 </template>
 
 <script>
-import onekit_behavior from "../../behaviors/onekit_behavior"
-export default{
-    name: "onekit-live-player",
-    mixins:[onekit_behavior],
-	props:{
-	
-		
-	},
-	methods:{
-		
-	}
-}
+  import onekit_behavior from "../../behaviors/onekit_behavior"
+  export default {
+    name: "onekit-lable",
+    mixins: [onekit_behavior],
+    props: {
+
+
+    },
+    methods: {
+
+    }
+  }
 </script>
 
 <style>

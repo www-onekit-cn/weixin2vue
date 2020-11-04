@@ -1,16 +1,14 @@
 <template>
   <page id="app">
-    <onekit-swiper indicator-dots
-                   indicator-color="#999"
-                   indicator-active-color="#ccc"
-                   autoplay
-                   :duration="100">
-      <template v-for="(item) in background">
-        <onekit-swiper-item :key="item">
-          <onekit-view :onekit-class="'swiper-item '+item">{{item}}</onekit-view>
-        </onekit-swiper-item>
-      </template>
-    </onekit-swiper>
+    <onekit-checkbox-group @change="checkboxChange">
+      <onekit-lable v-for="(item,index) in items" :key="index" onekit-class="checkbox">
+        <onekit-checkbox :value="item.name"
+                         :checked="item.checked"
+                         color="pink">
+        </onekit-checkbox>
+        {{item.value}}
+      </onekit-lable>
+    </onekit-checkbox-group>
 
   </page>
 </template>
@@ -19,46 +17,37 @@
   import OnekitPage from '../weixin2vue/OnekitPage'
   export default OnekitPage({}, {
 
-    onShareAppMessage() {
-      return {
-        title: 'swiper',
-        path: 'page/component/pages/swiper/swiper'
-      }
-    },
-
     data: {
-      background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
-      indicatorDots: true,
-      vertical: false,
-      autoplay: false,
-      interval: 2000,
-      duration: 500
+      items: [{
+          name: 'USA',
+          value: '美国'
+        },
+        {
+          name: 'CHN',
+          value: '中国',
+          checked: true
+        },
+        {
+          name: 'BRA',
+          value: '巴西'
+        },
+        {
+          name: 'JPN',
+          value: '日本'
+        },
+        {
+          name: 'ENG',
+          value: '英国'
+        },
+        {
+          name: 'TUR',
+          value: '法国'
+        }
+      ]
     },
-
-    changeIndicatorDots() {
-      this.setData({
-        indicatorDots: !this.data.indicatorDots
-      })
-    },
-
-    changeAutoplay() {
-      this.setData({
-        autoplay: !this.data.autoplay
-      })
-    },
-
-    intervalChange(e) {
-      this.setData({
-        interval: e.detail.value
-      })
-    },
-
-    durationChange(e) {
-      this.setData({
-        duration: e.detail.value
-      })
+    checkboxChange: function (e) {
+      console.log('checkbox发生change事件，携带value值为：', e.detail.value);
     }
-
   })
 </script>
 

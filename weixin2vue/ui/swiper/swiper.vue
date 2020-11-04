@@ -1,3 +1,4 @@
+/** BUG待处理 2020 11 4*/
 <template>
   <div class="onekit-swiper" ref="main" :active-index="currentIndex">
     <div class="onekit-swiper-inner">

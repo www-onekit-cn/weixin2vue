@@ -47,7 +47,8 @@
 <style scoped>
   .onekit-swiper-item {
     height: 100px;
-    float: left;
+    /* float: left; */
+    display: inline-block;
     background: pink;
   }
 </style>
