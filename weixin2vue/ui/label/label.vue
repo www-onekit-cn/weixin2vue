@@ -10,7 +10,7 @@
 <script>
   import onekit_behavior from "../../behaviors/onekit_behavior"
   export default {
-    name: "onekit-lable",
+    name: "onekit-label",
     mixins: [onekit_behavior],
     props: {
 
