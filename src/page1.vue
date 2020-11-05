@@ -4,7 +4,7 @@
       <onekit-label>
         <onekit-view onekit-class="section__title">type="switch"</onekit-view>
 
-        <onekit-switch :checked="switch1Checked" @change="switch1Change" checked></onekit-switch>
+        <onekit-switch checked @change="switch1Change"></onekit-switch>
 
       </onekit-label>
     </onekit-view>

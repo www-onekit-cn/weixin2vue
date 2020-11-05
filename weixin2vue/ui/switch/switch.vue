@@ -4,7 +4,10 @@
        :style="onekitStyle"
        :id="onekitId"
        class="switch">
-    <div class="switch-wrapper" :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status?switchBg:'#e9ebef'}" :class="{'close':!status,'disabled':this.disabled}" @click="handleSwitch">
+    <div class="switch-wrapper"
+         :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status?switchBg:'#e9ebef'}"
+         :class="{'close':!status,'disabled':this.disabled}"
+         @click.stop="handleSwitch">
       <div class="slider" :style="{'width':(height-2)+'px','height':(height-2)+'px','left':left+'px'}"></div>
     </div>
     <slot></slot>
@@ -24,23 +27,23 @@
       };
     },
     props: {
-      checked: {
+      'checked': {
         type: Boolean,
         default: false
       },
-      width: {
+      'width': {
         type: Number,
         default: 55
       },
-      height: {
+      'height': {
         type: Number,
         default: 35
       },
-      background: {
+      'background': {
         type: String,
         default: "#09BB07"
       },
-      disabled: {
+      'disabled': {
         type: Boolean,
         default: false
       }
@@ -89,13 +92,13 @@
       }
     },
     mounted() {
-      if (this.status != this.value) {
+      if (this.status != this.value && !this.checked) {
         this.status = this.value;
       }
       if (this.switchBg != this.background) {
         this.switchBg = this.background;
       }
-    }
+    },
   }
 </script>
 

@@ -2,7 +2,8 @@
   <label
          :class="['onekit-lable',onekitClass]"
          :style="onekitStyle"
-         :id="onekitId">
+         :id="onekitId"
+         @click="label_click()">
     <slot></slot>
   </label>
 </template>
@@ -17,7 +18,23 @@
 
     },
     methods: {
+      label_click() {
 
+        if (this.$children[1].handleSwitch) {
+          this.$children[1].handleSwitch()
+        } else {
+          console.log('没有该事件')
+        }
+
+      }
+    },
+    async mounted() {
+      if (this.$children.map(item => {
+          // eslint-disable-next-line no-prototype-builtins
+          item.hasOwnProperty('handleSwitch')
+        })) {
+        console.log('ok')
+      }
     }
   }
 </script>
