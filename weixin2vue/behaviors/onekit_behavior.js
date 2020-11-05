@@ -1,3 +1,4 @@
+/* eslint-disable vue/custom-event-name-casing */
 export default {
   props: {
     "onekit-id": { type: String, default: "" },

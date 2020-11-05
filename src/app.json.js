@@ -12,6 +12,7 @@ export default {
 	},
 	"pages":[
 		"page1",
+		"page2"
 	],
 	"permission":{
 		"scope.userLocation":{

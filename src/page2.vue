@@ -3,9 +3,12 @@
 </template>
 
 <script>
-  export default {
-
-  }
+  import OnekitPage from '../weixin2vue/OnekitPage';
+  export default OnekitPage({}, {
+    onLoad() {
+      console.log('page2')
+    }
+  })
 </script>
 
 <style>

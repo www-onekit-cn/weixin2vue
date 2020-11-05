@@ -1,22 +1,32 @@
 <template>
   <page id="app">
-    <onekit-view @tap="test_click">click</onekit-view>
 
+    <onekit-view @Tap="navigateTo_click">wx.navigateTo</onekit-view>
+    <onekit-view @Tap="redirectTo_click">wx.redirectTo</onekit-view>
   </page>
 </template>
 
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage';
-import wx from '../weixin2vue/wx';
-  export default OnekitPage({},{
+  import wx from '../weixin2vue/wx';
+  export default OnekitPage({}, {
     data: {},
-    test_click: function () {
-      wx.redirectTo({
-        url: './page2.vue',
+    navigateTo_click: function () {
+      console.log('click')
+      wx.navigateTo({
+        url: '/page2',
         success: (res) => { console.log(res) },
         fail: console.log
       });
-    }
+    },
+    redirectTo_click: function () {
+      console.log('click')
+      wx.redirectTo({
+        url: '/page2',
+        success: (res) => { console.log(res) },
+        fail: console.log
+      });
+    },
   });
 </script>
 
