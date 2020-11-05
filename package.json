@@ -11,6 +11,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "oneutil": "latest",
     "clipboard": "^2.0.6",
     "core-js": "2.6.11",
     "html2canvas": "^1.0.0-rc.7",

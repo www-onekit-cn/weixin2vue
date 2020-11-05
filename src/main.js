@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'; Vue.use(Router);
 import $ from 'jquery'
-import TheKit from '../weixin2vue/js/TheKit'
+import OneKit from '../weixin2vue/js/OneKit'
 import tabs from '../weixin2vue/pages/tabs'
 import activity from '../weixin2vue/pages/activity'
 import APP_JSON from './app.json.js'
 import weixin2vue from "weixin2vue"
-import wx from "../weixin2vue/wx"
 import('./app.js')
 Vue.use(weixin2vue);
-const screen_width = TheKit.isMobile() ? (($(window).width()) - 0) : 750;
+Vue.prototype.APP_JSON = APP_JSON;
+const screen_width = OneKit.isMobile() ? (($(window).width()) - 0) : 750;
 $("body").css('--screen-width', screen_width + "px");
 //////////////////////////////////////////////
 let router = {

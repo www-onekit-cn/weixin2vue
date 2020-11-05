@@ -1,8 +1,23 @@
-import Uri from "./Uri"
+import {URL} from 'oneutil'
+import $ from 'jquery'
 const storeFiles = {};
 const tempFiles = {};
+function isWeixin() {
+  const ua = window.navigator.userAgent.toLowerCase();
+  return ua.match(/MicroMessenger/i) === 'micromessenger';
+}
+function isMobile() {
+  const ua = navigator.userAgent;
+
+  const ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+
+      isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+
+      isAndroid = ua.match(/(Android)\s+([\d.]+)/);
+  return isIphone || isAndroid
+}
 function getUrl(url) {
-  let uri = new Uri(url);
+  let uri = new URL(url);
   let result;
   let type;
   if (uri.scheme == null) {
@@ -57,7 +72,7 @@ function loadImage(src, callback) {
     callback(null, null);
     return;
   }
-  let url = Uri.parse(src);
+  let url = new URL(src);
   if (url.toString().indexOf("tmp") !== -1) {
     let image = tempFiles[url];
     callback(image, src);
@@ -126,4 +141,4 @@ function raiseEvent(target, type, e) {
     type: type,
   }
 }
-export default { tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent }
+export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent }

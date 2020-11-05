@@ -9,15 +9,14 @@
 </template>
 
 <script>
-  import HTML from '../../js/HTML'
-  import TheKit from '../../js/TheKit'
+  import {HTML,STRING} from 'oneutil'
   import onekit_behavior from "../../behaviors/onekit_behavior"
   export default {
     name: "onekit-rich-text",
     mixins: [onekit_behavior],
     computed: {
       html() {
-        const html = TheKit.replace(typeof (this.nodes) == "string" ? this.nodes : HTML.nodes2html(this.nodes),
+        const html = STRING.replace(typeof (this.nodes) == "string" ? this.nodes : HTML.nodes2html(this.nodes),
           ' ', `&${this.space};`)
         return html
       }

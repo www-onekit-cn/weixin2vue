@@ -1,11 +1,13 @@
+/* eslint-disable vue/custom-event-name-casing */
 import Vue from "vue";
-const APP_JSON = Vue.prototype.APP_JSON;
+let APP_JSON;
 export default function (PAGE_JSON, object) {
   let result = {
     data() {
       return {};
     },
     created() {
+      APP_JSON = Vue.prototype.APP_JSON;
       this.data = this.$data;
       if (this["onLoad"]) {
         this["onLoad"]();
@@ -25,16 +27,13 @@ export default function (PAGE_JSON, object) {
         backgroundTextStyle: "dark",
       };
       if (APP_JSON.window) {
-        for (let key in APP_JSON.window) {
-          if (!APP_JSON.window.hasOwnProperty(key)) {
-            continue;
-          }
+        for (let key of Object.keys(APP_JSON.window)) {
           WINDOW[key] = APP_JSON.window[key];
         }
       }
       if (typeof (PAGE_JSON) != "undefined") {
         for (let key in PAGE_JSON) {
-          if (!PAGE_JSON.hasOwnProperty(key)) {
+          if (!PAGE_JSON[key]) {
             continue;
           }
           let item = PAGE_JSON[key];
@@ -55,7 +54,7 @@ export default function (PAGE_JSON, object) {
           }
         }
       }
-      this.$emit("updateWindow", WINDOW);
+      this.$emit('updateWindow', WINDOW);
       if (this["onReady"]) {
         this["onReady"]();
       }
@@ -78,10 +77,7 @@ export default function (PAGE_JSON, object) {
       setData(data) {
         let that = this;
         this.$nextTick(() => {
-          for (let k in data) {
-            if (!data.hasOwnProperty(k)) {
-              continue;
-            }
+          for (let k of Object.keys(data)) {
             that[k] = data[k];
           }
         });
@@ -95,10 +91,7 @@ export default function (PAGE_JSON, object) {
         return object.data;
       };
     }
-    for (let key in object) {
-      if (!object.hasOwnProperty(key)) {
-        continue;
-      }
+    for (let key of Object.keys(object)) {
       let obj = object[key];
       switch (key) {
         case "data":

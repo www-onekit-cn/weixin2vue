@@ -1,12 +1,14 @@
+/* eslint-disable vue/custom-event-name-casing */
 import Vue from "vue";
-const APP_JSON = Vue.prototype.APP_JSON;
+let APP_JSON;
 
-export default function(object){
+export default function(UC_JSON, object){
   let result = {
     data() {
       return {};
     },
     created() {
+       APP_JSON = Vue.prototype.APP_JSON;
       this.data = this.$data;
       if (this["onLoad"]) {
         this["onLoad"]();
@@ -26,20 +28,15 @@ export default function(object){
         backgroundColor:"#000000",
         backgroundTextStyle:"dark",
       };
-      if(APP.window) {
-        for (let key in APP.window) {
-          if (!APP.window.hasOwnProperty(key)) {
-            continue;
-          }
-          WINDOW[key] = APP.window[key];
+      if(APP_JSON.window) {
+        for (let key of Object.keys(APP_JSON.window)) {
+          WINDOW[key] = APP_JSON.window[key];
         }
       }
-      let path = this.$route.fullPath;
-      for (let key in PAGE_JSON) {
-        if (!PAGE_JSON.hasOwnProperty(key)) {
-          continue;
-        }
-        let item = PAGE_JSON[key];
+      //let path = this.$route.fullPath;
+      for (let key of Object.keys(UC_JSON)) {
+       
+        let item = UC_JSON[key];
         switch (key) {
           case "backgroundColorTop":
             break;
@@ -57,7 +54,7 @@ export default function(object){
         }
       }
       //console.log(WINDOW)
-      this.$emit("updateWindow",WINDOW);
+      this.$emit('updateWindow',WINDOW);
       if (this["onReady"]) {
         this["onReady"]();
       }
@@ -80,10 +77,7 @@ export default function(object){
       setData(data) {
         let that = this;
         this.$nextTick(() => {
-          for (let k in data) {
-            if (!data.hasOwnProperty(k)) {
-              continue;
-            }
+          for (let k of Object.keys(data)) {
             that[k] = data[k];
           }
         });
@@ -97,10 +91,7 @@ export default function(object){
         return object.data;
       };
     }
-    for (let key in object) {
-      if (!object.hasOwnProperty(key)) {
-        continue;
-      }
+    for (let key of Object.keys(object)) {
       let obj = object[key];
       switch (key) {
         case "data":

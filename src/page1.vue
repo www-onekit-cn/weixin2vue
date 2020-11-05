@@ -6,10 +6,9 @@
 </template>
 
 <script>
-  import { OnekitPage } from '../weixin2vue/OnekitPage';
-  import { wx } from '../weixin2vue/wx';
-
-  export default OnekitPage({
+  import OnekitPage from '../weixin2vue/OnekitPage';
+import wx from '../weixin2vue/wx';
+  export default OnekitPage({},{
     data: {},
     test_click: function () {
       wx.redirectTo({

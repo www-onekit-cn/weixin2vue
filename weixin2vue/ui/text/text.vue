@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import TheKit from '../../js/TheKit'
+  import {STRING} from 'oneutil'
   import onekit_behavior from '../../behaviors/onekit_behavior'
   export default {
     name: "onekit-text",
@@ -37,7 +37,7 @@
         var temp = this.$slots.default[0].text;
 
         if (this.space) {
-          temp = TheKit.replace(temp, ' ', `&${this.space};`)
+          temp = STRING.replace(temp, ' ', `&${this.space};`)
         }
         if (!this.decode) {
           temp = temp.replace(/&amp;/g, "&amp;&amp;");
