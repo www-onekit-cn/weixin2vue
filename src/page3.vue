@@ -1,6 +1,6 @@
 <template>
   <page id="app">
-    <h2>hello,world</h2>
+    <h2>hello,world page 3</h2>
     <onekit-view @Tap="navigateBack_click">wx.navigateBack</onekit-view>
     <onekit-view @Tap="reLaunch_click">wx.reLaunch</onekit-view>
 

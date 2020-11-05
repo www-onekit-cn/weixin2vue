@@ -261,7 +261,38 @@ export default class wx {
     }
     static getLogManager(wx_object) { }
     static switchTab() { }
-    static reLaunch() {
+    static reLaunch(wx_object) {
+        let wx_url = wx_object.url;
+        let wx_success = wx_object.success;
+        let wx_fail = wx_object.fail;
+        let wx_complete = wx_object.complete;
+        wx_object = null
+        ///////////
+        var wx_res;
+        try {
+            const vue_path = wx_url
+            const pageCount = Vue.prototype.VUE.$route.length-1
+            Vue.prototype.VUE.$router.go( -pageCount);
+            Vue.prototype.VUE.$router.replace(vue_path);
+            wx_res = {
+                navigateTo: 'ok'
+            };
+            if (wx_success) {
+                wx_success(wx_res);
+            }
+            if (wx_complete) {
+                wx_complete(wx_res);
+            }
+        } catch (e) {
+            console.log(e)
+            wx_res = { errMsg: e.message };
+            if (wx_fail) {
+                wx_fail(wx_res);
+            }
+            if (wx_complete) {
+                wx_complete(wx_res);
+            }
+        }
     }
 
     static redirectTo(wx_object) {
@@ -329,20 +360,16 @@ export default class wx {
 
 
     static navigateBack(wx_object) {
-        let delta;
-        let success = wx_object.success;
-        let fail = wx_object.fail;
-        let complete = wx_object.complete;
+        let wx_delta = wx_object.delta || 1;  // 返回的页面数
+        let wx_success = wx_object.success;
+        let wx_fail = wx_object.fail;
+        let wx_complete = wx_object.complete;
+        wx_object = null
+        ///////////
         var wx_res;
         try {
-            if (wx_object.delta) {
-                delta = wx_object.delta;
-            }
-            else {
-                delta = 1;
-            }
-            history.go(-delta);
-
+            const vue_delta = wx_delta
+            Vue.prototype.VUE.$router.go(-vue_delta);
             wx_res = {
                 navigateBack: 'ok'
             };
@@ -353,6 +380,7 @@ export default class wx {
                 wx_complete(wx_res);
             }
         } catch (e) {
+            console.log(e)
             wx_res = { errMsg: e.message };
             if (wx_fail) {
                 wx_fail(wx_res);
@@ -362,6 +390,7 @@ export default class wx {
             }
         }
     }
+
     static showToast(wx_object) {
         let tipTxt = wx_object.title;
         let time;
