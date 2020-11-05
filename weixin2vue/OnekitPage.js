@@ -1,7 +1,7 @@
 /* eslint-disable vue/custom-event-name-casing */
 import Vue from "vue";
 let APP_JSON;
-export default function (PAGE_JSON, object) {
+export default function(PAGE_JSON, object) {
   let result = {
     data() {
       return {};
@@ -10,7 +10,10 @@ export default function (PAGE_JSON, object) {
       APP_JSON = Vue.prototype.APP_JSON;
       this.data = this.$data;
       if (this["onLoad"]) {
-        this["onLoad"]();
+        const query = this.$route.query
+        this.eventChannelID = query.eventChannelID
+        delete query["eventChannelID"]
+        this["onLoad"]({ query });
       }
     },
     destroy() {
@@ -31,7 +34,7 @@ export default function (PAGE_JSON, object) {
           WINDOW[key] = APP_JSON.window[key];
         }
       }
-      if (typeof (PAGE_JSON) != "undefined") {
+      if (typeof(PAGE_JSON) != "undefined") {
         for (let key in PAGE_JSON) {
           if (!PAGE_JSON[key]) {
             continue;
@@ -81,9 +84,13 @@ export default function (PAGE_JSON, object) {
             that[k] = data[k];
           }
         });
+      },
+      getOpenerEventChannel() {
+        return Vue.prototype.$EventBus[this.eventChannelID];
       }
     },
     components: {}
+
   };
   if (object) {
     if (object.data) {

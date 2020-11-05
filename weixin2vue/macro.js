@@ -3,8 +3,6 @@ function getApp() {
   return Vue.prototype.APP_JSON
 }
 function getCurrentPages() {
-  const VUE = Vue.prototype.VUE
-  const router = VUE.$router
-  return router
+  return Vue.prototype.VUE.$routes.matched
 }
 export { getApp, getCurrentPages }

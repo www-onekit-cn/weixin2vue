@@ -8,6 +8,7 @@ import APP_JSON from './app.json.js'
 import weixin2vue from "weixin2vue"
 import('./app.js')
 Vue.use(weixin2vue);
+Vue.prototype.$EventBus = {}
 Vue.prototype.APP_JSON = APP_JSON;
 const screen_width = OneKit.isMobile() ? (($(window).width()) - 0) : 750;
 $("body").css('--screen-width', screen_width + "px");

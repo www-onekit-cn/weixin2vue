@@ -1,21 +1,25 @@
-import {URL} from 'oneutil'
+import Vue from 'vue'
+import { URL } from 'oneutil'
 import $ from 'jquery'
 const storeFiles = {};
 const tempFiles = {};
+
 function isWeixin() {
   const ua = window.navigator.userAgent.toLowerCase();
   return ua.match(/MicroMessenger/i) === 'micromessenger';
 }
+
 function isMobile() {
   const ua = navigator.userAgent;
 
   const ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
 
-      isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+    isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
 
-      isAndroid = ua.match(/(Android)\s+([\d.]+)/);
+    isAndroid = ua.match(/(Android)\s+([\d.]+)/);
   return isIphone || isAndroid
 }
+
 function getUrl(url) {
   let uri = new URL(url);
   let result;
@@ -39,6 +43,7 @@ function getUrl(url) {
   }
   return [type, result];
 }
+
 function getExt(url) {
   let x = url.lastIndexOf(".");
   if (x >= 0) {
@@ -47,25 +52,31 @@ function getExt(url) {
     return "";
   }
 }
+
 function createUUID() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    const r = Math.random() * 16 | 0,
+      v = c === 'x' ? r : (r & 0x3 | 0x8);
     return v.toString(16);
   });
 }
+
 function createUUIDfileName(fileName) {
   let uuid = createUUID();
   let ext = fileName.substring(fileName.lastIndexOf("."), fileName.length);
   return uuid + ext;
 }
+
 function createTempPath(fileName) {
   let uuid = createUUIDfileName(fileName);
   return `wxfile://tmp_oneki${uuid}`;
 }
+
 function createStorePath(fileName) {
   let uuid = createUUIDfileName(fileName);
   return `wxfile://store/oneki${uuid}`;
 }
+
 function loadImage(src, callback) {
 
   if (String.isEmpty(src)) {
@@ -83,10 +94,10 @@ function loadImage(src, callback) {
     $.ajax({
       url: url,
       dataType: "arraybuffer",
-      success: function (blob) {
+      success: function(blob) {
         callback(blob, src);
       },
-      error: function (a, b) {
+      error: function(a, b) {
         console.log(a, b);
       }
     });
@@ -94,15 +105,16 @@ function loadImage(src, callback) {
     $.ajax({
       url: url,
       dataType: "arraybuffer",
-      success: function (blob) {
+      success: function(blob) {
         callback(blob, src);
       },
-      error: function (a, b) {
+      error: function(a, b) {
         console.log(a, b);
       }
     });
   }
 }
+
 function raiseEvent(target, type, e) {
   return {
     changedTouches: [{
@@ -141,4 +153,10 @@ function raiseEvent(target, type, e) {
     type: type,
   }
 }
-export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent }
+function current(){
+  return Vue.prototype.VUE;
+}
+function currentUrl(){
+  return current().path;
+}
+export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl }

@@ -11,16 +11,22 @@
   import OnekitPage from '../weixin2vue/OnekitPage';
   import wx from '../weixin2vue/wx'
   export default OnekitPage({}, {
-    onLoad() {
-      console.log(this.$route)
+    onLoad(option) {
+      console.log(option.query)
+      const eventChannel = this.getOpenerEventChannel()
+      eventChannel.emit('acceptDataFromOpenedPage', { data: 'test' });
+      eventChannel.emit('someEvent', { data: 'test' });
+      eventChannel.on('acceptDataFromOpenerPage', function(data) {
+        console.log("acceptDataFromOpenerPage", data)
+      })
     },
-    navigateBack_click: function () {
+    navigateBack_click: function() {
       console.log('返回上一级')
       wx.navigateBack({
         delta: 1
       });
     },
-    reLaunch_click: function () {
+    reLaunch_click: function() {
       console.log('re...')
       wx.reLaunch({
         url: '/page1',
