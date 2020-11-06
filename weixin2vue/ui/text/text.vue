@@ -9,11 +9,12 @@
 </template>
 
 <script>
-  import {STRING} from 'oneutil'
+  import { STRING } from 'oneutil'
+  import weixin_behavior from '../../behaviors/weixin_behavior'
   import onekit_behavior from '../../behaviors/onekit_behavior'
   export default {
     name: "onekit-text",
-    mixins: [onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
     props: {
       'user-select': {
         type: Boolean,

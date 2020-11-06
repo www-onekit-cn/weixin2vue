@@ -8,10 +8,11 @@
 </template>
 
 <script>
-  import onekit_behavior from "../../behaviors/onekit_behavior"
+  import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
   export default {
     name: "onekit-slider",
-    mixins: [onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
     props: {
       'indicator-dots': {
         type: Boolean,

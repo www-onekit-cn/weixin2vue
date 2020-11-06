@@ -8,9 +8,10 @@
 </template>
 
 <script>
+  import weixin_behavior from '../../behaviors/weixin_behavior'
   import onekit_behavior from '../../behaviors/onekit_behavior'
   export default {
-    mixins: [onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
     name: 'onekit-button',
     props: {
       type: {

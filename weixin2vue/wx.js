@@ -551,9 +551,9 @@ export default class wx {
     } else {
       mask = wx_object.mask
     }
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     var wx_res;
     try {
       var viewportID = document.getElementById("viewport");
@@ -588,10 +588,10 @@ export default class wx {
     } catch (e) {
       wx_res = { errMsg: e.message };
       if (wx_fail) {
-        wx_fail(wx_res);
+        wx_fail(wx_fail);
       }
       if (wx_complete) {
-        wx_complete(wx_res);
+        wx_complete(wx_complete);
       }
     }
   }

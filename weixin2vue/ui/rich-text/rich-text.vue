@@ -10,10 +10,11 @@
 
 <script>
   import {HTML,STRING} from 'oneutil'
-  import onekit_behavior from "../../behaviors/onekit_behavior"
+  import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
   export default {
     name: "onekit-rich-text",
-    mixins: [onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
     computed: {
       html() {
         const html = STRING.replace(typeof (this.nodes) == "string" ? this.nodes : HTML.nodes2html(this.nodes),

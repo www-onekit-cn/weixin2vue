@@ -45,18 +45,27 @@
         exit
       </onekit-navigator>
 
+      <onekit-view @Tap="showToast()">showToast</onekit-view>
+
     </onekit-view>
   </page>
 </template>
 
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage';
-  // import wx from '../weixin2vue/wx';
+  import wx from '../weixin2vue/wx';
   export default OnekitPage({}, {
     data: {},
     onLoad: function(options) {
       this.setData({
         title: options.title
+      })
+    },
+    showToast() {
+      wx.showToast({
+        title: '成功',
+        icon: 'success',
+        duration: 2000
       })
     }
 

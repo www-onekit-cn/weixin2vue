@@ -9,10 +9,11 @@
 </template>
 
 <script>
+import weixin_behavior from "../../behaviors/weixin_behavior"
 import onekit_behavior from "../../behaviors/onekit_behavior"
 export default{
     name: "onekit-cover-image",
-    mixins:[onekit_behavior],
+    mixins:[weixin_behavior, onekit_behavior],
 	props:{
 	
 		

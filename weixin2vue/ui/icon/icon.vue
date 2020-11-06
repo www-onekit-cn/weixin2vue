@@ -6,10 +6,11 @@
 </template>
 
 <script>
+  import weixin_behavior from '../../behaviors/weixin_behavior'
   import onekit_behavior from '../../behaviors/onekit_behavior'
   export default {
     name: "onekit-icon",
-    mixins: [onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
     props: {
       type: {
         type: String,
@@ -46,31 +47,31 @@
       colorUpdate(color) {
         if (!color) {
           switch (this.type) {
-          case "success":
-          case "success_no_circle":
-          case "download":
-          case "info_circle":
-            color = "#20BF64";
-            break;
+            case "success":
+            case "success_no_circle":
+            case "download":
+            case "info_circle":
+              color = "#20BF64";
+              break;
 
-          case "info":
-          case "waiting":
-            color = "#24B0FC";
-            break;
+            case "info":
+            case "waiting":
+              color = "#24B0FC";
+              break;
 
-          case "warn":
-          case "cancel":
-            color = "#F75355";
-            break;
+            case "warn":
+            case "cancel":
+              color = "#F75355";
+              break;
 
-          case "circle":
-          case "search":
-          case "clear":
-            color = "#B2B2B2";
-            break;
+            case "circle":
+            case "search":
+            case "clear":
+              color = "#B2B2B2";
+              break;
 
-          default:
-            throw new Error(this.type);
+            default:
+              throw new Error(this.type);
           }
         }
         this.$el.style.setProperty("--icon-color", color);
