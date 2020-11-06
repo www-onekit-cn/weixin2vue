@@ -54,6 +54,7 @@
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage';
   import wx from '../weixin2vue/wx';
+  // import vhs from '../weixin2vue/wangjie_test'
   export default OnekitPage({}, {
     data: {},
     onLoad: function(options) {

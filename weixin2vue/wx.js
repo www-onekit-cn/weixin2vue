@@ -461,9 +461,9 @@ export default class wx {
     if (wx_object.image) {
       image = wx_object.image;
     }
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     var wx_res;
     try {
       var viewportID = document.getElementById("viewport");
