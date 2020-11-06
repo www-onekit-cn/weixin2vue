@@ -53,45 +53,48 @@ export default class wx {
     return window.btoa(binary);
   }
   static getSystemInfo(wx_object) {
-    let wx_success = wx_object.success;
-    let wx_fail = wx_object.fail;
-    let wx_complete = wx_object.complete;
+    let wx_success = wx_object ? wx_object.success:null;
+    let wx_fail = wx_object ? wx_object.fail : null
+    let wx_complete = wx_object ? wx_object.complete : null
     /////////////////////////////
+
+
     var wx_res;
-    try {
+    // try {
       wx_res = wx.getSystemInfoSync();
       if (wx_success) { wx_success(wx_res); }
       if (wx_complete) { wx_complete(wx_res); }
-    } catch (e) {
-      wx_res = { errMsg: e.message };
-      if (wx_fail) { wx_fail(wx_res); }
-      if (wx_complete) { wx_complete(wx_res); }
-    }
+    // } catch (e) {
+      
+      // wx_res = { errMsg: e.message };
+    //   if (wx_fail) { wx_fail(wx_res); }
+    //   if (wx_complete) { wx_complete(wx_res); }
+    // }
   }
 
   static getSystemInfoSync() {
-    try {
-      var device_type = navigator.userAgent; //获取userAgent信息
-      var md = {}; //new MobileDetect(device_type); //初始化mobile-detect
-      var os = md.os(); //获取系统
-      var model;
-      var system;
-      var platform;
-      if (os == 'iOS') {
-        //ios系统的处理
-        system = 'iOS ' + md.version('iPhone');
-        model = md.mobile();
-        platform = 'ios';
-      } else if (os == 'AndroidOS') {
-        //Android系统的处理
-        system = 'Android ' + md.version('Android');
-        model = md.mobile();
-        platform = 'android';
-      }
+    // try {
+    //   var device_type = navigator.userAgent; //获取userAgent信息
+    //   var md = {}; //new MobileDetect(device_type); //初始化mobile-detect
+    //   var os = md.os(); //获取系统
+    //   var model;
+    //   var system;
+    //   var platform;
+    //   if (os == 'iOS') {
+    //     //ios系统的处理
+    //     system = 'iOS ' + md.version('iPhone');
+    //     model = md.mobile();
+    //     platform = 'ios';
+    //   } else if (os == 'AndroidOS') {
+    //     //Android系统的处理
+    //     system = 'Android ' + md.version('Android');
+    //     model = md.mobile();
+    //     platform = 'android';
+    //   }
       return {
         errMsg: 'getSystemInfoSync:ok',
         brand: 'Onekit', // 手机品牌
-        model: model, // 手机型号
+        // model: model, // 手机型号
         pixelRatio: window.devicePixelRatio, // 设备像素比
         screenWidth: window.screen.width, // 屏幕宽度
         screenHeight: window.screen.height, // 屏幕高度
@@ -100,15 +103,15 @@ export default class wx {
         statusBarHeight: 20, // 状态栏的高度
         language: window.navigator.language, // 微信设置的语言
         version: '7.0', // 微信版本号
-        system: system, // 操作系统版本
-        platform: platform, // 客户端平台
+        // system: system, // 操作系统版本
+        // platform: platform, // 客户端平台
         fontSizeSetting: 20, // 用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位 px。
         SDKVersion: "2.12.1", // 客户端基础库版本
         benchmarkLevel: 1 // (仅Android小游戏) 性能等级，-2 或 0：该设备无法运行小游戏，-1：性能未知，>=1 设备性能值，该值越高，设备性能越好 (目前设备最高不到50)
       };
-    } catch (e) {
-      throw new Error('getSystemInfoSync:fail');
-    }
+    // } catch (e) {
+    //   throw new Error('getSystemInfoSync:fail');
+    // }
   }
   static getUpdateManager() {
     return new UpdateManagerClass();
@@ -832,19 +835,43 @@ export default class wx {
     }, 20);
   }
   static setNavigationBarTitle(wx_object) {
-    $("#onekitwx_navigationBar_title").html("xxx");
+
+    const wx_title = wx_object.title
+
+    $("#onekitwx_navigationBar_title").html(wx_title);
     if (wx_object.success) wx_object.wx_success();
     if (wx_object.complete) wx_object.complete();
 
   }
 
-  static showNavigationBarLoading() {}
+  static showNavigationBarLoading(wx_object) {
+    console.log(`
+    
+    ${wx_object}
+
+    在当前页面显示导航条加载动画
+
+    参数
+    Object object
+    属性	    类型	      默认值	必填	说明
+    success	    function      否	            接口调用成功的回调函数
+    fail	    function	  否                接口调用失败的回调函数
+    complete	function	  否	            接口调用结束的回调函数（调用成功、失败都会执行）
+    `)
+  }
 
   static hideNavigationBarLoading() {}
 
   static setNavigationBarColor(wx_object) {
-    if (wx_object.frontColor) { $("#onekitwx_navigationBar").css("color", wx_object.frontColor); }
-    if (wx_object.backgroundColor) { $("#onekitwx_navigationBar").css("background", wx_object.backgroundColor); }
+
+    const wx_frontColor = wx_object.frontColor
+    const wx_backgroundColor = wx_object.backgroundColor
+    // const wx_animation = wx_object.animation
+
+
+    $("#onekitwx_navigationBar").css("color", wx_frontColor)
+    $("#onekitwx_navigationBar").css("background", wx_backgroundColor)
+
   }
   static setBackgroundTextStyle() {
 
