@@ -28,9 +28,6 @@
         url = "/" + PATH.rel2abs(OneKit.currentUrl(), url)
         this.$refs[url][0].click();
       }
-      // changeTab(url){
-
-      // }
     },
     data() {
       return {
