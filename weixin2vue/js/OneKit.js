@@ -154,9 +154,9 @@ function raiseEvent(target, type, e) {
   }
 }
 function current(){
-  return Vue.prototype.VUE;
+  return Vue.prototype.CURRENT;
 }
 function currentUrl(){
-  return current().path;
+  return current().$route.path;
 }
 export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl }

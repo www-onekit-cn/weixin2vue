@@ -2,7 +2,7 @@
   <div id="app">
     <router-view @updatewindowjson="tabPage_updateWindowJson" @switchtab="tabPage_switchTab" />
     <div class="tab-bar">
-      <span :data-url="tab.url" v-for="tab in tabs" class="item" @click="tab_click(tab.url)" :key="tab.pagePath">
+      <span :ref="tab.url" v-for="tab in tabs" class="item" @click="tab_click(tab.url)" :key="tab.pagePath">
         <img :src="$route.path.includes(tab.url) ? tab.selected : tab.normal" alt />
         <span :class="{active:$route.path.includes(tab.url)}">{{tab.name}}</span>
       </span>
@@ -12,8 +12,7 @@
 
 <script>
   import Vue from "vue";
-  import $ from "jquery";
-  import oneutil from "oneutil";
+  import { PATH } from "oneutil";
   import OneKit from "../../js/OneKit";
   let APP_JSON;
   export default {
@@ -26,9 +25,8 @@
         this.$emit('updatewindowjson', { WINDOW_JSON });
       },
       tabPage_switchTab({ url }) {
-        url = oneutil.rel2abs(OneKit.currentUrl(), url)
-        console.log("xxxx", url)
-        $(`span[data-url='${url}`).click();
+        url = "/" + PATH.rel2abs(OneKit.currentUrl(), url)
+        this.$refs[url][0].click();
       }
       // changeTab(url){
 

@@ -7,6 +7,7 @@ export default function(PAGE_JSON, object) {
     },
     created() {
       APP_JSON = Vue.prototype.APP_JSON;
+      Vue.prototype.CURRENT = this
       this.data = this.$data;
       if (this["onLoad"]) {
         const query = this.$route.query
@@ -62,6 +63,7 @@ export default function(PAGE_JSON, object) {
       }
     },
     beforeRouteEnter(to, from, next) {
+      Vue.prototype.CURRENT = this
       next(vm => {
         if (vm["onShow"]) {
           vm["onShow"]();
