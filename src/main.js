@@ -52,7 +52,7 @@ for (let page of APP_JSON.pages) {
 }
 
 //
-const vue = Vue.prototype.VUE = new Vue({
+const vue = Vue.prototype.ROOT = new Vue({
   router: new Router(router),
   render: h => h(activity)
 })

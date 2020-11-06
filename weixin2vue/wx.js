@@ -300,9 +300,9 @@ export default class wx {
     var wx_res;
     try {
       const vue_path = wx_url
-      const pageCount = Vue.prototype.VUE.$route.length - 1
-      Vue.prototype.VUE.$router.go(-pageCount);
-      Vue.prototype.VUE.$router.replace(vue_path);
+      const pageCount = Vue.prototype.ROOT.$route.length - 1
+      Vue.prototype.ROOT.$router.go(-pageCount);
+      Vue.prototype.ROOT.$router.replace(vue_path);
       wx_res = {
         navigateTo: 'ok'
       };
@@ -334,7 +334,7 @@ export default class wx {
     var wx_res;
     try {
       const vue_path = wx_url
-      Vue.prototype.VUE.$router.replace(vue_path);
+      Vue.prototype.ROOT.$router.replace(vue_path);
       wx_res = {
         navigateTo: 'ok'
       };
@@ -375,7 +375,7 @@ export default class wx {
       const eventChannelID = new Date().getTime()
       Vue.prototype.$EventBus[eventChannelID] = eventChannel
       //////
-      Vue.prototype.VUE.$router.push({
+      Vue.prototype.ROOT.$router.push({
         path: vue_path,
         query: { eventChannelID }
       }).then(function() {
@@ -415,7 +415,7 @@ export default class wx {
     var wx_res;
     try {
       const vue_delta = wx_delta
-      Vue.prototype.VUE.$router.go(-vue_delta);
+      Vue.prototype.ROOT.$router.go(-vue_delta);
       wx_res = {
         navigateBack: 'ok'
       };
