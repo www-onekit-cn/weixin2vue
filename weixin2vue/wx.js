@@ -107,7 +107,6 @@ export default class wx {
         benchmarkLevel: 1 // (仅Android小游戏) 性能等级，-2 或 0：该设备无法运行小游戏，-1：性能未知，>=1 设备性能值，该值越高，设备性能越好 (目前设备最高不到50)
       };
     } catch (e) {
-      console.log(e);
       throw new Error('getSystemInfoSync:fail');
     }
   }
@@ -260,7 +259,37 @@ export default class wx {
 
   }
   static getLogManager(wx_object) {}
-  static switchTab() {}
+  static switchTab(wx_object) {
+    let wx_url = wx_object.url;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    wx_object = null
+    ///////////
+    var wx_res;
+    try {
+      const vue_url = wx_url
+      const current = OneKit.current();
+      current.$emit("switchtab",{url:vue_url})
+      wx_res = {
+        navigateTo: 'ok'
+      };
+      if (wx_success) {
+        wx_success(wx_res);
+      }
+      if (wx_complete) {
+        wx_complete(wx_res);
+      }
+    } catch (e) {
+      wx_res = { errMsg: e.message };
+      if (wx_fail) {
+        wx_fail(wx_res);
+      }
+      if (wx_complete) {
+        wx_complete(wx_res);
+      }
+    }
+  }
   static reLaunch(wx_object) {
     let wx_url = wx_object.url;
     let wx_success = wx_object.success;
@@ -284,7 +313,7 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (e) {
-      console.log(e)
+      
       wx_res = { errMsg: e.message };
       if (wx_fail) {
         wx_fail(wx_res);
@@ -316,7 +345,7 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (e) {
-      console.log(e)
+      
       wx_res = { errMsg: e.message };
       if (wx_fail) {
         wx_fail(wx_res);
@@ -364,7 +393,7 @@ export default class wx {
       })
 
     } catch (e) {
-      console.log(e)
+      
       wx_res = { errMsg: e.message };
       if (wx_fail) {
         wx_fail(wx_res);
@@ -397,7 +426,7 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (e) {
-      console.log(e)
+      
       wx_res = { errMsg: e.message };
       if (wx_fail) {
         wx_fail(wx_res);

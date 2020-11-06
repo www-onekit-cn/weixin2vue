@@ -14,6 +14,18 @@ export default {
 		"page1",
 		"page2"
 	],
+	"tabBar": {
+    "list": [
+      {
+        "pagePath": "page1",
+        "text": "Page 1"
+      },
+      {
+        "pagePath": "page2",
+        "text": "Page 2"
+      }
+    ]
+  },
 	"permission":{
 		"scope.userLocation":{
 			"desc":"你的位置信息将用于小程序位置接口的效果展示"

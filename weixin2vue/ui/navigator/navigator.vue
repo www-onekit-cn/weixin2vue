@@ -97,7 +97,9 @@
             break;
 
           case 'switchTab':
-            console.log('跳转失败，跳转方式' + this.openType + 'api未实现')
+            wx.switchTab({
+              url
+            })
             break;
 
           case 'reLaunch':

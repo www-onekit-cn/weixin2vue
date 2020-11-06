@@ -10,25 +10,25 @@
       <!-- <onekit-navigator target="miniProgram" open-type="navigate" app-id path version="release">打开绑定的小程序</onekit-navigator> -->
 
       <onekit-navigator onekit-class='test_children'
-                        url="/page2"
+                        url="page2"
                         open-type='navigate'>
         navigate
       </onekit-navigator>
 
       <onekit-navigator onekit-class='test_children'
-                        url="/page2"
+                        url="page2"
                         open-type='redirect'>
         redirect
       </onekit-navigator>
 
       <onekit-navigator onekit-class='test_children'
-                        url="/page2"
+                        url="page2"
                         open-type='switchTab'>
         switchTab
       </onekit-navigator>
 
       <onekit-navigator onekit-class='test_children'
-                        url="/page2"
+                        url="page2"
                         open-type='reLaunch'>
         reLaunch
       </onekit-navigator>
@@ -40,7 +40,7 @@
       </onekit-navigator>
 
       <onekit-navigator onekit-class='test_children'
-                        url="/page2"
+                        url="page2"
                         open-type='exit'>
         exit
       </onekit-navigator>

@@ -1,4 +1,3 @@
-/* eslint-disable vue/custom-event-name-casing */
 import Vue from "vue";
 let APP_JSON;
 export default function(PAGE_JSON, object) {
@@ -22,7 +21,7 @@ export default function(PAGE_JSON, object) {
       }
     },
     mounted() {
-      let WINDOW = {
+      let WINDOW_JSON = {
         navigationBarBackgroundColor: "#000000",
         navigationBarTextStyle: "white",
         navigationStyle: "default",
@@ -31,7 +30,7 @@ export default function(PAGE_JSON, object) {
       };
       if (APP_JSON.window) {
         for (let key of Object.keys(APP_JSON.window)) {
-          WINDOW[key] = APP_JSON.window[key];
+          WINDOW_JSON[key] = APP_JSON.window[key];
         }
       }
       if (typeof(PAGE_JSON) != "undefined") {
@@ -52,12 +51,12 @@ export default function(PAGE_JSON, object) {
             case "pageOrientation":
               break;
             default:
-              WINDOW[key] = item;
+              WINDOW_JSON[key] = item;
               break;
           }
         }
       }
-      this.$emit('updateWindow', WINDOW);
+      this.$emit('updatewindowjson', {WINDOW_JSON});
       if (this["onReady"]) {
         this["onReady"]();
       }
