@@ -270,7 +270,7 @@ export default class wx {
     try {
       const vue_url = wx_url
       const current = OneKit.current();
-      current.$emit("switchtab",{url:vue_url})
+      current.$emit("switchtab", { url: vue_url })
       wx_res = {
         navigateTo: 'ok'
       };
@@ -313,7 +313,7 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (e) {
-      
+
       wx_res = { errMsg: e.message };
       if (wx_fail) {
         wx_fail(wx_res);
@@ -345,7 +345,7 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (e) {
-      
+
       wx_res = { errMsg: e.message };
       if (wx_fail) {
         wx_fail(wx_res);
@@ -393,7 +393,7 @@ export default class wx {
       })
 
     } catch (e) {
-      
+
       wx_res = { errMsg: e.message };
       if (wx_fail) {
         wx_fail(wx_res);
@@ -426,7 +426,7 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (e) {
-      
+
       wx_res = { errMsg: e.message };
       if (wx_fail) {
         wx_fail(wx_res);
@@ -571,7 +571,7 @@ export default class wx {
         popToastHtml += `<div class="xsw_bei" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background-color: #262626;opacity: 0.4;z-index: 999999999999999999999"></div>`
       }
       popToastHtml += `<div class="pop-toast" style="position: fixed;  width: 140px;  height: 140px;  text-align: center;background-color: #555;border-radius: 10px;box-shadow: 0 2px 8px #555 ;right: 50%;top: 50%;margin: -70px -70px 0 0;z-index: 9999999999999999999999">`;
-      popToastHtml += `<div id="xsw_canvas" style="140px;height: 60px;"></div>`;
+      popToastHtml += `<div id="xsw_canvas" style="height: 60px;color: red;border:4px dashed #fff;width: 60px;text-align: center;margin: 10px auto;border-radius: 100%;"></div>`;
       popToastHtml += ` <div class="toast-tip" style=" font-size: 16px;  color: #fff;  height: 45px;overflow: hidden;width:130px; word-wrap: break-word; text-align: center;padding: 0 5px ;margin-bottom: 10px;margin-top: 10px;">${tipTxt}</div>
                               </div></div>`;
       $("body").append(popToastHtml);
@@ -612,6 +612,7 @@ export default class wx {
     let showCancel = wx_object.showCancel;
     let cancelColor = wx_object.cancelColor;
     let confirmColor = wx_object.confirmColor;
+
     let cancelText;
     if (!wx_object.cancelText) {
       cancelText = "取消";
@@ -624,9 +625,9 @@ export default class wx {
     } else {
       confirmText = wx_object.confirmText;
     }
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     var wx_res;
     try {
       var viewportID = document.getElementById("viewport");
@@ -705,9 +706,9 @@ export default class wx {
   static showActionSheet(wx_object) {
     let itemList = wx_object.itemList;
     let itemColor = wx_object.itemColor;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     var index;
     var wx_res;
     try {
@@ -774,6 +775,39 @@ export default class wx {
         wx_complete(wx_res);
       }
     }
+  }
+
+  static enableAlertBeforeUnload(wx_object) {
+    console.log(`
+    
+    ${wx_object}
+
+    开启小程序页面返回询问对话框
+
+    参数
+    Object object
+    属性	    类型	      默认值	必填	说明
+    message	    string		  是	            询问对话框内容
+    success	    function      否	            接口调用成功的回调函数
+    fail	    function	  否                接口调用失败的回调函数
+    complete	function	  否	            接口调用结束的回调函数（调用成功、失败都会执行）
+    `)
+  }
+
+  static disableAlertBeforeUnload(wx_object) {
+    console.log(`
+    
+    ${wx_object}
+
+    关闭小程序页面返回询问对话框
+
+    参数
+    Object object
+    属性	    类型	      默认值	必填	说明
+    success	    function      否	            接口调用成功的回调函数
+    fail	    function	  否                接口调用失败的回调函数
+    complete	function	  否	            接口调用结束的回调函数（调用成功、失败都会执行）
+    `)
   }
 
   static loading() {

@@ -44,8 +44,41 @@
                         open-type='exit'>
         exit
       </onekit-navigator>
+      <onekit-view onekit-class="test_title">界面API</onekit-view>
+      <onekit-view @Tap="showToast()"
+                   onekit-class='test_children'>
+        showToast
+      </onekit-view>
+      <onekit-view @Tap="showModal()"
+                   onekit-class='test_children'>
+        showModal
+      </onekit-view>
+      <onekit-view @Tap="showLoading()"
+                   onekit-class='test_children'>
+        showLoading
+      </onekit-view>
+      <onekit-view @Tap="showActionSheet()"
+                   onekit-class='test_children'>
+        showActionSheet
+      </onekit-view>
+      <onekit-view @Tap="hideToast()"
+                   onekit-class='test_children'>
+        hideToast
+      </onekit-view>
+      <onekit-view @Tap="hideLoading()"
+                   onekit-class='test_children'>
+        hideLoading
+      </onekit-view>
 
-      <onekit-view @Tap="showToast()">showToast</onekit-view>
+      <onekit-view @Tap="enableAlertBeforeUnload()"
+                   onekit-class='test_children'>
+        enableAlertBeforeUnload
+      </onekit-view>
+
+      <onekit-view @Tap="disableAlertBeforeUnload()"
+                   onekit-class='test_children'>
+        disableAlertBeforeUnload
+      </onekit-view>
 
     </onekit-view>
   </page>
@@ -61,15 +94,63 @@
       this.setData({
         title: options.title
       })
+      wx.showLoading({
+        title: '加载中',
+      })
+
+      setTimeout(function() {
+        wx.hideLoading()
+      }, 2000)
+
     },
     showToast() {
       wx.showToast({
         title: '成功',
         icon: 'success',
-        duration: 2000
+        duration: 20000
       })
+    },
+    showModal() {
+      wx.showModal({
+        title: '提示',
+        content: '这是一个模态弹窗',
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    },
+    showLoading() {
+      wx.showLoading({
+        title: '加载中',
+      })
+    },
+    showActionSheet() {
+      wx.showActionSheet({
+        itemList: ['A', 'B', 'C'],
+        success(res) {
+          console.log(res.tapIndex)
+        },
+        fail(res) {
+          console.log(res.errMsg)
+        }
+      })
+    },
+    hideToast() {
+      wx.hideToast()
+    },
+    hideLoading() {
+      wx.hideLoading()
+    },
+    enableAlertBeforeUnload() {
+      wx.enableAlertBeforeUnload()
+    },
+    disableAlertBeforeUnload() {
+      wx.disableAlertBeforeUnload()
     }
-
   });
 </script>
 
@@ -100,5 +181,9 @@
     padding: 20px;
     font-weight: bold;
     font-size: 20px;
+  }
+
+  .test_children:last-child {
+    margin-bottom: 100px;
   }
 </style>
