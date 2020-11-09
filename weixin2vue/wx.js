@@ -95,21 +95,22 @@ export default class wx {
           break;
       }
       return {
-        brand: 'Onekit', // 手机品牌
-        model: model, // 手机型号
-        pixelRatio: window.devicePixelRatio, // 设备像素比
-        screenWidth: window.screen.width, // 屏幕宽度
-        screenHeight: window.screen.height, // 屏幕高度
-        windowWidth: window.innerWidth, // 可使用窗口宽度
-        windowHeight: window.innerHeight, // 可使用窗口高度
-        statusBarHeight: 20, // 状态栏的高度
-        language: window.navigator.language, // 微信设置的语言
-        version: '7.0', // 微信版本号
-        system: system, // 操作系统版本
-        platform: platform, // 客户端平台
-        fontSizeSetting: 20, // 用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位 px。
-        SDKVersion: "2.12.1", // 客户端基础库版本
-        benchmarkLevel: 1 // (仅Android小游戏) 性能等级，-2 或 0：该设备无法运行小游戏，-1：性能未知，>=1 设备性能值，该值越高，设备性能越好 (目前设备最高不到50)
+        brand: 'Onekit',
+        model: model,
+        pixelRatio: window.devicePixelRatio,
+        screenWidth: window.screen.width,
+        screenHeight: window.screen.height,
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
+        statusBarHeight: 20,
+        language: window.navigator.language,
+        version: '7.0',
+        system: system,
+        platform: platform,
+        fontSizeSetting: 20,
+        SDKVersion: "2.12.1",
+        benchmarkLevel: 1,
+        theme: 'light'
       };
     } catch (e) {
       throw new Error('getSystemInfoSync:fail');
@@ -161,17 +162,37 @@ export default class wx {
   }
 
   static onUnhandledRejection(wx_callback) {
-  
+
     window.addEventListener('unhandledrejection', vue_e => {
-        const wx_reason = vue_e.reason
-        const wx_promise = vue_e.promise
-        wx_callback(wx_reason,wx_promise);
+      const wx_reason = vue_e.reason
+      const wx_promise = vue_e.promise
+      wx_callback(wx_reason, wx_promise);
     })
   }
 
+  static onThemeChange(wx_callback) {
+
+    Object.defineProperty(Vue.prototype.THEME,'theme',{
+      get:function(){
+          return Vue.prototype.THEME;
+      },
+      
+      set:function(newValue){
+          wx_callback()        
+      }
+  })
+    
+  }
+
+
+  static onPageNotFound(wx_callback) {
+    
+  }
+
+
   static offPageNotFound() {}
 
-  static onPageNotFound() {}
+
 
 
 

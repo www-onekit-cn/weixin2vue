@@ -9,6 +9,8 @@ import APP_JSON from './app.json.js'
 import PROJECT_JSON from './project.config.json.js'
 import weixin2vue from "weixin2vue"
 
+import wx from '../weixin2vue/wx'
+
 Vue.use(weixin2vue);
 Vue.prototype.$EventBus = {}
 Vue.prototype.APP_JSON = APP_JSON;
@@ -79,6 +81,13 @@ let wx_option = {
 };
 Vue.prototype.OPTION = wx_option
 /////////////////////////////
+
+let wx_theme = {
+  theme: wx.getSystemInfoSync().theme
+}
+Vue.prototype.THEME = wx_theme
+
+////////////////////////////
 import('./app.js')
 const vue = Vue.prototype.ROOT = new Vue({
   router: new Router(router),
