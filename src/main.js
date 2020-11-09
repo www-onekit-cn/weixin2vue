@@ -24,6 +24,8 @@ let router = {
 let tabPages = [];
 let tabBar = APP_JSON["tabBar"];
 if (tabBar) {
+  Vue.prototype.ENTRY = tabBar.list[0].pagePath
+  //
   let children = [];
   for (let tab of tabBar.list) {
     let pagePath = tab["pagePath"];
@@ -39,6 +41,8 @@ if (tabBar) {
   }
   router.routes[0].component = tabs;
   router.routes[0].children = children;
+}else{
+  Vue.prototype.ENTRY = APP_JSON.pages[0]
 }
 //
 for (let page of APP_JSON.pages) {
