@@ -142,8 +142,9 @@ export default class wx {
   
   // 获取全局唯一的版本管理器
   static getUpdateManager() {
-    // return new UpdateManager();
-    return true;
+    // return new UpdateManagerClass();
+    return new UpdateManager()
+    // return true;
   }
 
   static UpdateManager() {
