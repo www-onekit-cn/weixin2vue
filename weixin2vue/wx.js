@@ -4,7 +4,7 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable no-unused-vars */
 import Vue from 'vue'
-import $ from 'jquery'
+import $, { event } from 'jquery'
 import html2canvas from "html2canvas"
 import Animation from "./api/Animation"
 import AudioContext from "./api/AudioContext"
@@ -33,16 +33,17 @@ import OneKit from './js/OneKit'
 const MobileDetect = require('mobile-detect')
 let interaction;
 export default class wx {
+
   static canIUse() {
     return true;
   }
-  //64转array
+
   static base64ToArrayBuffer(base64) {
     base64 = base64.replace(/\s/g, '+');
     let commonContent = Buffer.from(base64, 'base64');
     return commonContent;
   }
-  //arrayz转64
+
   static arrayBufferToBase64(arrayBuffer) {
     var binary = '';
     var len = arrayBuffer.byteLength;
@@ -52,7 +53,7 @@ export default class wx {
     console.log(len);
     return window.btoa(binary);
   }
-  // 获取系统信息同步版本
+
   static getSystemInfo(wx_object) {
     let wx_success = wx_object ? wx_object.success : null;
     let wx_fail = wx_object ? wx_object.fail : null
@@ -72,7 +73,7 @@ export default class wx {
       if (wx_complete) { wx_complete(wx_res); }
     }
   }
-  // 获取系统信息
+
   static getSystemInfoSync() {
     try {
       const device_type = navigator.userAgent
@@ -114,7 +115,7 @@ export default class wx {
       throw new Error('getSystemInfoSync:fail');
     }
   }
-  // 更新客户端版本
+
   static updateWeChatApp(wx_object) {
     const wx_success = wx_object.success || ''
     const wx_fail = wx_object.fail || ''
@@ -140,7 +141,7 @@ export default class wx {
     }
   }
 
-  // 获取全局唯一的版本管理器
+
   static getUpdateManager() {
     // return new UpdateManagerClass();
     return new UpdateManager()
@@ -151,12 +152,29 @@ export default class wx {
 
   }
 
-  static offPageNotFound() {}
-  static onPageNotFound() {}
-  //获取小程序启动时的参数。
   static getLaunchOptionsSync() {
     return Vue.prototype.OPTION
   }
+
+  static getEnterOptionsSync() {
+    return Vue.prototype.OPTION
+  }
+
+  static onUnhandledRejection(wx_callback) {
+  
+    window.addEventListener('unhandledrejection', vue_e => {
+        const wx_reason = vue_e.reason
+        const wx_promise = vue_e.promise
+        wx_callback(wx_reason,wx_promise);
+    })
+  }
+
+  static offPageNotFound() {}
+
+  static onPageNotFound() {}
+
+
+
   static offError(callback) {
     Event.callback = callback;
     try {

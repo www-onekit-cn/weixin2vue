@@ -1,18 +1,18 @@
 <template>
   <page id="app">
     <!-- <onekit-view class="clearfix" style="margin:20px;"></onekit-view> -->
-    <onekit-view @Tap="toAd">click</onekit-view>
+    <!-- <onekit-view @Tap="toAd">click</onekit-view> -->
   </page>
 </template>
 
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage';
-  import wx from '../weixin2vue/wx';
+  //import wx from '../weixin2vue/wx';
   // import vhs from '../weixin2vue/wangjie_test'
   export default OnekitPage({}, {
     data: {},
-    toAd() {
-      console.log(wx.getLaunchOptionsSync())
+    onLoad() {
+      Promise.reject('Hello, Fundebug!');
     },
   });
 </script>
