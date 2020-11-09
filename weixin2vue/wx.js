@@ -52,6 +52,7 @@ export default class wx {
     console.log(len);
     return window.btoa(binary);
   }
+  // 获取系统信息同步版本
   static getSystemInfo(wx_object) {
     let wx_success = wx_object ? wx_object.success : null;
     let wx_fail = wx_object ? wx_object.fail : null
@@ -60,16 +61,16 @@ export default class wx {
 
 
     var wx_res;
-    // try {
-    wx_res = wx.getSystemInfoSync();
-    if (wx_success) { wx_success(wx_res); }
-    if (wx_complete) { wx_complete(wx_res); }
-    // } catch (e) {
+    try {
+      wx_res = wx.getSystemInfoSync();
+      if (wx_success) { wx_success(wx_res); }
+      if (wx_complete) { wx_complete(wx_res); }
+    } catch (e) {
 
-    // wx_res = { errMsg: e.message };
-    //   if (wx_fail) { wx_fail(wx_res); }
-    //   if (wx_complete) { wx_complete(wx_res); }
-    // }
+      wx_res = { errMsg: e.message };
+      if (wx_fail) { wx_fail(wx_res); }
+      if (wx_complete) { wx_complete(wx_res); }
+    }
   }
   // 获取系统信息
   static getSystemInfoSync() {
@@ -113,10 +114,42 @@ export default class wx {
       throw new Error('getSystemInfoSync:fail');
     }
   }
-
-  static getUpdateManager() {
-    return new UpdateManagerClass();
+  // 更新客户端版本
+  static updateWeChatApp(wx_object) {
+    const wx_success = wx_object.success || ''
+    const wx_fail = wx_object.fail || ''
+    const wx_complete = wx_object.complete || ''
+    // window.open("https://support.weixin.qq.com/update/", '_blank')
+   
+    try {
+      const wx_res = {errMsg: "private_openUrl:ok"}
+      if (wx_success) {
+        wx_success(wx_res);
+      }
+      if (wx_complete) {
+        wx_complete(wx_res);
+      }
+    } catch (e) {
+      wx_res = { errMsg: e.message };
+      if (wx_fail) {
+        wx_fail(wx_fail);
+      }
+      if (wx_complete) {
+        wx_complete(wx_complete);
+      }
+    }
   }
+  
+  // 获取全局唯一的版本管理器
+  static getUpdateManager() {
+    // return new UpdateManager();
+    return true;
+  }
+
+  static UpdateManager() {
+    
+  }
+
   static offPageNotFound() {}
   static onPageNotFound() {}
 
@@ -476,7 +509,7 @@ export default class wx {
         oMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;';
         oMeta.name = 'viewport';
         oMeta.id = 'viewport';
-        document.getElementsByTagName('head')[0].appendChild(oMeta);
+        document.getElementsByTagName('head')[0].appendChild(oMeta)
       }
       $(".xsw_toast").remove();
       var popToastHtml = "";
