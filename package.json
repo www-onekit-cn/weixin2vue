@@ -11,11 +11,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "oneutil": "latest",
     "clipboard": "^2.0.6",
     "core-js": "2.6.11",
     "html2canvas": "^1.0.0-rc.7",
     "jquery": "^3.5.1",
+    "mobile-detect": "^1.4.4",
+    "oneutil": "latest",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3"
   },
