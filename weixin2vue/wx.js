@@ -120,9 +120,9 @@ export default class wx {
     const wx_fail = wx_object.fail || ''
     const wx_complete = wx_object.complete || ''
     // window.open("https://support.weixin.qq.com/update/", '_blank')
-   
+
     try {
-      const wx_res = {errMsg: "private_openUrl:ok"}
+      const wx_res = { errMsg: "private_openUrl:ok" }
       if (wx_success) {
         wx_success(wx_res);
       }
@@ -139,7 +139,7 @@ export default class wx {
       }
     }
   }
-  
+
   // 获取全局唯一的版本管理器
   static getUpdateManager() {
     // return new UpdateManagerClass();
@@ -148,19 +148,31 @@ export default class wx {
   }
 
   static UpdateManager() {
-    
+
   }
 
   static offPageNotFound() {}
   static onPageNotFound() {}
-
+  //获取小程序启动时的参数。
   static getLaunchOptionsSync() {
     try {
+      const PROJECT_JSON = Vue.prototype.PROJECT_JSON
+      const wx_path = Vue.prototype.ENTRY
+      const wx_query = {
+        // query: Vue.prototype.current,
+        params: Vue.prototype.CURRENT.$route.params,
+        query: Vue.prototype.CURRENT.$route.query
+      }
+      const wx_scene = 1001;
+      const wx_referrerInfo = {
+        appId: PROJECT_JSON.appid,
+        extraData: {}
+      };
       let wx_res = {
-        path: location.href, // 启动小程序的路径
-        query: {}, // 启动小程序的 query 参数
-        referrerInfo: {}, // 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {}。
-        scene: 0, // 启动小程序的场景值
+        path: wx_path, // 启动小程序的路径
+        query: wx_query, // 启动小程序的 query 参数
+        referrerInfo: wx_referrerInfo, // 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {}。
+        scene: wx_scene, // 启动小程序的场景值
         shareTicket: undefined // shareTicket
       };
       return wx_res;
