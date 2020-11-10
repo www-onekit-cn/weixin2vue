@@ -223,20 +223,8 @@ export default class wx {
     Vue.prototype.offAudioInterruptionBegin = null
   }
 
-  static offAppShow(callback) {
-    Event.callback = callback;
-    try {
-      let wx_res;
-      document.removeEventListener('visibilitychange', Event.appShow_callback, false);
-      wx_res = {
-        errMsg: 'offAppShow:ok'
-      };
-      if (callback) {
-        return callback(wx_res);
-      }
-    } catch (e) {
-      throw new Error(e.message);
-    }
+  static offAppShow() {
+   Vue.prototype.onAppShow = null
   }
 
   static offAppHide(callback) {

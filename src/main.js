@@ -177,22 +177,18 @@ Vue.prototype.THEME = wx_theme
 */
 ////////////////////////////
 
-import('./app.js')
+import './app.js'
 
-
-
-setTimeout(() => {
-  if (!APP_JSON.pages.includes(ENTRY.path.substr(1))) {
-    if (Vue.prototype.onPageNotFound) {
-      const wx_res = {}
-      Vue.prototype.onPageNotFound(wx_res);
-    }
+if (!APP_JSON.pages.includes(ENTRY.path.substr(1))) {
+  if (Vue.prototype.onPageNotFound) {
+    const wx_res = {}
+    Vue.prototype.onPageNotFound(wx_res);
   }
-  //////////////////////////////
-  const vue = Vue.prototype.ROOT = new Vue({
-    router: new Router(router),
-    render: h => h(activity)
-  })
+}
+//////////////////////////////
+const vue = Vue.prototype.ROOT = new Vue({
+  router: new Router(router),
+  render: h => h(activity)
+})
 
-  vue.$mount('#app');
-}, 500)
+vue.$mount('#app');
