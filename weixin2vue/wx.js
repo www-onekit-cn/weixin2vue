@@ -237,6 +237,23 @@ export default class wx {
     Vue.prototype.$throw = (wx_err) => wx_callback(wx_err)
   }
 
+
+  static onAudioInterruptionEnd(wx_callback) {
+    document.addEventListener("visibilitychange", function() {
+      if(!document.hidden) {
+        wx_callback()
+      }
+    });
+  }
+
+  static onAudioInterruptionBegin(wx_callback) {
+    document.addEventListener("visibilitychange", function() {
+      if(document.hidden) {
+        wx_callback()
+      }
+    });
+  }
+
   static offAppShow(callback) {
     Event.callback = callback;
     try {

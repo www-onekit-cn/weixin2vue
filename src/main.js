@@ -16,9 +16,9 @@ Vue.prototype.$EventBus = {}
 Vue.prototype.APP_JSON = APP_JSON;
 Vue.prototype.PROJECT_JSON = PROJECT_JSON;
 ////////////////////////////////////////////////
-wx.onError(() => {
-  console.log('main err')
-})
+
+
+////////////////////////////////////////////
 const screen_width = OneKit.isMobile() ? (($(window).width()) - 0) : 750;
 $("body").css('--screen-width', screen_width + "px");
 //
