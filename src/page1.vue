@@ -8,15 +8,29 @@
 
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage';
-  // import wx from '../weixin2vue/wx';
+  import wx from '../weixin2vue/wx';
 
   // import OneKit from '../weixin2vue/js/OneKit'
   // import vhs from '../weixin2vue/wangjie_test'
   export default OnekitPage({}, {
 
-    async onLoad() {
 
-    },
+    onLoad() {
+      wx.onAudioInterruptionBegin((res) => {
+        console.log("xx", res)
+      })
+      wx.onAudioInterruptionEnd(res => {
+        console.log('yyy', res)
+      })
+
+      wx.onAppShow(res => {
+        console.log('show', res)
+      })
+      wx.onAppHide(res => {
+        console.log('hide', res)
+      })
+    }
+
   });
 </script>
 

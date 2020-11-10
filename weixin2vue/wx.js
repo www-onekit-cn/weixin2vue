@@ -58,26 +58,6 @@ export default class wx {
     return window.btoa(binary);
   }
 
-  static getSystemInfo(wx_object) {
-    let wx_success = wx_object ? wx_object.success : null;
-    let wx_fail = wx_object ? wx_object.fail : null
-    let wx_complete = wx_object ? wx_object.complete : null
-    /////////////////////////////
-
-
-    var wx_res;
-    try {
-      wx_res = wx.getSystemInfoSync();
-      if (wx_success) { wx_success(wx_res); }
-      if (wx_complete) { wx_complete(wx_res); }
-    } catch (e) {
-
-      wx_res = { errMsg: e.message };
-      if (wx_fail) { wx_fail(wx_res); }
-      if (wx_complete) { wx_complete(wx_res); }
-    }
-  }
-
   static getSystemInfoSync() {
     try {
       const device_type = navigator.userAgent
@@ -118,6 +98,26 @@ export default class wx {
       };
     } catch (e) {
       throw new Error('getSystemInfoSync:fail');
+    }
+  }
+
+  static getSystemInfo(wx_object) {
+    let wx_success = wx_object ? wx_object.success : null;
+    let wx_fail = wx_object ? wx_object.fail : null
+    let wx_complete = wx_object ? wx_object.complete : null
+    /////////////////////////////
+
+
+    var wx_res;
+    try {
+      wx_res = wx.getSystemInfoSync();
+      if (wx_success) { wx_success(wx_res); }
+      if (wx_complete) { wx_complete(wx_res); }
+    } catch (e) {
+
+      wx_res = { errMsg: e.message };
+      if (wx_fail) { wx_fail(wx_res); }
+      if (wx_complete) { wx_complete(wx_res); }
     }
   }
 
@@ -176,36 +176,66 @@ export default class wx {
 
   static onThemeChange(wx_callback) {
 
-    Object.defineProperty(Vue.prototype.THEME,'theme',{
-      get:function(){
-          return Vue.prototype.THEME;
+    Object.defineProperty(Vue.prototype.THEME, 'theme', {
+      get: function() {
+        return Vue.prototype.THEME;
       },
-      
-      set:function(newValue){
-          wx_callback()        
-      }
-  })
-    
-  }
 
+      set: function(newValue) {
+        wx_callback()
+      }
+    })
+
+  }
 
   static onPageNotFound(wx_callback) {
     const wx_path = OneKit.currentUrl()
     const wx_query = OneKit.current().$route.query
     let isEntry = false
 
-    console.log()
-    
-    const vue_current = OneKit.currentUrl().replace(/\//g,'')
-    if(!APP_JSON.pages.includes(vue_current)){
-      wx_callback(wx_path,wx_query,isEntry)
-    }else {
+    const vue_current = OneKit.currentUrl().replace(/\//g, '')
+    if (!APP_JSON.pages.includes(vue_current)) {
+      wx_callback(wx_path, wx_query, isEntry)
+    } else {
       return true
     }
-    
+
   }
 
+  static onError(wx_callback) {
+    // Event.callback = wx_callback;
+    // try {
+    //   // let wx_res;
+    //   window.addEventListener('error', Event.error_callback, false);
+    // } catch (e) {
+    //   throw new Error(e.message);
+    // }
+    // const wx_err = error
+    Vue.config.errorHandler = wx_callback
+    Vue.prototype.$throw = (wx_err) => wx_callback(wx_err)
+  }
 
+  static onAudioInterruptionEnd(wx_callback) {
+    Vue.prototype.onAudioInterruptionEnd = wx_callback
+  }
+
+  static onAudioInterruptionBegin(wx_callback) {
+    Vue.prototype.onAudioInterruptionBegin = wx_callback
+  }
+
+  static onAppShow(wx_callback) {
+    Vue.prototype.onAppShow = wx_callback
+  }
+
+  static onAppHide(wx_callback) {
+    // Event.callback = callback;
+    // try {
+    //   document.addEventListener('visibilitychange', Event.appHide_callback, false);
+    // } catch (e) {
+    //   throw new Error(e.message);
+    // }
+    Vue.prototype.onAppHide = wx_callback
+  }
   static offPageNotFound() {}
 
   static offError(callback) {
@@ -224,35 +254,9 @@ export default class wx {
     }
   }
 
-  static onError(wx_callback) {
-    // Event.callback = wx_callback;
-    // try {
-    //   // let wx_res;
-    //   window.addEventListener('error', Event.error_callback, false);
-    // } catch (e) {
-    //   throw new Error(e.message);
-    // }
-    // const wx_err = error
-    Vue.config.errorHandler = wx_callback
-    Vue.prototype.$throw = (wx_err) => wx_callback(wx_err)
-  }
+  
 
-
-  static onAudioInterruptionEnd(wx_callback) {
-    document.addEventListener("visibilitychange", function() {
-      if(!document.hidden) {
-        wx_callback()
-      }
-    });
-  }
-
-  static onAudioInterruptionBegin(wx_callback) {
-    document.addEventListener("visibilitychange", function() {
-      if(document.hidden) {
-        wx_callback()
-      }
-    });
-  }
+ 
 
   static offAppShow(callback) {
     Event.callback = callback;
@@ -270,14 +274,7 @@ export default class wx {
     }
   }
 
-  static onAppShow(callback) {
-    Event.callback = callback;
-    try {
-      document.addEventListener('visibilitychange', Event.appShow_callback, false);
-    } catch (e) {
-      throw new Error(e.message);
-    }
-  }
+ 
 
   static offAppHide(callback) {
     Event.callback = callback;
@@ -295,31 +292,7 @@ export default class wx {
     }
   }
 
-  static onAppHide(callback) {
-    Event.callback = callback;
-    try {
-      document.addEventListener('visibilitychange', Event.appHide_callback, false);
-    } catch (e) {
-      throw new Error(e.message);
-    }
-  }
 
-  static appShow_callback(event) {
-    let wx_res;
-    if (!document.hidden) {
-      wx_res = {
-        errMsg: 'onAppShow:ok',
-        path: location.href, // 小程序切前台的路径
-        query: {}, // 小程序切前台的 query 参数
-        referrerInfo: {}, // 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {}。
-        scene: 0, // 小程序切前台的场景值
-        shareTicket: undefined // shareTicket
-      };
-      if (Event.callback) {
-        Event.callback(wx_res);
-      }
-    }
-  }
 
   static appHide_callback(event) {
     let wx_res;

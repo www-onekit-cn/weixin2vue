@@ -26,7 +26,7 @@ let router = {
   mode: 'history',
   routes: [{
     path: '/',
-    redirect: `/${APP_JSON.pages[0]}`, 
+    redirect: `/${APP_JSON.pages[0]}`,
   }]
 };
 //
@@ -65,6 +65,53 @@ for (let page of APP_JSON.pages) {
   });
 }
 ////////////////////////////
+document.addEventListener("visibilitychange", function() {
+
+  if (document.hidden) {
+    if(Vue.prototype.onAudioInterruptionBegin){
+      Vue.prototype.onAudioInterruptionBegin()
+    }
+    if(Vue.prototype.onAppHide) {
+      const wx_path = OneKit.current().$route.path
+      const wx_query = {
+        params: "",
+        query: ""
+      }
+      const wx_scene = undefined;
+      const wx_referrerInfo = {};
+      let wx_res = {
+        path: wx_path,
+        scene: wx_scene,
+        query: wx_query,
+        referrerInfo: wx_referrerInfo,
+        shareTicket: undefined
+      };
+      Vue.prototype.onAppHide(wx_res)
+    }
+  } else {
+    if (Vue.prototype.onAppShow) {
+      const wx_path = OneKit.current().$route.path
+      const wx_query = {
+        params: "",
+        query: ""
+      }
+      const wx_scene = undefined;
+      const wx_referrerInfo = {};
+      let wx_res = {
+        path: wx_path,
+        scene: wx_scene,
+        query: wx_query,
+        referrerInfo: wx_referrerInfo,
+        shareTicket: undefined
+      };
+      Vue.prototype.onAppShow(wx_res)
+     
+    }
+    if(Vue.prototype.onAudioInterruptionEnd){
+      Vue.prototype.onAudioInterruptionEnd()
+    }
+  }
+})
 const wx_path = entry
 const wx_query = {
   params: "",
@@ -76,10 +123,10 @@ const wx_referrerInfo = {
   extraData: {}
 };
 let wx_option = {
-  path: wx_path, 
-  scene: wx_scene, 
-  query:wx_query, 
-  referrerInfo: wx_referrerInfo, 
+  path: wx_path,
+  scene: wx_scene,
+  query: wx_query,
+  referrerInfo: wx_referrerInfo,
   shareTicket: {}
 };
 Vue.prototype.OPTION = wx_option
