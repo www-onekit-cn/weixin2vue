@@ -30,6 +30,10 @@ import UpdateManager from "./api/UpdateManager"
 import UploadTask from "./api/UploadTask"
 import VideoContext from "./api/VideoContext"
 import OneKit from './js/OneKit'
+///
+import APP_JSON from '../src/app.json'
+import { includes } from 'core-js/fn/array'
+///
 const MobileDetect = require('mobile-detect')
 let interaction;
 export default class wx {
@@ -186,6 +190,18 @@ export default class wx {
 
 
   static onPageNotFound(wx_callback) {
+    const wx_path = OneKit.currentUrl()
+    const wx_query = OneKit.current().$route.query
+    let isEntry = false
+
+    console.log()
+    
+    const vue_current = OneKit.currentUrl().replace(/\//g,'')
+    if(!APP_JSON.pages.includes(vue_current)){
+      wx_callback(wx_path,wx_query,isEntry)
+    }else {
+      return true
+    }
     
   }
 

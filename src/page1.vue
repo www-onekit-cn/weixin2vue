@@ -1,25 +1,25 @@
 <template>
   <page id="app">
-    <!-- <onekit-view class="clearfix" style="margin:20px;"></onekit-view> -->
-    <!-- <onekit-view @Tap="toAd">click</onekit-view> -->
 
-    <onekit-view @Tap="toggleTheme">切换主题</onekit-view>
+
   </page>
 </template>
 
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage';
-  // import wx from '../weixin2vue/wx';
-  import Vue from 'vue'
+  import wx from '../weixin2vue/wx';
+
+  // import OneKit from '../weixin2vue/js/OneKit'
   // import vhs from '../weixin2vue/wangjie_test'
   export default OnekitPage({}, {
     data: {},
     async onLoad() {
 
+      await wx.onPageNotFound(
+
+      )
+
     },
-    toggleTheme() {
-      Vue.prototype.THEME.theme = 'dark'
-    }
   });
 </script>
 

@@ -88,9 +88,10 @@ let wx_theme = {
 Vue.prototype.THEME = wx_theme
 
 ////////////////////////////
-import('./app.js')
+
 const vue = Vue.prototype.ROOT = new Vue({
   router: new Router(router),
   render: h => h(activity)
 })
+import('./app.js')
 vue.$mount('#app');

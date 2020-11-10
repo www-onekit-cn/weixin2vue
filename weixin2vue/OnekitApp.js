@@ -5,5 +5,10 @@ export default function(APP) {
   if (APP.onLaunch) {
     APP.onLaunch(Vue.prototype.OPTION);
   }
-
+  if (APP.onShow) {
+    APP.onShow(Vue.prototype.OPTION);
+  }
+  if (APP.onLoad) {
+    APP.onLoad(Vue.prototype.OPTION);
+  }
 }
