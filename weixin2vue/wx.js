@@ -208,10 +208,6 @@ export default class wx {
 
   static offPageNotFound() {}
 
-
-
-
-
   static offError(callback) {
     Event.callback = callback;
     try {
@@ -228,14 +224,17 @@ export default class wx {
     }
   }
 
-  static onError(callback) {
-    Event.callback = callback;
-    try {
-      let wx_res;
-      window.addEventListener('error', Event.error_callback, false);
-    } catch (e) {
-      throw new Error(e.message);
-    }
+  static onError(wx_callback) {
+    // Event.callback = wx_callback;
+    // try {
+    //   // let wx_res;
+    //   window.addEventListener('error', Event.error_callback, false);
+    // } catch (e) {
+    //   throw new Error(e.message);
+    // }
+    // const wx_err = error
+    Vue.config.errorHandler = wx_callback
+    Vue.prototype.$throw = (wx_err) => wx_callback(wx_err)
   }
 
   static offAppShow(callback) {
