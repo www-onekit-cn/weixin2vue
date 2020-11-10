@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { URL } from 'oneutil'
+import { URL, PATH } from 'oneutil'
 import $ from 'jquery'
 const storeFiles = {};
 const tempFiles = {};
@@ -159,4 +159,14 @@ function current(){
 function currentUrl(){
   return current().$route.path;
 }
-export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl }
+function fixurl(wx_rel_url){
+  const wx_abs_url = PATH.res2abs(currentUrl(),wx_rel_url)
+  if(Vue.prototype.APP_JSON.pages.indexOf(wx_abs_url)<0){
+    if(Vue.prototype.onPageNotFound){
+      Vue.prototype.onPageNotFound();
+    }
+  }
+  const vue_path = wx_abs_url // ...
+  return vue_path
+}
+export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl }

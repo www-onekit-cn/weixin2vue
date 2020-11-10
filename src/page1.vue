@@ -16,19 +16,19 @@
 
 
     onLoad() {
-      wx.onAudioInterruptionBegin((res) => {
-        console.log("xx", res)
+      // wx.offUnhandledRejection(() => {
+      //   console.log('xx')
+      // })
+      wx.offAudioInterruptionEnd(() => {
+        console.log('end')
       })
-      wx.onAudioInterruptionEnd(res => {
-        console.log('yyy', res)
+      wx.offAudioInterruptionBegin(() => {
+        console.log('begin')
       })
-
-      wx.onAppShow(res => {
-        console.log('show', res)
-      })
-      wx.onAppHide(res => {
-        console.log('hide', res)
-      })
+      //  wx.navigateTo({
+      //   url: 'page10'
+      //  })
+      //  throw new Error("xx")
     }
 
   });

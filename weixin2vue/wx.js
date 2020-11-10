@@ -166,53 +166,23 @@ export default class wx {
   }
 
   static onUnhandledRejection(wx_callback) {
-
-    window.addEventListener('unhandledrejection', vue_e => {
-      const wx_reason = vue_e.reason
-      const wx_promise = vue_e.promise
-      wx_callback(wx_reason, wx_promise);
-    })
+    Vue.prototype.onUnhandledRejection = wx_callback
   }
 
   static onThemeChange(wx_callback) {
 
-    Object.defineProperty(Vue.prototype.THEME, 'theme', {
-      get: function() {
-        return Vue.prototype.THEME;
-      },
-
-      set: function(newValue) {
-        wx_callback()
-      }
-    })
+    Vue.prototype.onThemeChange = wx_callback
 
   }
 
   static onPageNotFound(wx_callback) {
-    const wx_path = OneKit.currentUrl()
-    const wx_query = OneKit.current().$route.query
-    let isEntry = false
+    Vue.prototype.onPageNotFound = wx_callback
 
-    const vue_current = OneKit.currentUrl().replace(/\//g, '')
-    if (!APP_JSON.pages.includes(vue_current)) {
-      wx_callback(wx_path, wx_query, isEntry)
-    } else {
-      return true
-    }
 
   }
 
   static onError(wx_callback) {
-    // Event.callback = wx_callback;
-    // try {
-    //   // let wx_res;
-    //   window.addEventListener('error', Event.error_callback, false);
-    // } catch (e) {
-    //   throw new Error(e.message);
-    // }
-    // const wx_err = error
-    Vue.config.errorHandler = wx_callback
-    Vue.prototype.$throw = (wx_err) => wx_callback(wx_err)
+    Vue.prototype.onError = wx_callback
   }
 
   static onAudioInterruptionEnd(wx_callback) {
@@ -228,35 +198,30 @@ export default class wx {
   }
 
   static onAppHide(wx_callback) {
-    // Event.callback = callback;
-    // try {
-    //   document.addEventListener('visibilitychange', Event.appHide_callback, false);
-    // } catch (e) {
-    //   throw new Error(e.message);
-    // }
     Vue.prototype.onAppHide = wx_callback
   }
-  static offPageNotFound() {}
 
-  static offError(callback) {
-    Event.callback = callback;
-    try {
-      let wx_res;
-      window.removeEventListener('error', Event.error_callback, false);
-      wx_res = {
-        errMsg: 'offError:ok'
-      };
-      if (callback) {
-        return callback(wx_res);
-      }
-    } catch (e) {
-      throw new Error(e.message);
-    }
+  static offUnhandledRejection() {
+    Vue.prototype.onUnhandledRejection = NaN
   }
 
-  
+  static offThemeChange() {
+    Vue.prototype.onThemeChange = NaN
+  }
 
- 
+  static offPageNotFound() {}
+
+  static offError() {
+    Vue.prototype.onError = null
+  }
+
+  static offAudioInterruptionEnd() {
+    Vue.prototype.onAudioInterruptionBegin = null
+  }
+
+  static offAudioInterruptionBegin() {
+    Vue.prototype.offAudioInterruptionBegin = null
+  }
 
   static offAppShow(callback) {
     Event.callback = callback;
@@ -273,8 +238,6 @@ export default class wx {
       throw new Error(e.message);
     }
   }
-
- 
 
   static offAppHide(callback) {
     Event.callback = callback;
@@ -435,7 +398,8 @@ export default class wx {
     ///////////
     var wx_res;
     try {
-      const vue_path = wx_url
+      const vue_path = OneKit.fixurl(wx_url)
+
       const channel = new Vue();
       for (const event_key in wx_events) {
         const event_func = wx_events[event_key]
