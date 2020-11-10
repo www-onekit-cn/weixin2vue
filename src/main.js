@@ -2,13 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router';
 Vue.use(Router);
 import $ from 'jquery'
+import { URL } from 'oneutil'
 import OneKit from '../weixin2vue/js/OneKit'
 import tabs from '../weixin2vue/pages/tabs'
 import activity from '../weixin2vue/pages/activity'
 import APP_JSON from './app.json.js'
 import PROJECT_JSON from './project.config.json.js'
 import weixin2vue from "weixin2vue"
-
+const ENTRY = Vue.prototype.ENTRY = new URL(location.href)
 // import wx from '../weixin2vue/wx'
 
 Vue.use(weixin2vue);
@@ -17,17 +18,6 @@ Vue.prototype.APP_JSON = APP_JSON;
 Vue.prototype.PROJECT_JSON = PROJECT_JSON;
 ////////////////////////////////////////////////
 
-/**  wyw  */
-// const wx_path = OneKit.currentUrl()
-// const wx_query = OneKit.current().$route.query
-// let isEntry = false
-
-// const vue_current = OneKit.currentUrl().replace(/\//g, '')
-// if (!APP_JSON.pages.includes(vue_current)) {
-//   wx_callback(wx_path, wx_query, isEntry)
-// } else {
-//   return true
-// }
 function onekit_onError(error) {
   if (Vue.prototype.onError) {
     Vue.prototype.onError(error)
@@ -103,7 +93,7 @@ document.addEventListener("visibilitychange", function() {
     if (Vue.prototype.onAudioInterruptionEnd) {
       Vue.prototype.onAudioInterruptionEnd()
     }
-    
+
   }
 })
 
@@ -123,33 +113,31 @@ let router = {
 let tabPages = [];
 let tabBar = APP_JSON["tabBar"];
 let entry
-  if (tabBar) {
-    entry = tabBar.list[0].pagePath
-    //
-    let children = [];
-    for (let tab of tabBar.list) {
-      let pagePath = tab["pagePath"];
+if (tabBar) {
+  entry = tabBar.list[0].pagePath
+  //
+  let children = [];
+  for (let tab of tabBar.list) {
+    let pagePath = tab["pagePath"];
 
-      children.push({
-        path: `/${pagePath}`,
-        component: () => import(`@/${pagePath}.vue`),
-        data() {
-          return {}
-        }
-      });
-      tabPages.push(pagePath);
-    }
-    router.routes[0].component = tabs;
-    router.routes[0].children = children;
-  } else {
-    entry = APP_JSON.pages[0]
+    children.push({
+      path: `/${pagePath}`,
+      component: () => import(`@/${pagePath}.vue`),
+      data() {
+        return {}
+      }
+    });
+    tabPages.push(pagePath);
   }
-const init_path = "xxx"
-  if (APP_JSON.pages.indexOf(init_path)>=0) {
-    entry = "" // out link open mini app
-  } else{
-    console.log(location.href)
-  }
+  router.routes[0].component = tabs;
+  router.routes[0].children = children;
+} else {
+  entry = APP_JSON.pages[0]
+}
+
+if (APP_JSON.pages.includes(ENTRY.path.substr(1))) {
+  entry = ENTRY.path.substr(1)
+}
 //
 for (let page of APP_JSON.pages) {
   if (tabBar && tabPages.indexOf(page) >= 0) {
@@ -189,9 +177,22 @@ Vue.prototype.THEME = wx_theme
 */
 ////////////////////////////
 
-const vue = Vue.prototype.ROOT = new Vue({
-  router: new Router(router),
-  render: h => h(activity)
-})
 import('./app.js')
-vue.$mount('#app');
+
+
+
+setTimeout(() => {
+  if (!APP_JSON.pages.includes(ENTRY.path.substr(1))) {
+    if (Vue.prototype.onPageNotFound) {
+      const wx_res = {}
+      Vue.prototype.onPageNotFound(wx_res);
+    }
+  }
+  //////////////////////////////
+  const vue = Vue.prototype.ROOT = new Vue({
+    router: new Router(router),
+    render: h => h(activity)
+  })
+
+  vue.$mount('#app');
+}, 500)

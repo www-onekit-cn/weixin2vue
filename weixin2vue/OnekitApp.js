@@ -8,7 +8,4 @@ export default function(APP) {
   if (APP.onShow) {
     APP.onShow(Vue.prototype.OPTION);
   }
-  if (APP.onLoad) {
-    APP.onLoad(Vue.prototype.OPTION);
-  }
 }
