@@ -31,6 +31,7 @@ import UpdateManager from "./api/UpdateManager"
 import UploadTask from "./api/UploadTask"
 import VideoContext from "./api/VideoContext"
 import OneKit from './js/OneKit'
+
 ///
 import APP_JSON from '../src/app.json'
 import { includes } from 'core-js/fn/array'
@@ -267,6 +268,14 @@ export default class wx {
       return false;
     }
     
+  }
+
+  static LogManager() {
+    return new LogManager()
+  }
+
+  static RealtimeLogManager() {
+    return new LogManager()
   }
 
   static appHide_callback(event) {

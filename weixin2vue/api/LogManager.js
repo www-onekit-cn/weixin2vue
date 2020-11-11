@@ -10,4 +10,16 @@ export default class LogManager {
   warn() {
 
   }
+
+  in () {
+
+  }
+
+  addFilterMsg() {
+
+  }
+
+  setFilterMsg() {
+    
+  }
 }
