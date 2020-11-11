@@ -254,6 +254,21 @@ export default class wx {
     }
   }
 
+  static getRealtimeLogManager () {
+    return new LogManager()
+  }
+
+  static getLogManager(wx_object) {
+    const wx_level = wx_object.level ? wx_object.level : 0
+    const reg = /[0-1]/;
+    if(wx_level.natch(reg)){
+      return new LogManager()     
+    }else{
+      return false;
+    }
+    
+  }
+
   static appHide_callback(event) {
     let wx_res;
     if (document.hidden) {
@@ -286,7 +301,8 @@ export default class wx {
   static setLogManager() {
 
   }
-  static getLogManager(wx_object) {}
+  
+ 
   static switchTab(wx_object) {
     let wx_url = wx_object.url;
     let wx_success = wx_object.success;
