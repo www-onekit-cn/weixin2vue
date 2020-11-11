@@ -6,6 +6,7 @@
 import Vue from 'vue'
 import $, { event } from 'jquery'
 import html2canvas from "html2canvas"
+import vconsole from 'vconsole'
 import Animation from "./api/Animation"
 import AudioContext from "./api/AudioContext"
 import CameraContext from "./api/CameraContext"
@@ -224,26 +225,34 @@ export default class wx {
   }
 
   static offAppShow() {
-   Vue.prototype.onAppShow = null
+    Vue.prototype.onAppShow = null
   }
 
-  static offAppHide(callback) {
-    Event.callback = callback;
+  static offAppHide() {
+    Vue.prototype.onAppHide = null
+  }
+
+  static setEnableDebug(wx_object) {
+    const wx_enableDebug = wx_object.enableDebug
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
     try {
-      let wx_res;
-      document.removeEventListener('visibilitychange', Event.appHide_callback, false);
-      wx_res = {
-        errMsg: 'offAppShow:ok'
-      };
-      if (callback) {
-        return callback(wx_res);
-      }
+      if (wx_enableDebug) {
+        new vconsole()
+        if(wx_success) {
+          wx_success()
+        }
+        if(wx_complete) {
+          wx_complete()
+        }
+      }     
     } catch (e) {
-      throw new Error(e.message);
+     const wx_res = { errMsg: e.message };
+      if (wx_fail) { wx_fail(wx_res); }
+      if (wx_complete) { wx_complete(wx_res); }
     }
   }
-
-
 
   static appHide_callback(event) {
     let wx_res;
@@ -270,9 +279,7 @@ export default class wx {
     }
   }
 
-  static setEnableDebug() {
 
-  }
   static setRealtimeManager() {
 
   }

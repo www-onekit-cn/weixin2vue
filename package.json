@@ -17,6 +17,7 @@
     "jquery": "^3.5.1",
     "mobile-detect": "^1.4.4",
     "oneutil": "latest",
+    "vconsole": "^3.3.4",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3"
   },
