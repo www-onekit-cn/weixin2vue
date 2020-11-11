@@ -4,42 +4,50 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable no-unused-vars */
 import Vue from 'vue'
-import $, { event } from 'jquery'
+import $ from 'jquery'
 import html2canvas from "html2canvas"
 import vconsole from 'vconsole'
 import Animation from "./api/Animation"
-import AudioContext from "./api/AudioContext"
-import CameraContext from "./api/CameraContext"
-import CanvasContext from "./api/CanvasContext"
-import CanvasGradient from "./api/CanvasGradient"
-import DownloadTask from "./api/DownloadTask"
 import EventChannel from "./api/EventChannel"
-import FileSystemManager from "./api/FileSystemManager"
-import Gradient from "./api/Gradient"
-import InnerAudioContext from "./api/InnerAudioContext"
-import InterstitialAd from "./api/InterstitialAd"
-import LivePlayerContext from "./api/LivePlayerContext"
-import LivePusherContext from "./api/LivePusherContext"
 import LogManager from "./api/LogManager"
-import MapContext from "./api/MapContext"
-import RecorderManager from "./api/RecorderManager"
 import RequestTask from "./api/RequestTask"
-import RewardedVideoAd from "./api/RewardedVideoAd"
 import SocketTask from "./api/SocketTask"
-import UDPSocket from "./api/UDPSocket"
 import UpdateManager from "./api/UpdateManager"
-import UploadTask from "./api/UploadTask"
-import VideoContext from "./api/VideoContext"
 import OneKit from './js/OneKit'
 
+// import AudioContext from "./api/AudioContext"
+// import CameraContext from "./api/CameraContext"
+// import CanvasContext from "./api/CanvasContext"
+// import CanvasGradient from "./api/CanvasGradient"
+// import DownloadTask from "./api/DownloadTask"
+
+// import FileSystemManager from "./api/FileSystemManager"
+// import Gradient from "./api/Gradient"
+// import InnerAudioContext from "./api/InnerAudioContext"
+// import InterstitialAd from "./api/InterstitialAd"
+// import LivePlayerContext from "./api/LivePlayerContext"
+// import LivePusherContext from "./api/LivePusherContext"
+
+// import MapContext from "./api/MapContext"
+// import RecorderManager from "./api/RecorderManager"
+
+// import RewardedVideoAd from "./api/RewardedVideoAd"
+
+// import UDPSocket from "./api/UDPSocket"
+
+// import UploadTask from "./api/UploadTask"
+// import VideoContext from "./api/VideoContext"
+
+
 ///
-import APP_JSON from '../src/app.json'
-import { includes } from 'core-js/fn/array'
+// import APP_JSON from '../src/app.json'
+// import { includes } from 'core-js/fn/array'
 ///
 const MobileDetect = require('mobile-detect')
 let interaction;
 export default class wx {
 
+  /**基础 */
   static canIUse() {
     return true;
   }
@@ -60,6 +68,7 @@ export default class wx {
     return window.btoa(binary);
   }
 
+  /**系统 */
   static getSystemInfoSync() {
     try {
       const device_type = navigator.userAgent
@@ -123,6 +132,7 @@ export default class wx {
     }
   }
 
+  /**更新 */
   static updateWeChatApp(wx_object) {
     const wx_success = wx_object.success || ''
     const wx_fail = wx_object.fail || ''
@@ -148,7 +158,6 @@ export default class wx {
     }
   }
 
-
   static getUpdateManager() {
     // return new UpdateManagerClass();
     return new UpdateManager()
@@ -158,7 +167,7 @@ export default class wx {
   static UpdateManager() {
 
   }
-
+  /**生命周期 */
   static getLaunchOptionsSync() {
     return Vue.prototype.OPTION
   }
@@ -167,6 +176,7 @@ export default class wx {
     return Vue.prototype.OPTION
   }
 
+  /**应用级事件 */
   static onUnhandledRejection(wx_callback) {
     Vue.prototype.onUnhandledRejection = wx_callback
   }
@@ -179,8 +189,6 @@ export default class wx {
 
   static onPageNotFound(wx_callback) {
     Vue.prototype.onPageNotFound = wx_callback
-
-
   }
 
   static onError(wx_callback) {
@@ -211,7 +219,9 @@ export default class wx {
     Vue.prototype.onThemeChange = NaN
   }
 
-  static offPageNotFound() {}
+  static offPageNotFound() {
+    Vue.prototype.onPageNotFound = null
+  }
 
   static offError() {
     Vue.prototype.onError = null
@@ -232,7 +242,7 @@ export default class wx {
   static offAppHide() {
     Vue.prototype.onAppHide = null
   }
-
+  /**调试 */
   static setEnableDebug(wx_object) {
     const wx_enableDebug = wx_object.enableDebug
     const wx_success = wx_object.success
@@ -241,33 +251,33 @@ export default class wx {
     try {
       if (wx_enableDebug) {
         new vconsole()
-        if(wx_success) {
+        if (wx_success) {
           wx_success()
         }
-        if(wx_complete) {
+        if (wx_complete) {
           wx_complete()
         }
-      }     
+      }
     } catch (e) {
-     const wx_res = { errMsg: e.message };
+      const wx_res = { errMsg: e.message };
       if (wx_fail) { wx_fail(wx_res); }
       if (wx_complete) { wx_complete(wx_res); }
     }
   }
 
-  static getRealtimeLogManager () {
+  static getRealtimeLogManager() {
     return new LogManager()
   }
 
   static getLogManager(wx_object) {
     const wx_level = wx_object.level ? wx_object.level : 0
     const reg = /[0-1]/;
-    if(wx_level.natch(reg)){
-      return new LogManager()     
-    }else{
+    if (wx_level.natch(reg)) {
+      return new LogManager()
+    } else {
       return false;
     }
-    
+
   }
 
   static LogManager() {
@@ -278,40 +288,7 @@ export default class wx {
     return new LogManager()
   }
 
-  static appHide_callback(event) {
-    let wx_res;
-    if (document.hidden) {
-      wx_res = {
-        errMsg: 'onAppHide:ok',
-        path: location.href, // 小程序切前台的路径
-        query: {}, // 小程序切前台的 query 参数
-        referrerInfo: {}, // 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {}。
-        scene: 0, // 小程序切前台的场景值
-        shareTicket: undefined // shareTicket
-      };
-      if (Event.callback) {
-        Event.callback(wx_res);
-      }
-    }
-  }
-
-  static error_callback(e) {
-    if (e) {
-      if (Event.callback) {
-        Event.callback(e.error);
-      }
-    }
-  }
-
-
-  static setRealtimeManager() {
-
-  }
-  static setLogManager() {
-
-  }
-  
- 
+  /**路由 */
   static switchTab(wx_object) {
     let wx_url = wx_object.url;
     let wx_success = wx_object.success;
@@ -343,6 +320,7 @@ export default class wx {
       }
     }
   }
+
   static reLaunch(wx_object) {
     let wx_url = wx_object.url;
     let wx_success = wx_object.success;
@@ -408,6 +386,7 @@ export default class wx {
       }
     }
   }
+
   static navigateTo(wx_object) {
     const wx_url = wx_object.url;
     const wx_events = wx_object.events;
@@ -458,7 +437,6 @@ export default class wx {
     }
   }
 
-
   static navigateBack(wx_object) {
     let wx_delta = wx_object.delta || 1; // 返回的页面数
     let wx_success = wx_object.success;
@@ -491,6 +469,7 @@ export default class wx {
     }
   }
 
+  /**界面 */
   static showToast(wx_object) {
     let tipTxt = wx_object.title;
     let time;
@@ -596,70 +575,6 @@ export default class wx {
       }
     }
   }
-
-  static showLoading(wx_object) {
-    let tipTxt = wx_object.title;
-    let mask;
-    if (!wx_object.mask) {
-      mask = false
-    } else {
-      mask = wx_object.mask
-    }
-    let wx_success = wx_object.success;
-    let wx_fail = wx_object.fail;
-    let wx_complete = wx_object.complete;
-    var wx_res;
-    try {
-      var viewportID = document.getElementById("viewport");
-      if (!viewportID) {
-        var oMeta = document.createElement('meta');
-        oMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;';
-        oMeta.name = 'viewport';
-        oMeta.id = 'viewport';
-        document.getElementsByTagName('head')[0].appendChild(oMeta);
-      }
-      $(".xsw_toast").remove();
-      var popToastHtml = "";
-      popToastHtml += `<div class="xsw_showLoading"> `;
-      if (mask == true) {
-        popToastHtml += `<div class="xsw_bei" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background-color: #262626;opacity: 0.4;z-index: 999999999999999999999"></div>`
-      }
-      popToastHtml += `<div class="pop-toast" style="position: fixed;  width: 140px;  height: 140px;  text-align: center;background-color: #555;border-radius: 10px;box-shadow: 0 2px 8px #555 ;right: 50%;top: 50%;margin: -70px -70px 0 0;z-index: 9999999999999999999999">`;
-      popToastHtml += `<div id="xsw_canvas" style="height: 60px;color: red;border:4px dashed #fff;width: 60px;text-align: center;margin: 10px auto;border-radius: 100%;"></div>`;
-      popToastHtml += ` <div class="toast-tip" style=" font-size: 16px;  color: #fff;  height: 45px;overflow: hidden;width:130px; word-wrap: break-word; text-align: center;padding: 0 5px ;margin-bottom: 10px;margin-top: 10px;">${tipTxt}</div>
-                              </div></div>`;
-      $("body").append(popToastHtml);
-      $("body").css({ "position": "relative" });
-      interaction.loading();
-      wx_res = { showLoading: "ok" };
-      if (wx_success) {
-        wx_success(wx_res);
-      }
-      if (wx_complete) {
-        wx_complete(wx_res);
-      }
-
-    } catch (e) {
-      wx_res = { errMsg: e.message };
-      if (wx_fail) {
-        wx_fail(wx_fail);
-      }
-      if (wx_complete) {
-        wx_complete(wx_complete);
-      }
-    }
-  }
-
-  static hideToast() {
-    $("#viewport").remove();
-    $(".xsw_showToast").remove();
-  }
-
-  static hideLoading() {
-    $("#viewport").remove();
-    $(".xsw_showLoading").remove();
-  }
-
   static showModal(wx_object) {
     let title = wx_object.title;
     let content = wx_object.content;
@@ -756,7 +671,58 @@ export default class wx {
     }
 
   }
+  static showLoading(wx_object) {
+    let tipTxt = wx_object.title;
+    let mask;
+    if (!wx_object.mask) {
+      mask = false
+    } else {
+      mask = wx_object.mask
+    }
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    var wx_res;
+    try {
+      var viewportID = document.getElementById("viewport");
+      if (!viewportID) {
+        var oMeta = document.createElement('meta');
+        oMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;';
+        oMeta.name = 'viewport';
+        oMeta.id = 'viewport';
+        document.getElementsByTagName('head')[0].appendChild(oMeta);
+      }
+      $(".xsw_toast").remove();
+      var popToastHtml = "";
+      popToastHtml += `<div class="xsw_showLoading"> `;
+      if (mask == true) {
+        popToastHtml += `<div class="xsw_bei" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background-color: #262626;opacity: 0.4;z-index: 999999999999999999999"></div>`
+      }
+      popToastHtml += `<div class="pop-toast" style="position: fixed;  width: 140px;  height: 140px;  text-align: center;background-color: #555;border-radius: 10px;box-shadow: 0 2px 8px #555 ;right: 50%;top: 50%;margin: -70px -70px 0 0;z-index: 9999999999999999999999">`;
+      popToastHtml += `<div id="xsw_canvas" style="height: 60px;color: red;border:4px dashed #fff;width: 60px;text-align: center;margin: 10px auto;border-radius: 100%;"></div>`;
+      popToastHtml += ` <div class="toast-tip" style=" font-size: 16px;  color: #fff;  height: 45px;overflow: hidden;width:130px; word-wrap: break-word; text-align: center;padding: 0 5px ;margin-bottom: 10px;margin-top: 10px;">${tipTxt}</div>
+                              </div></div>`;
+      $("body").append(popToastHtml);
+      $("body").css({ "position": "relative" });
+      interaction.loading();
+      wx_res = { showLoading: "ok" };
+      if (wx_success) {
+        wx_success(wx_res);
+      }
+      if (wx_complete) {
+        wx_complete(wx_res);
+      }
 
+    } catch (e) {
+      wx_res = { errMsg: e.message };
+      if (wx_fail) {
+        wx_fail(wx_fail);
+      }
+      if (wx_complete) {
+        wx_complete(wx_complete);
+      }
+    }
+  }
   static showActionSheet(wx_object) {
     let itemList = wx_object.itemList;
     let itemColor = wx_object.itemColor;
@@ -830,61 +796,25 @@ export default class wx {
       }
     }
   }
+  static hideToast() {
+    $("#viewport").remove();
+    $(".xsw_showToast").remove();
+  }
+
+  static hideLoading() {
+    $("#viewport").remove();
+    $(".xsw_showLoading").remove();
+  }
 
   static enableAlertBeforeUnload(wx_object) {
-    console.log(`
     
-    ${wx_object}
-
-    开启小程序页面返回询问对话框
-
-    参数
-    Object object
-    属性	    类型	      默认值	必填	说明
-    message	    string		  是	            询问对话框内容
-    success	    function      否	            接口调用成功的回调函数
-    fail	    function	  否                接口调用失败的回调函数
-    complete	function	  否	            接口调用结束的回调函数（调用成功、失败都会执行）
-    `)
   }
 
   static disableAlertBeforeUnload(wx_object) {
-    console.log(`
-    
-    ${wx_object}
-
-    关闭小程序页面返回询问对话框
-
-    参数
-    Object object
-    属性	    类型	      默认值	必填	说明
-    success	    function      否	            接口调用成功的回调函数
-    fail	    function	  否                接口调用失败的回调函数
-    complete	function	  否	            接口调用结束的回调函数（调用成功、失败都会执行）
-    `)
+   
   }
 
-  static loading() {
-    clearInterval(interaction.zhuan);
-    $('#xsw_canvas').html('');
-    $('#xsw_canvas').append("<canvas id='xsw_myCanvas' style='margin-left: -80px;margin-top: -35px;'></canvas>");
-    var c = document.getElementById("xsw_myCanvas");
-    var ctx = c.getContext("2d");
-    var lg = ctx.createRadialGradient(40, 40, 25, 60, 80, 120); //可以尝试改变这里的参数，你可以获取更多
-    lg.addColorStop(0, '#fff');
-    lg.addColorStop(.5, '#ccc');
-    lg.addColorStop(1, '#555');
-    ctx.lineWidth = 6;
-    ctx.strokeStyle = lg;
-    ctx.beginPath();
-    ctx.arc(150, 75, 25, 0, 1.5 * Math.PI);
-    ctx.stroke();
-    var zzz = 0;
-    interaction.zhuan = setInterval(function() {
-      zzz = zzz + 5;
-      $('#xsw_myCanvas').css({ 'transform': 'rotate(' + zzz + 'deg)' });
-    }, 20);
-  }
+  
   static setNavigationBarTitle(wx_object) {
 
     const wx_title = wx_object.title
@@ -896,19 +826,6 @@ export default class wx {
   }
 
   static showNavigationBarLoading(wx_object) {
-    console.log(`
-    
-    ${wx_object}
-
-    在当前页面显示导航条加载动画
-
-    参数
-    Object object
-    属性	    类型	      默认值	必填	说明
-    success	    function      否	            接口调用成功的回调函数
-    fail	    function	  否                接口调用失败的回调函数
-    complete	function	  否	            接口调用结束的回调函数（调用成功、失败都会执行）
-    `)
   }
 
   static hideNavigationBarLoading() {}
@@ -1078,19 +995,22 @@ export default class wx {
     }
     return animation;
   }
-
-  //window
-  //keyboard
+/** 网络 */
   static request(wx_object) {
-    let url = wx_object.url; // 【必填】开发者服务器接口地址
-    let data = wx_object.data; // 请求的参数
-    let header = wx_object.header; // 设置请求的 header，header 中不能设置 Referer。content-type 默认为 application/json
-    let method = wx_object.method || 'GET'; // HTTP 请求方法
-    let responseType = wx_object.responseType || 'json'; // 返回的数据格式
-    let dataType = wx_object.method || 'text'; // 响应的数据类型
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let url = wx_object.url; 
+    let data = wx_object.data;
+    let header = wx_object.header; 
+    let method = wx_object.method || 'GET'; 
+    let timeout = wx_object.timeout
+    let responseType = wx_object.responseType || 'json'; 
+    let dataType = wx_object.method || 'text';
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    //////////////////////////
+    let wx_enableHttp2 = wx_object.enableHttp2
+    let wx_enableQuic = wx_object.enableQuic
+    let wx_enableCahe = wx_object.enableChache
     //////////////////////////
     let request = new RequestTask();
     let wx_res;
@@ -1098,17 +1018,20 @@ export default class wx {
       url: url,
       data: data,
       headers: header,
+      timeout: timeout,
       method: method,
       dataType: responseType,
       type: dataType,
       success: function(wx_res, status, xhr) {
         wx_res = {
           data: wx_res,
-          header: thekit.header2json(xhr.getAllResponseHeaders()),
-          statusCode: xhr.status
+          header: OneKit.header2json(xhr.getAllResponseHeaders()),
+          statusCode: xhr.status,
+          cookies: xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie")  : [],
+          errMsg: 'request:ok'
         };
-        console.log(wx_res);
         if (wx_success) {
+          
           wx_success(wx_res);
         }
       },
@@ -1126,7 +1049,10 @@ export default class wx {
       }
     });
     request.jqXHR = {};
-    return request;
+    wx_enableHttp2 = null
+    wx_enableQuic = null
+    wx_enableCahe = null
+    return request; 
   }
 
   // TODO: 未改未测试
@@ -4042,4 +3968,36 @@ export default class wx {
   static setWindowSize() {}
   static onWindowResize() {}
   static offWindowResize() {}
+  static appHide_callback(event) {
+    let wx_res;
+    if (document.hidden) {
+      wx_res = {
+        errMsg: 'onAppHide:ok',
+        path: location.href, // 小程序切前台的路径
+        query: {}, // 小程序切前台的 query 参数
+        referrerInfo: {}, // 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {}。
+        scene: 0, // 小程序切前台的场景值
+        shareTicket: undefined // shareTicket
+      };
+      if (Event.callback) {
+        Event.callback(wx_res);
+      }
+    }
+  }
+
+  static error_callback(e) {
+    if (e) {
+      if (Event.callback) {
+        Event.callback(e.error);
+      }
+    }
+  }
+
+
+  static setRealtimeManager() {
+
+  }
+  static setLogManager() {
+
+  }
 }
