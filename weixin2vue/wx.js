@@ -1022,7 +1022,7 @@ export default class wx {
     let jqXHR = $.ajax({
       url: url,
       data: data,
-      async:true,
+      async: true,
       headers: header,
       timeout: timeout,
       method: method,

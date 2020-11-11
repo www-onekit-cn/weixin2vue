@@ -13,22 +13,26 @@
     onLoad() {
       // eslint-disable-next-line no-unused-vars
       const requestTask = wx.request({
-        url: 'http://192.168.146.1:3000/test',
+        url: 'http://192.168.146.1:3000/user/detail',
+        data: {
+          name: 'kiko'
+        },
         success(res) {
-          console.log("success", res)
+          console.log(res)
         },
         error(res) {
           console.log("error", res)
         }
       })
 
-      requestTask.onHeadersReceived((res) => {
-        console.log('ok', res)
-      })
-      /*
+      // requestTask.onHeadersReceived((res) => {
+      //   console.log('ok', res)
+      // })
+
       requestTask.offHeadersReceived((res) => {
         console.log('off', res)
-      })*/
+      })
+
     }
 
   });
