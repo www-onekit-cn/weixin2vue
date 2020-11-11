@@ -98,6 +98,18 @@ document.addEventListener("visibilitychange", function() {
 })
 
 
+
+// if(Vue.prototype.offHeadersReceived) {
+//   console.log(Vue.prototype.onHeadersReceived)
+// }
+
+// if(Vue.prototype.onHeadersReceived){
+//   Vue.prototype.onHeadersReceived()
+// }
+
+
+
+
 //////////////////////////
 const screen_width = OneKit.isMobile() ? (($(window).width()) - 0) : 750;
 $("body").css('--screen-width', screen_width + "px");

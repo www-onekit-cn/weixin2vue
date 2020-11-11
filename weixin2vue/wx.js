@@ -216,7 +216,7 @@ export default class wx {
   }
 
   static offThemeChange() {
-    Vue.prototype.onThemeChange = NaN
+    Vue.prototype.onThemeChange = null
   }
 
   static offPageNotFound() {
@@ -1002,57 +1002,65 @@ export default class wx {
     let header = wx_object.header; 
     let method = wx_object.method || 'GET'; 
     let timeout = wx_object.timeout
-    let responseType = wx_object.responseType || 'json'; 
-    let dataType = wx_object.method || 'text';
+    let dataType = wx_object.method || 'json';
+    let responseType = wx_object.responseType || 'text'; 
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
-    //////////////////////////
+    //
     let wx_enableHttp2 = wx_object.enableHttp2
     let wx_enableQuic = wx_object.enableQuic
     let wx_enableCahe = wx_object.enableChache
+    wx_object = null
     //////////////////////////
-    let request = new RequestTask();
-    let wx_res;
+    let requestTask
+    function trigger_HeadersReceived(cookies,header){
+      if(requestTask.onHeadersReceived){
+        requestTask.onHeadersReceived({cookies,header});
+      }
+    }
     let jqXHR = $.ajax({
       url: url,
       data: data,
+      async:true,
       headers: header,
       timeout: timeout,
       method: method,
       dataType: responseType,
       type: dataType,
-      success: function(wx_res, status, xhr) {
-        wx_res = {
-          data: wx_res,
-          header: OneKit.header2json(xhr.getAllResponseHeaders()),
+      success(vue_res, status,xhr) {
+        const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie")  : []
+        const header = OneKit.header2json(xhr.getAllResponseHeaders())
+        trigger_HeadersReceived(cookies,header);
+        const wx_res = {
+          data:vue_res,
+          header ,
           statusCode: xhr.status,
-          cookies: xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie")  : [],
+          cookies,
           errMsg: 'request:ok'
         };
         if (wx_success) {
-          
           wx_success(wx_res);
         }
+        if (wx_complete) {
+          wx_complete(wx_res);
+        }
       },
-      error: function(res) {
-        wx_res = res;
+      error(vue_res,xhr) {
+        const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie")  : []
+        const header = OneKit.header2json(xhr.getAllResponseHeaders())
+        trigger_HeadersReceived(cookies,header);
+        const wx_res = vue_res;
         if (wx_fail) {
           wx_fail(wx_res);
         }
-      },
-      complete: function(res) {
-        wx_res = res;
         if (wx_complete) {
           wx_complete(wx_res);
         }
       }
-    });
-    request.jqXHR = {};
-    wx_enableHttp2 = null
-    wx_enableQuic = null
-    wx_enableCahe = null
-    return request; 
+    })
+    requestTask = new RequestTask(jqXHR);
+    return requestTask
   }
 
   // TODO: 未改未测试

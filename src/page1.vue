@@ -11,16 +11,24 @@
 
 
     onLoad() {
-      wx.request({
-        url: 'http://192.168.146.1:3000/search/user',
-        data: {
-          data: '彭韵瑾'
+      // eslint-disable-next-line no-unused-vars
+      const requestTask = wx.request({
+        url: 'http://192.168.146.1:3000/test',
+        success(res) {
+          console.log("success", res)
         },
-        method: 'POST',
-        success: (data) => {
-          console.log(data)
+        error(res) {
+          console.log("error", res)
         }
       })
+
+      requestTask.onHeadersReceived((res) => {
+        console.log('ok', res)
+      })
+      /*
+      requestTask.offHeadersReceived((res) => {
+        console.log('off', res)
+      })*/
     }
 
   });
