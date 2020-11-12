@@ -11,26 +11,25 @@
 
 
     onLoad() {
-      // eslint-disable-next-line no-unused-vars
-      const requestTask = wx.request({
-        url: 'http://192.168.146.1:3000/user/detail',
-        data: {
-          name: 'kiko'
-        },
+      wx.request({
+        url: 'http://192.168.146.1:3000/test',
+        responseType: 'arraybuffer',
         success(res) {
-          console.log(res)
+          console.log('request111111', res.data)
         },
-        error(res) {
-          console.log("error", res)
+        fail(err) {
+          console.log('page 1  1111 failed', err)
         }
       })
 
-      // requestTask.onHeadersReceived((res) => {
-      //   console.log('ok', res)
-      // })
-
-      requestTask.offHeadersReceived((res) => {
-        console.log('off', res)
+      wx.request({
+        url: 'http://192.168.146.1:3000/test',
+        success(res) {
+          console.log('request222222', res.data)
+        },
+        fail(err) {
+          console.log('page 2 2222 failed', err)
+        }
       })
 
     }

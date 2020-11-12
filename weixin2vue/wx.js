@@ -1007,6 +1007,12 @@ export default class wx {
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
+    let arrflag = false
+    if(responseType === 'arraybuffer') {
+      
+      arrflag = true
+      
+    }
     //
     let wx_enableHttp2 = wx_object.enableHttp2
     let wx_enableQuic = wx_object.enableQuic
@@ -1014,10 +1020,12 @@ export default class wx {
     wx_object = null
     //////////////////////////
     let requestTask
+
     function trigger_HeadersReceived(cookies,header){
       if(requestTask.onHeadersReceived){
         requestTask.onHeadersReceived({cookies,header});
       }
+      
     }
     let jqXHR = $.ajax({
       url: url,
@@ -1026,19 +1034,31 @@ export default class wx {
       headers: header,
       timeout: timeout,
       method: method,
-      dataType: responseType,
+      dataType: responseType ? 'text' : wx.str2ab(responseType),
       type: dataType,
       success(vue_res, status,xhr) {
         const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie")  : []
         const header = OneKit.header2json(xhr.getAllResponseHeaders())
         trigger_HeadersReceived(cookies,header);
-        const wx_res = {
-          data:vue_res,
-          header ,
-          statusCode: xhr.status,
-          cookies,
-          errMsg: 'request:ok'
-        };
+        let wx_res;
+        if(arrflag) {
+          wx_res = {        
+            data:wx.str2ab(vue_res),
+            header ,
+            statusCode: xhr.status,
+            cookies,
+            errMsg: 'request:ok'
+          };
+        }else {
+          wx_res = {
+            data:vue_res,
+            header ,
+            statusCode: xhr.status,
+            cookies,
+            errMsg: 'request:ok'
+          };
+        }
+         
         if (wx_success) {
           wx_success(wx_res);
         }
@@ -1046,9 +1066,9 @@ export default class wx {
           wx_complete(wx_res);
         }
       },
-      error(vue_res,xhr) {
-        const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie")  : []
-        const header = OneKit.header2json(xhr.getAllResponseHeaders())
+      error(vue_res) {
+        const cookies = vue_res.getResponseHeader("Set-Cookie") ? vue_res.getResponseHeader("Set-Cookie")  : []
+        const header = OneKit.header2json(vue_res.getAllResponseHeaders())
         trigger_HeadersReceived(cookies,header);
         const wx_res = vue_res;
         if (wx_fail) {
@@ -1059,24 +1079,42 @@ export default class wx {
         }
       }
     })
+
     requestTask = new RequestTask(jqXHR);
     return requestTask
   }
 
-  // TODO: 未改未测试
+
+  static str2ab(str) {
+    let val = ""
+    for (let i in str) {
+      if (val === '') {
+        val = str.charCodeAt(i).toString(16)
+      } else {
+        val += ',' + str.charCodeAt(i).toString(16)
+      }
+    }
+    return new Uint8Array(val.match(/[\da-f]{2}/gi).map(function (h) {
+      return parseInt(h, 16)
+    })).buffer
+}
+
   static downloadFile(wx_object) {
-    let url = wx_object.url; // 【必填】下载资源的 url
-    let header = wx_object.header; // HTTP 请求的 Header，Header 中不能设置 Referer
-    let filePath = wx_object.filePath;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_url = wx_object.url;
+    let wx_header = wx_object.header; 
+    let wx_timeout = wx_object.timeout
+    let wx_filePath = wx_object.filePath;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     /////////////////////////////
-    let wx_res;
+    // let wx_res;
 
     $.ajax({
-      url: url,
-      headers: header,
+      url: wx_url,
+      headers: wx_header,
+      timeout: wx_timeout,
+      filePath: wx_filePath,
       dataType: 'arraybuffer',
       success: function(arraybuffer) {
         let shortName = url.substr(url.lastIndexOf('/') + 1);
