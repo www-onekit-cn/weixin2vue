@@ -69,7 +69,7 @@ function createUUIDfileName(fileName) {
 
 function createTempPath(fileName) {
   let uuid = createUUIDfileName(fileName);
-  return `wxfile://tmp_oneki${uuid}`;
+  return `wxfile://tmp_onekit_${uuid}`;
 }
 
 function createStorePath(fileName) {
@@ -187,8 +187,5 @@ function header2json(str) {
   return headers;
 }
 
-//字符串转arraybuffer
-function string2arrbuffer(str) {
-  return new TextEncoder().encode(str).buffer
-}
-export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json, string2arrbuffer }
+
+export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json }

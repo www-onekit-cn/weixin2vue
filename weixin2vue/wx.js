@@ -14,12 +14,14 @@ import RequestTask from "./api/RequestTask"
 import SocketTask from "./api/SocketTask"
 import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
+import DownloadTask from './api/DownloadTask'
+import { STRING } from 'oneutil'
 
 // import AudioContext from "./api/AudioContext"
 // import CameraContext from "./api/CameraContext"
 // import CanvasContext from "./api/CanvasContext"
 // import CanvasGradient from "./api/CanvasGradient"
-// import DownloadTask from "./api/DownloadTask"
+
 
 // import FileSystemManager from "./api/FileSystemManager"
 // import Gradient from "./api/Gradient"
@@ -814,7 +816,6 @@ export default class wx {
 
   }
 
-
   static setNavigationBarTitle(wx_object) {
 
     const wx_title = wx_object.title
@@ -1040,7 +1041,7 @@ export default class wx {
             wx_data = vue_data;
             break;
           case "arraybuffer":
-            wx_data = OneKit.string2arrbuffer(vue_data);
+            wx_data = STRING.string2arraybuffer(vue_data);
             break;
           default:
             throw new Error(responseType)
@@ -1082,33 +1083,54 @@ export default class wx {
 
   static downloadFile(wx_object) {
     let wx_url = wx_object.url;
-    let wx_header = wx_object.header;
     let wx_timeout = wx_object.timeout
-    let wx_filePath = wx_object.filePath;
+    let wx_filePath = wx_object.filePath || '';
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
+    //
+    let wx_header = wx_object.header;
+    let wx_mehotd = wx_object.method || 'GET'
+
+    let downloadTask;
     /////////////////////////////
-    $.ajax({
+    let jqXHR = $.ajax({
       url: wx_url,
       header: wx_header,
       timeout: wx_timeout,
-      type: 'POST',
+      type: wx_mehotd,
+      headers: wx_object.header,
+      filePath: wx_filePath,
 
-      success: () => {
+
+      success: (res, arraybuffer, xhr) => {
+        let shortName = wx_filePath.substr(wx_filePath.lastIndexOf('/') + 1);
+        let tempFilePath = OneKit.createTempPath(shortName);
+        OneKit.tempFiles[tempFilePath] = arraybuffer;
+
+        const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie") : []
+        const header = OneKit.header2json(xhr.getAllResponseHeaders())
+
         const wx_res = {
-          cookies: [],
-          dataLength: 13,
+          tempFilePath: tempFilePath,
+          cookies: cookies,
+          statusCode: 200,
+          dataLength: JSON.stringify(res).length,
           errMsg: 'downloadFile:ok',
-          header: {},
-          tempFilePath: 'https://test.com'
+          header: header,
         }
         if (wx_success) {
           wx_success(wx_res)
         }
+        if (wx_complete) {
+          wx_complete(wx_res)
+        }
       },
       error: (err) => {
-        throw new Error('ajax error' + JSON.stringify(err))
+        if (wx_fail) {
+          wx_fail(err)
+        }
+
       }
       // success: function(/*arraybuffer*/) {
       //   // let shortName = url.substr(url.lastIndexOf('/') + 1);
@@ -1131,6 +1153,8 @@ export default class wx {
       //   // console.log(a)
       // }
     });
+    downloadTask = new DownloadTask(jqXHR);
+    return downloadTask
   }
 
   // TODO: 未改未测试

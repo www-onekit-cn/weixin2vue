@@ -19,8 +19,7 @@
     "oneutil": "latest",
     "vconsole": "^3.3.4",
     "vue": "^2.6.11",
-    "vue-router": "^3.4.3",
-    "text-encoding": "latest"
+    "vue-router": "^3.4.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

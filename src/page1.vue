@@ -11,36 +11,32 @@
 
 
     onLoad() {
-      // wx.downloadFile({
-      //   url: 'http://192.168.146.1:3000/search/user',
-      //   // method: 'POST',
-      //   // data: {
-      //   //   data: '小'
-      //   // },
-      //   success(res) {
-      //     console.log('yyyyyy', res)
-      //   },
-      //   // fail(err) {
-      //   //   console.log('xxxxxx', err)
-      //   // }
-      // })
-
-      wx.request({
-        url: 'http://192.168.146.1:3000/test', //仅为示例，并非真实的接口地址
+      const that = this
+      /*
+        wx.request({
+          url: 'http://192.168.146.1:3000/test',
+          responseType: 'arraybuffer',
+          success (res) {
+             console.log(res)
+          },
+          fail:err => {
+            console.log(err)
+          }
+      })*/
+      wx.downloadFile({
+        url: 'http://192.168.146.1:3000/demo.jpg',
         success(res) {
-          console.log('wx11111111111', res.data)
+          console.log(res)
+          const src = res.tempFilePath
+          that.setData({ src });
+        },
+        fail: err => {
+          console.log(err)
         }
-      })
-
-      wx.request({
-        url: 'http://192.168.146.1:3000/test', //仅为示例，并非真实的接口地址
-        responseType: 'arraybuffer',
-        success(res) {
-          console.log('wx22222222222', res.data)
-        }
-      })
-
+      });
     }
+
+
 
   });
 </script>
