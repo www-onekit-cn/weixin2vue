@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { URL, PATH ,STRING} from 'oneutil'
+import { URL, PATH, STRING } from 'oneutil'
 import $ from 'jquery'
 const storeFiles = {};
 const tempFiles = {};
@@ -180,10 +180,15 @@ function header2json(str) {
 
   for (let i = 0; i < strArray.length - 1; i++) {
     var array = strArray[i].split(': ');
-    var key = STRING.firstUpper(array[0]); 
+    var key = STRING.firstUpper(array[0]);
     var value = array[1];
     headers[key] = value;
   }
   return headers;
 }
-export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json }
+
+//字符串转arraybuffer
+function string2arrbuffer(str) {
+  return new TextEncoder().encode(str).buffer
+}
+export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json, string2arrbuffer }

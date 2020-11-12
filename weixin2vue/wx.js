@@ -807,14 +807,14 @@ export default class wx {
   }
 
   static enableAlertBeforeUnload(wx_object) {
-    
+
   }
 
   static disableAlertBeforeUnload(wx_object) {
-   
+
   }
 
-  
+
   static setNavigationBarTitle(wx_object) {
 
     const wx_title = wx_object.title
@@ -825,8 +825,7 @@ export default class wx {
 
   }
 
-  static showNavigationBarLoading(wx_object) {
-  }
+  static showNavigationBarLoading(wx_object) {}
 
   static hideNavigationBarLoading() {}
 
@@ -995,24 +994,18 @@ export default class wx {
     }
     return animation;
   }
-/** 网络 */
+  /** 网络 */
   static request(wx_object) {
-    let url = wx_object.url; 
+    let url = wx_object.url;
     let data = wx_object.data;
-    let header = wx_object.header; 
-    let method = wx_object.method || 'GET'; 
+    let header = wx_object.header;
+    let method = wx_object.method || 'GET';
     let timeout = wx_object.timeout
-    let dataType = wx_object.method || 'json';
-    let responseType = wx_object.responseType || 'text'; 
+    let responseType = wx_object.responseType || 'text';
+    let dataType = responseType == "text" ? (wx_object.method || 'json') : "text";
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
-    let arrflag = false
-    if(responseType === 'arraybuffer') {
-      
-      arrflag = true
-      
-    }
     //
     let wx_enableHttp2 = wx_object.enableHttp2
     let wx_enableQuic = wx_object.enableQuic
@@ -1021,11 +1014,11 @@ export default class wx {
     //////////////////////////
     let requestTask
 
-    function trigger_HeadersReceived(cookies,header){
-      if(requestTask.onHeadersReceived){
-        requestTask.onHeadersReceived({cookies,header});
+    function trigger_HeadersReceived(cookies, header) {
+      if (requestTask.onHeadersReceived) {
+        requestTask.onHeadersReceived({ cookies, header });
       }
-      
+
     }
     let jqXHR = $.ajax({
       url: url,
@@ -1034,31 +1027,33 @@ export default class wx {
       headers: header,
       timeout: timeout,
       method: method,
-      dataType: responseType ? 'text' : wx.str2ab(responseType),
+      dataType,
       type: dataType,
-      success(vue_res, status,xhr) {
-        const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie")  : []
+      success(vue_data, status, xhr) {
+        const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie") : []
         const header = OneKit.header2json(xhr.getAllResponseHeaders())
-        trigger_HeadersReceived(cookies,header);
-        let wx_res;
-        if(arrflag) {
-          wx_res = {        
-            data:wx.str2ab(vue_res),
-            header ,
-            statusCode: xhr.status,
-            cookies,
-            errMsg: 'request:ok'
-          };
-        }else {
-          wx_res = {
-            data:vue_res,
-            header ,
-            statusCode: xhr.status,
-            cookies,
-            errMsg: 'request:ok'
-          };
+        trigger_HeadersReceived(cookies, header);
+
+        let wx_data
+        switch (responseType) {
+          case "text":
+            wx_data = vue_data;
+            break;
+          case "arraybuffer":
+            wx_data = OneKit.string2arrbuffer(vue_data);
+            break;
+          default:
+            throw new Error(responseType)
         }
-         
+        const wx_res = {
+          data: wx_data,
+          header,
+          statusCode: xhr.status,
+          cookies,
+          errMsg: 'request:ok'
+        };
+
+
         if (wx_success) {
           wx_success(wx_res);
         }
@@ -1067,9 +1062,9 @@ export default class wx {
         }
       },
       error(vue_res) {
-        const cookies = vue_res.getResponseHeader("Set-Cookie") ? vue_res.getResponseHeader("Set-Cookie")  : []
+        const cookies = vue_res.getResponseHeader("Set-Cookie") ? vue_res.getResponseHeader("Set-Cookie") : []
         const header = OneKit.header2json(vue_res.getAllResponseHeaders())
-        trigger_HeadersReceived(cookies,header);
+        trigger_HeadersReceived(cookies, header);
         const wx_res = vue_res;
         if (wx_fail) {
           wx_fail(wx_res);
@@ -1085,67 +1080,57 @@ export default class wx {
   }
 
 
-  static str2ab(str) {
-    let val = ""
-    for (let i in str) {
-      if (val === '') {
-        val = str.charCodeAt(i).toString(16)
-      } else {
-        val += ',' + str.charCodeAt(i).toString(16)
-      }
-    }
-    return new Uint8Array(val.match(/[\da-f]{2}/gi).map(function (h) {
-      return parseInt(h, 16)
-    })).buffer
-}
-
   static downloadFile(wx_object) {
     let wx_url = wx_object.url;
-    let wx_header = wx_object.header; 
+    let wx_header = wx_object.header;
     let wx_timeout = wx_object.timeout
     let wx_filePath = wx_object.filePath;
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
     /////////////////////////////
-    // let wx_res;
-
     $.ajax({
       url: wx_url,
-      headers: wx_header,
+      header: wx_header,
       timeout: wx_timeout,
-      filePath: wx_filePath,
-      dataType: 'arraybuffer',
-      success: function(arraybuffer) {
-        let shortName = url.substr(url.lastIndexOf('/') + 1);
-        let tempFilePath = OneKit.createTempPath(shortName);
-        OneKit.tempFiles[tempFilePath] = arraybuffer;
-        wx_res = {
-          tempFilePath: tempFilePath,
-          statusCode: 200
-        };
-        if (wx_success) {
-          wx_success(wx_res);
+      type: 'POST',
+
+      success: () => {
+        const wx_res = {
+          cookies: [],
+          dataLength: 13,
+          errMsg: 'downloadFile:ok',
+          header: {},
+          tempFilePath: 'https://test.com'
         }
-        if (wx_complete) {
-          wx_complete(wx_res);
+        if (wx_success) {
+          wx_success(wx_res)
         }
       },
-      error: function(a, b) {
-        //alert(url+"\n"+JSON.stringify(a)+"\n"+b);
-        throw new Error(a + '\b' + b);
+      error: (err) => {
+        throw new Error('ajax error' + JSON.stringify(err))
       }
+      // success: function(/*arraybuffer*/) {
+      //   // let shortName = url.substr(url.lastIndexOf('/') + 1);
+      //   // let tempFilePath = OneKit.createTempPath(shortName);
+      //   // OneKit.tempFiles[tempFilePath] = arraybuffer;
+      //   wx_res = {
+      //     // tempFilePath: tempFilePath,
+      //     statusCode: 200
+      //   };
+      //   if (wx_success) {
+      //     wx_success(wx_res);
+      //   }
+      //   if (wx_complete) {
+      //     wx_complete(wx_res);
+      //   }
+      // },
+      // error: function(a) {
+      //   //alert(url+"\n"+JSON.stringify(a)+"\n"+b);
+      //   throw new Error(a);
+      //   // console.log(a)
+      // }
     });
-  } catch (e) {
-    wx_res = {
-      errMsg: e.toString()
-    };
-    if (wx_fail) {
-      wx_fail(wx_res);
-    }
-    if (wx_complete) {
-      wx_complete(wx_res);
-    }
   }
 
   // TODO: 未改未测试
