@@ -1032,9 +1032,16 @@ export default class wx {
       default:
         throw wx_responseType;
       }
-    let requestTask
+    
 
-    let instance = axios({
+    const requestTask = new RequestTask(axios)
+  
+    // requestTask.onHeadersReceived(()=> {
+    //   console.log('++++++++')
+    // })
+    
+   setTimeout(() => {
+    axios({
       url: url,
       data: data,
       headers: header,
@@ -1042,30 +1049,30 @@ export default class wx {
       method:method,
       responseType: vue_responseType,
     }).then(response => {   
-        const wx_res = {
-        cookies: response.cookies || [],
-        data:response.data,
-        errMsg: `request: ${response.statusText}`,
-        header: response.headers,
-        statusCode: response.status
-       }
-       if (wx_success) {
-        wx_success(wx_res);
-      }
-      if (wx_complete) {
-        wx_complete(wx_res);
-      }
-    }).catch(error => {
-      if (wx_fail) {
-        wx_fail(error);
-      }
-      if (wx_complete) {
-        wx_complete(error);
-      }
-       
-    })
-
-    requestTask = new RequestTask(instance)
+      const wx_res = {
+      cookies: response.cookies || [],
+      data:response.data,
+      errMsg: `request: ${response.statusText}`,
+      header: response.headers,
+      statusCode: response.status
+     }
+     if (wx_success) {
+      wx_success(wx_res);
+    }
+    if (wx_complete) {
+      wx_complete(wx_res);
+    }
+  }).catch(error => {
+    if (wx_fail) {
+      wx_fail(error);
+    }
+    if (wx_complete) {
+      wx_complete(error);
+    }
+     
+  })
+   }, 500);
+    
     return requestTask
   }
 

@@ -55,6 +55,8 @@
         // fail: err => {
         //   console.log(err)
         // }
+      }).onHeadersReceived(() => {
+        console.log('++++++++')
       })
       //   wx.downloadFile({
       //     url: 'http://192.168.146.1:3000/demo.jpg',

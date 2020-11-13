@@ -1,7 +1,9 @@
 // import Vue from 'vue'
+//import axios from 'axios'
 export default class RequestTask {
-  constructor(jqXHR) {
-    this.jqXHR = jqXHR
+  constructor(axios) {
+    this.axios = axios
+
   }
   abort() {
     this.jqXHR.abort()
@@ -9,9 +11,19 @@ export default class RequestTask {
 
   onHeadersReceived(callback) {
     this.onHeadersReceived = callback
+    this.axios.interceptors.response.use(response => {
+      const header = response.headers
+      const wx_res = {
+        header
+      };
+      this.onHeadersReceived(wx_res)
+      return response;
+    }, function(error) {
+      return Promise.reject(error);
+    });
   }
 
-  offHeadersReceived( ) {
+  offHeadersReceived() {
     this.onHeadersReceived = null
   }
 }
