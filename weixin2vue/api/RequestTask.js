@@ -6,7 +6,7 @@ export default class RequestTask {
 
   }
   abort() {
-    this.jqXHR.abort()
+    this.axios.default.Cancel()
   }
 
   onHeadersReceived(callback) {
