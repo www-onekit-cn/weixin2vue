@@ -16,6 +16,7 @@ import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
 import DownloadTask from './api/DownloadTask'
 import { STRING } from 'oneutil'
+import axios from 'axios'
 
 // import AudioContext from "./api/AudioContext"
 // import CameraContext from "./api/CameraContext"
@@ -1002,8 +1003,8 @@ export default class wx {
     let header = wx_object.header;
     let method = wx_object.method || 'GET';
     let timeout = wx_object.timeout
-    let responseType = wx_object.responseType || 'text';
-    let dataType = responseType == "text" ? (wx_object.method || 'json') : "text";
+    const wx_responseType = wx_object.responseType || 'text';
+    const wx_dataType = wx_object.dataType || "json";
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
@@ -1013,70 +1014,58 @@ export default class wx {
     let wx_enableCahe = wx_object.enableChache
     wx_object = null
     //////////////////////////
-    let requestTask
-
-    function trigger_HeadersReceived(cookies, header) {
-      if (requestTask.onHeadersReceived) {
-        requestTask.onHeadersReceived({ cookies, header });
-      }
-
-    }
-    let jqXHR = $.ajax({
-      url: url,
-      data: data,
-      async: true,
-      headers: header,
-      timeout: timeout,
-      method: method,
-      dataType,
-      type: dataType,
-      success(vue_data, status, xhr) {
-        const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie") : []
-        const header = OneKit.header2json(xhr.getAllResponseHeaders())
-        trigger_HeadersReceived(cookies, header);
-
-        let wx_data
-        switch (responseType) {
-          case "text":
-            wx_data = vue_data;
-            break;
-          case "arraybuffer":
-            wx_data = STRING.string2arraybuffer(vue_data);
+    let vue_responseType
+    switch (wx_responseType) {
+      case "text":
+        switch (wx_dataType) {
+          case "json":
+            vue_responseType = 'json'
             break;
           default:
-            throw new Error(responseType)
+            vue_responseType='text'
+            break
         }
-        const wx_res = {
-          data: wx_data,
-          header,
-          statusCode: xhr.status,
-          cookies,
-          errMsg: 'request:ok'
-        };
-
-
-        if (wx_success) {
-          wx_success(wx_res);
-        }
-        if (wx_complete) {
-          wx_complete(wx_res);
-        }
-      },
-      error(vue_res) {
-        const cookies = vue_res.getResponseHeader("Set-Cookie") ? vue_res.getResponseHeader("Set-Cookie") : []
-        const header = OneKit.header2json(vue_res.getAllResponseHeaders())
-        trigger_HeadersReceived(cookies, header);
-        const wx_res = vue_res;
-        if (wx_fail) {
-          wx_fail(wx_res);
-        }
-        if (wx_complete) {
-          wx_complete(wx_res);
-        }
+        break;
+        case "arraybuffer":
+          vue_responseType = 'arraybuffer'
+        break;
+      default:
+        throw wx_responseType;
       }
+    let requestTask
+
+    let instance = axios({
+      url: url,
+      data: data,
+      headers: header,
+      timeout: timeout,
+      method:method,
+      responseType: vue_responseType,
+    }).then(response => {   
+        const wx_res = {
+        cookies: response.cookies || [],
+        data:response.data,
+        errMsg: `request: ${response.statusText}`,
+        header: response.headers,
+        statusCode: response.status
+       }
+       if (wx_success) {
+        wx_success(wx_res);
+      }
+      if (wx_complete) {
+        wx_complete(wx_res);
+      }
+    }).catch(error => {
+      if (wx_fail) {
+        wx_fail(error);
+      }
+      if (wx_complete) {
+        wx_complete(error);
+      }
+       
     })
 
-    requestTask = new RequestTask(jqXHR);
+    requestTask = new RequestTask(instance)
     return requestTask
   }
 
@@ -1106,7 +1095,8 @@ export default class wx {
       success: (res, arraybuffer, xhr) => {
         let shortName = wx_filePath.substr(wx_filePath.lastIndexOf('/') + 1);
         let tempFilePath = OneKit.createTempPath(shortName);
-        OneKit.tempFiles[tempFilePath] = arraybuffer;
+        console.log("xxx",res)
+        sessionStorage.setItem(tempFilePath,arraybuffer);
 
         const cookies = xhr.getResponseHeader("Set-Cookie") ? xhr.getResponseHeader("Set-Cookie") : []
         const header = OneKit.header2json(xhr.getAllResponseHeaders())
