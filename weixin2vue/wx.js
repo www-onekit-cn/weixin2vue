@@ -1,8 +1,3 @@
-/* eslint-disable no-empty */
-/* eslint-disable no-case-declarations */
-/* eslint-disable no-undef */
-/* eslint-disable no-redeclare */
-/* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import $ from 'jquery'
 import html2canvas from "html2canvas"
@@ -15,10 +10,10 @@ import SocketTask from "./api/SocketTask"
 import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
 import DownloadTask from './api/DownloadTask'
-
+//import {COLOR} from 'oneutil'
 import axios from 'axios'
-import JSZip from 'jszip'
-let saveAs = require('file-saver');
+// import JSZip from 'jszip'
+// let saveAs = require('file-saver');
 
 // import { STRING } from 'oneutil'
 // import AudioContext from "./api/AudioContext"
@@ -65,9 +60,9 @@ export default class wx {
   }
 
   static arrayBufferToBase64(arrayBuffer) {
-    var binary = '';
-    var len = arrayBuffer.byteLength;
-    for (var i = 0; i < len; i++) {
+    let binary = '';
+    let len = arrayBuffer.byteLength;
+    for (let i = 0; i < len; i++) {
       binary += String.fromCharCode(arrayBuffer[i]);
     }
     console.log(len);
@@ -125,7 +120,7 @@ export default class wx {
     /////////////////////////////
 
 
-    var wx_res;
+    let wx_res;
     try {
       wx_res = wx.getSystemInfoSync();
       if (wx_success) { wx_success(wx_res); }
@@ -154,12 +149,12 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (e) {
-      wx_res = { errMsg: e.message };
+      const wx_res = { errMsg: e.message };
       if (wx_fail) {
-        wx_fail(wx_fail);
+        wx_fail(wx_res);
       }
       if (wx_complete) {
-        wx_complete(wx_complete);
+        wx_complete(wx_res);
       }
     }
   }
@@ -302,7 +297,7 @@ export default class wx {
     let wx_complete = wx_object.complete;
     wx_object = null
     ///////////
-    var wx_res;
+    let wx_res;
     try {
       const vue_url = wx_url
       const current = OneKit.current();
@@ -334,7 +329,7 @@ export default class wx {
     let wx_complete = wx_object.complete;
     wx_object = null
     ///////////
-    var wx_res;
+    let wx_res;
     try {
       const vue_path = wx_url
       const pageCount = Vue.prototype.ROOT.$route.length - 1
@@ -368,7 +363,7 @@ export default class wx {
     let wx_complete = wx_object.complete;
     wx_object = null
     ///////////
-    var wx_res;
+    let wx_res;
     try {
       const vue_path = wx_url
       Vue.prototype.ROOT.$router.replace(vue_path);
@@ -401,7 +396,7 @@ export default class wx {
     const wx_complete = wx_object.complete;
     wx_object = null
     ///////////
-    var wx_res;
+    let wx_res;
     try {
       const vue_path = OneKit.fixurl(wx_url)
 
@@ -450,7 +445,7 @@ export default class wx {
     let wx_complete = wx_object.complete;
     wx_object = null
     ///////////
-    var wx_res;
+    let wx_res;
     try {
       const vue_delta = wx_delta
       Vue.prototype.ROOT.$router.go(-vue_delta);
@@ -503,18 +498,18 @@ export default class wx {
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
-    var wx_res;
+    let wx_res;
     try {
-      var viewportID = document.getElementById("viewport");
+      let viewportID = document.getElementById("viewport");
       if (!viewportID) {
-        var oMeta = document.createElement('meta');
+        let oMeta = document.createElement('meta');
         oMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;';
         oMeta.name = 'viewport';
         oMeta.id = 'viewport';
         document.getElementsByTagName('head')[0].appendChild(oMeta)
       }
       $(".xsw_toast").remove();
-      var popToastHtml = "";
+      let popToastHtml = "";
       popToastHtml += `<div class="xsw_showToast"> `;
       if (mask == true) {
         popToastHtml += `<div class="xsw_bei" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background-color: #262626;opacity: 0.4;z-index: 999999999999999999999"></div>`
@@ -544,8 +539,8 @@ export default class wx {
       $("body").css({ "position": "relative" });
       if (icon == "success") {
         /////////////////////////////////////////////////画勾
-        var cvs = document.getElementById('x_canvas'); //画布
-        var ctx = cvs.getContext('2d'); // 画笔
+        let cvs = document.getElementById('x_canvas'); //画布
+        let ctx = cvs.getContext('2d'); // 画笔
         ctx.lineWidth = 4; //线宽
         ctx.strokeStyle = "#fff"; //线的颜色
         ctx.moveTo(55, 35);
@@ -603,18 +598,18 @@ export default class wx {
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
-    var wx_res;
+    let wx_res;
     try {
-      var viewportID = document.getElementById("viewport");
+      let viewportID = document.getElementById("viewport");
       if (!viewportID) {
-        var oMeta = document.createElement('meta');
+        let oMeta = document.createElement('meta');
         oMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;';
         oMeta.name = 'viewport';
         oMeta.id = 'viewport';
         document.getElementsByTagName('head')[0].appendChild(oMeta);
       }
       $(".xsw_showModa").remove();
-      var showModalHtml = "";
+      let showModalHtml = "";
       showModalHtml += `<div class="xsw_showModa" >`
       showModalHtml += `<div class="xsw_showModaBei" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0; background-color: #333;opacity: 0.4;z-index: 999999999999999999999"></div>`
       showModalHtml += `<div class="xsw_modal-data" style="width:220px;  border-radius: 10px;  top: 50%;  left: 50%;  box-shadow: 0 2px 8px #555 ;  background-color: #fff;  border:1px solid #000;  padding:15px 0;  text-align:center;  z-index: 9999999999999999999999;  position: fixed;">
@@ -633,8 +628,8 @@ export default class wx {
       if (confirmColor) {
         $('.yesDian').css({ 'color': confirmColor })
       }
-      var outerWidth = -$('.xsw_modal-data').outerHeight() / 2;
-      var modal = document.querySelector('.xsw_modal-data');
+      let outerWidth = -$('.xsw_modal-data').outerHeight() / 2;
+      let modal = document.querySelector('.xsw_modal-data');
       modal.style.margin = outerWidth + 'px 0 0 -110px';
       /* $('.xsw_modal-data').css({'margin-left:','"+outerWidth+"'})*/
       $("body").css({ "position": "relative" });
@@ -688,18 +683,18 @@ export default class wx {
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
-    var wx_res;
+    let wx_res;
     try {
-      var viewportID = document.getElementById("viewport");
+      let viewportID = document.getElementById("viewport");
       if (!viewportID) {
-        var oMeta = document.createElement('meta');
+        let oMeta = document.createElement('meta');
         oMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;';
         oMeta.name = 'viewport';
         oMeta.id = 'viewport';
         document.getElementsByTagName('head')[0].appendChild(oMeta);
       }
       $(".xsw_toast").remove();
-      var popToastHtml = "";
+      let popToastHtml = "";
       popToastHtml += `<div class="xsw_showLoading"> `;
       if (mask == true) {
         popToastHtml += `<div class="xsw_bei" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;background-color: #262626;opacity: 0.4;z-index: 999999999999999999999"></div>`
@@ -735,44 +730,44 @@ export default class wx {
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
-    var index;
-    var wx_res;
+    let index;
+    let wx_res;
     try {
-      var viewportID = document.getElementById("viewport");
+      let viewportID = document.getElementById("viewport");
       if (!viewportID) {
-        var oMeta = document.createElement('meta');
+        let oMeta = document.createElement('meta');
         oMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;';
         oMeta.name = 'viewport';
         oMeta.id = 'viewport';
         document.getElementsByTagName('head')[0].appendChild(oMeta);
       }
       $(".xsw_showActionSheet").remove();
-      var showActionSheetHtml = "";
+      let showActionSheetHtml = "";
       showActionSheetHtml += `<div class="xsw_showActionSheet" >
                                     <div class="xsw_showActionSheetBei" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0; background-color: #333;opacity: 0.4;z-index: 999999999999999999999"></div>
                                     <div class="xsw_showActionSheet-data" style="width:220px;  border-radius: 5px;  top: 50%;  left: 50%;  box-shadow: 0 2px 8px #555 ;  background-color: #fff;  border:1px solid #000; text-align:center;  z-index: 9999999999999999999999;  position: fixed;color: #000000">
                                         <div style="text-align: left">`;
-      var xsw_length;
+      let xsw_length;
       if (itemList.length > 6) {
         xsw_length = 6;
       } else {
         xsw_length = itemList.length;
       }
-      for (var xsw_i = 0; xsw_i < xsw_length; xsw_i++) {
+      for (let xsw_i = 0; xsw_i < xsw_length; xsw_i++) {
         showActionSheetHtml += `<div class="xsw_list" style="border-bottom: 1px solid #cccccc;padding: 10px 0 10px 10px;">${itemList[xsw_i]}</div>`
       }
       showActionSheetHtml += `</div></div></div>`;
       $("body").append(showActionSheetHtml);
-      var outerWidth = -$('.xsw_showActionSheet-data').outerHeight() / 2;
-      var modal = document.querySelector('.xsw_showActionSheet-data');
+      let outerWidth = -$('.xsw_showActionSheet-data').outerHeight() / 2;
+      let modal = document.querySelector('.xsw_showActionSheet-data');
       modal.style.margin = outerWidth + 'px 0 0 -110px';
       $('.xsw_list:last').css({ 'border': "none" })
       if (itemColor) {
         $('.xsw_showActionSheet-data').css({ 'color': itemColor })
       }
       $('.xsw_list').click(function() {
-        var thisHtml = $(this).html();
-        for (var x in itemList) {
+        let thisHtml = $(this).html();
+        for (let x in itemList) {
           if (thisHtml == itemList[x]) {
             index = x;
           }
@@ -812,11 +807,11 @@ export default class wx {
     $(".xsw_showLoading").remove();
   }
 
-  static enableAlertBeforeUnload(wx_object) {
+  static enableAlertBeforeUnload() {
 
   }
 
-  static disableAlertBeforeUnload(wx_object) {
+  static disableAlertBeforeUnload() {
 
   }
 
@@ -826,11 +821,11 @@ export default class wx {
 
     $("#onekitwx_navigationBar_title").html(wx_title);
     if (wx_object.success) wx_object.wx_success();
-    if (wx_object.complete) wx_object.complete();
+    if (wx_object.complete) wx_object.wx_complete();
 
   }
 
-  static showNavigationBarLoading(wx_object) {}
+  static showNavigationBarLoading() {}
 
   static hideNavigationBarLoading() {}
 
@@ -848,7 +843,7 @@ export default class wx {
   static setBackgroundTextStyle() {
 
   }
-  static setBackgroundColor(wx_object) {
+  static setBackgroundColor() {
 
   }
   static setTabBarBadge() {}
@@ -866,27 +861,28 @@ export default class wx {
   static showTabBar() {}
 
   static hideTabBar() {}
-  static loadFontFace(wx_object) {
+  static loadFontFace() {
 
   }
-  static startPullDownRefresh(wx_object) {
+  static startPullDownRefresh() {
+    /*
     if (wx_object) {
-      let success = wx_object.success;
-      let fail = wx_object.fail;
-      let complete = wx_object.complete;
-      var wx_res;
+      let wx_success = wx_object.success;
+      let wx_fail = wx_object.fail;
+      let wx_complete = wx_object.complete;
+      let wx_res;
       try {
         if ($('.xsw_first').length < 1) {
-          var xsw_first = document.createElement("div");
+          let xsw_first = document.createElement("div");
           xsw_first.innerHTML = "<div class='xsw_first' style='width: 100%;text-align: center'></div>";
           if ($('body')) {
-            var first = document.body.firstChild; //得到页面的第一个元素
+            let first = document.body.firstChild; //得到页面的第一个元素
             first.before(xsw_first);
           } else {
             $("div").first().before(xsw_first);
           }
           if ($('.xsw_first')) {
-            var scroll = document.querySelector('.xsw_first');
+            let scroll = document.querySelector('.xsw_first');
             scroll.style.height = '90px';
             wx.loading();
             wx.onPullDownRefresh();
@@ -912,30 +908,30 @@ export default class wx {
       }
     } else {
       if ($('.xsw_first').length < 1) {
-        var xsw_first = document.createElement("div");
+        let xsw_first = document.createElement("div");
         xsw_first.innerHTML = "<div class='xsw_first' style='width: 100%;text-align: center'></div>";
         if ($('body')) {
-          var first = document.body.firstChild; //得到页面的第一个元素
+          let first = document.body.firstChild; //得到页面的第一个元素
           first.before(xsw_first);
         } else {
           $("div").first().before(xsw_first);
         }
         if ($('.xsw_first')) {
-          var scroll = document.querySelector('.xsw_first');
+          let scroll = document.querySelector('.xsw_first');
           scroll.style.height = '90px';
           wx.loading();
           wx.onPullDownRefresh();
         }
       }
-    }
+    }*/
   }
   static stopPullDownRefresh(wx_object) {
     let scroll
     if (wx_object) {
-      let success = wx_object.success;
-      let fail = wx_object.fail;
-      let complete = wx_object.complete;
-      var wx_res;
+      let wx_success = wx_object.success;
+      let wx_fail = wx_object.fail;
+      let wx_complete = wx_object.complete;
+      let wx_res;
       try {
         scroll = document.querySelector('.xsw_first');
         scroll.style.height = '0px';
@@ -1012,9 +1008,9 @@ export default class wx {
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
     //
-    let wx_enableHttp2 = wx_object.enableHttp2
-    let wx_enableQuic = wx_object.enableQuic
-    let wx_enableCahe = wx_object.enableChache
+  //  let wx_enableHttp2 = wx_object.enableHttp2
+   // let wx_enableQuic = wx_object.enableQuic
+ //   let wx_enableCahe = wx_object.enableChache
     wx_object = null
     //////////////////////////
     let vue_responseType
@@ -1083,7 +1079,7 @@ export default class wx {
   static downloadFile(wx_object) {
     let wx_url = wx_object.url;
     let wx_timeout = wx_object.timeout
-    let wx_filePath = wx_object.filePath || '';
+   // let wx_filePath = wx_object.filePath || '';
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
@@ -1102,7 +1098,7 @@ export default class wx {
       method: wx_mehotd,
     }).then(res => {
       const tempFilePath = OneKit.createTempPath("")
-      sessionStorage.setItem(tempFilePath,res.data)
+      sessionStorage.setItem(tempFilePath,new Blob([res.data]))
       if (wx_success) {
         wx_success({
           tempFilePath
@@ -1113,7 +1109,7 @@ export default class wx {
       }
     }).catch(err => {
       if (wx_fail) {
-        wx_fail()
+        wx_fail({errMsg:err.message})
       }
       if (wx_complete) {
         wx_complete()
@@ -1131,35 +1127,51 @@ export default class wx {
     let name = wx_object.name;
     let header = wx_object.header;
     let formData = wx_object.formData;
-    let timeout = wx_object.timeout
+   // let timeout = wx_object.timeout
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
     wx_object = null
     ///////////////////
-    let file
+    let blob
     if(filePath.startsWith("wxfile://store/onekit_")){
-      file = null //sessionStorage.getItem(filePath)
+      blob = null //sessionStorage.getItem(filePath)
     }else   if(filePath.startsWith("wxfile://tmp_onekit_")){
-      file = sessionStorage.getItem(filePath)
+      blob = sessionStorage.getItem(filePath)
     }else{
-      throw filePath
+      throw new Error(filePath)
     }
+    if(!header){
+      header = {}
+    }
+   header['Content-Type'] = 'multipart/form-data'
     /////////////////
-    
-    axios({
-      url,
-    }).then((res) => {
+    let data = new FormData()
+    data.append(name,URL.createObjectURL(blob),"xxx")
 
+for(const key of Object.keys(formData)){
+  data.append(key,formData[key])
+}
+    axios({
+      data,
+      method:"post",
+      headers:header,
+      url,
+    }).then(() => {
+const wx_ers = {}
       if (wx_success) {
-        wx_success()
+        wx_success(wx_ers)
       }
       if (wx_complete) {
-        wx_complete()
+        wx_complete(wx_ers)
       }
-    }).catch((err) => {
+    }).catch(() => {
+      const wx_ers = {}
       if (wx_fail) {
-        wx_fail()
+        wx_fail(wx_ers)
+      }
+      if (wx_complete) {
+        wx_complete(wx_ers)
       }
     })
 
@@ -1210,23 +1222,23 @@ export default class wx {
     let url = wx_object.url; // 【必填】开发者服务器 wss 接口地址
     // let header = wx_object.header; // HTTP Header，Header 中不能设置 Referer
     let protocols = wx_object.protocols; // 子协议数组	1.4.0
-    // let success = wx_object.success;
-    //  let fail = wx_object.fail;
-    //  let complete = wx_object.complete;
+    // let wx_success = wx_object.success;
+    //  let wx_fail = wx_object.fail;
+    //  let wx_complete = wx_object.complete;
     ///////////////////////////////////
     let socket = new WebSocket(url, protocols);
     /*
      */
     let socketTask = new SocketTask(socket);
-    if (!OnekitWX_WebSocket._socketTask) {
-      OnekitWX_WebSocket._socketTask = socketTask;
+    if (!Vue.prototype._socketTask) {
+      Vue.prototype._socketTask = socketTask;
     }
     return socketTask;
   }
 
   static onSocketOpen(callback) {
-    if (OnekitWX_WebSocket._socketTask) {
-      OnekitWX_WebSocket._socketTask._socket.addEventListener("open", function(event) {
+    if (Vue.prototype._socketTask) {
+      Vue.prototype._socketTask._socket.addEventListener("open", function(event) {
         if (callback) {
           return callback(event);
         }
@@ -1236,18 +1248,18 @@ export default class wx {
 
   static sendSocketMessage(wx_object) {
     let data = wx_object.data; // 【必填】需要发送的内容
-    //   let success = wx_object.success;
-    // let fail = wx_object.fail;
-    //  let complete = wx_object.complete;
+    //   let wx_success = wx_object.success;
+    // let wx_fail = wx_object.fail;
+    //  let wx_complete = wx_object.complete;
     ///////////////////////////////
-    if (OnekitWX_WebSocket._socketTask) {
-      OnekitWX_WebSocket._socketTask.send(data);
+    if (Vue.prototype._socketTask) {
+      Vue.prototype._socketTask.send(data);
     }
   }
 
   static onSocketMessage(callback) {
-    if (OnekitWX_WebSocket._socketTask) {
-      OnekitWX_WebSocket._socketTask._socket.addEventListener("message", function(event) {
+    if (Vue.prototype._socketTask) {
+      Vue.prototype._socketTask._socket.addEventListener("message", function(event) {
         if (callback) {
           callback(event);
         }
@@ -1256,14 +1268,14 @@ export default class wx {
   }
 
   static onSocketError(callback) {
-    if (OnekitWX_WebSocket._socketTask) {
-      OnekitWX_WebSocket._socketTask._socket.addEventListener("error", callback);
+    if (Vue.prototype._socketTask) {
+      Vue.prototype._socketTask._socket.addEventListener("error", callback);
     }
   }
 
   static onSocketClose(callback) {
-    if (OnekitWX_WebSocket._socketTask) {
-      OnekitWX_WebSocket._socketTask._socket.addEventListener("close", function(event) {
+    if (Vue.prototype._socketTask) {
+      Vue.prototype._socketTask._socket.addEventListener("close", function(event) {
         if (callback) {
           callback(event);
         }
@@ -1272,7 +1284,7 @@ export default class wx {
   }
 
   static closeSocket() {
-    OnekitWX_WebSocket._socketTask.close();
+    Vue.prototype._socketTask.close();
   }
 
   static offLocalServiceResolveFail() {
@@ -1312,20 +1324,23 @@ export default class wx {
 
   // INFO: 已改
   static setStorageSync(key, value) {
+    // eslint-disable-next-line no-useless-catch
     try {
       localStorage.setItem(key, value);
-    } catch (e) {}
+    } catch (e) {
+      throw e
+    }
   }
 
   // INFO: 已改
   static setStorage(wx_object) {
-    var key = wx_object.key;
-    var data = wx_object.data;
-    var success = wx_object.success;
-    var fail = wx_object.fail;
-    var complete = wx_object.complete;
+    let key = wx_object.key;
+    let data = wx_object.data;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
 
-    var res = {};
+    let res = {};
     try {
       localStorage.setItem(key, data);
       if (localStorage.getItem(key) === data) {
@@ -1337,11 +1352,11 @@ export default class wx {
     } catch (error) {
       res.errMsg = error.message;
       if (wx_fail) {
-        fail(res);
+        wx_fail(res);
       }
     }
     if (wx_complete) {
-      complete(res);
+      wx_complete(res);
     }
   }
   // INFO: 已改
@@ -1352,14 +1367,14 @@ export default class wx {
 
   // INFO: 已改
   static getStorage(wx_object) {
-    var key = wx_object.key;
-    var success = wx_object.success;
-    var fail = wx_object.fail;
-    var complete = wx_object.complete;
+    let key = wx_object.key;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
 
-    var res = {};
+    let res = {};
     try {
-      var value = localStorage.getItem(key);
+      let value = localStorage.getItem(key);
       if (value) {
         res.errMsg = 'getStorage:ok';
         res.data = value;
@@ -1369,17 +1384,17 @@ export default class wx {
       } else {
         res.errMsg = 'getStorage:fail data not found';
         if (wx_fail) {
-          fail(res);
+          wx_fail(res);
         }
       }
     } catch (error) {
       res.errMsg = error.message;
       if (wx_fail) {
-        fail(res);
+        wx_fail(res);
       }
     }
     if (wx_complete) {
-      complete(res);
+      wx_complete(res);
     }
   }
 
@@ -1391,12 +1406,12 @@ export default class wx {
 
   // INFO: 已改
   static removeStorage(wx_object) {
-    var key = wx_object.key;
-    var success = wx_object.success;
-    var fail = wx_object.fail;
-    var complete = wx_object.complete;
+    let key = wx_object.key;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
 
-    var res = {};
+    let res = {};
     try {
       localStorage.removeItem(key);
       res.errMsg = 'removeStorage:ok';
@@ -1406,11 +1421,11 @@ export default class wx {
     } catch (error) {
       res.errMsg = error.message;
       if (wx_fail) {
-        fail(res);
+        wx_fail(res);
       }
     }
     if (wx_complete) {
-      complete(res);
+      wx_complete(res);
     }
   }
 
@@ -1425,11 +1440,11 @@ export default class wx {
     if (!wx_object) {
       localStorage.clear();
     } else {
-      let success = wx_object.success || '';
-      let fail = wx_object.fail || '';
-      let complete = wx_object.complete || '';
+      let wx_success = wx_object.success || '';
+      let wx_fail = wx_object.fail || '';
+      let wx_complete = wx_object.complete || '';
 
-      var res = {};
+      let res = {};
       try {
         localStorage.clear();
         res.errMsg = 'clearStorage:ok';
@@ -1439,27 +1454,27 @@ export default class wx {
       } catch (error) {
         res = { errMsg: error.message };
         if (wx_fail) {
-          fail(res);
+          wx_fail(res);
         }
       }
       if (wx_complete) {
-        complete(res);
+        wx_complete(res);
       }
     }
   }
 
   static getStorageInfo(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
-    var wx_res;
-    var keysArray = new Array();
-    for (var i = 0; i < localStorage.length; i++) {
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    let wx_res;
+    let keysArray = new Array();
+    for (let i = 0; i < localStorage.length; i++) {
       //所有键值
-      var getKey = localStorage.key(i);
+      let getKey = localStorage.key(i);
       keysArray.push(getKey);
     }
-    var sizeStore = 0;
+    let sizeStore = 0;
     if (localStorage) {
       //占用空间
       for (let item of Object.keys(localStorage)) {
@@ -1493,15 +1508,15 @@ export default class wx {
   }
 
   static getStorageInfoSync() {
-    var wx_res;
+    let wx_res;
     try {
-      var keysArray = new Array();
-      for (var i = 0; i < localStorage.length; i++) {
+      let keysArray = new Array();
+      for (let i = 0; i < localStorage.length; i++) {
         //所有键值
-        var getKey = localStorage.key(i);
+        let getKey = localStorage.key(i);
         keysArray.push(getKey);
       }
-      var sizeStore = 0;
+      let sizeStore = 0;
       if (localStorage) {
         //占用空间
         for (let item of Object.keys(localStorage)) {
@@ -1525,16 +1540,16 @@ export default class wx {
   static createMapContext() {}
 
   // HACK: 这个 api 的名字、参数和 JS-SDK 一样，可以在用户代码中直接调用 JS-SDK 来实现
-  static chooseImage(wx_object) {}
+  static chooseImage() {}
 
   // HACK: 这个 api 的名字、参数和 JS-SDK 一样，可以在用户代码中直接调用 JS-SDK 来实现
-  static previewImage(wx_object) {}
+  static previewImage() {}
 
   static getImageInfo(wx_object) {
     let src = wx_object.src;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     let wx_res = {};
     let isGetImageInfo = false;
     //////////////////////////////////
@@ -1551,7 +1566,7 @@ export default class wx {
         getImageInfoSuccess_callback();
       };
       pic.src = src;
-      // 5秒后如果没有获取到数据就去回调执行 fail() 和 complete()
+      // 5秒后如果没有获取到数据就去回调执行 wx_fail() 和 wx_complete()
       setTimeout(function() {
         if (!isGetImageInfo) {
           getImageInfoFail_callback();
@@ -1583,27 +1598,27 @@ export default class wx {
 
   static saveImageToPhotosAlbum() {}
 
-  static compressImage(wx_object) {}
+  static compressImage() {}
 
   static canvasDataURL(path, obj, callback) {
-    var img = new Image();
+    let img = new Image();
     img.src = path;
     img.onload = function() {
-      var that = this;
+      let that = this;
       // 默认按比例压缩
-      var w = that.width,
+      let w = that.width,
         h = that.height,
         scale = w / h;
       w = obj.width || w;
       h = obj.height || w / scale;
-      var quality = 0.7; // 默认图片质量为0.7
+      let quality = 0.7; // 默认图片质量为0.7
       //生成canvas
-      var canvas = document.createElement('canvas');
-      var ctx = canvas.getContext('2d');
+      let canvas = document.createElement('canvas');
+      let ctx = canvas.getContext('2d');
       // 创建属性节点
-      var anw = document.createAttribute('width');
+      let anw = document.createAttribute('width');
       anw.nodeValue = w;
-      var anh = document.createAttribute('height');
+      let anh = document.createAttribute('height');
       anh.nodeValue = h;
       canvas.setAttributeNode(anw);
       canvas.setAttributeNode(anh);
@@ -1613,14 +1628,14 @@ export default class wx {
         quality = obj.quality;
       }
       // quality值越小，所绘制出的图像越模糊
-      var base64 = canvas.toDataURL('image/jpeg', quality);
-      var Blob = wx.convertBase64UrlToBlob(base64);
-      var imgPath = window.URL.createObjectURL(Blob);
+      let base64 = canvas.toDataURL('image/jpeg', quality);
+      let Blob = wx.convertBase64UrlToBlob(base64);
+      let imgPath = window.URL.createObjectURL(Blob);
       callback({ imgPath: imgPath, Blob: Blob });
     };
   }
   static convertBase64UrlToBlob(urlData) {
-    var arr = urlData.split(','),
+    let arr = urlData.split(','),
       mime = arr[0].match(/:(.*?);/)[1],
       bstr = atob(arr[1]),
       n = bstr.length,
@@ -1631,20 +1646,20 @@ export default class wx {
     return new Blob([u8arr], { type: mime });
   }
   static chooseVideo(wx_object) {
-    let wx_res;
+   // let wx_res;
     if (wx_object) {
       let sourceType = wx_object.sourceType || ['album', 'camera']; //视频选择的来源
-      let compressed = wx_object.compressed || true; // 是否压缩所选择的视频文件
-      let maxDuration = wx_object.maxDuration || 60; // 拍摄视频最长拍摄时间，单位秒
-      let camera = wx_object.camera || 'back'; // 默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效
-      let success = wx_object.success;
-      let fail = wx_object.fail;
-      let complete = wx_object.complete;
+     // let compressed = wx_object.compressed || true; // 是否压缩所选择的视频文件
+    //  let maxDuration = wx_object.maxDuration || 60; // 拍摄视频最长拍摄时间，单位秒
+    //  let camera = wx_object.camera || 'back'; // 默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效
+      let wx_success = wx_object.success;
+      let wx_fail = wx_object.fail;
+      let wx_complete = wx_object.complete;
       let wx_res;
       try {
         if (sourceType[0] == 'album') {
           // 视频选择的来源为 album ;
-          var xsw_ThisVideo = document.createElement('input');
+          let xsw_ThisVideo = document.createElement('input');
           xsw_ThisVideo.setAttribute('type', 'file');
           xsw_ThisVideo.setAttribute('id', 'xsw_Video');
           xsw_ThisVideo.setAttribute('accept', 'video/*');
@@ -1682,19 +1697,19 @@ export default class wx {
 
   static saveVideoToPhotosAlbum(wx_object) {
     let filePath = wx_object.filePath;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     let wx_res;
     try {
-      var xsw_A = document.createElement('a');
+      let xsw_A = document.createElement('a');
       xsw_A.innerHTML = '<button>保存</button>';
       xsw_A.setAttribute('id', 'xswAH');
       xsw_A.setAttribute('download', '下载');
       xsw_A.setAttribute('style', 'font-size: 12px');
-      var firstA = document.body.firstChild;
+      let firstA = document.body.firstChild;
       document.body.insertBefore(xsw_A, firstA);
-      var xswAH = document.getElementById('xswAH');
+      let xswAH = document.getElementById('xswAH');
       xswAH.setAttribute('href', filePath);
       wx_res = { errMsg: 'saveVideoToPhotosAlbum:ok' };
       if (wx_success) { wx_success(wx_res); }
@@ -1705,22 +1720,19 @@ export default class wx {
       if (wx_complete) { wx_complete(wx_res); }
     }
   }
-  static createVideoContext(id, wx_object) {
-    try {
-      // 【id 为必填项】这里判断 id 是否为 string
-      checkParams(id, 'string');
+  static createVideoContext() {
+  /*  try {
 
       return new VC(id);
     } catch (error) {
       throw new Error(error);
-    }
+    }*/
   }
 
   static setInnerAudioOption() {}
   static getAvailableAudioSources() {}
   // AudioContext
-  static createAudioContext(id, wx_object) {
-    checkParams(id, 'string');
+  static createAudioContext(id) {
     let ac = document.getElementById(id);
 
     ac.setSrc = function(src) {
@@ -1731,25 +1743,25 @@ export default class wx {
       ac.currentTime = position;
     };
 
-    //console.warn(String_format(ONEKIT_GLOBAL_NOT_MAINTAIN, '<audio/>', 'createInnerAudioContext'));
+    //console.warn(String.format(ONEKIT_GLOBAL_NOT_MAINTAIN, '<audio/>', 'createInnerAudioContext'));
 
     return ac;
   }
 
   // InnerAudioContext
   static createInnerAudioContext() {
-    return new IAC();
+    return {};//new IAC();
   }
 
   static getBackgroundAudioPlayerState(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     let wx_res;
-    var xsw_audio = document.getElementById('xsw_autoplayId');
+    let xsw_audio = document.getElementById('xsw_autoplayId');
     try {
       if (xsw_audio) {
-        var audioStatus = '2';
+        let audioStatus = '2';
         xsw_audio.addEventListener('playing', function() {
           audioStatus = '1';
         });
@@ -1795,12 +1807,12 @@ export default class wx {
     let dataUrl = wx_object.dataUrl;
     let title = wx_object.title;
     let coverImgUrl = wx_object.coverImgUrl;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     let wx_res;
     try {
-      var wrap;
+      let wrap;
       if (title || coverImgUrl) {
         wrap = document.createElement('div');
         wrap.innerHTML =
@@ -1809,17 +1821,17 @@ export default class wx {
           '" style="width: 80px;height: 80px;display: inline-block;padding-left: 20px;margin-top: 10px;"><div style="display: inline-block;padding-left: 20px;color: #fff">' +
           title +
           '</div></div><audio src="" id="xsw_autoplayId"  style="width: 80%;margin-left: 10%"   controls="controls"  ></audio>';
-        var firstT = document.body.firstChild;
+        let firstT = document.body.firstChild;
         document.body.insertBefore(wrap, firstT);
       } else {
         wrap = document.createElement('audio');
         wrap.setAttribute('id', 'xsw_autoplayId');
         wrap.setAttribute('autoplay', 'autoplay');
         wrap.setAttribute('style', 'visibility: hidden;');
-        var first = document.body.firstChild;
+        let first = document.body.firstChild;
         document.body.insertBefore(wrap, first);
       }
-      var xsw_audio = document.getElementById('xsw_autoplayId');
+      let xsw_audio = document.getElementById('xsw_autoplayId');
       xsw_audio.src = dataUrl;
       //xsw_audio.controls=true
       xsw_audio.autoplay = true;
@@ -1842,7 +1854,7 @@ export default class wx {
   }
 
   static pauseBackgroundAudio(wx_object) {
-    var xsw_audio = document.getElementById('xsw_autoplayId');
+    let xsw_audio = document.getElementById('xsw_autoplayId');
     if (!wx_object) {
       if (xsw_audio) {
         xsw_audio.pause();
@@ -1850,9 +1862,9 @@ export default class wx {
         throw new Error('请先播放音乐！');
       }
     } else {
-      let success = wx_object.success;
-      let fail = wx_object.fail;
-      let complete = wx_object.complete;
+      let wx_success = wx_object.success;
+      let wx_fail = wx_object.fail;
+      let wx_complete = wx_object.complete;
       let wx_res;
       try {
         if (xsw_audio) {
@@ -1880,7 +1892,7 @@ export default class wx {
   }
 
   static stopBackgroundAudio(wx_object) {
-    var xsw_audio = document.getElementById('xsw_autoplayId');
+    let xsw_audio = document.getElementById('xsw_autoplayId');
     if (!wx_object) {
       if (xsw_audio) {
         xsw_audio.pause();
@@ -1889,9 +1901,9 @@ export default class wx {
         throw new Error('请先播放音乐！');
       }
     } else {
-      let success = wx_object.success;
-      let fail = wx_object.fail;
-      let complete = wx_object.complete;
+      let wx_success = wx_object.success;
+      let wx_fail = wx_object.fail;
+      let wx_complete = wx_object.complete;
       let wx_res;
       try {
         if (xsw_audio) {
@@ -1920,11 +1932,11 @@ export default class wx {
 
   static seekBackgroundAudio(wx_object) {
     let position = wx_object.position;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     let wx_res;
-    var xsw_audio = document.getElementById('xsw_autoplayId');
+    let xsw_audio = document.getElementById('xsw_autoplayId');
     try {
       if (xsw_audio) {
         xsw_audio.currentTime = position;
@@ -1951,10 +1963,10 @@ export default class wx {
 
   static onBackgroundAudioPlay(callback) {
     setTimeout(function() {
-      var xsw_audio = document.getElementById('xsw_autoplayId');
+      let xsw_audio = document.getElementById('xsw_autoplayId');
       if (xsw_audio) {
         xsw_audio.addEventListener('playing', function() {
-          var audioStatus = '1';
+          let audioStatus = '1';
           callback(audioStatus);
         });
       }
@@ -1962,9 +1974,9 @@ export default class wx {
   }
 
   static onBackgroundAudioPause(callback) {
-    var audioStatus;
-    var zzz = setInterval(function() {
-      var xsw_audio = document.getElementById('xsw_autoplayId');
+    let audioStatus;
+    let zzz = setInterval(function() {
+      let xsw_audio = document.getElementById('xsw_autoplayId');
       if (xsw_audio) {
         xsw_audio.addEventListener('pause', function() {
           if (xsw_audio.currentTime == 0) {
@@ -1984,9 +1996,9 @@ export default class wx {
   }
 
   static onBackgroundAudioStop(callback) {
-    var audioStatus;
-    var zzz = setInterval(function() {
-      var xsw_audio = document.getElementById('xsw_autoplayId');
+    let audioStatus;
+    let zzz = setInterval(function() {
+      let xsw_audio = document.getElementById('xsw_autoplayId');
       if (xsw_audio) {
         xsw_audio.addEventListener('pause', function() {
           if (xsw_audio.currentTime == 0) {
@@ -2007,18 +2019,18 @@ export default class wx {
   // 获取全局唯一的背景音频管理器
 
   //   static getBackgroundAudioManager() {
-  //     var wrap = document.createElement('audio');
+  //     let wrap = document.createElement('audio');
   //     wrap.setAttribute('id', 'xsw_autoplayId');
   //     wrap.setAttribute('autoplay', 'autoplay');
   //     wrap.setAttribute('style', 'visibility: hidden;');
-  //     var first = document.body.firstChild;
+  //     let first = document.body.firstChild;
   //     document.body.insertBefore(wrap, first);
-  //     var xsw_audio = document.getElementById('xsw_autoplayId');
-  //     var wz_0 = setInterval(function() {
+  //     let xsw_audio = document.getElementById('xsw_autoplayId');
+  //     let wz_0 = setInterval(function() {
   //       if (xsw_audio.title || xsw_audio.coverImgUrl || xsw_audio.singer) {
   //         xsw_audio.setAttribute('controls', 'controls');
   //         xsw_audio.style = 'width: 80%;margin-left: 10%';
-  //         var div = document.createElement('div');
+  //         let div = document.createElement('div');
   //         div.innerHTML =
   //           '<div style="width: 80%;background-color: #444;padding-top: 5px;margin-left: 10%"><img src="' +
   //           xsw_audio.coverImgUrl +
@@ -2027,7 +2039,7 @@ export default class wx {
   //           '</div><div style="font-size: 14px;">' +
   //           xsw_audio.singer +
   //           '</div><br></div></div>';
-  //         var first_0 = document.body.firstChild;
+  //         let first_0 = document.body.firstChild;
   //         document.body.insertBefore(div, first_0);
   //         clearInterval(wz_0);
   //       } else {
@@ -2035,7 +2047,7 @@ export default class wx {
   // 				clearInterval(wz_0);*/
   //       }
   //     });
-  //     var wz_1 = setInterval(function() {
+  //     let wz_1 = setInterval(function() {
   //       if (xsw_audio.startTime) {
   //         xsw_audio.currentTime = xsw_audio.startTime;
   //         clearInterval(wz_1);
@@ -2097,7 +2109,7 @@ export default class wx {
   //       let wx_res;
   //       wx_res = {};
   //       setTimeout(function() {
-  //         var wz_2 = setInterval(function() {
+  //         let wz_2 = setInterval(function() {
   //           if (xsw_audio.ended == true) {
   //             callback(wx_res);
   //             clearInterval(wz_2);
@@ -2107,10 +2119,10 @@ export default class wx {
   //     };
   //     xsw_audio.onTimeUpdate = function(callback) {
   //       let wx_res;
-  //       var currentTimeArray = [];
+  //       let currentTimeArray = [];
   //       wx_res = {};
   //       setTimeout(function() {
-  //         var wz_3 = setInterval(function() {
+  //         let wz_3 = setInterval(function() {
   //           currentTimeArray.push(xsw_audio.currentTime);
   //           if (
   //             parseInt(currentTimeArray[currentTimeArray.length - 1]) -
@@ -2125,10 +2137,10 @@ export default class wx {
   //     };
   //     xsw_audio.onWaiting = function(callback) {
   //       let wx_res;
-  //       var currentTimeArray = [];
+  //       let currentTimeArray = [];
   //       wx_res = {};
   //       setTimeout(function() {
-  //         var wz_4 = setInterval(function() {
+  //         let wz_4 = setInterval(function() {
   //           xsw_audio.addEventListener('playing', function() {
   //             if (
   //               parseInt(currentTimeArray[currentTimeArray.length - 1]) ==
@@ -2146,11 +2158,11 @@ export default class wx {
 
   static getBackgroundAudioManager() {
 
-    var audio = document.createElement('audio');
+    let audio = document.createElement('audio');
     audio.setAttribute('id', 'backgroundAudio');
-    var firstChild = document.body.firstChild;
+    let firstChild = document.body.firstChild;
     document.body.insertBefore(audio, firstChild);
-    var bgm = document.getElementById('backgroundAudio');
+    let bgm = document.getElementById('backgroundAudio');
     bgm.autoplay = true;
     bgm.controls = true;
 
@@ -2249,8 +2261,8 @@ export default class wx {
       };
     };
 
-    bgm.onNext = function(callback) {};
-    bgm.onPrev = function(callback) {};
+    bgm.onNext = function() {};
+    bgm.onPrev = function() {};
 
     return bgm;
   }
@@ -2259,26 +2271,27 @@ export default class wx {
 
   //LivePusher
 
-  static startRecord(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.success;
-    let complete = wx_object.success;
+  static startRecord() {
+  //  let wx_success = wx_object.success;
+   // let wx_fail = wx_object.success;
+  //  let wx_complete = wx_object.success;
     //////////////////////////////
     try {
       wx.startRecord();
     } catch (error) {
+      const wx_res = {}
       wx_res.errMsg = error.message;
       console.log(wx_res);
     }
   }
 
   static stopRecord(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.success;
-    let complete = wx_object.success;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.success;
+    let wx_complete = wx_object.success;
     //////////////////////////////
     let wx_res = {};
-    let localId;
+    //let localId;
     wx.stopRecord({
       success: function(res) {
         if (wx_success) {
@@ -2302,17 +2315,17 @@ export default class wx {
 
   //EditorContext
 
-  static getLocation(wx_object) {
-    var type = wx_object.type || 'wgs84'; // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入 'gcj02'
-    var altitude = wx_object.altitude || 'false'; //【小程序传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度】
-    var success = wx_object.success;
-    var fail = wx_object.fail;
-    var complete = wx_object.complete;
+  static getLocation(){//wx_object) {
+   // let type = wx_object.type || 'wgs84'; // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入 'gcj02'
+   // let altitude = wx_object.altitude || 'false'; //【小程序传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度】
+    //let wx_success = wx_object.success;
+    //let wx_fail = wx_object.fail;
+   // let wx_complete = wx_object.complete;
 
     // TODO: getLocation:模拟器无法返回speed、accuracy（手机上好像可以返回，还没试）
     // HACK: getLocation:JS-SDK无法返回{ altitude高度，verticalAccuracy垂直精度（Android 无法获取，返回 0）, horizontalAccuracy水平精度 }
     if (navigator.geolocation) {
-      var n = navigator.geolocation.getCurrentPosition(function(res) {
+      let n = navigator.geolocation.getCurrentPosition(function(res) {
         console.log(res); // 需要的坐标地址就在res中
         console.log(n.verticalAccuracy);
       });
@@ -2331,40 +2344,41 @@ export default class wx {
       },
       fail: function(res) {
         if (wx_fail) {
-          fail(res);
+          wx_fail(res);
         }
       },
       complete: function(res) {
         if (wx_complete) {
-          complete(res);
+          wx_complete(res);
         }
       }
     });*/
   }
 
   static openLocation(wx_object) {
-    var latitude = wx_object.latitude; //（必填） 纬度，浮点数，范围为90 ~ -90
-    var longitude = wx_object.longitude; //（必填）经度，浮点数，范围为180 ~ -180
+    let latitude = wx_object.latitude; //（必填） 纬度，浮点数，范围为90 ~ -90
+    let longitude = wx_object.longitude; //（必填）经度，浮点数，范围为180 ~ -180
     // TODO: 5~18 转换为 1~28
-    var scale = wx_object.latitude || 28; // 地图缩放级别,整形值,范围从1~28。默认为最大【小程序：缩放比例，范围5~18】
-    var name = wx_object.name; // 位置名
-    var address = wx_object.address; // 地址详情说明
-    var infoUrl = wx_object.infoUrl; // * 在查看位置界面底部显示的超链接,可点击跳转
-    var success = wx_object.success;
-    var fail = wx_object.fail;
-    var complete = wx_object.complete;
+    let scale = wx_object.latitude || 28; // 地图缩放级别,整形值,范围从1~28。默认为最大【小程序：缩放比例，范围5~18】
+    let name = wx_object.name; // 位置名
+    let address = wx_object.address; // 地址详情说明
+    let infoUrl = wx_object.infoUrl; // * 在查看位置界面底部显示的超链接,可点击跳转
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
 
     try {
-      var errorInfo = '';
-      var hasError = false;
+      let errorInfo = '';
+      let hasError = false;
+      const onekit_global = {}
       if (typeof latitude !== 'number') {
         errorInfo =
-          String_format(onekit_global.error_head, 'openLocation') +
-          String_format(onekit_global.error_body, 'latitude', 'Number', typeof longitude);
+          String.format(onekit_global.error_head, 'openLocation') +
+          String.format(onekit_global.error_body, 'latitude', 'Number', typeof longitude);
         hasError = true;
       } else if (!longitude) {
         // TODO: 无法进入这里判断
-        errorInfo += String_format(onekit_global.error_body, 'longitude', 'Number');
+        errorInfo += String.format(onekit_global.error_body, 'longitude', 'Number');
         hasError = true;
       }
       if (hasError) {
@@ -2388,11 +2402,11 @@ export default class wx {
         }
       },
       fail: function() {
-        fail();
+        wx_fail();
       },
       complete: function() {
         if (wx_complete) {
-          complete();
+          wx_complete();
         }
       }
     });
@@ -2408,10 +2422,10 @@ export default class wx {
     let reserve = wx_object.reserve;
     ///////////////////
     let eCanvas = $("[canvasid='" + canvasId + "']")[0];
-    Canvas._draw(eCanvas, actions, reserve);
+    wx._draw(eCanvas, actions, reserve);
   }
-  static _draw(eCanvas, actions, reserve) {
-
+  static _draw(){//eCanvas, actions, reserve) {
+/*
     window.requestAnimationFrame(function() {
 
       let canvas = eCanvas.getContext("2d");
@@ -2722,37 +2736,37 @@ export default class wx {
       }
 
 
-      /*  if (_canvasToTempFilePath != null) {
-       // console.error(JSON.stringify(_canvasToTempFilePath));
-       let OBJECT = _canvasToTempFilePath;
-       let x = (OBJECT.containsKey("x") ? OBJECT.get("x") : 0);
-       let y = (OBJECT.containsKey("y") ? OBJECT.get("y") : 0);
-       let width = (OBJECT.containsKey("width") ? OBJECT.get("width") : px2dp(this.getWidth()) - x);
-       let height = (OBJECT.containsKey("height") ? OBJECT.get("height") : px2dp(this.getHeight()) - y);
-       let destWidth = (OBJECT.containsKey("destWidth") ? OBJECT.get("destWidth") : width);
-       let destHeight = (OBJECT.containsKey("destHeight") ? OBJECT.get("destHeight") : height);
-       let fileType = (OBJECT.containsKey("fileType") ? OBJECT.get("fileType") : "png");
-       let quality = (OBJECT.containsKey("quality") ? OBJECT.get("quality") : 1);
-       _canvasToTempFilePath = null;
-       //////////////////
-       try {
-       this.buildDrawingCache();
-       let saveImage = this.getDrawingCache();
-       saveImage = cn.onekit.IMAGE.crop(saveImage, new Rect(dp2px(x), dp2px(y), dp2px(x + width), dp2px(y + height)));
-       saveImage = cn.onekit.IMAGE.scale(saveImage, width / destWidth, height / destHeight);
-       //
-       let androidTempDir = context.getExternalCacheDir().getPath();
-       let androidUUIDname = OneKit.createUUID() + "." + fileType;
-       let file = new java.io.File(androidTempDir, androidUUIDname);
-       file.createNewFile();
-       let fos = new FileOutputStream(file);
-       saveImage.compress(fileType.equalsIgnoreCase("png") ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, (100 * quality), fos);
-       fos.flush();
-       } catch (e) {
-       e.printStackTrace();
-       }
-       }*/
-    });
+      //   if (_canvasToTempFilePath != null) {
+      //  // console.error(JSON.stringify(_canvasToTempFilePath));
+      //  let OBJECT = _canvasToTempFilePath;
+      //  let x = (OBJECT.containsKey("x") ? OBJECT.get("x") : 0);
+      //  let y = (OBJECT.containsKey("y") ? OBJECT.get("y") : 0);
+      //  let width = (OBJECT.containsKey("width") ? OBJECT.get("width") : px2dp(this.getWidth()) - x);
+      //  let height = (OBJECT.containsKey("height") ? OBJECT.get("height") : px2dp(this.getHeight()) - y);
+      //  let destWidth = (OBJECT.containsKey("destWidth") ? OBJECT.get("destWidth") : width);
+      //  let destHeight = (OBJECT.containsKey("destHeight") ? OBJECT.get("destHeight") : height);
+      //  let fileType = (OBJECT.containsKey("fileType") ? OBJECT.get("fileType") : "png");
+      //  let quality = (OBJECT.containsKey("quality") ? OBJECT.get("quality") : 1);
+      //  _canvasToTempFilePath = null;
+      //  //////////////////
+      //  try {
+      //  this.buildDrawingCache();
+      //  let saveImage = this.getDrawingCache();
+      //  saveImage = cn.onekit.IMAGE.crop(saveImage, new Rect(dp2px(x), dp2px(y), dp2px(x + width), dp2px(y + height)));
+      //  saveImage = cn.onekit.IMAGE.scale(saveImage, width / destWidth, height / destHeight);
+      //  //
+      //  let androidTempDir = context.getExternalCacheDir().getPath();
+      //  let androidUUIDname = OneKit.createUUID() + "." + fileType;
+      //  let file = new java.io.File(androidTempDir, androidUUIDname);
+      //  file.createNewFile();
+      //  let fos = new FileOutputStream(file);
+      //  saveImage.compress(fileType.equalsIgnoreCase("png") ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, (100 * quality), fos);
+      //  fos.flush();
+      //  } catch (e) {
+      //  e.printStackTrace();
+      //  }
+      //  }
+    });*/
   }
 
   static saveFile() {}
@@ -2770,26 +2784,26 @@ export default class wx {
   static createCameraContext() {}
 
   static login() {
-    var weiXdeng = document.createElement('button');
+    let weiXdeng = document.createElement('button');
     weiXdeng.setAttribute('id', 'weiXingDeng');
     weiXdeng.setAttribute('style', 'width:80%;margin:20px 0 0 10%');
     weiXdeng.setAttribute('onclick', 'OpenInterface.weixinDian()');
     weiXdeng.innerText = '微信登录';
-    var firstDian = document.body.firstChild;
+    let firstDian = document.body.firstChild;
     document.body.insertBefore(weiXdeng, firstDian);
-    var zhiFdeng = document.createElement('button');
+    let zhiFdeng = document.createElement('button');
     zhiFdeng.setAttribute('id', 'zhiFBDeng');
     zhiFdeng.setAttribute('style', 'width:80%;margin:20px 0 0 10%');
     zhiFdeng.setAttribute('onclick', 'OpenInterface.zhiFBDian()');
     zhiFdeng.innerText = '支付宝登录';
     document.body.appendChild(zhiFdeng);
-    var weiBdeng = document.createElement('button');
+    let weiBdeng = document.createElement('button');
     weiBdeng.setAttribute('id', 'weiBoDeng');
     weiBdeng.setAttribute('style', 'width:80%;margin:20px 0 0 10%');
     weiBdeng.setAttribute('onclick', 'OpenInterface.weiBoDian()');
     weiBdeng.innerText = '微博登录';
     document.body.appendChild(weiBdeng);
-    var QQdeng = document.createElement('button');
+    let QQdeng = document.createElement('button');
     QQdeng.setAttribute('id', 'QQDeng');
     QQdeng.setAttribute('style', 'width:80%;margin:20px 0 0 10%');
     QQdeng.setAttribute('onclick', 'OpenInterface.QQDian()');
@@ -2821,7 +2835,7 @@ export default class wx {
 
   static reportMonitor() {}
 
-  static reportAnalytics(eventName, data) {
+  static reportAnalytics() {
 
   }
 
@@ -2832,9 +2846,11 @@ export default class wx {
     let package_s = wx_object.package; // 统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id=***（ package 为js关键词，所以取名为 package_s ）
     let signType = wx_object.signType; // 签名算法
     let paySign = wx_object.paySign; // 签名
-    let success = wx_object.success || '';
-    let fail = wx_object.fail || '';
-    let complete = wx_object.complete || '';
+    let wx_success = wx_object.success || '';
+    let wx_fail = wx_object.fail || '';
+    let wx_complete = wx_object.complete || '';
+    //
+    const res = {}
     wx.chooseWXPay({
       // JS-SDK参数
       timestamp: timestamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
@@ -2843,8 +2859,8 @@ export default class wx {
       signType: signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
       paySign: paySign, // 支付签名
       success: wx_success(res),
-      fail: fail(res),
-      complete: complete(res)
+      fail: wx_fail(res),
+      complete: wx_complete(res)
     });
   }
 
@@ -2857,29 +2873,29 @@ export default class wx {
 
   static addCard(wx_object) {
     let cardList = wx_object.cardList;
-    let success = wx_object.success || '';
-    let fail = wx_object.fail || '';
-    let complete = wx_object.complete || '';
+    let wx_success = wx_object.success || '';
+    let wx_fail = wx_object.fail || '';
+    let wx_complete = wx_object.complete || '';
     /////////////////////////////////
     wx.openCard({
       cardList: cardList, // 需要添加的卡券列表
-      success: success,
-      fail: fail,
-      complete: complete
+      success: wx_success,
+      fail: wx_fail,
+      complete: wx_complete
     });
   }
 
   static openCard(wx_object) {
     let cardList = wx_object.cardList;
-    let success = wx_object.success || '';
-    let fail = wx_object.fail || '';
-    let complete = wx_object.complete || '';
+    let wx_success = wx_object.success || '';
+    let wx_fail = wx_object.fail || '';
+    let wx_complete = wx_object.complete || '';
     /////////////////////////////////
     wx.openCard({
       cardList: cardList, // 需要打开的卡券列表
-      success: success,
-      fail: fail,
-      complete: complete
+      success: wx_success,
+      fail: wx_fail,
+      complete: wx_complete
     });
   }
 
@@ -2892,12 +2908,12 @@ export default class wx {
   static getWeRunData() {}
 
   // 小程序和 JS-SDK 都有 iBeacon 的实现，但是貌似不一样
-  static startBeaconDiscovery(wx_object) {
+  static startBeaconDiscovery() {
     // let uuids = wx_object.uuids;
     // let ignoreBluetoothAvailable = wx_object.ignoreBluetoothAvailable;
-    // let success = wx_object.success;
-    // let fail = wx_object.success;
-    // let complete = wx_object.success;
+    // let wx_success = wx_object.success;
+    // let wx_fail = wx_object.success;
+    // let wx_complete = wx_object.success;
     // //////////////////////////////
     // wx.startSearchBeacons({
     //   ticket: '', //摇周边的业务ticket, 系统自动添加在摇出来的页面链接后面
@@ -2979,10 +2995,10 @@ export default class wx {
 
   static makePhoneCall(wx_object) {
     let phoneNumber = wx_object.phoneNumber;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
-    var wx_res;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    let wx_res;
     try {
       location.href = 'tel:' + phoneNumber;
       wx_res = {};
@@ -3007,16 +3023,16 @@ export default class wx {
   // HACK: 应该不能通过web方式实现
   static addPhoneContact(wx_object) {
     let phoneNumber = wx_object.phoneNumber;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
-    var wx_res;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    let wx_res;
     try {
-      var oDiv = document.createElement('div');
+      let oDiv = document.createElement('div');
       oDiv.innerHTML = "<a  id='biaoDown' href='#' style='display: none'></a>";
       console.log(oDiv);
       document.body.appendChild(oDiv);
-      var Url2 = document.getElementById('biaoDown');
+      let Url2 = document.getElementById('biaoDown');
       Url2.setAttribute('href', 'wtai://wp/ap;' + phoneNumber + ';');
       wx_res = {};
       if (wx_success) {
@@ -3037,9 +3053,9 @@ export default class wx {
   }
 
   static getBatteryInfo(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.success;
-    let complete = wx_object.success;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.success;
+    let wx_complete = wx_object.success;
     //////////////////////////////
     try {
       let wx_res = {};
@@ -3055,6 +3071,9 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (error) {
+      const wx_res = {
+        errMsg:error.message
+      }
       if (wx_fail) {
         wx_fail(wx_res);
       }
@@ -3065,9 +3084,9 @@ export default class wx {
   }
 
   static getBatteryInfoSync(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.success;
-    let complete = wx_object.success;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.success;
+    let wx_complete = wx_object.success;
     //////////////////////////////
     try {
       let wx_res = {};
@@ -3083,6 +3102,9 @@ export default class wx {
         wx_complete(wx_res);
       }
     } catch (error) {
+      const wx_res = {
+        errMsg:error.message
+      }
       if (wx_fail) {
         wx_fail(wx_res);
       }
@@ -3093,10 +3115,10 @@ export default class wx {
   }
 
   static setClipboardData(wx_object) {
-    let data = wx_object.data; // 【必填】剪贴板的内容
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+  //  let data = wx_object.data; // 【必填】剪贴板的内容
+  //  let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     /////////////////////////////
     let wx_res = {};
     try {
@@ -3125,12 +3147,12 @@ export default class wx {
   }
 
   static getClipboardData(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
-    var wx_res = {};
+    //let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    let wx_res = {};
     try {
-      // var clipboardData = clipboardData.getData('Text'); // 只能在 IE 浏览器中获取剪贴板内容
+      // let clipboardData = clipboardData.getData('Text'); // 只能在 IE 浏览器中获取剪贴板内容
       // wx_res.errMsg = 'getClipboardData:ok';
       // wx_res.data = clipboardData;
       // if (wx_success) {
@@ -3151,11 +3173,11 @@ export default class wx {
   }
   static setScreenBrightness() {
     // 设置屏幕亮度
-    plus.screen.setBrightness(0.5);
+    //plus.screen.setBrightness(0.5);
   }
 
   static getScreenBrightness() {
-    plus.screen.getBrightness();
+   // plus.screen.getBrightness();
   }
 
   static setKeepScreenOn() {}
@@ -3165,41 +3187,41 @@ export default class wx {
       //let ctx = cas.getContext('2d');
       //canvas.width = 100, canvas.height = 100;
       let dataURL = canvas.toDataURL('image/png', 1);
-      if (OnekitWX_Screen._callback) {
+      if (Vue.prototype.Screen_callback) {
         let wx_res = { image: dataURL };
-        OnekitWX_Screen._callback(wx_res);
+        Vue.prototype.Screen_callback(wx_res);
       }
     });
   }
 
   static onUserCaptureScreen(callback) {
-    OnekitWX_Screen._callback = callback;
+    Vue.prototype.Screen_callback = callback;
   }
 
   static onAccelerometerChange(callback) {
-    Accelerometer.callback = callback;
+    Vue.prototype.Accelerometer_callback = callback;
   }
   static _callback(event) {
-    if (Accelerometer.callback) {
-      var acceleration = event.accelerationIncludingGravity;
-      var wx_res = {
+    if (Vue.prototype.Accelerometer_callback) {
+      let acceleration = event.accelerationIncludingGravity;
+      let wx_res = {
         x: acceleration.x,
         y: acceleration.y,
         z: acceleration.z
       };
-      Accelerometer.callback(wx_res);
+      Vue.prototype.Accelerometer_callback(wx_res);
     }
   }
   static startAccelerometer(wx_object) {
-    let interval = wx_object.interval;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+   // let interval = wx_object.interval;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     ///////////////////////////
-    var wx_res;
+    let wx_res;
     try {
       if (window.DeviceMotionEvent) {
-        window.addEventListener('devicemotion', Accelerometer._callback, false);
+        window.addEventListener('devicemotion', Vue.prototype.Accelerometer__callback, false);
         wx_res = {
           errMsg: 'startAccelerometer:ok'
         };
@@ -3232,13 +3254,13 @@ export default class wx {
   }
 
   static stopAccelerometer(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
-    var wx_res;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    let wx_res;
     try {
       if (window.DeviceMotionEvent) {
-        window.removeEventListener('devicemotion', Accelerometer._callback, false);
+        window.removeEventListener('devicemotion', Vue.prototype.Accelerometer__callback, false);
         wx_res = {
           errMsg: 'stopAccelerometer:ok'
         };
@@ -3271,33 +3293,33 @@ export default class wx {
   }
 
   static _deviceorientation(event) {
-    if (OnekitWX_Compass._callback) {
+    if (Vue.prototype.Compass_callback) {
       let wx_res = {
         direction: event.alpha,
         accuracy: 'unknown'
       };
-      OnekitWX_Compass._callback(wx_res);
+      Vue.prototype.Compass_callback(wx_res);
     }
   }
   static onCompassChange(callback) {
-    OnekitWX_Compass._callback = callback;
+    Vue.prototype.Compass_callback = callback;
   }
   static offCompassChange() {
-    OnekitWX_Compass._callback = null;
+    Vue.prototype.Compass_callback = null;
   }
   static startCompass(wx_object) {
     if (!wx_object) {
       wx_object = {};
     }
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     ///////////////////////////
     let wx_res;
     try {
       if (window.DeviceMotionEvent) {
-        if (OnekitWX_Compass._callback) {
-          window.addEventListener('deviceorientation', OnekitWX_Compass._deviceorientation, false);
+        if (Vue.prototype.Compass_callback) {
+          window.addEventListener('deviceorientation', Vue.prototype.Compass_deviceorientation, false);
         }
         //
         wx_res = {
@@ -3323,14 +3345,14 @@ export default class wx {
     if (!wx_object) {
       wx_object = {};
     }
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     ///////////////////////////
     let wx_res;
     try {
       if (window.DeviceMotionEvent) {
-        window.removeEventListener('deviceorientation', OnekitWX_Compass._deviceorientation, false);
+        window.removeEventListener('deviceorientation', Vue.prototype.Compass_deviceorientation, false);
         //
         wx_res = {
           errMsg: 'stopCompass:ok'
@@ -3355,15 +3377,15 @@ export default class wx {
     if (!wx_object) {
       wx_object = {};
     }
-    let interval = wx_object.interval || 'normal'; // 监听陀螺仪数据回调函数的执行频率
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+  //  let interval = wx_object.interval || 'normal'; // 监听陀螺仪数据回调函数的执行频率
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     ///////////////////////////////
     let wx_res;
     try {
       if (window.DeviceOrientationEvent) {
-        window.addEventListener('deviceorientation', DeviceMotion._callback, false);
+        window.addEventListener('deviceorientation', Vue.prototype.DeviceMotion_callback, false);
         wx_res = {
           errMsg: 'startDeviceMotionListening:ok'
         };
@@ -3387,14 +3409,14 @@ export default class wx {
     if (!wx_object) {
       wx_object = {};
     }
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     /////////////////////////////////
     let wx_res;
     try {
       if (window.DeviceOrientationEvent) {
-        window.removeEventListener('deviceorientation', DeviceMotion._callback, false);
+        window.removeEventListener('deviceorientation', Vue.prototype.DeviceMotion_callback, false);
         wx_res = {
           errMsg: 'stopDeviceMotionListening:ok'
         };
@@ -3413,22 +3435,22 @@ export default class wx {
   }
 
   static onDeviceMotionChange(callback) {
-    DeviceMotion.callback = callback;
+    Vue.prototype.DeviceMotioncallback = callback;
   }
 
   static startGyroscope(wx_object) {
     if (!wx_object) {
       wx_object = {};
     }
-    let interval = wx_object.interval || 'normal'; // 监听陀螺仪数据回调函数的执行频率
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    //let interval = wx_object.interval || 'normal'; // 监听陀螺仪数据回调函数的执行频率
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     ///////////////////////////////
     let wx_res;
     try {
       if (window.DeviceOrientationEvent) {
-        window.addEventListener('devicemotion', Gyroscope._callback, false);
+        window.addEventListener('devicemotion', Vue.prototype.Gyroscope_callback, false);
         wx_res = {
           errMsg: 'startGyroscope:ok'
         };
@@ -3452,14 +3474,14 @@ export default class wx {
     if (!wx_object) {
       wx_object = {};
     }
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     /////////////////////////////////
     let wx_res;
     try {
       if (window.DeviceOrientationEvent) {
-        window.removeEventListener('devicemotion', Gyroscope._callback, false);
+        window.removeEventListener('devicemotion', Vue.prototype.Gyroscope_callback, false);
         wx_res = {
           errMsg: 'stopGyroscope:ok'
         };
@@ -3478,11 +3500,11 @@ export default class wx {
   }
 
   static onGyroscopeChange(callback) {
-    Gyroscope.callback = callback;
+    Vue.prototype.Gyroscopecallback = callback;
   }
 
   static onMemoryWarning(callback) {
-    var _callback = callback;
+    let _callback = callback;
     //////////////////////////////
     let wx_res = {};
     wx_res.level = 1;
@@ -3515,22 +3537,22 @@ export default class wx {
   }
 
   static scanItem() {}
-  static scanCode(wx_object) {
-    let onlyFromCamera = wx_object.onlyFromCamera || false; // 是否只能从相机扫码，不允许从相册选择图片（JS-SDK不支持）
-    let scanType = wx_object.scanType || ['barCode', 'qrCode']; // 扫码类型
-    let success = wx_object.success;
-    let fail = wx_object.success;
-    let complete = wx_object.success;
+  static scanCode() {
+   // let onlyFromCamera = wx_object.onlyFromCamera || false; // 是否只能从相机扫码，不允许从相册选择图片（JS-SDK不支持）
+  //  let scanType = wx_object.scanType || ['barCode', 'qrCode']; // 扫码类型
+   // let wx_success = wx_object.success;
+   // let wx_fail = wx_object.success;
+    //let wx_complete = wx_object.success;
     ////////////////////////////////
 
   }
 
   static vibrateLong(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     ///////////////////////////
-    var wx_res = {};
+    let wx_res = {};
     try {
       //let supportsVibrate = "vibrate" in navigator;
       if (navigator['vibrate']) {
@@ -3559,11 +3581,11 @@ export default class wx {
   }
 
   static vibrateShort(wx_object) {
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
     ///////////////////////////
-    var wx_res = {};
+    let wx_res = {};
     try {
       //let supportsVibrate = "vibrate" in navigator;
       if (navigator['vibrate']) {
@@ -3599,12 +3621,12 @@ export default class wx {
   static getExtConfigSync() {}
 
   static createSelectorQuery() {
-    var xsw_document = document;
+    let xsw_document = document;
     xsw_document.select = function(wx_object) {
-      var ThatBox = xsw_document.querySelector(wx_object);
+      let ThatBox = xsw_document.querySelector(wx_object);
       ThatBox.boundingClientRect = function(callback) {
-        var Html = ThatBox.innerHTML;
-        var boundingClientRectArray = [];
+        let Html = ThatBox.innerHTML;
+        let boundingClientRectArray = [];
         boundingClientRectArray['id'] = ThatBox.getAttribute('id');
         boundingClientRectArray['left'] = ThatBox.getBoundingClientRect().left;
         if (Html) {
@@ -3619,7 +3641,7 @@ export default class wx {
         boundingClientRectArray['height'] = ThatBox.getBoundingClientRect().height;
         if (callback) {
           let objT = {};
-          for (var x in boundingClientRectArray) {
+          for (let x in boundingClientRectArray) {
             objT[x] = boundingClientRectArray[x]
           }
           callback.exec = function() {
@@ -3629,9 +3651,9 @@ export default class wx {
         xsw_document.execPush(boundingClientRectArray);
         return callback;
       };
-      var Tarray = [];
+      let Tarray = [];
       ThatBox.scrollOffset = function(callback) {
-        var Html = ThatBox.innerHTML;
+        let Html = ThatBox.innerHTML;
         Tarray['id'] = ThatBox.getAttribute('id');
         if (Html) {
           Tarray['dataset'] = { Html };
@@ -3642,7 +3664,7 @@ export default class wx {
         Tarray['scrollLeft'] = ThatBox.scrollLeft;
         if (callback) {
           let objT = new Object();
-          for (var x in Tarray) {
+          for (let x in Tarray) {
             objT[x] = Tarray[x]
           }
           callback.exec = function() {
@@ -3659,12 +3681,12 @@ export default class wx {
         let size = wx_object.size;
         let scrollOffset = wx_object.scrollOffset;
         let properties = wx_object.properties;
-        var fieldsArray = [];
+        let fieldsArray = [];
         if (id && id == true) {
           fieldsArray['id'] = ThatBox.getAttribute('id');
         }
         if (dataset && dataset == true) {
-          var Html = ThatBox.innerHTML;
+          let Html = ThatBox.innerHTML;
           if (Html) {
             fieldsArray['dataset'] = { Html };
           } else {
@@ -3690,8 +3712,8 @@ export default class wx {
             fieldsArray[properties[xx]] = ThatBox.getAttribute(properties[xx]);
           }
         }
-        var objF = new Object();
-        for (var x in fieldsArray) {
+        let objF = new Object();
+        for (let x in fieldsArray) {
           objF[x] = fieldsArray[x]
         }
         callback.exec = function() {
@@ -3703,12 +3725,12 @@ export default class wx {
     };
 
     xsw_document.selectAll = function(wx_object) {
-      var ThatBox = xsw_document.querySelectorAll(wx_object);
+      let ThatBox = xsw_document.querySelectorAll(wx_object);
       ThatBox.boundingClientRect = function(callback) {
-        var objArray = new Array();
-        var boundingClientRectArray = [];
+        let objArray = new Array();
+        let boundingClientRectArray = [];
         for (let xd = 0; xd < ThatBox.length; xd++) {
-          var Html = ThatBox[xd].innerHTML;
+          let Html = ThatBox[xd].innerHTML;
           boundingClientRectArray['id'] = ThatBox[xd].getAttribute('id');
           boundingClientRectArray['left'] = ThatBox[xd].getBoundingClientRect().left;
           if (Html) {
@@ -3722,7 +3744,7 @@ export default class wx {
           boundingClientRectArray['width'] = ThatBox[xd].getBoundingClientRect().width;
           boundingClientRectArray['height'] = ThatBox[xd].getBoundingClientRect().height;
           let objT = new Object();
-          for (var x in boundingClientRectArray) {
+          for (let x in boundingClientRectArray) {
             objT[x] = boundingClientRectArray[x]
           }
           objArray.push(objT);
@@ -3736,10 +3758,10 @@ export default class wx {
         return callback;
       };
       ThatBox.scrollOffset = function(callback) {
-        var objTArray = new Array();
-        var Tarray = [];
+        let objTArray = new Array();
+        let Tarray = [];
         for (let xd = 0; xd < ThatBox.length; xd++) {
-          var Html = ThatBox[xd].innerHTML;
+          let Html = ThatBox[xd].innerHTML;
           Tarray['id'] = ThatBox[xd].getAttribute('id');
           if (Html) {
             Tarray['dataset'] = { Html };
@@ -3749,7 +3771,7 @@ export default class wx {
           Tarray['scrollTop'] = ThatBox[xd].scrollTop;
           Tarray['scrollLeft'] = ThatBox[xd].scrollLeft;
           let objT = new Object();
-          for (var x in Tarray) {
+          for (let x in Tarray) {
             objT[x] = Tarray[x]
           }
           objTArray.push(objT);
@@ -3763,8 +3785,8 @@ export default class wx {
         return callback;
       };
       ThatBox.fields = function(wx_object, callback) {
-        var objTTArray = new Array();
-        var fieldsArray = [];
+        let objTTArray = new Array();
+        let fieldsArray = [];
         for (let xd = 0; xd < ThatBox.length; xd++) {
           let id = wx_object.id;
           let dataset = wx_object.dataset;
@@ -3776,7 +3798,7 @@ export default class wx {
             fieldsArray['id'] = ThatBox[xd].getAttribute('id');
           }
           if (dataset && dataset == true) {
-            var Html = ThatBox[xd].innerHTML;
+            let Html = ThatBox[xd].innerHTML;
             if (Html) {
               fieldsArray['dataset'] = { Html };
             } else {
@@ -3802,8 +3824,8 @@ export default class wx {
               fieldsArray[properties[xx]] = ThatBox[xd].getAttribute(properties[xx]);
             }
           }
-          var objF = new Object();
-          for (var x in fieldsArray) {
+          let objF = new Object();
+          for (let x in fieldsArray) {
             objF[x] = fieldsArray[x]
           }
           objTTArray.push(objF);
@@ -3819,11 +3841,11 @@ export default class wx {
       return ThatBox;
     };
 
-    xsw_document.selectViewport = function(callback) {
-      var selectBody = document.body;
+    xsw_document.selectViewport = function() {
+      let selectBody = document.body;
       selectBody.boundingClientRect = function(callback) {
-        var boundingClientRectArrayA = [];
-        var Html = selectBody.innerHTML;
+        let boundingClientRectArrayA = [];
+        let Html = selectBody.innerHTML;
         boundingClientRectArrayA['left'] = selectBody.getBoundingClientRect().left;
         if (Html) {
           boundingClientRectArrayA['dataset'] = { Html };
@@ -3837,7 +3859,7 @@ export default class wx {
         boundingClientRectArrayA['height'] = selectBody.getBoundingClientRect().height;
         if (callback) {
           let objT = new Object();
-          for (var x in boundingClientRectArrayA) {
+          for (let x in boundingClientRectArrayA) {
             objT[x] = boundingClientRectArrayA[x]
           }
           callback.exec = function() {
@@ -3847,9 +3869,9 @@ export default class wx {
         xsw_document.execPush(boundingClientRectArrayA);
         return callback;
       };
-      var Sarray = [];
+      let Sarray = [];
       selectBody.scrollOffset = function(callback) {
-        var Html = selectBody.innerHTML;
+        let Html = selectBody.innerHTML;
         Sarray['id'] = selectBody.getAttribute('id');
         if (Html) {
           Sarray['dataset'] = { Html };
@@ -3860,7 +3882,7 @@ export default class wx {
         Sarray['scrollLeft'] = selectBody.scrollLeft;
         if (callback) {
           let objT = new Object();
-          for (var x in Sarray) {
+          for (let x in Sarray) {
             objT[x] = Sarray[x]
           }
           callback.exec = function() {
@@ -3877,12 +3899,12 @@ export default class wx {
         let size = wx_object.size;
         let scrollOffset = wx_object.scrollOffset;
         let properties = wx_object.properties;
-        var fieldsArrayA = [];
+        let fieldsArrayA = [];
         if (id && id == true) {
           fieldsArrayA['id'] = selectBody.getAttribute('id');
         }
         if (dataset && dataset == true) {
-          var Html = selectBody.innerHTML;
+          let Html = selectBody.innerHTML;
           if (Html) {
             fieldsArrayA['dataset'] = { Html };
           } else {
@@ -3908,8 +3930,8 @@ export default class wx {
             fieldsArrayA[properties[xx]] = selectBody.getAttribute(properties[xx]);
           }
         }
-        var objF = new Object();
-        for (var x in fieldsArrayA) {
+        let objF = new Object();
+        for (let x in fieldsArrayA) {
           objF[x] = fieldsArrayA[x]
         }
         callback.exec = function() {
@@ -3920,10 +3942,10 @@ export default class wx {
       return selectBody
     };
 
-    var execArray = [];
+    let execArray = [];
     xsw_document.execPush = function(callback) {
       let objT = new Object();
-      for (var x in callback) {
+      for (let x in callback) {
         objT[x] = callback[x]
       }
       execArray.push(objT);
@@ -3934,11 +3956,11 @@ export default class wx {
     return xsw_document;
   }
 
-  static getNetworkType(wx_object) {
-    var success = wx_object.success;
-    var fail = wx_object.fail;
-    var complete = wx_object.complete;
-    var connectionInfo = navigator.connection;
+  static getNetworkType() {
+  //  let wx_success = wx_object.success;
+  //  let wx_fail = wx_object.fail;
+  //  let wx_complete = wx_object.complete;
+    let connectionInfo = navigator.connection;
     alert(connectionInfo.effectiveType);
 
   }
@@ -3946,8 +3968,8 @@ export default class wx {
   // TODO: 未测试
   // INFO: Network Information API 兼容性很差 (https://caniuse.com/#feat=netinfo) (https://developer.mozilla.org/zh-CN/docs/Web/API/Network_Information_API)
   static onNetworkStatusChange(callback) {
-    var connection = navigator.connection;
-    var connectionInfo = {};
+    let connection = navigator.connection;
+    let connectionInfo = {};
     connectionInfo.isOnline = true;
     connectionInfo.networkType = connection.type || 'unknown';
     connection.addEventListener('change', function() {
@@ -3973,8 +3995,8 @@ export default class wx {
 
   static createIntersectionObserver() {}
 
-  static createRewardedVideoAd(wx_object) {}
-  static createInterstitialAd(wx_object) {}
+  static createRewardedVideoAd() {}
+  static createInterstitialAd() {}
 
   static color() {} //canvas
   static ble() {}
@@ -3999,9 +4021,9 @@ export default class wx {
   static authPrivateMessage() {}
 
 
-  static playVoice(wx_object) {}
-  static pauseVoice(wx_object) {}
-  static stopVoice(wx_object) {}
+  static playVoice() {}
+  static pauseVoice() {}
+  static stopVoice() {}
 
   static setBackgroundFetchToken() {}
   static onBackgroundFetchData() {}
@@ -4020,7 +4042,7 @@ export default class wx {
   static setWindowSize() {}
   static onWindowResize() {}
   static offWindowResize() {}
-  static appHide_callback(event) {
+  static appHide_callback() {
     let wx_res;
     if (document.hidden) {
       wx_res = {

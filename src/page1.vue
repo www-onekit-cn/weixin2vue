@@ -17,7 +17,7 @@
   import wx from '../weixin2vue/wx';
   export default OnekitPage({}, {
     eFile_change(e) {
-      const file = e.target.file
+      const file = e.target.files[0]
       console.log(file)
       //
       // var zip = new JSZip();
@@ -46,6 +46,7 @@
       wx.downloadFile({
         url: 'http://127.0.0.1:3000/demo.jpg',
         success: ({ tempFilePath }) => {
+          // console.log(tempFilePath)
           wx.uploadFile({
             url: 'http://192.168.146.1:3000/file_upload',
             name: 'file',
@@ -55,6 +56,9 @@
             },
             success: (res) => {
               console.log('上传成功', res)
+            },
+            fail: (err) => {
+              console.log('upload faild', err)
             }
           })
         }
