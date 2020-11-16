@@ -74,7 +74,7 @@ function createTempPath(fileName) {
 
 function createStorePath(fileName) {
   let uuid = createUUIDfileName(fileName);
-  return `wxfile://store/oneki${uuid}`;
+  return `wxfile://store/onekit_${uuid}`;
 }
 
 function loadImage(src, callback) {

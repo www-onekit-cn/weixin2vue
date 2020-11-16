@@ -1025,57 +1025,57 @@ export default class wx {
             vue_responseType = 'json'
             break;
           default:
-            vue_responseType='text'
+            vue_responseType = 'text'
             break
         }
         break;
-        case "arraybuffer":
-          vue_responseType = 'arraybuffer'
+      case "arraybuffer":
+        vue_responseType = 'arraybuffer'
         break;
       default:
         throw wx_responseType;
-      }
-    
+    }
+
 
     const requestTask = new RequestTask(axios)
-  
+
     // requestTask.onHeadersReceived(()=> {
     //   console.log('++++++++')
     // })
-    
-   setTimeout(() => {
-    axios({
-      url: url,
-      data: data,
-      headers: header,
-      timeout: timeout,
-      method:method,
-      responseType: vue_responseType,
-    }).then(response => {   
-      const wx_res = {
-      cookies: response.cookies || [],
-      data:response.data,
-      errMsg: `request: ${response.statusText}`,
-      header: response.headers,
-      statusCode: response.status
-     }
-     if (wx_success) {
-      wx_success(wx_res);
-    }
-    if (wx_complete) {
-      wx_complete(wx_res);
-    }
-  }).catch(error => {
-    if (wx_fail) {
-      wx_fail(error);
-    }
-    if (wx_complete) {
-      wx_complete(error);
-    }
-     
-  })
-   }, 500);
-    
+
+    setTimeout(() => {
+      axios({
+        url: url,
+        data: data,
+        headers: header,
+        timeout: timeout,
+        method: method,
+        responseType: vue_responseType,
+      }).then(response => {
+        const wx_res = {
+          cookies: response.cookies || [],
+          data: response.data,
+          errMsg: `request: ${response.statusText}`,
+          header: response.headers,
+          statusCode: response.status
+        }
+        if (wx_success) {
+          wx_success(wx_res);
+        }
+        if (wx_complete) {
+          wx_complete(wx_res);
+        }
+      }).catch(error => {
+        if (wx_fail) {
+          wx_fail(error);
+        }
+        if (wx_complete) {
+          wx_complete(error);
+        }
+
+      })
+    }, 500);
+
     return requestTask
   }
 
@@ -1091,32 +1091,36 @@ export default class wx {
     let wx_header = wx_object.header;
     let wx_mehotd = wx_object.method || 'GET'
 
-    
+
     const downloadTask = new DownloadTask(axios);
 
     axios({
       url: wx_url,
       headers: wx_header,
       timeout: wx_timeout,
+      responseType:"blob",
       method: wx_mehotd,
     }).then(res => {
-      sessionStorage.setItem(res.data)
-      if(wx_success){
-        wx_success()
+      const tempFilePath = OneKit.createTempPath("")
+      sessionStorage.setItem(tempFilePath,res.data)
+      if (wx_success) {
+        wx_success({
+          tempFilePath
+        })
       }
-      if(wx_complete) {
+      if (wx_complete) {
         wx_complete()
       }
     }).catch(err => {
-      if(wx_fail){
+      if (wx_fail) {
         wx_fail()
       }
-      if(wx_complete){
+      if (wx_complete) {
         wx_complete()
       }
     })
 
-    
+
     return downloadTask
   }
 
@@ -1127,10 +1131,40 @@ export default class wx {
     let name = wx_object.name;
     let header = wx_object.header;
     let formData = wx_object.formData;
-    let success = wx_object.success;
-    let fail = wx_object.fail;
-    let complete = wx_object.complete;
-    let wx_res;
+    let timeout = wx_object.timeout
+    let wx_success = wx_object.success;
+    let wx_fail = wx_object.fail;
+    let wx_complete = wx_object.complete;
+    wx_object = null
+    ///////////////////
+    let file
+    if(filePath.startsWith("wxfile://store/onekit_")){
+      file = null //sessionStorage.getItem(filePath)
+    }else   if(filePath.startsWith("wxfile://tmp_onekit_")){
+      file = sessionStorage.getItem(filePath)
+    }else{
+      throw filePath
+    }
+    /////////////////
+    
+    axios({
+      url,
+    }).then((res) => {
+
+      if (wx_success) {
+        wx_success()
+      }
+      if (wx_complete) {
+        wx_complete()
+      }
+    }).catch((err) => {
+      if (wx_fail) {
+        wx_fail()
+      }
+    })
+
+
+
     /*
       let params = new FormData();
       formData.append('fileDian', filePath);
