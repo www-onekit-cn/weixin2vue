@@ -46,9 +46,8 @@
       wx.downloadFile({
         url: 'http://127.0.0.1:3000/demo.jpg',
         success: ({ tempFilePath }) => {
-          // console.log(tempFilePath)
           wx.uploadFile({
-            url: 'http://192.168.146.1:3000/file_upload',
+            url: 'http://127.0.0.1:3000/file_upload',
             name: 'file',
             filePath: tempFilePath,
             formData: {

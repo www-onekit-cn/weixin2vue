@@ -16,6 +16,7 @@ Vue.use(weixin2vue);
 Vue.prototype.$EventBus = {}
 Vue.prototype.APP_JSON = APP_JSON;
 Vue.prototype.PROJECT_JSON = PROJECT_JSON;
+Vue.prototype.TEMP = {}
 ////////////////////////////////////////////////
 
 function onekit_onError(error) {

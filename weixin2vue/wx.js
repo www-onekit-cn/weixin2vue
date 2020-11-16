@@ -1097,8 +1097,9 @@ export default class wx {
       responseType:"blob",
       method: wx_mehotd,
     }).then(res => {
-      const tempFilePath = OneKit.createTempPath("")
-      sessionStorage.setItem(tempFilePath,new Blob([res.data]))
+      const tempFilePath = OneKit.createTempPath(wx_url.substr(wx_url.lastIndexOf("/")))
+
+      Vue.prototype.TEMP[tempFilePath] = res.data
       if (wx_success) {
         wx_success({
           tempFilePath
@@ -1137,7 +1138,7 @@ export default class wx {
     if(filePath.startsWith("wxfile://store/onekit_")){
       blob = null //sessionStorage.getItem(filePath)
     }else   if(filePath.startsWith("wxfile://tmp_onekit_")){
-      blob = sessionStorage.getItem(filePath)
+      blob = Vue.prototype.TEMP[filePath]
     }else{
       throw new Error(filePath)
     }
@@ -1147,7 +1148,7 @@ export default class wx {
    header['Content-Type'] = 'multipart/form-data'
     /////////////////
     let data = new FormData()
-    data.append(name,URL.createObjectURL(blob),"xxx")
+    data.append(name,new File([blob],filePath))
 
 for(const key of Object.keys(formData)){
   data.append(key,formData[key])
