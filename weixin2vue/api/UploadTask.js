@@ -47,8 +47,6 @@ export default class UploadTask {
     this.onProgressUpdate = callback
 
     this.axios_instance.defaults['onUploadProgress'] = progressEvent => {
-      // let persent = (progressEvent.loaded / progressEvent.total * 100 | 0) //上传进度百分比
-      // console.log('上传进度为',persent)
       const res = {
         progress: (progressEvent.loaded / progressEvent.total * 100 | 0),
         totalBytesExpectedToSend: progressEvent.total,

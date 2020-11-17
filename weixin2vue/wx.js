@@ -1088,16 +1088,15 @@ export default class wx {
     let wx_mehotd = wx_object.method || 'GET'
 
     const axios_instance = axios.create({
-
+      headers: wx_header,
+      timeout: wx_timeout,
+      responseType: "blob",
     })
 
     const downloadTask = new DownloadTask(axios_instance);
     setTimeout(() => {
       axios_instance({
         url: wx_url,
-        headers: wx_header,
-        timeout: wx_timeout,
-        responseType: "blob",
         method: wx_mehotd,
       }).then(res => {
         const tempFilePath = OneKit.createTempPath(wx_url.substr(wx_url.lastIndexOf("/")))

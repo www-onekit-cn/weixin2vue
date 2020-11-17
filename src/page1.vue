@@ -1,9 +1,5 @@
 <template>
   <page id="app">
-    <!--
-    <onekit-view @Tap="test_save">Save</onekit-view>
-    <onekit-view @Tap="test_read">Read</onekit-view>
-    -->
 
     <input type="file" ref="eFile" @change="eFile_change" />
 
@@ -14,7 +10,6 @@
   import OnekitPage from '../weixin2vue/OnekitPage';
   // import JSZip from 'jszip'
   // let saveAs = require('file-saver');
-  // import Vue from 'vue'
   import wx from '../weixin2vue/wx';
   export default OnekitPage({}, {
     eFile_change(e) {
@@ -45,25 +40,6 @@
 
     onLoad() {
 
-
-      // wx.request({
-      //   url: 'http://192.168.146.1:3000/test',
-      //   success: (res) => {
-      //     console.log("[A] success", res)
-      //   },
-      //   fail: (err) => {
-      //     console.log('[A] fail', err)
-      //   }
-      // }).abort()
-      // wx.request({
-      //   url: 'http://192.168.146.1:3000/test2',
-      //   success: (res) => {
-      //     console.log("[B] success", res)
-      //   },
-      //   fail: (err) => {
-      //     console.log('[B] fail', err)
-      //   }
-      // })
       wx.downloadFile({
         url: 'http://127.0.0.1:3000/demo.jpg',
         success: ({ tempFilePath }) => {
@@ -80,33 +56,12 @@
             fail: (err) => {
               console.log('upload faild', err)
             }
-          }).abort()
+          })
 
-        }
+        },
+      }).onProgressUpdate(res => {
+        console.log('xxx', res)
       })
-      //   //  const t hat = this
-
-      // wx.downloadFile({
-      //   url: 'http://192.168.146.1:3000/test',
-      //   // success(res) {
-      //   //   console.log(res)
-      //   // },
-      //   // fail: err => {
-      //   //   console.log(err)
-      //   // }
-      // })
-      // wx.downloadFile({
-      //       url: 'http://192.168.146.1:3000/demo.jpg',
-      //       success(res) {
-      //         console.log(res)
-      //         const src = res.tempFilePath
-      //         that.setData({ src });
-      //       },
-      //       fail: err => {
-      //         console.log(err)
-      //       }
-      //     });
-      //   }
     }
 
 
