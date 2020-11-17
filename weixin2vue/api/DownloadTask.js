@@ -9,14 +9,13 @@ export default class DownloadTask {
     const source = CancelToken.source();
     axios.interceptors.request.use(
       config => {
-        config.cancelToken = source.token; // 全局添加cancelToken
+        config.cancelToken = source.token;
         return config;
       },
       err => {
         return Promise.reject(err);
       }
     );
-    /** 设置响应拦截 **/
     this.axios_instance.interceptors.request.use(() => {
         source.cancel(); 
       }

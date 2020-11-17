@@ -1034,7 +1034,11 @@ export default class wx {
     }
 
     const axios_instance = axios.create({
-
+      data: data,
+      headers: header,
+      timeout: timeout,
+      method: method,
+      responseType: vue_responseType,
     })
 
     const requestTask = new RequestTask(axios_instance)
@@ -1042,11 +1046,7 @@ export default class wx {
     setTimeout(() => {
       axios_instance({
         url: url,
-        data: data,
-        headers: header,
-        timeout: timeout,
-        method: method,
-        responseType: vue_responseType,
+
       }).then(response => {
         const wx_res = {
           cookies: response.cookies || [],

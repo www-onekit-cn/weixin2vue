@@ -56,7 +56,7 @@
             fail: (err) => {
               console.log('upload faild', err)
             }
-          })
+          }).abort()
 
         },
       }).onProgressUpdate(res => {

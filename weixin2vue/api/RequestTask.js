@@ -1,12 +1,25 @@
-// import Vue from 'vue'
-//import axios from 'axios'
+import axios from 'axios' 
 export default class RequestTask {
-  constructor(wx_request) {
-    this.wx_request = wx_request
+  constructor(axios_instance) {
+    this.axios_instance = axios_instance
 
   }
   abort() {
-    //console.log(this.wx_request.delete())
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+    axios.interceptors.request.use(
+      config => {
+        config.cancelToken = source.token;
+        return config;
+      },
+      err => {
+        return Promise.reject(err);
+      }
+    );
+    this.axios_instance.interceptors.request.use(() => {
+        source.cancel(); 
+      }
+    );
   }
 
   onHeadersReceived(callback) {
