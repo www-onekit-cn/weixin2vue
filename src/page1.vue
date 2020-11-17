@@ -80,11 +80,8 @@
             fail: (err) => {
               console.log('upload faild', err)
             }
-          }).onProgressUpdate(res => {
-            console.log(res)
-          })
-          // rq.onProgressUpdate(console.log('ok'))
-          // rq.abort()
+          }).abort()
+
         }
       })
       //   //  const t hat = this

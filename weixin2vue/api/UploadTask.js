@@ -1,14 +1,27 @@
+import axios from 'axios'
+
 export default class UploadTask {
 
   constructor(axios_instance) {
     this.axios_instance = axios_instance
-    // console.log(this.axios_instace.defaults)
-    // this.axios_instace.defaults.setData({'userinfo.schoolNo':'1001'})
   }
   abort() {
-    let CancelToken = this.axios_instace.CancelToken
-    let source = CancelToken.source()
-    source.cancel(`cancel`)
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+    axios.interceptors.request.use(
+      config => {
+        config.cancelToken = source.token; // 全局添加cancelToken
+        return config;
+      },
+      err => {
+        return Promise.reject(err);
+      }
+    );
+    /** 设置响应拦截 **/
+    this.axios_instance.interceptors.request.use(() => {
+        source.cancel(); 
+      }
+    );
   }
 
   onHeadersReceived(callback) {
@@ -37,13 +50,14 @@ export default class UploadTask {
       // let persent = (progressEvent.loaded / progressEvent.total * 100 | 0) //上传进度百分比
       // console.log('上传进度为',persent)
       const res = {
-        progress: (progressEvent.loaded / progressEvent.total * 100 | 0),       
-        totalBytesExpectedToSend:progressEvent.total,
-        totalBytesSent:progressEvent.loaded,
+        progress: (progressEvent.loaded / progressEvent.total * 100 | 0),
+        totalBytesExpectedToSend: progressEvent.total,
+        totalBytesSent: progressEvent.loaded,
         cookies: []
       }
       this.onProgressUpdate(res)
     }
+
   }
 
   offProgressUpdate() {

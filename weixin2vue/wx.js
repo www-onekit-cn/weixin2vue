@@ -1158,12 +1158,6 @@ export default class wx {
       data.append(key, formData[key])
     }
 
-    // let config = {
-    //   onUploadProgress: progressEvent => {
-    //     let persent = (progressEvent.loaded / progressEvent.total * 100 | 0) //上传进度百分比
-    //     console.log('上传进度为',persent)
-    //   },
-    // }
 
     const axios_instance = axios.create({
       headers: header,
@@ -1172,15 +1166,8 @@ export default class wx {
 
     const uploadTask = new UploadTask(axios_instance)
 
-    // axios_instace.defaults.setData({'userinfo.schoolNo':'1001'})
-
-
-    // console.log(axios_instance.defaults)
-    // console.log(axios_instance.defaults)
-
     setTimeout(() => {
-      // axios_instace({
-      //   url,
+
       axios_instance({
         url,
         data,
