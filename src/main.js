@@ -17,6 +17,7 @@ Vue.prototype.$EventBus = {}
 Vue.prototype.APP_JSON = APP_JSON;
 Vue.prototype.PROJECT_JSON = PROJECT_JSON;
 Vue.prototype.TEMP = {}
+Vue.prototype.axios_CONFIG = {}
 ////////////////////////////////////////////////
 
 function onekit_onError(error) {
