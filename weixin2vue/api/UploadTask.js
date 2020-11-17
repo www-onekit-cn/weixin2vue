@@ -1,12 +1,14 @@
-import Vue from 'vue'
 export default class UploadTask {
 
-  constructor(axios) {
-    this.axios = axios
-
+  constructor(axios_instance) {
+    this.axios_instance = axios_instance
+    // console.log(this.axios_instace.defaults)
+    // this.axios_instace.defaults.setData({'userinfo.schoolNo':'1001'})
   }
   abort() {
-    this.axios.default.Cancel()
+    let CancelToken = this.axios_instace.CancelToken
+    let source = CancelToken.source()
+    source.cancel(`cancel`)
   }
 
   onHeadersReceived(callback) {
@@ -31,21 +33,21 @@ export default class UploadTask {
 
     this.onProgressUpdate = callback
 
-    const config = {
-      onUploadProgress: progressEvent => {
-        let persent = (progressEvent.loaded / progressEvent.total * 100 | 0) //上传进度百分比
-        console.log(persent)
-      },
+    this.axios_instance.defaults['onUploadProgress'] = progressEvent => {
+      // let persent = (progressEvent.loaded / progressEvent.total * 100 | 0) //上传进度百分比
+      // console.log('上传进度为',persent)
+      const res = {
+        progress: (progressEvent.loaded / progressEvent.total * 100 | 0),       
+        totalBytesExpectedToSend:progressEvent.total,
+        totalBytesSent:progressEvent.loaded,
+        cookies: []
+      }
+      this.onProgressUpdate(res)
     }
-
-   
-    
-    return config
-
   }
 
   offProgressUpdate() {
     this.onProgressUpdate = null
-    Vue.prototype.axios_CONFIG = {}
+    this.axios_instance.defaults['onUploadProgress'] = {}
   }
 }

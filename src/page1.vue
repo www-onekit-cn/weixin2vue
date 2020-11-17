@@ -14,7 +14,7 @@
   import OnekitPage from '../weixin2vue/OnekitPage';
   // import JSZip from 'jszip'
   // let saveAs = require('file-saver');
-  import Vue from 'vue'
+  // import Vue from 'vue'
   import wx from '../weixin2vue/wx';
   export default OnekitPage({}, {
     eFile_change(e) {
@@ -46,44 +46,47 @@
     onLoad() {
 
 
-      wx.request({
-        url: 'http://192.168.146.1:3000/test',
-        success: (res) => {
-          console.log("[A] success", res)
-        },
-        fail: (err) => {
-          console.log('[A] fail', err)
-        }
-      }).abort()
-      wx.request({
-        url: 'http://192.168.146.1:3000/test2',
-        success: (res) => {
-          console.log("[B] success", res)
-        },
-        fail: (err) => {
-          console.log('[B] fail', err)
-        }
-      })
-      // wx.downloadFile({
-      //   url: 'http://127.0.0.1:3000/demo.jpg',
-      //   success: ({ tempFilePath }) => {
-      //     const rq = wx.uploadFile({
-      //       url: 'http://127.0.0.1:3000/file_upload',
-      //       name: 'file',
-      //       filePath: tempFilePath,
-      //       formData: {
-      //         'user': 'test'
-      //       },
-      //       success: (res) => {
-      //         console.log('上传成功', res)
-      //       },
-      //       fail: (err) => {
-      //         console.log('upload faild', err)
-      //       }
-      //     })
-      //     rq.onProgressUpdate(console.log('ok'))
+      // wx.request({
+      //   url: 'http://192.168.146.1:3000/test',
+      //   success: (res) => {
+      //     console.log("[A] success", res)
+      //   },
+      //   fail: (err) => {
+      //     console.log('[A] fail', err)
+      //   }
+      // }).abort()
+      // wx.request({
+      //   url: 'http://192.168.146.1:3000/test2',
+      //   success: (res) => {
+      //     console.log("[B] success", res)
+      //   },
+      //   fail: (err) => {
+      //     console.log('[B] fail', err)
       //   }
       // })
+      wx.downloadFile({
+        url: 'http://127.0.0.1:3000/demo.jpg',
+        success: ({ tempFilePath }) => {
+          wx.uploadFile({
+            url: 'http://127.0.0.1:3000/file_upload',
+            name: 'file',
+            filePath: tempFilePath,
+            formData: {
+              'user': 'test'
+            },
+            success: (res) => {
+              console.log('上传成功', res)
+            },
+            fail: (err) => {
+              console.log('upload faild', err)
+            }
+          }).onProgressUpdate(res => {
+            console.log(res)
+          })
+          // rq.onProgressUpdate(console.log('ok'))
+          // rq.abort()
+        }
+      })
       //   //  const t hat = this
 
       // wx.downloadFile({

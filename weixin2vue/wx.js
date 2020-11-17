@@ -1125,7 +1125,7 @@ export default class wx {
     return downloadTask
   }
 
-  
+
   static uploadFile(wx_object) {
     let url = wx_object.url;
     let filePath = wx_object.filePath;
@@ -1157,40 +1157,54 @@ export default class wx {
     for (const key of Object.keys(formData)) {
       data.append(key, formData[key])
     }
-     
-    const axios_instace = axios.create()
 
-    const uploadTask = new UploadTask(axios_instace)
-    
-    const config = Vue.prototype.axios_CONFIG
-    
-    console.log(config)
+    // let config = {
+    //   onUploadProgress: progressEvent => {
+    //     let persent = (progressEvent.loaded / progressEvent.total * 100 | 0) //上传进度百分比
+    //     console.log('上传进度为',persent)
+    //   },
+    // }
 
-    axios_instace({
-      data,
-      method: "post",
+    const axios_instance = axios.create({
       headers: header,
-      url,
       timeout,
-      ...config
-    }).then(() => {
-      const wx_ers = {}
-      if (wx_success) {
-        wx_success(wx_ers)
-      }
-      if (wx_complete) {
-        wx_complete(wx_ers)
-      }
-    }).catch(() => {
-      const wx_ers = {}
-      if (wx_fail) {
-        wx_fail(wx_ers)
-      }
-      if (wx_complete) {
-        wx_complete(wx_ers)
-      }
-    },0)
-    
+    })
+
+    const uploadTask = new UploadTask(axios_instance)
+
+    // axios_instace.defaults.setData({'userinfo.schoolNo':'1001'})
+
+
+    // console.log(axios_instance.defaults)
+    // console.log(axios_instance.defaults)
+
+    setTimeout(() => {
+      // axios_instace({
+      //   url,
+      axios_instance({
+        url,
+        data,
+        method: "post",
+        // ...config
+      }).then(() => {
+        const wx_ers = {}
+        if (wx_success) {
+          wx_success(wx_ers)
+        }
+        if (wx_complete) {
+          wx_complete(wx_ers)
+        }
+      }).catch(() => {
+        const wx_ers = {}
+        if (wx_fail) {
+          wx_fail(wx_ers)
+        }
+        if (wx_complete) {
+          wx_complete(wx_ers)
+        }
+      })
+    }, 0);
+
     return uploadTask
   }
 
