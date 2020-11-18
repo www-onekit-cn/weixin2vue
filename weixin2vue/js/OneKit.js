@@ -187,5 +187,4 @@ function header2json(str) {
   return headers;
 }
 
-
 export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json }

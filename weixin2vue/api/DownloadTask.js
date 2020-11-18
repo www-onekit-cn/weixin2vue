@@ -50,7 +50,6 @@ export default class DownloadTask {
         totalBytesSent: progressEvent.loaded,
         cookies: []
       }
-      console.log(progressEvent)
       this.onProgressUpdate(res)
     }
   }

@@ -6,7 +6,7 @@ import Animation from "./api/Animation"
 import EventChannel from "./api/EventChannel"
 import LogManager from "./api/LogManager"
 import RequestTask from "./api/RequestTask"
-import SocketTask from "./api/SocketTask"
+// import SocketTask from "./api/SocketTask"
 import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
 import DownloadTask from './api/DownloadTask'
@@ -1195,21 +1195,66 @@ export default class wx {
   }
 
   static connectSocket(wx_object) {
-    let url = wx_object.url; // 【必填】开发者服务器 wss 接口地址
-    // let header = wx_object.header; // HTTP Header，Header 中不能设置 Referer
-    let protocols = wx_object.protocols; // 子协议数组	1.4.0
-    // let wx_success = wx_object.success;
-    //  let wx_fail = wx_object.fail;
-    //  let wx_complete = wx_object.complete;
-    ///////////////////////////////////
-    let socket = new WebSocket(url, protocols);
-    /*
-     */
-    let socketTask = new SocketTask(socket);
-    if (!Vue.prototype._socketTask) {
-      Vue.prototype._socketTask = socketTask;
+
+    const wx_url = wx_object.url
+    const wx_protocols = wx_object.protocols
+    const wx_socket_connect = new WebSocket(wx_url, wx_protocols)
+    const wx_res = {
+      CLOSED: 3,
+      CLOSING: 2,
+      CONNECTION: 0,
+      OPEN: 1,
+      close: wx_socket_connect.__proto__.close,
+      onClose: wx_socket_connect.onclose,
+      onError: wx_socket_connect.onerror,
+      onMessage: wx_socket_connect.onmessage,
+      onOpen: wx_socket_connect.onopen,
+      readyState: wx_socket_connect.readyState,
+      send: wx_socket_connect.__proto__.send,
     }
-    return socketTask;
+
+    return wx_res
+
+
+
+    /* let url = wx_object.url;
+     // let header = wx_object.header; 
+     let protocols = wx_object.protocols;
+     let wx_success = wx_object.success;
+     let wx_fail = wx_object.fail;
+     let socket_id = 0
+     //  let wx_complete = wx_object.complete;
+     ///////////////////////////////////
+
+     /*
+      */
+
+    // let socketTask = new SocketTask(socket);
+
+    /*  new WebSocket(url, protocols)
+      // console.log(socket)
+      try {
+        
+        let wx_res = {
+          socketTaskId: socket_id,
+          errMsg: "connectSocket:ok"
+        }
+       
+        // Vue.prototype._socketTask = socketTask;
+        if (wx_success) {
+          wx_success(wx_res)
+        }
+
+      } catch (e) {
+        if (wx_fail) {
+          wx_fail()
+        }
+      } **/
+
+
+    // console.log(socket)
+
+    // return socketTask;
   }
 
   static onSocketOpen(callback) {

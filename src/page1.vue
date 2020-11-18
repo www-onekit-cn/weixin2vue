@@ -40,28 +40,13 @@
 
     onLoad() {
 
-      wx.downloadFile({
-        url: 'http://127.0.0.1:3000/demo.jpg',
-        success: ({ tempFilePath }) => {
-          wx.uploadFile({
-            url: 'http://127.0.0.1:3000/file_upload',
-            name: 'file',
-            filePath: tempFilePath,
-            formData: {
-              'user': 'test'
-            },
-            success: (res) => {
-              console.log('上传成功', res)
-            },
-            fail: (err) => {
-              console.log('upload faild', err)
-            }
-          }).abort()
-
-        },
-      }).onProgressUpdate(res => {
-        console.log('xxx', res)
+      const task1 = wx.connectSocket({
+        url: 'wss://echo.websocket.org',
       })
+
+      console.log(task1)
+
+
     }
 
 
