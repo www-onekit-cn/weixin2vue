@@ -1239,56 +1239,20 @@ export default class wx {
       let socketCount = wx.socketCount || 0
       socketCount++
       wx.socketCount = socketCount
-      const wx_res = {
-        socketTaskId: wx.socketCount,
-        errMsg: "connectSocket:ok"
+      if(wx.socketCount === 5) {
+        return
+      }
+      const wx_res = {      
+        errMsg: "connectSocket:ok",
+        socketTaskId: wx.socketCount
       }
 
+      const wx_socket = new SocketTask(vue_socket)
       SUCCESS(wx_res)
-      return new SocketTask(vue_socket)
-
+      return wx_socket
     }, wx_success, wx_fail, wx_complete)
 
 
-
-    /* let url = wx_object.url;
-     // let header = wx_object.header; 
-     let protocols = wx_object.protocols;
-     let wx_success = wx_object.success;
-     let wx_fail = wx_object.fail;
-     let socket_id = 0
-     //  let wx_complete = wx_object.complete;
-     ///////////////////////////////////
-
-     /*
-      */
-
-    // let socketTask = new SocketTask(socket);
-
-    /*  new WebSocket(url, protocols)
-      // console.log(socket)
-      try {
-        
-        let wx_res = {
-          socketTaskId: socket_id,
-          errMsg: "connectSocket:ok"
-        }
-       
-        // Vue.prototype._socketTask = socketTask;
-        if (wx_success) {
-          wx_success(wx_res)
-        }
-
-      } catch (e) {
-        if (wx_fail) {
-          wx_fail()
-        }
-      } **/
-
-
-    // console.log(socket)
-
-    // return socketTask;
   }
 
   static onSocketOpen(callback) {

@@ -39,27 +39,35 @@
     },
 
     onLoad() {
-      /* wx.setStorage({
-         key: "key1",
-         data: 1,
-         success: res => { console.log("success", res) },
-         fail: res => { console.log("fail", res) },
-         complete: res => { console.log("complete", res) }
-       })**/
-
-      wx.connectSocket({
+      let task1
+      task1 = wx.connectSocket({
         url: 'wss://echo.websocket.org',
         success: res => {
           console.log('WebSocket 111', res)
+
         }
+      })
+      task1.onOpen(() => {
+        task1.send({
+          data: "xxx",
+          success: () => {
+            console.log('res')
+          }
+        })
+      })
+      task1.onMessage((res) => {
+        console.log("onMessage", res)
+        ///////////////
+
+        task1.close({
+          code: 1000,
+          reson: 'web socket is close',
+          success: () => {
+            console.log('close')
+          }
+        })
       })
 
-      wx.connectSocket({
-        url: 'wss://echo.websocket.org',
-        success: res => {
-          console.log('WebSocket 222', res)
-        }
-      })
 
     }
 
