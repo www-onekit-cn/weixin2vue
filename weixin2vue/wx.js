@@ -6,7 +6,7 @@ import Animation from "./api/Animation"
 import EventChannel from "./api/EventChannel"
 import LogManager from "./api/LogManager"
 import RequestTask from "./api/RequestTask"
-// import SocketTask from "./api/SocketTask"
+import SocketTask from "./api/SocketTask"
 import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
 import DownloadTask from './api/DownloadTask'
@@ -49,6 +49,37 @@ const MobileDetect = require('mobile-detect')
 let interaction;
 export default class wx {
 
+  static RUN(body, wx_success, wx_fail, wx_complete) {
+    try {
+      return body(res => {
+        if (wx_success) {
+          wx_success(res);
+        }
+        if (wx_complete) {
+          wx_complete(res);
+        }
+      }, res => {
+        if (wx_fail) {
+          wx_fail(res);
+        }
+        if (wx_complete) {
+          wx_complete(res);
+        }
+      }, )
+
+    } catch (vue_e) {
+      const wx_errMsg = vue_e.message;
+      let res = {
+        errMsg: wx_errMsg
+      }
+      if (wx_fail) {
+        wx_fail(res);
+      }
+      if (wx_complete) {
+        wx_complete(res);
+      }
+    }
+  }
   /**基础 */
   static canIUse() {
     return true;
@@ -1198,22 +1229,23 @@ export default class wx {
 
     const wx_url = wx_object.url
     const wx_protocols = wx_object.protocols
-    const wx_socket_connect = new WebSocket(wx_url, wx_protocols)
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    wx_object = null
+    //
+    return wx.RUN((SUCCESS) => {
+      
+    const vue_socket = new WebSocket(wx_url, wx_protocols)
     const wx_res = {
-      CLOSED: 3,
-      CLOSING: 2,
-      CONNECTION: 0,
-      OPEN: 1,
-      close: wx_socket_connect.__proto__.close,
-      onClose: wx_socket_connect.onclose,
-      onError: wx_socket_connect.onerror,
-      onMessage: wx_socket_connect.onmessage,
-      onOpen: wx_socket_connect.onopen,
-      readyState: wx_socket_connect.readyState,
-      send: wx_socket_connect.__proto__.send,
+      socketTaskId: 1,
+      errMsg:"connectSocket:ok"
     }
+    
+      SUCCESS(wx_res)
+    return new SocketTask(vue_socket)
 
-    return wx_res
+    }, wx_success, wx_fail, wx_complete)
 
 
 
@@ -1348,37 +1380,39 @@ export default class wx {
     // eslint-disable-next-line no-useless-catch
     try {
       localStorage.setItem(key, value);
-    } catch (e) {
-      throw e
+    } catch (vue_e) {
+      const wx_e = {
+
+      }
+      throw wx_e
     }
   }
-
   // INFO: 已改
   static setStorage(wx_object) {
-    let key = wx_object.key;
-    let data = wx_object.data;
+    if (!wx_object) {
+      return
+    }
+    let wx_key = wx_object.key;
+    let wx_data = wx_object.data;
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
+    wx_object = null
+    ////////////
+    wx.RUN((SUCCESS) => {
+      const vue_key = wx_key
+      const vue_data = wx_data
+      localStorage.setItem(vue_key, vue_data);
+      //
+      const wx_errMsg = 'setStorage:ok';
 
-    let res = {};
-    try {
-      localStorage.setItem(key, data);
-      if (localStorage.getItem(key) === data) {
-        res.errMsg = 'setStorage:ok';
-        if (wx_success) {
-          wx_success(res);
-        }
+      let vue_res = {
+        errMsg: wx_errMsg
       }
-    } catch (error) {
-      res.errMsg = error.message;
-      if (wx_fail) {
-        wx_fail(res);
-      }
-    }
-    if (wx_complete) {
-      wx_complete(res);
-    }
+      SUCCESS(vue_res)
+      // FAIL(vue_res);
+      // throw new Error("xxx")
+    }, wx_success, wx_fail, wx_complete)
   }
   // INFO: 已改
   // INFO: 直接返回获取值，不需要加try catch，在调用时由客户代码加try catch, 例子参见（https://developers.weixin.qq.com/miniprogram/dev/api/wx.getStorageSync.html）

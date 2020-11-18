@@ -39,9 +39,19 @@
     },
 
     onLoad() {
+      /* wx.setStorage({
+         key: "key1",
+         data: 1,
+         success: res => { console.log("success", res) },
+         fail: res => { console.log("fail", res) },
+         complete: res => { console.log("complete", res) }
+       })**/
 
       const task1 = wx.connectSocket({
         url: 'wss://echo.websocket.org',
+        success: res => {
+          console.log('xxx', res)
+        }
       })
 
       console.log(task1)
