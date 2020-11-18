@@ -47,15 +47,19 @@
          complete: res => { console.log("complete", res) }
        })**/
 
-      const task1 = wx.connectSocket({
+      wx.connectSocket({
         url: 'wss://echo.websocket.org',
         success: res => {
-          console.log('xxx', res)
+          console.log('WebSocket 111', res)
         }
       })
 
-      console.log(task1)
-
+      wx.connectSocket({
+        url: 'wss://echo.websocket.org',
+        success: res => {
+          console.log('WebSocket 222', res)
+        }
+      })
 
     }
 

@@ -1235,15 +1235,17 @@ export default class wx {
     wx_object = null
     //
     return wx.RUN((SUCCESS) => {
-      
-    const vue_socket = new WebSocket(wx_url, wx_protocols)
-    const wx_res = {
-      socketTaskId: 1,
-      errMsg:"connectSocket:ok"
-    }
-    
+      const vue_socket = new WebSocket(wx_url, wx_protocols)
+      let socketCount = wx.socketCount || 0
+      socketCount++
+      wx.socketCount = socketCount
+      const wx_res = {
+        socketTaskId: wx.socketCount,
+        errMsg: "connectSocket:ok"
+      }
+
       SUCCESS(wx_res)
-    return new SocketTask(vue_socket)
+      return new SocketTask(vue_socket)
 
     }, wx_success, wx_fail, wx_complete)
 
