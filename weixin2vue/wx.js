@@ -1314,13 +1314,31 @@ export default class wx {
   }
 
   static onSocketClose(callback) {
-    if (Vue.prototype._socketTask) {
-      Vue.prototype._socketTask._socket.addEventListener("close", function(event) {
-        if (callback) {
-          callback(event);
-        }
-      });
+    // if (Vue.prototype._socketTask) {
+    //   Vue.prototype._socketTask._socket.addEventListener("close", function(event) {
+    //     if (callback) {
+    //       callback(event);
+    //     }
+    //   });
+    // }
+
+    if (!Vue.prototype._socket.close) {
+      return null
     }
+
+    Vue.prototype._socket.addEventListener("close", () => {
+        
+      const wx_code = Vue.prototype._socket_closeCode
+      const wx_reson = Vue.prototype._socket_coloseReson
+
+      Vue.prototype._socket_closeCode = null 
+      Vue.prototype._socket_coloseReson = null
+        if(callback) {
+          callback(wx_code,wx_reson)
+        }
+
+      
+    })
   }
 
   static closeSocket() {

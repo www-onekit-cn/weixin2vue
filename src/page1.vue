@@ -85,6 +85,10 @@
       wx.onSocketError(() => {
         console.log('pg1pg1pg1 error')
       })
+
+      wx.onSocketClose(res => {
+        console.log('--------res---', res.code)
+      })
     }
 
 

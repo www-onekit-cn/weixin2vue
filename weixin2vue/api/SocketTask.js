@@ -12,8 +12,10 @@
      })
      this.socket.addEventListener("close", (vue_code,vue_reson) => {
        if (this.onClose) {
-         const wx_code = vue_code
+         const wx_code = vue_code 
          const wx_reson = vue_reson
+         Vue.prototype._socket_closeCode = wx_code
+         Vue.prototype._socket_coloseReson = wx_reson
          this.onClose(wx_code,wx_reson);
        }
      })
