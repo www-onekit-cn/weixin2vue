@@ -1,7 +1,8 @@
+ import Vue from 'vue'
  export default class SocketTask {
    constructor(socket) {
-     this.socket = socket;
-     console.log(this.socket)
+     this.socket = socket 
+      Vue.prototype._socket = socket
      this.socket.addEventListener("open", (vue_header,vue_profile) => {
        if (this.onOpen) {
          const wx_header = vue_header

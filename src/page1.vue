@@ -68,6 +68,10 @@
         })
       })
 
+      wx.onSocketOpen(() => {
+        console.log('page1', 'open')
+      })
+
 
     }
 

@@ -1256,13 +1256,19 @@ export default class wx {
   }
 
   static onSocketOpen(callback) {
-    if (Vue.prototype._socketTask) {
-      Vue.prototype._socketTask._socket.addEventListener("open", function(event) {
-        if (callback) {
-          return callback(event);
-        }
-      });
-    }
+    // if (Vue.prototype._socketTask) {
+    //   Vue.prototype._socketTask._socket.addEventListener("open", function(event) {
+    //     if (callback) {
+    //       return callback(event);
+    //     }
+    //   });
+    // }
+    
+    Vue.prototype._socket.addEventListener('open',event => {
+      if(callback){
+        return callback(event)
+      }
+    })
   }
 
   static sendSocketMessage(wx_object) {
