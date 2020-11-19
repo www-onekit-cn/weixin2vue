@@ -11,8 +11,9 @@ import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
 import DownloadTask from './api/DownloadTask'
 import UploadTask from './api/UploadTask'
-// import {PROMISE} from 'oneutil'
+import {PROMISE} from 'oneutil'
 import axios from 'axios'
+
 // import JSZip from 'jszip'
 // let saveAs = require('file-saver');
 
@@ -49,37 +50,6 @@ const MobileDetect = require('mobile-detect')
 let interaction;
 export default class wx {
 
-  static RUN(body, wx_success, wx_fail, wx_complete) {
-    try {
-      return body(res => {
-        if (wx_success) {
-          wx_success(res);
-        }
-        if (wx_complete) {
-          wx_complete(res);
-        }
-      }, res => {
-        if (wx_fail) {
-          wx_fail(res);
-        }
-        if (wx_complete) {
-          wx_complete(res);
-        }
-      }, )
-
-    } catch (vue_e) {
-      const wx_errMsg = vue_e.message;
-      let res = {
-        errMsg: wx_errMsg
-      }
-      if (wx_fail) {
-        wx_fail(res);
-      }
-      if (wx_complete) {
-        wx_complete(res);
-      }
-    }
-  }
   /**基础 */
   static canIUse() {
     return true;
@@ -1234,7 +1204,7 @@ export default class wx {
     const wx_complete = wx_object.complete
     wx_object = null
     //
-    return wx.RUN((SUCCESS) => {
+    return PROMISE((SUCCESS) => {
       const vue_socket = new WebSocket(wx_url, wx_protocols)
       let socketCount = wx.socketCount || 0
       socketCount++
@@ -1278,7 +1248,7 @@ export default class wx {
     if (!wx.onSocketOpen) {
       return false
     }
-    wx.RUN((SUCCESS, /*FAIL*/ ) => {
+    PROMISE((SUCCESS, /*FAIL*/ ) => {
 
       Vue.prototype._socket.send(wx_data);
       SUCCESS()
@@ -1380,15 +1350,13 @@ export default class wx {
     console.error('HTML5 is not support UDP!!');
   }
 
-  // INFO: 已改
+
   static setStorageSync(key, value) {
-    // eslint-disable-next-line no-useless-catch
+
     try {
       localStorage.setItem(key, value);
     } catch (vue_e) {
-      const wx_e = {
-
-      }
+      const wx_e = vue_e
       throw wx_e
     }
   }
@@ -1404,19 +1372,17 @@ export default class wx {
     let wx_complete = wx_object.complete;
     wx_object = null
     ////////////
-    wx.RUN((SUCCESS) => {
+    PROMISE((SUCCESS) => {
       const vue_key = wx_key
       const vue_data = wx_data
-      localStorage.setItem(vue_key, vue_data);
-      //
-      const wx_errMsg = 'setStorage:ok';
 
+      wx.setStorageSync(vue_key,vue_data)
+      const wx_errMsg = 'setStorage:ok';
       let vue_res = {
         errMsg: wx_errMsg
       }
       SUCCESS(vue_res)
-      // FAIL(vue_res);
-      // throw new Error("xxx")
+    
     }, wx_success, wx_fail, wx_complete)
   }
   // INFO: 已改

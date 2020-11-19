@@ -39,55 +39,18 @@
     },
 
     onLoad() {
-      let task1
-      task1 = wx.connectSocket({
-        url: 'wss://echo.websocket.org',
+      wx.setStorage({
+        key: 'name',
+        data: '王野未',
         success: res => {
-          console.log('WebSocket 111', res)
-
+          console.log('success', res)
+        },
+        fail: () => {
+          console.log('faild')
+        },
+        complete: () => {
+          console.log('complete')
         }
-      })
-      task1.onOpen(() => {
-        task1.send({
-          data: "xxx",
-          success: () => {
-            console.log('res')
-          }
-        })
-      })
-      task1.onMessage((res) => {
-        console.log("onMessage", res)
-        ///////////////
-
-        task1.close({
-          code: 1000,
-          reson: 'web socket is close',
-          success: () => {
-            console.log('close')
-          }
-        })
-      })
-
-      wx.onSocketOpen(() => {
-        console.log('page1', 'open')
-        wx.sendSocketMessage({
-          data: "xxx",
-          success: () => {
-            console.log('OOOOO OPEN res')
-          }
-        })
-      })
-
-      wx.onSocketMessage(res => {
-        console.log('ONONON MESSAGE PG1', res)
-      })
-
-      wx.onSocketError(() => {
-        console.log('pg1pg1pg1 error')
-      })
-
-      wx.onSocketClose(res => {
-        console.log('--------res---', res.code)
       })
     }
 
