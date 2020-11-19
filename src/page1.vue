@@ -78,6 +78,9 @@
         })
       })
 
+      wx.onSocketMessage(res => {
+        console.log('ONONON MESSAGE PG1', res)
+      })
 
     }
 

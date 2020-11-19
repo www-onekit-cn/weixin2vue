@@ -1261,8 +1261,8 @@ export default class wx {
       return false
     }
 
-    Vue.prototype._socket.addEventListener('open',event => {
-      if(callback){
+    Vue.prototype._socket.addEventListener('open', event => {
+      if (callback) {
         return callback(event)
       }
     })
@@ -1275,26 +1275,30 @@ export default class wx {
     const wx_complete = wx_object.complete
     wx_object = null
     ///////////////////////////////
-    if(!wx.onSocketOpen) {
+    if (!wx.onSocketOpen) {
       return false
     }
-    wx.RUN((SUCCESS,/*FAIL*/) => {
+    wx.RUN((SUCCESS, /*FAIL*/ ) => {
 
-      Vue.prototype._socket.send(wx_data); 
-        SUCCESS()
+      Vue.prototype._socket.send(wx_data);
+      SUCCESS()
     }, wx_success, wx_fail, wx_complete)
-      
-    
+
+
   }
 
   static onSocketMessage(callback) {
-    if (Vue.prototype._socketTask) {
-      Vue.prototype._socketTask._socket.addEventListener("message", function(event) {
-        if (callback) {
-          callback(event);
-        }
-      });
+
+    if (!Vue.prototype._socket) {
+      return null;
     }
+
+    Vue.prototype._socket.addEventListener('message', event => {
+      if (callback) {
+        return callback(event)
+      }
+    })
+
   }
 
   static onSocketError(callback) {
