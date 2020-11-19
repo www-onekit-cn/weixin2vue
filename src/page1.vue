@@ -70,6 +70,12 @@
 
       wx.onSocketOpen(() => {
         console.log('page1', 'open')
+        wx.sendSocketMessage({
+          data: "xxx",
+          success: () => {
+            console.log('OOOOO OPEN res')
+          }
+        })
       })
 
 

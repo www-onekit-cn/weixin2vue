@@ -11,7 +11,7 @@ import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
 import DownloadTask from './api/DownloadTask'
 import UploadTask from './api/UploadTask'
-//import {COLOR} from 'oneutil'
+// import {PROMISE} from 'oneutil'
 import axios from 'axios'
 // import JSZip from 'jszip'
 // let saveAs = require('file-saver');
@@ -1239,10 +1239,10 @@ export default class wx {
       let socketCount = wx.socketCount || 0
       socketCount++
       wx.socketCount = socketCount
-      if(wx.socketCount === 5) {
+      if (wx.socketCount === 5) {
         return
       }
-      const wx_res = {      
+      const wx_res = {
         errMsg: "connectSocket:ok",
         socketTaskId: wx.socketCount
       }
@@ -1256,14 +1256,11 @@ export default class wx {
   }
 
   static onSocketOpen(callback) {
-    // if (Vue.prototype._socketTask) {
-    //   Vue.prototype._socketTask._socket.addEventListener("open", function(event) {
-    //     if (callback) {
-    //       return callback(event);
-    //     }
-    //   });
-    // }
-    
+
+    if (!Vue.prototype._socket) {
+      return false
+    }
+
     Vue.prototype._socket.addEventListener('open',event => {
       if(callback){
         return callback(event)
@@ -1272,14 +1269,22 @@ export default class wx {
   }
 
   static sendSocketMessage(wx_object) {
-    let data = wx_object.data; // 【必填】需要发送的内容
-    //   let wx_success = wx_object.success;
-    // let wx_fail = wx_object.fail;
-    //  let wx_complete = wx_object.complete;
+    const wx_data = wx_object.data
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    wx_object = null
     ///////////////////////////////
-    if (Vue.prototype._socketTask) {
-      Vue.prototype._socketTask.send(data);
+    if(!wx.onSocketOpen) {
+      return false
     }
+    wx.RUN((SUCCESS,/*FAIL*/) => {
+
+      Vue.prototype._socket.send(wx_data); 
+        SUCCESS()
+    }, wx_success, wx_fail, wx_complete)
+      
+    
   }
 
   static onSocketMessage(callback) {
