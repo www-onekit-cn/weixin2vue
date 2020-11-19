@@ -1385,43 +1385,37 @@ export default class wx {
     
     }, wx_success, wx_fail, wx_complete)
   }
-  // INFO: 已改
-  // INFO: 直接返回获取值，不需要加try catch，在调用时由客户代码加try catch, 例子参见（https://developers.weixin.qq.com/miniprogram/dev/api/wx.getStorageSync.html）
+  
   static getStorageSync(key) {
     return localStorage.getItem(key);
   }
 
-  // INFO: 已改
   static getStorage(wx_object) {
     let key = wx_object.key;
     let wx_success = wx_object.success;
     let wx_fail = wx_object.fail;
     let wx_complete = wx_object.complete;
-
+    wx_object = null
     let res = {};
-    try {
+
+    PROMISE((SUCCESS,FAIL,COMPLETE) => {
       let value = localStorage.getItem(key);
       if (value) {
         res.errMsg = 'getStorage:ok';
         res.data = value;
         if (wx_success) {
-          wx_success(res);
+          SUCCESS(res);
         }
       } else {
         res.errMsg = 'getStorage:fail data not found';
         if (wx_fail) {
-          wx_fail(res);
+          FAIL(res);
         }
       }
-    } catch (error) {
-      res.errMsg = error.message;
-      if (wx_fail) {
-        wx_fail(res);
+      if (wx_complete) {
+        COMPLETE(res);
       }
-    }
-    if (wx_complete) {
-      wx_complete(res);
-    }
+    },wx_success,wx_fail,wx_complete)    
   }
 
   // INFO: 已改

@@ -52,6 +52,17 @@
           console.log('complete')
         }
       })
+
+
+      wx.getStorage({
+        key: 'name',
+        success: res => {
+          console.log('xxx', res)
+        },
+        fail: err => {
+          console.log('yyy', err)
+        }
+      })
     }
 
 
