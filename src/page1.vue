@@ -73,6 +73,14 @@
 
       const sync = wx.getStorageInfoSync()
       console.log(sync)
+
+
+      wx.removeStorage({
+        key: 'name',
+        success: res => {
+          console.log('removed', res)
+        }
+      })
     }
 
 

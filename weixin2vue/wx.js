@@ -1428,21 +1428,15 @@ export default class wx {
     const wx_complete = wx_object.complete;
     wx_object = null
     let res = {};
-    try {
-      localStorage.removeItem(key);
-      res.errMsg = 'removeStorage:ok';
-      if (wx_success) {
-        wx_success(res);
-      }
-    } catch (error) {
-      res.errMsg = error.message;
-      if (wx_fail) {
-        wx_fail(res);
-      }
-    }
-    if (wx_complete) {
-      wx_complete(res);
-    }
+
+    PROMISE((SUCCESS) => {
+
+      wx.removeStorageSync(key)
+      res.errMsg = 'removeStorage:ok'
+      SUCCESS(res)
+
+    },wx_success,wx_fail,wx_complete)
+
   }
 
 
