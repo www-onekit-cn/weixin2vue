@@ -66,9 +66,13 @@
 
       wx.getStorageInfo({
         success: res => {
-          console.log('INFOINFOINFO', res)
+          console.log('INFOINFOINFOOOOOOOOOOOOOOOOO   I GOT IT', res)
         }
       })
+
+
+      const sync = wx.getStorageInfoSync()
+      console.log(sync)
     }
 
 

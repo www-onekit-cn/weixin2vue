@@ -11,7 +11,7 @@ import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
 import DownloadTask from './api/DownloadTask'
 import UploadTask from './api/UploadTask'
-import {PROMISE} from 'oneutil'
+import { PROMISE } from 'oneutil'
 import axios from 'axios'
 
 // import JSZip from 'jszip'
@@ -1297,17 +1297,17 @@ export default class wx {
     }
 
     Vue.prototype._socket.addEventListener("close", () => {
-        
+
       const wx_code = Vue.prototype._socket_closeCode
       const wx_reson = Vue.prototype._socket_coloseReson
 
-      Vue.prototype._socket_closeCode = null 
+      Vue.prototype._socket_closeCode = null
       Vue.prototype._socket_coloseReson = null
-        if(callback) {
-          callback(wx_code,wx_reson)
-        }
+      if (callback) {
+        callback(wx_code, wx_reson)
+      }
 
-      
+
     })
   }
 
@@ -1375,16 +1375,16 @@ export default class wx {
       const vue_key = wx_key
       const vue_data = wx_data
 
-      wx.setStorageSync(vue_key,vue_data)
+      wx.setStorageSync(vue_key, vue_data)
       const wx_errMsg = 'setStorage:ok';
       let vue_res = {
         errMsg: wx_errMsg
       }
       SUCCESS(vue_res)
-    
+
     }, wx_success, wx_fail, wx_complete)
   }
-  
+
   static getStorageSync(key) {
     return localStorage.getItem(key);
   }
@@ -1397,7 +1397,7 @@ export default class wx {
     wx_object = null
     let res = {};
 
-    PROMISE((SUCCESS,FAIL,COMPLETE) => {
+    PROMISE((SUCCESS, FAIL, COMPLETE) => {
       let value = localStorage.getItem(key);
       if (value) {
         res.errMsg = 'getStorage:ok';
@@ -1414,7 +1414,7 @@ export default class wx {
       if (wx_complete) {
         COMPLETE(res);
       }
-    },wx_success,wx_fail,wx_complete)    
+    }, wx_success, wx_fail, wx_complete)
   }
 
   static removeStorageSync(key) {
@@ -1478,43 +1478,16 @@ export default class wx {
   }
 
   static getStorageInfo(wx_object) {
-    let wx_success = wx_object.success;
-    let wx_fail = wx_object.fail;
-    let wx_complete = wx_object.complete;
-    let wx_res;
-    let keysArray = new Array();
-    for (let i = 0; i < localStorage.length; i++) {
-      let getKey = localStorage.key(i);
-      keysArray.push(getKey);
-    }
-    let sizeStore = 0;
-    if (localStorage) {
-      for (let item of Object.keys(localStorage)) {
-        sizeStore += localStorage.getItem(item).length;
-      }
-    }
-    ///////////
-    const explor = navigator.userAgent
+    const wx_success = wx_object.success;
+    const wx_fail = wx_object.fail;
+    const wx_complete = wx_object.complete;
+    wx_object = null
 
-    // let loacl_Browser = ''
-    console.log(explor)
-
-   if(explor.indexOf('Chrome') >= 0) {
-     console.log('chrome')
-   }
-
-
-    
-    //////////
-    PROMISE((SUCCESS,COMPLETE) => {
-      wx_res = {
-        keys: keysArray,
-        currentSize:Math.ceil((sizeStore / 1024).toFixed(2)),
-        limitSize:1024 * 5,
-      }
+    PROMISE((SUCCESS) => {
+      const wx_res = wx.getStorageInfoSync()
+      wx_res['errMsg'] = 'getStorageInfo:ok'
       SUCCESS(wx_res)
-      COMPLETE()
-    },wx_success,wx_fail,wx_complete)
+    }, wx_success, wx_fail, wx_complete)
   }
 
   static getStorageInfoSync() {
@@ -1522,24 +1495,19 @@ export default class wx {
     try {
       let keysArray = new Array();
       for (let i = 0; i < localStorage.length; i++) {
-        //所有键值
         let getKey = localStorage.key(i);
         keysArray.push(getKey);
       }
       let sizeStore = 0;
       if (localStorage) {
-        //占用空间
         for (let item of Object.keys(localStorage)) {
           sizeStore += localStorage.getItem(item).length;
-
         }
       }
       wx_res = {
         keys: keysArray,
-        // HACK: 是这样做吗？
-        currentSize: Math.ceil((sizeStore / 1024).toFixed(2)), // 先转换成kb，再保留两位小数，最后向上取整
-        // TODO: 小程序单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB
-        limitSize: ''
+        currentSize: Math.ceil((sizeStore / 1024).toFixed(2)),
+        limitSize: '5110'
       };
       return wx_res;
     } catch (e) {
