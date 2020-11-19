@@ -1360,7 +1360,6 @@ export default class wx {
       throw wx_e
     }
   }
-  // INFO: 已改
   static setStorage(wx_object) {
     if (!wx_object) {
       return
@@ -1418,19 +1417,16 @@ export default class wx {
     },wx_success,wx_fail,wx_complete)    
   }
 
-  // INFO: 已改
-  // INFO: 直接删除值，不需要加try catch，在调用时由客户代码加try catch, 例子参见（https://developers.weixin.qq.com/miniprogram/dev/api/wx.removeStorageSync.html）
   static removeStorageSync(key) {
     localStorage.removeItem(key);
   }
 
-  // INFO: 已改
   static removeStorage(wx_object) {
-    let key = wx_object.key;
-    let wx_success = wx_object.success;
-    let wx_fail = wx_object.fail;
-    let wx_complete = wx_object.complete;
-
+    const key = wx_object.key;
+    const wx_success = wx_object.success;
+    const wx_fail = wx_object.fail;
+    const wx_complete = wx_object.complete;
+    wx_object = null
     let res = {};
     try {
       localStorage.removeItem(key);
@@ -1449,13 +1445,11 @@ export default class wx {
     }
   }
 
-  // INFO: 已改
-  // INFO: 直接删除全部值，不需要加try catch，在调用时由客户代码加try catch, 例子参见（https://developers.weixin.qq.com/miniprogram/dev/api/wx.clearStorageSync.html）
+
   static clearStorageSync() {
     localStorage.clear();
   }
 
-  // INFO: 已改
   static clearStorage(wx_object) {
     if (!wx_object) {
       localStorage.clear();
@@ -1490,41 +1484,37 @@ export default class wx {
     let wx_res;
     let keysArray = new Array();
     for (let i = 0; i < localStorage.length; i++) {
-      //所有键值
       let getKey = localStorage.key(i);
       keysArray.push(getKey);
     }
     let sizeStore = 0;
     if (localStorage) {
-      //占用空间
       for (let item of Object.keys(localStorage)) {
         sizeStore += localStorage.getItem(item).length;
-
       }
     }
-    try {
+    ///////////
+    const explor = navigator.userAgent
+
+    // let loacl_Browser = ''
+    console.log(explor)
+
+   if(explor.indexOf('Chrome') >= 0) {
+     console.log('chrome')
+   }
+
+
+    
+    //////////
+    PROMISE((SUCCESS,COMPLETE) => {
       wx_res = {
         keys: keysArray,
-        // HACK: 是这样做吗？
-        currentSize: Math.ceil((sizeStore / 1024).toFixed(2)),
-        // TODO: 小程序单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB
-        limitSize: ''
-      };
-      if (wx_success) {
-        wx_success(wx_res);
+        currentSize:Math.ceil((sizeStore / 1024).toFixed(2)),
+        limitSize:1024 * 5,
       }
-      if (wx_complete) {
-        wx_complete(wx_res);
-      }
-    } catch (e) {
-      wx_res = { errMsg: e.message };
-      if (wx_fail) {
-        wx_fail(wx_res);
-      }
-      if (wx_complete) {
-        wx_complete(wx_res);
-      }
-    }
+      SUCCESS(wx_res)
+      COMPLETE()
+    },wx_success,wx_fail,wx_complete)
   }
 
   static getStorageInfoSync() {

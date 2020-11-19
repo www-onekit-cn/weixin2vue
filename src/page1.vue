@@ -63,6 +63,12 @@
           console.log('yyy', err)
         }
       })
+
+      wx.getStorageInfo({
+        success: res => {
+          console.log('INFOINFOINFO', res)
+        }
+      })
     }
 
 
