@@ -1445,30 +1445,16 @@ export default class wx {
   }
 
   static clearStorage(wx_object) {
-    if (!wx_object) {
-      localStorage.clear();
-    } else {
-      let wx_success = wx_object.success || '';
-      let wx_fail = wx_object.fail || '';
-      let wx_complete = wx_object.complete || '';
-
-      let res = {};
-      try {
-        localStorage.clear();
-        res.errMsg = 'clearStorage:ok';
-        if (wx_success) {
-          wx_success(res);
-        }
-      } catch (error) {
-        res = { errMsg: error.message };
-        if (wx_fail) {
-          wx_fail(res);
-        }
-      }
-      if (wx_complete) {
-        wx_complete(res);
-      }
-    }
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    wx_object = null
+    let res = {}
+    PROMISE((SUCCESS) => {
+      wx.clearStorageSync()
+      res.errMsg = 'clearStorage:ok'
+      SUCCESS(res)
+    },wx_success,wx_fail,wx_complete)
   }
 
   static getStorageInfo(wx_object) {
