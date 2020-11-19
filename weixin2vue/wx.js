@@ -1302,9 +1302,15 @@ export default class wx {
   }
 
   static onSocketError(callback) {
-    if (Vue.prototype._socketTask) {
-      Vue.prototype._socketTask._socket.addEventListener("error", callback);
+    if (!Vue.prototype._socket) {
+      return null
     }
+    Vue.prototype._socket.addEventListener("error", () => {
+      if (callback) {
+        callback()
+      }
+    });
+
   }
 
   static onSocketClose(callback) {

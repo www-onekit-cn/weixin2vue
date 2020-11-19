@@ -82,6 +82,9 @@
         console.log('ONONON MESSAGE PG1', res)
       })
 
+      wx.onSocketError(() => {
+        console.log('pg1pg1pg1 error')
+      })
     }
 
 
