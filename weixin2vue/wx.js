@@ -1508,7 +1508,7 @@ export default class wx {
 
     PROMISE((SUCCESS) => {
       const vue_sourceType = wx_sourceType
-      // let tempFilePathi;
+
       switch (vue_sourceType) {
         case 'album':
 
@@ -1528,6 +1528,7 @@ export default class wx {
                   eChooseImage.setAttribute('id', 'eChooseImage')
                   eChooseImage.setAttribute('style', 'visibility: hidden;')
                   eChooseImage.setAttribute('multiple', 'multipl')
+                  eChooseImage.setAttribute('accept', 'image/*')
 
                   function TASKS(items, func, success) {
                     const result = [];
@@ -1586,11 +1587,153 @@ export default class wx {
 
           break;
         case 'camera':
-          console.log('camera')
+          $.confirm({
+            title: '是否允许打开摄像头?',
+            content: '',
+            type: 'green',
+            buttons: {
+              ok: {
+                text: "ok!",
+                btnClass: 'btn-primary',
+                keys: ['enter'],
+                action: () => {
+
+                  let eChooseImage = document.createElement('input')
+                  eChooseImage.setAttribute('type', 'file')
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('style', 'visibility: hidden;')
+                  eChooseImage.setAttribute('capture', 'camera')
+                  eChooseImage.setAttribute('accept', 'image/*')
+
+                  function TASKS(items, func, success) {
+                    const result = [];
+                    let i = 0;
+                    let itemCallback
+                    itemCallback = function(res) {
+                      result.push(res)
+                      if (i >= items.length) {
+                        success(result)
+                        return
+                      }
+                      func(items[i++], itemCallback);
+                    }
+                    func(items[i++], itemCallback);
+                  }
+
+                  eChooseImage.addEventListener('change', e => {
+
+
+                    TASKS(e.target.files, (file, itemCallback) => {
+                      var reader = new FileReader();
+                      reader.onload = function(e) {
+                        let blob
+                        if (typeof e.target.result === 'object') {
+                          blob = new Blob([e.target.result])
+                        } else {
+                          blob = e.target.result
+                        }
+                        const path = OneKit.createTempPath(file.name)
+                        const size =
+                          Vue.prototype.TEMP[path] = blob
+                        itemCallback({ path, size })
+
+                      }
+                      reader.readAsArrayBuffer(file);
+                    }, (tempFiles) => {
+                      const tempFilePaths = tempFiles.map(tempFile => tempFile.path)
+                      const wx_res = {
+                        errMsg: 'chooseImage:ok',
+                        tempFilePaths,
+                        tempFiles
+                      }
+
+                      SUCCESS(wx_res)
+                    })
+                  })
+
+
+                  document.body.appendChild(eChooseImage)
+                  eChooseImage.click()
+                }
+              },
+              cancel: function() {}
+            }
+          });
+
           break;
 
         default:
-          console.log("['album', 'camera']")
+          $.confirm({
+            title: '是否允许打开摄像头?',
+            content: '',
+            type: 'green',
+            buttons: {
+              ok: {
+                text: "ok!",
+                btnClass: 'btn-primary',
+                keys: ['enter'],
+                action: () => {
+
+                  let eChooseImage = document.createElement('input')
+                  eChooseImage.setAttribute('type', 'file')
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('style', 'visibility: hidden;')
+                  eChooseImage.setAttribute('accept', 'image/*')
+
+                  function TASKS(items, func, success) {
+                    const result = [];
+                    let i = 0;
+                    let itemCallback
+                    itemCallback = function(res) {
+                      result.push(res)
+                      if (i >= items.length) {
+                        success(result)
+                        return
+                      }
+                      func(items[i++], itemCallback);
+                    }
+                    func(items[i++], itemCallback);
+                  }
+
+                  eChooseImage.addEventListener('change', e => {
+
+
+                    TASKS(e.target.files, (file, itemCallback) => {
+                      var reader = new FileReader();
+                      reader.onload = function(e) {
+                        let blob
+                        if (typeof e.target.result === 'object') {
+                          blob = new Blob([e.target.result])
+                        } else {
+                          blob = e.target.result
+                        }
+                        const path = OneKit.createTempPath(file.name)
+                        const size =
+                          Vue.prototype.TEMP[path] = blob
+                        itemCallback({ path, size })
+
+                      }
+                      reader.readAsArrayBuffer(file);
+                    }, (tempFiles) => {
+                      const tempFilePaths = tempFiles.map(tempFile => tempFile.path)
+                      const wx_res = {
+                        errMsg: 'chooseImage:ok',
+                        tempFilePaths,
+                        tempFiles
+                      }
+
+                      SUCCESS(wx_res)
+                    })
+                  })
+
+
+                  document.body.appendChild(eChooseImage)
+                  eChooseImage.click()
+                }
+              },
+              cancel: function() {}
+            }
+          });
       }
 
 
