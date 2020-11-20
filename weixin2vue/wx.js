@@ -14,6 +14,9 @@ import UploadTask from './api/UploadTask'
 import { PROMISE } from 'oneutil'
 import axios from 'axios'
 
+import 'jquery-confirm'
+import 'jquery-confirm/css/jquery-confirm.css'
+
 // import JSZip from 'jszip'
 // let saveAs = require('file-saver');
 
@@ -1101,7 +1104,6 @@ export default class wx {
         method: wx_mehotd,
       }).then(res => {
         const tempFilePath = OneKit.createTempPath(wx_url.substr(wx_url.lastIndexOf("/")))
-
         Vue.prototype.TEMP[tempFilePath] = res.data
         if (wx_success) {
           wx_success({
@@ -1284,14 +1286,6 @@ export default class wx {
   }
 
   static onSocketClose(callback) {
-    // if (Vue.prototype._socketTask) {
-    //   Vue.prototype._socketTask._socket.addEventListener("close", function(event) {
-    //     if (callback) {
-    //       callback(event);
-    //     }
-    //   });
-    // }
-
     if (!Vue.prototype._socket.close) {
       return null
     }
@@ -1435,7 +1429,7 @@ export default class wx {
       res.errMsg = 'removeStorage:ok'
       SUCCESS(res)
 
-    },wx_success,wx_fail,wx_complete)
+    }, wx_success, wx_fail, wx_complete)
 
   }
 
@@ -1454,7 +1448,7 @@ export default class wx {
       wx.clearStorageSync()
       res.errMsg = 'clearStorage:ok'
       SUCCESS(res)
-    },wx_success,wx_fail,wx_complete)
+    }, wx_success, wx_fail, wx_complete)
   }
 
   static getStorageInfo(wx_object) {
@@ -1497,11 +1491,119 @@ export default class wx {
 
   static createMapContext() {}
 
-  // HACK: 这个 api 的名字、参数和 JS-SDK 一样，可以在用户代码中直接调用 JS-SDK 来实现
-  static chooseImage() {}
+  static eFile_change(e) {
+    const file = e.files
+    console.log('xxxxxxxx', file)
+  }
+
+  static chooseImage(wx_object) {
+    //const wx_count = wx_object.count || 9
+    //const wx_sizeType = wx_object.signType || ['original', 'compressed']
+    const wx_sourceType = wx_object.sourceType || ['album', 'camera']
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    wx_object = null
+    //////////
+
+    PROMISE((SUCCESS) => {
+      const vue_sourceType = wx_sourceType
+      // let tempFilePathi;
+      switch (vue_sourceType) {
+        case 'album':
+
+          $.confirm({
+            title: '是否允许进入相册?',
+            content: '',
+            type: 'green',
+            buttons: {
+              ok: {
+                text: "ok!",
+                btnClass: 'btn-primary',
+                keys: ['enter'],
+                action: () => {
+
+                  let eChooseImage = document.createElement('input')
+                  eChooseImage.setAttribute('type', 'file')
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('style', 'visibility: hidden;')
+                  eChooseImage.setAttribute('multiple', 'multipl')
+
+                  function TASKS(items, func, success) {
+                    const result = [];
+                    let i = 0;
+                    let itemCallback
+                    itemCallback = function(res) {
+                      result.push(res)
+                      if (i >= items.length) {
+                        success(result)
+                        return
+                      }
+                      func(items[i++], itemCallback);
+                    }
+                    func(items[i++], itemCallback);
+                  }
+
+                  eChooseImage.addEventListener('change', e => {
+
+
+                    TASKS(e.target.files, (file, itemCallback) => {
+                      var reader = new FileReader();
+                      reader.onload = function(e) {
+                        let blob
+                        if (typeof e.target.result === 'object') {
+                          blob = new Blob([e.target.result])
+                        } else {
+                          blob = e.target.result
+                        }
+                        const path = OneKit.createTempPath(file.name)
+                        const size =
+                          Vue.prototype.TEMP[path] = blob
+                        itemCallback({ path, size })
+
+                      }
+                      reader.readAsArrayBuffer(file);
+                    }, (tempFiles) => {
+                      const tempFilePaths = tempFiles.map(tempFile => tempFile.path)
+                      const wx_res = {
+                        errMsg: 'chooseImage:ok',
+                        tempFilePaths,
+                        tempFiles
+                      }
+
+                      SUCCESS(wx_res)
+                    })
+                  })
+
+
+                  document.body.appendChild(eChooseImage)
+                  eChooseImage.click()
+                }
+              },
+              cancel: function() {}
+            }
+          });
+
+          break;
+        case 'camera':
+          console.log('camera')
+          break;
+
+        default:
+          console.log("['album', 'camera']")
+      }
+
+
+
+    }, wx_success, wx_fail, wx_complete)
+
+  }
+
+
 
   // HACK: 这个 api 的名字、参数和 JS-SDK 一样，可以在用户代码中直接调用 JS-SDK 来实现
   static previewImage() {}
+
 
   static getImageInfo(wx_object) {
     let src = wx_object.src;

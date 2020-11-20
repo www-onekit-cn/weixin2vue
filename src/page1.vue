@@ -1,7 +1,7 @@
 <template>
   <page id="app">
 
-    <input type="file" ref="eFile" @change="eFile_change" />
+    <!-- <input type="file" ref="eFile" @change="eFile_change" /> -->
 
   </page>
 </template>
@@ -39,53 +39,14 @@
     },
 
     onLoad() {
-      wx.setStorage({
-        key: 'name',
-        data: '王野未',
+      wx.chooseImage({
+        count: 9,
+        sourceType: 'album',
         success: res => {
-          console.log('success', res)
-        },
-        fail: () => {
-          console.log('faild')
-        },
-        complete: () => {
-          console.log('complete')
-        }
-      })
-
-
-      wx.getStorage({
-        key: 'name',
-        success: res => {
-          console.log('xxx', res)
+          console.log('okkkkk', res)
         },
         fail: err => {
-          console.log('yyy', err)
-        }
-      })
-
-      wx.getStorageInfo({
-        success: res => {
-          console.log('INFOINFOINFOOOOOOOOOOOOOOOOO   I GOT IT', res)
-        }
-      })
-
-
-      const sync = wx.getStorageInfoSync()
-      console.log(sync)
-
-
-      // wx.removeStorage({
-      //   key: 'name',
-      //   success: res => {
-      //     console.log('removed', res)
-      //   }
-      // })
-
-
-      wx.clearStorage({
-        success: res => {
-          console.log('Got it ', res)
+          console.log('baddd', err)
         }
       })
     }
