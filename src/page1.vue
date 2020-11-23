@@ -2,7 +2,7 @@
   <page id="app">
 
     <!-- <input type="file" ref="eFile" @change="eFile_change" /> -->
-
+    <div class="test" @Tap="test">aaaaaaaaaaaaaaaa</div>
   </page>
 </template>
 
@@ -12,6 +12,11 @@
   // let saveAs = require('file-saver');
   import wx from '../weixin2vue/wx';
   export default OnekitPage({}, {
+
+    test() {
+      wx.chooseVideo()
+    },
+
     eFile_change(e) {
       const file = e.target.files[0]
       console.log(file)
@@ -39,7 +44,18 @@
     },
 
     onLoad() {
-      wx.chooseImage({
+      // wx.chooseImage({
+      //   count: 9,
+      //   sourceType: 'album',
+      //   success: res => {
+      //     console.log('okkkkk', res)
+      //   },
+      //   fail: err => {
+      //     console.log('baddd', err)
+      //   }
+      // })
+
+      wx.chooseVideo({
         count: 9,
         sourceType: 'album',
         success: res => {
