@@ -20,7 +20,7 @@
     "jquery-confirm": "^3.3.4",
     "jszip": "latest",
     "mobile-detect": "^1.4.4",
-    "oneutil": "^1.4.1",
+    "oneutil": "^1.4.3",
     "vconsole": "^3.3.4",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3"

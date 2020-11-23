@@ -55,7 +55,18 @@
       //   }
       // })
 
-      wx.chooseVideo({
+      // wx.chooseVideo({
+      //   count: 9,
+      //   sourceType: 'album',
+      //   success: res => {
+      //     console.log('okkkkk', res)
+      //   },
+      //   fail: err => {
+      //     console.log('baddd', err)
+      //   }
+      // })
+
+      wx.chooseImage({
         count: 9,
         sourceType: 'album',
         success: res => {

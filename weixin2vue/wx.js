@@ -11,7 +11,7 @@ import UpdateManager from "./api/UpdateManager"
 import OneKit from './js/OneKit'
 import DownloadTask from './api/DownloadTask'
 import UploadTask from './api/UploadTask'
-import { PROMISE } from 'oneutil'
+import { PROMISE, TASK } from 'oneutil'
 import axios from 'axios'
 
 import 'jquery-confirm'
@@ -1508,108 +1508,13 @@ export default class wx {
 
     PROMISE((SUCCESS) => {
       const vue_sourceType = wx_sourceType
-      wx._chooseImage(SUCCESS, vue_sourceType)
+      const vue_sorts = 'image'
+      wx._chooseMedia(SUCCESS, vue_sourceType,vue_sorts)
     }, wx_success, wx_fail, wx_complete)
 
   }
 
 
-  static _chooseImage(SUCCESS, TYPE) {
-    $.confirm({
-      title: '是否允许打开摄像头或相册?',
-      content: '',
-      type: 'green',
-      buttons: {
-        ok: {
-          text: "ok!",
-          btnClass: 'btn-primary',
-          keys: ['enter'],
-          action: () => {
-
-            let eChooseImage = document.createElement('input')
-            eChooseImage.setAttribute('type', 'file')
-            eChooseImage.setAttribute('style', 'visibility: hidden;')
-            switch (TYPE) {
-              case 'album':
-                eChooseImage.setAttribute('id', 'eChooseImage')
-                eChooseImage.setAttribute('accept', 'image/*')
-                eChooseImage.setAttribute('multiple', 'multipl')
-                break
-
-              case 'camera':
-                eChooseImage.setAttribute('id', 'eChooseImage')
-                eChooseImage.setAttribute('accept', 'image/*')
-                eChooseImage.setAttribute('capture', 'camera')
-                break
-
-              default:
-                eChooseImage.setAttribute('id', 'eChooseImage')
-                eChooseImage.setAttribute('accept', 'image/*')
-
-            }
-
-
-
-
-            function TASKS(items, func, success) {
-              const result = [];
-              let i = 0;
-              let itemCallback
-              itemCallback = function(res) {
-                result.push(res)
-                if (i >= items.length) {
-                  success(result)
-                  return
-                }
-                func(items[i++], itemCallback);
-              }
-              func(items[i++], itemCallback);
-            }
-
-            eChooseImage.addEventListener('change', e => {
-
-
-              TASKS(e.target.files, (file, itemCallback) => {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                  let blob
-                  if (typeof e.target.result === 'object') {
-                    blob = new Blob([e.target.result])
-                  } else {
-                    blob = e.target.result
-                  }
-                  const path = OneKit.createTempPath(file.name)
-                  const size =
-                    Vue.prototype.TEMP[path] = blob
-                  itemCallback({ path, size })
-
-                }
-                reader.readAsArrayBuffer(file);
-              }, (tempFiles) => {
-                const tempFilePaths = tempFiles.map(tempFile => tempFile.path)
-                const wx_res = {
-                  errMsg: 'chooseImage:ok',
-                  tempFilePaths,
-                  tempFiles
-                }
-
-                SUCCESS(wx_res)
-              })
-            })
-
-
-            document.body.appendChild(eChooseImage)
-            eChooseImage.click()
-          }
-        },
-        cancel: function() {}
-      }
-    });
-  }
-
-
-
-  // HACK: 这个 api 的名字、参数和 JS-SDK 一样，可以在用户代码中直接调用 JS-SDK 来实现
   static previewImage() {}
 
 
@@ -1722,59 +1627,12 @@ export default class wx {
     const wx_complete = wx_object.complete
     PROMISE((SUCCESS) => {
       const vue_sourceType = wx_sourceType
-      wx._chooseViedo(SUCCESS, vue_sourceType)
+      const Vue_sorts = 'vedio'
+      wx._chooseMedia(SUCCESS, vue_sourceType, Vue_sorts)
     }, wx_success, wx_fail, wx_complete)
-    // console.log('in')
-    // // let wx_res;
-    // if (wx_object) {
-    //   let sourceType = wx_object.sourceType || ['album', 'camera']; //视频选择的来源
-    //   // let compressed = wx_object.compressed || true; // 是否压缩所选择的视频文件
-    //   //  let maxDuration = wx_object.maxDuration || 60; // 拍摄视频最长拍摄时间，单位秒
-    //   //  let camera = wx_object.camera || 'back'; // 默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效
-    //   let wx_success = wx_object.success;
-    //   let wx_fail = wx_object.fail;
-    //   let wx_complete = wx_object.complete;
-    //   let wx_res;
-    //   try {
-    //     if (sourceType[0] == 'album') {
-    //       // 视频选择的来源为 album ;
-    //       let xsw_ThisVideo = document.createElement('input');
-    //       xsw_ThisVideo.setAttribute('type', 'file');
-    //       xsw_ThisVideo.setAttribute('id', 'xsw_Video');
-    //       xsw_ThisVideo.setAttribute('accept', 'video/*');
-    //       // 监听点击“选择文件”事件（需要手动点击“选择文件”按钮来打开dialog，貌似不能通过模拟来点击）
-    //       xsw_ThisVideo.addEventListener(
-    //         'change',
-    //         function() {
-    //           let file = xsw_ThisVideo.files[0];
-    //           if (file) {
-    //             wx_res = {
-    //               tempFilePath: undefined, // 选定视频的临时文件路径
-    //               duration: undefined, // 选定视频的时间长度
-    //               size: file.size, // 选定视频的数据量大小
-    //               height: undefined, // 返回选定视频的高度
-    //               width: undefined // 返回选定视频的宽度
-    //             };
-    //             if (wx_success) { wx_success(wx_res); }
-    //             if (wx_complete) { wx_complete(wx_res); }
-    //           }
-    //         },
-    //         false
-    //       );
-    //     } else {
-    //       // 视频选择的来源为 camera ;
-    //     }
-    //   } catch (error) {
-    //     wx_res = {
-    //       errMsg: 'chooseVideo:fail'
-    //     };
-    //     if (wx_fail) { wx_fail(wx_res); }
-    //     if (wx_complete) { wx_complete(wx_res); }
-    //   }
-    // }
   }
 
-  static _chooseViedo(SUCCESS, TYPE) {
+  static _chooseMedia(SUCCESS, TYPE, SORTS) {
     $.confirm({
       title: '是否允许打开摄像头或相册?',
       content: '',
@@ -1788,46 +1646,32 @@ export default class wx {
             let eChooseImage = document.createElement('input')
             eChooseImage.setAttribute('type', 'file')
             eChooseImage.setAttribute('style', 'visibility: hidden;')
-            switch (TYPE) {
-              case 'album':
-                eChooseImage.setAttribute('id', 'eChooseImage')
-                eChooseImage.setAttribute('accept', 'vedio/*')
-                eChooseImage.setAttribute('multiple', 'multipl')
-                break
+            if (SORTS == 'vedio') {
+              switch (TYPE) {
+                case 'album':
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('accept', 'vedio/*')
+                  eChooseImage.setAttribute('multiple', 'multipl')
+                  break
 
-              case 'camera':
-                eChooseImage.setAttribute('id', 'eChooseImage')
-                eChooseImage.setAttribute('accept', 'video/*')
-                eChooseImage.setAttribute('capture', 'camera')
-                break
+                case 'camera':
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('accept', 'video/*')
+                  eChooseImage.setAttribute('capture', 'camera')
+                  break
 
-              default:
-                eChooseImage.setAttribute('id', 'eChooseImage')
-                eChooseImage.setAttribute('accept', 'video/*')
+                default:
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('accept', 'video/*')
 
-            }
+              }
 
-            eChooseImage.addEventListener('change', e => {
-              const file = e.target.files[0]
-              let _url = URL.createObjectURL(file)
-              let eVideo = document.createElement('video')
-              eVideo.addEventListener('loadedmetadata', ({ target }) => {
-
-                const reader = new FileReader()
-                
-                reader.onload = () => {
-                  let blob
-                  if(typeof file == 'object'){
-                    blob = new Blob([file])
-                  }else {
-                    blob = file
-                  }
-
-                  console.log(blob)
-                }
-                
-                reader.readAsArrayBuffer(file);
-                const tempFiles = [{
+              eChooseImage.addEventListener('change', e => {
+                const file = e.target.files[0]
+                let _url = URL.createObjectURL(file)
+                let eVideo = document.createElement('video')
+                eVideo.addEventListener('loadedmetadata', ({ target }) => {
+                  const tempFiles = [{
                     duration: target.duration,
                     fileType: file.type,
                     height: target.videoHeight,
@@ -1835,16 +1679,43 @@ export default class wx {
                     tempFilePath: OneKit.createTempPath(file.name),
                     thumTempFilePath: _url,
                     width: target.videoWidth
+                  }]
+                  const res = {
+                    errMsg: "chooseMedia: ok",
+                    type: file.type,
+                    tempFiles
                   }
 
-                ]
-                const res = {
-                  errMsg: "chooseMedia: ok",
-                  type: file.type,
-                  tempFiles
-                }
+                  SUCCESS(res)
+                })
+                eVideo.src = _url
+              })
+            }
+
+            if (SORTS == 'image') {
+              switch (TYPE) {
+                case 'album':
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('accept', 'image/*')
+                  eChooseImage.setAttribute('multiple', 'multipl')
+                  break
   
-                /* 
+                case 'camera':
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('accept', 'image/*')
+                  eChooseImage.setAttribute('capture', 'camera')
+                  break
+  
+                default:
+                  eChooseImage.setAttribute('id', 'eChooseImage')
+                  eChooseImage.setAttribute('accept', 'image/*')
+  
+              }
+  
+  
+              eChooseImage.addEventListener('change', e => {
+  
+                TASK(e.target.files, (file, itemCallback) => {
                   var reader = new FileReader();
                   reader.onload = function(e) {
                     let blob
@@ -1853,16 +1724,25 @@ export default class wx {
                     } else {
                       blob = e.target.result
                     }
-                    // console.log(file)
                     const path = OneKit.createTempPath(file.name)
                     const size =
                       Vue.prototype.TEMP[path] = blob.size
-                    const fileType = file.type
-*/
-                SUCCESS(res)
+                    itemCallback({ path, size })
+  
+                  }
+                  reader.readAsArrayBuffer(file);
+                }, (tempFiles) => {
+                  const tempFilePaths = tempFiles.map(tempFile => tempFile.path)
+                  const wx_res = {
+                    errMsg: 'chooseImage:ok',
+                    tempFilePaths,
+                    tempFiles
+                  }
+  
+                  SUCCESS(wx_res)
+                })
               })
-              eVideo.src = _url
-            })
+            }
             document.body.appendChild(eChooseImage)
             eChooseImage.click()
           }
