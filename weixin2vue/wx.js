@@ -1619,20 +1619,23 @@ export default class wx {
     return new Blob([u8arr], { type: mime });
   }
   static chooseVideo(wx_object) {
-    // const wx_count = wx_object.count || 9
-    // const wx_mediaType = wx_object.mediaType || ['image', 'video']
     const wx_sourceType = wx_object.sourceType || ['album', 'camara']
+    // const wx_compressed = wx_Object.compressed || true
+    // const wx_maxDuration = wx_object.maxDuration || 60
+    const wx_camera = wx_object.camera || 'back'
     const wx_success = wx_object.success
     const wx_fail = wx_object.fail
     const wx_complete = wx_object.complete
+
+    wx_object = null
     PROMISE((SUCCESS) => {
       const vue_sourceType = wx_sourceType
       const Vue_sorts = 'vedio'
-      wx._chooseMedia(SUCCESS, vue_sourceType, Vue_sorts)
+      wx._chooseMedia(SUCCESS, vue_sourceType, Vue_sorts,wx_camera)
     }, wx_success, wx_fail, wx_complete)
   }
 
-  static _chooseMedia(SUCCESS, TYPE, SORTS) {
+  static _chooseMedia(SUCCESS, TYPE, SORTS, CAMERA) {
     $.confirm({
       title: '是否允许打开摄像头或相册?',
       content: '',
@@ -1657,7 +1660,12 @@ export default class wx {
                 case 'camera':
                   eChooseImage.setAttribute('id', 'eChooseImage')
                   eChooseImage.setAttribute('accept', 'video/*')
-                  eChooseImage.setAttribute('capture', 'camera')
+                  if(CAMERA == 'back'){
+                    eChooseImage.setAttribute('capture', 'back')
+                  }
+                  if(CAMERA == 'front') {
+                    eChooseImage.setAttribute('capture', 'user')
+                  }
                   break
 
                 default:

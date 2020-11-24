@@ -66,9 +66,9 @@
       //   }
       // })
 
-      wx.chooseImage({
-        count: 9,
-        sourceType: 'album',
+      wx.chooseVideo({
+        sourceType: 'camera',
+        camera: 'front',
         success: res => {
           console.log('okkkkk', res)
         },
