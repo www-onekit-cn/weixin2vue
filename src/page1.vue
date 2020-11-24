@@ -57,7 +57,7 @@
 
       wx.chooseMessageFile({
         count: 10,
-        type: 'all',
+        // type: 'file',
         extensions: 'md',
         success: res => {
           console.log(res)

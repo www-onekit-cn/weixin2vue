@@ -1528,24 +1528,49 @@ export default class wx {
             eChooseFile.setAttribute('type', 'file')
             eChooseFile.setAttribute('style', 'display: none;')
             eChooseFile.setAttribute('multiple', 'multipl')
+            eChooseFile.setAttribute('accept', `${TYPE}/*`)
+            if (EXTENSION && TYPE == 'file') {
+              eChooseFile.setAttribute('accept', `.${EXTENSION}`)
+            }
+
             eChooseFile.click()
             eChooseFile.addEventListener('change', e => {
-             let fileFactory;
+              let fileFactory;
               if (COUNT) {
                 let dosth = [...e.target.files]
                 fileFactory = [...dosth.slice(0, COUNT)]
               } else {
                 fileFactory = e.target.files
               }
-              console.log(fileFactory)
-              const res = {
-                errMsg: 'chooseMessageFile:ok',
-                tempFiles: []
-              }
-              SUCCESS(res)
+              TASK(fileFactory, (file,itemCallback) => {
+                let reader = new FileReader()
+                reader.onload = e => {
+                  let blob
+                  if(typeof e.target.result == 'object'){
+                    blob = new Blob([e.target.result])
+                  }else {
+                    blob = e.target.result
+                  }
+                  console.log(file)
+                  const size = blob.size
+                  const path = OneKit.createTempPath(file.name)
+                  const name = file.name
+                  const time = Math.round(file.lastModifiedDate /1000)
+                  const type = file.type
+                  itemCallback({name,path,size,time,type})
+                }
+                reader.readAsArrayBuffer(file)
+              }, tempFiles => { 
+                const res = {
+                  errMsg: 'chooseMessageFile:ok',
+                  tempFiles
+                }
+                SUCCESS(res)
+              })
+
             })
-           
-           
+
+
           }
         },
         cancel: function() {}
