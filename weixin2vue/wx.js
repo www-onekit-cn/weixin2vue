@@ -1497,7 +1497,7 @@ export default class wx {
   }
 
   static chooseImage(wx_object) {
-    //const wx_count = wx_object.count || 9
+    const wx_count = wx_object.count || 9
     //const wx_sizeType = wx_object.signType || ['original', 'compressed']
     const wx_sourceType = wx_object.sourceType || ['album', 'camera']
     const wx_success = wx_object.success
@@ -1509,7 +1509,9 @@ export default class wx {
     PROMISE((SUCCESS) => {
       const vue_sourceType = wx_sourceType
       const vue_sorts = 'image'
-      wx._chooseMedia(SUCCESS, vue_sourceType,vue_sorts)
+      const vue_count = wx_count
+      const vue_camera = 'back'
+      wx._chooseMedia(SUCCESS, vue_sourceType, vue_sorts,vue_camera ,vue_count)
     }, wx_success, wx_fail, wx_complete)
 
   }
@@ -1618,10 +1620,32 @@ export default class wx {
     }
     return new Blob([u8arr], { type: mime });
   }
+/////////////////////////////
+  static chooseMedia(wx_object) {
+    // const wx_count = wx_object.count || 9                                   //
+    const wx_mediaType = wx_object.mediaType || ['image', 'video'] //
+    const wx_sourceType = wx_object.sourceType || ['album', 'camera'] //
+    // const wx_maxDuration = wx_object.maxDuration || 10                      // HTML5 is not support
+    // const wx_sizeType = wx_object.signType || ['original', 'compressed']    // WangYewei: 前端怎么去压缩视频呢？ 用canvas绘制吗
+    const wx_camera = wx_object.camera || 'back' // 
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    wx_object = null
+
+    PROMISE((SUCCESS) => {
+      const vue_sourceType = wx_sourceType
+      const vue_sorts = wx_mediaType
+      const vue_camera = wx_camera
+      wx._chooseMedia(SUCCESS, vue_sourceType, vue_sorts, vue_camera)
+    }, wx_success, wx_fail, wx_complete)
+
+  }
+
   static chooseVideo(wx_object) {
     const wx_sourceType = wx_object.sourceType || ['album', 'camara']
-    // const wx_compressed = wx_Object.compressed || true
-    // const wx_maxDuration = wx_object.maxDuration || 60
+    // const wx_compressed = wx_Object.compressed || true  // HTML5 is not support
+    // const wx_maxDuration = wx_object.maxDuration || 60  // HTML5 is not support
     const wx_camera = wx_object.camera || 'back'
     const wx_success = wx_object.success
     const wx_fail = wx_object.fail
@@ -1631,11 +1655,11 @@ export default class wx {
     PROMISE((SUCCESS) => {
       const vue_sourceType = wx_sourceType
       const Vue_sorts = 'vedio'
-      wx._chooseMedia(SUCCESS, vue_sourceType, Vue_sorts,wx_camera)
+      wx._chooseMedia(SUCCESS, vue_sourceType, Vue_sorts, wx_camera)
     }, wx_success, wx_fail, wx_complete)
   }
 
-  static _chooseMedia(SUCCESS, TYPE, SORTS, CAMERA) {
+  static _chooseMedia(SUCCESS, TYPE, SORTS, CAMERA, COUNT) {
     $.confirm({
       title: '是否允许打开摄像头或相册?',
       content: '',
@@ -1649,6 +1673,7 @@ export default class wx {
             let eChooseImage = document.createElement('input')
             eChooseImage.setAttribute('type', 'file')
             eChooseImage.setAttribute('style', 'visibility: hidden;')
+           
             if (SORTS == 'vedio') {
               switch (TYPE) {
                 case 'album':
@@ -1660,10 +1685,10 @@ export default class wx {
                 case 'camera':
                   eChooseImage.setAttribute('id', 'eChooseImage')
                   eChooseImage.setAttribute('accept', 'video/*')
-                  if(CAMERA == 'back'){
+                  if (CAMERA == 'back') {
                     eChooseImage.setAttribute('capture', 'back')
                   }
-                  if(CAMERA == 'front') {
+                  if (CAMERA == 'front') {
                     eChooseImage.setAttribute('capture', 'user')
                   }
                   break
@@ -1707,23 +1732,32 @@ export default class wx {
                   eChooseImage.setAttribute('accept', 'image/*')
                   eChooseImage.setAttribute('multiple', 'multipl')
                   break
-  
+
                 case 'camera':
                   eChooseImage.setAttribute('id', 'eChooseImage')
                   eChooseImage.setAttribute('accept', 'image/*')
                   eChooseImage.setAttribute('capture', 'camera')
                   break
-  
+
                 default:
                   eChooseImage.setAttribute('id', 'eChooseImage')
                   eChooseImage.setAttribute('accept', 'image/*')
-  
+
               }
-  
-  
+
+
               eChooseImage.addEventListener('change', e => {
-  
-                TASK(e.target.files, (file, itemCallback) => {
+              let fileFactory;
+               if(COUNT) {
+                let dosth = [...e.target.files]
+                fileFactory = [...dosth.slice(0,COUNT)]         
+               }else {
+                fileFactory = e.target.files
+               }
+   
+
+                 TASK(fileFactory, (file, itemCallback) => {
+                 
                   var reader = new FileReader();
                   reader.onload = function(e) {
                     let blob
@@ -1736,7 +1770,7 @@ export default class wx {
                     const size =
                       Vue.prototype.TEMP[path] = blob.size
                     itemCallback({ path, size })
-  
+
                   }
                   reader.readAsArrayBuffer(file);
                 }, (tempFiles) => {
@@ -1746,7 +1780,7 @@ export default class wx {
                     tempFilePaths,
                     tempFiles
                   }
-  
+
                   SUCCESS(wx_res)
                 })
               })

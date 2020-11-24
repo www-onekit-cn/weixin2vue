@@ -66,14 +66,22 @@
       //   }
       // })
 
-      wx.chooseVideo({
-        sourceType: 'camera',
-        camera: 'front',
+      // wx.chooseVideo({
+      //   sourceType: 'camera',
+      //   camera: 'front',
+      //   success: res => {
+      //     console.log('okkkkk', res)
+      //   },
+      //   fail: err => {
+      //     console.log('baddd', err)
+      //   }
+      // })
+
+      wx.chooseImage({
+        sourceType: 'album',
+        // count: 2,
         success: res => {
-          console.log('okkkkk', res)
-        },
-        fail: err => {
-          console.log('baddd', err)
+          console.log('------------', res)
         }
       })
     }
