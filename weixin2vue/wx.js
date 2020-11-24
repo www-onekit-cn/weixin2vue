@@ -1496,6 +1496,64 @@ export default class wx {
     console.log('xxxxxxxx', file)
   }
 
+
+  static chooseMessageFile(wx_object) {
+    const wx_conunt = wx_object.count
+    const wx_type = wx_object.type || 'all'
+    const wx_extensions = wx_object.extensions
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    wx_object = null
+    PROMISE((SUCCESS) => {
+      const vue_count = wx_conunt
+      const vue_type = wx_type
+      const vue_extensions = wx_extensions
+      wx._chooseMessage(SUCCESS, vue_count, vue_type, vue_extensions)
+    }, wx_success, wx_complete, wx_fail)
+  }
+
+  static _chooseMessage(SUCCESS, COUNT, TYPE, EXTENSION) {
+    $.confirm({
+      title: '是否允许打开文件夹?',
+      content: '',
+      type: 'green',
+      buttons: {
+        ok: {
+          text: "ok!",
+          btnClass: 'btn-primary',
+          keys: ['enter'],
+          action: () => {
+            let eChooseFile = document.createElement('input')
+            eChooseFile.setAttribute('type', 'file')
+            eChooseFile.setAttribute('style', 'display: none;')
+            eChooseFile.setAttribute('multiple', 'multipl')
+            eChooseFile.click()
+            eChooseFile.addEventListener('change', e => {
+             let fileFactory;
+              if (COUNT) {
+                let dosth = [...e.target.files]
+                fileFactory = [...dosth.slice(0, COUNT)]
+              } else {
+                fileFactory = e.target.files
+              }
+              console.log(fileFactory)
+              const res = {
+                errMsg: 'chooseMessageFile:ok',
+                tempFiles: []
+              }
+              SUCCESS(res)
+            })
+           
+           
+          }
+        },
+        cancel: function() {}
+      }
+    });
+  }
+
+
   static chooseImage(wx_object) {
     const wx_count = wx_object.count || 9
     const wx_sizeType = wx_object.sizeType || ['original', 'compressed']
@@ -1504,8 +1562,6 @@ export default class wx {
     const wx_fail = wx_object.fail
     const wx_complete = wx_object.complete
     wx_object = null
-    //////////
-
     PROMISE((SUCCESS) => {
       const vue_sourceType = wx_sourceType
       const vue_sorts = 'image'
@@ -1514,7 +1570,6 @@ export default class wx {
       const vue_compressd = wx_sizeType
       wx._chooseMedia(SUCCESS, vue_sourceType, vue_sorts, vue_camera, vue_count, vue_compressd)
     }, wx_success, wx_fail, wx_complete)
-
   }
 
 
@@ -1576,52 +1631,6 @@ export default class wx {
 
   static compressImage() {}
 
-  // static canvasDataURL(path, obj, callback) {
-  //   let img = new Image();
-  //   img.src = path;
-  //   img.onload = function() {
-  //     let that = this;
-  //     // 默认按比例压缩
-  //     let w = that.width,
-  //       h = that.height,
-  //       scale = w / h;
-  //     w = obj.width || w;
-  //     h = obj.height || w / scale;
-  //     let quality = 0.7; // 默认图片质量为0.7
-  //     //生成canvas
-  //     let canvas = document.createElement('canvas');
-  //     let ctx = canvas.getContext('2d');
-  //     // 创建属性节点
-  //     let anw = document.createAttribute('width');
-  //     anw.nodeValue = w;
-  //     let anh = document.createAttribute('height');
-  //     anh.nodeValue = h;
-  //     canvas.setAttributeNode(anw);
-  //     canvas.setAttributeNode(anh);
-  //     ctx.drawImage(that, 0, 0, w, h);
-  //     // 图像质量
-  //     if (obj.quality && obj.quality <= 1 && obj.quality > 0) {
-  //       quality = obj.quality;
-  //     }
-  //     // quality值越小，所绘制出的图像越模糊
-  //     let base64 = canvas.toDataURL('image/jpeg', quality);
-  //     let Blob = wx.convertBase64UrlToBlob(base64);
-  //     let imgPath = window.URL.createObjectURL(Blob);
-  //     callback({ imgPath: imgPath, Blob: Blob });
-  //   };
-  // }
-  // static convertBase64UrlToBlob(urlData) {
-  //   let arr = urlData.split(','),
-  //     mime = arr[0].match(/:(.*?);/)[1],
-  //     bstr = atob(arr[1]),
-  //     n = bstr.length,
-  //     u8arr = new Uint8Array(n);
-  //   while (n--) {
-  //     u8arr[n] = bstr.charCodeAt(n);
-  //   }
-  //   return new Blob([u8arr], { type: mime });
-  // }
-  /////////////////////////////
   static chooseMedia(wx_object) {
     // const wx_count = wx_object.count || 9                                   //
     const wx_mediaType = wx_object.mediaType || ['image', 'video'] //
@@ -1775,9 +1784,6 @@ export default class wx {
                     let reader = new FileReader();
                     reader.readAsDataURL(file)
                     reader.onload = function() {
-                      /////////////////////
-
-
                       function readImg(file) {
                         return new Promise((resolve, reject) => {
                           const img = new Image()
@@ -1837,6 +1843,7 @@ export default class wx {
                       upload(file).catch(e => console.log(e))
                     }
                   }
+                  // WangYewei: 我忘记这一行是用来干啥的了，但是我不敢删，注意吧
                   // reader.readAsArrayBuffer(file);
                 }, (tempFiles) => {
 

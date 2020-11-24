@@ -55,41 +55,12 @@
       //   }
       // })
 
-      // wx.chooseVideo({
-      //   count: 9,
-      //   sourceType: 'album',
-      //   success: res => {
-      //     console.log('okkkkk', res)
-      //   },
-      //   fail: err => {
-      //     console.log('baddd', err)
-      //   }
-      // })
-
-      // wx.chooseVideo({
-      //   sourceType: 'camera',
-      //   camera: 'front',
-      //   success: res => {
-      //     console.log('okkkkk', res)
-      //   },
-      //   fail: err => {
-      //     console.log('baddd', err)
-      //   }
-      // })
-
-      wx.chooseImage({
-        sourceType: 'album',
-        // count: 2,
+      wx.chooseMessageFile({
+        count: 10,
+        type: 'all',
+        extensions: 'md',
         success: res => {
-          console.log('------------', res)
-        }
-      })
-
-      wx.chooseImage({
-        sourceType: 'album',
-        sizeType: 'origin',
-        success: res => {
-          console.log('++++++++++', res)
+          console.log(res)
         }
       })
     }
