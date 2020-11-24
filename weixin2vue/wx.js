@@ -1498,7 +1498,7 @@ export default class wx {
 
   static chooseImage(wx_object) {
     const wx_count = wx_object.count || 9
-    //const wx_sizeType = wx_object.signType || ['original', 'compressed']
+    const wx_sizeType = wx_object.sizeType || ['original', 'compressed']
     const wx_sourceType = wx_object.sourceType || ['album', 'camera']
     const wx_success = wx_object.success
     const wx_fail = wx_object.fail
@@ -1511,7 +1511,8 @@ export default class wx {
       const vue_sorts = 'image'
       const vue_count = wx_count
       const vue_camera = 'back'
-      wx._chooseMedia(SUCCESS, vue_sourceType, vue_sorts,vue_camera ,vue_count)
+      const vue_compressd = wx_sizeType
+      wx._chooseMedia(SUCCESS, vue_sourceType, vue_sorts, vue_camera, vue_count, vue_compressd)
     }, wx_success, wx_fail, wx_complete)
 
   }
@@ -1575,52 +1576,52 @@ export default class wx {
 
   static compressImage() {}
 
-  static canvasDataURL(path, obj, callback) {
-    let img = new Image();
-    img.src = path;
-    img.onload = function() {
-      let that = this;
-      // 默认按比例压缩
-      let w = that.width,
-        h = that.height,
-        scale = w / h;
-      w = obj.width || w;
-      h = obj.height || w / scale;
-      let quality = 0.7; // 默认图片质量为0.7
-      //生成canvas
-      let canvas = document.createElement('canvas');
-      let ctx = canvas.getContext('2d');
-      // 创建属性节点
-      let anw = document.createAttribute('width');
-      anw.nodeValue = w;
-      let anh = document.createAttribute('height');
-      anh.nodeValue = h;
-      canvas.setAttributeNode(anw);
-      canvas.setAttributeNode(anh);
-      ctx.drawImage(that, 0, 0, w, h);
-      // 图像质量
-      if (obj.quality && obj.quality <= 1 && obj.quality > 0) {
-        quality = obj.quality;
-      }
-      // quality值越小，所绘制出的图像越模糊
-      let base64 = canvas.toDataURL('image/jpeg', quality);
-      let Blob = wx.convertBase64UrlToBlob(base64);
-      let imgPath = window.URL.createObjectURL(Blob);
-      callback({ imgPath: imgPath, Blob: Blob });
-    };
-  }
-  static convertBase64UrlToBlob(urlData) {
-    let arr = urlData.split(','),
-      mime = arr[0].match(/:(.*?);/)[1],
-      bstr = atob(arr[1]),
-      n = bstr.length,
-      u8arr = new Uint8Array(n);
-    while (n--) {
-      u8arr[n] = bstr.charCodeAt(n);
-    }
-    return new Blob([u8arr], { type: mime });
-  }
-/////////////////////////////
+  // static canvasDataURL(path, obj, callback) {
+  //   let img = new Image();
+  //   img.src = path;
+  //   img.onload = function() {
+  //     let that = this;
+  //     // 默认按比例压缩
+  //     let w = that.width,
+  //       h = that.height,
+  //       scale = w / h;
+  //     w = obj.width || w;
+  //     h = obj.height || w / scale;
+  //     let quality = 0.7; // 默认图片质量为0.7
+  //     //生成canvas
+  //     let canvas = document.createElement('canvas');
+  //     let ctx = canvas.getContext('2d');
+  //     // 创建属性节点
+  //     let anw = document.createAttribute('width');
+  //     anw.nodeValue = w;
+  //     let anh = document.createAttribute('height');
+  //     anh.nodeValue = h;
+  //     canvas.setAttributeNode(anw);
+  //     canvas.setAttributeNode(anh);
+  //     ctx.drawImage(that, 0, 0, w, h);
+  //     // 图像质量
+  //     if (obj.quality && obj.quality <= 1 && obj.quality > 0) {
+  //       quality = obj.quality;
+  //     }
+  //     // quality值越小，所绘制出的图像越模糊
+  //     let base64 = canvas.toDataURL('image/jpeg', quality);
+  //     let Blob = wx.convertBase64UrlToBlob(base64);
+  //     let imgPath = window.URL.createObjectURL(Blob);
+  //     callback({ imgPath: imgPath, Blob: Blob });
+  //   };
+  // }
+  // static convertBase64UrlToBlob(urlData) {
+  //   let arr = urlData.split(','),
+  //     mime = arr[0].match(/:(.*?);/)[1],
+  //     bstr = atob(arr[1]),
+  //     n = bstr.length,
+  //     u8arr = new Uint8Array(n);
+  //   while (n--) {
+  //     u8arr[n] = bstr.charCodeAt(n);
+  //   }
+  //   return new Blob([u8arr], { type: mime });
+  // }
+  /////////////////////////////
   static chooseMedia(wx_object) {
     // const wx_count = wx_object.count || 9                                   //
     const wx_mediaType = wx_object.mediaType || ['image', 'video'] //
@@ -1659,7 +1660,7 @@ export default class wx {
     }, wx_success, wx_fail, wx_complete)
   }
 
-  static _chooseMedia(SUCCESS, TYPE, SORTS, CAMERA, COUNT) {
+  static _chooseMedia(SUCCESS, TYPE, SORTS, CAMERA, COUNT, COMPRESSPED) {
     $.confirm({
       title: '是否允许打开摄像头或相册?',
       content: '',
@@ -1673,7 +1674,7 @@ export default class wx {
             let eChooseImage = document.createElement('input')
             eChooseImage.setAttribute('type', 'file')
             eChooseImage.setAttribute('style', 'visibility: hidden;')
-           
+
             if (SORTS == 'vedio') {
               switch (TYPE) {
                 case 'album':
@@ -1747,33 +1748,98 @@ export default class wx {
 
 
               eChooseImage.addEventListener('change', e => {
-              let fileFactory;
-               if(COUNT) {
-                let dosth = [...e.target.files]
-                fileFactory = [...dosth.slice(0,COUNT)]         
-               }else {
-                fileFactory = e.target.files
-               }
-   
-
-                 TASK(fileFactory, (file, itemCallback) => {
-                 
-                  var reader = new FileReader();
-                  reader.onload = function(e) {
-                    let blob
-                    if (typeof e.target.result === 'object') {
-                      blob = new Blob([e.target.result])
-                    } else {
-                      blob = e.target.result
+                let fileFactory;
+                if (COUNT) {
+                  let dosth = [...e.target.files]
+                  fileFactory = [...dosth.slice(0, COUNT)]
+                } else {
+                  fileFactory = e.target.files
+                }
+                TASK(fileFactory, (file, itemCallback) => {
+                  if (COMPRESSPED == 'origin') {
+                    let reader = new FileReader();
+                    reader.onload = function(e) {
+                      let blob
+                      if (typeof e.target.result === 'object') {
+                        blob = new Blob([e.target.result])
+                      } else {
+                        blob = e.target.result
+                      }
+                      const path = OneKit.createTempPath(file.name)
+                      const size = Vue.prototype.TEMP[path] = blob.size
+                      itemCallback({ path, size })
                     }
-                    const path = OneKit.createTempPath(file.name)
-                    const size =
-                      Vue.prototype.TEMP[path] = blob.size
-                    itemCallback({ path, size })
+                    reader.readAsArrayBuffer(file);
+                  } else {
 
+                    let reader = new FileReader();
+                    reader.readAsDataURL(file)
+                    reader.onload = function() {
+                      /////////////////////
+
+
+                      function readImg(file) {
+                        return new Promise((resolve, reject) => {
+                          const img = new Image()
+                          const reader = new FileReader()
+                          reader.onload = function(e) {
+                            img.src = e.target.result
+                          }
+                          reader.onerror = function(e) {
+                            reject(e)
+                          }
+                          reader.readAsDataURL(file)
+                          img.onload = function() {
+                            resolve(img)
+                          }
+                          img.onerror = function(e) {
+                            reject(e)
+                          }
+                        })
+                      }
+
+                      function compressImg(img, type, mx, mh) {
+                        return new Promise((resolve) => {
+                          const canvas = document.createElement('canvas')
+                          const context = canvas.getContext('2d')
+                          const { width: originWidth, height: originHeight } = img
+                          const maxWidth = mx
+                          const maxHeight = mh
+                          let targetWidth = originWidth
+                          let targetHeight = originHeight
+                          if (originWidth > maxWidth || originHeight > maxHeight) {
+                            if (originWidth / originHeight > 1) {
+                              targetWidth = maxWidth
+                              targetHeight = Math.round(maxWidth * (originHeight / originWidth))
+                            } else {
+                              targetHeight = maxHeight
+                              targetWidth = Math.round(maxHeight * (originWidth / originHeight))
+                            }
+                          }
+                          canvas.width = targetWidth
+                          canvas.height = targetHeight
+                          context.clearRect(0, 0, targetWidth, targetHeight)
+                          context.drawImage(img, 0, 0, targetWidth, targetHeight)
+                          canvas.toBlob(function(blob) {
+                            resolve(blob)
+                          }, type || 'image/png')
+                        })
+                      }
+                      async function upload(file) {
+                        const eImg = await readImg(file)
+                        const blob = await compressImg(eImg, file.type, 500, 500)
+                        const path = OneKit.createTempPath(file.name)
+                        const size =
+                          Vue.prototype.TEMP[path] = blob.size
+                        itemCallback({ path, size })
+                      }
+
+                      upload(file).catch(e => console.log(e))
+                    }
                   }
-                  reader.readAsArrayBuffer(file);
+                  // reader.readAsArrayBuffer(file);
                 }, (tempFiles) => {
+
                   const tempFilePaths = tempFiles.map(tempFile => tempFile.path)
                   const wx_res = {
                     errMsg: 'chooseImage:ok',

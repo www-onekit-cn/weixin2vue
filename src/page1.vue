@@ -84,6 +84,14 @@
           console.log('------------', res)
         }
       })
+
+      wx.chooseImage({
+        sourceType: 'album',
+        sizeType: 'origin',
+        success: res => {
+          console.log('++++++++++', res)
+        }
+      })
     }
 
 
