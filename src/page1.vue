@@ -2,16 +2,29 @@
   <page id="app">
 
     <!-- <input type="file" ref="eFile" @change="eFile_change" /> -->
-    <div class="test" @Tap="test">aaaaaaaaaaaaaaaa</div>
+    <page id="app">
+      <!-- <onekit-video :src="tempFilePath"></onekit-video>
+      <onekit-image :src="origintempFilePath"></onekit-image> -->
+      <!-- <img src="./kiko_20200309184916.jpg" alt=""> -->
+
+    </page>
   </page>
 </template>
 
 <script>
   import OnekitPage from '../weixin2vue/OnekitPage';
+  import video from '../weixin2vue/ui/video/video.vue';
   // import JSZip from 'jszip'
   // let saveAs = require('file-saver');
   import wx from '../weixin2vue/wx';
-  export default OnekitPage({}, {
+  export default OnekitPage({
+    components: { video },
+  }, {
+
+    data: {
+      tempFilePath: '',
+      origintempFilePath: ''
+    },
 
     test() {
       wx.chooseVideo()
@@ -43,41 +56,14 @@
 
     },
 
-    onLoad() {
-      // wx.chooseImage({
-      //   count: 9,
-      //   sourceType: 'album',
-      //   success: res => {
-      //     console.log('okkkkk', res)
-      //   },
-      //   fail: err => {
-      //     console.log('baddd', err)
-      //   }
-      // })
+    onLoad: function() {
 
-      wx.chooseMessageFile({
-        count: 10,
-        // type: 'file',
-        extensions: 'md',
+      wx.getImageInfo({
+        src: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4012952931,1058099867&fm=115&gp=0.jpg',
         success: res => {
-          wx.compressImage({
-            src: res.tempFiles[0].path,
-            quality: 80,
-            success: res => {
-              console.log(res)
-            }
-          })
+          console.log(res)
         }
       })
-
-      // wx.chooseImage({
-      //   count: 10,
-      //   sourceType: 'album',
-      //   sizeType: 'compressed',
-      //   success: res => {
-      //     console.log(res)
-      //   }
-      // })
     }
 
 

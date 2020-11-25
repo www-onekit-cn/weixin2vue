@@ -17,6 +17,7 @@ import axios from 'axios'
 import 'jquery-confirm'
 import 'jquery-confirm/css/jquery-confirm.css'
 
+
 // import JSZip from 'jszip'
 // let saveAs = require('file-saver');
 
@@ -1542,24 +1543,26 @@ export default class wx {
               } else {
                 fileFactory = e.target.files
               }
-              TASK(fileFactory, (file,itemCallback) => {
+              TASK(fileFactory, (file, itemCallback) => {
                 let reader = new FileReader()
                 reader.onload = e => {
                   let blob
-                  if(typeof e.target.result == 'object'){
+                  if (typeof e.target.result == 'object') {
                     blob = new Blob([e.target.result])
-                  }else {
+                  } else {
                     blob = e.target.result
                   }
+                  console.log(fileFactory)
                   const size = blob.size
-                  const path = OneKit.createTempPath(file.name)
+                  const path = Vue.prototype.TEMP[path] = fileFactory
+                  Vue.prototype.TEMP[path] = fileFactory
                   const name = file.name
-                  const time = Math.round(file.lastModifiedDate /1000)
+                  const time = Math.round(file.lastModifiedDate / 1000)
                   const type = file.type
-                  itemCallback({name,path,size,time,type})
+                  itemCallback({ name, path, size, time, type })
                 }
                 reader.readAsArrayBuffer(file)
-              }, tempFiles => { 
+              }, tempFiles => {
                 const res = {
                   errMsg: 'chooseMessageFile:ok',
                   tempFiles
@@ -1600,56 +1603,97 @@ export default class wx {
   static previewImage() {}
 
 
+
   static getImageInfo(wx_object) {
-    let src = wx_object.src;
-    let wx_success = wx_object.success;
-    let wx_fail = wx_object.fail;
-    let wx_complete = wx_object.complete;
-    let wx_res = {};
-    let isGetImageInfo = false;
-    //////////////////////////////////
-    try {
-      let pic = new Image();
-      pic.onload = function() {
-        isGetImageInfo = true;
-        wx_res.errMsg = 'getImageInfo:ok';
-        wx_res.width = this.width;
-        wx_res.height = this.height;
-        wx_res.path = src;
-        wx_res.type = 'none';
-        wx_res.orientation = 'none'; // HACK: 可以用 exif-js 库来实现？ (https://github.com/exif-js/exif-js)
-        getImageInfoSuccess_callback();
-      };
-      pic.src = src;
-      // 5秒后如果没有获取到数据就去回调执行 wx_fail() 和 wx_complete()
-      setTimeout(function() {
-        if (!isGetImageInfo) {
-          getImageInfoFail_callback();
+    const wx_src = wx_object.src 
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+
+    PROMISE((SUCCESS) => {
+      // const vue_src = require(PATH.rel2abs(wx_src))
+      const vue_src = wx_src
+      console.log('+++++++++++++++',vue_src)
+      const eImage = document.createElement('img')
+      eImage.setAttribute('src', vue_src)
+      // eImage.setAttribute('style', 'width:100px;height:100px')
+      // document.body.append(eImage)
+
+      let pic_res = new Image()
+
+      pic_res.onload = () => {
+        console.log(pic_res)
+
+        const errMsg = "getImageInfo:ok"
+        const height = pic_res.height
+        const width = pic_res.width
+        // const type = pic_res.type
+        const res = {
+          errMsg,
+          height,
+          orientation: 'up',
+          path: vue_src,
+          type:'jpeg',
+          width
         }
-      }, 5000);
-    } catch (error) {
-      getImageInfoFail_callback();
-    }
+        SUCCESS(res)
+      }
 
-    function getImageInfoFail_callback() {
-      wx_res.errMsg = 'getImageInfo:fail invalid';
-      if (wx_fail) {
-        wx_fail(wx_res);
-      }
-      if (wx_complete) {
-        wx_complete(wx_res);
-      }
-    }
-
-    function getImageInfoSuccess_callback() {
-      if (wx_success) {
-        wx_success(wx_res);
-      }
-      if (wx_complete) {
-        wx_complete(wx_res);
-      }
-    }
+      pic_res.src = vue_src
+     document.remove(eImage)
+    }, wx_success, wx_fail, wx_complete)
   }
+
+  // static getImageInfo(wx_object) {
+  // let src = wx_object.src;
+  // let wx_success = wx_object.success;
+  // let wx_fail = wx_object.fail;
+  // let wx_complete = wx_object.complete;
+  // let wx_res = {};
+  // let isGetImageInfo = false;
+  // //////////////////////////////////
+  // try {
+  //   let pic = new Image();
+  //   pic.onload = function() {
+  //     isGetImageInfo = true;
+  //     wx_res.errMsg = 'getImageInfo:ok';
+  //     wx_res.width = this.width;
+  //     wx_res.height = this.height;
+  //     wx_res.path = src;
+  //     wx_res.type = 'none';
+  //     wx_res.orientation = 'none'; // HACK: 可以用 exif-js 库来实现？ (https://github.com/exif-js/exif-js)
+  //     getImageInfoSuccess_callback();
+  //   };
+  //   pic.src = src;
+  //   // 5秒后如果没有获取到数据就去回调执行 wx_fail() 和 wx_complete()
+  //   setTimeout(function() {
+  //     if (!isGetImageInfo) {
+  //       getImageInfoFail_callback();
+  //     }
+  //   }, 5000);
+  // } catch (error) {
+  //   getImageInfoFail_callback();
+  // }
+
+  //   function getImageInfoFail_callback() {
+  //     wx_res.errMsg = 'getImageInfo:fail invalid';
+  //     if (wx_fail) {
+  //       wx_fail(wx_res);
+  //     }
+  //     if (wx_complete) {
+  //       wx_complete(wx_res);
+  //     }
+  //   }
+
+  //   function getImageInfoSuccess_callback() {
+  //     if (wx_success) {
+  //       wx_success(wx_res);
+  //     }
+  //     if (wx_complete) {
+  //       wx_complete(wx_res);
+  //     }
+  //   }
+  // }
 
   static saveImageToPhotosAlbum() {}
 
@@ -1661,13 +1705,13 @@ export default class wx {
     const wx_complete = wx_object.complete
     PROMISE((SUCCESS) => {
       const vue_src = wx_src
-      
+
       const res = {
         errMsg: 'compressImage:ok',
         tempFilePath: vue_src
       }
       SUCCESS(res)
-    },wx_success,wx_fail,wx_complete)
+    }, wx_success, wx_fail, wx_complete)
   }
 
   static chooseMedia(wx_object) {
@@ -1814,7 +1858,7 @@ export default class wx {
                         blob = e.target.result
                       }
                       const path = OneKit.createTempPath(file.name)
-                      const size = Vue.prototype.TEMP[path] = blob.size
+                      const size = blob.size
                       itemCallback({ path, size })
                     }
                     reader.readAsArrayBuffer(file);
@@ -1843,14 +1887,14 @@ export default class wx {
                         })
                       }
 
-                      
-                      
+
+
                       async function upload(file) {
                         const eImg = await readImg(file)
                         const blob = await OneKit.compressImg(eImg, file.type, 500, 500)
                         const path = OneKit.createTempPath(file.name)
-                        const size =
-                          Vue.prototype.TEMP[path] = blob.size
+
+                        const size = blob.size
                         itemCallback({ path, size })
                       }
 
