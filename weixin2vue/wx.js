@@ -1654,7 +1654,9 @@ export default class wx {
 
   static saveImageToPhotosAlbum() {}
 
-  static compressImage() {}
+  static async compressImage() {
+
+  }
 
   static chooseMedia(wx_object) {
     // const wx_count = wx_object.count || 9                                   //
@@ -1829,36 +1831,11 @@ export default class wx {
                         })
                       }
 
-                      function compressImg(img, type, mx, mh) {
-                        return new Promise((resolve) => {
-                          const canvas = document.createElement('canvas')
-                          const context = canvas.getContext('2d')
-                          const { width: originWidth, height: originHeight } = img
-                          const maxWidth = mx
-                          const maxHeight = mh
-                          let targetWidth = originWidth
-                          let targetHeight = originHeight
-                          if (originWidth > maxWidth || originHeight > maxHeight) {
-                            if (originWidth / originHeight > 1) {
-                              targetWidth = maxWidth
-                              targetHeight = Math.round(maxWidth * (originHeight / originWidth))
-                            } else {
-                              targetHeight = maxHeight
-                              targetWidth = Math.round(maxHeight * (originWidth / originHeight))
-                            }
-                          }
-                          canvas.width = targetWidth
-                          canvas.height = targetHeight
-                          context.clearRect(0, 0, targetWidth, targetHeight)
-                          context.drawImage(img, 0, 0, targetWidth, targetHeight)
-                          canvas.toBlob(function(blob) {
-                            resolve(blob)
-                          }, type || 'image/png')
-                        })
-                      }
+                      
+                      
                       async function upload(file) {
                         const eImg = await readImg(file)
-                        const blob = await compressImg(eImg, file.type, 500, 500)
+                        const blob = await OneKit.compressImg(eImg, file.type, 500, 500)
                         const path = OneKit.createTempPath(file.name)
                         const size =
                           Vue.prototype.TEMP[path] = blob.size
@@ -1868,7 +1845,6 @@ export default class wx {
                       upload(file).catch(e => console.log(e))
                     }
                   }
-                  // WangYewei: 我忘记这一行是用来干啥的了，但是我不敢删，注意吧
                   // reader.readAsArrayBuffer(file);
                 }, (tempFiles) => {
 

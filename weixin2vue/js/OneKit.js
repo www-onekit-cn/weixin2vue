@@ -187,4 +187,32 @@ function header2json(str) {
   return headers;
 }
 
-export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json }
+ function compressImg(img, type, mx, mh) {
+  return new Promise((resolve) => {
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+    const { width: originWidth, height: originHeight } = img
+    const maxWidth = mx
+    const maxHeight = mh
+    let targetWidth = originWidth
+    let targetHeight = originHeight
+    if (originWidth > maxWidth || originHeight > maxHeight) {
+      if (originWidth / originHeight > 1) {
+        targetWidth = maxWidth
+        targetHeight = Math.round(maxWidth * (originHeight / originWidth))
+      } else {
+        targetHeight = maxHeight
+        targetWidth = Math.round(maxHeight * (originWidth / originHeight))
+      }
+    }
+    canvas.width = targetWidth
+    canvas.height = targetHeight
+    context.clearRect(0, 0, targetWidth, targetHeight)
+    context.drawImage(img, 0, 0, targetWidth, targetHeight)
+    canvas.toBlob(function(blob) {
+      resolve(blob)
+    }, type || 'image/png')
+  })
+}
+
+export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json,compressImg }
