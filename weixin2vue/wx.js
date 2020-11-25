@@ -1551,7 +1551,6 @@ export default class wx {
                   }else {
                     blob = e.target.result
                   }
-                  console.log(file)
                   const size = blob.size
                   const path = OneKit.createTempPath(file.name)
                   const name = file.name
@@ -1654,8 +1653,21 @@ export default class wx {
 
   static saveImageToPhotosAlbum() {}
 
-  static async compressImage() {
-
+  static compressImage(wx_object) {
+    const wx_src = wx_object.src
+    // const wx_quality = wx_object.wx_quality
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    PROMISE((SUCCESS) => {
+      const vue_src = wx_src
+      
+      const res = {
+        errMsg: 'compressImage:ok',
+        tempFilePath: vue_src
+      }
+      SUCCESS(res)
+    },wx_success,wx_fail,wx_complete)
   }
 
   static chooseMedia(wx_object) {

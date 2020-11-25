@@ -60,9 +60,24 @@
         // type: 'file',
         extensions: 'md',
         success: res => {
-          console.log(res)
+          wx.compressImage({
+            src: res.tempFiles[0].path,
+            quality: 80,
+            success: res => {
+              console.log(res)
+            }
+          })
         }
       })
+
+      // wx.chooseImage({
+      //   count: 10,
+      //   sourceType: 'album',
+      //   sizeType: 'compressed',
+      //   success: res => {
+      //     console.log(res)
+      //   }
+      // })
     }
 
 
