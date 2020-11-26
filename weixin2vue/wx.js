@@ -1502,107 +1502,24 @@ export default class wx {
   }
 
 
-  static chooseMessageFile(wx_object) {
-    const wx_conunt = wx_object.count
-    const wx_type = wx_object.type || 'all'
-    const wx_extensions = wx_object.extensions
+
+
+  static saveImageToPhotosAlbum(wx_object) {
+    const wx_filePath = wx_object.filePath
     const wx_success = wx_object.success
     const wx_fail = wx_object.fail
     const wx_complete = wx_object.complete
-    wx_object = null
+    
     PROMISE((SUCCESS) => {
-      const vue_count = wx_conunt
-      const vue_type = wx_type
-      const vue_extensions = wx_extensions
-      wx._chooseMessage(SUCCESS, vue_count, vue_type, vue_extensions)
-    }, wx_success, wx_complete, wx_fail)
-  }
-
-  static _chooseMessage(SUCCESS, COUNT, TYPE, EXTENSION) {
-    $.confirm({
-      title: '是否允许打开文件夹?',
-      content: '',
-      type: 'green',
-      buttons: {
-        ok: {
-          text: "ok!",
-          btnClass: 'btn-primary',
-          keys: ['enter'],
-          action: () => {
-            let eChooseFile = document.createElement('input')
-            eChooseFile.setAttribute('type', 'file')
-            eChooseFile.setAttribute('style', 'display: none;')
-            eChooseFile.setAttribute('multiple', 'multipl')
-            eChooseFile.setAttribute('accept', `${TYPE}/*`)
-            if (EXTENSION && TYPE == 'file') {
-              eChooseFile.setAttribute('accept', `.${EXTENSION}`)
-            }
-
-            eChooseFile.click()
-            eChooseFile.addEventListener('change', e => {
-              let fileFactory;
-              if (COUNT) {
-                let dosth = [...e.target.files]
-                fileFactory = [...dosth.slice(0, COUNT)]
-              } else {
-                fileFactory = e.target.files
-              }
-              TASK(fileFactory, (file, itemCallback) => {
-                let reader = new FileReader()
-                reader.onload = e => {
-                  let blob
-                  if (typeof e.target.result == 'object') {
-                    blob = new Blob([e.target.result])
-                  } else {
-                    blob = e.target.result
-                  }
-                  console.log(fileFactory)
-                  const size = blob.size
-                  const path = Vue.prototype.TEMP[path] = fileFactory
-                  Vue.prototype.TEMP[path] = fileFactory
-                  const name = file.name
-                  const time = Math.round(file.lastModifiedDate / 1000)
-                  const type = file.type
-                  itemCallback({ name, path, size, time, type })
-                }
-                reader.readAsArrayBuffer(file)
-              }, tempFiles => {
-                const res = {
-                  errMsg: 'chooseMessageFile:ok',
-                  tempFiles
-                }
-                SUCCESS(res)
-              })
-
-            })
-
-
-          }
-        },
-        cancel: function() {}
+      const vue_filePath = wx_filePath
+      const fileName= OneKit.createTempPath('Photos')
+      OneKit.downloadPicture(vue_filePath,fileName)
+      const res = {
+        errMsg : 'saveImageToPhotosAlbum:ok'
       }
-    });
+      SUCCESS(res)
+    },wx_success,wx_fail,wx_complete)
   }
-
-
-  static chooseImage(wx_object) {
-    const wx_count = wx_object.count || 9
-    const wx_sizeType = wx_object.sizeType || ['original', 'compressed']
-    const wx_sourceType = wx_object.sourceType || ['album', 'camera']
-    const wx_success = wx_object.success
-    const wx_fail = wx_object.fail
-    const wx_complete = wx_object.complete
-    wx_object = null
-    PROMISE((SUCCESS) => {
-      const vue_sourceType = wx_sourceType
-      const vue_sorts = 'image'
-      const vue_count = wx_count
-      const vue_camera = 'back'
-      const vue_compressd = wx_sizeType
-      wx._chooseMedia(SUCCESS, vue_sourceType, vue_sorts, vue_camera, vue_count, vue_compressd)
-    }, wx_success, wx_fail, wx_complete)
-  }
-
 
   static previewMedia(wx_object){
     const wx_sources = wx_object.sources
@@ -1652,8 +1569,6 @@ export default class wx {
 
 
   }
-
-
 
   static getImageInfo(wx_object) {
     const wx_src = wx_object.src
@@ -1771,8 +1686,6 @@ export default class wx {
     }, wx_success, wx_fail, wx_complete)
   }
 
-  static saveImageToPhotosAlbum() {}
-
   static compressImage(wx_object) {
     const wx_src = wx_object.src
     // const wx_quality = wx_object.wx_quality
@@ -1789,6 +1702,107 @@ export default class wx {
       SUCCESS(res)
     }, wx_success, wx_fail, wx_complete)
   }
+
+  static chooseMessageFile(wx_object) {
+    const wx_conunt = wx_object.count
+    const wx_type = wx_object.type || 'all'
+    const wx_extensions = wx_object.extensions
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    wx_object = null
+    PROMISE((SUCCESS) => {
+      const vue_count = wx_conunt
+      const vue_type = wx_type
+      const vue_extensions = wx_extensions
+      wx._chooseMessage(SUCCESS, vue_count, vue_type, vue_extensions)
+    }, wx_success, wx_complete, wx_fail)
+  }
+
+  static _chooseMessage(SUCCESS, COUNT, TYPE, EXTENSION) {
+    $.confirm({
+      title: '是否允许打开文件夹?',
+      content: '',
+      type: 'green',
+      buttons: {
+        ok: {
+          text: "ok!",
+          btnClass: 'btn-primary',
+          keys: ['enter'],
+          action: () => {
+            let eChooseFile = document.createElement('input')
+            eChooseFile.setAttribute('type', 'file')
+            eChooseFile.setAttribute('style', 'display: none;')
+            eChooseFile.setAttribute('multiple', 'multipl')
+            eChooseFile.setAttribute('accept', `${TYPE}/*`)
+            if (EXTENSION && TYPE == 'file') {
+              eChooseFile.setAttribute('accept', `.${EXTENSION}`)
+            }
+
+            eChooseFile.click()
+            eChooseFile.addEventListener('change', e => {
+              let fileFactory;
+              if (COUNT) {
+                let dosth = [...e.target.files]
+                fileFactory = [...dosth.slice(0, COUNT)]
+              } else {
+                fileFactory = e.target.files
+              }
+              TASK(fileFactory, (file, itemCallback) => {
+                let reader = new FileReader()
+                reader.onload = e => {
+                  let blob
+                  if (typeof e.target.result == 'object') {
+                    blob = new Blob([e.target.result])
+                  } else {
+                    blob = e.target.result
+                  }
+                  console.log(fileFactory)
+                  const size = blob.size
+                  const path = Vue.prototype.TEMP[path] = fileFactory
+                  Vue.prototype.TEMP[path] = fileFactory
+                  const name = file.name
+                  const time = Math.round(file.lastModifiedDate / 1000)
+                  const type = file.type
+                  itemCallback({ name, path, size, time, type })
+                }
+                reader.readAsArrayBuffer(file)
+              }, tempFiles => {
+                const res = {
+                  errMsg: 'chooseMessageFile:ok',
+                  tempFiles
+                }
+                SUCCESS(res)
+              })
+
+            })
+
+
+          }
+        },
+        cancel: function() {}
+      }
+    });
+  }
+
+  static chooseImage(wx_object) {
+    const wx_count = wx_object.count || 9
+    const wx_sizeType = wx_object.sizeType || ['original', 'compressed']
+    const wx_sourceType = wx_object.sourceType || ['album', 'camera']
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+    wx_object = null
+    PROMISE((SUCCESS) => {
+      const vue_sourceType = wx_sourceType
+      const vue_sorts = 'image'
+      const vue_count = wx_count
+      const vue_camera = 'back'
+      const vue_compressd = wx_sizeType
+      wx._chooseMedia(SUCCESS, vue_sourceType, vue_sorts, vue_camera, vue_count, vue_compressd)
+    }, wx_success, wx_fail, wx_complete)
+  }
+
 
   static chooseMedia(wx_object) {
     // const wx_count = wx_object.count || 9                                   //
@@ -2001,7 +2015,6 @@ export default class wx {
   }
 
 
-
   static saveVideoToPhotosAlbum(wx_object) {
     let filePath = wx_object.filePath;
     let wx_success = wx_object.success;
@@ -2027,6 +2040,7 @@ export default class wx {
       if (wx_complete) { wx_complete(wx_res); }
     }
   }
+
   static createVideoContext() {
     /*  try {
 

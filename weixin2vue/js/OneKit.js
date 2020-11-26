@@ -215,4 +215,32 @@ function header2json(str) {
   })
 }
 
-export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json,compressImg }
+function downloadPicture(file,name){
+  const _image = new Image()
+  _image.setAttribute('crossOrigin', 'anoymous')
+  _image.onload = () => {
+    let canvas = document.createElement('canvas')
+    canvas.width = _image.width
+    canvas.height = _image.height
+    let context = canvas.getContext('2d')
+    context.drawImage(_image,0, 0, _image.width, _image.height)
+    const url = canvas.toDataURL('image/png')
+    
+    const $a =document.createElement('a')
+    const event = new MouseEvent('click')
+
+    $a.download = name
+    $a.href = url
+    $a.dispatchEvent(event)
+   
+  }
+  _image.src = file
+
+  /*
+    @create by wangyewei 
+  
+  */
+
+}
+
+export default { isWeixin, isMobile, tempFiles, storeFiles, getUrl, getExt, createUUID, createUUIDfileName, createTempPath, createStorePath, loadImage, raiseEvent, current, currentUrl, fixurl, header2json,compressImg,downloadPicture }
