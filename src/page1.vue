@@ -58,11 +58,12 @@
 
     onLoad: function() {
 
-      wx.getImageInfo({
-        src: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4012952931,1058099867&fm=115&gp=0.jpg',
+      wx.previewImage({
+        current: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1720212253,1779103205&fm=115&gp=0.jpg', // 当前显示图片的http链接
+        urls: ['https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1720212253,1779103205&fm=115&gp=0.jpg', 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1720212253,1779103205&fm=115&gp=0.jpg'],
         success: res => {
           console.log(res)
-        }
+        } // 需要预览的图片http链接列表
       })
     }
 

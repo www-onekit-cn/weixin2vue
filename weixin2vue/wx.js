@@ -17,6 +17,10 @@ import axios from 'axios'
 import 'jquery-confirm'
 import 'jquery-confirm/css/jquery-confirm.css'
 
+import './api/PrevewImage'
+
+
+
 
 // import JSZip from 'jszip'
 // let saveAs = require('file-saver');
@@ -1600,7 +1604,33 @@ export default class wx {
   }
 
 
-  static previewImage() {}
+  
+
+  static previewImage(wx_object) {
+    const wx_urls = wx_object.urls
+    const wx_current = wx_object.current
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+
+    PROMISE((SUCCESS) => {
+      const vue_urls = wx_urls
+      const vue_current = wx_current
+      const obj = {
+        urls:vue_urls,
+        current: vue_current
+      };
+      // eslint-disable-next-line no-undef
+      _preview_.start(obj)
+      const res = {
+        errMsg: 'previewImage: ok'
+      }
+      console.log(res)
+      SUCCESS(res)
+    },wx_success,wx_complete,wx_fail)
+
+
+  }
 
 
 
