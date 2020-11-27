@@ -1821,14 +1821,15 @@ export default class wx {
       _video.onloadeddata = function() {
         const height = _video.videoHeight
         const width = _video.videoWidth
-        console.log(_video.size)
+        const duration = _video.duration
+        console.log(_video.mozPresentedFrames)
         const res = {
           errMsg: 'getVedioInfo: ok',
           audioBitrate: '',
           audioChannel: '',
           audioSampleRate: '',
           bitrate: '',
-          duration: '',
+          duration,
           fps:'',
           height,
           orientation: '',
