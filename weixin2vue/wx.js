@@ -1502,26 +1502,24 @@ export default class wx {
   }
 
 
-
-
   static saveImageToPhotosAlbum(wx_object) {
     const wx_filePath = wx_object.filePath
     const wx_success = wx_object.success
     const wx_fail = wx_object.fail
     const wx_complete = wx_object.complete
-    
+
     PROMISE((SUCCESS) => {
       const vue_filePath = wx_filePath
-      const fileName= OneKit.createTempPath('Photos')
-      OneKit.downloadPicture(vue_filePath,fileName)
+      const fileName = OneKit.createTempPath('Photos')
+      OneKit.downloadPicture(vue_filePath, fileName)
       const res = {
-        errMsg : 'saveImageToPhotosAlbum:ok'
+        errMsg: 'saveImageToPhotosAlbum:ok'
       }
       SUCCESS(res)
-    },wx_success,wx_fail,wx_complete)
+    }, wx_success, wx_fail, wx_complete)
   }
 
-  static previewMedia(wx_object){
+  static previewMedia(wx_object) {
     const wx_sources = wx_object.sources
     const wx_current = wx_object.current || 0
     const wx_success = wx_object.success
@@ -1533,7 +1531,7 @@ export default class wx {
       const vue_current = wx_current
       const obj = {
         urls: vue_sources,
-        current:vue_current,
+        current: vue_current,
       }
       // eslint-disable-next-line no-undef
       _preview_.start(obj)
@@ -1541,7 +1539,7 @@ export default class wx {
         errMsg: 'previewMedia: ok',
       }
       SUCCESS(res)
-    },wx_success,wx_fail,wx_complete)
+    }, wx_success, wx_fail, wx_complete)
 
   }
 
@@ -1556,7 +1554,7 @@ export default class wx {
       const vue_urls = wx_urls
       const vue_current = wx_current
       const obj = {
-        urls:vue_urls,
+        urls: vue_urls,
         current: vue_current
       };
       // eslint-disable-next-line no-undef
@@ -1565,7 +1563,7 @@ export default class wx {
         errMsg: 'previewImage: ok'
       }
       SUCCESS(res)
-    },wx_success,wx_complete,wx_fail)
+    }, wx_success, wx_complete, wx_fail)
 
 
   }
@@ -1605,11 +1603,11 @@ export default class wx {
 
     PROMISE((SUCCESS) => {
       let vue_src = wx_src
-      vue_src = require('../src/kiko_20200309184916.jpg')
+      // vue_src = require('../src/kiko_20200309184916.jpg')
       const eImage = document.createElement('img')
       eImage.setAttribute('src', vue_src)
       eImage.setAttribute("crossOrigin", "Anonymous");
-      document.body.append(eImage)
+      // document.body.append(eImage)
       let pic_res = new Image()
 
       pic_res.onload = () => {
@@ -1621,7 +1619,6 @@ export default class wx {
         const file = btof(base64, 'text')
         formData.append('filenaem', file)
 
-        console.log(file)
         /////////////////////
         function functiongetOrientation(file, callback) {
           var reader = new window.FileReader();
@@ -1803,6 +1800,82 @@ export default class wx {
     }, wx_success, wx_fail, wx_complete)
   }
 
+  static getVideoInfo(wx_object) {
+    // const wx_src = wx_object.src
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+
+
+    PROMISE((SUCCESS) => {
+
+      const _video = document.createElement('video')
+      let src = require('../src/20200626_200259.mp4')
+      _video.setAttribute('src', src)
+      _video.setAttribute('crossorigin', 'Anonymous')
+      _video.src = src
+      document.body.append(_video)
+      _video.load()
+
+      console.log('ok')
+      _video.onloadeddata = function() {
+        const height = _video.videoHeight
+        const width = _video.videoWidth
+        console.log(_video.size)
+        const res = {
+          errMsg: 'getVedioInfo: ok',
+          audioBitrate: '',
+          audioChannel: '',
+          audioSampleRate: '',
+          bitrate: '',
+          duration: '',
+          fps:'',
+          height,
+          orientation: '',
+          size: '',
+          type: '',
+          width
+        }
+        SUCCESS(res)
+      }
+      
+      document.remove(_video)
+    }, wx_success, wx_fail, wx_complete)
+
+
+
+
+  }
+
+  static createVideoContext() {
+    /*  try {
+
+        return new VC(id);
+      } catch (error) {
+        throw new Error(error);
+      }*/
+  }
+
+  static compressVideo() {} // HTML5 is not support
+
+
+  static chooseVideo(wx_object) {
+    const wx_sourceType = wx_object.sourceType || ['album', 'camara']
+    // const wx_compressed = wx_Object.compressed || true  // HTML5 is not support
+    // const wx_maxDuration = wx_object.maxDuration || 60  // HTML5 is not support
+    const wx_camera = wx_object.camera || 'back'
+    const wx_success = wx_object.success
+    const wx_fail = wx_object.fail
+    const wx_complete = wx_object.complete
+
+    wx_object = null
+    PROMISE((SUCCESS) => {
+      const vue_sourceType = wx_sourceType
+      const Vue_sorts = 'vedio'
+      wx._chooseMedia(SUCCESS, vue_sourceType, Vue_sorts, wx_camera)
+    }, wx_success, wx_fail, wx_complete)
+  }
+
 
   static chooseMedia(wx_object) {
     // const wx_count = wx_object.count || 9                                   //
@@ -1825,22 +1898,7 @@ export default class wx {
 
   }
 
-  static chooseVideo(wx_object) {
-    const wx_sourceType = wx_object.sourceType || ['album', 'camara']
-    // const wx_compressed = wx_Object.compressed || true  // HTML5 is not support
-    // const wx_maxDuration = wx_object.maxDuration || 60  // HTML5 is not support
-    const wx_camera = wx_object.camera || 'back'
-    const wx_success = wx_object.success
-    const wx_fail = wx_object.fail
-    const wx_complete = wx_object.complete
 
-    wx_object = null
-    PROMISE((SUCCESS) => {
-      const vue_sourceType = wx_sourceType
-      const Vue_sorts = 'vedio'
-      wx._chooseMedia(SUCCESS, vue_sourceType, Vue_sorts, wx_camera)
-    }, wx_success, wx_fail, wx_complete)
-  }
 
   static _chooseMedia(SUCCESS, TYPE, SORTS, CAMERA, COUNT, COMPRESSPED) {
     $.confirm({
@@ -2041,14 +2099,6 @@ export default class wx {
     }
   }
 
-  static createVideoContext() {
-    /*  try {
-
-        return new VC(id);
-      } catch (error) {
-        throw new Error(error);
-      }*/
-  }
 
   static setInnerAudioOption() {}
   static getAvailableAudioSources() {}
