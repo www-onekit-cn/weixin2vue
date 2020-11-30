@@ -1,3 +1,4 @@
+import { COLOR } from 'oneutil'
 
 export default class Animation{
      constructor() {
@@ -132,16 +133,16 @@ export default class Animation{
          return this;
      }
 
-     step(option) {
-         let animationInfoSet = {animationInfos: []};
-         for (let a = 0; a < this._buffer.length; a++) {
-             let animationInfo = this._buffer[a];
-             animationInfoSet.animationInfos.push(animationInfo);
-         }
-         this._animations.push(animationInfoSet);
-       //  this._buffer = [];
-         return this;
-     }
+    //  step(option) {
+    //      let animationInfoSet = {animationInfos: []};
+    //      for (let a = 0; a < this._buffer.length; a++) {
+    //          let animationInfo = this._buffer[a];
+    //          animationInfoSet.animationInfos.push(animationInfo);
+    //      }
+    //      this._animations.push(animationInfoSet);
+    //    //  this._buffer = [];
+    //      return this;
+    //  }
 
      export() {
          let actions = [];
