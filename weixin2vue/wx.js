@@ -3,6 +3,7 @@ import Vue from 'vue'
 import WX from 'weixin2html/wx'
 import OneKit from './js/OneKit'
 import EventChannel from "./api/EventChannel"
+import './js/PrevewImage'
  class VueWX extends WX{
 
     setNavigationBarTitle(wx_object) {
