@@ -3,6 +3,7 @@ import Router from 'vue-router';
 Vue.use(Router);
 import $ from 'jquery'
 import { URL } from 'oneutil'
+import TheKit from 'weixin2html/js/TheKit';
 import OneKit from '../weixin2vue/js/OneKit'
 import tabs from '../weixin2vue/pages/tabs'
 import activity from '../weixin2vue/pages/activity'
@@ -113,7 +114,7 @@ document.addEventListener("visibilitychange", function() {
 
 
 //////////////////////////
-const screen_width = OneKit.isMobile() ? (($(window).width()) - 0) : 750;
+const screen_width = TheKit.isMobile() ? (($(window).width()) - 0) : 750;
 $("body").css('--screen-width', screen_width + "px");
 //
 let router = {
