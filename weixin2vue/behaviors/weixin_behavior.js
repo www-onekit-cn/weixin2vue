@@ -13,7 +13,7 @@ export default {
       this.$emit("Touchcancel");
     },*/
     ui_mouseup() {
-      this.$emit("Touchen");
+      this.$emit("Touchend");
     },
     ui_click() {
       this.$emit("Tap");
