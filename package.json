@@ -20,11 +20,11 @@
     "jquery-confirm": "^3.3.4",
     "jszip": "latest",
     "mobile-detect": "^1.4.4",
-    "oneutil": "^2.0.2",
+    "oneutil": "latest",
     "vconsole": "^3.3.4",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3",
-    "weixin2html": "^1.0.10"
+    "weixin2html": "^1.0.13"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

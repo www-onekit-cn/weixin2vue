@@ -12,7 +12,7 @@
 
 <script>
   import Vue from "vue";
-  import { PATH } from "oneutil";
+  import PATH from "oneutil/PATH";
   import OneKit from "../../js/OneKit";
   let APP_JSON;
   export default {

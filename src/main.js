@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router';
 Vue.use(Router);
 import $ from 'jquery'
-import { URL } from 'oneutil'
+import URL from 'oneutil/URL'
 import TheKit from 'weixin2html/js/TheKit';
 import OneKit from '../weixin2vue/js/OneKit'
 import tabs from '../weixin2vue/pages/tabs'
