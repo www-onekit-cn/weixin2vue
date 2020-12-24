@@ -24,7 +24,7 @@
     "vconsole": "^3.3.4",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3",
-    "weixin2html": "^1.0.13"
+    "weixin2html": "latest"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
