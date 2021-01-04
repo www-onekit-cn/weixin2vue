@@ -1,9 +1,9 @@
-import Vue from "vue";
-let APP_JSON;
+import Vue from "vue"
+let APP_JSON
 export default function(PAGE_JSON, object) {
   let result = {
     data() {
-      return {};
+      return {}
     },
     created() {
       APP_JSON = Vue.prototype.APP_JSON;
