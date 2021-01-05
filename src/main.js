@@ -12,6 +12,13 @@ import PROJECT_JSON from './project.config.json.js'
 import weixin2vue from "weixin2vue"
 const ENTRY = Vue.prototype.ENTRY = new URL(location.href)
 // import wx from '../weixin2vue/wx'
+/////////
+import uc from '../src/components/uc.vue'
+import Template from '../src/components/Template.vue'
+Vue.component('uc', uc)
+Vue.component('TEMPLATE', Template)
+////////
+
 
 Vue.use(weixin2vue);
 Vue.prototype.$EventBus = {}
@@ -116,6 +123,7 @@ document.addEventListener("visibilitychange", function() {
 //////////////////////////
 const screen_width = TheKit.isMobile() ? (($(window).width()) - 0) : 750;
 $("body").css('--screen-width', screen_width + "px");
+$('body').css('height', 100 + 'vh')
 //
 let router = {
   mode: 'history',

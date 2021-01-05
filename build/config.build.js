@@ -20,6 +20,7 @@ module.exports = {
             chunkFilename: "[id]/index.js"
         },
         resolve: pub.resolve,
+        
         plugins: [
             new CopyWebpackPlugin({
              patterns:[{
