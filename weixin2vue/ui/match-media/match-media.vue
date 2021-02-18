@@ -22,9 +22,6 @@
       'max-height': Number,
       'orientation': Number
     },
-    methods: {
-
-    },
     computed: {
       show() {
         let isShow = false

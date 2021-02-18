@@ -1,10 +1,8 @@
 <template>
   <page id="app">
-    <page id="app">
-      <onekit-match-media :min-width="375" :max-width="600">iPhone X</onekit-match-media>
-      <onekit-match-media :min-width="320" :max-width="600">iPhone 5</onekit-match-media>
-      <onekit-match-media :min-width="625" :max-width="800">iPad</onekit-match-media>
-    </page>
+    <onekit-movable-area class="moving">
+      <onekit-movable-view class="movitem">text</onekit-movable-view>
+    </onekit-movable-area>
   </page>
 </template>
 
@@ -18,5 +16,15 @@
 </script>
 
 <style>
+  .moving {
+    width: 200px;
+    height: 200px;
+    background: #ccc;
+  }
 
+  .movitem {
+    width: 40px;
+    height: 40px;
+    background: green;
+  }
 </style>
