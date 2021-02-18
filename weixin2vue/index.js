@@ -8,8 +8,8 @@ import wx from './wx'
 export default {
   install(Vue) {
     Vue.use(ui)
-    Vue.use(pages)
   },
+  pages,
   OnekitApp,
   OnekitBehavior,
   OnekitComponent,
