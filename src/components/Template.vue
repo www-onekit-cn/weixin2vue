@@ -26,8 +26,8 @@
     created() {
       const res = this.isRes()
       this.tem = res
-      console.log(this.DATA, 'options API DATA')
-      console.log(this.res, 'options API')
+      // console.log(this.DATA, 'options API DATA')
+      // console.log(this.res, 'options API')
     },
     methods: {
       isRes() {
@@ -39,7 +39,7 @@
 
   const data = { ...optionsApi }
 
-  console.log(data)
+  // console.log(data)
 
   const tempB = wx_temp.tempB(data)
 
