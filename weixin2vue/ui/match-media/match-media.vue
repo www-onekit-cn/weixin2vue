@@ -25,14 +25,48 @@
     methods: {
 
     },
-    created() {
-      console.log(this.minWidth)
-      console.log(window.innerWidth)
-    },
     computed: {
       show() {
         let isShow = false
-        if (this.minWidth <= window.innerWidth && this.maxWidth >= window.innerWidth) isShow = true
+
+        let isWidth = true
+        if (this.minWidth && this.minWidth > window.innerWidth) isWidth = false
+        if (this.maxWidth && this.maxWidth < window.innerWidth) isWidth = false
+        if (this.minWidth && this.maxWidth) {
+          if (!this.minWidth <= window.innerWidth && !this.maxWidth >= window.innerWidth) isWidth = false
+        }
+        if (this.width && this.width !== window.innerWidth) isHeight = false
+
+        let isHeight = true
+
+        if (this.minHeight && this.minHeight > window.innerHeight) isHeight = false
+        if (this.maxHeight && this.maxHeight < window.innerHeight) isHeight = false
+        if (this.minWidth && this.maxWidth) {
+          if (!this.minHeight <= window.innerHeight && !this.maxHeight >= window.innerHeight) isHeight = false
+        }
+        if (this.width && this.width !== window.innerWidth) isHeight = false
+
+        let isOrientation = true
+
+        if (this.orientation) {
+          if (this.orientation == 'landscape') {
+            if (window.orientation == 0 || window.orientation == 180) {
+              isOrientation = true
+            } else {
+              isOrientation = false
+            }
+          }
+          if (this.orientation == 'portrait') {
+            if (window.orientation == 90 || window.orientation == -90) {
+              isOrientation = true
+            } else {
+              isOrientation = false
+            }
+          }
+        }
+
+
+        if (isOrientation && isHeight && isWidth) isShow = true
         return isShow
       }
     }
