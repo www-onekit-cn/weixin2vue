@@ -24,7 +24,7 @@
     "vconsole": "^3.3.4",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3",
-    "weixin2html": "1.1.1",
+    "weixin2html": "1.2.0",
     "vue-amap": "^0.5.10"
   },
   "devDependencies": {
