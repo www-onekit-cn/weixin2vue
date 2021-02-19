@@ -1,19 +1,17 @@
 <template>
-  <div :class="['onekit-image',onekitClass]"
-       :style="onekitStyle"
-       :id="onekitId"
-       v-show="lazy">
-    <div class="img"
-         :style="{
+  <div class="img"
+       :style="{
 						backgroundImage: `url(${src})`,
 						width: width ? width : '300px', 
 						height: height ? height : '223px',
 						backgroundPosition: position ? position : '',
 						backgroundSize: bgcover,
             backgroundRepeat: 'no-repeat',           
-            }"
-         ref="img">
-    </div>
+            onekitStyle}"
+       ref="img"
+       v-show="lazy"
+       :id="onekitId"
+       :class="['onekit-image',onekitClass]">
     <slot></slot>
   </div>
 </template>
