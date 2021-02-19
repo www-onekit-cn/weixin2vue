@@ -23,12 +23,12 @@
 </template>
 
 <script>
-  import toutiao_behavior from "../../behaviors/toutiao_behavior"
+  import weixin_behavior from "../../behaviors/weixin_behavior"
   import onekit_behavior from "../../behaviors/onekit_behavior"
   import { eventBus } from '../../eventBus'
   export default {
     name: "onekit-slider",
-    mixins: [toutiao_behavior, onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
     data: () => ({ left: 0, values: 0, nowVal: 0 }),
     props: {
       'max': {

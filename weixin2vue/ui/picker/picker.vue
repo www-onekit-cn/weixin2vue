@@ -32,7 +32,7 @@
 </template>
 
 <script>
-  import toutiao_behavior from "../../behaviors/toutiao_behavior"
+  import weixin_behavior from "../../behaviors/weixin_behavior"
   import onekit_behavior from "../../behaviors/onekit_behavior"
   import selector from './_/selector-picker/selector'
   import region from './_/region-picker/region'
@@ -51,7 +51,7 @@
         newRange: []
       }
     },
-    mixins: [toutiao_behavior, onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
     props: {
       mode: {
         type: String,

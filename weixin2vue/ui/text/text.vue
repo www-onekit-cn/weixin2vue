@@ -12,11 +12,11 @@
 
 <script>
   import STRING from 'oneutil/STRING'
-  import toutiao_behavior from '../../behaviors/toutiao_behavior'
+  import weixin_behavior from '../../behaviors/weixin_behavior'
   import onekit_behavior from '../../behaviors/onekit_behavior'
   export default {
     name: "onekit-text",
-    mixins: [toutiao_behavior, onekit_behavior],
+    mixins: [weixin_behavior, onekit_behavior],
     data() {
       return {
         oldValue: '',
