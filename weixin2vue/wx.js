@@ -5,7 +5,6 @@ import OneKit from './js/OneKit'
 import EventChannel from "./api/EventChannel"
 import './js/PrevewImage'
 class VueWX extends WX {
-
   setNavigationBarTitle(wx_object) {
 
     const wx_title = wx_object.title
@@ -291,7 +290,7 @@ class VueWX extends WX {
       this.fn_global().ROOT.$router.push({
         path: vue_path,
         query: { eventChannelID }
-      }).then(function() {
+      }).then(function () {
 
         wx_res = {
           navigateTo: 'ok',
@@ -432,7 +431,7 @@ class VueWX extends WX {
       }
       /////////////////////////////////////////////////
       if (time != "" || time != 0) {
-        setTimeout(function() {
+        setTimeout(function () {
           $("#viewport").remove();
           $(".xsw_showToast").remove();
         }, time);
@@ -512,7 +511,7 @@ class VueWX extends WX {
       modal.style.margin = outerWidth + 'px 0 0 -110px';
       /* $('.xsw_modal-data').css({'margin-left:','"+outerWidth+"'})*/
       $("body").css({ "position": "relative" });
-      $('.noDian').click(function() {
+      $('.noDian').click(function () {
         $("#viewport").remove();
         $(".xsw_showModa").remove();
         wx_res = {
@@ -526,7 +525,7 @@ class VueWX extends WX {
           wx_complete(wx_res);
         }
       });
-      $('.yesDian').click(function() {
+      $('.yesDian').click(function () {
         $("#viewport").remove();
         $(".xsw_showModa").remove();
         wx_res = {
@@ -644,7 +643,7 @@ class VueWX extends WX {
       if (itemColor) {
         $('.xsw_showActionSheet-data').css({ 'color': itemColor })
       }
-      $('.xsw_list').click(function() {
+      $('.xsw_list').click(function () {
         let thisHtml = $(this).html();
         for (let x in itemList) {
           if (thisHtml == itemList[x]) {
@@ -662,7 +661,7 @@ class VueWX extends WX {
           wx_complete(wx_res);
         }
       });
-      $(".xsw_showActionSheet").click(function() {
+      $(".xsw_showActionSheet").click(function () {
         $("#viewport").remove();
         $(".xsw_showActionSheet").remove();
       });
@@ -686,4 +685,4 @@ class VueWX extends WX {
     $(".xsw_showLoading").remove();
   }
 }
-export default new VueWX(Vue.prototype)
+export default new VueWX(()=>Vue.prototype)
