@@ -1,4 +1,2 @@
 import activity from "./activity.vue"
-export default {
-  activity
-}
+export default activity
