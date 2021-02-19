@@ -12,18 +12,20 @@
            :value="model"
            :disabled="disabled"
            :checked="checked"
-           v-bind="$attrs">
+           v-bind="$attrs"
+           ref="inp">
 
     <slot></slot>
   </label>
 </template>
 
 <script>
-  import weixin_behavior from "../../behaviors/weixin_behavior"
-import onekit_behavior from "../../behaviors/onekit_behavior"
+  import toutiao_behavior from "../../behaviors/toutiao_behavior"
+  import onekit_behavior from "../../behaviors/onekit_behavior"
+  import { eventBus } from '../../eventBus';
   export default {
     name: "onekit-checkbox",
-    mixins: [weixin_behavior, onekit_behavior],
+    mixins: [toutiao_behavior, onekit_behavior],
     props: {
       "value": {
         type: String,
@@ -86,7 +88,20 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
         if (!isDisabled) {
           this.model = isGroup ? value : !model;
         }
+        const dom = this.$refs.inp.checked
+        if (dom) {
+          eventBus.$emit('checkBox-val-confirm', this.value)
+        } else {
+          eventBus.$emit('checkBox-val-cancel', this.value)
+        }
+
       }
+    },
+    mounted() {
+      eventBus.$on('onekit-foem-item-reset', () => {
+        this.$refs.inp.checked = false
+      })
+
     }
   }
 </script>
@@ -124,6 +139,6 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
     width: 100%;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 2xp;
+    border-radius: 2px;
   }
 </style>

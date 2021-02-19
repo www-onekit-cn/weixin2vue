@@ -1,4 +1,4 @@
-/** BUG待处理 2020 11 4*/
+/** BUG待处理 2021 2 2*/
 <template>
   <div class="onekit-swiper" ref="main" :active-index="currentIndex">
     <div class="onekit-swiper-inner">
@@ -61,21 +61,20 @@
     },
     data() {
       return {
-        isTransition: false, // 初始化
-        width: 0, // 幻灯片宽度
-        wrapperWidth: 0, // 范围宽度
-        currentIndex: 0, // 当前页
-        translateX: 0, // x轴
-        showBtnPrev: true, // 前一页按钮
-        showBtnNext: true, // 下一页按钮
-        touching: false, // 正在触屏
-        startX: 0, // x轴 开始位置
-        startY: 0, // y轴 开始位置
-        currentX: 0, // x轴 当前位置
-        startTranslateX: 0, //
+        isTransition: false,
+        width: 0,
+        wrapperWidth: 0,
+        currentIndex: 0,
+        translateX: 0,
+        showBtnPrev: true,
+        touching: false,
+        startX: 0,
+        startY: 0,
+        currentX: 0,
+        startTranslateX: 0,
         differenceX: 0,
-        canSlide: true, // 手势判断
-        isStart: true, // 是否刚开始
+        canSlide: true,
+        isStart: true,
         translateValue: '',
         sliderLength: 0,
       };
@@ -107,11 +106,9 @@
           this.$emit('success', this.currentIndex);
         }
       },
-      // 监听触摸
       main_touchstart(event) {
         this.onTouchStart(event);
       },
-      // 监听鼠标移动
       onMouseStart(event) {
         this.touching = true;
         this.startX = event.clientX;
@@ -125,14 +122,12 @@
           this.startTranslateX = this.translateX;
         }
       },
-      /// 监听鼠标移动
       onMouseMove(event) {
         if (this.touching) {
           this.differenceX = event.clientX - this.startX;
           this.translateX = this.startTranslateX + this.differenceX;
         }
       },
-      /// 监听触屏滑动
       onTouchStart(event) {
         if (this.sliderLength <= 1) {
           return false;
@@ -151,7 +146,6 @@
           this.startTranslateX = this.translateX;
         }
       },
-      /// 监听触屏滑动
       main_touchmove(event) {
         if (this.touching) {
           this.differenceX = event.touches[0].clientX - this.startX;
@@ -173,7 +167,7 @@
           this.isStart = false;
         }
       },
-      /// 监听触屏结束
+
       main_touchend(event) {
         event.preventDefault();
         this.touching = false;
@@ -188,9 +182,8 @@
         this.canSlide = true;
       },
       autoPlay() {
-        // 自动轮播
-        if (this.touching == false && this.autoplay) {
-          var auto = setInterval(() => {
+        if (!this.touching && this.autoplay) {
+          this.auto = setInterval(() => {
             if (this.currentIndex === this.sliderLength) {
               this.setIndex(0);
               this.startTranslateX = this.translateX;
@@ -202,19 +195,20 @@
             this.setIndex(this.currentIndex)
           }, this.duration * 10);
         } else {
-          clearInterval(auto)
+          clearInterval(this.auto)
         }
+
       }
 
     },
     mounted() {
-      let width = this.$refs['main'].offsetWidth;
+      let width = this.$refs['main'].offsetWidth
       this.width = width;
-      this.sliderLength = this.$children.length;
-      this.wrapperWidth = (this.sliderLength + 2) * width;
+      this.sliderLength = this.$children.length
+      this.wrapperWidth = (this.sliderLength + 2) * width
       let dom = this.$refs['slider-wrapper'];
-      dom.insertBefore(this.$children[0].$el.cloneNode(true), dom.children[dom.children.length]);
-      dom.insertBefore(this.$children[this.sliderLength - 1].$el.cloneNode(true), dom.children[0]);
+      dom.insertBefore(this.$children[0].$el.cloneNode(true), dom.children[dom.children.length])
+      dom.insertBefore(this.$children[this.sliderLength - 1].$el.cloneNode(true), dom.children[0])
       dom.children[0].style.width = `${this.width}px`;
       dom.children[dom.children.length - 1].style.width = `${this.width}px`;
       this.setIndex(0);
@@ -222,7 +216,7 @@
         this.isTransition = true;
       }, 300);
       this.autoPlay()
-      console.log(this.$refs.swipericon)
+      // console.log(this.$refs.swipericon)
     },
     created() {},
     beforeDestroy() {},

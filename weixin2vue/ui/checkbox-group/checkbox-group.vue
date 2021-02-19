@@ -8,11 +8,12 @@
 </template>
 
 <script>
-  import weixin_behavior from "../../behaviors/weixin_behavior"
-import onekit_behavior from "../../behaviors/onekit_behavior"
+  import toutiao_behavior from "../../behaviors/toutiao_behavior"
+  import onekit_behavior from "../../behaviors/onekit_behavior"
+  import { eventBus } from '../../eventBus'
   export default {
     name: "onekit-checkbox-group",
-    mixins: [weixin_behavior, onekit_behavior],
+    mixins: [toutiao_behavior, onekit_behavior],
     data() {
       return {
         chckboxArr: []
@@ -36,6 +37,7 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
       selectItem(item) {
         const { value } = this;
         this.$emit("select", [...value, item]);
+        console.log([...value, item])
       },
       deleteItem(item) {
         const { value: selectItems } = this;
@@ -44,8 +46,22 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
           selectItems.filter(selectitem => selectitem !== item)
         );
       }
-    }
+    },
+    mounted() {
+      eventBus.$on('onekit-foem-item-reset', () => {
+        this.chckboxArr.length = 0
+      })
+      eventBus.$on('checkBox-val-confirm', data => {
+        this.chckboxArr.push(data)
+        eventBus.$emit('onekit-checkbox-submit', this.chckboxArr)
+      })
+      eventBus.$on('checkBox-val-cancel', data => {
+        const index = this.chckboxArr.indexOf(data)
+        this.chckboxArr.splice(index, 1)
+        eventBus.$emit('onekit-checkbox-submit', this.chckboxArr)
+      })
 
+    }
   }
 </script>
 

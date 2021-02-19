@@ -3,7 +3,8 @@
        :class="['onekit-switch',onekitClass]"
        :style="onekitStyle"
        :id="onekitId"
-       class="switch">
+       class="switch"
+       :key="tag">
     <div class="switch-wrapper"
          :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status?switchBg:'#e9ebef'}"
          :class="{'close':!status,'disabled':this.disabled}"
@@ -15,16 +16,19 @@
 </template>
 
 <script>
-  import weixin_behavior from "../../behaviors/weixin_behavior"
-import onekit_behavior from "../../behaviors/onekit_behavior"
+  import toutiao_behavior from "../../behaviors/toutiao_behavior"
+  import onekit_behavior from "../../behaviors/onekit_behavior"
+  import { eventBus } from '../../eventBus';
+  // import { eventBus } from '../../eventBus'
   export default {
     name: "onekit-switch",
-    mixins: [weixin_behavior, onekit_behavior],
+    mixins: [toutiao_behavior, onekit_behavior],
     data() {
       return {
         status: true,
         left: 1,
-        switchBg: "#ff4949"
+        switchBg: "#ED4C67",
+        tag: +new Date()
       };
     },
     props: {
@@ -42,7 +46,7 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
       },
       'background': {
         type: String,
-        default: "#09BB07"
+        default: "#ED4C67"
       },
       'disabled': {
         type: Boolean,
@@ -52,11 +56,11 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
     },
     watch: {
       value() {
-        this.status = this.value; //拿到父组件传给子组件的值
+        this.status = this.value
         this.changeStatus();
       },
       status(data) {
-        this.$emit("input", data); //通过子组件改变父组件的v-model的值
+        this.$emit("input", data)
         this.changeStatus();
       },
       width() {
@@ -68,7 +72,7 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
       background(data) {
         if (data) {
           if (data.indexOf("#") == -1) {
-            this.switchBg = "#ff4949";
+            this.switchBg = "#ED4C67"
           } else {
             this.switchBg = data;
           }
@@ -80,16 +84,17 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
         if (this.status) {
           this.left = 1;
         } else {
-          this.left = this.width - (this.height - 1);
+          this.left = this.width - (this.height - 1)
         }
       },
       handleSwitch() {
         if (this.disabled) {
           return;
         }
-        this.status ? (this.status = false) : (this.status = true);
-        this.changeStatus();
-        this.$emit("change", this.status); //传change事件，可以让父组件使用@change
+        this.status ? (this.status = false) : (this.status = true)
+        this.changeStatus()
+        this.$emit("Change", this.status)
+        eventBus.$emit('onekit-switch-submit', this.status)
       }
     },
     mounted() {
@@ -97,8 +102,12 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
         this.status = this.value;
       }
       if (this.switchBg != this.background) {
-        this.switchBg = this.background;
+        this.switchBg = this.background
       }
+      eventBus.$on('onekit-foem-item-reset', () => {
+        if (!this.checked) this.status = false
+        eventBus.$emit('onekit-switch-submit', this.status)
+      })
     },
   }
 </script>
@@ -111,6 +120,7 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
     border-radius: 15px;
     position: relative;
     cursor: pointer;
+    transition: .25s background;
   }
 
   .close {
