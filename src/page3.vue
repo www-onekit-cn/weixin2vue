@@ -1,5 +1,5 @@
 <template>
-  <page id="app">
+  <onekit-page id="app">
     <onekit-view onekit-class="btn-area">
 
 
@@ -99,7 +99,7 @@
       </onekit-view>
     </onekit-view>
 
-  </page>
+  </onekit-page>
 </template>
 
 <script>

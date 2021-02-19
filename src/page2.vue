@@ -1,10 +1,10 @@
 <template>
-  <page id="app">
+  <onekit-page id="app">
     <h2>hello,world</h2>
     <onekit-view @Tap="navigateBack_click">wx.navigateBack</onekit-view>
     <onekit-view @Tap="reLaunch_click">wx.reLaunch</onekit-view>
 
-  </page>
+  </onekit-page>
 </template>
 
 <script>

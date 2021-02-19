@@ -1,9 +1,9 @@
 <template>
-  <page id="app">
+  <onekit-page id="app">
     <onekit-movable-area class="moving">
       <onekit-movable-view class="movitem">text</onekit-movable-view>
     </onekit-movable-area>
-  </page>
+  </onekit-page>
 </template>
 
 <script>
