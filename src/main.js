@@ -11,11 +11,6 @@ import APP_JSON from './app.json.js'
 import PROJECT_JSON from './project.config.json.js'
 import weixin2vue from "weixin2vue"
 const ENTRY = Vue.prototype.ENTRY = new URL(location.href)
-/////////
-import uc from '../src/components/uc.vue'
-import Template from '../src/components/Template.vue'
-Vue.component('uc', uc)
-Vue.component('TEMPLATE', Template)
 ////////
 
 
