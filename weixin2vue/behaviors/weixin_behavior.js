@@ -3,26 +3,26 @@ export default {
   props: {
   },
   methods: {
-    ui_mousedown() {
-      this.$emit("Touchstart");
+    ui_mousedown(e) {
+      this.$emit("Touchstart",e);
     },
-    ui_mousemove() {
-      this.$emit("Touchmove");
+    ui_mousemove(e) {
+      this.$emit("Touchmove",e);
     },
     /*ui_mousecanvas() {
       this.$emit("Touchcancel");
     },*/
-    ui_mouseup() {
-      this.$emit("Touchend");
+    ui_mouseup(e) {
+      this.$emit("Touchend",e);
     },
-    ui_click() {
-      this.$emit("Tap");
+    ui_click(e) {
+      this.$emit("Tap",e);
     },
     /* ui_longPress() {
        this.$emit("Longpress");
      },*/
-    ui_longclick() {
-      this.$emit("Longtap");
+    ui_longclick(e,) {
+      this.$emit("Longtap",e);
     },
   }
 }
