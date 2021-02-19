@@ -1,11 +1,9 @@
 <template>
-		<div
+		<img
 		:class="['onekit-image',onekitClass]"
 		:style="onekitStyle"
 		:id="onekitId"
-		>
-		<slot></slot>
-		</div>
+		/>
 </template>
 
 <script>
