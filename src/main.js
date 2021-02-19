@@ -5,13 +5,12 @@ import $ from 'jquery'
 import URL from 'oneutil/URL'
 import TheKit from 'weixin2html/js/TheKit';
 import OneKit from '../weixin2vue/js/OneKit'
-import tabs from '../weixin2vue/pages/tabs'
-import activity from '../weixin2vue/pages/activity'
+import tabs from '../weixin2vue/pages/tabs/tabs.vue'
+import activity from '../weixin2vue/pages/activity/activity.vue'
 import APP_JSON from './app.json.js'
 import PROJECT_JSON from './project.config.json.js'
 import weixin2vue from "weixin2vue"
 const ENTRY = Vue.prototype.ENTRY = new URL(location.href)
-// import wx from '../weixin2vue/wx'
 /////////
 import uc from '../src/components/uc.vue'
 import Template from '../src/components/Template.vue'
