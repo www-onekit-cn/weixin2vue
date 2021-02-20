@@ -3,6 +3,7 @@ import Vue from 'vue'
 import WX from 'weixin2html/wx'
 import OneKit from './js/OneKit'
 import EventChannel from "./api/EventChannel"
+import CanvasContext from './api/CanvasContext'
 import './js/PrevewImage'
 class VueWX extends WX {
 
@@ -733,6 +734,12 @@ class VueWX extends WX {
   createMapContext() {
     console.warn('createMapContext are not currently supported')
   }
-  //////////// 动画 ////////////
+  //////////// 画布 ////////////
+  createCanvasContext(id) {
+    const canvas = document.getElementById(id)
+    console.log(id,canvas)
+    const canvasContext = canvas.getContext("2d")
+    return new CanvasContext(canvasContext)
+  }
 }
 export default new VueWX(()=>Vue.prototype)
