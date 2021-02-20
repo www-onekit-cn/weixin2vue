@@ -42,7 +42,7 @@
         </div>
       </template>
     </div>
-    <div style="flex-grow:2;overflow:scroll;">
+    <div style="flex-grow:2;overflow:hidden;">
       <router-view @updatewindowjson="activity_updateWindowJson"></router-view>
     </div>
 

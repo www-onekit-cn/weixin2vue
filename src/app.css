@@ -1,5 +1,5 @@
 @import '/weixin2vue/dist/public/onekit.css';
-@import './page/common/lib/weui.css';
+/*@import './page/common/lib/weui.css';*/
 .onekit-page {
     background-color: var(--weui-BG-1) ;
     height: 100% ;
