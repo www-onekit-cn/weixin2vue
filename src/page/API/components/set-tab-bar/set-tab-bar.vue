@@ -38,9 +38,9 @@
 </template>
 <script>
 import Vue from 'vue'
-import foot from '../../../page/common/foot.foot'
+import foot from '../../../common/foot.foot.vue'
 Vue.component('onekit-template-foot', foot)
-import head from '../../../page/common/head.head'
+import head from '../../../common/head.head.vue'
 Vue.component('onekit-template-head', head)
 const ONEKIT_JSON = {
   "component": true,

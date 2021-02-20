@@ -43,7 +43,7 @@
         </template>
         <onekit-view>
           <template v-if="connects.length > 0">
-            <onekit-view v-for="(item) in connects"
+            <onekit-view v-for="(item,index) in connects"
                          :key="index">
               <onekit-view>
                 <onekit-text>{{item.deviceId}} : {{item.serverId}}</onekit-text>
