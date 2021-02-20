@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"onUserCaptureScreen"}'></onekit-template>
+                       :DATA='{"title":"onUserCaptureScreen"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-body-info">

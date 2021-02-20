@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"get/set/clearStorage"}'></onekit-template>
+                       :DATA='{"title":"get/set/clearStorage"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section">

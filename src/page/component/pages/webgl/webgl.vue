@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"webgl"}'></onekit-template>
+                       :DATA='{"title":"webgl"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <template v-if="canIUse">

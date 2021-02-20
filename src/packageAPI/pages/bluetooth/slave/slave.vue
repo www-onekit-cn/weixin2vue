@@ -6,7 +6,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"bluetooth"}'></onekit-template>
+                       :DATA='{"title":"bluetooth"}'></onekit-template>
       <onekit-view onekit-class="page-body"
                    onekit-style="display: flex; flex-direction: column">
         <onekit-text onekit-style="text-align: center; margin: 16px">当前 serverId {{serverId}}</onekit-text>

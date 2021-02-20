@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"form"}'></onekit-template>
+                       :DATA='{"title":"form"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-form @submit.stop="formSubmit"

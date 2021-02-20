@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"navigateTo/Back, redirectTo"}'></onekit-template>
+                       :DATA='{"title":"navigateTo/Back, redirectTo"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="btn-area">

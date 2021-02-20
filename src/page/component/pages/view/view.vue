@@ -4,7 +4,7 @@
     <import src='../../../common/foot.vue' />-->
 
     <onekit-view onekit-class="container">
-      <onekit-template-head :DATA='{"title":"view"}' />
+      <onekit-template-head ::DATA='{"title":"view"}' />
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section">
           <onekit-view onekit-class="page-section-title">

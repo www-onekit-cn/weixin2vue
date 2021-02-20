@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"mDNS"}'></onekit-template>
+                       :DATA='{"title":"mDNS"}'></onekit-template>
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section">
           <onekit-button type="primary"

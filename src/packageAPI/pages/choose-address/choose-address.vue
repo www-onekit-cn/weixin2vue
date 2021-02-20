@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"chooseAddress"}'></onekit-template>
+                       :DATA='{"title":"chooseAddress"}'></onekit-template>
 
       <onekit-form>
         <onekit-view onekit-class="page-section">

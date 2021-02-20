@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"open/get/Setting"}'></onekit-template>
+                       :DATA='{"title":"open/get/Setting"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-form>

@@ -78,6 +78,9 @@ export default function(PAGE_JSON, object) {
       });
     },
     methods: {
+      animate(){
+
+      },
       setData(data) {
         let that = this;
         this.$nextTick(() => {

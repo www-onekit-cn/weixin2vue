@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"Permission"}'></onekit-template>
+                       :DATA='{"title":"Permission"}'></onekit-template>
 
       <onekit-view onekit-class="page-body"
                    v-if="openid">

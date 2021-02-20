@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"无障碍访问"}'></onekit-template>
+                       :DATA='{"title":"无障碍访问"}'></onekit-template>
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section">
           <onekit-view onekit-class="page-section-title">

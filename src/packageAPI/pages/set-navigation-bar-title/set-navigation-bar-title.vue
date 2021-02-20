@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"setNaivgationBarTitle"}'></onekit-template>
+                       :DATA='{"title":"setNaivgationBarTitle"}'></onekit-template>
 
       <onekit-form class="page-body"
                    @submit="setNaivgationBarTitle">

@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"navigationBarLoading"}'></onekit-template>
+                       :DATA='{"title":"navigationBarLoading"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="btn-area">

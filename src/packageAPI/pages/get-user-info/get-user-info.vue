@@ -1,11 +1,11 @@
 <template>
   <onekit-page id='app'>
- <!--    <import src='../../../common/head.vue' />
+    <!--    <import src='../../../common/head.vue' />
     <import src='../../../common/foot.vue' />-->
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"getUserInfo"}'></onekit-template>
+                       :DATA='{"title":"getUserInfo"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section">

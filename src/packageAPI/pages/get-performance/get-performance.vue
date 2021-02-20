@@ -6,7 +6,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"getPerformance"}'></onekit-template>
+                       :DATA='{"title":"getPerformance"}'></onekit-template>
       <template v-if="support">
         <onekit-button type="primary"
                        @:tap="getPerformanceInfo">

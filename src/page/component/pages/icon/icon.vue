@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"icon"}'></onekit-template>
+                       :DATA='{"title":"icon"}'></onekit-template>
 
       <onekit-view onekit-class="icon-box">
         <onekit-icon onekit-class="icon-box-img"

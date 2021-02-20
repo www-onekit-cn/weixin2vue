@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"open-data"}'></onekit-template>
+                       :DATA='{"title":"open-data"}'></onekit-template>
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="avatar">
           <onekit-open-data onekit-class="avatar-img"

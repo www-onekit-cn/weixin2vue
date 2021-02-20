@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"templateMessage"}'></onekit-template>
+                       :DATA='{"title":"templateMessage"}'></onekit-template>
       <onekit-form class="page-body"
                    @submit="submitForm"
                    report-submit="true">

@@ -6,7 +6,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"live-pusher"}'></onekit-template>
+                       :DATA='{"title":"live-pusher"}'></onekit-template>
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section">
           <onekit-live-pusher onekit-id="pusher"

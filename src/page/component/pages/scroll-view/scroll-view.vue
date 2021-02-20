@@ -6,7 +6,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"scroll-view"}'></onekit-template>
+                       :DATA='{"title":"scroll-view"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section">
@@ -132,22 +132,18 @@
   </onekit-page>
 </template>
 <script>
-/* eslint-disable no-unused-vars */
 const refresh =
-
-  module.exports = {
-    onPulling: function (evt, instance) {
-      var p = Math.min(evt.detail.dy / 80, 1)
-      console.log(p)
-      var view = instance.selectComponent('.refresh-container')
-      view.setStyle({
-        opacity: p,
-        transform: "scale(" + p + ")"
-      })
-    }
+{
+  onPulling: function (evt, instance) {
+    var p = Math.min(evt.detail.dy / 80, 1)
+    console.log(p)
+    var view = instance.selectComponent('.refresh-container')
+    view.setStyle({
+      opacity: p,
+      transform: "scale(" + p + ")"
+    })
   }
-
-  ;
+}
 import Vue from 'vue'
 import foot from '../../../../page/common/foot.foot'
 Vue.component('onekit-template-foot', foot)
@@ -159,7 +155,7 @@ const ONEKIT_JSON = {
   "usingComponents": {}
 }
 import OnekitPage from '../../../../../weixin2vue/OnekitPage';
-import wx from '../../../../../weixin2vue/wx';
+//import wx from '../../../../../weixin2vue/wx';
 //let //let global = {};
 const order = [
   'demo1',

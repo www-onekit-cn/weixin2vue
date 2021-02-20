@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"onAccelerometerChange"}'></onekit-template>
+                       :DATA='{"title":"onAccelerometerChange"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section page-section_center">

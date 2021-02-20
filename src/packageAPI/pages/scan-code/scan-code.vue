@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"scanCode"}'></onekit-template>
+                       :DATA='{"title":"scanCode"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="weui-cells__title">扫码结果</onekit-view>

@@ -1,7 +1,5 @@
 export default {
   "pages": [
-    "page/component/pages/view/view",
-    /*
     "page/component/pages/scroll-view/scroll-view",
     "page/component/pages/swiper/swiper",
     "page/component/pages/text/text",
@@ -42,16 +40,10 @@ export default {
     "page/component/pages/web-view/web-view",
     "page/component/pages/editor/editor",
     "page/component/pages/canvas-2d/canvas-2d",
-    "page/component/pages/webgl/webgl"*/
+    "page/component/pages/webgl/webgl"
   ],
-  "window": {
-    "backgroundColor": "#f7f7f7",
-    "navigationBarBackgroundColor": "#f7f7f7",
-    "navigationBarTitleText": "演示",
-    "navigationBarTextStyle": "black"
-  },
-  /*
   "subpackages": [{
+      "root": "packageAPI",
       "pages": [
         "pages/login/login",
         "pages/get-user-info/get-user-info",
@@ -124,10 +116,10 @@ export default {
         "pages/wxs/sidebar",
         "pages/wxs/stick-top",
         "pages/wxs/nearby"
-      ],
-      "root": "packageAPI"
+      ]
     },
     {
+      "root": "packageCloud",
       "pages": [
         "pages/doc-web-view/doc-web-view",
         "pages/user-authentication/user-authentication",
@@ -144,8 +136,43 @@ export default {
         "pages/scf-database/scf-database",
         "pages/scf-storage/scf-storage",
         "pages/scf-openapi/scf-openapi"
-      ],
-      "root": "packageCloud"
+      ]
     }
-  ]*/
+  ],
+  "preloadRule": {
+    "page/component/index": {
+      "network": "all",
+      "packages": [
+        "packageCloud"
+      ]
+    }
+  },
+  "window": {
+    "navigationBarTextStyle": "@navigationBarTextStyle",
+    "navigationBarTitleText": "演示",
+    "navigationBarBackgroundColor": "@navigationBarBackgroundColor",
+    "backgroundColor": "@backgroundColor"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx4f1b24bdc99fa23b"
+  ],
+  "workers": "workers",
+  "debug": false,
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "cloud": true,
+  "sitemapLocation": "sitemap.json",
+  "themeLocation": "demo.theme.json",
+  "darkmode": true,
+  "resizable": true
 }

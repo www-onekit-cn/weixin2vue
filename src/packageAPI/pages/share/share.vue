@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"onShareAppMessage"}'></onekit-template>
+                       :DATA='{"title":"onShareAppMessage"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="weui-cells__title">发送内容（以下字段可自由适配）</onekit-view>

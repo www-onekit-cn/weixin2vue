@@ -6,7 +6,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"picker-view"}'></onekit-template>
+                       :DATA='{"title":"picker-view"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</onekit-view>

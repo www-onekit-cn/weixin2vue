@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"当前页"}'></onekit-template>
+                       :DATA='{"title":"当前页"}'></onekit-template>
     </onekit-view>
   </onekit-page>
 </template>

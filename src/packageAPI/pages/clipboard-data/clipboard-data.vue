@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"get/set/ClipboardData"}'></onekit-template>
+                       :DATA='{"title":"get/set/ClipboardData"}'></onekit-template>
 
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="weui-cells weui-cells_after-title">

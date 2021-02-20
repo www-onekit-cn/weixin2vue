@@ -5,7 +5,7 @@
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
-                       DATA='{"title":"新建的页面"}'></onekit-template>
+                       :DATA='{"title":"新建的页面"}'></onekit-template>
     </onekit-view>
   </onekit-page>
 </template>
