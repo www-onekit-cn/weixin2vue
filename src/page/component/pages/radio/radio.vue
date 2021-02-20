@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 <template>
   <onekit-page id='app'>
-    <import src='../../../common/head.vue' />
-    <import src='../../../common/foot.vue' />
+    <!--    <import src='../../../common/head.vue' />
+    <import src='../../../common/foot.vue' />-->
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"

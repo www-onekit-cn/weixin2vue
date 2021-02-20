@@ -1,7 +1,7 @@
 <template>
   <onekit-page id='app'>
-    <import src='../../../common/head.vue' />
-    <import src='../../../common/foot.vue' />
+ <!--    <import src='../../../common/head.vue' />
+    <import src='../../../common/foot.vue' />-->
 
     <onekit-view onekit-class="container">
       <onekit-template is="onekit-template-head"
@@ -38,9 +38,9 @@
 </template>
 <script>
 import Vue from 'vue'
-import foot from '../../../../page/common/foot.foot'
+import foot from '../../../page/common/foot.foot'
 Vue.component('onekit-template-foot', foot)
-import head from '../../../../page/common/head.head'
+import head from '../../../page/common/head.head'
 Vue.component('onekit-template-head', head)
 const ONEKIT_JSON = {
   "component": true,

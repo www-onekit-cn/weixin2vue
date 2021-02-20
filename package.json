@@ -23,9 +23,9 @@
     "oneutil": "2.5.0",
     "vconsole": "^3.3.4",
     "vue": "^2.6.11",
+    "vue-amap": "^0.5.10",
     "vue-router": "^3.4.3",
-    "weixin2html": "1.2.1",
-    "vue-amap": "^0.5.10"
+    "weixin2html": "1.2.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
