@@ -1,3 +1,4 @@
+/* eslint-disable */
 //import wx from '../../../../weixin2vue/wx';
 //let global = {};
 const util = {}

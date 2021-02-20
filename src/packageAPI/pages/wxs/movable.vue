@@ -16,6 +16,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable */
 const test = require('./movable');
 const ONEKIT_JSON = {
   "navigationBarTitleText": "movable",

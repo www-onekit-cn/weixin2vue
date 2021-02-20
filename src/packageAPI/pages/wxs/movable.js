@@ -1,3 +1,4 @@
+/* eslint-disable */
 var startX = 0
 var startY = 0
 var lastLeft = lastTop = 50

@@ -23,6 +23,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable */
 import Vue from 'vue'
 import head from '../../../common/head.head'
 Vue.component('onekit-template-head', head)

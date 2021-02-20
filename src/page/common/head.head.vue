@@ -19,20 +19,20 @@ const ONEKIT_JSON = {
   "usingComponents": {}
 }
 import OnekitComponent from '../../../weixin2vue/OnekitComponent';
-import  wx  from '../../../weixin2vue/wx';
+import wx from '../../../weixin2vue/wx';
 global = {};
 export default OnekitComponent(ONEKIT_JSON, {}, {
-  properties: {
-    DATA: Object
-  },
-  attached: function () {
-    if (this.DATA) {
+  properties: ["DATA"],
+  onLoad: function () {
+    console.log("aaaaa",this.props.DATA)
+    if (this.props.DATA) {
       var data;
-      if (typeof (this.DATA) == "string") {
+      if (typeof (this.props.DATA) == "string") {
         data = JSON.parse((('{' + this.DATA)) + '}');
       } else {
-        data = this.DATA;
+        data = this.props.DATA;
       }
+      console.log("xxxx", data)
       this.setData(data);
     }
   }
