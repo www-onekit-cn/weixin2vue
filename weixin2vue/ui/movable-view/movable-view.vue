@@ -84,6 +84,33 @@ export default {
         let left = e.clientX - disX;
         let top = e.clientY - disY;
 
+        /*****  临界值 starting（此区域代码可注释）  ***/
+        // 获取父元素 自元素 的宽高
+        // let {
+        //   offsetHeight: parentNodeHeight,
+        //   offsetWidth: parentNodeWidth,
+        // } = this.$refs.parentNode;
+        // let {
+        //   offsetHeight: sonNodeHeight,
+        //   offsetWidth: sonNodeWidth,
+        // } = this.$refs.sonNode;
+
+        // // 左上角(left)
+        // if (left < 0) {
+        //   left = 0;
+        // }
+        // if (top < 0) {
+        //   top = 0;
+        // }
+        // // 左下角
+        // if (top > parentNodeHeight - sonNodeHeight) {
+        //   top = parentNodeHeight - sonNodeHeight;
+        // }
+        // if (left > parentNodeWidth - sonNodeWidth) {
+        //   left = parentNodeWidth - sonNodeWidth;
+        // }
+        /*****  临界值 ending  ***/
+
         //绑定元素位置到positionX和positionY上面
         this.positionX = top;
         this.positionY = left;
