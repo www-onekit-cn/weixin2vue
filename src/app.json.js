@@ -1,8 +1,7 @@
 export default {
   "pages": [
-    "page1",
-    "page/component/index",
     "page/component/pages/view/view",
+    /*
     "page/component/pages/scroll-view/scroll-view",
     "page/component/pages/swiper/swiper",
     "page/component/pages/text/text",
@@ -43,7 +42,7 @@ export default {
     "page/component/pages/web-view/web-view",
     "page/component/pages/editor/editor",
     "page/component/pages/canvas-2d/canvas-2d",
-    "page/component/pages/webgl/webgl"
+    "page/component/pages/webgl/webgl"*/
   ],
   "window": {
     "backgroundColor": "#f7f7f7",
@@ -51,6 +50,7 @@ export default {
     "navigationBarTitleText": "演示",
     "navigationBarTextStyle": "black"
   },
+  /*
   "subpackages": [{
       "pages": [
         "pages/login/login",
@@ -147,5 +147,5 @@ export default {
       ],
       "root": "packageCloud"
     }
-  ]
+  ]*/
 }
