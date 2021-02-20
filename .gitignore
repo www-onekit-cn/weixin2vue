@@ -24,17 +24,3 @@ yarn-error.log*
 *.iml
 package-lock.json
 .DS_Store
-src/page/common/foot.foot.vue
-src/page/common/head.head.vue
-src/page/common/index.css
-src/page/common/lib/weui.css
-src/page/component/index.vue
-src/page1.vue
-src/page2.vue
-src/page3.vue
-src/app.json.js
-src/app.css
-src/app.json.js
-src/page1.vue
-src/page2.vue
-src/page3.vue
