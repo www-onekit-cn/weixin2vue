@@ -1,5 +1,5 @@
 import Vue from 'vue'
-const Any = "Any"
+const Any = null
 function getApp() {
   return Vue.prototype.APP
 }

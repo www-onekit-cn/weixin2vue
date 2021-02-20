@@ -22,23 +22,17 @@ import OnekitComponent from '../../../weixin2vue/OnekitComponent';
 import wx from '../../../weixin2vue/wx';
 import { Any } from '../../../weixin2vue/macro';
 //let global = {};
-export default OnekitComponent(ONEKIT_JSON,  {
+export default OnekitComponent(ONEKIT_JSON, {
   properties: {
-    DATA: Any
+    DATA: { type: Any }
   },
   data: {
-    title: ""
+    title: "",
+    desc: ""
   },
-  onLoad: function () {
-    if (this.data.DATA) {
-      var data;
-      if (typeof (this.data.DATA) == "string") {
-        data = JSON.parse((('{' + this.data.DATA)) + '}');
-      } else {
-        data = this.data.DATA;
-      }
-      this.setData(data);
-    }
+  attached: function () {
+    const data = this.getDATA().DATA
+    this.setData(data);
   }
 })
 </script>
