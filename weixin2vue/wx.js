@@ -4,6 +4,7 @@ import WX from 'weixin2html/wx'
 import OneKit from './js/OneKit'
 import EventChannel from "./api/EventChannel"
 import CanvasContext from './api/CanvasContext'
+import OffscreenCanvas from './api/OffscreenCanvas'
 import './js/PrevewImage'
 class VueWX extends WX {
 
@@ -741,5 +742,15 @@ class VueWX extends WX {
     const canvasContext = canvas.getContext("2d")
     return new CanvasContext(canvasContext)
   }
+
+  createOffscreenCanvas() {
+    return new OffscreenCanvas()
+  }
+
+  canvasToTempFilePath() {}
+
+  canvasPutImageData() {}
+
+  canvasGetImageData() {}
 }
 export default new VueWX(()=>Vue.prototype)
