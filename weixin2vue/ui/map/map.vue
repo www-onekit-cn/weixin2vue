@@ -1,148 +1,112 @@
 <template>
-  <div :class="['onekit-map',onekitClass]" :style="onekitStyle" :id="onekitId">
-    <el-amap class="amap-box" vid="amap-vue" :center="center" :zoom="scale - 1" :events="events">
-      <el-amap-circle v-for="m of tt_circles" :key="`${m}`" :center="m.center" :radius="m.radius" fill-opacity="0.2"
-        strokeWeight="1">
+  <div :class="['onekit-map',onekitClass]"
+       :style="onekitStyle"
+       :id="onekitId"
+       @click="map_tap">
 
-      </el-amap-circle>
-      <el-amap-polyline :path="tt_polyline.path">
-
-      </el-amap-polyline>
-      <el-amap-marker v-for="(m, i) in tt_position" :key="i" :position="m.position" :title="m.title" :events="m.events">
-      </el-amap-marker>
-    </el-amap>
-    <slot></slot>
   </div>
 </template>
 
 <script>
-  import weixin_behavior from "../../behaviors/weixin_behavior"
-  import onekit_behavior from "../../behaviors/onekit_behavior"
-  import Vue from 'vue'
-  import VueMap from 'vue-amap'
-  Vue.use(VueMap)
-  VueMap.initAMapApiLoader({
-    key: '0c805d60efe6c4e05d13b93e4e48a129',
-    plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType',
-      'AMap.PolyEditor', 'AMap.CircleEditor'
-    ]
-  })
-  const optionsAPI = {
-    name: "onekit-map",
-    mixins: [weixin_behavior, onekit_behavior],
-    data() {
-      const self = this
-      return {
-        events: {
-          'click': e => {
-            e['detail'] = {
-              latitude: e.lnglat.lat,
-              longitude: e.lnglat.lng
-            }
-            self.$emit('tap', e)
-          }
-        }
-      }
-    },
-    props: {
-      longitude: {
-        type: Number,
-        required: true
-      },
-      latitude: {
-        type: Number,
-        required: true
-      },
-      scale: {
-        type: Number,
-        default: 16
-      },
-      markers: Array,
-      circles: Array,
-      'show-location': {
-        type: Boolean,
-        default: false
-      },
-      polyline: Array,
-      'include-points': Array
-    },
-    mounted() {},
-    computed: {
-      center() {
-        return [this.longitude, this.latitude]
-      },
-      tt_position() {
-        let tt_position = []
-        for (let key in this.markers) {
-          const {
-            longitude,
-            latitude,
-            title,
-            id,
-            iconPath
-          } = this.markers[key]
-          let obj = {}
-          obj[`position`] = [longitude, latitude]
-          obj[`title`] = title
-          obj[`icon`] = iconPath
-          obj['events'] = {
-            click: e => {
-              e['detail'] = {
-                markerId: id,
-                latitude: e.lnglat.lat,
-                longitude: e.lnglat.lng
-              }
-              this.$emit('markertap', e)
-            }
-          }
-          tt_position.push(obj)
-        }
-        return tt_position
-      },
-      tt_circles() {
-        let tt_circles = []
-        for (let key in this.circles) {
-          const {
-            longitude,
-            latitude,
-            radius
-          } = this.circles[key]
-          let obj = []
-          obj['center'] = [longitude, latitude]
-          obj['radius'] = radius
-          tt_circles.push(obj)
-        }
-        return tt_circles
-      },
-      tt_polyline() {
-        let polyline = {}
-        for (let key in this.polyline) {
-          const {
-            points,
-            color,
-            width,
-            dottedLine
-          } = this.polyline[key]
-          polyline['path'] = []
-          for (let points_key in points) {
-            const {
-              longitude,
-              latitude
-            } = points[points_key]
-            const path = [longitude, latitude]
-            polyline['path'].push(path)
-          }
-          polyline['strokeColor'] = color
-          polyline['strokeWeight'] = width
-          dottedLine ? polyline['strokeStyle'] = 'dashed' : polyline['strokeStyle'] = 'solid'
-        }
-        return polyline
-      }
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default {
+  name: "onekit-map",
+  mixins: [weixin_behavior, onekit_behavior],
+  data () {
+    return {
+
     }
-  }
-  export default optionsAPI
+  },
+  props: {
+    longitude: { type: Number, required: true },
+    latitude: { type: Number, required: true },
+    scale: { type: Number, default: 16 },
+    'min-scale': { type: Number, default: 3 },
+    'max-scale': { ype: Number, default: 20 },
+    markers: Array,
+    covers: Array,
+    polyline: Array,
+    circles: Array,
+    controls: Array,
+    'include-points': Array,
+    'show-location': { type: Boolean, default: false },
+    polygons: Array,
+    subkey: String,
+    'layer-style': { type: Number, default: 1 },
+    rotate: { type: Number, default: 0 },
+    skew: { type: Number, default: 0 },
+    enable3D: { type: Boolean, default: false },
+    showCompass: { type: Boolean, default: false },
+    showsScale: { type: Boolean, default: false },
+    enableOverlooking: { type: Boolean, default: false },
+    enableZoom: { type: Boolean, default: true },
+    enableScroll: { type: Boolean, default: true },
+    enableRotate: { type: Boolean, default: false },
+    enableSatellite: { type: Boolean, default: false },
+    enableTraffic: { type: Boolean, default: false },
+    enablePoi: { type: Boolean, default: true },
+    enableBuilding: { type: Boolean, default: true },
+    setting: Object
+  },
+  mounted () { },
+  methods:{
+    map_tap(){
+      const data = {
+        longitude:this.longitude,
+        latitude: this.latitude
+      }
+      this.$emit('Tap', data)
+    },
+    //
+    _trigger_markertap() {
+      const data = {
+      }
+      this.$emit('MarkerTap', data)
+    },
+    _trigger_labeltap() {
+      const data = {
+      }
+      this.$emit('LabelTap', data)
+    },
+    //
+    _trigger_controltap() {
+      const data = {
+      }
+      this.$emit('Controltap', data)
+    },
+    _trigger_CalloutTap() {
+      const data = {
+      }
+      this.$emit('CalloutTap', data)
+    },
+    _trigger_updated() {
+      const data = {
+      }
+      this.$emit('Updated', data)
+    },
+    _trigger_regionchange() {
+      const data = {
+      }
+      this.$emit('RegionChange', data)
+    },
+    //
+    _trigger_poitap() {
+      const data = {
+      }
+      this.$emit('PoiTap', data)
+    },
+    _trigger_anchorpointtap() {
+      const data = {
+      }
+      this.$emit('AnchorPointTap', data)
+    },
+  },
+  computed: {
+
+  },
+}
 </script>
 
 <style>
-
 </style>
