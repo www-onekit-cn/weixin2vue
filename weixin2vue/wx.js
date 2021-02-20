@@ -6,6 +6,8 @@ import EventChannel from "./api/EventChannel"
 import CanvasContext from './api/CanvasContext'
 import OffscreenCanvas from './api/OffscreenCanvas'
 import './js/PrevewImage'
+import AMapManager from 'vue-amap'
+import MapContext from "./api/MapContext"
 class VueWX extends WX {
 
   setNavigationBarTitle(wx_object) {
@@ -732,8 +734,8 @@ class VueWX extends WX {
   }
 
   //////////// 地图 ////////////
-  createMapContext() {
-    console.warn('createMapContext are not currently supported')
+  createMapContext(mapId) {
+    return new MapContext(AMapManager.getChildInstance(mapId), mapId)
   }
   //////////// 画布 ////////////
   createCanvasContext(id) {
@@ -752,5 +754,6 @@ class VueWX extends WX {
   canvasPutImageData() {}
 
   canvasGetImageData() {}
+  
 }
 export default new VueWX(()=>Vue.prototype)
