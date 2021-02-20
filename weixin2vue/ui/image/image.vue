@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="img"
        :style="{
@@ -12,7 +13,6 @@
        v-show="lazy"
        :id="onekitId"
        :class="['onekit-image',onekitClass]">
-    <slot></slot>
   </div>
 </template>
 
@@ -152,3 +152,97 @@
     height: 225px;
   }
 </style>
+-->
+<template>
+  <div ref="div"
+       :class="`onekit-image ${onekitClass}`"
+       :style="`${onekitStyle}`"></div>
+</template>
+<script>
+import weixin_behavior from "../../behaviors/weixin_behavior"
+import onekit_behavior from "../../behaviors/onekit_behavior"
+export default {
+  name: "onekit-image",
+  mixins: [weixin_behavior, onekit_behavior],
+  data: () => ({
+    lazy: true
+  }),
+  props: {
+    'src': {
+      type: String,
+    },
+    'mode': {
+      type: String,
+      default: 'scaleToFill'
+    },
+    'webp': {
+      type: Boolean,
+      default: false
+    },
+    'lazy-load': {
+      type: Boolean,
+      default: false
+    },
+    'show-menu-by-longpress': {
+      type: Boolean,
+      default: false
+    }
+  },
+  watch: {
+    src (src) {
+      this.src_(src)
+    },
+    mode (mode) {
+      this.mode_(mode)
+    }
+  },
+  mounted () {
+    this.src_(this.src)
+    this.mode_(this.mode)
+  },
+  methods: {
+    src_ (src) {
+      this.$refs.div.style.backgroundImage = `url(${src})`
+    },
+    mode_ (mode) {
+      switch (mode) {
+        case "scaleToFill":
+          this.$refs.div.style.backgroundSize = "100% 100%";
+          break;
+        case "aspectFit":
+          this.$refs.div.style.backgroundSize = "contain", this.$refs.div.style.backgroundPosition = "center center";
+          break;
+        case "aspectFill":
+          this.$refs.div.style.backgroundSize = "cover", this.$refs.div.style.backgroundPosition = "center center";
+          break;
+        case "top":
+          this.$refs.div.style.backgroundPosition = "top center";
+          break;
+        case "bottom":
+          this.$refs.div.style.backgroundPosition = "bottom center";
+          break;
+        case "center":
+          this.$refs.div.style.backgroundPosition = "center center";
+          break;
+        case "left":
+          this.$refs.div.style.backgroundPosition = "center left";
+          break;
+        case "right":
+          this.$refs.div.style.backgroundPosition = "center right";
+          break;
+        case "top left":
+          this.$refs.div.style.backgroundPosition = "top left";
+          break;
+        case "top right":
+          this.$refs.div.style.backgroundPosition = "top right";
+          break;
+        case "bottom left":
+          this.$refs.div.style.backgroundPosition = "bottom left";
+          break;
+        case "bottom right":
+          this.$refs.div.style.backgroundPosition = "bottom right"
+      }
+    }
+  }
+}
+</script>

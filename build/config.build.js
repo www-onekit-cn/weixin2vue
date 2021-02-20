@@ -24,8 +24,8 @@ module.exports = {
         plugins: [
             new CopyWebpackPlugin({
              patterns:[{
-              from: "./public",
-              to: 'public'
+              from: "./public/onekit",
+              to: 'public/onekit'
              }]
             })
         ]
