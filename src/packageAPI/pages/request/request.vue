@@ -35,8 +35,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "网络请求",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 const requestUrl = require('../../../config').requestUrl
 const duration = 2000

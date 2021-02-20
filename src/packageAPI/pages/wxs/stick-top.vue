@@ -46,9 +46,9 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "stick-top",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { getApp } from 'weixin2vue/macro';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
+import { getApp } from '../../../../weixin2vue/macro';
 //let global = {};
 const height = wx.getSystemInfoSync().windowHeight
 const app = getApp()

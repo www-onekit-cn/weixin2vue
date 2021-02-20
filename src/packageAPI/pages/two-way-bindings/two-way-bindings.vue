@@ -22,6 +22,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable */
 import Vue from 'vue'
 import head from '../../../common/head.head'
 Vue.component('onekit-template-head', head)
@@ -31,8 +32,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "two-way-bindings",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   data: {

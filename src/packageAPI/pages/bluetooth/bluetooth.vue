@@ -13,7 +13,7 @@
             <onekit-scroll-view onekit-class="device_list"
                                 scroll-y
                                 scroll-with-animation>
-              <onekit-view v-for="(item,index) in devices"
+              <onekit-view v-for="(item) in devices"
                            :key="item.index"
                            :data-device-id="item.deviceId"
                            :data-name="item.name || item.localName"
@@ -54,7 +54,7 @@
                            @Tap="closeBLEConnection">断开连接</onekit-button>
           </onekit-view>
         </onekit-view>
-        <onekit-view v-for="(item,index) in chs"
+        <onekit-view v-for="(item) in chs"
                      :key="item.index"
                      onekit-style="font-size: 12px; margin-top: 10px;">
           <onekit-view>特性UUID: {{item.uuid}}</onekit-view>
@@ -66,15 +66,6 @@
   </onekit-page>
 </template>
 <script>
-const utils =
-  module.exports.max = function (n1, n2) {
-    return Math.max(n1, n2)
-  }
-module.exports.len = function (arr) {
-  arr = arr || []
-  return arr.length
-}
-  ;
 import Vue from 'vue'
 import head from '../../../common/head.head'
 Vue.component('onekit-template-head', head)
@@ -84,8 +75,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "蓝牙",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 function inArray (arr, key, val) {
   for (var i = 0; i < arr.length; i++) {
@@ -139,6 +130,15 @@ export default OnekitPage(ONEKIT_JSON, {
         }
       }
     })
+  },
+  utils: {
+    max: function (n1, n2) {
+      return Math.max(n1, n2)
+    },
+    len: function (arr) {
+      arr = arr || []
+      return arr.length
+    }
   },
   getBluetoothAdapterState: function () {
     wx.getBluetoothAdapterState({

@@ -1,3 +1,4 @@
+
 <template>
   <onekit-page id='app'>
     <import src='../../../common/head.vue' />
@@ -52,6 +53,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import foot from '../../../../page/common/foot.foot'
 Vue.component('onekit-template-foot', foot)
@@ -61,8 +63,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "live-pusher",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../../weixin2vue/OnekitPage';
+import wx from '../../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

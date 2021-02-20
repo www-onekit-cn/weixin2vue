@@ -1,3 +1,4 @@
+
 <template>
   <onekit-page id='app'>
     <import src='../../../common/head.vue' />
@@ -13,7 +14,7 @@
                          :autoplay="autoplay"
                          :interval="interval"
                          :duration="duration">
-            <template v-for="(item,index) in background">
+            <template v-for="(item) in background">
               <onekit-swiper-item>
                 <onekit-view :onekit-class="'swiper-item '+(item)"></onekit-view>
               </onekit-swiper-item>
@@ -65,6 +66,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import foot from '../../../../page/common/foot.foot'
 Vue.component('onekit-template-foot', foot)
@@ -74,8 +76,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "swiper",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../../weixin2vue/OnekitPage';
+import wx from '../../../../../weixin2vue/wx';
 //let //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

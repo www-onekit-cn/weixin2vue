@@ -20,8 +20,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "音频",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {
@@ -30,7 +30,7 @@ export default OnekitPage(ONEKIT_JSON, {
       path: 'packageAPI/pages/audio/audio'
     }
   },
-  onReady: function (e) {
+  onReady: function () {
     this.audioCtx = wx.createAudioContext('myAudio')
     this.audioCtx.setSrc('https://dldir1.qq.com/music/release/upload/t_mm_file_publish/2339610.m4a')
     this.audioCtx.play()

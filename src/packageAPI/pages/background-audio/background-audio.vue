@@ -58,9 +58,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "背景音频",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-//import { getApp } from 'weixin2vue/macro';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 //const app = getApp()
 const util = require('../../../util/util.js')

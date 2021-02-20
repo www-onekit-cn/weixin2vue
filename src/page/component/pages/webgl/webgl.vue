@@ -37,8 +37,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "webgl",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../../weixin2vue/OnekitPage';
+import wx from '../../../../../weixin2vue/wx';
 //let global = {};
 import { compareVersion } from "../../../../util/util"
 const vs = `

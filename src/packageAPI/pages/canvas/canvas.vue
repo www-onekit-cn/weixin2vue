@@ -13,7 +13,7 @@
                          canvas-id="canvas"></onekit-canvas>
           <onekit-scroll-view onekit-class="canvas-buttons"
                               scroll-y="true">
-            <template v-for="(method,index) in methods">
+            <template v-for="(method) in methods">
               <onekit-button onekit-class="canvas-button"
                              @Tap="method">{{method}}</onekit-button>
             </template>
@@ -38,8 +38,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "创建画布",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 const example = require('./example.js')
 export default OnekitPage(ONEKIT_JSON, {

@@ -24,7 +24,7 @@
                    @:touchstart="test$touchstart"
                    onekit-class="page-top">
         <onekit-view onekit-style="margin: 10px 10px;"> >>> 右滑出现侧边菜单</onekit-view>
-        <template v-for="(item,index) in tabs">
+        <template v-for="(item) in tabs">
           <onekit-view onekit-style="display: flex; align-items: center; flex-direction: column;">
             <onekit-image :src="item.img"
                           mode="widthFix"></onekit-image>
@@ -41,8 +41,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "sidebar",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   test$touchend (e) { test.touchend(e, this); },

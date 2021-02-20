@@ -36,8 +36,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "动态加载字体",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

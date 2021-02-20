@@ -13,7 +13,7 @@
           获取性能数据
         </onekit-button>
         <onekit-view onekit-class="page-section">
-          <onekit-view v-for="(item,index) in array"
+          <onekit-view v-for="(item) in array"
                        :key="index"
                        onekit-class="performance-list">
             <onekit-view onekit-class="performance-item">
@@ -43,8 +43,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "性能数据",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 const util = require('./util')
 const performance = wx.getPerformance ? wx.getPerformance() : {}

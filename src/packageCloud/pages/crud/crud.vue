@@ -29,7 +29,7 @@
           <onekit-view onekit-class="weui-cells__title">Todo List</onekit-view>
           <onekit-view onekit-class="weui-cells weui-cells_after-title"
                        v-if="openid">
-            <onekit-view v-for="(item,index) in todoList"
+            <onekit-view v-for="(item) in todoList"
                          :key="item._id"
                          onekit-class="weui-cell weui-cell_access"
                          hover-class="weui-cell_active"
@@ -83,9 +83,9 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "基本操作",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
-import { getApp } from 'weixin2vue/macro';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
+import { getApp } from '../../../../weixin2vue/macro';
 //let global = {};
 const app = getApp()
 export default OnekitPage(ONEKIT_JSON, {

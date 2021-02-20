@@ -38,6 +38,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import foot from '../../../../page/common/foot.foot'
 Vue.component('onekit-template-foot', foot)
@@ -47,8 +48,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "rich-text",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../../weixin2vue/OnekitPage';
+import wx from '../../../../../weixin2vue/wx';
 //let global = {};
 const htmlSnip = `<div class="div_class">
   <h1>Title</h1>

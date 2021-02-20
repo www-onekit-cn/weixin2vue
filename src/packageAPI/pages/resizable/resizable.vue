@@ -25,6 +25,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable */
 const resizable = require('./resizable');
 import Vue from 'vue'
 import head from '../../../common/head.head'
@@ -36,8 +37,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "屏幕旋转",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+//import wx from '../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

@@ -12,7 +12,7 @@
           <onekit-view onekit-class="page-section-title">表单组件在label内</onekit-view>
           <onekit-checkbox-group onekit-class="group"
                                  @Change="checkboxChange">
-            <onekit-view v-for="(item,index) in checkboxItems"
+            <onekit-view v-for="(item) in checkboxItems"
                          :key="index"
                          onekit-class="label-1">
               <onekit-label>
@@ -28,7 +28,7 @@
           <onekit-view onekit-class="page-section-title">label用for标识表单组件</onekit-view>
           <onekit-radio-group onekit-class="group"
                               @Change="radioChange">
-            <onekit-view v-for="(item,index) in radioItems"
+            <onekit-view v-for="(item) in radioItems"
                          :key="index"
                          onekit-class="label-2">
               <onekit-radio :onekit-id="item.name"
@@ -66,8 +66,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "label",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-//import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../../weixin2vue/OnekitPage';
+//import wx from '../../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

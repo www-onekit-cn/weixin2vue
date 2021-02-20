@@ -27,7 +27,7 @@
           <onekit-scroll-view onekit-class="device_list"
                               scroll-y
                               scroll-with-animation>
-            <onekit-view v-for="(item,index) in beacons"
+            <onekit-view v-for="(item) in beacons"
                          :key="item.index"
                          onekit-class="device_item"
                          hover-class="device_item_hover">
@@ -55,8 +55,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "iBeacon",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

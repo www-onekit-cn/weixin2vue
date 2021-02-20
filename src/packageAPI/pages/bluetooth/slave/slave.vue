@@ -1,3 +1,4 @@
+
 <template>
   <onekit-page id='app'>
     <import src='../../../../common/head.vue' />
@@ -41,14 +42,15 @@
                         @Confirm="onConfirm"></onekit-input>
         </template>
         <onekit-view>
-          <onekit-view v-for="(item,index) in connects"
-                       :key="index"
-                       v-if="connects.length > 0">
-            <onekit-view>
-              <onekit-text>{{item.deviceId}} : {{item.serverId}}</onekit-text>
-              <onekit-text>{{item.connected ? "已连接" : "断开"}}</onekit-text>
+          <template v-if="connects.length > 0">
+            <onekit-view v-for="(item) in connects"
+                         :key="index">
+              <onekit-view>
+                <onekit-text>{{item.deviceId}} : {{item.serverId}}</onekit-text>
+                <onekit-text>{{item.connected ? "已连接" : "断开"}}</onekit-text>
+              </onekit-view>
             </onekit-view>
-          </onekit-view>
+          </template>
         </onekit-view>
       </onekit-view>
       <onekit-template is="onekit-template-foot"></onekit-template>
@@ -56,6 +58,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import head from '../../../../common/head.head'
 Vue.component('onekit-template-head', head)
@@ -64,8 +67,8 @@ Vue.component('onekit-template-foot', foot)
 const ONEKIT_JSON = {
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../../weixin2vue/OnekitPage';
+import wx from '../../../../../weixin2vue/wx';
 //let global = {};
 const uuid3 = '0C76801A-62EB-45E5-96A8-37C8882ABB2B'
 const serviceId = 'D0611E78-BBB4-4591-A5F8-487910AE4366'
@@ -97,7 +100,7 @@ export default OnekitPage(ONEKIT_JSON, {
     servers: [
     ]
   },
-  onLoad: function (options) {
+  onLoad: function () {
     wx.onBLEPeripheralConnectionStateChanged((res) => {
       console.log('connect')
       const connects = this.data.connects
@@ -317,7 +320,7 @@ export default OnekitPage(ONEKIT_JSON, {
     wx.closeBluetoothAdapter()
   },
   onUnload: function () {
-    this.data.servers.forEach((server) => {
+    this.data.servers.forEach(() => {
     })
   }
 })

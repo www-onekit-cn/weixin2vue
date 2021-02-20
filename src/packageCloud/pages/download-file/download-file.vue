@@ -74,9 +74,9 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "下载文件",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { getApp } from 'weixin2vue/macro';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
+import { getApp } from '../../../../weixin2vue/macro';
 //let global = {};
 const demoImageFileId = require('../../../config').demoImageFileId
 const app = getApp()

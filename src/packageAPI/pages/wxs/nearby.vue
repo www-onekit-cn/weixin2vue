@@ -1,3 +1,4 @@
+
 <template>
   <onekit-page id='app'>
 
@@ -12,7 +13,7 @@
                    :interval="interval"
                    circular
                    :duration="duration">
-      <template v-for="(item,index) in imgUrls">
+      <template v-for="(item) in imgUrls">
         <onekit-swiper-item onekit-style="height:100%;">
           <onekit-image :src="item"
                         onekit-class="slide-image"
@@ -25,13 +26,14 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable no-unused-vars */
 const test = require('./nearby');
 const ONEKIT_JSON = {
   "navigationBarTitleText": "nearby",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 const windowWidth = wx.getSystemInfoSync().windowWidth
 export default OnekitPage(ONEKIT_JSON, {

@@ -48,8 +48,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "Web Socket",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 function showModal (title, content) {
   wx.showModal({

@@ -82,9 +82,9 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "模板消息",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { getApp } from 'weixin2vue/macro';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
+import { getApp } from '../../../../weixin2vue/macro';
 //let global = {};
 const templateMessageUrl = require('../../../config').templateMessageUrl
 const app = getApp()

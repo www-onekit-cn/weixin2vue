@@ -1,4 +1,4 @@
-import { wx } from 'weixin2vue';
+//import wx from '../weixin2vue/wx';
 //let global = {};
 const host = '14592619.qcloud.la'
 const config = {

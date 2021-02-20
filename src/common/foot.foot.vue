@@ -14,8 +14,8 @@ const ONEKIT_JSON = {
   "component": true,
   "usingComponents": {}
 }
-import { OnekitComponent } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitComponent from '../../weixin2vue/OnekitComponent';
+//import wx from '../weixin2vue/wx';
 //let //let global = {};
 export default OnekitComponent(ONEKIT_JSON, {}, {
   properties: {

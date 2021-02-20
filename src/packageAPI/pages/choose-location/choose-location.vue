@@ -44,8 +44,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "使用原生地图选择位置",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 const util = require('../../../util/util.js')
 const formatLocation = util.formatLocation

@@ -32,7 +32,7 @@
               <template v-if="currentPermissionIndex === 0">
                 <onekit-view onekit-class="weui-tab">
                   <onekit-view onekit-class="weui-navbar">
-                    <template v-for="(item,index) in tabs[currentPermissionIndex]">
+                    <template v-for="(item) in tabs[currentPermissionIndex]">
                       <onekit-view :onekit-id="index"
                                    :onekit-class="'weui-navbar__item '+(activeTabIndex === index ? 'weui-bar__item_on' : '')"
                                    @Tap="onTabClick">
@@ -97,7 +97,7 @@
               <template v-elif="currentPermissionIndex === 1">
                 <onekit-view onekit-class="weui-tab">
                   <onekit-view onekit-class="weui-navbar">
-                    <template v-for="(item,index) in tabs[currentPermissionIndex]">
+                    <template v-for="(item) in tabs[currentPermissionIndex]">
                       <onekit-view :onekit-id="index"
                                    :onekit-class="'weui-navbar__item '+(activeTabIndex === index ? 'weui-bar__item_on' : '')"
                                    @Tap="onTabClick">
@@ -224,9 +224,9 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "权限管理",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
-import { getApp } from 'weixin2vue/macro';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
+import { getApp } from '../../../../weixin2vue/macro';
 //let global = {};
 const app = getApp()
 const sliderWidth = 96

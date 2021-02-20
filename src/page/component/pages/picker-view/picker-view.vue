@@ -1,3 +1,4 @@
+
 <template>
   <onekit-page id='app'>
     <import src='../../../common/head.vue' />
@@ -14,17 +15,17 @@
                             :value="value"
                             @Change="bindChange">
           <onekit-picker-view-column>
-            <onekit-view v-for="(item,index) in years"
+            <onekit-view v-for="(item) in years"
                          :key="item.years"
                          onekit-style="line-height: 50px; text-align: center;">{{item}}年</onekit-view>
           </onekit-picker-view-column>
           <onekit-picker-view-column>
-            <onekit-view v-for="(item,index) in months"
+            <onekit-view v-for="(item) in months"
                          :key="item.months"
                          onekit-style="line-height: 50px; text-align: center;">{{item}}月</onekit-view>
           </onekit-picker-view-column>
           <onekit-picker-view-column>
-            <onekit-view v-for="(item,index) in days"
+            <onekit-view v-for="(item) in days"
                          :key="item.days"
                          onekit-style="line-height: 50px; text-align: center;">{{item}}日</onekit-view>
           </onekit-picker-view-column>
@@ -46,6 +47,8 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
 import Vue from 'vue'
 import foot from '../../../../page/common/foot.foot'
 Vue.component('onekit-template-foot', foot)
@@ -55,8 +58,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "picker-view",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../../weixin2vue/OnekitPage';
+import wx from '../../../../../weixin2vue/wx';
 //let global = {};
 const date = new Date()
 const years = [

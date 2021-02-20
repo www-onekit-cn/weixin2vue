@@ -62,8 +62,9 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "删除文件",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import { getApp } from '../../../../weixin2vue/macro';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let //let global = {};
 const app = getApp()
 export default OnekitPage(ONEKIT_JSON, {

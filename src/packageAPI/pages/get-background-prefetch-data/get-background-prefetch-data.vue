@@ -48,9 +48,9 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "数据预拉取",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
-import { getApp } from 'weixin2vue/macro';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
+import { getApp } from '../../../../weixin2vue/macro';
 //let global = {};
 const app = getApp()
 Date.prototype.Format = function (fmt) {

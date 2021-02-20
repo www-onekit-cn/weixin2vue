@@ -11,7 +11,7 @@
         <onekit-view onekit-class="page-body-info">
           <onekit-scroll-view onekit-class="device-list"
                               scroll-y>
-            <onekit-view v-for="(item,index) in wifiList"
+            <onekit-view v-for="(item) in wifiList"
                          :key="item.index"
                          onekit-class="item">
               <onekit-view onekit-class="list">
@@ -49,8 +49,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "Wi-Fi",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

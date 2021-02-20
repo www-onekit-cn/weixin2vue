@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 <template>
   <onekit-page id='app'>
     <import src='../../../common/head.vue' />
@@ -23,7 +24,7 @@
           <onekit-view onekit-class="page-section-title">推荐展示样式</onekit-view>
           <onekit-view onekit-class="weui-cells weui-cells_after-title">
             <onekit-radio-group @Change="radioChange">
-              <onekit-label v-for="(item,index) in items"
+              <onekit-label v-for="(item) in items"
                             :key="item.value"
                             onekit-class="weui-cell weui-check__label">
 
@@ -43,6 +44,7 @@
   </onekit-page>
 </template>
 <script>
+/* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import foot from '../../../../page/common/foot.foot'
 Vue.component('onekit-template-foot', foot)
@@ -52,8 +54,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "radio",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../../weixin2vue/OnekitPage';
+import wx from '../../../../../weixin2vue/wx';
 //let //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

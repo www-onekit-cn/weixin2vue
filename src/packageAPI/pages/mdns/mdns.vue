@@ -17,7 +17,7 @@
             停止搜索 mDNS
           </onekit-button>
           <onekit-view>
-            <onekit-view v-for="(item,index) in serviceList"
+            <onekit-view v-for="(item) in serviceList"
                          :key="item.index"
                          onekit-class="row">
               <onekit-text>设备服务名：{{item.serviceName}}</onekit-text>
@@ -40,8 +40,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "mDNS",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 var serviceList = [
 ]

@@ -10,7 +10,7 @@
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section">
           <onekit-view onekit-class="page-section-title">
-             源视频
+            源视频
           </onekit-view>
         </onekit-view>
         <onekit-view onekit-class="page-section">
@@ -35,10 +35,10 @@
         <template v-if="targetSrc">
           <onekit-view onekit-class="page-section">
             <onekit-view onekit-class="page-section-title">
-               <onekit-text>合成视频</onekit-text>
+              <onekit-text>合成视频</onekit-text>
             </onekit-view>
             <onekit-view onekit-class="page-section-title">
-               <onekit-text>合成视频轨道为：源视频1视频轨道 + 源视频2音频轨道</onekit-text>
+              <onekit-text>合成视频轨道为：源视频1视频轨道 + 源视频2音频轨道</onekit-text>
             </onekit-view>
           </onekit-view>
           <onekit-view onekit-class="page-section">
@@ -61,8 +61,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "音视频合成",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShareAppMessage: function () {

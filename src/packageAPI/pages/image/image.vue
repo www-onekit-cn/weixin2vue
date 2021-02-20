@@ -64,7 +64,7 @@
                     </onekit-view>
                     <onekit-view onekit-class="weui-uploader__bd">
                       <onekit-view onekit-class="weui-uploader__files">
-                        <template v-for="(image,index) in imageList">
+                        <template v-for="(image) in imageList">
                           <onekit-view onekit-class="weui-uploader__file">
                             <onekit-image onekit-class="weui-uploader__img"
                                           :src="image"
@@ -101,8 +101,8 @@ const ONEKIT_JSON = {
   "navigationBarTitleText": "图片",
   "usingComponents": {}
 }
-import { OnekitPage } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitPage from '../../../../weixin2vue/OnekitPage';
+import wx from '../../../../weixin2vue/wx';
 //let global = {};
 const sourceType = [
   [

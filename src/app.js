@@ -3,8 +3,8 @@
 import Vue from 'vue';
 import weixin2vue from 'weixin2vue';
 Vue.use(weixin2vue);
-import { OnekitApp } from 'weixin2vue';
-import { wx } from 'weixin2vue';
+import OnekitApp from '../weixin2vue/OnekitApp';
+import wx from '../weixin2vue/wx';
 //let global = {};
 const config = require('./config')
 const themeListeners = []
