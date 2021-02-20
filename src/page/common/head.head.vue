@@ -1,5 +1,5 @@
 <template>
-  <onekit-page id='app'>
+  <onekit-ui>
     <onekit-view onekit-class="page-head">
       <onekit-view onekit-class="page-head-title">
         {{title}}
@@ -10,7 +10,7 @@
         {{desc}}
       </onekit-view>
     </onekit-view>
-  </onekit-page>
+  </onekit-ui>
 </template>
 <script>
 /* eslint-disable */
@@ -20,19 +20,23 @@ const ONEKIT_JSON = {
 }
 import OnekitComponent from '../../../weixin2vue/OnekitComponent';
 import wx from '../../../weixin2vue/wx';
-global = {};
-export default OnekitComponent(ONEKIT_JSON, {}, {
-  properties: ["DATA"],
+import { Any } from '../../../weixin2vue/macro';
+//let global = {};
+export default OnekitComponent(ONEKIT_JSON,  {
+  properties: {
+    DATA: Any
+  },
+  data: {
+    title: ""
+  },
   onLoad: function () {
-    console.log("aaaaa",this.props.DATA)
-    if (this.props.DATA) {
+    if (this.data.DATA) {
       var data;
-      if (typeof (this.props.DATA) == "string") {
-        data = JSON.parse((('{' + this.DATA)) + '}');
+      if (typeof (this.data.DATA) == "string") {
+        data = JSON.parse((('{' + this.data.DATA)) + '}');
       } else {
-        data = this.props.DATA;
+        data = this.data.DATA;
       }
-      console.log("xxxx", data)
       this.setData(data);
     }
   }

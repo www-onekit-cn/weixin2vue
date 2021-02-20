@@ -1,5 +1,5 @@
 <template>
-  <onekit-page id='app'>
+  <onekit-ui>
     <onekit-navigator onekit-class="page-foot"
                       openType="switchTab"
                       url="/page/component/index"
@@ -7,7 +7,7 @@
       <onekit-image onekit-class="icon-foot"
                     src="../../image/icon_foot.png"></onekit-image>
     </onekit-navigator>
-  </onekit-page>
+  </onekit-ui>
 </template>
 <script>
 /* eslint-disable */
@@ -17,19 +17,22 @@ const ONEKIT_JSON = {
 }
 import OnekitComponent from '../../../weixin2vue/OnekitComponent';
 import wx from '../../../weixin2vue/wx';
+import { Any } from '../../../weixin2vue/macro';
 //let global = {};
-export default OnekitComponent(ONEKIT_JSON, {}, {
-  properties: ["DATA"],
+export default OnekitComponent(ONEKIT_JSON, {
+  properties: {
+    DATA: Any
+  },
   data: {
     desc: ""
   },
   attached: function () {
-    if (this.DATA) {
+    if (this.data.DATA) {
       var data;
-      if (typeof (this.DATA) == "string") {
-        data = JSON.parse((('{' + this.DATA)) + '}');
+      if (typeof (this.data.DATA) == "string") {
+        data = JSON.parse((('{' + this.data.DATA)) + '}');
       } else {
-        data = this.DATA;
+        data = this.data.DATA;
       }
       this.setData(data);
     }

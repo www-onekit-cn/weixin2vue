@@ -41,6 +41,7 @@ import swiper_item from './swiper-item'
 import Switch from './switch'
 import text from './text'
 import textarea from './textarea'
+import ui from './ui'
 import video from './video'
 import view from './view'
 import voip_room from './voip-room'
@@ -95,6 +96,7 @@ export default {
         Vue.use(Switch)
         Vue.use(text)
         Vue.use(textarea)
+        Vue.use(ui)
         Vue.use(video)
         Vue.use(view)
         Vue.use(voip_room)
