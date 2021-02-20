@@ -21,13 +21,13 @@ import { Any } from '../../../weixin2vue/macro';
 //let global = {};
 export default OnekitComponent(ONEKIT_JSON, {
   properties: {
-    DATA: String
+    DATA: { type: Any }
   },
   data: {
-    title: ""
   },
   attached: function () {
-
+    const data = this.getDATA().DATA
+    this.setData(data);
   }
 })
 </script>

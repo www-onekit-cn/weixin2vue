@@ -81,6 +81,9 @@ export default function (UC_JSON, object) {
         _data = data
       },
       setData(data) {
+        if(!data){
+          return
+        }
         Object.assign(_data,data)
         this.$nextTick(() => {
           for (let k of Object.keys(data)) {
@@ -110,7 +113,6 @@ export default function (UC_JSON, object) {
               prop.type = property.type
             }
             if (property.value) {
-              _data[propertyName] = property.value
               prop.default = property.value
             }
             result.props[propertyName] = prop
