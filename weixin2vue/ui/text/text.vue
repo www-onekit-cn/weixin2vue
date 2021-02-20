@@ -1,10 +1,6 @@
 <template>
-  <div
-       :class="['onekit-text',onekitClass,
-						this.userSelect? 'iselect': '']"
-       :style="onekitStyle"
-       :id="onekitId"
-       ref="dom">
+  <div :class="['onekit-text',onekitClass,
+						this.userSelect? 'iselect': '']" :style="onekitStyle" :id="onekitId" ref="dom">
     <span v-html="html"></span>
     <slot v-if="false"></slot>
   </div>
@@ -72,13 +68,5 @@
 </script>
 
 <style>
-  .iselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    display: inline-block;
-  }
+
 </style>

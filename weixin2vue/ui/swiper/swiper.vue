@@ -2,21 +2,16 @@
 <template>
   <div class="onekit-swiper" ref="main" :active-index="currentIndex">
     <div class="onekit-swiper-inner">
-      <div class="onekit-swiper-wrapper clearfix"
-           @touchstart="main_touchstart"
-           @touchmove="main_touchmove"
-           @touchend="main_touchend"
-           ref="slider-wrapper"
-           :style="{width: `${this.wrapperWidth}px`, transform: translateValue, 'transition-duration': (touching || !isTransition) ? '0ms' : '300ms'}">
+      <div class="onekit-swiper-wrapper clearfix" @touchstart="main_touchstart" @touchmove="main_touchmove"
+        @touchend="main_touchend" ref="slider-wrapper"
+        :style="{width: `${this.wrapperWidth}px`, transform: translateValue, 'transition-duration': (touching || !isTransition) ? '0ms' : '300ms'}">
         <slot></slot>
       </div>
     </div>
     <div v-if="indicatorDots" class="onekit-swiper-pagination clearfix">
-      <div class="onekit-swiper-page icon"
-           v-for="(item, index) in sliderLength"
-           :key="index"
-           :class="[((index === currentIndex) || (index === 0 && currentIndex === sliderLength) || (index === sliderLength - 1 && currentIndex === -1)) ? 'onekit-swiper-page-active' : '']"
-           :style="{'background':((index === currentIndex) || (index === 0 && currentIndex === sliderLength) || (index === sliderLength - 1 && currentIndex === -1) ? indicatorActiveColor : indicatorColor)}">
+      <div class="onekit-swiper-page icon" v-for="(item, index) in sliderLength" :key="index"
+        :class="[((index === currentIndex) || (index === 0 && currentIndex === sliderLength) || (index === sliderLength - 1 && currentIndex === -1)) ? 'onekit-swiper-page-active' : '']"
+        :style="{'background':((index === currentIndex) || (index === 0 && currentIndex === sliderLength) || (index === sliderLength - 1 && currentIndex === -1) ? indicatorActiveColor : indicatorColor)}">
 
       </div>
     </div>
@@ -152,7 +147,8 @@
           let differenceY = event.touches[0].clientY - this.startY;
           // 不循环
           if (!this.circular) {
-            if ((this.currentIndex === 0 && this.differenceX > 0) || (this.currentIndex === this.sliderLength - 1 && this.differenceX < 0)) {
+            if ((this.currentIndex === 0 && this.differenceX > 0) || (this.currentIndex === this.sliderLength - 1 &&
+                this.differenceX < 0)) {
               return false;
             }
           }
@@ -225,40 +221,5 @@
 </script>
 
 <style scoped>
-  .onekit-swiper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
 
-  .onekit-swiper-inner {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .onekit-swiper-wrapper {
-    height: 100%;
-  }
-
-  .onekit-swiper-pagination {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .onekit-swiper-page {
-    height: 8px;
-    width: 8px;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: 8px;
-    display: inline-block;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-
-  .onekit-swiper-page:last-child {
-    margin-right: 0;
-  }
 </style>

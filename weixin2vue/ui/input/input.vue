@@ -1,21 +1,9 @@
 <template>
   <div>
-    <input
-           :class="['onekit-input',onekitClass]"
-           :style="onekitStyle"
-           :id="onekitId"
-           :value="value"
-           :pattern="newType"
-           :type="password ? 'password' : '' "
-           :placeholder="placeholder"
-           :disabled="disabled ? 'disabled' : false "
-           :maxlength="maxlength"
-           :autofocus="focusNew? 'autofocus' : '' "
-           @focus="_focus"
-           @blur="_blur"
-           @keydown="_confirm"
-           v-model="val"
-           @input="_input" />
+    <input :class="['onekit-input',onekitClass]" :style="onekitStyle" :id="onekitId" :value="value" :pattern="newType"
+      :type="password ? 'password' : '' " :placeholder="placeholder" :disabled="disabled ? 'disabled' : false "
+      :maxlength="maxlength" :autofocus="focusNew? 'autofocus' : '' " @focus="_focus" @blur="_blur" @keydown="_confirm"
+      v-model="val" @input="_input" />
   </div>
 
 </template>
@@ -23,7 +11,9 @@
 <script>
   import weixin_behavior from "../../behaviors/weixin_behavior"
   import onekit_behavior from "../../behaviors/onekit_behavior"
-  import { eventBus } from '../../eventBus'
+  import {
+    eventBus
+  } from '../../eventBus'
   export default {
     name: "onekit-input",
     mixins: [weixin_behavior, onekit_behavior],
@@ -63,16 +53,16 @@
       newType() {
         let newType
         switch (this.type) {
-        case 'text':
-          newType = 'text'
-          break
-        case 'number':
-          newType = '[0-9]*'
-          break
-        case 'digit':
-          newType = 'number'
-          break
-        default:
+          case 'text':
+            newType = 'text'
+            break
+          case 'number':
+            newType = '[0-9]*'
+            break
+          case 'digit':
+            newType = 'number'
+            break
+          default:
         }
         return newType
       }
@@ -92,7 +82,14 @@
         if (this.adjustPosition) {
           window.scroll(0, 0)
         }
-        const { changedTouches, currentTarget, target, timeStamp, touches, type } = e
+        const {
+          changedTouches,
+          currentTarget,
+          target,
+          timeStamp,
+          touches,
+          type
+        } = e
         const detail = {
           value: this.val
         }
@@ -111,7 +108,14 @@
       },
       _blur(e) {
 
-        const { changedTouches, currentTarget, target, timeStamp, touches, type } = e
+        const {
+          changedTouches,
+          currentTarget,
+          target,
+          timeStamp,
+          touches,
+          type
+        } = e
         const detail = {
           value: this.val
         }
@@ -133,7 +137,12 @@
         }
       },
       _input(e) {
-        const { currentTarget, target, timeStamp, touches } = e
+        const {
+          currentTarget,
+          target,
+          timeStamp,
+          touches
+        } = e
         const detail = {
           cursor: this.val.length,
           value: this.val,
@@ -162,10 +171,5 @@
 </script>
 
 <style>
-  .onekit-input {
-    width: 100%;
-    background: none;
-    outline: none;
-    border: none;
-  }
+
 </style>

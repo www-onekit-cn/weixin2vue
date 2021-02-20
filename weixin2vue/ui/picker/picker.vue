@@ -1,8 +1,5 @@
 <template>
-  <div
-       :class="['onekit-picker',onekitClass]"
-       :style="onekitStyle"
-       :id="onekitId">
+  <div :class="['onekit-picker',onekitClass]" :style="onekitStyle" :id="onekitId">
     <div class="selector" v-if="mode === 'selector'">
       <selector :column="'1'" :data="data" />
       <slot></slot>
@@ -40,7 +37,9 @@
   import city_list from './_/region-picker/city-data.json'
   import timeComponent from './_/time-picker/time'
   import dateComponent from './_/date-picker/date'
-  import { eventBus } from '../../eventBus'
+  import {
+    eventBus
+  } from '../../eventBus'
   export default {
     name: "onekit-picker",
     data() {
@@ -148,40 +147,40 @@
         this.$emit('Cancel')
       })
       switch (this.mode) {
-      case 'selector':
-        eventBus.$on('onekit-picker-change-done', data => {
-          eventBus.$emit('onekit-picker-submit', data)
-          this.$emit('Change', data)
-        })
-        break
-      case 'region':
-        eventBus.$on('onekit-region-picker-change-done', data => {
-          eventBus.$emit('onekit-picker-submit', data)
-          this.$emit('Change', data)
-        })
-        break
-      case 'multiSelector':
-        eventBus.$on('onekit-mutiPicker-changeend', data => {
-          this.newRange = this.range
-          eventBus.$emit('mutirangeChange', this.newRange)
-          eventBus.$emit('onekit-picker-submit', data)
-          this.$emit('Columnchange', data)
-        })
-        break
-      case 'time':
-        eventBus.$on('onekit-time-picker-change-done', data => {
-          eventBus.$emit('onekit-picker-submit', data)
-          this.$emit('Change', data)
-        })
-        break
-      case 'date':
-        eventBus.$on('onekit-date-picker-change-done', data => {
-          eventBus.$emit('onekit-picker-submit', data)
-          this.$emit('Change', data)
-        })
-        break
-      default:
-        return
+        case 'selector':
+          eventBus.$on('onekit-picker-change-done', data => {
+            eventBus.$emit('onekit-picker-submit', data)
+            this.$emit('Change', data)
+          })
+          break
+        case 'region':
+          eventBus.$on('onekit-region-picker-change-done', data => {
+            eventBus.$emit('onekit-picker-submit', data)
+            this.$emit('Change', data)
+          })
+          break
+        case 'multiSelector':
+          eventBus.$on('onekit-mutiPicker-changeend', data => {
+            this.newRange = this.range
+            eventBus.$emit('mutirangeChange', this.newRange)
+            eventBus.$emit('onekit-picker-submit', data)
+            this.$emit('Columnchange', data)
+          })
+          break
+        case 'time':
+          eventBus.$on('onekit-time-picker-change-done', data => {
+            eventBus.$emit('onekit-picker-submit', data)
+            this.$emit('Change', data)
+          })
+          break
+        case 'date':
+          eventBus.$on('onekit-date-picker-change-done', data => {
+            eventBus.$emit('onekit-picker-submit', data)
+            this.$emit('Change', data)
+          })
+          break
+        default:
+          return
       }
 
     }
@@ -189,8 +188,5 @@
 </script>
 
 <style>
-  .onekit-picker {
-    position: relative;
-    width: 100%;
-  }
+
 </style>

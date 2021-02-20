@@ -1,17 +1,7 @@
 <template>
-  <textarea
-            :class="['onekit-textarea',onekitClass]"
-            :id="onekitId"
-            v-model="text"
-            :placeholder="placeholder"
-            :disabled="disabled"
-            :maxlength="maxlength"
-            :autofocus="focus"
-            @input="_write"
-            @focus="_focus"
-            @blur="_blur"
-            @keyup.enter="_confirm"
-            :style="{onekitStyle,'position': fixed ? 'fixed' : 'relative'}">
+  <textarea :class="['onekit-textarea',onekitClass]" :id="onekitId" v-model="text" :placeholder="placeholder"
+    :disabled="disabled" :maxlength="maxlength" :autofocus="focus" @input="_write" @focus="_focus" @blur="_blur"
+    @keyup.enter="_confirm" :style="{onekitStyle,'position': fixed ? 'fixed' : 'relative'}">
   </textarea>
 </template>
 
@@ -71,7 +61,11 @@
     },
     methods: {
       _write(event) {
-        const { currentTarget, target, timeStamp } = event
+        const {
+          currentTarget,
+          target,
+          timeStamp
+        } = event
         const detail = {
           value: this.$el.value,
           cursor: this.$el.value.length,
@@ -104,7 +98,11 @@
         }
       },
       _focus(e) {
-        const { currentTarget, target, timeStamp } = e
+        const {
+          currentTarget,
+          target,
+          timeStamp
+        } = e
         const detail = {
           value: this.$el.value,
           height: this.$el.scrollHeight
@@ -139,7 +137,11 @@
         }
       },
       _blur(e) {
-        const { currentTarget, target, timeStamp } = e
+        const {
+          currentTarget,
+          target,
+          timeStamp
+        } = e
         const detail = {
           value: this.$el.value,
         }
@@ -155,7 +157,11 @@
         this.$emit('blur', event)
       },
       _confirm(e) {
-        const { currentTarget, target, timeStamp } = e
+        const {
+          currentTarget,
+          target,
+          timeStamp
+        } = e
         const detail = {
           value: this.$el.value,
         }
@@ -175,11 +181,5 @@
 </script>
 
 <style>
-  .onekit-textarea {
-    width: 100%;
-    resize: none;
-    background: none;
-    outline: none;
-    /* border: none;a */
-  }
+
 </style>

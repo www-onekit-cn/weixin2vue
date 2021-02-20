@@ -1,10 +1,6 @@
 /** BUG待处理 2021 2 2*/
 <template>
-  <div
-       :class="['onekit-scroll-view',onekitClass]"
-       :style="{onekitStyle}"
-       :id="onekitId"
-       @touchstart="scroll">
+  <div :class="['onekit-scroll-view',onekitClass]" :style="{onekitStyle}" :id="onekitId" @touchstart="scroll">
     <slot></slot>
   </div>
 </template>
@@ -50,9 +46,5 @@
 </script>
 
 <style>
-  .onekit-scroll-view {
-    /* width: 100%; */
-    height: 200px;
-    overflow: scroll;
-  }
+
 </style>

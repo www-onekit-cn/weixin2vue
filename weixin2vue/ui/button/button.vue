@@ -1,15 +1,10 @@
 <template>
-  <button
-          class="onekit-button"
-          :class="[typeClass, disabled ? 'weui_btn_disabled' : '', mini ? 'weui_btn_mini' : '']"
-          :style="{onekitStyle, 
+  <button class="onekit-button" :class="[typeClass, disabled ? 'weui_btn_disabled' : '', mini ? 'weui_btn_mini' : '']"
+    :style="{onekitStyle, 
                    'background-color': clicking ? _bgcolor.bgcolorActive : _bgcolor.bgcolor,
                    'color': clicking ? _bgcolor.bgTxtcolorActive : _bgcolor.bgTxtcolor,                   
-                    }"
-          @click.prevent="button_click($event)"
-          :type="formType">
-    <div class="loading"
-         v-if="_loading">
+                    }" @click.prevent="button_click($event)" :type="formType">
+    <div class="loading" v-if="_loading">
     </div>
     <slot></slot>
   </button>
@@ -18,7 +13,9 @@
 <script>
   import weixin_behavior from '../../behaviors/weixin_behavior'
   import onekit_behavior from '../../behaviors/onekit_behavior'
-  import { eventBus } from '../../eventBus'
+  import {
+    eventBus
+  } from '../../eventBus'
   export default {
     mixins: [weixin_behavior, onekit_behavior],
     data() {
@@ -56,7 +53,13 @@
       button_click($event) {
         if (!this.disabled) {
           if (this.formType === 'submit') {
-            const { changedTouches, currentTarget, target, timeStamp, touches } = $event
+            const {
+              changedTouches,
+              currentTarget,
+              target,
+              timeStamp,
+              touches
+            } = $event
             const detail = {
               formId: this.onekitId,
               target: {
@@ -80,7 +83,13 @@
             eventBus.$emit('onekit-form-submit-click', data)
           }
           if (this.formType === 'reset') {
-            const { changedTouches, currentTarget, target, timeStamp, touches } = $event
+            const {
+              changedTouches,
+              currentTarget,
+              target,
+              timeStamp,
+              touches
+            } = $event
             const detail = {
               target: {
                 id: '',
@@ -145,7 +154,12 @@
           bgTxtcolor = 'rgba(0, 0, 0, .3)'
         }
 
-        return { bgcolor, bgcolorActive, bgTxtcolor, bgTxtcolorActive }
+        return {
+          bgcolor,
+          bgcolorActive,
+          bgTxtcolor,
+          bgTxtcolorActive
+        }
       },
     },
     mounted() {
@@ -157,35 +171,5 @@
 </script>
 
 <style>
-  .onekit-button {
-    border: 1px solid #ccc;
-    padding: 14px 16px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 8px;
-    outline: none;
-    /* width: 100%; */
-  }
 
-  .loading {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    /* background: #000; */
-    border: 2px solid #ffffff;
-    border-bottom: .3px solid transparent;
-    border-radius: 100%;
-    margin-right: 8px;
-    animation: loadingRotato 1.4s linear infinite;
-  }
-
-  @keyframes loadingRotato {
-    from {
-      transform: translateY(4px) rotate(0deg);
-    }
-
-    to {
-      transform: translateY(4px) rotate(360deg);
-    }
-  }
 </style>

@@ -1,15 +1,7 @@
 <template>
-  <div
-       :class="['onekit-video',onekitClass]"
-       :style="onekitStyle">
-    <video :src='src'
-           :id="onekitId"
-           :poster="poster"
-           :loop="loop"
-           :controls="controls"
-           ref="vedioDom"
-           :class="[showFullscreenBtn ? 'show-button' : 'hide-button']"
-           :style="{'object-fit': fit}"></video>
+  <div :class="['onekit-video',onekitClass]" :style="onekitStyle">
+    <video :src='src' :id="onekitId" :poster="poster" :loop="loop" :controls="controls" ref="vedioDom"
+      :class="[showFullscreenBtn ? 'show-button' : 'hide-button']" :style="{'object-fit': fit}"></video>
     <slot></slot>
   </div>
 </template>
@@ -20,7 +12,9 @@
   export default {
     name: "onekit-video",
     mixins: [weixin_behavior, onekit_behavior],
-    data: () => ({ video: '' }),
+    data: () => ({
+      video: ''
+    }),
     props: {
       'src': {
         type: String,
@@ -117,25 +111,41 @@
         this.$emit('waitting')
       },
       _trigger_adstart(e) {
-        e.detail = { adType: 'preRollAd' | 'postRollAd' }
+        e.detail = {
+          adType: 'preRollAd' | 'postRollAd'
+        }
         this.$emit('adstart', e)
       },
       _trigger_adended(e) {
-        e.detail = { adType: 'preRollAd' | 'postRollAd' }
+        e.detail = {
+          adType: 'preRollAd' | 'postRollAd'
+        }
         this.$emit('adended', e)
       },
       _trgger_adclose(e) {
-        e.detail = { adType: 'preRollAd' | 'postRollAd' }
+        e.detail = {
+          adType: 'preRollAd' | 'postRollAd'
+        }
         this.$emit('adclose', e)
       },
       _trigger_aderror(e) {
-        e.detail = { adType: 'preRollAd' | 'postRollAd' }
+        e.detail = {
+          adType: 'preRollAd' | 'postRollAd'
+        }
         this.$emit('aderror', e)
       },
       _trugger_loadedmetadata(data) {
-        let { width, height, duration } = data
+        let {
+          width,
+          height,
+          duration
+        } = data
         let e = {}
-        e.detail = { width, height, duration }
+        e.detail = {
+          width,
+          height,
+          duration
+        }
         this.$emit('loadedmetadata', e)
       }
     }
@@ -143,19 +153,5 @@
 </script>
 
 <style>
-  .onekit-video {
-    width: 100%;
-  }
 
-  .onekit-video video {
-    width: 100%;
-  }
-
-  .show-button::-webkit-media-controls-fullscreen-button {
-    display: block
-  }
-
-  .hide-button::-webkit-media-controls-fullscreen-button {
-    display: none
-  }
 </style>

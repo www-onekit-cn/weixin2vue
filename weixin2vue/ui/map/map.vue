@@ -1,30 +1,14 @@
 <template>
-  <div
-       :class="['onekit-map',onekitClass]"
-       :style="onekitStyle"
-       :id="onekitId">
-    <el-amap
-             class="amap-box"
-             vid="amap-vue"
-             :center="center"
-             :zoom="scale - 1"
-             :events="events">
-      <el-amap-circle v-for="m of tt_circles"
-                      :key="`${m}`"
-                      :center="m.center"
-                      :radius="m.radius"
-                      fill-opacity="0.2"
-                      strokeWeight="1">
+  <div :class="['onekit-map',onekitClass]" :style="onekitStyle" :id="onekitId">
+    <el-amap class="amap-box" vid="amap-vue" :center="center" :zoom="scale - 1" :events="events">
+      <el-amap-circle v-for="m of tt_circles" :key="`${m}`" :center="m.center" :radius="m.radius" fill-opacity="0.2"
+        strokeWeight="1">
 
       </el-amap-circle>
       <el-amap-polyline :path="tt_polyline.path">
 
       </el-amap-polyline>
-      <el-amap-marker v-for="(m, i) in tt_position"
-                      :key="i"
-                      :position="m.position"
-                      :title="m.title"
-                      :events="m.events">
+      <el-amap-marker v-for="(m, i) in tt_position" :key="i" :position="m.position" :title="m.title" :events="m.events">
       </el-amap-marker>
     </el-amap>
     <slot></slot>
@@ -39,7 +23,9 @@
   Vue.use(VueMap)
   VueMap.initAMapApiLoader({
     key: '0c805d60efe6c4e05d13b93e4e48a129',
-    plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor']
+    plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType',
+      'AMap.PolyEditor', 'AMap.CircleEditor'
+    ]
   })
   const optionsAPI = {
     name: "onekit-map",
@@ -88,7 +74,13 @@
       tt_position() {
         let tt_position = []
         for (let key in this.markers) {
-          const { longitude, latitude, title, id, iconPath } = this.markers[key]
+          const {
+            longitude,
+            latitude,
+            title,
+            id,
+            iconPath
+          } = this.markers[key]
           let obj = {}
           obj[`position`] = [longitude, latitude]
           obj[`title`] = title
@@ -110,7 +102,11 @@
       tt_circles() {
         let tt_circles = []
         for (let key in this.circles) {
-          const { longitude, latitude, radius } = this.circles[key]
+          const {
+            longitude,
+            latitude,
+            radius
+          } = this.circles[key]
           let obj = []
           obj['center'] = [longitude, latitude]
           obj['radius'] = radius
@@ -121,10 +117,18 @@
       tt_polyline() {
         let polyline = {}
         for (let key in this.polyline) {
-          const { points, color, width, dottedLine } = this.polyline[key]
+          const {
+            points,
+            color,
+            width,
+            dottedLine
+          } = this.polyline[key]
           polyline['path'] = []
           for (let points_key in points) {
-            const { longitude, latitude } = points[points_key]
+            const {
+              longitude,
+              latitude
+            } = points[points_key]
             const path = [longitude, latitude]
             polyline['path'].push(path)
           }
@@ -140,7 +144,5 @@
 </script>
 
 <style>
-  .onekit-map {
-    width: 100%;
-  }
+
 </style>

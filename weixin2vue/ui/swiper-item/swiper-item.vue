@@ -1,8 +1,6 @@
 <template>
-  <div
-       :class="['onekit-swiper-item',onekitClass]"
-       :style="[onekitStyle,itemStyle,{width: `${$parent.width}px`}]"
-       :id="onekitId">
+  <div :class="['onekit-swiper-item',onekitClass]" :style="[onekitStyle,itemStyle,{width: `${$parent.width}px`}]"
+    :id="onekitId">
     <slot></slot>
   </div>
 </template>
@@ -46,10 +44,5 @@
 </script>
 
 <style scoped>
-  .onekit-swiper-item {
-    height: 100px;
-    /* float: left; */
-    display: inline-block;
-    background: pink;
-  }
+
 </style>

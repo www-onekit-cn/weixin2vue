@@ -1,14 +1,8 @@
 <template>
-  <div
-       :class="['onekit-switch',onekitClass]"
-       :style="onekitStyle"
-       :id="onekitId"
-       class="switch"
-       :key="tag">
+  <div :class="['onekit-switch',onekitClass]" :style="onekitStyle" :id="onekitId" class="switch" :key="tag">
     <div class="switch-wrapper"
-         :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status?switchBg:'#e9ebef'}"
-         :class="{'close':!status,'disabled':this.disabled}"
-         @click.stop="handleSwitch">
+      :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status?switchBg:'#e9ebef'}"
+      :class="{'close':!status,'disabled':this.disabled}" @click.stop="handleSwitch">
       <div class="slider" :style="{'width':(height-2)+'px','height':(height-2)+'px','left':left+'px'}"></div>
     </div>
     <slot></slot>
@@ -18,7 +12,9 @@
 <script>
   import weixin_behavior from "../../behaviors/weixin_behavior"
   import onekit_behavior from "../../behaviors/onekit_behavior"
-  import { eventBus } from '../../eventBus';
+  import {
+    eventBus
+  } from '../../eventBus';
   // import { eventBus } from '../../eventBus'
   export default {
     name: "onekit-switch",
@@ -113,34 +109,5 @@
 </script>
 
 <style>
-  .switch-wrapper {
-    width: 60px;
-    height: 30px;
-    background: #ff4949;
-    border-radius: 15px;
-    position: relative;
-    cursor: pointer;
-    transition: .25s background;
-  }
 
-  .close {
-    background: #e9ebef;
-  }
-
-  .disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
-
-  .slider {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #ffffff;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    z-index: 3;
-    transition: left 0.4s;
-  }
 </style>
