@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="start">屏幕分享</button>
+  <button id="record">开始录制</button>
+  <button id="stop">结束录制</button>
+  <button id="download">下载视频</button>
+  <video autoplay playsinline id="player"></video>
+
+  <script>
+    let allStream
+    document.querySelector('#start').onclick = function () {
+      if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) {
+        navigator.mediaDevices.getDisplayMedia({
+          video: true,
+          audio: false
+        }).then((stream) => {
+          allStream = stream;
+          document.querySelector('#player').srcObject = stream;
+        }).catch((err) => {
+          console.error(err);
+        })
+      } else {
+        alert('不支持这个特性');
+      }
+    }
+
+    let buf = [];
+let mediaRecorder;
+
+document.querySelector('#record').onclick = function() {
+    // 约束视频格式
+    const options = {
+        mimeType: 'video/webm;codecs=vp8'
+    }
+    // 判断是否是支持的mimeType格式
+    if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+        console.error('不支持的视频格式');
+        return;
+    }
+    try {
+      // console.log(allStream, options)
+        mediaRecorder = new MediaRecorder(allStream, options);
+        // 处理采集到的事件
+        mediaRecorder.ondataavailable = function(e) {
+            if (e && e.data && e.data.size > 0) {
+                // 存储到数组中
+                buf.push(e.data);
+            }
+        };
+        // 开始录制
+        mediaRecorder.start(10)
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+document.querySelector('#download').onclick = function() {
+    mediaRecorder.stop();
+    if (buf.length) {
+        const blob = new Blob(buf, { type: 'video/webm'});
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.style.display = 'none';
+        a.download = 'aaa.webm';
+        a.click();
+    } else {
+        alert('还没有录制任何内容');
+    }
+}
+
+
+  </script>
+</body>
+
+</html>
