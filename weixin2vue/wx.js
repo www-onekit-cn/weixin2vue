@@ -5,6 +5,7 @@ import OneKit from './js/OneKit'
 import EventChannel from "./api/EventChannel"
 import './js/PrevewImage'
 class VueWX extends WX {
+
   setNavigationBarTitle(wx_object) {
 
     const wx_title = wx_object.title
@@ -15,9 +16,17 @@ class VueWX extends WX {
 
   }
 
-  showNavigationBarLoading() {}
+  showNavigationBarLoading() {
+    console.warn('Is not currently supprted')
+  }
 
-  hideNavigationBarLoading() {}
+  hideNavigationBarLoading() {
+    console.warn('is not currently supported')
+  }
+
+  hideHomeButton() {
+    console.warn('is not currently supported')
+  }
 
   setNavigationBarColor(wx_object) {
 
@@ -30,30 +39,51 @@ class VueWX extends WX {
     $("#onekitwx_navigationBar").css("background", wx_backgroundColor)
 
   }
+
   setBackgroundTextStyle() {
-
+    console.warn('is not currently supported')
   }
+
   setBackgroundColor() {
-
+    console.warn('is not currently supported')
   }
-  setTabBarBadge() {}
 
-  removeTabBarBadge() {}
+  setTabBarBadge() {
+    console.warn('is not currently supprted')
+  }
 
-  showTabBarRedDot() {}
+  removeTabBarBadge() {
+    console.warn('is not currently supprted')
+  }
 
-  hideTabBarRedDot() {}
+  showTabBarRedDot() {
+    console.warn('is not currently supprted')
+  }
 
-  setTabBarStyle() {}
+  hideTabBarRedDot() {
+    console.warn('is not currently supprted')
+  }
 
-  setTabBarItem() {}
+  setTabBarStyle() {
+    console.warn('is not currently supprted')
+  }
 
-  showTabBar() {}
+  setTabBarItem() {
+    console.warn('is not currently supprted')
+  }
 
-  hideTabBar() {}
+  showTabBar() {
+    console.warn('is not currently supprted')
+  }
+
+  hideTabBar() {
+    console.warn('is not currently supprted')
+  }
+
   loadFontFace() {
-
+    console.warn('is not currently supprted')
   }
+
   startPullDownRefresh() {
     /*
     if (wx_object) {
@@ -115,6 +145,7 @@ class VueWX extends WX {
       }
     }*/
   }
+
   stopPullDownRefresh(wx_object) {
     let scroll
     if (wx_object) {
@@ -168,6 +199,7 @@ class VueWX extends WX {
   }
 
   /**路由 */
+
   switchTab(wx_object) {
     let wx_url = wx_object.url;
     let wx_success = wx_object.success;
@@ -454,6 +486,7 @@ class VueWX extends WX {
       }
     }
   }
+
   showModal(wx_object) {
     let title = wx_object.title;
     let content = wx_object.content;
@@ -550,6 +583,7 @@ class VueWX extends WX {
     }
 
   }
+
   showLoading(wx_object) {
     let tipTxt = wx_object.title;
     let mask;
@@ -602,6 +636,7 @@ class VueWX extends WX {
       }
     }
   }
+
   showActionSheet(wx_object) {
     let itemList = wx_object.itemList;
     let itemColor = wx_object.itemColor;
@@ -675,6 +710,7 @@ class VueWX extends WX {
       }
     }
   }
+
   hideToast() {
     $("#viewport").remove();
     $(".xsw_showToast").remove();
@@ -684,5 +720,19 @@ class VueWX extends WX {
     $("#viewport").remove();
     $(".xsw_showLoading").remove();
   }
+
+  enableAlertBeforeUnload() {
+    console.warn('Is not currently supported')
+  }
+
+  disableAlertBeforeUnload() {
+    console.warn('Is not currently supported')
+  }
+
+  //////////// 地图 ////////////
+  createMapContext() {
+    console.warn('createMapContext are not currently supported')
+  }
+  //////////// 动画 ////////////
 }
 export default new VueWX(()=>Vue.prototype)
