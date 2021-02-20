@@ -19,7 +19,7 @@ import OnekitComponent from '../../../weixin2vue/OnekitComponent';
 import wx from '../../../weixin2vue/wx';
 //let global = {};
 export default OnekitComponent(ONEKIT_JSON, {}, {
-  properties: [DATA],
+  properties: ["DATA"],
   data: {
     desc: ""
   },

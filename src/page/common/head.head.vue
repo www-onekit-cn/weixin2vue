@@ -22,7 +22,7 @@ import OnekitComponent from '../../../weixin2vue/OnekitComponent';
 import wx from '../../../weixin2vue/wx';
 global = {};
 export default OnekitComponent(ONEKIT_JSON, {}, {
-  properties: [DATA],
+  properties: ["DATA"],
   onLoad: function () {
     console.log("aaaaa",this.props.DATA)
     if (this.props.DATA) {
