@@ -163,6 +163,7 @@ const order = [
   'demo3'
 ]
 export default OnekitPage(ONEKIT_JSON, {
+  data:{scrollTop:0},
   refresh$onPulling (e) { refresh.onPulling(e, this); },
   onLoad: function () {
     this.animate('#scroll-sample-object1', [
