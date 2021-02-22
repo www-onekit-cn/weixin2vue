@@ -18,20 +18,20 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
     props: {
       'target': {
         type: String,
-        default: 'self',
+        default: 'self'/*,
         validator(value) {
           return value == 'self' || 'miniProgram'
-        }
+        }*/
       },
       'url': {
         type: String
       },
       'open-type': {
         type: String,
-        default: 'navigate',
+        default: 'navigate'/*,
         validator(value) {
           return value == 'navigate' || 'redirect' || 'switchTab' || 'reLaunch' || 'navigateBack' || 'exit'
-        }
+        }*/
       },
       'delta': {
         type: [Number, String],
@@ -48,10 +48,10 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
       },
       'version': {
         type: String,
-        default: 'release',
+        default: 'release'/*,
         validator(value) {
           return value == 'develop' || 'trial' || 'release'
-        }
+        }*/
       },
       'hover-class': {
         type: String,
@@ -87,31 +87,36 @@ import onekit_behavior from "../../behaviors/onekit_behavior"
 
           case 'navigate':
             wx.navigateTo({
-              url
+              url,
+              fail:console.error
             })
             break;
 
           case 'redirect':
             wx.redirectTo({
-              url
+              url,
+              fail:console.error
             })
             break;
 
           case 'switchTab':
             wx.switchTab({
-              url
+              url,
+              fail:console.error
             })
             break;
 
           case 'reLaunch':
             wx.reLaunch({
-              url
+              url,
+              fail:console.error
             })
             break;
 
           case 'navigateBack':
             wx.navigateBack({
-              delta
+              delta,
+              fail:console.error
             })
             break;
 

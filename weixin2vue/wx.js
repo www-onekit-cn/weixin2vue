@@ -323,6 +323,7 @@ class VueWX extends WX {
       const eventChannelID = new Date().getTime()
       this.fn_global().$EventBus[eventChannelID] = eventChannel
       //////
+      console.log(vue_path)
       this.fn_global().ROOT.$router.push({
         path: vue_path,
         query: { eventChannelID }
