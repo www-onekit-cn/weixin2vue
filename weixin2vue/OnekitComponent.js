@@ -102,6 +102,7 @@ export default function (UC_JSON, object) {
       case "onShareAppMessage":
         break;
       case "properties":
+        console.log("=============",new Date().getTime())
         for (let propertyName of Object.keys(obj)) {
           const property = obj[propertyName]
           if (!property) {

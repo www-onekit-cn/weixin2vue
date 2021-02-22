@@ -24,7 +24,7 @@ import { Any } from '../../../weixin2vue/macro';
 //let global = {};
 export default OnekitComponent(ONEKIT_JSON, {
   properties: {
-    DATA: { type: Any }
+    DATA: { type: Object }
   },
   data: {
     title: "",
