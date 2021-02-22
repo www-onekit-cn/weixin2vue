@@ -1,4 +1,4 @@
-@import '/weixin2vue/dist/public/onekit.css';
+@import '../public/onekit/onekit.css';
 @import './page/common/lib/weui.css';
 
 .onekit-page {

@@ -89,8 +89,6 @@ export default {
 };
 </script>
 <style scoped="scoped">
-@import "../../../public/onekit.css";
-@import "../../../public/weui.css";
 
 #onekitwx_navigationBar {
   height: 50px;
