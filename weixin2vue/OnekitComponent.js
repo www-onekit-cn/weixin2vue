@@ -9,7 +9,8 @@ export default function (UC_JSON, object) {
     props: {},
     watch: {},
     created() {
-
+      this.data = object.data || {}
+      ////////////////
       APP_JSON = Vue.prototype.APP_JSON;
       ////////////////
       if (this["created"]) {
@@ -19,6 +20,10 @@ export default function (UC_JSON, object) {
     mounted() {
       if (this["attached"]) {
         this["attached"]();
+      }
+      //////////
+      for(const propertyName of Object.keys(object.properties)){
+        this.data[propertyName] = this[propertyName]
       }
       //////////
       let WINDOW_JSON = {
