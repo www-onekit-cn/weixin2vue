@@ -325,7 +325,7 @@ class VueWX extends WX {
       //////
       console.log(vue_path)
       this.fn_global().ROOT.$router.push({
-        path: vue_path,
+        path: `/${vue_path}`,
         query: { eventChannelID }
       }).then(function () {
 
