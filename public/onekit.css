@@ -4,13 +4,13 @@
 
 
 .onekit-page {
-  
+
   cursor: default;
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   width: 100% !important;
-  height:100% !important;
+  height: 100% !important;
   overflow: scroll;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -603,7 +603,7 @@ input[type='radio'] {
   text-align: center;
 }
 
-.onekit-swiper-page {
+.onekit-swiper-onekit-page {
   height: 8px;
   width: 8px;
   border: 1px solid rgba(0, 0, 0, .2);

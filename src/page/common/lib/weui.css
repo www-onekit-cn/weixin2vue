@@ -1,5 +1,5 @@
 [data-weui-theme=light],
-page {
+.onekit-page {
     --weui-BTN-DISABLED-FONT-COLOR: rgba(0, 0, 0, .2) ;
 }
 @media(prefers-color-scheme: dark) {
@@ -8,7 +8,7 @@ page {
     }
 }
 [data-weui-theme=light],
-page {
+.onekit-page {
     --weui-BTN-DEFAULT-BG: #f2f2f2 ;
 }
 @media(prefers-color-scheme: dark) {
@@ -17,7 +17,7 @@ page {
     }
 }
 [data-weui-theme=light],
-page {
+.onekit-page {
     --weui-BTN-DEFAULT-COLOR: #06ae56 ;
 }
 @media(prefers-color-scheme: dark) {
@@ -26,7 +26,7 @@ page {
     }
 }
 [data-weui-theme=light],
-page {
+.onekit-page {
     --weui-BTN-DEFAULT-ACTIVE-BG: #e6e6e6 ;
 }
 @media(prefers-color-scheme: dark) {
@@ -35,7 +35,7 @@ page {
     }
 }
 [data-weui-theme=light],
-page {
+.onekit-page {
     --weui-DIALOG-LINE-COLOR: rgba(0, 0, 0, .1) ;
 }
 @media(prefers-color-scheme: dark) {
@@ -51,7 +51,7 @@ page {
     vertical-align: middle ;
 }
 [data-weui-theme=light],
-page {
+.onekit-page {
     --weui-BG-0: #ededed ;
     --weui-BG-1: #f7f7f7 ;
     --weui-BG-2: #fff ;
@@ -124,7 +124,7 @@ page {
     }
 }
 [data-weui-theme=light],
-page {
+.onekit-page {
     --weui-BG-COLOR-ACTIVE: #ececec ;
 }
 @media(prefers-color-scheme: dark) {
