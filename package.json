@@ -52,6 +52,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {}
+    "rules": {},
+    "globals":{
+      "qq": true
+    }
   }
 }
