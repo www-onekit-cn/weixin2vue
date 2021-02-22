@@ -26,8 +26,8 @@ export default OnekitComponent(ONEKIT_JSON, {
   data: {
   },
   attached: function () {
-    const data = this.getDATA().DATA
-    this.setData(data);
+    const DATA = this.data.DATA
+    this.setData(DATA);
   }
 })
 </script>

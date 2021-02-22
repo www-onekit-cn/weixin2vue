@@ -9,7 +9,7 @@ export default function (UC_JSON, object) {
     props: {},
     watch: {},
     created() {
-      this.data = object.data || {}
+      this.data = _data;
       ////////////////
       APP_JSON = Vue.prototype.APP_JSON;
       ////////////////
@@ -23,7 +23,7 @@ export default function (UC_JSON, object) {
       }
       //////////
       for(const propertyName of Object.keys(object.properties)){
-        this.data[propertyName] = this[propertyName]
+        _data[propertyName] = this[propertyName]
       }
       //////////
       let WINDOW_JSON = {
@@ -79,12 +79,6 @@ export default function (UC_JSON, object) {
       });
     },
     methods: {
-      getDATA() {
-        return _data
-      },
-      setDATA(data) {
-        _data = data
-      },
       setData(data) {
         if(!data){
           return
