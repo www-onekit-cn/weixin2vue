@@ -10,7 +10,7 @@
       <onekit-view onekit-class="page-body">
         <onekit-view onekit-class="page-section page-section-spacing">
           <onekit-view onekit-class="text-box"
-                       scroll-y="true"
+                       scroll-y
                        :scroll-top="scrollTop">
             <onekit-text>{{text}}</onekit-text>
           </onekit-view>

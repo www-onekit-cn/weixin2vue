@@ -12,7 +12,7 @@
           <onekit-canvas onekit-class="canvas-element"
                          canvas-id="canvas"></onekit-canvas>
           <onekit-scroll-view onekit-class="canvas-buttons"
-                              scroll-y="true">
+                              scroll-y>
             <template v-for="(method) in methods">
               <onekit-button onekit-class="canvas-button"
                              @Tap="method">{{method}}</onekit-button>

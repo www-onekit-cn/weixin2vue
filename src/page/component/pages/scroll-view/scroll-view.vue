@@ -14,7 +14,7 @@
             <onekit-text>Vertical Scroll\n纵向滚动</onekit-text>
           </onekit-view>
           <onekit-view onekit-class="page-section-spacing">
-            <onekit-scroll-view scroll-y="true"
+            <onekit-scroll-view
                                 onekit-style="height: 150px;"
                                 @Scrolltoupper="upper"
                                 @Scrolltolower="lower"
@@ -36,7 +36,7 @@
           </onekit-view>
           <onekit-view onekit-class="page-section-spacing">
             <onekit-scroll-view onekit-class="scroll-view_H"
-                                scroll-x="true"
+                                scroll-x
                                 @Scroll="scroll"
                                 onekit-style="width: 100%">
               <onekit-view onekit-id="demo1"
@@ -109,7 +109,7 @@
           </onekit-view>
           <onekit-view onekit-class="page-section-spacing">
             <onekit-scroll-view onekit-id="scroll-view_D"
-                                scroll-y="true"
+                               
                                 onekit-style="height: 150px;"
                                 @Scrolltoupper="upper"
                                 @Scrolltolower="lower"
@@ -163,7 +163,6 @@ const order = [
   'demo3'
 ]
 export default OnekitPage(ONEKIT_JSON, {
-  data:{scrollTop:0},
   refresh$onPulling (e) { refresh.onPulling(e, this); },
   onLoad: function () {
     this.animate('#scroll-sample-object1', [
@@ -246,6 +245,7 @@ export default OnekitPage(ONEKIT_JSON, {
     }
   },
   data: {
+    scrollTop:null,
     toView: 'green',
     triggered: false
   },

@@ -13,7 +13,7 @@
           <onekit-view onekit-class="page-section-title">默认样式</onekit-view>
           <onekit-label onekit-class="radio">
             <onekit-radio value="r1"
-                          checked="true"></onekit-radio>选中
+                          checked></onekit-radio>选中
           </onekit-label>
           <onekit-label onekit-class="radio">
             <onekit-radio value="r2"></onekit-radio>未选中
@@ -30,7 +30,7 @@
 
                 <onekit-view onekit-class="weui-cell__hd">
                   <onekit-radio :value="item.value"
-                                checked="true"></onekit-radio>
+                                checked></onekit-radio>
                 </onekit-view>
                 <onekit-view onekit-class="weui-cell__bd">{{item.name}}</onekit-view>
               </onekit-label>

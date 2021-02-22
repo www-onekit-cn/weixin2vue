@@ -12,7 +12,7 @@
           <onekit-view onekit-class="page-section-title">默认样式</onekit-view>
           <onekit-label onekit-class="checkbox">
             <onekit-checkbox value="cb"
-                             checked="true"></onekit-checkbox>选中
+                             checked></onekit-checkbox>选中
           </onekit-label>
           <onekit-label onekit-class="checkbox">
             <onekit-checkbox value="cb"></onekit-checkbox>未选中

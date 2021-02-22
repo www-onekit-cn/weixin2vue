@@ -19,7 +19,7 @@
         <onekit-view onekit-class="page-section">
           <onekit-view onekit-class="page-section-title">这是一个可以自动聚焦的textarea</onekit-view>
           <onekit-view onekit-class="textarea-wrp">
-            <onekit-textarea auto-focus="true"
+            <onekit-textarea auto-focus
                              onekit-style="height: 3em"></onekit-textarea>
           </onekit-view>
         </onekit-view>
