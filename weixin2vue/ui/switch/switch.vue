@@ -1,7 +1,7 @@
 <template>
   <div :class="['onekit-switch',onekitClass]" :style="onekitStyle" :id="onekitId" class="switch" :key="tag">
     <div class="switch-wrapper"
-      :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status ? '#e9ebef' : switchBg}"
+      :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status ? switchBg : '#e9ebef'}"
       :class="{'close':!status,'disabled':this.disabled}" @click.stop="handleSwitch">
       <div class="slider" :style="{'width':(height-2)+'px','height':(height-2)+'px','left':left+'px'}"></div>
     </div>
@@ -78,9 +78,9 @@
     methods: {
       changeStatus() {
         if (this.status) {
-          this.left = 1;
+          this.left = this.width - (this.height - 1);
         } else {
-          this.left = this.width - (this.height - 1)
+          this.left = 1
         }
       },
       handleSwitch() {
@@ -94,6 +94,7 @@
       }
     },
     mounted() {
+      this.changeStatus()
       if (this.status != this.value && !this.checked) {
         this.status = this.value;
       }
