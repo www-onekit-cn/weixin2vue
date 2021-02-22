@@ -55,8 +55,8 @@
 </template>
 <script>
 import Vue from "vue";
-
 import clipboard from 'clipboard';
+import wx from '../../wx'
 Vue.prototype.clipboard = clipboard;
 
 export default {
@@ -69,7 +69,7 @@ export default {
   methods: {
 
     back_click () {
-      history.back();
+      wx.navigateBack({});
     },
     activity_updateWindowJson ({ WINDOW_JSON }) {
       this.WINDOW_JSON = WINDOW_JSON;
