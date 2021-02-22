@@ -89,7 +89,6 @@ export default {
 };
 </script>
 <style scoped="scoped">
-
 #onekitwx_navigationBar {
   height: 50px;
   display: flex;

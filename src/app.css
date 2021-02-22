@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.onekit-page>view {
+.onekit-page>.onekit-view {
   width: 100vw;
   max-width: 600px;
 }

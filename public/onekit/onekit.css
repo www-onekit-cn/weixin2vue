@@ -4,12 +4,10 @@
 
 
 .onekit-page {
-
   cursor: default;
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
-  width: 100% !important;
   height: 100% !important;
   overflow: scroll;
   -webkit-text-size-adjust: none;
