@@ -1,5 +1,6 @@
 export default {
   "pages": [
+    "page/component/index",
     "page/component/pages/view/view",
     "page/component/pages/scroll-view/scroll-view",
     "page/component/pages/swiper/swiper",

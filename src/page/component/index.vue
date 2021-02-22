@@ -47,7 +47,7 @@ const ONEKIT_JSON = {
   "usingComponents": {}
 }
 import OnekitPage from '../../../weixin2vue/OnekitPage';
-import wx from '../../../weixin2vue/OnekitPage';
+import wx from '../../../weixin2vue/wx';
 //global = {};
 export default OnekitPage(ONEKIT_JSON, {
   onShow: function () {

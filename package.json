@@ -25,7 +25,7 @@
     "vue": "^2.6.11",
     "vue-amap": "^0.5.10",
     "vue-router": "^3.4.3",
-    "weixin2html": "1.2.2"
+    "weixin2html": "1.2.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
@@ -53,7 +53,7 @@
       "eslint:recommended"
     ],
     "rules": {},
-    "globals":{
+    "globals": {
       "qq": true
     }
   }
