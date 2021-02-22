@@ -1,7 +1,7 @@
 <template>
   <div :class="['onekit-switch',onekitClass]" :style="onekitStyle" :id="onekitId" class="switch" :key="tag">
     <div class="switch-wrapper"
-      :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status?switchBg:'#e9ebef'}"
+      :style="{'width':width+'px','height': height+'px','border-radius': (height/2)+'px','background':status ? '#e9ebef' : switchBg}"
       :class="{'close':!status,'disabled':this.disabled}" @click.stop="handleSwitch">
       <div class="slider" :style="{'width':(height-2)+'px','height':(height-2)+'px','left':left+'px'}"></div>
     </div>
